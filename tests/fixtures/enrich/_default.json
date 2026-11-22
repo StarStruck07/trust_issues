@@ -19,7 +19,7 @@
             "logo_permalink": null,
             "description": null,
             "company_type": null,
-            "status": null,
+            "status": "active",
             "year_founded": null,
             "employee_count_range": null,
             "markets": null

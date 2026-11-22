@@ -43,7 +43,10 @@ DEFAULT_FIELDS = ["basic_info", "headcount", "funding", "people", "news", "emplo
 
 # requests per 60 s, per endpoint (observed headers; override with CRD_RATE_<ENDPOINT>=n)
 RATE_LIMITS = {"identify": 5, "enrich": 5, "job_search": 5, "person_enrich": 5,
-               "web_search": 10, "web_fetch": 10, "watch": 10, "credits": 300}
+               "web_search": 10, "web_fetch": 10, "watch": 10, "credits": 300, "registries": 10}
+# Public government pages fetched directly (no Crustdata auth header, 0 credits, ledger provider "registry").
+PUBLIC_ENDPOINTS = {"registries"}
+PUBLIC_UA = "Mozilla/5.0 (compatible; CounterpartyRiskDesk/0.1)"
 BACKOFF = [1, 3, 9]
 MAX_TRIES = 3
 TIMEOUT_S = float(os.getenv("CRD_HTTP_TIMEOUT", "45"))   # first enrich call took 31 s in the probe
@@ -186,6 +189,8 @@ def _lookup_values(payload: dict) -> list[str]:
         out += [_norm(v) for v in payload.get(k) or []]
     if payload.get("query"):
         out.append(_norm(payload["query"]))
+    if payload.get("key"):
+        out.append(_norm(payload["key"]))
     f = payload.get("filters")
     stack = [f] if f else []
     while stack:
@@ -295,6 +300,16 @@ class CrustdataClient:
         resp = self._call("POST", "/watch/company", body, "watch", use_cache=False)
         return resp if isinstance(resp, dict) else {}
 
+    def public_get(self, url: str, *, key: str, day: str | None = None) -> dict:
+        """GET a public registry page (IBBI). Returns {"url", "status", "html"}. Never sends the API key.
+
+        `key` names the mock fixture (tests/fixtures/registries/<slug(key)>.json); `day` scopes the cache
+        to one day so a weekly re-run re-reads the registry.
+        """
+        payload = {"url": url, "key": key, "day": day or _now().date().isoformat()}
+        resp = self._call("GET", url, payload, "registries")
+        return resp if isinstance(resp, dict) else {}
+
     def test_company_watch(self, watch_id: str, body: dict | None = None) -> dict:
         resp = self._call("POST", f"/watch/company/{watch_id}/test", body or {}, "watch", use_cache=False)
         return resp if isinstance(resp, dict) else {}
@@ -374,10 +389,17 @@ class CrustdataClient:
                          "x-api-version": API_VERSION})
         return self._http
 
+    def _public_http(self) -> httpx.Client:
+        if getattr(self, "_pub", None) is None:
+            self._pub = httpx.Client(timeout=TIMEOUT_S, follow_redirects=True, transport=self._transport,
+                                     headers={"user-agent": PUBLIC_UA})
+        return self._pub
+
     def _http_with_retries(self, method: str, path: str, payload: dict | None, endpoint: str,
                            rhash: str) -> tuple[Any, float | None, int]:
         bucket = _bucket(endpoint, self._sleep)
-        http = self._client()
+        public = endpoint in PUBLIC_ENDPOINTS
+        http = self._public_http() if public else self._client()
         fails = 0          # 5xx / timeout / network
         limited = 0        # 429
         last_err = ""
@@ -385,7 +407,12 @@ class CrustdataClient:
             bucket.take()
             t0 = time.perf_counter()
             try:
-                r = http.request(method, path, json=payload) if payload is not None else http.request(method, path)
+                if public:
+                    r = http.request(method, payload["url"])
+                elif payload is not None:
+                    r = http.request(method, path, json=payload)
+                else:
+                    r = http.request(method, path)
             except httpx.TimeoutException as e:
                 ms = int((time.perf_counter() - t0) * 1000)
                 fails += 1
@@ -413,6 +440,8 @@ class CrustdataClient:
             code = r.status_code
 
             if code == 200 or code == 201:
+                if public:
+                    return {"url": str(r.url), "status": code, "html": r.text}, 0.0, ms
                 credits = _num(r.headers.get("x-credits-used"))
                 try:
                     return r.json(), credits, ms
@@ -430,7 +459,7 @@ class CrustdataClient:
                 bucket.hold(wait)
                 self._sleep(wait)
                 continue
-            if code == 402 or (code == 400 and "credit" in text.lower()):
+            if not public and (code == 402 or (code == 400 and "credit" in text.lower())):
                 self._ledger(endpoint, rhash, status="error", latency_ms=ms, note=f"{code} credits exhausted")
                 raise CreditsExhausted(f"{endpoint}: HTTP {code} {text}")
             if code in (401, 403):
@@ -483,7 +512,8 @@ class CrustdataClient:
     def _ledger(self, endpoint: str, rhash: str, *, status: str, credits: float = 0.0, inr: float = 0.0,
                 latency_ms: int = 0, note: str = "") -> None:
         db.insert_ledger(LedgerEntry(
-            call_id=uuid.uuid4().hex, run_id=self.run_id, provider="crustdata", endpoint=endpoint,
+            call_id=uuid.uuid4().hex, run_id=self.run_id,
+            provider="registry" if endpoint in PUBLIC_ENDPOINTS else "crustdata", endpoint=endpoint,
             request_hash=rhash, credits=credits, inr=inr, latency_ms=latency_ms, status=status,
             note=note, ts=_now()))
 

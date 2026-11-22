@@ -144,12 +144,15 @@ def gather(cp: Counterparty, entity: ResolvedEntity, client, cfg) -> list[Eviden
         if not enrich:
             out.append(ctx.make_ev("headcount_qoq", "Company Enrich returned no record for this company", None,
                                    "Company Enrich", None, None, status="empty", raw_ref=raw))
+            out.append(ctx.unavailable("legal_status", "Company status", "no company record (MCA not checked)"))
         else:
             out += enrich_signals(ctx, enrich, raw)
+            out.append(legal_status_from_enrich(ctx, enrich, raw))
     except STOP:
         raise
     except Exception as e:  # noqa: BLE001
         out.append(ctx.unavailable("headcount_qoq", "Company Enrich", e))
+        out.append(ctx.unavailable("legal_status", "Company status (Company Enrich)", e))
 
     # 3. hiring via Job Search
     try:
@@ -263,6 +266,20 @@ def enrich_signals(ctx: _Ctx, d: dict, raw: str | None) -> list[Evidence]:
         if ev:
             out.append(ev)
     return out
+
+
+def legal_status_from_enrich(ctx: _Ctx, d: dict, raw: str | None) -> Evidence:
+    """MCA cannot be checked (CAPTCHA), so company status comes from Crustdata's record and says so."""
+    from crd.data.registries import MCA_NOTE
+    status = str(((d.get("basic_info") or {}).get("status")) or "").strip().lower()
+    if not status:
+        return ctx.unavailable("legal_status", "Company status",
+                               "Crustdata company record has no status; " + MCA_NOTE)
+    h_date = _last_ts_date((d.get("headcount") or {}).get("timeseries"))
+    rec = _date(d.get("updated_at")) or _date(d.get("indexed_at")) or h_date
+    return ctx.make_ev("legal_status", f"Company status '{status}' per Crustdata company record. {MCA_NOTE}",
+                       {"status": status, "registry_checked": False}, "Company Enrich", "basic_info.status",
+                       rec, raw_ref=raw)
 
 
 def _web_traffic(ctx: _Ctx, d: dict, raw: str | None) -> Evidence | None:

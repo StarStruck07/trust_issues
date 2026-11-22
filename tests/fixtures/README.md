@@ -43,3 +43,11 @@ Probe run cost: **15.83 credits** (balance 15200.00 → 15184.17), which matches
 - Enrich `basic_info` has `status`, which may be useful for legal-status hints.
 - Identify and enrich responses are a top-level array: `[{matched_on, match_type, matches:[{confidence_score, company_data}]}]`.
 - Webhook signature header: `x-crustdata-signature: t=<unix>,v1=<hex>`, HMAC-SHA256 over `"<t>.<raw body>"`, keyed by the API key (docs).
+
+## Registries (checked 2026-11-22)
+
+| Registry | Reached how | Works? | Cost | Notes |
+|---|---|---|---|---|
+| IBBI public announcements | `GET https://ibbi.gov.in/public-announcement?title=<name>` via `client.public_get` | **Yes**, no login or CAPTCHA | free (ledger provider `registry`) | Table: type of PA, date, debtor, applicant, IP, PDF. Fixtures in `registries/` (`noel-pharma.json` = a real CIRP of 25 Jul 2026) |
+| MCA company master data | portal | **No**: HTTP 403 to automated access, plus a CAPTCHA | n/a | Not bypassed. `legal_status` comes from Crustdata `basic_info.status`, and its claim says MCA was not checked |
+| GST taxpayer search | portal | **No**: JavaScript app behind a CAPTCHA | n/a | Not bypassed. Reported as `empty` ("not checked") when a GSTIN is given |
