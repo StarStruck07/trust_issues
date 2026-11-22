@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{% block title %}Counterparty Risk Desk{% endblock %}</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.min.css">
+  <link rel="stylesheet" href="/static/style.css">
+  <script src="https://unpkg.com/htmx.org@1.9.12"></script>
+</head>
+<body>
+<header class="container">
+  <nav>
+    <ul><li><a href="/" class="contrast"><strong>Counterparty Risk Desk</strong></a></li></ul>
+    <ul>
+      <li><a href="/">Dashboard</a></li>
+      <li><a href="/approvals">Approvals{% if pending_count %}<span class="nav-badge">{{ pending_count }}</span>{% endif %}</a></li>
+      <li><a href="/outbox">Outbox</a></li>
+      <li><a href="/ledger">Ledger</a></li>
+      <li><a href="/runs">Runs</a></li>
+    </ul>
+  </nav>
+</header>
+<main class="container">
+{% if USING_FAKE_DB %}<p class="muted">Mock data layer (crd.fakes) — swaps to the real crd.db automatically when it lands.</p>{% endif %}
+{% block content %}{% endblock %}
+</main>
+<footer class="container site">
+  Every fact links to its source · Irreversible actions need approval · Costs recorded per call
+</footer>
+</body>
+</html>

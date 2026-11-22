@@ -1,0 +1,37 @@
+/* Counterparty Risk Desk — calm and dense. One accent colour, no gradients. */
+:root { --accent: #1d4ed8; --pico-font-size: 15px; }
+.badge {
+  display: inline-block; padding: .08rem .55rem; border-radius: 999px; color: #fff;
+  font-weight: 700; font-size: .72rem; font-variant: small-caps; letter-spacing: .06em;
+  text-transform: lowercase; white-space: nowrap; vertical-align: middle;
+}
+.r-GREEN { background: #1a7f37; } .r-AMBER { background: #b26b00; } .r-RED { background: #c62828; }
+.r-CANNOT_VERIFY { background: #6b7280; } .r-HELD { background: #6d28d9; }
+.nav-badge { background: #c62828; color: #fff; border-radius: 999px; padding: 0 .45rem; font-size: .75rem; margin-left: .2rem; }
+a.src { font-size: .82em; white-space: nowrap; }
+.muted { color: #6b7280; font-size: .9em; }
+.tag { display: inline-block; font-size: .7rem; padding: 0 .4rem; border-radius: 4px; font-weight: 600; letter-spacing: .03em; }
+.tag.stale { background: #fef3c7; color: #92400e; }
+.tag.unavailable { background: #ede9fe; color: #6d28d9; }
+.tiles { display: grid; grid-template-columns: repeat(4, 1fr); gap: .75rem; margin: 1rem 0; }
+.tile { border: 1px solid #e5e7eb; border-radius: 8px; padding: .6rem .9rem; }
+.tile .n { font-size: 1.8rem; font-weight: 700; line-height: 1.1; }
+.tile.RED .n { color: #c62828; } .tile.AMBER .n { color: #b26b00; } .tile.GREEN .n { color: #1a7f37; } .tile.CV .n { color: #6b7280; }
+.box { border-left: 4px solid #6b7280; background: #f9fafb; padding: .6rem .9rem; margin: 1rem 0; }
+.box.held { border-color: #6d28d9; background: #f5f3ff; }
+.box.conflict { border-color: #b26b00; background: #fffbeb; }
+.banner { border: 1px solid var(--accent); color: #1e3a8a; background: #eff6ff; padding: .6rem .9rem; border-radius: 6px; margin-bottom: 1rem; }
+.flash { border: 1px solid #1a7f37; background: #f0fdf4; padding: .5rem .9rem; border-radius: 6px; }
+.flash.err { border-color: #c62828; background: #fef2f2; }
+table.dense td, table.dense th { padding: .3rem .5rem; font-size: .88rem; }
+.step-ok { color: #1a7f37; } .step-run { color: var(--accent); } .step-err { color: #c62828; } .step-wait { color: #d1d5db; }
+.ticker td { font-family: ui-monospace, Consolas, monospace; font-size: .8rem; }
+.ticker tr.cached td { color: #9ca3af; } .ticker tr.error td { color: #c62828; }
+.card { border: 1px solid #e5e7eb; border-radius: 8px; padding: .9rem 1.1rem; margin-bottom: 1rem; }
+.card h3 { margin-bottom: .4rem; font-size: 1.05rem; }
+progress { height: .6rem; }
+sup a { text-decoration: none; font-size: .75em; }
+footer.site { margin-top: 3rem; color: #6b7280; font-size: .85rem; border-top: 1px solid #e5e7eb; padding-top: .8rem; }
+.held { color: #6d28d9; } .cv { color: #4b5563; }
+textarea.draft { font-family: ui-monospace, Consolas, monospace; font-size: .85rem; min-height: 9rem; }
+iframe.report { width: 100%; height: 75vh; border: 1px solid #e5e7eb; border-radius: 6px; }

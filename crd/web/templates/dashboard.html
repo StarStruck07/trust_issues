@@ -1,0 +1,43 @@
+{% extends "base.html" %}
+{% block content %}
+<form method="post" action="/runs" enctype="multipart/form-data">
+  <label for="request_text"><strong>What should the desk review?</strong></label>
+  <textarea id="request_text" name="request_text" rows="2">{{ default_request }}</textarea>
+  <div class="grid">
+    <label>Counterparty CSV <span class="muted">(optional — otherwise the stored list)</span>
+      <input type="file" name="csv_file" accept=".csv">
+    </label>
+    <div style="align-self:end"><button type="submit">Run review</button></div>
+  </div>
+</form>
+
+{% if run %}
+<h3 style="margin-top:1.5rem">Latest run · <a href="/runs/{{ run.run_id }}">{{ run.run_id }}</a>
+  <span class="muted">{{ run.status }} · {{ run.started_at }}</span></h3>
+<div class="tiles">
+  <div class="tile RED"><div class="n">{{ counts.RED }}</div>RED</div>
+  <div class="tile AMBER"><div class="n">{{ counts.AMBER }}</div>AMBER</div>
+  <div class="tile CV"><div class="n">{{ counts.CV }}</div>CANNOT VERIFY + HELD</div>
+  <div class="tile GREEN"><div class="n">{{ counts.GREEN }}</div>GREEN</div>
+</div>
+<p class="muted">{{ data.costs.credits }} credits · {{ data.costs.inr|inr }} · {{ data.costs.calls }} calls · {{ data.costs.minutes }} min
+  · <a href="/runs/{{ run.run_id }}/report">Open report</a></p>
+
+<table class="dense striped">
+  <thead><tr>{% for f in data.fields %}<th>{{ f.replace('_', ' ') }}</th>{% endfor %}</tr></thead>
+  <tbody>
+  {% for r in data.rows %}<tr>
+    {% for f in data.fields %}{% set v = r.cells[f] %}<td>
+      {%- if f == 'display_name' -%}<a href="/cp/{{ run.run_id }}/{{ r.cp_id }}">{{ v }}</a>{% if r.a.cp_ids|length > 1 %} <span class="muted">({{ r.a.cp_ids|join(' + ') }})</span>{% endif %}
+      {%- elif f == 'rating' -%}<span class="badge r-{{ v }}">{{ v|rating_label }}</span>
+      {%- elif f in ('inr_at_risk', 'exposure_inr') -%}{{ v|inr }}
+      {%- elif f == 'sources' -%}{% for s in v %}{% if s.url %}<a class="src" href="{{ s.url }}" target="_blank">{{ s.label }} ↗</a>{% else %}<span class="muted">{{ s.label }}</span>{% endif %}{% if s.record_date %} <span class="muted">· {{ s.record_date }}</span>{% endif %}{% if not loop.last %}<br>{% endif %}{% endfor %}
+      {%- else -%}{{ v }}{%- endif -%}
+    </td>{% endfor %}
+  </tr>{% endfor %}
+  </tbody>
+</table>
+{% else %}
+<p class="muted">No runs yet. Start one above.</p>
+{% endif %}
+{% endblock %}

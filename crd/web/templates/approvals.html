@@ -1,0 +1,40 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="banner">Nothing here is sent until a person approves it. During the event, all messages go to our team inbox only.</div>
+{% if done %}<p class="flash">Decision recorded for {{ done }}.</p>{% endif %}
+{% if err == 'changed' %}<p class="flash err">This action changed since you opened it. Reload.</p>{% endif %}
+{% if err == 'approver' %}<p class="flash err">Enter your name as approver.</p>{% endif %}
+
+<h2>Approval queue <span class="muted">({{ pending|length }})</span></h2>
+{% for p in pending %}{% set x = p.act %}
+<article class="card" id="{{ x.action_id }}">
+  <h3>{{ HUMAN_LABEL.get(x.type|val, x.type|val) }} —
+    {% if p.a %}<a href="/cp/{{ x.run_id }}/{{ x.cp_id }}">{{ p.a.display_name }}</a> <span class="badge r-{{ p.a.rating|val }}">{{ p.a.rating|rating_label }}</span>{% else %}{{ x.cp_id }}{% endif %}</h3>
+  <p class="muted"><strong>to:</strong> {{ x.to }} · <strong>subject:</strong> {{ x.subject }} · key <code>{{ x.idempotency_key }}</code></p>
+  {% if x.error %}<p class="flash err">{{ x.error }} — please review and approve again.</p>{% endif %}
+  {% if p.reasons %}<p><strong>Reasons</strong></p><ul>
+    {% for e in p.reasons %}<li>{{ e.claim }} — {{ e|src }}</li>{% endfor %}</ul>{% endif %}
+  <form method="post" action="/approvals/{{ x.action_id }}">
+    <textarea class="draft" name="draft">{{ x.draft }}</textarea>
+    <div class="grid">
+      <input name="approver" placeholder="Approver name (required)" required>
+      <button name="decision" value="approve">Approve</button>
+      <button name="decision" value="reject" class="secondary outline" formnovalidate>Reject</button>
+    </div>
+  </form>
+</article>
+{% else %}
+<p class="muted">Nothing waiting for approval.</p>
+{% endfor %}
+
+<h3>Recently decided</h3>
+{% if decided %}
+<table class="dense"><thead><tr><th>Action</th><th>Counterparty</th><th>Status</th><th>By</th><th>Executed</th><th>Ref</th><th></th></tr></thead><tbody>
+{% for x in decided %}<tr>
+  <td>{{ HUMAN_LABEL.get(x.type|val, x.type|val) }}</td><td>{{ x.cp_id }}</td><td>{{ x.status|val }}</td>
+  <td>{{ x.approved_by or '—' }}</td><td>{{ x.executed_at or '—' }}</td><td class="muted">{{ x.external_ref or x.error or '' }}</td>
+  <td>{% if x.status|val == 'failed' %}<form method="post" action="/actions/{{ x.action_id }}/retry" style="margin:0"><button class="outline" style="padding:.1rem .6rem">Retry</button></form>{% endif %}</td>
+</tr>{% endfor %}
+</tbody></table>
+{% else %}<p class="muted">No decisions yet.</p>{% endif %}
+{% endblock %}

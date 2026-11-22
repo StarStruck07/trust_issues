@@ -1,0 +1,6 @@
+{% extends "base.html" %}
+{% block content %}
+<h2>Run {{ run.run_id }}</h2>
+<p class="muted">“{{ run.request }}” · as of {{ run.as_of }} · started {{ run.started_at }}</p>
+<div id="progress">{% include "_progress.html" %}</div>
+{% endblock %}
