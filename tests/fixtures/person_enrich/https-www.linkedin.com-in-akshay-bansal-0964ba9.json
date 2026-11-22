@@ -1,0 +1,90 @@
+[
+ {
+  "matched_on": "https://www.linkedin.com/in/akshay-bansal-0964ba9",
+  "match_type": "professional_network_profile_url",
+  "match_status": "matched",
+  "matches": [
+   {
+    "confidence_score": 1.0,
+    "person_data": {
+     "basic_profile": {
+      "name": "Akshay Bansal",
+      "current_title": "Chief Operating Officer"
+     },
+     "professional_network": {
+      "connections": null
+     },
+     "social_handles": {
+      "professional_network_identifier": {
+       "profile_url": "https://www.linkedin.com/in/akshay-bansal-0964ba9"
+      }
+     },
+     "experience": {
+      "employment_details": {
+       "current": [
+        {
+         "name": "India Glycols Limited, Delhi",
+         "title": "Chief Operating Officer",
+         "crustdata_company_id": 2107,
+         "start_date": "2025-08-01T00:00:00+00:00",
+         "end_date": null
+        },
+        {
+         "name": "India Glycols Limited, Delhi",
+         "title": "Head - Sales and Marketing API & Nutraceuticals",
+         "crustdata_company_id": 2107,
+         "start_date": "2022-01-01T00:00:00+00:00",
+         "end_date": null
+        }
+       ],
+       "past": [
+        {
+         "name": "MANKIND PHARMA LTD",
+         "title": "General Manager - API Marketing (Global)",
+         "crustdata_company_id": 6149,
+         "start_date": "2017-08-01T00:00:00+00:00",
+         "end_date": "2022-05-01T00:00:00+00:00"
+        },
+        {
+         "name": "Glenmark Pharmaceuticals",
+         "title": "Sr. Manager - International Marketing",
+         "crustdata_company_id": 1682,
+         "start_date": "2010-06-01T00:00:00+00:00",
+         "end_date": "2017-08-01T00:00:00+00:00"
+        },
+        {
+         "name": "Dishman Carbogen Amcis Ltd",
+         "title": "Sr. Manager International Marketing -API",
+         "crustdata_company_id": 6255538,
+         "start_date": "2009-03-01T00:00:00+00:00",
+         "end_date": "2010-12-01T00:00:00+00:00"
+        },
+        {
+         "name": "Alembic Pharmaceuticals Limited",
+         "title": "Manger - International Marketing",
+         "crustdata_company_id": 2695290,
+         "start_date": "2006-05-01T00:00:00+00:00",
+         "end_date": "2009-03-01T00:00:00+00:00"
+        },
+        {
+         "name": "Orchid Pharma",
+         "title": "Territory Manager - International Marketing",
+         "crustdata_company_id": 3483,
+         "start_date": "2003-03-01T00:00:00+00:00",
+         "end_date": "2006-05-01T00:00:00+00:00"
+        },
+        {
+         "name": "Claris Limited",
+         "title": "Executive - Business Development (Central Eastern Europe)",
+         "crustdata_company_id": 971,
+         "start_date": "2000-02-01T00:00:00+00:00",
+         "end_date": "2003-01-01T00:00:00+00:00"
+        }
+       ]
+      }
+     }
+    }
+   }
+  ]
+ }
+]

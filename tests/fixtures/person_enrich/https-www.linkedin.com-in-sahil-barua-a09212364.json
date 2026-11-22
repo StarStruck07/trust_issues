@@ -1,0 +1,48 @@
+[
+ {
+  "matched_on": "https://www.linkedin.com/in/sahil-barua-a09212364",
+  "match_type": "professional_network_profile_url",
+  "match_status": "matched",
+  "matches": [
+   {
+    "confidence_score": 1.0,
+    "person_data": {
+     "basic_profile": {
+      "name": "Sahil Barua",
+      "current_title": "Chief Executive Officer"
+     },
+     "professional_network": {
+      "connections": null
+     },
+     "social_handles": {
+      "professional_network_identifier": {
+       "profile_url": "https://www.linkedin.com/in/sahil-barua-a09212364"
+      }
+     },
+     "experience": {
+      "employment_details": {
+       "current": [
+        {
+         "name": "Delhivery",
+         "title": "Chief Executive Officer",
+         "crustdata_company_id": 5798,
+         "start_date": "2011-03-01T00:00:00+00:00",
+         "end_date": null
+        }
+       ],
+       "past": [
+        {
+         "name": "Bain & Company",
+         "title": "Consultant",
+         "crustdata_company_id": 725332,
+         "start_date": "2008-05-01T00:00:00+00:00",
+         "end_date": "2011-03-01T00:00:00+00:00"
+        }
+       ]
+      }
+     }
+    }
+   }
+  ]
+ }
+]

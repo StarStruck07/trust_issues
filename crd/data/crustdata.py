@@ -160,7 +160,7 @@ class _FixtureIndex:
                 except ValueError:
                     continue
                 for item in data if isinstance(data, list) else []:
-                    for m in item.get("matches") or []:
+                    for m in (item.get("matches") or [])[:1]:   # only the top match names this file
                         cd = m.get("company_data") or {}
                         bi = cd.get("basic_info") or {}
                         for v in (cd.get("crustdata_company_id"), bi.get("primary_domain"), bi.get("name")):
@@ -171,7 +171,7 @@ class _FixtureIndex:
     def find(self, endpoint: str, payload: dict) -> Path | None:
         values = _lookup_values(payload)
         for v in values:
-            for key in (self.by_ep.get((endpoint, v)), self.alias.get(v), slug(v)):
+            for key in (slug(v), self.by_ep.get((endpoint, v)), self.alias.get(v)):   # exact file first
                 if key and (self.root / endpoint / f"{key}.json").exists():
                     return self.root / endpoint / f"{key}.json"
         # web search queries like '"Delhivery" Mumbai': match any known company name inside the query
@@ -268,9 +268,11 @@ class CrustdataClient:
                    start_date: int | None = None, end_date: int | None = None,
                    cp_key: str | None = None) -> list[dict]:
         """Results carry no publish date; pass start_date/end_date (unix seconds) to bound the window."""
-        payload: dict = {"query": query, "location": "IN"}
+        # No location: location "IN" returned Hindi Google-News noise that ignored the quoted name (probe 22 Nov).
+        # news + web in one page (same 1-credit price): web catches company announcements news misses.
+        payload: dict = {"query": query}
         if news:
-            payload["sources"] = ["news"]
+            payload["sources"] = ["news", "web"]
         if start_date is not None:
             payload["start_date"] = int(start_date)
         if end_date is not None:
@@ -624,6 +626,11 @@ def minimise_people(endpoint: str, body: Any) -> Any:
                 if isinstance(ppl, dict):
                     m["company_data"]["people"] = {"decision_makers": [], "founders": [],
                                                    "cxos": [_slim_person(x) for x in ppl.get("cxos") or []]}
+    elif endpoint == "web_fetch" and isinstance(body, list):
+        from crd.data.news import html_to_text   # store the article text, not the page's scripts and ads
+        for pg in body:
+            if isinstance(pg, dict) and isinstance(pg.get("content"), str) and "<" in pg["content"]:
+                pg["content"] = html_to_text(pg["content"])
     elif endpoint == "person_enrich" and isinstance(body, list):
         for item in body:
             for m in (item or {}).get("matches") or []:

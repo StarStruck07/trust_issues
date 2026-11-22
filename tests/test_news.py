@@ -205,3 +205,49 @@ def test_prompt_injection_in_article_is_data_not_instructions(monkeypatch):
     assert "<document>" in seen["user"] and seen["user"].count("<document>") == 1
     assert e.value["category"] == "irrelevant" and e.value["relevant"] is False   # invented sentence rejected
     assert "sentence not found" in e.claim
+
+
+class SearchOnly(FakeNewsClient):
+    def __init__(self, results, **kw):
+        super().__init__(**kw)
+        self.results = results
+        self.queries = []
+
+    def web_search(self, query, **kw):
+        self.queries.append(query)
+        return self.results
+
+
+GOTO = "https://www.google.com/goto?url=CAESabc"
+
+
+def test_google_redirect_result_is_headline_only_not_fetched():
+    c = SearchOnly([{"title": "Acme Logistics shares plunge as MD and CEO resigns", "url": GOTO,
+                     "snippet": "Acme Logistics Private Limited said its MD and CEO resigned on Monday."}])
+    evs = run(c, {"news": []})
+    e = evs[0]
+    assert e.url == GOTO and e.value["category"] == "leadership_exit" and "classified on headline" in e.claim
+    assert c.fetched == []                                   # redirect links are never sent to Web Fetch
+
+
+def test_hindi_resignation_headline_with_latin_name():
+    c = SearchOnly([{"title": "Acme Logistics के शेयरों में हाहाकार! MD व CEO के इस्तीफे से 13% फिसला", "url": GOTO,
+                     "snippet": ""}])
+    assert run(c, {"news": []})[0].value["category"] == "leadership_exit"
+
+
+def test_risk_word_in_snippet_ranks_and_later_sentence_is_used():
+    quiet = [(f"https://example.news/q{i}", f"Acme Logistics quarterly update {i}", f"2026-11-{10 + i}") for i in range(3)]
+    c = SearchOnly([{"title": "Acme Logistics India investment plan", "url": GOTO,
+                     "snippet": "Acme Logistics plans new hubs. Meanwhile Acme Logistics winds down its retail unit."}])
+    evs = run(c, enrich_news(*quiet))
+    wind = [e for e in evs if e.url == GOTO][0]              # ranked into the top 3 by its snippet
+    assert wind.value["category"] == "layoffs_or_shutdown"
+    assert "winds down" in wind.passage
+
+
+def test_search_uses_client_legal_name_and_brand():
+    c = SearchOnly([])
+    news.collect(resolved(legal_name="Acme", domain="acme.in"),
+                 cp(name="Acme India", legal_name="Acme Logistics India Private Limited"), {"news": []}, c, config.get())
+    assert c.queries == ['"Acme Logistics India"', '"Acme India"']

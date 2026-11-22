@@ -1,0 +1,111 @@
+[
+ {
+  "matched_on": "https://www.linkedin.com/in/isha-dalal-49b30863",
+  "match_type": "professional_network_profile_url",
+  "match_status": "matched",
+  "matches": [
+   {
+    "confidence_score": 1.0,
+    "person_data": {
+     "basic_profile": {
+      "name": "Isha Dalal",
+      "current_title": "Chief Financial Officer"
+     },
+     "professional_network": {
+      "connections": null
+     },
+     "social_handles": {
+      "professional_network_identifier": {
+       "profile_url": "https://www.linkedin.com/in/isha-dalal-49b30863"
+      }
+     },
+     "experience": {
+      "employment_details": {
+       "current": [
+        {
+         "name": "Mahindra Logistics",
+         "title": "Chief Financial Officer",
+         "crustdata_company_id": 2885,
+         "start_date": "2025-09-01T00:00:00+00:00",
+         "end_date": null
+        }
+       ],
+       "past": [
+        {
+         "name": "Mahindra Group",
+         "title": "Senior Vice President, Head- Group FP&A & Chief Risk Officer",
+         "crustdata_company_id": 2825,
+         "start_date": "2024-09-01T00:00:00+00:00",
+         "end_date": "2025-09-01T00:00:00+00:00"
+        },
+        {
+         "name": "Unilever",
+         "title": "Head- Supply Chain Finance, HUL",
+         "crustdata_company_id": 1268078,
+         "start_date": "2023-08-01T00:00:00+00:00",
+         "end_date": "2024-09-01T00:00:00+00:00"
+        },
+        {
+         "name": "Unilever",
+         "title": "GM - Finance Excellence Team",
+         "crustdata_company_id": 1268078,
+         "start_date": "2021-12-01T00:00:00+00:00",
+         "end_date": "2023-08-01T00:00:00+00:00"
+        },
+        {
+         "name": "Multiples Alternate Asset Management",
+         "title": "Vice President",
+         "crustdata_company_id": 1942183,
+         "start_date": "2019-04-01T00:00:00+00:00",
+         "end_date": "2021-11-01T00:00:00+00:00"
+        },
+        {
+         "name": "Multiples Alternate Asset Management",
+         "title": "Associate Vice President",
+         "crustdata_company_id": 1942183,
+         "start_date": "2017-04-01T00:00:00+00:00",
+         "end_date": "2019-04-01T00:00:00+00:00"
+        },
+        {
+         "name": "Multiples Alternate Asset Management",
+         "title": "Investment Associate",
+         "crustdata_company_id": 1942183,
+         "start_date": "2015-01-01T00:00:00+00:00",
+         "end_date": "2017-04-01T00:00:00+00:00"
+        },
+        {
+         "name": "Ambit Private Limited",
+         "title": "Senior Associate",
+         "crustdata_company_id": 612755,
+         "start_date": "2014-05-01T00:00:00+00:00",
+         "end_date": "2015-05-01T00:00:00+00:00"
+        },
+        {
+         "name": "Ambit Private Limited",
+         "title": "Associate",
+         "crustdata_company_id": 612755,
+         "start_date": "2012-09-01T00:00:00+00:00",
+         "end_date": "2014-04-01T00:00:00+00:00"
+        },
+        {
+         "name": "CNBC-TV18",
+         "title": "Correspondent & Associate Producer",
+         "crustdata_company_id": null,
+         "start_date": "2008-01-01T00:00:00+00:00",
+         "end_date": "2010-12-01T00:00:00+00:00"
+        },
+        {
+         "name": "EY",
+         "title": "Analyst",
+         "crustdata_company_id": 891049,
+         "start_date": "2007-01-01T00:00:00+00:00",
+         "end_date": "2007-01-01T00:00:00+00:00"
+        }
+       ]
+      }
+     }
+    }
+   }
+  ]
+ }
+]

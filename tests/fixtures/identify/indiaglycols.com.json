@@ -1,0 +1,67 @@
+[
+ {
+  "matched_on": "indiaglycols.com",
+  "match_type": "domain",
+  "matches": [
+   {
+    "confidence_score": 1.0,
+    "company_data": {
+     "crustdata_company_id": 2107,
+     "basic_info": {
+      "name": "India Glycols Limited, Delhi",
+      "crustdata_company_id": 2107,
+      "primary_domain": "indiaglycols.com",
+      "all_domains": [
+       "indiaglycols.com"
+      ],
+      "website": "https://www.indiaglycols.com/",
+      "professional_network_url": "https://www.linkedin.com/company/india-glyvols-limited-delhi",
+      "professional_network_id": "496247",
+      "profile_name": "India Glycols Limited, Delhi",
+      "logo_permalink": "https://crustdata-media.s3.us-east-2.amazonaws.com/company/c20e4813e63125a6e8cfb6cc1f8fee5c4e322b5ba11df32239e24d1c245fe366.jpg",
+      "description": "India Glycols Limited (IGL) a company which was established as a single mono-ethylene glycol plant in 1983 is a Rs. 9700+ crore globally renowned company that manufactures green technology based fuels, fertilizers, consumer goods, specialty and performance chemicals, natural gums, potable spirits, industrial-speciality gases and nutraceuticals; in bulk quantity, today.India Glycols Limited holds the distinction of being the only green petrochemical company of its kind and is the first and only in the world to have commercialized the production of ethylene oxide, its derivatives and glycols from renewable agricultural resources, namely molasses or grain.A socially and environmentally responsible company, IGL makes each and every product by keeping the planet’s health in mind. The company is committed to be one of the most respected and innovative manufacturers of internationally sustainable products derived from natural, green or renewable resources, which add value and continuous growth to all stakeholders, to the society, and to the planet at large.To do this, the company has implemented several green methodologies, including: New solutions and products made via the green route, i.e. from raw materials from renewable resources. Novel technologies, including super critical technology for nutraceuticals where carbon dioxide is used as a green solvent during extraction processes. Product toxicity, wastes and emissions during manufacture.Even the administrative processes are green, where IGL has adopted the latest SAP ERP (S/4 HANA 2023 version), Salesforce CRM, Industrial IOT & other tech solutions to drive efficiences across the entire value stream. IGL is doing every bit it can to ensure a sustainable future for generations to come.",
+      "company_type": "Public Company",
+      "year_founded": 1983,
+      "employee_count_range": "1001-5000",
+      "markets": [
+       "NSE"
+      ],
+      "industries": [
+       "Chemical Manufacturing",
+       "Manufacturing"
+      ]
+     },
+     "social_profiles": null
+    }
+   },
+   {
+    "confidence_score": 1.0,
+    "company_data": {
+     "crustdata_company_id": 6342093,
+     "basic_info": {
+      "name": "India Glycols Limited",
+      "crustdata_company_id": 6342093,
+      "primary_domain": "indiaglycols.com",
+      "all_domains": [
+       "indiaglycols.com"
+      ],
+      "website": "https://www.indiaglycols.com",
+      "professional_network_url": "https://www.linkedin.com/company/india-glycols-limited",
+      "professional_network_id": "97192184",
+      "profile_name": "India Glycols Limited",
+      "logo_permalink": "https://crustdata-media.s3.us-east-2.amazonaws.com/company/d39ed97fd26fc1a2d1c85893b19ea28c5733387c148d7c54784dae34bd1156b9.jpg",
+      "description": "India Glycols is a leading company that manufactures green technology based bulk, specialty and performance chemicals and natural gums, spirits, industrial gases, sugar and nutraceuticals.The company was established as a single mono-ethylene glycol plant in 1983. Since then, IGL has brought together cutting-edge technology, innovation and an unflagging commitment to quality, to manufacture a wide range of products that have found global demand.",
+      "company_type": "Privately Held",
+      "year_founded": null,
+      "employee_count_range": "10001+",
+      "markets": [],
+      "industries": [
+       "Manufacturing"
+      ]
+     },
+     "social_profiles": null
+    }
+   }
+  ]
+ }
+]

@@ -157,9 +157,10 @@ def test_mock_reads_recorded_fixture(monkeypatch):
     ed = c.enrich(company_id=cid)                      # found via company-id alias
     assert ed["basic_info"]["primary_domain"] == "delhivery.com"
     assert ed["headcount"]["total"] > 0
-    assert c.last_raw_ref.endswith("enrich/delhivery.com.json")
+    assert c.last_raw_ref.endswith(("enrich/delhivery.com.json", "enrich/5798.json"))
     assert c.job_search(company_id=cid)
-    assert c.web_search('"Delhivery"')                 # query mapped to the company's fixture
+    c.web_search('"Delhivery"')                        # query mapped to the recorded fixture
+    assert c.last_raw_ref.endswith(("web_search/delhivery.json", "web_search/delhivery.com.json"))
     led = db.get_ledger("run-m")
     assert led and all(e.status == "cached" and e.credits == 0 and e.note == "mock" for e in led)
 
@@ -223,3 +224,11 @@ def test_record_mode_writes_replayable_fixtures(monkeypatch, tmp_path):
     out = CrustdataClient("run-r").identify(domains=["a.in"])          # replays offline
     assert out[0]["matches"][0]["company_data"]["crustdata_company_id"] == 1
     crustdata._INDEX = None
+
+
+def test_mock_exact_fixture_beats_alias_from_another_file(monkeypatch):
+    """tide.co must resolve to Tide, not to Tide Water Oil whose name search also listed Tide."""
+    monkeypatch.setenv("CRD_MOCK", "1")
+    crustdata._INDEX = None
+    m = CrustdataClient("run-m").identify(domains=["tide.co"])[0]["matches"][0]
+    assert m["company_data"]["basic_info"]["name"] == "Tide"

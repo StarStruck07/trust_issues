@@ -33,7 +33,7 @@ def test_carrier_signals_from_one_enrich_call():
     evs = run(cp(role="carrier"), resolved(**DELHIVERY))
     qoq = by(evs, "headcount_qoq")[0]
     assert qoq.status == "ok" and qoq.value == pytest.approx(2.84, abs=0.01)
-    assert qoq.field_path == "headcount.growth_percent.qoq" and qoq.raw_ref.endswith("enrich/delhivery.com.json")
+    assert qoq.field_path == "headcount.growth_percent.qoq" and qoq.raw_ref.endswith(("enrich/delhivery.com.json", "enrich/5798.json"))
     assert qoq.record_date == date(2026, 11, 16) and not qoq.stale
     assert by(evs, "headcount_6m")[0].value == pytest.approx(4.88, abs=0.01)
     rv = by(evs, "employee_reviews")[0]

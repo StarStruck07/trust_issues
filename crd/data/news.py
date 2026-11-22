@@ -36,7 +36,8 @@ SKIP_HOSTS = ("google.com", "facebook.com", "linkedin.com", "youtube.com", "inst
 LEGAL_SUFFIXES = r"\b(private limited|pvt\.? ?ltd\.?|limited|ltd\.?|llp|inc\.?|corporation|corp\.?|co\.?)$"
 RISK_WORDS = re.compile(
     r"insolven|nclt|cirp|liquidat|raid|fraud|evasion|layoff|lays off|retrench|shut ?down|shutter|strike|"
-    r"fire|flood|halt|default|downgrade|resign|quits|exit|probe|arrest|loss", re.I)
+    r"fire|flood|halt|default|downgrade|resign|quits|exit|probe|arrest|wind(s|ing)? down|clos(es|ing) (its )?(customer|member)|"
+    r"इस्तीफ|छंटनी|हड़ताल|दिवाल", re.I)   # Hindi: resignation, layoffs, strike, insolvency (many Indian results)
 NEUTRAL_RE = re.compile(r"\b(acquir\w*|acquisition|merger|merge[sd]?|demerger|amalgamat\w*)\b", re.I)
 STOP = (BudgetExceeded, CreditsExhausted)
 
@@ -80,6 +81,12 @@ FALLBACK_RULES: list[tuple[re.Pattern, str]] = [
     (re.compile(r"\bdowngrad\w*|\blos(es|t|ing) (\w+ ){0,2}(client|customer|contract|account)s?\b|"
                 r"\bdefaults? on\b|\bdelayed (salaries|salary|payments?)\b|\bunpaid (salaries|dues|vendors)\b", re.I),
      "lost_client_or_downgrade"),
+    (re.compile(r"(ceo|md|सीईओ|एमडी)[^.।]{0,60}इस्तीफ|इस्तीफ[^.।]{0,40}(ceo|md|सीईओ|एमडी)", re.I), "leadership_exit"),
+    (re.compile(r"छंटनी"), "layoffs_or_shutdown"),
+    (re.compile(r"हड़ताल"), "operations_halt"),
+    (re.compile(r"\bwind(s|ing)? down\b|\bwinds? up (its |the )?(business|operations)|\bexits? (the )?indian? market|"
+                r"\bclos(es|ing|ed) (\w+ ){0,2}(customer|member)s?\b",
+                re.I), "layoffs_or_shutdown"),
     (re.compile(r"\b(ceo|cfo|coo|md|managing director|chief executive|chief financial|chief operating|founder)\b"
                 r"[^.]{0,60}\b(resigns?|resigned|quits?|steps? down|stepped down|exits?|exited)\b|"
                 r"\b(resigns?|resigned|quits?|steps? down|stepped down)\b[^.]{0,40}\b(ceo|cfo|coo|md|chief)\b", re.I),
@@ -109,9 +116,12 @@ def collect(entity: ResolvedEntity, cp: Counterparty, enrich_resp: dict, client,
             cands.setdefault(url, {"url": url, "title": n.get("article_title") or "", "date": d,
                                    "origin": "Company Enrich news"})
     search_errors: list[Exception] = []
-    queries = [f'"{names.legal}"']
+    queries = [f'"{names.search}"']
+    # the brand is how the press names the company ("Tide India", not "Tide Platform India Private Limited")
     if cp.city:
         queries.append(f'"{names.brand}" {cp.city}')
+    elif _norm_ws(names.brand) != _norm_ws(names.search):
+        queries.append(f'"{names.brand}"')
     t0 = int(datetime.combine(start, time.min, tzinfo=timezone.utc).timestamp())
     t1 = int(datetime.combine(ctx.as_of, time.max, tzinfo=timezone.utc).timestamp())
     for q in queries:
@@ -124,9 +134,14 @@ def collect(entity: ResolvedEntity, cp: Counterparty, enrich_resp: dict, client,
             continue
         for r in results or []:
             url = r.get("url")
-            if url and not _skip(url):
+            if not url:
+                continue
+            redirect = _is_google_redirect(url)
+            if redirect or not _skip(url):
+                # Google redirect links cannot be fetched: keep the headline + snippet as headline-only evidence
                 cands.setdefault(url, {"url": url, "title": r.get("title") or "", "date": None,
-                                       "snippet": r.get("snippet") or "", "origin": "Web Search"})
+                                       "snippet": r.get("snippet") or "", "origin": "Web Search",
+                                       "nofetch": redirect})
 
     if not cands:
         if search_errors:
@@ -137,7 +152,8 @@ def collect(entity: ResolvedEntity, cp: Counterparty, enrich_resp: dict, client,
 
     # 2. fetch the top few (risk headlines first, then most recent)
     def rank(c: dict):
-        return (0 if RISK_WORDS.search(c["title"]) else 1, -(c["date"].toordinal() if c["date"] else 0))
+        text = f'{c["title"]} {c.get("snippet", "")}'      # the risk word is often only in the snippet
+        return (0 if RISK_WORDS.search(text) else 1, -(c["date"].toordinal() if c["date"] else 0))
     top, seen_titles = [], set()
     for c in sorted(cands.values(), key=rank):         # same story under two URLs counts once
         t = _norm_ws(c["title"])
@@ -147,8 +163,9 @@ def collect(entity: ResolvedEntity, cp: Counterparty, enrich_resp: dict, client,
         top.append(c)
         if len(top) >= FETCH_TOP:
             break
+    fetchable = [c["url"] for c in top if not c.get("nofetch")]
     try:
-        pages = ctx.call(client.web_fetch, [c["url"] for c in top]) or []
+        pages = (ctx.call(client.web_fetch, fetchable) or []) if fetchable else []
     except STOP:
         raise
     except Exception as e:  # noqa: BLE001
@@ -192,23 +209,40 @@ def classify(title: str, text: str, names: "_Names", cp: Counterparty, entity: R
 
 
 def keyword_classify(title: str, text: str, names: "_Names") -> NewsClass:
-    sentence = names.first_named_sentence(text) or (title if names.mentions(title) else "")
-    scope = f"{title} {sentence}"
-    m = NEUTRAL_RE.search(scope)
-    if m:
-        word = m.group(1).lower()
+    """Keyword rules over the headline and every sentence that names the company (first 8).
+
+    The quoted sentence is the naming sentence where the rule fired (or the first naming sentence when only
+    the headline matched), so the code-side namesake filter can verify it verbatim.
+    """
+    named = names.named_sentences(text, limit=8)
+    if not named and names.mentions(title):
+        named = [title]
+    first = named[0] if named else ""
+    scopes = [(title, first)] + [(sent, sent) for sent in named]
+
+    def hit(rx: re.Pattern) -> tuple[re.Match, str] | None:
+        for scope, quote in scopes:
+            m = rx.search(scope)
+            if m:
+                return m, quote
+        return None
+
+    found = hit(NEUTRAL_RE)
+    if found:
+        word = found[0].group(1).lower()
         sub = "demerger" if word.startswith("demerg") else "merger" if word.startswith(("merg", "amalg")) \
             else "acquisition"
-        return NewsClass(relevant=bool(sentence), company_named_sentence=sentence, category="irrelevant", subtype=sub)
+        return NewsClass(relevant=bool(first), company_named_sentence=found[1], category="irrelevant", subtype=sub)
     for rx, cat in FALLBACK_RULES:
-        if rx.search(scope):
-            return NewsClass(relevant=bool(sentence), company_named_sentence=sentence, category=cat)
+        found = hit(rx)
+        if found:
+            return NewsClass(relevant=bool(first), company_named_sentence=found[1], category=cat)
     for rx, sub in POSITIVE_RULES:
-        if rx.search(scope):
-            return NewsClass(relevant=bool(sentence), company_named_sentence=sentence, category="positive",
-                             subtype=sub)
+        found = hit(rx)
+        if found:
+            return NewsClass(relevant=bool(first), company_named_sentence=found[1], category="positive", subtype=sub)
     # no risk keyword: about the company but neutral (keywords can't tell "minor" negatives apart)
-    return NewsClass(relevant=bool(sentence), company_named_sentence=sentence, category="irrelevant")
+    return NewsClass(relevant=bool(first), company_named_sentence=first, category="irrelevant")
 
 
 def namesake_filter(cls: NewsClass, text: str, names: "_Names", city: str | None) -> tuple[NewsClass, str]:
@@ -265,7 +299,9 @@ def _passage(sentence: str, names: "_Names", max_words: int = 14) -> str:
 # --------------------------------------------------------------------------- names
 class _Names:
     def __init__(self, entity: ResolvedEntity, cp: Counterparty):
-        self.legal = (entity.legal_name or cp.legal_name or cp.name).strip()
+        # the client's own legal name is more specific than Crustdata's display name ("Tide")
+        self.legal = (cp.legal_name or entity.legal_name or cp.name).strip()
+        self.search = _strip_suffix(self.legal) or self.legal
         self.brand = cp.name.strip()
         self.brand_core = _core(self.brand)
         # legal name(s); when none is known, the brand is the only name we have
@@ -290,10 +326,28 @@ class _Names:
         return any(self._has(c, s) for c in self.cores | {self.brand_core}) or bool(self.domain and self.domain in s)
 
     def first_named_sentence(self, text: str) -> str:
+        found = self.named_sentences(text, limit=1)
+        return found[0] if found else ""
+
+    def named_sentences(self, text: str, limit: int = 8) -> list[str]:
+        out = []
         for sent in _sentences(text):
             if self.mentions(sent):
-                return sent
-        return ""
+                out.append(sent)
+                if len(out) >= limit:
+                    break
+        return out
+
+
+def _strip_suffix(name: str) -> str:
+    """'Tide Platform India Private Limited' -> 'Tide Platform India' (case kept, for search queries)."""
+    s = re.sub(r"[\s,.]+$", "", name.strip())
+    for _ in range(2):
+        s2 = re.sub(r"[\s,]+(private limited|pvt\.? ?ltd\.?|limited|ltd\.?|llp|inc\.?)$", "", s, flags=re.I)
+        if s2 == s:
+            break
+        s = s2
+    return s
 
 
 def _core(name: str | None) -> str:
@@ -361,6 +415,11 @@ def _norm_ws(s: str | None, lower: bool = True) -> str:
 def _date(v) -> "datetime.date | None":
     from crd.data.signals import _date as d
     return d(v)
+
+
+def _is_google_redirect(url: str) -> bool:
+    u = urlparse(url)
+    return (u.hostname or "").lower().endswith("google.com") and u.path.startswith("/goto")
 
 
 def _skip(url: str) -> bool:

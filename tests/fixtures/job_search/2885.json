@@ -1,0 +1,1032 @@
+{
+ "job_listings": [
+  {
+   "crustdata_job_id": 8079130043544270,
+   "job_details": {
+    "job_id": 8079130043544270,
+    "title": "Recruiter",
+    "category": null,
+    "workplace_type": null,
+    "url": "https://in.indeed.com/viewjob?jk=cd1eb0d8054855e7",
+    "reposted_job": false,
+    "number_of_openings": null,
+    "source": "indeed",
+    "employment_type": "full_time"
+   },
+   "company": {
+    "basic_info": {
+     "crustdata_company_id": 2885,
+     "name": "Mahindra Logistics",
+     "primary_domain": "mahindralogistics.com",
+     "website": "http://mahindralogistics.com",
+     "professional_network_id": "3538091",
+     "industries": [
+      "Transportation, Logistics, Supply Chain and Storage"
+     ]
+    },
+    "locations": {
+     "country": "India",
+     "state": "Maharashtra",
+     "city": null,
+     "street_address": "Arena Space, 10th & 11th Floor, Plot No 20, Jogeshwari - Vikhroli Link Rd, near Majas Depot, Jogeshwari East,, Jogeshwari East, Maharashtra"
+    },
+    "headcount": {
+     "total": 8577,
+     "range": "10001+",
+     "largest_headcount_country": "IND"
+    },
+    "followers": {
+     "count": 580518
+    },
+    "revenue": {
+     "estimated": {
+      "lower_bound_usd": 1000000000,
+      "upper_bound_usd": 1000000000000
+     },
+     "public_markets": {
+      "stock_symbols": [
+       "MAHLOG"
+      ],
+      "fiscal_year_end": ""
+     },
+     "acquisition_status": null
+    },
+    "funding": {
+     "total_investment_usd": 71152575.0,
+     "valuation_usd": 0.0,
+     "last_fundraise_date": "2017-10-31T00:00:00",
+     "last_round_type": "series_unknown",
+     "num_funding_rounds": 2,
+     "investors": [
+      "Birla Sun Life Insurance",
+      "DSP Blackrock",
+      "Goldman Sachs",
+      "HDFC Trustee",
+      "Kedaara Capital",
+      "Reliance Mutual Fund"
+     ]
+    },
+    "competitors": {
+     "websites": [
+      "https://www.worldwide-logistics.cn/",
+      "http://www.leapindia.net",
+      "http://www.leapindia.com",
+      "http://www.blowhorn.com",
+      "https://www.reloadlogistics.com/?linkedin_views",
+      "http://www.logisticshub.tech",
+      "http://www.ecomexpress.in",
+      "http://www.itdglobal.com",
+      "http://www.letstransport.in",
+      "http://holisollogistics.com",
+      "http://www.musanga.com",
+      "https://lobb.in",
+      "https://www.unilogicgroup.com/links/",
+      "https://www.pristinelogistics.com/",
+      "http://www.fastlogistics.com.ph/",
+      "https://www.brandlink.pro",
+      "http://americangloballogistics.com/",
+      "http://www.itlvn.com",
+      "http://www.ssll.in",
+      "https://www.delhivery.com/",
+      "http://www.best-inc.com",
+      "http://contrans.in",
+      "https://ekartlogistics.com/",
+      "http://www.tmc-employeneurship.com",
+      "http://www.highlightmotor.com/",
+      "https://sohanlal.in/",
+      "https://dreamlogisticsusa.com/"
+     ]
+    }
+   },
+   "location": {
+    "raw": "Piravom, Kochi, Kerala",
+    "city": "Piravom",
+    "district": null,
+    "state": "Keralam",
+    "country": "India",
+    "pincode": null
+   },
+   "content": {
+    "description": "Key Responsibilities * Plan and execute daily hiring activities to meet the Delivery Associate manpower requirements at PVRD, TKQA and ERSD. * Source candidates through field visits, local networks, referrals, job portals, social media and recruitment advertisements. * Identify suitable candidates in delivery catchment areas and conduct initial screening for availability, location suitability, vehicle access and role expectations. * Explain job responsibilities, delivery process expectations, payout structure and applicable work conditions clearly to candidates. * Coordinate document collection, verification, onboarding formalities, training and deployment with the respective station teams. * Maintain a daily recruitment tracker covering leads, calls, walk-ins, interviews, selections, onboarding, joining and dropouts. * Follow up with selected candidates until they report for duty and support early-stage retention through regular engagement. * Work closely with Hub Managers and Operations teams to understand manpower gaps, route requirements and daily deployment plans. * Ensure that recruited Delivery Associates are onboarded under the company’s approved process and are managed in line with Whizzard/Mahindra Logistics standards and operational expectations. * Share daily and weekly hiring updates, challenges, market feedback and action plans with the reporting manager. * Support recruitment drives and manpower requirements at other assigned Kerala stations whenever required. Candidate Profile * Education: Minimum Plus Two; graduates are preferred. * Experience: 1–3 years of experience in field recruitment, delivery associate hiring, manpower sourcing or frontline staffing is preferred. Candidates with strong field-level sourcing ability may also be considered. * Skills: Good communication and negotiation skills; ability to engage with local communities; follow-up and coordination skills; basic MS Excel/Google Sheets and smartphone usage. * Mobility: Willingness to travel to assigned stations and conduct regular field visits. * Languages: Malayalam required; basic English communication is preferred. Pay: ₹30,000.00 - ₹35,000.00 per month Benefits: * Health insurance Work Location: On the road"
+   },
+   "metadata": {
+    "date_added": "2026-11-04T09:40:53",
+    "date_updated": "2026-11-06T16:48:26"
+   }
+  },
+  {
+   "crustdata_job_id": 2415179018848477,
+   "job_details": {
+    "job_id": 2415179018848477,
+    "title": "Logistics Executive",
+    "category": null,
+    "workplace_type": "On-site",
+    "url": "https://in.indeed.com/viewjob?jk=c59c4541a13ac300",
+    "reposted_job": false,
+    "number_of_openings": null,
+    "source": "indeed",
+    "employment_type": "full_time"
+   },
+   "company": {
+    "basic_info": {
+     "crustdata_company_id": 2885,
+     "name": "Mahindra Logistics",
+     "primary_domain": "mahindralogistics.com",
+     "website": "http://mahindralogistics.com",
+     "professional_network_id": "3538091",
+     "industries": [
+      "Transportation, Logistics, Supply Chain and Storage"
+     ]
+    },
+    "locations": {
+     "country": "India",
+     "state": "Maharashtra",
+     "city": null,
+     "street_address": "Arena Space, 10th & 11th Floor, Plot No 20, Jogeshwari - Vikhroli Link Rd, near Majas Depot, Jogeshwari East,, Jogeshwari East, Maharashtra"
+    },
+    "headcount": {
+     "total": 8577,
+     "range": "10001+",
+     "largest_headcount_country": "IND"
+    },
+    "followers": {
+     "count": 580518
+    },
+    "revenue": {
+     "estimated": {
+      "lower_bound_usd": 1000000000,
+      "upper_bound_usd": 1000000000000
+     },
+     "public_markets": {
+      "stock_symbols": [
+       "MAHLOG"
+      ],
+      "fiscal_year_end": ""
+     },
+     "acquisition_status": null
+    },
+    "funding": {
+     "total_investment_usd": 71152575.0,
+     "valuation_usd": 0.0,
+     "last_fundraise_date": "2017-10-31T00:00:00",
+     "last_round_type": "series_unknown",
+     "num_funding_rounds": 2,
+     "investors": [
+      "Birla Sun Life Insurance",
+      "DSP Blackrock",
+      "Goldman Sachs",
+      "HDFC Trustee",
+      "Kedaara Capital",
+      "Reliance Mutual Fund"
+     ]
+    },
+    "competitors": {
+     "websites": [
+      "https://www.worldwide-logistics.cn/",
+      "http://www.leapindia.net",
+      "http://www.leapindia.com",
+      "http://www.blowhorn.com",
+      "https://www.reloadlogistics.com/?linkedin_views",
+      "http://www.logisticshub.tech",
+      "http://www.ecomexpress.in",
+      "http://www.itdglobal.com",
+      "http://www.letstransport.in",
+      "http://holisollogistics.com",
+      "http://www.musanga.com",
+      "https://lobb.in",
+      "https://www.unilogicgroup.com/links/",
+      "https://www.pristinelogistics.com/",
+      "http://www.fastlogistics.com.ph/",
+      "https://www.brandlink.pro",
+      "http://americangloballogistics.com/",
+      "http://www.itlvn.com",
+      "http://www.ssll.in",
+      "https://www.delhivery.com/",
+      "http://www.best-inc.com",
+      "http://contrans.in",
+      "https://ekartlogistics.com/",
+      "http://www.tmc-employeneurship.com",
+      "http://www.highlightmotor.com/",
+      "https://sohanlal.in/",
+      "https://dreamlogisticsusa.com/"
+     ]
+    }
+   },
+   "location": {
+    "raw": "Kochi, Kerala",
+    "city": "Kochi",
+    "district": null,
+    "state": "Kerala",
+    "country": "India",
+    "pincode": null
+   },
+   "content": {
+    "description": "Bagging Sorting Scanning for the Amazone Product Pay: From ₹19,000.00 per month Benefits: * Flexible schedule * Health insurance * Paid time off * Provident Fund Work Location: In person"
+   },
+   "metadata": {
+    "date_added": "2026-10-16T08:13:14",
+    "date_updated": "2026-11-05T19:04:33"
+   }
+  },
+  {
+   "crustdata_job_id": 6193892862908353,
+   "job_details": {
+    "job_id": 6193892862908353,
+    "title": "Computer Lab Invigilator",
+    "category": null,
+    "workplace_type": "On-site",
+    "url": "https://in.indeed.com/viewjob?jk=a8ed52c85cd8249b",
+    "reposted_job": false,
+    "number_of_openings": null,
+    "source": "indeed",
+    "employment_type": "full_time"
+   },
+   "company": {
+    "basic_info": {
+     "crustdata_company_id": 2885,
+     "name": "Mahindra Logistics",
+     "primary_domain": "mahindralogistics.com",
+     "website": "http://mahindralogistics.com",
+     "professional_network_id": "3538091",
+     "industries": [
+      "Transportation, Logistics, Supply Chain and Storage"
+     ]
+    },
+    "locations": {
+     "country": "India",
+     "state": "Maharashtra",
+     "city": null,
+     "street_address": "Arena Space, 10th & 11th Floor, Plot No 20, Jogeshwari - Vikhroli Link Rd, near Majas Depot, Jogeshwari East,, Jogeshwari East, Maharashtra"
+    },
+    "headcount": {
+     "total": 8577,
+     "range": "10001+",
+     "largest_headcount_country": "IND"
+    },
+    "followers": {
+     "count": 580518
+    },
+    "revenue": {
+     "estimated": {
+      "lower_bound_usd": 1000000000,
+      "upper_bound_usd": 1000000000000
+     },
+     "public_markets": {
+      "stock_symbols": [
+       "MAHLOG"
+      ],
+      "fiscal_year_end": ""
+     },
+     "acquisition_status": null
+    },
+    "funding": {
+     "total_investment_usd": 71152575.0,
+     "valuation_usd": 0.0,
+     "last_fundraise_date": "2017-10-31T00:00:00",
+     "last_round_type": "series_unknown",
+     "num_funding_rounds": 2,
+     "investors": [
+      "Birla Sun Life Insurance",
+      "DSP Blackrock",
+      "Goldman Sachs",
+      "HDFC Trustee",
+      "Kedaara Capital",
+      "Reliance Mutual Fund"
+     ]
+    },
+    "competitors": {
+     "websites": [
+      "https://www.worldwide-logistics.cn/",
+      "http://www.leapindia.net",
+      "http://www.leapindia.com",
+      "http://www.blowhorn.com",
+      "https://www.reloadlogistics.com/?linkedin_views",
+      "http://www.logisticshub.tech",
+      "http://www.ecomexpress.in",
+      "http://www.itdglobal.com",
+      "http://www.letstransport.in",
+      "http://holisollogistics.com",
+      "http://www.musanga.com",
+      "https://lobb.in",
+      "https://www.unilogicgroup.com/links/",
+      "https://www.pristinelogistics.com/",
+      "http://www.fastlogistics.com.ph/",
+      "https://www.brandlink.pro",
+      "http://americangloballogistics.com/",
+      "http://www.itlvn.com",
+      "http://www.ssll.in",
+      "https://www.delhivery.com/",
+      "http://www.best-inc.com",
+      "http://contrans.in",
+      "https://ekartlogistics.com/",
+      "http://www.tmc-employeneurship.com",
+      "http://www.highlightmotor.com/",
+      "https://sohanlal.in/",
+      "https://dreamlogisticsusa.com/"
+     ]
+    }
+   },
+   "location": {
+    "raw": "Jalandhar Cantt, Jalandhar, Punjab",
+    "city": "Jalandhar",
+    "district": "Jalandhar Division",
+    "state": "Punjab",
+    "country": "India",
+    "pincode": null
+   },
+   "content": {
+    "description": "*Duty Timing: 6:00 AM – 6:00 PM* Employment Type: Full-time Job Description We are looking for responsible and disciplined Computer Lab Invigilators to support the smooth conduct of computer-based examinations. *Shift-wise Payment:* * 1st Shift – ₹375 * 2nd Shift – ₹650 * 3rd Shift – ₹800 *Key Responsibilities* * Monitor candidates during online examinations. * Verify candidate identity and ensure exam rules are followed. * Assist with seating arrangements and exam check-in. * Report any irregularities or misconduct during the examination. * Coordinate with the exam center team to ensure smooth operations. * Maintain discipline and professionalism throughout the examination process. *Requirements* * Minimum qualification: Graduate. * Basic computer knowledge. * Good communication and interpersonal skills. * Punctual, responsible, and able to work in a professional environment. * Willing to work from 6:00 AM to 6:00 PM. Pay: ₹15,000.00 - ₹17,000.00 per month Work Location: In person"
+   },
+   "metadata": {
+    "date_added": "2026-07-28T05:54:04",
+    "date_updated": "2026-11-06T20:48:39"
+   }
+  },
+  {
+   "crustdata_job_id": 8961615486601009,
+   "job_details": {
+    "job_id": 8961615486601009,
+    "title": "Delivery Associate",
+    "category": "Others",
+    "workplace_type": "On-site",
+    "url": "https://www.linkedin.com/jobs/view/4250304637",
+    "reposted_job": false,
+    "number_of_openings": null,
+    "source": "professional_network",
+    "employment_type": null
+   },
+   "company": {
+    "basic_info": {
+     "crustdata_company_id": 2885,
+     "name": "Mahindra Logistics",
+     "primary_domain": "mahindralogistics.com",
+     "website": "http://mahindralogistics.com",
+     "professional_network_id": "3538091",
+     "industries": [
+      "Transportation, Logistics, Supply Chain and Storage"
+     ]
+    },
+    "locations": {
+     "country": "India",
+     "state": "Maharashtra",
+     "city": null,
+     "street_address": "Arena Space, 10th & 11th Floor, Plot No 20, Jogeshwari - Vikhroli Link Rd, near Majas Depot, Jogeshwari East,, Jogeshwari East, Maharashtra"
+    },
+    "headcount": {
+     "total": 8577,
+     "range": "10001+",
+     "largest_headcount_country": "IND"
+    },
+    "followers": {
+     "count": 580518
+    },
+    "revenue": {
+     "estimated": {
+      "lower_bound_usd": 1000000000,
+      "upper_bound_usd": 1000000000000
+     },
+     "public_markets": {
+      "stock_symbols": [
+       "MAHLOG"
+      ],
+      "fiscal_year_end": ""
+     },
+     "acquisition_status": null
+    },
+    "funding": {
+     "total_investment_usd": 71152575.0,
+     "valuation_usd": 0.0,
+     "last_fundraise_date": "2017-10-31T00:00:00",
+     "last_round_type": "series_unknown",
+     "num_funding_rounds": 2,
+     "investors": [
+      "Birla Sun Life Insurance",
+      "DSP Blackrock",
+      "Goldman Sachs",
+      "HDFC Trustee",
+      "Kedaara Capital",
+      "Reliance Mutual Fund"
+     ]
+    },
+    "competitors": {
+     "websites": [
+      "https://www.worldwide-logistics.cn/",
+      "http://www.leapindia.net",
+      "http://www.leapindia.com",
+      "http://www.blowhorn.com",
+      "https://www.reloadlogistics.com/?linkedin_views",
+      "http://www.logisticshub.tech",
+      "http://www.ecomexpress.in",
+      "http://www.itdglobal.com",
+      "http://www.letstransport.in",
+      "http://holisollogistics.com",
+      "http://www.musanga.com",
+      "https://lobb.in",
+      "https://www.unilogicgroup.com/links/",
+      "https://www.pristinelogistics.com/",
+      "http://www.fastlogistics.com.ph/",
+      "https://www.brandlink.pro",
+      "http://americangloballogistics.com/",
+      "http://www.itlvn.com",
+      "http://www.ssll.in",
+      "https://www.delhivery.com/",
+      "http://www.best-inc.com",
+      "http://contrans.in",
+      "https://ekartlogistics.com/",
+      "http://www.tmc-employeneurship.com",
+      "http://www.highlightmotor.com/",
+      "https://sohanlal.in/",
+      "https://dreamlogisticsusa.com/"
+     ]
+    }
+   },
+   "location": {
+    "raw": "Bengaluru, Karnataka, India",
+    "city": "Bengaluru",
+    "district": "Bangalore Division",
+    "state": "Karnataka",
+    "country": "India",
+    "pincode": null
+   },
+   "content": {
+    "description": " Hiring: Delivery Associate – Last Mile (Heavy & Bulky Items) 📍 Location: [Insert location, e.g., Madhavara or delivery zone] 📦 Category: Heavy & Bulky Last Mile DeliveryWe are looking for a Delivery Associate to handle heavy and bulky items for last-mile delivery.🔹 Role: Delivery Associate 🔹 Responsibilities:Handling and delivering heavy/bulky goods to end customersEnsuring safe and timely deliveryCoordinating with the warehouse and customer service team✅ Requirements:Prior experience in heavy/bulky delivery preferredPhysically fit and capable of lifting heavy itemsMust have a valid ID and local area knowledgeImmediate joiners preferred📞 If you know any suitable candidate, please contact me directly at-8861626107,6360229955"
+   },
+   "metadata": {
+    "date_added": "2025-06-18T05:35:16",
+    "date_updated": "2025-06-18T00:00:00"
+   }
+  },
+  {
+   "crustdata_job_id": 7262462189596890,
+   "job_details": {
+    "job_id": 7262462189596890,
+    "title": "Associate Operations",
+    "category": "Operations",
+    "workplace_type": "On-site",
+    "url": "https://www.linkedin.com/jobs/view/4087145220",
+    "reposted_job": false,
+    "number_of_openings": null,
+    "source": "professional_network",
+    "employment_type": null
+   },
+   "company": {
+    "basic_info": {
+     "crustdata_company_id": 2885,
+     "name": "Mahindra Logistics",
+     "primary_domain": "mahindralogistics.com",
+     "website": "http://mahindralogistics.com",
+     "professional_network_id": "3538091",
+     "industries": [
+      "Transportation, Logistics, Supply Chain and Storage"
+     ]
+    },
+    "locations": {
+     "country": "India",
+     "state": "Maharashtra",
+     "city": null,
+     "street_address": "Arena Space, 10th & 11th Floor, Plot No 20, Jogeshwari - Vikhroli Link Rd, near Majas Depot, Jogeshwari East,, Jogeshwari East, Maharashtra"
+    },
+    "headcount": {
+     "total": 8577,
+     "range": "10001+",
+     "largest_headcount_country": "IND"
+    },
+    "followers": {
+     "count": 580518
+    },
+    "revenue": {
+     "estimated": {
+      "lower_bound_usd": 1000000000,
+      "upper_bound_usd": 1000000000000
+     },
+     "public_markets": {
+      "stock_symbols": [
+       "MAHLOG"
+      ],
+      "fiscal_year_end": ""
+     },
+     "acquisition_status": null
+    },
+    "funding": {
+     "total_investment_usd": 71152575.0,
+     "valuation_usd": 0.0,
+     "last_fundraise_date": "2017-10-31T00:00:00",
+     "last_round_type": "series_unknown",
+     "num_funding_rounds": 2,
+     "investors": [
+      "Birla Sun Life Insurance",
+      "DSP Blackrock",
+      "Goldman Sachs",
+      "HDFC Trustee",
+      "Kedaara Capital",
+      "Reliance Mutual Fund"
+     ]
+    },
+    "competitors": {
+     "websites": [
+      "https://www.worldwide-logistics.cn/",
+      "http://www.leapindia.net",
+      "http://www.leapindia.com",
+      "http://www.blowhorn.com",
+      "https://www.reloadlogistics.com/?linkedin_views",
+      "http://www.logisticshub.tech",
+      "http://www.ecomexpress.in",
+      "http://www.itdglobal.com",
+      "http://www.letstransport.in",
+      "http://holisollogistics.com",
+      "http://www.musanga.com",
+      "https://lobb.in",
+      "https://www.unilogicgroup.com/links/",
+      "https://www.pristinelogistics.com/",
+      "http://www.fastlogistics.com.ph/",
+      "https://www.brandlink.pro",
+      "http://americangloballogistics.com/",
+      "http://www.itlvn.com",
+      "http://www.ssll.in",
+      "https://www.delhivery.com/",
+      "http://www.best-inc.com",
+      "http://contrans.in",
+      "https://ekartlogistics.com/",
+      "http://www.tmc-employeneurship.com",
+      "http://www.highlightmotor.com/",
+      "https://sohanlal.in/",
+      "https://dreamlogisticsusa.com/"
+     ]
+    }
+   },
+   "location": {
+    "raw": "Chakan, Maharashtra, India",
+    "city": "Chakan",
+    "district": "Pune Division",
+    "state": "Maharashtra",
+    "country": "India",
+    "pincode": null
+   },
+   "content": {
+    "description": "An Exciting opportunity to work with Mahindra Logistics Limited!\n\nWalkin Drive for Associate Operation\ns\nIf you have: Completed your Graduation from any stream (Engg preferred)Have minimum six months of experience in warehousing / supply chains / manufacturing, automobile/ warehousing experience / Logistics experience.And willingness to learn and work in a growing industry\n. \nDate: 5th, 6th & 7th December 2024Time: 9:00Am to 5:00PmLocation: Mahindra Logistics Limited. Village Sudhawadi Behind H.P Petrol Pump. Talegaon Chakan Highway Taluka Maval – 4105\n07.\nJob Description:Co-ordinate with customer for Line Feeding Operations in respective area.Timely Material Feeding at Line Ensuring Manpower Allocation as per production planEnsuring No Loss, No Overfeeding of material and No Obsolete Materials balance onlineShortage report Commnication to buyer and Production team.Maintain & update store layout, Maintain store PFEP.(Plan for each part) Reconciliation (receipt Reco) of major commodity like Tyre.Ensure storage of material in store as per FIFO. Maintain zero damages, flow of material, identification label of material.Conduct 5S audits in every area, flash reports & closure of open points.Ensure everyone in your team follows the Standard Operating Procedure (SOP) and Work Instruction (WI) Monitor adherence of safety standards in your area/department.5 's Score improvement as per target of 80% Conduct training awareness sessions for on 5's and Safety for FTC and BA employees Ensuring Conservation of natural resources Ensure Compliance on applicable legal and other requirements related to EHS Ensure to implement new processes and Policies circulated fro\nm HO\nPlease carry a copy of your CV and a photo ID along with you at the time of inter\nview.\nAbout Co\nmpany:\nMahindra Logistics Limited is a leading integrated logistics & mobility solutions provider with over a decade of experience. We have a strong presence across the country. We offer Supply Chain solutions to diverse industry verticals such as Automotive, Engineering, Consumer Goods, Pharmaceuticals, Telecom, Commodities, and E-commerce and also offer integrated employee transportation solutions to enterprise across IT, ITeS, manufacturing, Banking, Financial Services and Insurance, and Consulting Businesses. Igniting Success!! In a way, that is what we essentially do. We believe that the success of a company lies in the success of its employees. We focus on Igniting Success for our employees by empowering them to deliver, be customer centric, build their capabilities & skillsets and develop a growth mindset. Being recognized as a Great Place to Work underlines our commitment to providing a positive work envir\nonment.\nMahindra Logistics Ltd is an equal opportunity employer that is committed to strengthening diversity and inclusion at the workplace through an enabling environment, supportive work life policies and a culture that welcomes and celebrates differences and creates a sense of belonging. We do not tolerate any form of harassment or discrimination based on nationality, race, colour, sex, religion, gender identity or expression, sexual orientation, disability, age, pregnancy or marital status and allow for equal opportunities for all our team members. We are an equal opportunity employer and are committed to maintaining respect and dignity \nfor all.\nLearn more about us at www.mahindralogi\nstics.com"
+   },
+   "metadata": {
+    "date_added": "2024-12-02T13:31:44",
+    "date_updated": "2024-12-05T00:00:00"
+   }
+  },
+  {
+   "crustdata_job_id": 6981819233483445,
+   "job_details": {
+    "job_id": 6981819233483445,
+    "title": "Business Development Manager",
+    "category": "Sales",
+    "workplace_type": "On-site",
+    "url": "https://www.linkedin.com/jobs/view/4083336308",
+    "reposted_job": false,
+    "number_of_openings": null,
+    "source": "professional_network",
+    "employment_type": null
+   },
+   "company": {
+    "basic_info": {
+     "crustdata_company_id": 2885,
+     "name": "Mahindra Logistics",
+     "primary_domain": "mahindralogistics.com",
+     "website": "http://mahindralogistics.com",
+     "professional_network_id": "3538091",
+     "industries": [
+      "Transportation, Logistics, Supply Chain and Storage"
+     ]
+    },
+    "locations": {
+     "country": "India",
+     "state": "Maharashtra",
+     "city": null,
+     "street_address": "Arena Space, 10th & 11th Floor, Plot No 20, Jogeshwari - Vikhroli Link Rd, near Majas Depot, Jogeshwari East,, Jogeshwari East, Maharashtra"
+    },
+    "headcount": {
+     "total": 8577,
+     "range": "10001+",
+     "largest_headcount_country": "IND"
+    },
+    "followers": {
+     "count": 580518
+    },
+    "revenue": {
+     "estimated": {
+      "lower_bound_usd": 1000000000,
+      "upper_bound_usd": 1000000000000
+     },
+     "public_markets": {
+      "stock_symbols": [
+       "MAHLOG"
+      ],
+      "fiscal_year_end": ""
+     },
+     "acquisition_status": null
+    },
+    "funding": {
+     "total_investment_usd": 71152575.0,
+     "valuation_usd": 0.0,
+     "last_fundraise_date": "2017-10-31T00:00:00",
+     "last_round_type": "series_unknown",
+     "num_funding_rounds": 2,
+     "investors": [
+      "Birla Sun Life Insurance",
+      "DSP Blackrock",
+      "Goldman Sachs",
+      "HDFC Trustee",
+      "Kedaara Capital",
+      "Reliance Mutual Fund"
+     ]
+    },
+    "competitors": {
+     "websites": [
+      "https://www.worldwide-logistics.cn/",
+      "http://www.leapindia.net",
+      "http://www.leapindia.com",
+      "http://www.blowhorn.com",
+      "https://www.reloadlogistics.com/?linkedin_views",
+      "http://www.logisticshub.tech",
+      "http://www.ecomexpress.in",
+      "http://www.itdglobal.com",
+      "http://www.letstransport.in",
+      "http://holisollogistics.com",
+      "http://www.musanga.com",
+      "https://lobb.in",
+      "https://www.unilogicgroup.com/links/",
+      "https://www.pristinelogistics.com/",
+      "http://www.fastlogistics.com.ph/",
+      "https://www.brandlink.pro",
+      "http://americangloballogistics.com/",
+      "http://www.itlvn.com",
+      "http://www.ssll.in",
+      "https://www.delhivery.com/",
+      "http://www.best-inc.com",
+      "http://contrans.in",
+      "https://ekartlogistics.com/",
+      "http://www.tmc-employeneurship.com",
+      "http://www.highlightmotor.com/",
+      "https://sohanlal.in/",
+      "https://dreamlogisticsusa.com/"
+     ]
+    }
+   },
+   "location": {
+    "raw": "Mumbai, Maharashtra, India",
+    "city": "Mumbai",
+    "district": "Konkan Division",
+    "state": "Maharashtra",
+    "country": "India",
+    "pincode": null
+   },
+   "content": {
+    "description": "Key responsibilities: • Generate market intelligence (competition business) of allocated areas • Achieve/exceeds revenue sales budget for the assigned territory. • Building a sustainable and robust pipeline and ensuring accurate and rigorous forecasting and account planning. • Effectively managing and driving the sales cycle from prospection to successful closure. • Develop independently new sales revenue and order book. • Grow sales territory and revenues through cold calls, networking, and referrals, attend industry events such as trade shows and other methods. • Plan & organise time & territory in the most effective way to achieve/exceed productivity targets (face to face calls, selling hours etc.) whist maintaining progress with account maintenance, follow up of issues, administration etc. • Builds & maintains effective long-term relationships between the Customer and Company that facilitates business retention and growth. • Identifies & develops opportunities to grow the business and add value to the Customer seeking guidance on complex/large revenue opportunities, by introducing & advising on appropriate products and services from the full portfolio. • Supporting Commercial teams on Collection activity of due Outstanding.\nSkills Essential - B2B Sales/ Business Development - Negotiation skills- Capable of engaging with decision makers - Market combing- Identification of new prospects through cold calling - Good analytical skills with ability to identify actual issue /needs & match to appropriate solution/products\nEssential - Personal vehicle (2-wheeler/ 4-wheeler) - Excellent verbal and written communications skills - Good geographical knowledge - Self-motivated & goal-oriented\nMinimum of 4-5 years of years of selling experience in logistics space, preferably (Corporate Sales) Industries: Logistics\nLocations:Ahmedabad, Sanand, GandhidhamVapiPune (Pune City,Lonikand,Ranjangaon,Daund)Pune (Shirwal,Satara,Kolhapur,Sangli)Nasik,Ahmednagar,AurangabadNagpur,RaipurNavi Mumbai,Patalganga,PanvelInside Mumbai,Vasai,TaraporeBhopal,JabalpurHoskote,Mahadevpura,ITPL,WhitefieldBelagavi,Dharwad,Hubballi, (ROK)Visakhapatnam,Kakinada,Vijaywada,Ongole,KopparthiChennia (Sriperumbudur,Poonamalee,Ambattur,ThiruvallurGummidipoondi,SricityTiruppur,Erode,Salem"
+   },
+   "metadata": {
+    "date_added": "2024-11-26T08:43:57",
+    "date_updated": "2024-12-05T00:00:00"
+   }
+  },
+  {
+   "crustdata_job_id": 3348835385915385,
+   "job_details": {
+    "job_id": 3348835385915385,
+    "title": "Senior Manager Sales Business Development",
+    "category": "Sales",
+    "workplace_type": null,
+    "url": "https://in.linkedin.com/jobs/view/senior-manager-sales-business-development-at-mahindra-logistics-4006203507",
+    "reposted_job": false,
+    "number_of_openings": null,
+    "source": "professional_network",
+    "employment_type": null
+   },
+   "company": {
+    "basic_info": {
+     "crustdata_company_id": 2885,
+     "name": "Mahindra Logistics",
+     "primary_domain": "mahindralogistics.com",
+     "website": "http://mahindralogistics.com",
+     "professional_network_id": "3538091",
+     "industries": [
+      "Transportation, Logistics, Supply Chain and Storage"
+     ]
+    },
+    "locations": {
+     "country": "India",
+     "state": "Maharashtra",
+     "city": null,
+     "street_address": "Arena Space, 10th & 11th Floor, Plot No 20, Jogeshwari - Vikhroli Link Rd, near Majas Depot, Jogeshwari East,, Jogeshwari East, Maharashtra"
+    },
+    "headcount": {
+     "total": 8577,
+     "range": "10001+",
+     "largest_headcount_country": "IND"
+    },
+    "followers": {
+     "count": 580518
+    },
+    "revenue": {
+     "estimated": {
+      "lower_bound_usd": 1000000000,
+      "upper_bound_usd": 1000000000000
+     },
+     "public_markets": {
+      "stock_symbols": [
+       "MAHLOG"
+      ],
+      "fiscal_year_end": ""
+     },
+     "acquisition_status": null
+    },
+    "funding": {
+     "total_investment_usd": 71152575.0,
+     "valuation_usd": 0.0,
+     "last_fundraise_date": "2017-10-31T00:00:00",
+     "last_round_type": "series_unknown",
+     "num_funding_rounds": 2,
+     "investors": [
+      "Birla Sun Life Insurance",
+      "DSP Blackrock",
+      "Goldman Sachs",
+      "HDFC Trustee",
+      "Kedaara Capital",
+      "Reliance Mutual Fund"
+     ]
+    },
+    "competitors": {
+     "websites": [
+      "https://www.worldwide-logistics.cn/",
+      "http://www.leapindia.net",
+      "http://www.leapindia.com",
+      "http://www.blowhorn.com",
+      "https://www.reloadlogistics.com/?linkedin_views",
+      "http://www.logisticshub.tech",
+      "http://www.ecomexpress.in",
+      "http://www.itdglobal.com",
+      "http://www.letstransport.in",
+      "http://holisollogistics.com",
+      "http://www.musanga.com",
+      "https://lobb.in",
+      "https://www.unilogicgroup.com/links/",
+      "https://www.pristinelogistics.com/",
+      "http://www.fastlogistics.com.ph/",
+      "https://www.brandlink.pro",
+      "http://americangloballogistics.com/",
+      "http://www.itlvn.com",
+      "http://www.ssll.in",
+      "https://www.delhivery.com/",
+      "http://www.best-inc.com",
+      "http://contrans.in",
+      "https://ekartlogistics.com/",
+      "http://www.tmc-employeneurship.com",
+      "http://www.highlightmotor.com/",
+      "https://sohanlal.in/",
+      "https://dreamlogisticsusa.com/"
+     ]
+    }
+   },
+   "location": {
+    "raw": "Bengaluru, Karnataka, India",
+    "city": "Bengaluru",
+    "district": "Bangalore Division",
+    "state": "Karnataka",
+    "country": "India",
+    "pincode": null
+   },
+   "content": {
+    "description": "About Us: Mahindra Logistics Limited is a leading integrated logistics & mobility solutions provider with over a decade of experience. We have a strong presence across the country. We offer Supply Chain solutions to diverse industry verticals such as Automotive, Engineering, Consumer Goods, Pharmaceuticals, Telecom, Commodities, and E-commerce and also offer integrated employee transportation solutions to enterprise across IT, ITeS, manufacturing, Banking, Financial Services and Insurance, and Consulting Businesses.\nJob Description:\n• The Incumbent will be responsible for winning new business by penetrating new clients.• Reactivating former/ dormant clients & accounts.• Must have Warehousing sales, Solution sales, and Transportation experience.• Developing trust relationships with a portfolio of major clients.• Responsible for consulting for contract logistics. • Acquiring a thorough understanding of key customer needs and requirements.• Expanding the relationships with existing customers by continuously proposing solutions that meet their objectives.• We are looking for someone with leadership skills, experience in 3PL or logistics, strong negotiation skills. • Experience in handling Key Accounts of 3PL customers across Pan India • Experience in handling Ecommerce operations.• Ensure the correct products and services are delivered to customers in a timely manner.• Prepare regular reports of progress and forecasts to internal and external stakeholders using key account metrics.\nMahindra Logistics Ltd is an equal opportunity employer that is committed to strengthening diversity and inclusion at the workplace through an enabling environment, supportive work life policies and a culture that welcomes and celebrates differences and creates a sense of belonging. We do not tolerate any form of harassment or discrimination based on nationality, race, colour, sex, religion, gender identity or expression, sexual orientation, disability, age, pregnancy or marital status and allow for equal opportunities for all our team members.We are an equal opportunity employer and are committed to maintaining respect and dignity for all. Learn more about us at \nwww.mahindralogistics.com"
+   },
+   "metadata": {
+    "date_added": "2024-08-23T00:00:00",
+    "date_updated": "2024-09-18T00:00:00"
+   }
+  },
+  {
+   "crustdata_job_id": 4030328216775153,
+   "job_details": {
+    "job_id": 4030328216775153,
+    "title": "Business Development Manager",
+    "category": "Business Development and Sales",
+    "workplace_type": null,
+    "url": "https://in.linkedin.com/jobs/view/business-development-manager-at-mahindra-logistics-3931157619",
+    "reposted_job": false,
+    "number_of_openings": null,
+    "source": "professional_network",
+    "employment_type": null
+   },
+   "company": {
+    "basic_info": {
+     "crustdata_company_id": 2885,
+     "name": "Mahindra Logistics",
+     "primary_domain": "mahindralogistics.com",
+     "website": "http://mahindralogistics.com",
+     "professional_network_id": "3538091",
+     "industries": [
+      "Transportation, Logistics, Supply Chain and Storage"
+     ]
+    },
+    "locations": {
+     "country": "India",
+     "state": "Maharashtra",
+     "city": null,
+     "street_address": "Arena Space, 10th & 11th Floor, Plot No 20, Jogeshwari - Vikhroli Link Rd, near Majas Depot, Jogeshwari East,, Jogeshwari East, Maharashtra"
+    },
+    "headcount": {
+     "total": 8577,
+     "range": "10001+",
+     "largest_headcount_country": "IND"
+    },
+    "followers": {
+     "count": 580518
+    },
+    "revenue": {
+     "estimated": {
+      "lower_bound_usd": 1000000000,
+      "upper_bound_usd": 1000000000000
+     },
+     "public_markets": {
+      "stock_symbols": [
+       "MAHLOG"
+      ],
+      "fiscal_year_end": ""
+     },
+     "acquisition_status": null
+    },
+    "funding": {
+     "total_investment_usd": 71152575.0,
+     "valuation_usd": 0.0,
+     "last_fundraise_date": "2017-10-31T00:00:00",
+     "last_round_type": "series_unknown",
+     "num_funding_rounds": 2,
+     "investors": [
+      "Birla Sun Life Insurance",
+      "DSP Blackrock",
+      "Goldman Sachs",
+      "HDFC Trustee",
+      "Kedaara Capital",
+      "Reliance Mutual Fund"
+     ]
+    },
+    "competitors": {
+     "websites": [
+      "https://www.worldwide-logistics.cn/",
+      "http://www.leapindia.net",
+      "http://www.leapindia.com",
+      "http://www.blowhorn.com",
+      "https://www.reloadlogistics.com/?linkedin_views",
+      "http://www.logisticshub.tech",
+      "http://www.ecomexpress.in",
+      "http://www.itdglobal.com",
+      "http://www.letstransport.in",
+      "http://holisollogistics.com",
+      "http://www.musanga.com",
+      "https://lobb.in",
+      "https://www.unilogicgroup.com/links/",
+      "https://www.pristinelogistics.com/",
+      "http://www.fastlogistics.com.ph/",
+      "https://www.brandlink.pro",
+      "http://americangloballogistics.com/",
+      "http://www.itlvn.com",
+      "http://www.ssll.in",
+      "https://www.delhivery.com/",
+      "http://www.best-inc.com",
+      "http://contrans.in",
+      "https://ekartlogistics.com/",
+      "http://www.tmc-employeneurship.com",
+      "http://www.highlightmotor.com/",
+      "https://sohanlal.in/",
+      "https://dreamlogisticsusa.com/"
+     ]
+    }
+   },
+   "location": {
+    "raw": "Delhi, India",
+    "city": null,
+    "district": "Delhi Division",
+    "state": "Delhi",
+    "country": "India",
+    "pincode": null
+   },
+   "content": {
+    "description": ". . . Location we are hiring for:-. PAN INDIA. Industry-. Logistics (Mandatory). Responsibilities. Growing revenue and profitability within key accounts.. Develop and implement strategic business development plans to achieve corporate growth objectives.. Analyze market trends, competitor activities, and customer needs to identify new business opportunities.. Build and maintain strong relationships with corporate clients, understanding their logistics requirements and providing tailored solutions.. Act as the primary point of contact for key accounts, ensuring exceptional service delivery and customer satisfaction.. Proactively engage with clients to anticipate their future needs and develop long-term partnerships.. Drive sales activities to meet or exceed revenue targets, including prospecting, lead qualification, and contract negotiations.. Foster relationships with industry stakeholders, including suppliers, partners, and regulatory bodies.. Qualifications. Bachelor's degree in Business Administration, Logistics, Supply Chain Management, or related field; MBA preferred.. Proven track record of success in business development, sales, or account management within the logistics industry.. Strong understanding of logistics operations, freight forwarding, supply chain management, and related services.. Excellent communication, negotiation, and interpersonal skills.. Strategic thinker with the ability to analyze market data and identify growth opportunities.. Ability to work independently, prioritize tasks, and manage time effectively.. Willingness to travel.. . . . . Show more. . . . . Show less. . . . . ."
+   },
+   "metadata": {
+    "date_added": "2024-05-22T00:00:00",
+    "date_updated": "2024-06-05T00:00:00"
+   }
+  },
+  {
+   "crustdata_job_id": 8189728222171556,
+   "job_details": {
+    "job_id": 8189728222171556,
+    "title": "Cluster Sales Manager",
+    "category": "Sales",
+    "workplace_type": null,
+    "url": "https://in.linkedin.com/jobs/view/cluster-sales-manager-at-mahindra-logistics-3931162412",
+    "reposted_job": false,
+    "number_of_openings": null,
+    "source": "professional_network",
+    "employment_type": null
+   },
+   "company": {
+    "basic_info": {
+     "crustdata_company_id": 2885,
+     "name": "Mahindra Logistics",
+     "primary_domain": "mahindralogistics.com",
+     "website": "http://mahindralogistics.com",
+     "professional_network_id": "3538091",
+     "industries": [
+      "Transportation, Logistics, Supply Chain and Storage"
+     ]
+    },
+    "locations": {
+     "country": "India",
+     "state": "Maharashtra",
+     "city": null,
+     "street_address": "Arena Space, 10th & 11th Floor, Plot No 20, Jogeshwari - Vikhroli Link Rd, near Majas Depot, Jogeshwari East,, Jogeshwari East, Maharashtra"
+    },
+    "headcount": {
+     "total": 8577,
+     "range": "10001+",
+     "largest_headcount_country": "IND"
+    },
+    "followers": {
+     "count": 580518
+    },
+    "revenue": {
+     "estimated": {
+      "lower_bound_usd": 1000000000,
+      "upper_bound_usd": 1000000000000
+     },
+     "public_markets": {
+      "stock_symbols": [
+       "MAHLOG"
+      ],
+      "fiscal_year_end": ""
+     },
+     "acquisition_status": null
+    },
+    "funding": {
+     "total_investment_usd": 71152575.0,
+     "valuation_usd": 0.0,
+     "last_fundraise_date": "2017-10-31T00:00:00",
+     "last_round_type": "series_unknown",
+     "num_funding_rounds": 2,
+     "investors": [
+      "Birla Sun Life Insurance",
+      "DSP Blackrock",
+      "Goldman Sachs",
+      "HDFC Trustee",
+      "Kedaara Capital",
+      "Reliance Mutual Fund"
+     ]
+    },
+    "competitors": {
+     "websites": [
+      "https://www.worldwide-logistics.cn/",
+      "http://www.leapindia.net",
+      "http://www.leapindia.com",
+      "http://www.blowhorn.com",
+      "https://www.reloadlogistics.com/?linkedin_views",
+      "http://www.logisticshub.tech",
+      "http://www.ecomexpress.in",
+      "http://www.itdglobal.com",
+      "http://www.letstransport.in",
+      "http://holisollogistics.com",
+      "http://www.musanga.com",
+      "https://lobb.in",
+      "https://www.unilogicgroup.com/links/",
+      "https://www.pristinelogistics.com/",
+      "http://www.fastlogistics.com.ph/",
+      "https://www.brandlink.pro",
+      "http://americangloballogistics.com/",
+      "http://www.itlvn.com",
+      "http://www.ssll.in",
+      "https://www.delhivery.com/",
+      "http://www.best-inc.com",
+      "http://contrans.in",
+      "https://ekartlogistics.com/",
+      "http://www.tmc-employeneurship.com",
+      "http://www.highlightmotor.com/",
+      "https://sohanlal.in/",
+      "https://dreamlogisticsusa.com/"
+     ]
+    }
+   },
+   "location": {
+    "raw": "Delhi, India",
+    "city": null,
+    "district": "Delhi Division",
+    "state": "Delhi",
+    "country": "India",
+    "pincode": null
+   },
+   "content": {
+    "description": "Location we are hiring for:-North- Haryana, Delhi , Rajasthan, Uttar Pradesh, Uttarakhand, Himachal Pradesh, PunjabSouth- Tamil Nadu and KeralaWest- Gujarat\n\nResponsibilities\nGrowing revenue and profitability within key accounts.Develop and implement strategic business development plans to achieve corporate growth objectives.Analyze market trends, competitor activities, and customer needs to identify new business opportunities.Build and maintain strong relationships with corporate clients, understanding their logistics requirements and providing tailored solutions.Act as the primary point of contact for key accounts, ensuring exceptional service delivery and customer satisfaction.Proactively engage with clients to anticipate their future needs and develop long-term partnerships.Drive sales activities to meet or exceed revenue targets, including prospecting, lead qualification, and contract negotiations.Foster relationships with industry stakeholders, including suppliers, partners, and regulatory bodies.\nQualificationsBachelor's degree in Business Administration, Logistics, Supply Chain Management, or related field; MBA preferred.Should have work experience between 7-10 years.Proven track record of success in business development, sales, or account management within the logistics industry.Strong understanding of logistics operations, freight forwarding, supply chain management, and related services.Excellent communication, negotiation, and interpersonal skills.Strategic thinker with the ability to analyze market data and identify growth opportunities.Ability to work independently, prioritize tasks, and manage time effectively.Willingness to travel."
+   },
+   "metadata": {
+    "date_added": "2024-05-22T00:00:00",
+    "date_updated": "2024-06-01T00:00:00"
+   }
+  }
+ ],
+ "next_cursor": null,
+ "total_count": 9
+}

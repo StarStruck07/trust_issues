@@ -1,0 +1,720 @@
+[
+ {
+  "matched_on": "Tide Water Oil Co. (India) Ltd.",
+  "match_type": "name",
+  "matches": [
+   {
+    "confidence_score": 0.6,
+    "company_data": {
+     "crustdata_company_id": 5121,
+     "basic_info": {
+      "name": "Tide Water Oil Company Limited",
+      "crustdata_company_id": 5121,
+      "primary_domain": null,
+      "all_domains": [],
+      "website": null,
+      "professional_network_url": "https://www.linkedin.com/company/tide-water-oil-company-limited",
+      "professional_network_id": "33925190",
+      "profile_name": "Tide Water Oil Company Limited",
+      "logo_permalink": "https://crustdata-media.s3.us-east-2.amazonaws.com/company/ee1c81c2e7e3d4cd224f6b0e1e76ed9443ee074dee50e3a1c11875d01bb3abd2.jpg",
+      "description": "Tide Water Oil Company Limited is an utilities company based out of Atlanta Ave, Orlando, Florida, United States.",
+      "company_type": null,
+      "year_founded": 1900,
+      "employee_count_range": "501-1000",
+      "markets": [],
+      "industries": [
+       "Utilities"
+      ]
+     },
+     "social_profiles": null
+    }
+   },
+   {
+    "confidence_score": 0.6,
+    "company_data": {
+     "crustdata_company_id": 61246495,
+     "basic_info": {
+      "name": "Eastland Oil Co - India",
+      "crustdata_company_id": 61246495,
+      "primary_domain": "eastlandoil.com",
+      "all_domains": [
+       "eastlandoil.com"
+      ],
+      "website": "http://eastlandoil.com",
+      "professional_network_url": "https://www.linkedin.com/company/eastland-oil-co---india",
+      "professional_network_id": "7897119",
+      "profile_name": "Eastland Oil Co - India",
+      "logo_permalink": null,
+      "description": "Eastland Oil Co - India is an oil & energy company based out of India.",
+      "company_type": null,
+      "year_founded": null,
+      "employee_count_range": null,
+      "markets": [],
+      "industries": [
+       "Oil and Gas"
+      ]
+     },
+     "social_profiles": null
+    }
+   },
+   {
+    "confidence_score": 0.6,
+    "company_data": {
+     "crustdata_company_id": 64444005,
+     "basic_info": {
+      "name": "Swastik Eucalyptus Oil Co - India",
+      "crustdata_company_id": 64444005,
+      "primary_domain": "oils-tea.com",
+      "all_domains": [
+       "oils-tea.com"
+      ],
+      "website": "http://oils-tea.com",
+      "professional_network_url": "https://www.linkedin.com/company/swastik-eucalyptus-oil-co---india",
+      "professional_network_id": "7863608",
+      "profile_name": "Swastik Eucalyptus Oil Co - India",
+      "logo_permalink": null,
+      "description": "Swastik Eucalyptus Oil Co - India is a company based out of India.",
+      "company_type": null,
+      "year_founded": null,
+      "employee_count_range": null,
+      "markets": [],
+      "industries": []
+     },
+     "social_profiles": null
+    }
+   },
+   {
+    "confidence_score": 0.6,
+    "company_data": {
+     "crustdata_company_id": 20948917,
+     "basic_info": {
+      "name": "Tide-water",
+      "crustdata_company_id": 20948917,
+      "primary_domain": null,
+      "all_domains": [],
+      "website": null,
+      "professional_network_url": "https://www.linkedin.com/company/tide-water",
+      "professional_network_id": "100625533",
+      "profile_name": "Tide-water",
+      "logo_permalink": null,
+      "description": null,
+      "company_type": "Partnership",
+      "year_founded": null,
+      "employee_count_range": "2-10",
+      "markets": [],
+      "industries": [
+       "Travel Arrangements",
+       "Administrative and Support Services"
+      ]
+     },
+     "social_profiles": null
+    }
+   },
+   {
+    "confidence_score": 0.6,
+    "company_data": {
+     "crustdata_company_id": 30282137,
+     "basic_info": {
+      "name": "The Seawell Oil Co - India",
+      "crustdata_company_id": 30282137,
+      "primary_domain": "seawelloil.com",
+      "all_domains": [
+       "seawelloil.com"
+      ],
+      "website": "http://seawelloil.com",
+      "professional_network_url": "https://www.linkedin.com/company/the-seawell-oil-co---india",
+      "professional_network_id": "7908457",
+      "profile_name": "The Seawell Oil Co - India",
+      "logo_permalink": null,
+      "description": "The Seawell Oil Co - India is an oil & energy company based out of 306, Arjun Centre, Govandi Station Road, Govandi,, Mumbai, Maharashtra, India.",
+      "company_type": null,
+      "year_founded": null,
+      "employee_count_range": null,
+      "markets": [],
+      "industries": [
+       "Oil and Gas",
+       "Oil, Gas, and Mining"
+      ]
+     },
+     "social_profiles": null
+    }
+   },
+   {
+    "confidence_score": 0.6,
+    "company_data": {
+     "crustdata_company_id": 7424872,
+     "basic_info": {
+      "name": "Tide Water Transit",
+      "crustdata_company_id": 7424872,
+      "primary_domain": null,
+      "all_domains": [],
+      "website": "http://www.tidewater-transit.com/",
+      "professional_network_url": "https://www.linkedin.com/company/tide-water-transit",
+      "professional_network_id": "5760420",
+      "profile_name": "Tide Water Transit",
+      "logo_permalink": "https://crustdata-media.s3.us-east-2.amazonaws.com/company/57c7b1d221dac23dd22fc16a9a1130af82d04db7483af9103da1779d1c83b248.jpg",
+      "description": "Tide Water Transit is a logistics and supply chain company based out of 2059 S Hamilton St, Dalton, Georgia, United States.",
+      "company_type": null,
+      "year_founded": 1949,
+      "employee_count_range": "2-10",
+      "markets": [
+       "PRIVATE"
+      ],
+      "industries": [
+       "Transportation, Logistics, Supply Chain and Storage"
+      ]
+     },
+     "social_profiles": null
+    }
+   },
+   {
+    "confidence_score": 0.6,
+    "company_data": {
+     "crustdata_company_id": 62084281,
+     "basic_info": {
+      "name": "Pure Tide Water",
+      "crustdata_company_id": 62084281,
+      "primary_domain": "puretidewater.com",
+      "all_domains": [
+       "puretidewater.com"
+      ],
+      "website": "http://www.puretidewater.com",
+      "professional_network_url": "https://www.linkedin.com/company/pure-tide-water",
+      "professional_network_id": "110421221",
+      "profile_name": "Pure Tide Water",
+      "logo_permalink": null,
+      "description": "Pure Tide delivers premium purified water through a closed loop reusable glass bottle system designed to eliminate single use plastic and raise the standard for how drinking water is sourced processed and delivered.Our water is purified using advanced reverse osmosis and can be mineral balanced for clean consistent taste. Every bottle is filled sealed delivered collected sanitized and reused locally creating a circular system that prioritizes quality transparency and environmental responsibility.We operate with a community first model built on local facilities efficient delivery routes and direct relationships with the households and businesses we serve. There is no long haul shipping no disposable packaging and no vague claims.Pure Tide exists to do water the right way. Clean honest and built to last.",
+      "company_type": "Privately Held",
+      "year_founded": 2025,
+      "employee_count_range": "2-10",
+      "markets": [],
+      "industries": [
+       "Beverage Manufacturing",
+       "Food and Beverage Manufacturing",
+       "Manufacturing"
+      ]
+     },
+     "social_profiles": null
+    }
+   },
+   {
+    "confidence_score": 0.6,
+    "company_data": {
+     "crustdata_company_id": 65314161,
+     "basic_info": {
+      "name": "TIDE WATER HOUSEKEEPING",
+      "crustdata_company_id": 65314161,
+      "primary_domain": "tidewaterhousekeeping.com",
+      "all_domains": [
+       "tidewaterhousekeeping.com"
+      ],
+      "website": "http://www.tidewaterhousekeeping.com/residential.html",
+      "professional_network_url": "https://www.linkedin.com/company/tidewater-house-keeping",
+      "professional_network_id": "10800884",
+      "profile_name": "TIDE WATER HOUSEKEEPING",
+      "logo_permalink": null,
+      "description": "Tidewater Housekeeping is a Maid service in Norfolk and surrounding areas. We offer tailored residential Maid services that are guaranteed to meet your individual needs. We don’t believe in a “one size fits all” pre-packaged service as each and every individual client and their home is unique, and should be treated as such. We focus on saving you money in that aspect, instead of offering you a package with services that you don’t require, we’re here to provide you with a 100% free estimate with the exact services that you need. All of our Maids at Tidewater Housekeeping in Norfolk are trained with years of experience in ensuring your home is properly cleaned, treated and maintained the first time. We take pride in all of our Maids and set a standard to go above and beyond with each and every single cleaning. Request a free quote through our website right now and one of our advisors will be in touch with you shortly.",
+      "company_type": "Sole Proprietorship",
+      "year_founded": 2016,
+      "employee_count_range": "2-10",
+      "markets": [],
+      "industries": [
+       "Retail"
+      ]
+     },
+     "social_profiles": null
+    }
+   },
+   {
+    "confidence_score": 0.6,
+    "company_data": {
+     "crustdata_company_id": 28384485,
+     "basic_info": {
+      "name": "Tide Water India P. Limited",
+      "crustdata_company_id": 28384485,
+      "primary_domain": null,
+      "all_domains": [],
+      "website": null,
+      "professional_network_url": "https://www.linkedin.com/company/tide-water-india-p.-limited",
+      "professional_network_id": "33626855",
+      "profile_name": "Tide Water India P. Limited",
+      "logo_permalink": null,
+      "description": "Tide Water India P. Limited is an electrical/electronic manufacturing company based out of B / 305 Ashok Nagar, Ambadi Road, Vasai Road(West), Dist :, Thane, Maharashtra, India.",
+      "company_type": null,
+      "year_founded": null,
+      "employee_count_range": "51-200",
+      "markets": [],
+      "industries": [
+       "Appliances, Electrical, and Electronics Manufacturing",
+       "Manufacturing"
+      ]
+     },
+     "social_profiles": null
+    }
+   },
+   {
+    "confidence_score": 0.6,
+    "company_data": {
+     "crustdata_company_id": 61004824,
+     "basic_info": {
+      "name": "TIDE WATER GLAZING INC",
+      "crustdata_company_id": 61004824,
+      "primary_domain": null,
+      "all_domains": [],
+      "website": null,
+      "professional_network_url": "https://www.linkedin.com/company/tide-water-glazing-inc",
+      "professional_network_id": "61845535",
+      "profile_name": "TIDE WATER GLAZING INC",
+      "logo_permalink": null,
+      "description": "TIDE WATER GLAZING INC is a company based out of 806 R CROMWELL PARK DR, Glen Burnie, Maryland, United States.",
+      "company_type": null,
+      "year_founded": null,
+      "employee_count_range": "2-10",
+      "markets": [],
+      "industries": []
+     },
+     "social_profiles": null
+    }
+   },
+   {
+    "confidence_score": 0.6,
+    "company_data": {
+     "crustdata_company_id": 4605272,
+     "basic_info": {
+      "name": "Behran Oil Co.",
+      "crustdata_company_id": 4605272,
+      "primary_domain": "behranoil.co",
+      "all_domains": [
+       "behranoil.co"
+      ],
+      "website": "https://www.behranoil.co/",
+      "professional_network_url": "https://www.linkedin.com/company/behran-oil",
+      "professional_network_id": "4818461",
+      "profile_name": "Behran Oil Co.",
+      "logo_permalink": "https://crustdata-media.s3.us-east-2.amazonaws.com/company/581cd2c1356d3c48069afb8ca7574808f920476d4cc09d1c343da0724888cd04.jpg",
+      "description": "Behran  Oil Co. is the leading lubricant manufacturer in Iran , established in 1962 . Initially its founded as a blending unit , but now through some expansion project  , the capacity of refinery is reached to more than 220000 tons / year base oil and the sales of more than six hundred different products , to annual income of 450000000 US  $ in 2010. Share of each group of product in 2006 total sale income is as follows :Automotive oils 60.9 % , Industrial oils 24.4 5 , Process oils 8.4 % , Engine coolant 2.8 % , paraffin waxes 3.3 % , Grease 0.2 %  Behran initiated exporting its products in 1991 with the sales of Paraffin Wax and Furfural Extracts to international market at the outset. Now, Behran products are being exported to more than 40 countries worldwide, with the quantity of 70000 Tons per year and the annual sales of 24 Million USD.",
+      "company_type": "Public Company",
+      "year_founded": 1963,
+      "employee_count_range": "1001-5000",
+      "markets": [
+       "PRIVATE"
+      ],
+      "industries": [
+       "Oil and Gas",
+       "Oil, Gas, and Mining"
+      ]
+     },
+     "social_profiles": null
+    }
+   },
+   {
+    "confidence_score": 0.6,
+    "company_data": {
+     "crustdata_company_id": 1689806,
+     "basic_info": {
+      "name": "Holiday Oil Co.",
+      "crustdata_company_id": 1689806,
+      "primary_domain": "holidayoil.com",
+      "all_domains": [
+       "holidayoil.com"
+      ],
+      "website": "https://holidayoil.com",
+      "professional_network_url": "https://www.linkedin.com/company/holidayoilco",
+      "professional_network_id": "1636342",
+      "profile_name": "Holiday Oil Co.",
+      "logo_permalink": "https://crustdata-media.s3.us-east-2.amazonaws.com/company/fd3b2dc249b771cb5d10f1cefb61591681346a333629ae4b6ef6eade66ad806d.jpg",
+      "description": "The premier convenience store in Utah. Since 1964, Holiday Oil has been serving the State of Utah. We have grown to 77 locations to serve our customers. Our roots have been in providing excellent customer service and employees you can trust.",
+      "company_type": "Sole Proprietorship",
+      "year_founded": 1964,
+      "employee_count_range": "1001-5000",
+      "markets": [
+       "PRIVATE"
+      ],
+      "industries": [
+       "Food and Beverage Retail",
+       "Retail"
+      ]
+     },
+     "social_profiles": null
+    }
+   },
+   {
+    "confidence_score": 0.6,
+    "company_data": {
+     "crustdata_company_id": 7565200,
+     "basic_info": {
+      "name": "Taylor Oil Co.",
+      "crustdata_company_id": 7565200,
+      "primary_domain": "tayloroilco.com",
+      "all_domains": [
+       "tayloroilco.com"
+      ],
+      "website": "http://www.tayloroilco.com/",
+      "professional_network_url": "https://www.linkedin.com/company/taylor-oil-co.",
+      "professional_network_id": "11030918",
+      "profile_name": "Taylor Oil Co.",
+      "logo_permalink": "https://crustdata-media.s3.us-east-2.amazonaws.com/company/515a1d55aed733b1292ee58cc389497d386daa4447d4ffca8ad7437cf02fd6dc.jpg",
+      "description": "Taylor Oil Company keeps America moving. The premier provider of on-site fueling services to construction crews, contractors, boats and marinas along the East Coast and beyond, Taylor Oil delivers the highest quality gasoline, diesel fuel and other petroleum products 24 hours a day, seven days a week. Our system is synchronized to your schedule, assuring your ability to keep machinery operating and projects profitable.For the past 50 years Taylor Oil Co. has provided direct-to-equipment fueling on job sites. Our trucks will visit your job site to fill all of your equipment, tanks and/or vehicles.",
+      "company_type": "Privately Held",
+      "year_founded": 1909,
+      "employee_count_range": "51-200",
+      "markets": [
+       "PRIVATE"
+      ],
+      "industries": [
+       "Oil and Gas",
+       "Oil, Gas, and Mining"
+      ]
+     },
+     "social_profiles": null
+    }
+   },
+   {
+    "confidence_score": 0.6,
+    "company_data": {
+     "crustdata_company_id": 2181233,
+     "basic_info": {
+      "name": "IRANOL Oil Co.",
+      "crustdata_company_id": 2181233,
+      "primary_domain": "iranol.ir",
+      "all_domains": [
+       "iranol.ir"
+      ],
+      "website": "http://www.iranol.ir",
+      "professional_network_url": "https://www.linkedin.com/company/iranol-oil-refinery",
+      "professional_network_id": "3696361",
+      "profile_name": "IRANOL Oil Co.",
+      "logo_permalink": "https://crustdata-media.s3.us-east-2.amazonaws.com/company/5b9b9252dac4831dd622c407ab9f36426b8758db1b938e218d77a7266c30c7fe.jpg",
+      "description": "شركت ملي نفت ايران در راستاي خصوصي سازي شرکتهاي دولتي و سياست هاي كلان دولت جمهوری اسلامی ایران مبني بر كاهش حجم تصدي گري دولتي در حوزه غير انحصاري و واگذاري امور به بخش خصوصي، با هدف توسعه مشاركت اين بخش در فعاليتهاي اقتصادي و صنعتي، بمنظور افزايش كارآيي ، واحد های روغن سازی پالایشگاههای تهران و آبادان را به سازمان تامين اجتماعي، صندوق بازنشستگی کشوری و آستان قدس رضوي واگذار نموده است كه اين واگذاري منجر به تاسيس شركت نفت ايرانول در 11 آذرماه سال 1381 گرديد و در بهمن سال 1391 سهام این شرکت در فرابورس پذیرفته و عرضه شد. شرکت نفت ایرانول اکنون در سه بخش پالایشگاه روغن سازی تهران ، پالایشگاه روغن سازی آبادان و مجتمع ظرف سازی و بسته بندی به فعالیت خود ادامه می دهد. Iranol Oil Company (PJS) is Iran’s market leader in production of various base, engine and industrial oil brands, as well as slack wax, furfural extract, petrolatum, and bright stock. In the practical phase of the national privatization project, the oil refineries of Tehran and Abadan cities were detached from the National Iranian Oil Company in winter 2002, and incorporated Iranol.",
+      "company_type": "Public Company",
+      "year_founded": 2003,
+      "employee_count_range": "1001-5000",
+      "markets": [
+       "PRIVATE"
+      ],
+      "industries": [
+       "Oil and Gas",
+       "Oil, Gas, and Mining"
+      ]
+     },
+     "social_profiles": null
+    }
+   },
+   {
+    "confidence_score": 0.6,
+    "company_data": {
+     "crustdata_company_id": 1220865,
+     "basic_info": {
+      "name": "Blarney Castle Oil Co.",
+      "crustdata_company_id": 1220865,
+      "primary_domain": "blarneycastleoil.com",
+      "all_domains": [
+       "blarneycastleoil.com"
+      ],
+      "website": "http://www.blarneycastleoil.com",
+      "professional_network_url": "https://www.linkedin.com/company/blarney-castle-oil-co-",
+      "professional_network_id": "1803259",
+      "profile_name": "Blarney Castle Oil Co.",
+      "logo_permalink": "https://crustdata-media.s3.us-east-2.amazonaws.com/company/b7c2dcae08ee138e8b007d8423f120b7c8426d8adbc71cf04404bcd02503c639.jpg",
+      "description": "Blarney Castle Oil Co is a petroleum and propane distribution company that owns and operates over 130 convenience stores and 10 branch offices in Michigan. Founded in 1933, Blarney Castle Oil Co is still a family-owned business. Superior customer service has been the focus of the McCarthy family since the beginning, along with development of employees.",
+      "company_type": "Privately Held",
+      "year_founded": 1933,
+      "employee_count_range": "1001-5000",
+      "markets": [
+       "PRIVATE"
+      ],
+      "industries": [
+       "Retail"
+      ]
+     },
+     "social_profiles": null
+    }
+   },
+   {
+    "confidence_score": 0.6,
+    "company_data": {
+     "crustdata_company_id": 1977023,
+     "basic_info": {
+      "name": "Rhinehart Oil Co",
+      "crustdata_company_id": 1977023,
+      "primary_domain": "rhinehartoil.com",
+      "all_domains": [
+       "rhinehartoil.com"
+      ],
+      "website": "http://www.rhinehartoil.com",
+      "professional_network_url": "https://www.linkedin.com/company/rhinehart-oil-co",
+      "professional_network_id": "3950113",
+      "profile_name": "Rhinehart Oil Co",
+      "logo_permalink": "https://crustdata-media.s3.us-east-2.amazonaws.com/company/c0fe49823b2d01a8e8fa845b05848f1f1a2e5938f1a33480e9dffe920462ca21.jpg",
+      "description": "Rhinehart Oil is a lubricant and fuel distributor servicing customers in Utah, Colorado, and Wyoming.  Founded in 1976, Rhinehart Oil provides exceptional quality and impeccable service. Rhinehart Oil is a total solutions provider that offers a wide range of high quality products and supporting services to industrial, commercial, and automotive markets. Rhinehart Oil distributes a wide variety of products including lubricants, fuels, diesel exhaust fluid (DEF), equipment, chemicals, and automotive ancillary products.",
+      "company_type": "Privately Held",
+      "year_founded": 1976,
+      "employee_count_range": "51-200",
+      "markets": [
+       "PRIVATE"
+      ],
+      "industries": [
+       "Wholesale"
+      ]
+     },
+     "social_profiles": null
+    }
+   },
+   {
+    "confidence_score": 0.6,
+    "company_data": {
+     "crustdata_company_id": 17602641,
+     "basic_info": {
+      "name": "WATER & OIL TECHNOLOGIES, INC.",
+      "crustdata_company_id": 17602641,
+      "primary_domain": "wateroiltechnologiesinc.com",
+      "all_domains": [
+       "wateroiltechnologiesinc.com"
+      ],
+      "website": "https://wateroiltechnologiesinc.com",
+      "professional_network_url": "https://www.linkedin.com/company/water-&-oil-technologies-inc.",
+      "professional_network_id": "16113678",
+      "profile_name": "WATER & OIL TECHNOLOGIES, INC.",
+      "logo_permalink": null,
+      "description": "WATER & OIL TECHNOLOGIES, INC. is an environmental services company based out of 52 EASTFIELD RD, MONTGOMERY, Illinois, United States.",
+      "company_type": null,
+      "year_founded": null,
+      "employee_count_range": "2-10",
+      "markets": [],
+      "industries": [
+       "Environmental Services",
+       "Business Consulting and Services",
+       "Professional Services"
+      ]
+     },
+     "social_profiles": null
+    }
+   },
+   {
+    "confidence_score": 0.6,
+    "company_data": {
+     "crustdata_company_id": 9186508,
+     "basic_info": {
+      "name": "Foster Blue Water Oil",
+      "crustdata_company_id": 9186508,
+      "primary_domain": null,
+      "all_domains": [],
+      "website": null,
+      "professional_network_url": "https://www.linkedin.com/company/foster-blue-water-oil",
+      "professional_network_id": "1799663",
+      "profile_name": "Foster Blue Water Oil",
+      "logo_permalink": "https://crustdata-media.s3.us-east-2.amazonaws.com/company/b14752b6dda72dabdd2ccf41fea806dca03aa9d4108e1acc2dcbadbaec3c8049.jpg",
+      "description": null,
+      "company_type": null,
+      "year_founded": null,
+      "employee_count_range": null,
+      "markets": [],
+      "industries": [
+       "Oil and Gas",
+       "Oil, Gas, and Mining"
+      ]
+     },
+     "social_profiles": null
+    }
+   },
+   {
+    "confidence_score": 0.6,
+    "company_data": {
+     "crustdata_company_id": 28878391,
+     "basic_info": {
+      "name": "Green Tide Water Disposal, Ltd.",
+      "crustdata_company_id": 28878391,
+      "primary_domain": null,
+      "all_domains": [],
+      "website": null,
+      "professional_network_url": "https://www.linkedin.com/company/green-tide-water-disposal-ltd-",
+      "professional_network_id": "8776941",
+      "profile_name": "Green Tide Water Disposal, Ltd.",
+      "logo_permalink": null,
+      "description": "Green Tide Water Disposal, Ltd. is an oil & energy company based out of 106E 6th St, Austin, Texas, United States.",
+      "company_type": null,
+      "year_founded": null,
+      "employee_count_range": "2-10",
+      "markets": [],
+      "industries": [
+       "Oil and Gas",
+       "Oil, Gas, and Mining"
+      ]
+     },
+     "social_profiles": null
+    }
+   },
+   {
+    "confidence_score": 0.6,
+    "company_data": {
+     "crustdata_company_id": 9600391,
+     "basic_info": {
+      "name": "NEWCOMB OIL CO",
+      "crustdata_company_id": 9600391,
+      "primary_domain": null,
+      "all_domains": [],
+      "website": null,
+      "professional_network_url": "https://www.linkedin.com/company/newcomb-oil-co",
+      "professional_network_id": "9751736",
+      "profile_name": "NEWCOMB OIL CO",
+      "logo_permalink": "https://crustdata-media.s3.us-east-2.amazonaws.com/company/7dda18a060090ebd3e5641aa42e26e58eac414d01f0272d98fd05fa724724ea4.jpg",
+      "description": "NEWCOMB OIL CO is a consumer services company based out of 564 Bluff Dr, La Crescent, Minnesota, United States.",
+      "company_type": null,
+      "year_founded": null,
+      "employee_count_range": "2-10",
+      "markets": [],
+      "industries": [
+       "Consumer Services"
+      ]
+     },
+     "social_profiles": null
+    }
+   },
+   {
+    "confidence_score": 0.6,
+    "company_data": {
+     "crustdata_company_id": 2052235,
+     "basic_info": {
+      "name": "Krist Oil Co",
+      "crustdata_company_id": 2052235,
+      "primary_domain": "kristoil.com",
+      "all_domains": [
+       "kristoil.com"
+      ],
+      "website": "http://www.kristoil.com",
+      "professional_network_url": "https://www.linkedin.com/company/krist-oil-co",
+      "professional_network_id": "4037010",
+      "profile_name": "Krist Oil Co",
+      "logo_permalink": "https://crustdata-media.s3.us-east-2.amazonaws.com/company/238a8eddb3151b27a16294464e9a87e6a87a121f1c67db1f41cfa1d5ccc8e395.jpg",
+      "description": "Krist Stores are locally owned and operated convenience stores throughout Upper Michigan and Northern Wisconsin, with one location on the North Shore of Minnesota. Competitive Fuel Pricing, Snacks, Beverages, Propane Cylinders and all your convenience needs are offered at every location.",
+      "company_type": "Public Company",
+      "year_founded": 1917,
+      "employee_count_range": "501-1000",
+      "markets": [
+       "PRIVATE"
+      ],
+      "industries": [
+       "Retail Gasoline",
+       "Retail"
+      ]
+     },
+     "social_profiles": null
+    }
+   },
+   {
+    "confidence_score": 0.6,
+    "company_data": {
+     "crustdata_company_id": 2163832,
+     "basic_info": {
+      "name": "Apex Oil Co",
+      "crustdata_company_id": 2163832,
+      "primary_domain": "apexoil.com",
+      "all_domains": [
+       "apexoil.com"
+      ],
+      "website": "http://apexoil.com",
+      "professional_network_url": "https://www.linkedin.com/company/apex-oil-co",
+      "professional_network_id": "6785414",
+      "profile_name": "Apex Oil Co",
+      "logo_permalink": "https://crustdata-media.s3.us-east-2.amazonaws.com/company/e5853989e5dd412360f0f0fc6b007a47599106e8f2ee108fedd53e5ebb70e686.jpg",
+      "description": "Apex Oil Co is an oil & energy company based out of 3314 River Road, Wilmington, United States.",
+      "company_type": null,
+      "year_founded": 1932,
+      "employee_count_range": null,
+      "markets": [
+       "PRIVATE"
+      ],
+      "industries": [
+       "Oil and Gas",
+       "Oil, Gas, and Mining"
+      ]
+     },
+     "social_profiles": null
+    }
+   },
+   {
+    "confidence_score": 0.6,
+    "company_data": {
+     "crustdata_company_id": 662394,
+     "basic_info": {
+      "name": "Tide",
+      "crustdata_company_id": 662394,
+      "primary_domain": "tide.co",
+      "all_domains": [
+       "tide.co"
+      ],
+      "website": "https://www.tide.co",
+      "professional_network_url": "https://www.linkedin.com/company/tide-banking",
+      "professional_network_id": "10877408",
+      "profile_name": "Tide",
+      "logo_permalink": "https://crustdata-media.s3.us-east-2.amazonaws.com/company/a19f096ed7c700446f44a3b7ed33d62f1587dffb4b07c76711c13cb5cba5d28f.jpg",
+      "description": "Tide helps SMEs save time (and money) in the running of their businesses by not only offering business accounts and related banking services, but also a comprehensive set of highly usable and connected administrative solutions from invoicing to accounting.Tide is transforming the small business banking market with over 1.6 million globally across the UK, India, Germany and France. Using advanced technology, all solutions are designed with SMEs in mind.With quick onboarding, low fees and innovative features, we thrive on making data-driven decisions to help SMEs save both time and money.Tide facts:> Tide is available for UK, Indian, German and French SMEs> Over 1.6 million members: 800,000 UK and 800,000 in India and growing rapidly > Over $200 million raised in funding> Over 2500 Tideans globally - we’re diversity champions!> We have offices in Central London, with a member support and technology centre in Sofia, Bulgaria, technology centres in Serbia, Romania, Lithuania and Hyderabad and offices in Gurugram and New Delhi, India",
+      "company_type": "Privately Held",
+      "year_founded": 2015,
+      "employee_count_range": "1001-5000",
+      "markets": [
+       "PRIVATE"
+      ],
+      "industries": [
+       "Financial Services"
+      ]
+     },
+     "social_profiles": null
+    }
+   },
+   {
+    "confidence_score": 0.6,
+    "company_data": {
+     "crustdata_company_id": 2130788,
+     "basic_info": {
+      "name": "Fuji Oil Co., Ltd.",
+      "crustdata_company_id": 2130788,
+      "primary_domain": "fujioil.co.jp",
+      "all_domains": [
+       "fujioil.co.jp"
+      ],
+      "website": "https://www.fujioil.co.jp/en/",
+      "professional_network_url": "https://www.linkedin.com/company/fuji-oil-group",
+      "professional_network_id": "47656651",
+      "profile_name": "Fuji Oil Co., Ltd.",
+      "logo_permalink": "https://crustdata-media.s3.us-east-2.amazonaws.com/company/5a4446da8b5d27b8da7ac58cee29d6d2d8a73fd07c5489891a3b29effe3b421e.jpg",
+      "description": "The Fuji Oil Group engages mainly in the development, production, and sale of vegetable oils & fats, industrial chocolate, emulsified & fermented ingredients, and soy-based ingredients.It contributes to the joy of food and to human health.",
+      "company_type": "Public Company",
+      "year_founded": 1950,
+      "employee_count_range": "5001-10000",
+      "markets": [],
+      "industries": [
+       "Food and Beverage Manufacturing",
+       "Manufacturing"
+      ]
+     },
+     "social_profiles": null
+    }
+   },
+   {
+    "confidence_score": 0.6,
+    "company_data": {
+     "crustdata_company_id": 25174280,
+     "basic_info": {
+      "name": "Tide Water Seafoods Inc",
+      "crustdata_company_id": 25174280,
+      "primary_domain": null,
+      "all_domains": [],
+      "website": null,
+      "professional_network_url": "https://www.linkedin.com/company/tide-water-seafoods-inc",
+      "professional_network_id": "8880952",
+      "profile_name": "Tide Water Seafoods Inc",
+      "logo_permalink": null,
+      "description": "Tide Water Seafoods Inc is a company based out of 13105 Ramona Blvd # J, Irwindale, California, United States.",
+      "company_type": null,
+      "year_founded": null,
+      "employee_count_range": "2-10",
+      "markets": [],
+      "industries": []
+     },
+     "social_profiles": null
+    }
+   }
+  ]
+ }
+]

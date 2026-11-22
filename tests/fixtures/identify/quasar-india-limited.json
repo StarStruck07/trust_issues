@@ -1,0 +1,780 @@
+[
+ {
+  "matched_on": "Quasar India Limited",
+  "match_type": "name",
+  "matches": [
+   {
+    "confidence_score": 0.8,
+    "company_data": {
+     "crustdata_company_id": 67368692,
+     "basic_info": {
+      "name": "Quasar Infotek Private Limited - India",
+      "crustdata_company_id": 67368692,
+      "primary_domain": "quasarinfotek.com",
+      "all_domains": [
+       "quasarinfotek.com"
+      ],
+      "website": "http://quasarinfotek.com",
+      "professional_network_url": "https://www.linkedin.com/company/quasar-infotek-private-limited---india",
+      "professional_network_id": "7915841",
+      "profile_name": "Quasar Infotek Private Limited - India",
+      "logo_permalink": null,
+      "description": "Quasar Infotek Private Limited - India is a company based out of No. 194, New No. 303, Poonamallee High Road, Kilpauk,, Chennai, Tamil Nadu, India.",
+      "company_type": null,
+      "year_founded": null,
+      "employee_count_range": null,
+      "markets": [],
+      "industries": []
+     },
+     "social_profiles": null
+    }
+   },
+   {
+    "confidence_score": 0.6,
+    "company_data": {
+     "crustdata_company_id": 3855,
+     "basic_info": {
+      "name": "Quasar India Ltd",
+      "crustdata_company_id": 3855,
+      "primary_domain": "quasarindia.in",
+      "all_domains": [
+       "quasarindia.in"
+      ],
+      "website": "http://www.quasarindia.in/",
+      "professional_network_url": "https://www.linkedin.com/company/quasar-india-ltd",
+      "professional_network_id": "27083267",
+      "profile_name": "Quasar India Ltd",
+      "logo_permalink": "https://crustdata-media.s3.us-east-2.amazonaws.com/company/153532c76fb1c2ef484785f87400e106a84b34c7e7c049d72bbaa6ad04cbc909.jpg",
+      "description": "Quasar India Ltd is a company based out of India.",
+      "company_type": null,
+      "year_founded": 1979,
+      "employee_count_range": null,
+      "markets": [
+       "BSE"
+      ],
+      "industries": []
+     },
+     "social_profiles": null
+    }
+   },
+   {
+    "confidence_score": 0.6,
+    "company_data": {
+     "crustdata_company_id": 4316,
+     "basic_info": {
+      "name": "State Bank of India",
+      "crustdata_company_id": 4316,
+      "primary_domain": "sbi.bank.in",
+      "all_domains": [
+       "sbi.bank.in",
+       "bank.sbi"
+      ],
+      "website": "https://sbi.bank.in",
+      "professional_network_url": "https://www.linkedin.com/company/state-bank-of-india",
+      "professional_network_id": "166135",
+      "profile_name": "State Bank of India",
+      "logo_permalink": "https://crustdata-media.s3.us-east-2.amazonaws.com/company/1ccea84bef562316022fc8e0fce1ea01ec4967b7bbe911a7d91429ba2c709fa1.jpg",
+      "description": "We are the largest Indian Public Sector Banking & Financial Services Company. Headquartered in Mumbai, our national presence across the country with over 22,000 branches and globally across all time-zones at 227 locations in 30 countries, makes us the leader in the sector.Our legacy ranges back to the British era through the Imperial Bank of India, founded in 1806. Today, we are a conglomerate employing skilled professionals who are successfully taking the legacy forward through our specialized and customized financial services designed to cater the needs of Corporates, SMEs, NRIs & Retail customers. For more information about Career & Life at SBI, please visit :  https://sbi.bank.in/web/careersDisclaimer: SBI shall bear no responsibility for confidentiality of information shared with SBI through LinkedIn.",
+      "company_type": "Public Company",
+      "year_founded": 1806,
+      "employee_count_range": "10001+",
+      "markets": [
+       "NSE"
+      ],
+      "industries": [
+       "Banking",
+       "Credit Intermediation",
+       "Financial Services"
+      ]
+     },
+     "social_profiles": null
+    }
+   },
+   {
+    "confidence_score": 0.6,
+    "company_data": {
+     "crustdata_company_id": 1098,
+     "basic_info": {
+      "name": "Dabur India Limited",
+      "crustdata_company_id": 1098,
+      "primary_domain": "dabur.com",
+      "all_domains": [
+       "dabur.com"
+      ],
+      "website": "http://www.dabur.com",
+      "professional_network_url": "https://www.linkedin.com/company/dabur-india-limited",
+      "professional_network_id": "7203",
+      "profile_name": "Dabur India Limited",
+      "logo_permalink": "https://crustdata-media.s3.us-east-2.amazonaws.com/company/f95751c91341f980a81bc7739f76074ec0042c254272eccb0fd5a3203c54be3a.jpg",
+      "description": "We are Dabur, an Indian Transnational offering the best nature-based solutions to provide holistic Health & Well-Being to households in more than 120 markets spanning Asia, Europe and The US. A world leader in Ayurveda, we are a family of over 7,000 individuals continuously striving to conduct business in an environmentally sustainable manner.Home to trusted household brands like Dabur Chyawanprash, Dabur Honey, Dabur Red Paste, Dabur Amla, Vatika and Real, we are recognized the world over for our leadership, innovation and ability to reinvent ourselves and stay relevant for consumers across generations and geographies.At the heart of our success is our team of diverse, experienced and talented employees. They play a key role in seamlessly driving of our operations, developing and delivering nature-based solutions on time, every time, with their passion, excellence and innovative spirit.Be a part of one of the world’s Most Trusted brands... It’s an opportunity to learn, develop and enhance your skills, while improving the lives of consumers and communities.",
+      "company_type": "Public Company",
+      "year_founded": 1884,
+      "employee_count_range": "5001-10000",
+      "markets": [
+       "NSE"
+      ],
+      "industries": [
+       "Manufacturing"
+      ]
+     },
+     "social_profiles": null
+    }
+   },
+   {
+    "confidence_score": 0.6,
+    "company_data": {
+     "crustdata_company_id": 2957,
+     "basic_info": {
+      "name": "Maruti Suzuki India Limited",
+      "crustdata_company_id": 2957,
+      "primary_domain": "marutisuzuki.com",
+      "all_domains": [
+       "marutisuzuki.com"
+      ],
+      "website": "http://www.marutisuzuki.com",
+      "professional_network_url": "https://www.linkedin.com/company/maruti-udyog-limited",
+      "professional_network_id": "8412",
+      "profile_name": "Maruti Suzuki India Limited",
+      "logo_permalink": "https://crustdata-media.s3.us-east-2.amazonaws.com/company/1da95efc7247e4f5084015894c2f71ba0d61eea87b0821b573b64953e8e48b1f.jpg",
+      "description": "Maruti Suzuki was established with a dream to provide the 'Joy of Mobility' in the early 1980s. With a humble start of manufacturing about 20,000 cars in a year, the Company has grown leaps and bounds, manufacturing close to 2 million cars a year in FY 2022-23. Over the last four decades, the Company has served over 27 million happy customers in India and around 100 countries of the world. It maintained its market leadership in India throughout–reflecting the Company’s obsession with creating customer delight and demonstrating its agility to adapt to the changing times. This was possible by leveraging the unique ability of Suzuki Motor Corporation (parent company) to design feature-rich, safer, environment-friendly products, delivering world-class quality at an affordable price. In FY 2023-24, Maruti Suzuki embarked on an ambitious path in terms of manufacturing scale, while simultaneously transiting towards a low-carbon path. This marks a new phase for the Company.",
+      "company_type": "Public Company",
+      "year_founded": 1982,
+      "employee_count_range": "10001+",
+      "markets": [
+       "PRIVATE"
+      ],
+      "industries": [
+       "Motor Vehicle Manufacturing",
+       "Transportation Equipment Manufacturing",
+       "Manufacturing"
+      ]
+     },
+     "social_profiles": null
+    }
+   },
+   {
+    "confidence_score": 0.6,
+    "company_data": {
+     "crustdata_company_id": 1388078,
+     "basic_info": {
+      "name": "Air India Limited",
+      "crustdata_company_id": 1388078,
+      "primary_domain": "airindia.com",
+      "all_domains": [
+       "airindia.com"
+      ],
+      "website": "https://linktr.ee/airindia",
+      "professional_network_url": "https://www.linkedin.com/company/airindia",
+      "professional_network_id": "3751291",
+      "profile_name": "Air India Limited",
+      "logo_permalink": "https://crustdata-media.s3.us-east-2.amazonaws.com/company/d1ed9382f46d1b816816365a62fc399cfdff24ca712bd9c295f584cf3adc527e.jpg",
+      "description": "Air India Limited",
+      "company_type": "Government Agency",
+      "year_founded": 1932,
+      "employee_count_range": "10001+",
+      "markets": [
+       "PRIVATE"
+      ],
+      "industries": [
+       "Airlines and Aviation",
+       "Transportation, Logistics, Supply Chain and Storage"
+      ]
+     },
+     "social_profiles": null
+    }
+   },
+   {
+    "confidence_score": 0.6,
+    "company_data": {
+     "crustdata_company_id": 1032977,
+     "basic_info": {
+      "name": "PwC India",
+      "crustdata_company_id": 1032977,
+      "primary_domain": "pwc.in",
+      "all_domains": [
+       "pwc.to",
+       "pwc.com",
+       "pwc.in"
+      ],
+      "website": "http://www.pwc.in",
+      "professional_network_url": "https://www.linkedin.com/company/pwc-india",
+      "professional_network_id": "1092713",
+      "profile_name": "PwC India",
+      "logo_permalink": "https://crustdata-media.s3.us-east-2.amazonaws.com/company/f2cbaf547bf37bbffbee55ed98648838e21713382f3af12c78eb77d142404b9b.jpg",
+      "description": "At PwC, we help clients build trust and reinvent so they can turn complexity into a competitive advantage. We’re a tech-forward, people-empowered network with more than 360,000 people in more than 130 countries and territories. Across audit and assurance, tax and legal, deals, and consulting, we help clients build, accelerate, and sustain momentum. Find out more at www.pwc.com.PwC refers to the PwC network and/or one or more of its member firms, each of which is a separate legal entity. Please see www.pwc.com/structure for further details.",
+      "company_type": "Privately Held",
+      "year_founded": 1880,
+      "employee_count_range": "10001+",
+      "markets": [
+       "PRIVATE"
+      ],
+      "industries": [
+       "Business Consulting and Services",
+       "Professional Services"
+      ]
+     },
+     "social_profiles": null
+    }
+   },
+   {
+    "confidence_score": 0.6,
+    "company_data": {
+     "crustdata_company_id": 17303,
+     "basic_info": {
+      "name": "KPMG India",
+      "crustdata_company_id": 17303,
+      "primary_domain": "social.kpmg",
+      "all_domains": [
+       "kpmg.com",
+       "social.kpmg"
+      ],
+      "website": "https://social.kpmg/contactus",
+      "professional_network_url": "https://www.linkedin.com/company/kpmgindia",
+      "professional_network_id": "2525298",
+      "profile_name": "KPMG India",
+      "logo_permalink": "https://crustdata-media.s3.us-east-2.amazonaws.com/company/ce51bc903f93d075d1f267b7224bd78e7245cf7ab4ba8a340015bff68ba08cf5.jpg",
+      "description": "KPMG entities in India are established under the laws of India and are owned and managed (as the case may be) by established Indian professionals. Established in September 1993, the KPMG entities have rapidly built a significant competitive presence in the country. Today we operate from offices across 14 cities including in Ahmedabad, Bengaluru, Chandigarh, Chennai, Gurugram, Hyderabad, Jaipur, Kochi, Kolkata, Mumbai, Noida, Pune, Vadodara and Vijayawada.KPMG entities have a domestic client base of over 2700 companies. Our global approach to service delivery helps provide value-added services to clients.Our differentiation is derived from a rapid performance-based, industry-tailored and technology-enabled business advisory services delivered by some of the leading talented professionals in the country. KPMG professionals are grouped by industry focus and our clients are able to deal with industry professionals who speak their language. Our internal information technology and knowledge management systems enable the delivery of informed and timely business advice to clients.",
+      "company_type": "Partnership",
+      "year_founded": 1993,
+      "employee_count_range": "10001+",
+      "markets": [
+       "PRIVATE"
+      ],
+      "industries": [
+       "Business Consulting and Services",
+       "Professional Services"
+      ]
+     },
+     "social_profiles": null
+    }
+   },
+   {
+    "confidence_score": 0.6,
+    "company_data": {
+     "crustdata_company_id": 1088826,
+     "basic_info": {
+      "name": "Accenture in India",
+      "crustdata_company_id": 1088826,
+      "primary_domain": "accenture.com",
+      "all_domains": [
+       "accenture.com"
+      ],
+      "website": "http://www.accenture.com/india",
+      "professional_network_url": "https://www.linkedin.com/company/accentureindia",
+      "professional_network_id": "9215331",
+      "profile_name": "Accenture in India",
+      "logo_permalink": "https://crustdata-media.s3.us-east-2.amazonaws.com/company/07ca3374eebb954741428b1dc7e7427ac32eec4fdfd130428f9d5ee6c9f3bdad.jpg",
+      "description": "Accenture is a global professional services company with leading capabilities in digital, cloud and security. Combining unmatched experience and specialized skills across more than 40 industries, we offer Strategy and Consulting, Interactive, Technology and Operations services — all powered by the world’s largest network of Advanced Technology and Intelligent Operations centers. Our 699,000 people deliver on the promise of technology and human ingenuity every day, serving clients in more than 120 countries. We embrace the power of change to create value and shared success for our clients, people, shareholders, partners and communities. Visit us at accenture.com.",
+      "company_type": "Public Company",
+      "year_founded": 1989,
+      "employee_count_range": "10001+",
+      "markets": [],
+      "industries": [
+       "IT Services and IT Consulting",
+       "Professional Services"
+      ]
+     },
+     "social_profiles": null
+    }
+   },
+   {
+    "confidence_score": 0.6,
+    "company_data": {
+     "crustdata_company_id": 4202,
+     "basic_info": {
+      "name": "Steel Authority of India Limited",
+      "crustdata_company_id": 4202,
+      "primary_domain": "sail.co.in",
+      "all_domains": [
+       "sail.co.in"
+      ],
+      "website": "https://www.sail.co.in",
+      "professional_network_url": "https://www.linkedin.com/company/steel-authority-of-india-limited",
+      "professional_network_id": "21190",
+      "profile_name": "Steel Authority of India Limited",
+      "logo_permalink": "https://crustdata-media.s3.us-east-2.amazonaws.com/company/1b6b88b42366f1881f3cd9db931c46524e42aaa2a3fe33d9b05542b1730ea39b.jpg",
+      "description": "Steel Authority of India Limited (SAIL) traces its origin to the formative years of an emerging nation - India. After independence, the steel sector was to propel the economic growth and rapid industrialization of the country, and since 1973, SAIL steel has played a pivotal role in transforming the nation. SAIL is the largest steel-making company in India and one of the seven Maharatna’s of the country’s Central Public Sector Enterprises. We produce top quality steel and iron at five integrated plants and three special steel plants, located principally in the eastern and central regions of India and situated close to domestic sources of raw materials. We manufacture and sell a broad range of steel products which are high in demand in the domestic as well as international market. Visit this page regularly to stay connected and get updates about our products, new initiatives, accomplishments, and more.. Follow us at X: www.x.com/SAILSteel and www.instgram.com/steelauthority",
+      "company_type": "Public Company",
+      "year_founded": 1954,
+      "employee_count_range": "10001+",
+      "markets": [
+       "NSE"
+      ],
+      "industries": [
+       "Manufacturing"
+      ]
+     },
+     "social_profiles": null
+    }
+   },
+   {
+    "confidence_score": 0.6,
+    "company_data": {
+     "crustdata_company_id": 53833,
+     "basic_info": {
+      "name": "Kia India",
+      "crustdata_company_id": 53833,
+      "primary_domain": "kiaindia.net",
+      "all_domains": [
+       "kia.com",
+       "kiaindia.net"
+      ],
+      "website": "https://career.kiaindia.net/kiaindia/",
+      "professional_network_url": "https://www.linkedin.com/company/kiaind",
+      "professional_network_id": "13616676",
+      "profile_name": "Kia India",
+      "logo_permalink": "https://crustdata-media.s3.us-east-2.amazonaws.com/company/39c9ad80cb69eb2e37ae6ec48dcd803b285fadc463f22561760bc6c199232426.jpg",
+      "description": "What moves you?A new idea. A new destination. A different perspective. A desire to challenge the expected. Or simply the feeling that there is something more waiting around the corner. At Kia, we believe movement begins long before the wheels start turning. It begins with inspiration.That belief is at the heart of Movement That Inspires — our philosophy of creating products, experiences and ideas that move people, not just physically, but emotionally and culturally. In India, that belief comes to life across a growing portfolio built for different ambitions and different ways of moving — Seltos, Sonet, Syros, Carens Clavis, Carnival, Sorento, EV6, EV9, Carens Clavis EV and Syros EV.Different vehicles. Different technologies. Different journeys. One Kia. But our journey in India extends beyond our cars.With 15 lakh+ Kia vehicles on Indian roads, a world-class manufacturing facility in Anantapur with an annual production capacity of 4 lakh units, and a sales and service network spanning 891 touchpoints across 402 cities, we have built a growing ecosystem around the people who choose to move with us. More than 5 lakh connected Kia cars on Indian roads reflect our belief that technology should make every journey smarter and more intuitive.And the people behind Kia matter just as much. Kia India has been Great Place to Work® CertifiedTM for two consecutive years, making us the only car manufacturer in India to achieve this back-to-back milestone. Because creating inspiring experiences for the world begins with creating an environment where our own people can thrive, challenge convention and do their best work.As India moves into its next chapter, so do we — exploring new technologies, new experiences and new ways to inspire people to move forward. Because the most meaningful journeys don't just take you somewhere. They move you.Want to be part of the journey? Explore opportunities and build what’s next with Kia India.",
+      "company_type": "Privately Held",
+      "year_founded": null,
+      "employee_count_range": "1001-5000",
+      "markets": [],
+      "industries": [
+       "Motor Vehicle Manufacturing",
+       "Transportation Equipment Manufacturing",
+       "Manufacturing"
+      ]
+     },
+     "social_profiles": null
+    }
+   },
+   {
+    "confidence_score": 0.6,
+    "company_data": {
+     "crustdata_company_id": 15829,
+     "basic_info": {
+      "name": "Quasar",
+      "crustdata_company_id": 15829,
+      "primary_domain": "quasar.co.in",
+      "all_domains": [
+       "quasar.co.in"
+      ],
+      "website": "http://www.quasar.co.in",
+      "professional_network_url": "https://www.linkedin.com/company/quasar",
+      "professional_network_id": "12256",
+      "profile_name": "Quasar",
+      "logo_permalink": "https://crustdata-media.s3.us-east-2.amazonaws.com/company/1dda71bc3c9b29129f6719e5f574e5ed51bb414a8c1bd3d8db620fcef0792d39.jpg",
+      "description": "We are full service digital marketing services company providing end to end solution on digital marketing to prestigious clients like Microsoft, Eureka Forbes, Skoda, Sharekhan, Tata Aig, General Motors, Tata Indicom, Channel [V], Aviva Life Insurance, Monster.com, Makemytrip.com, Kotak Group amongst others.",
+      "company_type": "Privately Held",
+      "year_founded": 2005,
+      "employee_count_range": "51-200",
+      "markets": [
+       "PRIVATE"
+      ],
+      "industries": [
+       "Advertising Services",
+       "Professional Services"
+      ]
+     },
+     "social_profiles": null
+    }
+   },
+   {
+    "confidence_score": 0.6,
+    "company_data": {
+     "crustdata_company_id": 611436,
+     "basic_info": {
+      "name": "Walmart Global Tech India",
+      "crustdata_company_id": 611436,
+      "primary_domain": "walmart.com",
+      "all_domains": [
+       "walmart.com"
+      ],
+      "website": "https://tech.walmart.com/content/walmart-global-tech/en_us.html",
+      "professional_network_url": "https://www.linkedin.com/company/walmartglobaltechindia",
+      "professional_network_id": "9390173",
+      "profile_name": "Walmart Global Tech India",
+      "logo_permalink": "https://crustdata-media.s3.us-east-2.amazonaws.com/company/4b8c868a7b06fcd78cf8cd9aa3285e6e0c6ffc0481cc015d5cb3a2a26947173a.jpg",
+      "description": "We’re a tech powerhouse that innovates for the world’s largest retailer - Walmart. Since our inception, we've been dedicated to bringing about customer delight and convenience, on a global scale. Our technology-first products and solutions cater to millions of customers' needs while saving them time and money.  Ready to spark joy with the power of tech?Visit our website.",
+      "company_type": "Public Company",
+      "year_founded": 1962,
+      "employee_count_range": "10001+",
+      "markets": [
+       "PRIVATE"
+      ],
+      "industries": [
+       "Software Development",
+       "Technology, Information and Internet",
+       "Technology, Information and Media"
+      ]
+     },
+     "social_profiles": null
+    }
+   },
+   {
+    "confidence_score": 0.6,
+    "company_data": {
+     "crustdata_company_id": 7608,
+     "basic_info": {
+      "name": "Future Group India",
+      "crustdata_company_id": 7608,
+      "primary_domain": "futuregroup.in",
+      "all_domains": [
+       "futuregroup.in"
+      ],
+      "website": "http://www.futuregroup.in/",
+      "professional_network_url": "https://www.linkedin.com/company/future-group-people-office",
+      "professional_network_id": "872046",
+      "profile_name": "Future Group India",
+      "logo_permalink": "https://crustdata-media.s3.us-east-2.amazonaws.com/company/bbf7b37b1cdd6a1c3a9b8806ccdd5486939b84b69c9e8ac048ced85d14087307.jpg",
+      "description": "AboutWorking with Future Group gives you an opportunity to be part of a family with a unique culture and beliefs. Drawing from the vision of modern Indian retail, we have built a company that our people are proud of and our customers and communities value.MissionWe share the vision and belief that our customers and stakeholders shall be served only by creating and executing future scenarios in the consumption space leading to economic development.DescriptionFuture Group understands the soul of Indian consumers. As one of India’s retail pioneers with multiple retail formats, we connect a diverse and passionate community of Indian buyers, sellers and businesses. The collective impact on business is staggering: Around 220 million customers walk into our stores each year and choose products and services supplied by over 30,000 small, medium and large entrepreneurs and manufacturers from across India. And this number is set to grow.",
+      "company_type": "Privately Held",
+      "year_founded": 1980,
+      "employee_count_range": "10001+",
+      "markets": [
+       "PRIVATE"
+      ],
+      "industries": [
+       "Manufacturing"
+      ]
+     },
+     "social_profiles": null
+    }
+   },
+   {
+    "confidence_score": 0.6,
+    "company_data": {
+     "crustdata_company_id": 1898,
+     "basic_info": {
+      "name": "Havells India Ltd",
+      "crustdata_company_id": 1898,
+      "primary_domain": "havells.com",
+      "all_domains": [
+       "standardelectricals.com",
+       "havells.com"
+      ],
+      "website": "http://www.havells.com",
+      "professional_network_url": "https://www.linkedin.com/company/havells-india-ltd",
+      "professional_network_id": "81758",
+      "profile_name": "Havells India Ltd",
+      "logo_permalink": "https://crustdata-media.s3.us-east-2.amazonaws.com/company/c063101ca7e94749c2e2ddda73d26736b21b05fcedb58657672f12ba8fe24af9.jpg",
+      "description": "Havells India Limited is a leading FMEG company with a strong global presence, manufacturing a wide range of electrical products for residential, commercial, and industrial use. Key brands include Havells, Havells Studio, Lloyd, Havells Crabtree, Standard Electricals and REO.With a focus on innovation and customer satisfaction, Havells boasts a robust distribution network, exclusive brand showrooms, and a strong emphasis on service. The company prioritizes sustainability, with a focus on renewable energy, waste reduction, and environmental conservation.Havells is committed to social responsibility, with initiatives in education, sanitation, and community development. Recognized for its sustainability efforts, Havells has been ranked in the Dow Jones Sustainability Index and maintains an 'A' rating in the MSCI ESG Rating.Learn more about Havells on the following channels: Facebook I Youtube I Twitter I Instagram I",
+      "company_type": "Public Company",
+      "year_founded": 1958,
+      "employee_count_range": "5001-10000",
+      "markets": [
+       "NSE"
+      ],
+      "industries": [
+       "Appliances, Electrical, and Electronics Manufacturing",
+       "Manufacturing"
+      ]
+     },
+     "social_profiles": null
+    }
+   },
+   {
+    "confidence_score": 0.6,
+    "company_data": {
+     "crustdata_company_id": 6219,
+     "basic_info": {
+      "name": "Home Credit India",
+      "crustdata_company_id": 6219,
+      "primary_domain": "homecredit.co.in",
+      "all_domains": [
+       "homecredit.co.in"
+      ],
+      "website": "http://www.homecredit.co.in",
+      "professional_network_url": "https://www.linkedin.com/company/home-credit-india",
+      "professional_network_id": "3309352",
+      "profile_name": "Home Credit India",
+      "logo_permalink": "https://crustdata-media.s3.us-east-2.amazonaws.com/company/ad934b95f3457b987df8a5943ad6e7d9e7f952381cdfc3bdafc66e9554d3a036.jpg",
+      "description": "Home Credit India Finance Pvt. Ltd., a subsidiary of TVS Holdings Ltd.  is a leading consumer finance company committed to driving credit penetration and financial inclusion across India. Home Credit India offers a diversified range of innovative products, supported by a superior customer experience, and continues to expand its pan-India presence. With a focus on providing simple, trustworthy, transparent, tech-driven accessible financial solutions, Home Credit India has been part of financial journey for crores of customers through a robust network of points-of-sale (PoS) spread across India.For more information, visit www.homecredit.co.in",
+      "company_type": "Privately Held",
+      "year_founded": 2012,
+      "employee_count_range": "10001+",
+      "markets": [
+       "PRIVATE"
+      ],
+      "industries": [
+       "Financial Services"
+      ]
+     },
+     "social_profiles": null
+    }
+   },
+   {
+    "confidence_score": 0.6,
+    "company_data": {
+     "crustdata_company_id": 1382539,
+     "basic_info": {
+      "name": "Government of India",
+      "crustdata_company_id": 1382539,
+      "primary_domain": "svpnpa.gov.in",
+      "all_domains": [
+       "svpnpa.gov.in"
+      ],
+      "website": "http://www.svpnpa.gov.in",
+      "professional_network_url": "https://www.linkedin.com/company/government-of-india",
+      "professional_network_id": "1695580",
+      "profile_name": "Government of India",
+      "logo_permalink": "https://crustdata-media.s3.us-east-2.amazonaws.com/company/35375a553c7019cba70dd6d7e9e66ad2aeb5c128514056c34c1285c196ee99d0.jpg",
+      "description": "he Government of India, officially known as the Union Government, and also known as the Central Government, was established by the Constitution of India, and is the governing authority of a union of 28 states and seven union territories, collectively called the Republic of India. It is seated in New Delhi, the capital of India.The government comprises three branches: the executive, the legislative and the judiciary. The executive branch headed by the President, who is the Head of State and exercises his or her power directly or through officers subordinate to him.[1] The Legislative branch or the Parliament consists of the lower house, the Lok Sabha, and the upper house, the Rajya Sabha, as well as the president. The Judicial branch has the Supreme Court at its apex, 21 High Courts, and numerous civil, criminal and family courts at the district level.The basic civil and criminal laws governing the citizens of India are set down in major parliamentary legislation, such as the Civil Procedure Code, the Indian Penal Code, and the Criminal Procedure Code. The union and individual state governments consist of executive, legislative and judicial branches. The legal system as applicable to the federal and individual state governments is based on the English Common and Statutory Law. India accepts International Court of Justice jurisdiction with several reservations.",
+      "company_type": "Government Agency",
+      "year_founded": 1947,
+      "employee_count_range": "10001+",
+      "markets": [
+       "PRIVATE"
+      ],
+      "industries": [
+       "Law Enforcement",
+       "Administration of Justice",
+       "Government Administration"
+      ]
+     },
+     "social_profiles": null
+    }
+   },
+   {
+    "confidence_score": 0.6,
+    "company_data": {
+     "crustdata_company_id": 1522601,
+     "basic_info": {
+      "name": "Berger Paints India",
+      "crustdata_company_id": 1522601,
+      "primary_domain": "bergerpaints.com",
+      "all_domains": [
+       "bitly.com",
+       "bergerpaints.com"
+      ],
+      "website": "https://bit.ly/bergerpaintsindia",
+      "professional_network_url": "https://www.linkedin.com/company/bergerpaintsindia",
+      "professional_network_id": "3114627",
+      "profile_name": "Berger Paints India",
+      "logo_permalink": "https://crustdata-media.s3.us-east-2.amazonaws.com/company/e75737eb181b49853544fe85d38a0b8c8f24deb1a329364b75fb34df40b7b2eb.jpg",
+      "description": "For over a century, Berger Paints has been creating colours that beautify, protect and endure.From our beginnings in India in 1923 to becoming the country’s second-largest paint company and India’s leader in protective coatings, our journey has been shaped by innovation, trust and performance. Today, we continue to deliver solutions across decorative, industrial and protective coatings that are built to stand the test of time.The same belief that has shaped our products for over a century now shapes our purpose.Our brand philosophy, Rang Bana Rahe, is rooted in a simple idea: just as colours should stay vibrant through rain, dust, heat and time, the colours we carry within, our joy, courage and spirit, should stay resilient through life’s changing seasons.This philosophy guides everything we do. It shapes the products we create, the relationships we build with our consumers, dealer partners and painters, and the culture we nurture for our employees.Together, we are creating a future where colours do more than transform spaces. They protect what matters, celebrate resilience and inspire people to stay true to themselves.",
+      "company_type": "Public Company",
+      "year_founded": null,
+      "employee_count_range": "1001-5000",
+      "markets": [],
+      "industries": [
+       "Manufacturing"
+      ]
+     },
+     "social_profiles": null
+    }
+   },
+   {
+    "confidence_score": 0.6,
+    "company_data": {
+     "crustdata_company_id": 556,
+     "basic_info": {
+      "name": "Bank of India",
+      "crustdata_company_id": 556,
+      "primary_domain": "bankofindia.bank.in",
+      "all_domains": [
+       "bankofindia.co.in",
+       "bankofindia.bank.in"
+      ],
+      "website": "https://bankofindia.bank.in/",
+      "professional_network_url": "https://www.linkedin.com/company/bankofindiaofficial",
+      "professional_network_id": "80751496",
+      "profile_name": "Bank of India",
+      "logo_permalink": "https://crustdata-media.s3.us-east-2.amazonaws.com/company/64259f284b073bec3706ff6b4669c3e4653240bca469f440e6b4a71e0973dc4a.jpg",
+      "description": "Welcome to Bank of India's official LinkedIn page! Join us & stay tuned to learn about our products, exciting offers & latest happenings.Bank of India was founded on 7th September, 1906 by a group of eminent business professionals from Mumbai. The Bank was under private ownership and control till July 1969 when it was nationalized along with 13 other banks.Beginning with one office in Mumbai, with a paid-up capital of Rs.50 lakh and 50 employees, the Bank has made a rapid growth over the years and blossomed into a mighty institution with a strong national presence and sizable international operations. In business volume, the Bank occupies a premier position among the nationalized banks.The Bank has over 5100 branches in India spread over all states/ union territories including specialized branches. These branches are controlled through 68 Zonal Offices and 12 NBG Offices. There are 23 foreign branches, 4 foreign subsidiaries, 1 representative office and 1 joint venture abroad.",
+      "company_type": "Public Company",
+      "year_founded": 1906,
+      "employee_count_range": "10001+",
+      "markets": [
+       "NSE"
+      ],
+      "industries": [
+       "Banking",
+       "Credit Intermediation",
+       "Financial Services"
+      ]
+     },
+     "social_profiles": null
+    }
+   },
+   {
+    "confidence_score": 0.6,
+    "company_data": {
+     "crustdata_company_id": 1149716,
+     "basic_info": {
+      "name": "PwC Acceleration Center India",
+      "crustdata_company_id": 1149716,
+      "primary_domain": "pwc.com",
+      "all_domains": [
+       "pwc.com"
+      ],
+      "website": "https://jobs-ta.pwc.com/global/en/ACs-in-India-Career-Site",
+      "professional_network_url": "https://www.linkedin.com/company/pwc-ac-india",
+      "professional_network_id": "14524301",
+      "profile_name": "PwC Acceleration Center India",
+      "logo_permalink": "https://crustdata-media.s3.us-east-2.amazonaws.com/company/e30d917671605ddda8e266088e7a3ff79d195fbde9b775a9c7c9b66e4c259839.jpg",
+      "description": "PricewaterhouseCoopers Service Delivery Center, Kolkata (PwC SDC, Kolkata) and PricewaterhouseCoopers Service Delivery Center, Bangalore (PwC SDC, Bangalore) are now PwC Acceleration Centers in India.The Acceleration Centers in India enable PwC territories across the world in growth and operational excellence by providing high quality services. We currently have offices in Kolkata, Hyderabad, Mumbai and Bangalore. Acceleration Centers (ACs) are PwC’s diverse, global talent hubs focused on enabling growth for the organization and value creation for our clients. The ACs serve as global competency centers providing the PwC network with scale, talent, skills and a platform for innovation and client service excellence. The ACs are integral to achieving PwC purpose solving important problems - by mobilizing the best capabilities worldwide to address our stakeholders’ most important needs. An optimal combination of people and technology, PwC ACs help unlock opportunities for our clients and our people. They help make more possible.At PwC Acceleration Centers in India, our people are at the front and center of the AC mission of creating value through global talents working together. We are proud to be working with some of the best minds in the country and many more. They have breadth and depth of competencies that help the global network take on challenging engagements.",
+      "company_type": "Privately Held",
+      "year_founded": null,
+      "employee_count_range": "10001+",
+      "markets": [],
+      "industries": [
+       "Professional Services"
+      ]
+     },
+     "social_profiles": null
+    }
+   },
+   {
+    "confidence_score": 0.6,
+    "company_data": {
+     "crustdata_company_id": 1035345,
+     "basic_info": {
+      "name": "IIFL (India Infoline Group)",
+      "crustdata_company_id": 1035345,
+      "primary_domain": "iiflrealty.com",
+      "all_domains": [
+       "iifl.com",
+       "iiflrealty.com",
+       "indiainfoline.com"
+      ],
+      "website": "https://www.indiainfoline.com/",
+      "professional_network_url": "https://www.linkedin.com/company/iifl",
+      "professional_network_id": "239538",
+      "profile_name": "IIFL (India Infoline Group)",
+      "logo_permalink": "https://crustdata-media.s3.us-east-2.amazonaws.com/company/9b51b1c92dcf97693e5f9b8547accc03c4133577eab44c3b8bac2a932271a2fd.jpg",
+      "description": "IIFL group is one of India's largest diversified financial services conglomerates with three listed entities - IIFL Finance, IIFL Securities and 360 ONE Wealth & Asset Management. Founded in 1995 by Nirmal Jain as a small research house, today IIFL Group employs over 40000 people and caters to over 10 million customers through various financial products and services. Our strength has been to continuously innovate and reinvent ourselves. IIFL’s evolution from an entrepreneurial start-up in 1995 to a full range diversified financial services group is a story of steady growth by adapting to the dynamic business environment, without losing focus on our core domain of financial services. Today IIFL Group manages assets over $50 billion and is present across Asia, Europe and the US. IIFL Group's companies are backed by marquee investors like Fairfax, Bain Capital, The Capital Group and WardFerry among others.",
+      "company_type": "Public Company",
+      "year_founded": 1995,
+      "employee_count_range": "10001+",
+      "markets": [],
+      "industries": [
+       "Financial Services"
+      ]
+     },
+     "social_profiles": null
+    }
+   },
+   {
+    "confidence_score": 0.6,
+    "company_data": {
+     "crustdata_company_id": 5287,
+     "basic_info": {
+      "name": "Union Bank of India",
+      "crustdata_company_id": 5287,
+      "primary_domain": "unionbankofindia.bank.in",
+      "all_domains": [
+       "unionbankofindia.co.in",
+       "unionbankofindia.bank.in"
+      ],
+      "website": "http://www.unionbankofindia.bank.in/",
+      "professional_network_url": "https://www.linkedin.com/company/unionbankofindia",
+      "professional_network_id": "947768",
+      "profile_name": "Union Bank of India",
+      "logo_permalink": "https://crustdata-media.s3.us-east-2.amazonaws.com/company/0f1272201afdaca961c11149d7f41e407e1ff0a598aaf4a02e0c75827467ec3f.jpg",
+      "description": "Union Bank of India is one of the leading public sector banks of the country. The Bank is a listed entity, and the Government of India holds 74.76 percent in Bank's total paid-up capital. The Bank, having its headquarters at Mumbai (India), was registered on November 11, 1919 as a limited company. On 1st April 2020, Andhra Bank and Corporation Bank were amalgamated into Union Bank of India. Today, it has a network of 8650+ domestic branches, 8300 ATMs, 74,100+ employees and 26,600+ BC Points. The Bank’s total business as of 31st December 2025 stood at Rs. 22,39,740 crores, comprising Rs. 12,22,856 crore of deposits and Rs. 10,16,884 crores of advances. The Bank also has 2 branches overseas at Dubai International Financial Centre (UAE) & Sydney (Australia); 1 banking subsidiary at London (UK); 4 para-banking subsidiaries (domestic); 2 joint ventures and 1 associate -Andhra Pradesh Grameen Bank. Union Bank of India is the first large public sector bank in the country to have implemented 100% core banking solution. The Bank has received several awards and recognition for its prowess in technology, digital banking, financial inclusion, MSME and development of human resources.Do not share your Mobile Number, Account Details, Card details or any other Personal Detail publicly  on social media. Avoid clicking unknown links or downloading APKs from emails or messages.Stay alert and cyber-safe",
+      "company_type": "Public Company",
+      "year_founded": 1919,
+      "employee_count_range": "10001+",
+      "markets": [
+       "NSE"
+      ],
+      "industries": [
+       "Banking",
+       "Credit Intermediation",
+       "Financial Services"
+      ]
+     },
+     "social_profiles": null
+    }
+   },
+   {
+    "confidence_score": 0.6,
+    "company_data": {
+     "crustdata_company_id": 1037302,
+     "basic_info": {
+      "name": "Carelon Global Solutions India",
+      "crustdata_company_id": 1037302,
+      "primary_domain": "carelonglobal.in",
+      "all_domains": [
+       "carelonglobal.in",
+       "carelon.com"
+      ],
+      "website": "https://www.carelonglobal.in",
+      "professional_network_url": "https://www.linkedin.com/company/carelon-global-solutions-in",
+      "professional_network_id": "91669706",
+      "profile_name": "Carelon Global Solutions India",
+      "logo_permalink": "https://crustdata-media.s3.us-east-2.amazonaws.com/company/ac60b99fa4eba8c42858bdc7c1b8d8a6de66234e406ef8b9fd31b8c524535977.jpg",
+      "description": "Carelon Global Solutions makes healthcare operations more practical, effective, and efficient. Our global team of more than 25K innovators drives growth, delivers exceptional support, and develops digital tools specifically for health plans, providers, and systems. Each day, our partners and experts from across the globe implement new ways to save time and money — so doctors can focus on care.Formerly known as Legato Health Technologies, Carelon Global Solutions is part of the Carelon family of brands and is a fully owned subsidiary of Elevance Health. Headquartered in the United States, Carelon Global Solutions has talented teams in India, Ireland, the Philippines, and Puerto Rico.Want to be part of something meaningful? Join our growing team. We believe that when bold talent meets limitless thinking, the possibilities are endless. As part of our India team, you’ll work alongside some of the best minds in the business to solve healthcare’s most complex challenges. You’ll be part of an exciting, fast-paced, and supportive company culture, where all associates receive:•Competitive pay.•Generous benefits.•Training, mentorship, and growth.•Hybrid workplace flexibility.•The opportunity to help others and make a difference.Follow our Carelon Global Solutions India LinkedIn page for the latest job postings and timely company news.",
+      "company_type": "Public Company",
+      "year_founded": 2017,
+      "employee_count_range": "10001+",
+      "markets": [
+       "PRIVATE"
+      ],
+      "industries": [
+       "IT Services and IT Consulting",
+       "Professional Services"
+      ]
+     },
+     "social_profiles": null
+    }
+   },
+   {
+    "confidence_score": 0.6,
+    "company_data": {
+     "crustdata_company_id": 6062421,
+     "basic_info": {
+      "name": "Honda Cars India Ltd",
+      "crustdata_company_id": 6062421,
+      "primary_domain": "hondacarindia.com",
+      "all_domains": [
+       "hondacarindia.com"
+      ],
+      "website": "http://www.hondacarindia.com",
+      "professional_network_url": "https://www.linkedin.com/company/honda-cars-india-ltd",
+      "professional_network_id": "300365",
+      "profile_name": "Honda Cars India Ltd",
+      "logo_permalink": "https://crustdata-media.s3.us-east-2.amazonaws.com/company/ad7aefbfd260c9529754fecd0726a67fa99dc2925d0ed8caba3719a7daa85076.jpg",
+      "description": "Honda Cars India Ltd. (HCIL), a leading manufacturer of premium cars in India, was established in December 1995 with a commitment to provide Honda’s passenger car models and technologies, to the Indian customers. HCIL’s corporate office is based in Greater Noida, UP and its state-of-the-art manufacturing facility is located at Tapukara, District. Alwar, Rajasthan. Honda’s models are strongly associated with advanced design and technology, apart from their established qualities of durability, reliability, safety, and fuel-efficiency. The company has a strong sales and distribution network spread across the country. Besides the new car business, Honda offers one stop solution for buying and selling pre-owned cars through its business function Honda Auto Terrace. The Honda Certified Pre-owned cars come with an assurance of quality and peace of mind that caters to the diverse and burgeoning needs of pre-owned car buyers across the country.",
+      "company_type": "Partnership",
+      "year_founded": 1995,
+      "employee_count_range": "1001-5000",
+      "markets": [
+       "PRIVATE"
+      ],
+      "industries": [
+       "Motor Vehicle Manufacturing",
+       "Transportation Equipment Manufacturing",
+       "Manufacturing"
+      ]
+     },
+     "social_profiles": null
+    }
+   },
+   {
+    "confidence_score": 0.6,
+    "company_data": {
+     "crustdata_company_id": 611412,
+     "basic_info": {
+      "name": "Mercedes-Benz Research and Development India",
+      "crustdata_company_id": 611412,
+      "primary_domain": "mbrdi.co.in",
+      "all_domains": [
+       "daimler.com",
+       "mbrdi.co.in"
+      ],
+      "website": "https://www.mbrdi.co.in/#/",
+      "professional_network_url": "https://www.linkedin.com/company/mercedes-benz-research-and-development-india",
+      "professional_network_id": "293939",
+      "profile_name": "Mercedes-Benz Research and Development India",
+      "logo_permalink": "https://crustdata-media.s3.us-east-2.amazonaws.com/company/5cdb651f70ce232b0f594ae3a7fb20676dad71857e02e5df6c8cb8358c0d6a45.jpg",
+      "description": "Mercedes-Benz Research and Development India (MBRDI) is the largest research and development centre for Mercedes-Benz Group AG outside of Germany. With 30 years of innovation, MBRDI is contributing towards building the world’s most desirable cars, right here from India. Our mission - shape the future of sustainable mobility, one innovation at a time. MBRDI’s expertise includes developing new technologies like connected, autonomous and electric in the mobility world - driving digital acceleration, leading excellence in-car software and paving the way for sustainable mobility. MBRDI currently employs nearly 8500 professionals in the field of engineering, digitalisation, testing and simulation, and data science, with people at the heart of our culture.Our philosophy - When every individual shines in his or her own capabilities, we shine!  We are committed to building an environment where everyone is enabled to bring their true self to work, each day. By fostering a diverse & inclusive work ecosystem, and enabling equal opportunities, we are building a culture that inspires innovation and sparks creativity and growth.",
+      "company_type": "Privately Held",
+      "year_founded": 1996,
+      "employee_count_range": "5001-10000",
+      "markets": [
+       "PRIVATE"
+      ],
+      "industries": [
+       "Motor Vehicle Manufacturing",
+       "Transportation Equipment Manufacturing",
+       "Manufacturing"
+      ]
+     },
+     "social_profiles": null
+    }
+   }
+  ]
+ }
+]

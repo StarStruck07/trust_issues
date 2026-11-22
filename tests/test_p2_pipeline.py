@@ -142,8 +142,6 @@ def test_webhook_rejects_unsigned_and_forged(web):
     assert queued == []
 
 
-@pytest.mark.xfail(reason="crd/web/app.py calls db.save_watch_event(event_id, body) but db needs "
-                          "(event_id, watch_id, payload): fix pending from Prachi", strict=False)
 def test_webhook_accepts_signed_delivery_once(web):
     client, queued = web
     raw = json.dumps(PAYLOAD).encode()
