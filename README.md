@@ -86,9 +86,18 @@ every page. The verdicts and draft actions are real outputs of the scoring engin
 (this run: 248 trusted, 92 doubts, 39 don't trust, 45 can't tell or on hold; 85 drafts awaiting
 approval). It exists to show the product at a realistic scale, not as evidence of accuracy.
 
+### Real supply-chain demo (live data)
+
+`data/input/supply_chain_demo.csv` lists **14 well-known Indian supply-chain companies**: TCI, VRL,
+Gati, Allcargo, CONCOR, Xpressbees, Shadowfax, Ecom Express as carriers and warehouses; Flipkart, Nykaa,
+Zepto, Asian Paints, Marico, Lenskart as customers. Reviewed live on 22 Nov 2026 for **155 credits**
+(about 11 per company): **Zepto RED** (flood-hit delivery operations, paying 33 days late), **Nykaa and
+Lenskart AMBER**, 11 GREEN. Recorded, so it replays offline at 0 credits:
+`python -m crd.cli review "Run this week's review" -i data/input/supply_chain_demo.csv --mock`.
+
 ### Where it stands
 
-- **176 unit and integration tests pass**, Windows included.
+- **178 unit and integration tests pass**, Windows included.
 - **Graded cases: 12/12 pass, 0 wrong GREENs.** Every case company was recorded live on 22 Nov 2026
   (`CRD_RECORD=1`), so the run replays offline at 0 credits with `python -m crd.cli test --mock`.
 - **Mock mode never invents data.** A company with no recording gets "no recorded company data" →
