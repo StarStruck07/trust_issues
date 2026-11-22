@@ -74,6 +74,23 @@ def raise_watch(key: str, domain: str) -> str:
     existing = db.outbox_get(key)
     if existing:
         return existing["outbox_id"]
-    watch_id = watcher.create_watch([domain], os.getenv("WEBHOOK_URL"), every_hours=24)
+    url = os.getenv("WEBHOOK_URL") or _cfg_webhook()
+    if not url.startswith("https://"):
+        # No public callback (e.g. no ngrok during a local demo): Crustdata cannot call us back, so
+        # we record the request instead of failing the action; the weekly review still covers it.
+        body = (f"Daily re-check requested for {domain}. Crustdata watch not created: no public "
+                "webhook_url configured (set webhook_url in config.yaml to the ngrok URL).")
+        ref = db.outbox_insert(key, "watch", domain, "watch requested (no webhook configured)", body)
+        return ref or db.outbox_get(key)["outbox_id"]
+    watch_id = watcher.create_watch([domain], url, every_hours=24)
     ref = db.outbox_insert(key, "watch", domain, f"watch every 24h ({watch_id})", domain)
     return ref or db.outbox_get(key)["outbox_id"]
+
+
+def _cfg_webhook() -> str:
+    try:
+        from crd.deps import config
+
+        return str(config.get().get("webhook_url") or "")
+    except Exception:
+        return ""

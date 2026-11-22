@@ -81,6 +81,18 @@ def score(cps: list[Counterparty], entity: ResolvedEntity, evidence: list[Eviden
                                    note="ambiguous identity"))
         return finish(Rating.CANNOT_VERIFY, 0)
     if entity.status == "not_found":
+        # No company record, but the registry was searched with the exact legal name from the client's
+        # own list: an insolvency notice for that name is still a valid hard stop.
+        hs = {str(x).lower() for x in sc.hard_stops}
+        for e in ok:
+            val = str(e.value if not isinstance(e.value, dict) else e.value.get("status", "")).lower()
+            if e.signal == "insolvency" and e.source_type == "registry" and val in hs:
+                hard_stop = val
+                signals.append(SignalScore(signal="insolvency", points=-100, evidence_ids=[e.evidence_id],
+                                           note=f"hard stop: {val} (registry, by legal name)"))
+                conflicts.append(f"No company record matched '{primary.legal_name or primary.name}'; the "
+                                 "registry notice was found by the exact legal name from our list.")
+                return finish(Rating.RED, 0)
         if any(e.status == "unavailable" for e in id_ev):
             cannot_verify.append(
                 f"HELD: is '{primary.name}' a real, active company? Missing: identity check (source unavailable). "
