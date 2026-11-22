@@ -72,14 +72,78 @@ def src_link(e) -> Markup:
 
 def evlinks(text: str) -> Markup:
     """Turn [ev_xxx] markers into superscript links to the evidence row."""
-    out = re.sub(r"\[(ev_[A-Za-z0-9]+)\]",
-                 lambda m: f'<sup><a href="#{m.group(1)}">[{m.group(1)}]</a></sup>',
-                 str(escape(text or "")))
-    return Markup(out)
+    seen: dict[str, int] = {}
+
+    def cite(m):
+        eid = m.group(1)
+        n = seen.setdefault(eid, len(seen) + 1)
+        return f'<a class="cite" href="#{eid}" title="{eid}">{n}</a>'
+
+    return Markup(re.sub(r"\s*\[(ev_[A-Za-z0-9]+)\]", cite, str(escape(text or ""))))
+
+
+STATUS_LABEL = {
+    "proposed": "Draft only", "pending_approval": "Awaiting approval", "approved": "Approved · queued",
+    "executing": "Sending…", "done": "Done", "rejected": "Rejected", "held": "Held", "failed": "Failed",
+    "running": "Running", "partial": "Partial", "ok": "OK", "cached": "Cached", "error": "Error",
+    "unknown": "Unknown",
+}
+HUMAN = {
+    "headcount_qoq": "Headcount · quarter", "headcount_6m": "Headcount · 6 months", "hiring": "Hiring",
+    "news": "News", "leadership": "Leadership", "insolvency": "Insolvency", "mca_status": "MCA status",
+    "identity": "Identity", "warehouse_lessor": "warehouse lessor", "layoffs_or_shutdown": "Layoffs or shutdown reported",
+    "cirp_admitted": "insolvency (CIRP) admitted", "sole_source": "sole source",
+}
+
+
+def status_label(s) -> str:
+    s = _val(s)
+    return STATUS_LABEL.get(s, str(s).replace("_", " ").capitalize())
+
+
+def human(s) -> str:
+    s = str(_val(s) or "")
+    return HUMAN.get(s, s.replace("_", " "))
+
+
+def reason(text) -> str:
+    """Make a rule note readable: 'qoq -22.1% <= -20% -> -20' -> 'qoq -22.1% ≤ -20%'."""
+    t = str(text or "")
+    if t.startswith("hard stop: "):
+        return "Hard stop: " + human(t[len("hard stop: "):])
+    if t in HUMAN:
+        return HUMAN[t]
+    t = re.sub(r"\s*->\s*[+-]?\d+\s*$", "", t).replace("<=", "≤").replace(">=", "≥").replace("->", "→")
+    return t[:1].upper() + t[1:]
+
+
+def move(text) -> Markup:
+    """'AMBER → RED' as two small rating pills with an arrow."""
+    parts = re.split(r"\s*(?:→|->)\s*", str(text or ""))
+    if len(parts) != 2:
+        return Markup(escape(text or ""))
+    pill = lambda r: (f'<span class="pill sm r-{escape(r.strip().replace(" ", "_"))}">'
+                      f'{escape(report.rating_label(r.strip()))}</span>')
+    return Markup(f'<span class="move">{pill(parts[0])}<span class="arrow">→</span>{pill(parts[1])}</span>')
+
+
+def action_label(x) -> str:
+    if (getattr(x, "idempotency_key", "") or "").endswith(":account_call"):
+        return "Account owner call (instead of a terms change)"
+    t = _val(x.type)
+    return HUMAN_LABEL.get(t, t)
 
 
 env = templates.env
+env.filters["action_label"] = action_label
+env.filters["move"] = move
 env.filters["inr"] = report.inr
+env.filters["status_label"] = status_label
+env.filters["human"] = human
+env.filters["reason"] = reason
+env.filters["href"] = report.source_href
+env.globals["css_v"] = lambda: int((HERE / "static" / "style.css").stat().st_mtime)
+env.globals["MOCK"] = USING_FAKE_DB or os.getenv("CRD_MOCK", "1") == "1"
 env.filters["rating_label"] = report.rating_label
 env.filters["val"] = _val
 env.filters["src"] = src_link
@@ -184,7 +248,10 @@ def cp_detail(request: Request, run_id: str, cp_id: str):
         raise HTTPException(404, "assessment not found")
     evidence = [e for cp in a.cp_ids for e in db.get_evidence(run_id, cp)]
     actions = [x for x in db.get_actions(None, run_id) if x.cp_id in a.cp_ids]
+    from crd.actions import priority
+
     return page(request, "cp_detail.html", a=a, why=explain.why(run_id, cp_id) or {},
+                prio=priority.for_assessment(a, cfg=config.get()),
                 evidence=evidence, actions=actions, run_id=run_id)
 
 
@@ -201,16 +268,21 @@ def _assessment_for(act):
 
 
 @app.get("/approvals", response_class=HTMLResponse)
-def approvals(request: Request, done: str | None = None, err: str | None = None):
+def approvals(request: Request, done: str | None = None, err: str | None = None,
+              decision: str | None = None):
+    order = {"P1": 0, "P2": 1, "P3": 2, "P4": 3}
     pending = [{"act": x, "a": _assessment_for(x), "reasons": _reasons(x)}
                for x in db.get_actions("pending_approval")]
+    pending.sort(key=lambda p: order.get(getattr(p["act"], "priority", None) or "P4", 3))
     decided = [x for x in db.get_actions(["approved", "executing", "done", "rejected", "failed"])
                if not x.reversible][:10]
-    return page(request, "approvals.html", pending=pending, decided=decided, done=done, err=err)
+    return page(request, "approvals.html", pending=pending, decided=decided, done=done, err=err,
+                decision=decision)
 
 
 @app.post("/approvals/{action_id}")
-def decide(action_id: str, decision: str = Form(...), approver: str = Form(""), draft: str = Form("")):
+def decide(action_id: str, decision: str = Form(...), approver: str = Form(""), draft: str = Form(""),
+           senior: str = Form("")):
     approver = approver.strip()
     if not approver:
         return RedirectResponse(f"/approvals?err=approver#{action_id}", status_code=303)
@@ -218,6 +290,10 @@ def decide(action_id: str, decision: str = Form(...), approver: str = Form(""), 
     if not act:
         raise HTTPException(404, "action not found")
     if decision == "approve":
+        if getattr(act, "requires_senior", False):
+            if senior != "yes":
+                return RedirectResponse(f"/approvals?err=senior#{action_id}", status_code=303)
+            approver = f"{approver} (senior)"
         draft = draft.replace("\r\n", "\n")
         ok = db.transition_action(action_id, "pending_approval", "approved", draft=draft,
                                   draft_hash=sha256(draft), approved_by=approver, approved_at=_now(),
@@ -232,7 +308,7 @@ def decide(action_id: str, decision: str = Form(...), approver: str = Form(""), 
             return RedirectResponse(f"/approvals?err=changed#{action_id}", status_code=303)
     else:
         raise HTTPException(400, "decision must be approve or reject")
-    return RedirectResponse(f"/approvals?done={action_id}", status_code=303)
+    return RedirectResponse(f"/approvals?done={action_id}&decision={decision}", status_code=303)
 
 
 @app.post("/actions/{action_id}/retry")

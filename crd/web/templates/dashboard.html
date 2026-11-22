@@ -1,43 +1,148 @@
 {% extends "base.html" %}
 {% block content %}
-<form method="post" action="/runs" enctype="multipart/form-data">
-  <label for="request_text"><strong>What should the desk review?</strong></label>
-  <textarea id="request_text" name="request_text" rows="2">{{ default_request }}</textarea>
-  <div class="grid">
-    <label>Counterparty CSV <span class="muted">(optional — otherwise the stored list)</span>
-      <input type="file" name="csv_file" accept=".csv">
-    </label>
-    <div style="align-self:end"><button type="submit">Run review</button></div>
+{% if run %}
+{%- set rows = data.rows -%}
+{%- set ns = namespace(red=0, amber=0, cv=0, green=0, total=0) -%}
+{%- for r in rows -%}
+  {%- set ns.total = ns.total + (r.a.inr_at_risk or 0) -%}
+  {%- if r.rating == 'RED' %}{% set ns.red = ns.red + (r.a.inr_at_risk or 0) %}
+  {%- elif r.rating == 'AMBER' %}{% set ns.amber = ns.amber + (r.a.inr_at_risk or 0) %}
+  {%- elif r.rating == 'GREEN' %}{% set ns.green = ns.green + (r.a.inr_at_risk or 0) %}
+  {%- else %}{% set ns.cv = ns.cv + (r.a.inr_at_risk or 0) %}{% endif -%}
+{%- endfor -%}
+{%- set n = rows|length or 1 -%}
+{% endif %}
+
+<div class="page-head">
+  <div>
+    <h1>Weekly counterparty review</h1>
+    <div class="sub">{% if run %}Latest run <a href="/runs/{{ run.run_id }}">{{ run.run_id }}</a> · as of {{ run.as_of }} · {{ ui.status(run.status) }}{% else %}No review has run yet.{% endif %}</div>
   </div>
+  {% if run %}<div class="row">
+    <a class="btn" href="/runs/{{ run.run_id }}/files/review.json">{{ ui.icon('download', 15) }}JSON</a>
+    <a class="btn primary" href="/runs/{{ run.run_id }}/report">{{ ui.icon('file', 15) }}Open report</a>
+  </div>{% endif %}
+</div>
+
+<form class="card reqbar" method="post" action="/runs" enctype="multipart/form-data">
+  <div>
+    <label class="lbl" for="request_text">Ask the desk</label>
+    <textarea id="request_text" name="request_text" rows="1">{{ default_request }}</textarea>
+  </div>
+  <div class="file">
+    <label class="lbl" for="csv_file">Counterparty list <span class="faint">(optional)</span></label>
+    <input id="csv_file" type="file" name="csv_file" accept=".csv">
+  </div>
+  <button class="btn primary" type="submit" style="height:40px">{{ ui.icon('play', 14) }}Run review</button>
 </form>
 
 {% if run %}
-<h3 style="margin-top:1.5rem">Latest run · <a href="/runs/{{ run.run_id }}">{{ run.run_id }}</a>
-  <span class="muted">{{ run.status }} · {{ run.started_at }}</span></h3>
-<div class="tiles">
-  <div class="tile RED"><div class="n">{{ counts.RED }}</div>RED</div>
-  <div class="tile AMBER"><div class="n">{{ counts.AMBER }}</div>AMBER</div>
-  <div class="tile CV"><div class="n">{{ counts.CV }}</div>CANNOT VERIFY + HELD</div>
-  <div class="tile GREEN"><div class="n">{{ counts.GREEN }}</div>GREEN</div>
+<div class="section-title" style="margin-top:22px"><h2>Where the risk is</h2></div>
+<div class="kpis">
+  <button type="button" class="kpi k-RED" data-filter="RED"><div class="n">{{ counts.RED }}</div><div class="l">Red</div><div class="s">{{ ns.red|inr }} at risk</div></button>
+  <button type="button" class="kpi k-AMBER" data-filter="AMBER"><div class="n">{{ counts.AMBER }}</div><div class="l">Amber</div><div class="s">{{ ns.amber|inr }} at risk</div></button>
+  <button type="button" class="kpi k-CV" data-filter="CV"><div class="n">{{ counts.CV }}</div><div class="l">Cannot verify · Held</div><div class="s">needs a person</div></button>
+  <button type="button" class="kpi k-GREEN" data-filter="GREEN"><div class="n">{{ counts.GREEN }}</div><div class="l">Green</div><div class="s">no action needed</div></button>
 </div>
-<p class="muted">{{ data.costs.credits }} credits · {{ data.costs.inr|inr }} · {{ data.costs.calls }} calls · {{ data.costs.minutes }} min
-  · <a href="/runs/{{ run.run_id }}/report">Open report</a></p>
 
-<table class="dense striped">
-  <thead><tr>{% for f in data.fields %}<th>{{ f.replace('_', ' ') }}</th>{% endfor %}</tr></thead>
-  <tbody>
-  {% for r in data.rows %}<tr>
-    {% for f in data.fields %}{% set v = r.cells[f] %}<td>
-      {%- if f == 'display_name' -%}<a href="/cp/{{ run.run_id }}/{{ r.cp_id }}">{{ v }}</a>{% if r.a.cp_ids|length > 1 %} <span class="muted">({{ r.a.cp_ids|join(' + ') }})</span>{% endif %}
-      {%- elif f == 'rating' -%}<span class="badge r-{{ v }}">{{ v|rating_label }}</span>
-      {%- elif f in ('inr_at_risk', 'exposure_inr') -%}{{ v|inr }}
-      {%- elif f == 'sources' -%}{% for s in v %}{% if s.url %}<a class="src" href="{{ s.url }}" target="_blank">{{ s.label }} ↗</a>{% else %}<span class="muted">{{ s.label }}</span>{% endif %}{% if s.record_date %} <span class="muted">· {{ s.record_date }}</span>{% endif %}{% if not loop.last %}<br>{% endif %}{% endfor %}
-      {%- else -%}{{ v }}{%- endif -%}
-    </td>{% endfor %}
-  </tr>{% endfor %}
-  </tbody>
-</table>
+<div class="card" style="margin-top:12px">
+  <div class="metrics">
+    <span><b>{{ rows|length }}</b> counterparties</span>
+    <span><b>{{ ns.total|inr }}</b> total at risk</span>
+    <span><b>{{ pending_count }}</b> awaiting approval</span>
+    <span><b>{{ data.costs.credits }}</b> credits</span>
+    <span><b>{{ data.costs.inr|inr }}</b> spent</span>
+    <span><b>{{ data.costs.calls }}</b> calls{% if data.costs.cached_pct %} · {{ data.costs.cached_pct }}% cached{% endif %}</span>
+    {% if data.costs.minutes %}<span><b>{{ data.costs.minutes }}</b> min</span>{% endif %}
+  </div>
+  <div style="padding:0 16px 14px">
+    <div class="dist" title="Rating mix">
+      <span style="width:{{ 100 * counts.RED / n }}%;background:var(--red)"></span>
+      <span style="width:{{ 100 * counts.AMBER / n }}%;background:var(--amber)"></span>
+      <span style="width:{{ 100 * counts.CV / n }}%;background:var(--grey)"></span>
+      <span style="width:{{ 100 * counts.GREEN / n }}%;background:var(--green)"></span>
+    </div>
+  </div>
+</div>
+
+<div class="grid-2" style="margin-top:16px;align-items:start">
+  <div class="card">
+    <div class="card-head"><h3>Priority = rating × importance</h3><span class="muted small">same rating, different urgency</span></div>
+    <div class="card-body" style="padding:8px 10px 10px">
+      <table class="matrix">
+        <tr><th class="rowh"></th><th>Red</th><th>Amber</th><th>Verify · Held</th><th>Green</th></tr>
+        {% for imp in ['strategic', 'core', 'standard'] %}<tr>
+          <th class="rowh imp-{{ imp }}">{{ imp }}</th>
+          {% for col in ['RED', 'AMBER', 'CV', 'GREEN'] %}{% set cell = data.matrix[imp][col] %}
+          <td class="{{ 'zero' if not cell }} {{ 'hot' if cell and col == 'RED' and imp != 'standard' else ('warm' if cell and (col == 'AMBER' or col == 'RED')) }}">
+            <div class="n">{{ cell|length }}</div>
+            {% if cell %}<div class="who">{% for c in cell[:3] %}<a href="/cp/{{ run.run_id }}/{{ c.cp_id }}">{{ c.name }}</a>{% endfor %}</div>{% endif %}
+          </td>{% endfor %}
+        </tr>{% endfor %}
+      </table>
+    </div>
+  </div>
+  <div class="card">
+    <div class="card-head"><h3>How importance changes the action</h3></div>
+    <div class="card-body small" style="line-height:1.65">
+      <div class="row" style="gap:6px;margin-bottom:6px">{{ ui.prio('P1') }} act now {{ ui.prio('P2') }} this week {{ ui.prio('P3') }} monitor {{ ui.prio('P4') }} no action</div>
+      <ul style="margin:4px 0 0;padding-left:18px">
+        <li><b>Sole-source or strategic supplier</b> on Amber → line up a backup carrier now.</li>
+        <li><b>Customer who relies on us</b> on Amber → account-owner call, not a terms cut. They usually keep paying.</li>
+        <li><b>Customer who can switch easily</b> → terms email at half the usual exposure bar.</li>
+        <li><b>Strategic accounts</b> → irreversible actions need a senior approver.</li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+{% if data.changes %}
+<div class="section-title"><h2>Changed since last review</h2><span class="count">{{ data.changes|length }}</span></div>
+<div class="changes">
+  {% for a in data.changes %}<a class="change" href="/cp/{{ run.run_id }}/{{ a.cp_ids[0] }}">{{ a.display_name }} {{ a.change_since_last|move }}</a>{% endfor %}
+</div>
+{% endif %}
+
+<div class="section-title">
+  <h2>Ranked by priority, then ₹ at risk</h2><span class="count" id="shown">{{ rows|length }}</span>
+  <span style="flex:1"></span>
+  <button type="button" class="btn sm" data-filter="ALL" id="clear" hidden>Show all</button>
+</div>
+<div class="card" style="overflow:auto">
+  <table class="tbl" id="ranked">
+    <thead><tr>{% for f in data.fields %}<th class="{{ 'right' if f in ('inr_at_risk','exposure_inr') }}">{{ f|human|replace('inr', '₹')|replace('display name', 'counterparty') }}</th>{% endfor %}</tr></thead>
+    <tbody>
+    {% for r in rows %}
+      <tr class="rated" data-r="{{ r.rating }}" data-g="{{ 'CV' if r.rating in ('CANNOT_VERIFY','HELD') else r.rating }}">
+        {% for f in data.fields %}{{ ui.field_cell(f, r.cells[f], r, run.run_id) }}{% endfor %}
+      </tr>
+    {% endfor %}
+    </tbody>
+  </table>
+</div>
+
+<script>
+(function () {
+  const rows = document.querySelectorAll('#ranked tbody tr');
+  const tiles = document.querySelectorAll('[data-filter]');
+  const clear = document.getElementById('clear');
+  let current = 'ALL';
+  function apply(f) {
+    current = (f === current || f === 'ALL') ? 'ALL' : f;
+    let n = 0;
+    rows.forEach(r => { const on = current === 'ALL' || r.dataset.g === current; r.classList.toggle('hidden', !on); if (on) n++; });
+    tiles.forEach(t => t.classList.toggle('on', t.dataset.filter === current));
+    document.getElementById('shown').textContent = n;
+    clear.hidden = current === 'ALL';
+  }
+  tiles.forEach(t => t.addEventListener('click', () => apply(t.dataset.filter)));
+})();
+</script>
 {% else %}
-<p class="muted">No runs yet. Start one above.</p>
+<div class="card empty" style="margin-top:16px">
+  {{ ui.icon('shield', 28) }}
+  <p class="strong" style="margin-top:8px">No reviews yet</p>
+  <p>Ask the desk above and click <b>Run review</b>. Results show up here, ranked by ₹ at risk.</p>
+</div>
 {% endif %}
 {% endblock %}

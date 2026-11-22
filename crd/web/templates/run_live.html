@@ -1,6 +1,11 @@
 {% extends "base.html" %}
 {% block content %}
-<h2>Run {{ run.run_id }}</h2>
-<p class="muted">“{{ run.request }}” · as of {{ run.as_of }} · started {{ run.started_at }}</p>
-<div id="progress">{% include "_progress.html" %}</div>
+<div class="crumbs"><a href="/runs">Runs</a> / {{ run.run_id }}</div>
+<div class="page-head">
+  <div>
+    <h1>Reviewing counterparties</h1>
+    <div class="sub">“{{ run.request }}” · as of {{ run.as_of }} · started {{ (run.started_at or '')[:19]|replace('T', ' ') }}</div>
+  </div>
+</div>
+{% include "_progress.html" %}
 {% endblock %}

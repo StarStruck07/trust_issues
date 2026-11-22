@@ -1,70 +1,147 @@
 {% extends "base.html" %}
+{% block title %}{{ a.display_name }} · Counterparty Risk Desk{% endblock %}
 {% block content %}
-{% set r = a.rating|val %}
-<p class="muted"><a href="/runs/{{ run_id }}/report">← report {{ run_id }}</a></p>
-<h2>{{ a.display_name }} <span class="badge r-{{ r }}">{{ r|rating_label }}</span></h2>
-<p>
-  {{ a.role }} · score <strong>{{ a.score }}/100</strong> · exposure {{ a.exposure_inr|inr }} · at risk <strong>{{ a.inr_at_risk|inr }}</strong>
-  {% if a.change_since_last %} · <strong>{{ a.change_since_last }}</strong>{% endif %}
-  {% if a.cp_ids|length > 1 %} · merged rows {{ a.cp_ids|join(', ') }}{% endif %}
-</p>
-<p>{{ a.explanation|evlinks }}</p>
+{%- set r = a.rating|val -%}
+{%- set rc = {'GREEN':'green','AMBER':'amber','RED':'red','HELD':'purple'}.get(r, 'grey') -%}
+{%- set final = why.final_score if why.final_score is not none else a.score -%}
+<div class="crumbs"><a href="/">Dashboard</a> / <a href="/runs/{{ run_id }}/report">{{ run_id }}</a> / {{ a.cp_ids|join(' + ') }}</div>
 
-<h4>Why this rating</h4>
-<table class="dense">
-  <thead><tr><th>Step</th><th>Points</th><th>Note</th><th>Evidence</th></tr></thead>
-  <tbody>
-    <tr><td>Start</td><td>{{ why.start or 70 }}</td><td class="muted">every counterparty starts here</td><td></td></tr>
-    {% for s in why.signals or [] %}<tr>
-      <td>{{ s.signal }}</td><td>{{ '%+d'|format(s.points) }}</td><td>{{ s.note }}</td>
-      <td>{% for e in s.evidence %}<a href="#{{ e.id }}">{{ e.id }}</a>{% if e.url %} <a class="src" href="{{ e.url }}" target="_blank">source ↗</a>{% elif e.raw_ref %} <a class="src" href="/raw/{{ run_id }}/{{ e.raw_ref }}" target="_blank">raw ↗</a>{% endif %}{% if e.record_date %} <span class="muted">· {{ e.record_date }}</span>{% endif %}{% if not loop.last %}<br>{% endif %}{% endfor %}</td>
-    </tr>{% endfor %}
-    <tr><td>Hard stop</td><td></td><td>{{ why.hard_stop or a.hard_stop or 'none' }}</td><td></td></tr>
-    {% if why.coverage %}<tr><td>Coverage check</td><td></td>
-      <td>{{ 'passed' if why.coverage.passed else 'failed' }} · have: {{ why.coverage.ok_signals|join(', ') }} · required: {{ why.coverage.required|join(', ') }}</td><td></td></tr>{% endif %}
-    <tr><td><strong>Final score</strong></td><td><strong>{{ why.final_score if why.final_score is not none else a.score }}</strong></td><td><span class="badge r-{{ r }}">{{ r|rating_label }}</span></td><td></td></tr>
-  </tbody>
-</table>
+<div class="card">
+  <div class="hero">
+    <div class="gauge" title="Score {{ a.score }}/100">
+      <svg width="92" height="92" viewBox="0 0 92 92">
+        <circle cx="46" cy="46" r="40" fill="none" stroke="var(--grey-soft)" stroke-width="8"/>
+        <circle cx="46" cy="46" r="40" fill="none" stroke="var(--{{ rc }})" stroke-width="8" stroke-linecap="round"
+                stroke-dasharray="{{ '%.1f'|format(251.3 * ([a.score, 0]|max) / 100) }} 251.3"/>
+      </svg>
+      <div class="val"><div><b style="color:var(--{{ rc }})">{{ a.score }}</b><small>/ 100</small></div></div>
+    </div>
+    <div>
+      <h1>{{ a.display_name }} {{ ui.rating(r, 'lg') }}</h1>
+      <div class="meta">
+        <span class="row" style="gap:6px">{{ ui.prio(prio.tier) }} <b style="color:var(--text)">{{ prio.label }}</b></span>
+        <span>{{ a.role|human|capitalize }} · <span class="imp-{{ prio.importance }}">{{ prio.importance }}</span>{% if prio.depends_on_us not in ('na', none) %} · relies on us: {{ prio.depends_on_us }}{% endif %}</span>
+        {% if a.entity.legal_name and a.entity.legal_name != a.display_name %}<span>{{ a.entity.legal_name }}</span>{% endif %}
+        {% if a.entity.domain %}<span>{{ a.entity.domain }}</span>{% endif %}
+        {% if a.cp_ids|length > 1 %}<span class="tag neutral">merged {{ a.cp_ids|join(' + ') }}</span>{% endif %}
+        {% if a.hard_stop %}<span class="tag irrev">hard stop · {{ a.hard_stop|human }}</span>{% endif %}
+        {% if a.change_since_last %}<span class="row" style="gap:6px">{{ a.change_since_last|move }} <span>since last review</span></span>{% endif %}
+      </div>
+    </div>
+    <div class="money">
+      <div class="k">Exposure</div><div class="k">At risk</div>
+      <div class="v">{{ a.exposure_inr|inr if a.exposure_inr else '—' }}</div>
+      <div class="v {{ 'risk' if a.inr_at_risk }}">{{ a.inr_at_risk|inr if a.inr_at_risk else '—' }}</div>
+    </div>
+  </div>
+  {% if a.explanation %}<p class="lead">{{ a.explanation|evlinks }}</p>{% endif %}
+  <div class="why-line">{{ ui.icon('scale', 15) }} <span><b>Priority {{ prio.tier }}</b> because {{ prio.reason }}.</span></div>
+</div>
 
 {% if a.cannot_verify or why.unavailable %}
-<div class="box {{ 'held' if r == 'HELD' else '' }}">
-  <strong>{{ 'Held' if r == 'HELD' else 'Cannot verify' }}</strong>
-  <ul>{% for line in a.cannot_verify %}<li>{{ line }}</li>{% endfor %}
-  {% for u in why.unavailable or [] %}<li>{{ u }}</li>{% endfor %}</ul>
+<div class="callout {{ 'held' if r == 'HELD' else 'cv' }}" style="margin-top:16px">
+  {{ ui.icon('pause' if r == 'HELD' else 'help', 18) }}
+  <div><div class="title">{{ 'Held — a source failed, so we did not treat silence as good news' if r == 'HELD' else ('Cannot verify — a person needs to confirm' if r == 'CANNOT_VERIFY' else 'Some sources were unavailable') }}</div>
+    <ul>{% for line in a.cannot_verify %}<li>{{ line }}</li>{% endfor %}{% for u in why.unavailable or [] %}<li>{{ u }}</li>{% endfor %}</ul></div>
 </div>
 {% endif %}
 {% if a.conflicts %}
-<div class="box conflict"><strong>Conflicts</strong><ul>{% for c in a.conflicts %}<li>{{ c }}</li>{% endfor %}</ul></div>
+<div class="callout warn" style="margin-top:12px">{{ ui.icon('alert', 18) }}
+  <div><div class="title">Conflicting sources</div><ul>{% for c in a.conflicts %}<li>{{ c }}</li>{% endfor %}</ul></div></div>
 {% endif %}
 
-<h4>Evidence</h4>
-<table class="dense">
-  <thead><tr><th>Id</th><th>Signal</th><th>Claim</th><th>Source</th><th>Field</th><th>Link · date</th></tr></thead>
-  <tbody>
-  {% for e in evidence %}<tr id="{{ e.evidence_id }}">
-    <td class="muted">{{ e.evidence_id }}</td><td>{{ e.signal }}</td>
-    <td>{{ e.claim }}{% if e.passage %}<br><span class="muted">“{{ e.passage }}”</span>{% endif %}
-      {% if e.stale %} <span class="tag stale">stale</span>{% endif %}
-      {% if e.status == 'unavailable' %} <span class="tag unavailable">unavailable</span>{% endif %}</td>
-    <td>{{ e.source }}</td><td class="muted">{{ e.field_path or '' }}</td><td>{{ e|src }}</td>
-  </tr>{% else %}<tr><td colspan="6" class="muted">No evidence stored.</td></tr>{% endfor %}
-  </tbody>
-</table>
+<div class="grid-main" style="margin-top:16px">
+  <div class="stack">
+    <div class="card">
+      <div class="card-head"><h3>Why this rating</h3><span class="muted small">fixed rules over cited evidence</span></div>
+      <table class="wf">
+        <tr><td class="lab"><b>Starting score</b><small>every counterparty</small></td><td class="pts">{{ why.start or 70 }}</td>
+          <td><div class="axis" style="--w:0"><i class="base" style="width:{{ why.start or 70 }}%;left:0;right:auto"></i></div></td><td class="ev"></td></tr>
+        {% for s in why.signals or [] %}
+        <tr>
+          <td class="lab"><b>{{ s.signal|human }}</b><small>{{ s.note|reason }}</small></td>
+          <td class="pts {{ 'neg' if s.points < 0 else ('pos' if s.points > 0) }}">{{ '%+d'|format(s.points) }}</td>
+          <td><div class="axis">{% if s.points %}<i class="{{ 'neg' if s.points < 0 else 'pos' }}" style="width:{{ ([s.points|abs, 70]|min) / 70 * 50 }}%"></i>{% endif %}</div></td>
+          <td class="ev">{% for e in s.evidence %}<a class="cite" href="#{{ e.id }}" title="{{ e.claim }}">{{ e.id[3:] }}</a>{% endfor %}</td>
+        </tr>
+        {% endfor %}
+        <tr><td class="lab"><b>Hard stop</b><small>overrides the score</small></td><td class="pts">{{ '—' if not (why.hard_stop or a.hard_stop) }}</td>
+          <td colspan="2">{% if why.hard_stop or a.hard_stop %}<span class="tag irrev">{{ (why.hard_stop or a.hard_stop)|human }}</span>{% else %}<span class="faint small">none</span>{% endif %}</td></tr>
+        {% if why.coverage %}
+        <tr><td class="lab"><b>Coverage check</b><small>no evidence, no GREEN</small></td>
+          <td class="pts" style="color:var(--{{ 'green' if why.coverage.passed else 'red' }})">{{ ui.icon('check' if why.coverage.passed else 'x', 15) }}</td>
+          <td colspan="2"><div class="row" style="gap:4px">
+            {% for req in why.coverage.required %}<span class="tag {{ 'neutral' if req in why.coverage.ok_signals else 'irrev' }}">{{ req|human }}</span>{% endfor %}
+          </div></td></tr>
+        {% endif %}
+        <tr class="total"><td class="lab"><b>Final score</b></td><td class="pts" style="color:var(--{{ rc }})">{{ final }}</td>
+          <td><div class="axis"><i class="base" style="width:{{ [final, 0]|max }}%;left:0;right:auto;background:var(--{{ rc }})"></i></div></td>
+          <td class="ev">{{ ui.rating(r) }}</td></tr>
+      </table>
+    </div>
 
-<h4>Identity</h4>
-<p>Match: <strong>{{ a.entity.match_type }}</strong> · confidence {{ '%.0f'|format((a.entity.confidence or 0) * 100) }}%
-  {% if a.entity.legal_name %} · {{ a.entity.legal_name }}{% endif %}{% if a.entity.domain %} · {{ a.entity.domain }}{% endif %}{% if a.entity.cin %} · CIN {{ a.entity.cin }}{% endif %}</p>
-{% if a.entity.candidates %}
-<table class="dense"><thead><tr><th>Candidate</th><th>City</th><th>Domain</th><th>CIN</th><th>Score</th></tr></thead><tbody>
-{% for c in a.entity.candidates %}<tr><td>{{ c.name }}</td><td>{{ c.city or '—' }}</td><td>{{ c.domain or '—' }}</td><td>{{ c.cin or '—' }}</td><td>{{ c.score }}</td></tr>{% endfor %}
-</tbody></table>
-{% endif %}
+    <div class="card">
+      <div class="card-head"><h3>Evidence</h3><span class="muted small">{{ evidence|length }} items · click any source</span></div>
+      <ul class="ev-list">
+      {% for e in evidence %}
+        <li class="ev-item {{ 'unavail' if e.status == 'unavailable' }}" id="{{ e.evidence_id }}">
+          <div><div class="sig">{{ e.signal|human }}</div><div class="id">{{ e.evidence_id }}</div></div>
+          <div>
+            <div class="claim">{{ e.claim }}</div>
+            {% if e.passage %}<blockquote>“{{ e.passage }}”</blockquote>{% endif %}
+            {% if e.field_path %}<div class="fp">{{ e.field_path }}</div>{% endif %}
+          </div>
+          <div class="where">
+            {{ ui.src(e) }}
+            <div class="row" style="gap:4px">
+              {% if e.stale %}<span class="tag stale">stale</span>{% endif %}
+              {% if e.status == 'unavailable' %}<span class="tag unavailable">unavailable</span>{% endif %}
+              {% if e.status == 'empty' %}<span class="tag neutral">nothing found</span>{% endif %}
+            </div>
+          </div>
+        </li>
+      {% else %}<li class="empty">No evidence stored.</li>{% endfor %}
+      </ul>
+    </div>
+  </div>
 
-<h4>Actions for this counterparty</h4>
-{% if actions %}
-<table class="dense"><thead><tr><th>Action</th><th>Status</th><th>Approved by</th><th></th></tr></thead><tbody>
-{% for x in actions %}<tr><td>{{ HUMAN_LABEL.get(x.type|val, x.type|val) }}</td><td>{{ x.status|val }}</td><td>{{ x.approved_by or '—' }}</td>
-<td>{% if x.status|val == 'pending_approval' %}<a href="/approvals#{{ x.action_id }}">review →</a>{% endif %}</td></tr>{% endfor %}
-</tbody></table>
-{% else %}<p class="muted">No actions proposed.</p>{% endif %}
+  <div class="stack">
+    <div class="card">
+      <div class="card-head"><h3>Actions</h3><a class="small" href="/approvals">Approval queue →</a></div>
+      {% if actions %}
+      <table class="tbl compact">
+        {% for x in actions %}<tr>
+          <td style="width:28px;color:var(--muted)">{{ ui.action_icon(x.type) }}</td>
+          <td><div class="strong">{{ x|action_label }}</div>
+            <div class="small muted">{{ 'reversible · automatic' if x.reversible else ('irreversible · needs senior approval' if x.requires_senior else 'irreversible · needs approval') }}{% if x.approved_by %} · by {{ x.approved_by }}{% endif %}</div>
+            {% if x.why %}<div class="small" style="color:var(--text-2)">{{ x.why }}</div>{% endif %}</td>
+          <td class="right">{% if x.status|val == 'pending_approval' %}<a href="/approvals#{{ x.action_id }}">{{ ui.status(x.status) }}</a>{% else %}{{ ui.status(x.status) }}{% endif %}</td>
+        </tr>{% endfor %}
+      </table>
+      {% else %}<div class="empty">No actions proposed.</div>{% endif %}
+    </div>
+
+    <div class="card">
+      <div class="card-head"><h3>Identity</h3><span class="status s-{{ 'done' if a.entity.match_type == 'exact' else ('pending_approval' if a.entity.match_type in ('fuzzy', 'ambiguous') else 'failed') }}">{{ a.entity.match_type|capitalize }} match</span></div>
+      <div class="card-body">
+        <dl class="kv">
+          <dt>Confidence</dt><dd><span class="conf"><span class="bar"><i style="width:{{ (a.entity.confidence or 0) * 100 }}%"></i></span>{{ '%.0f'|format((a.entity.confidence or 0) * 100) }}%</span></dd>
+          {% if a.entity.legal_name %}<dt>Legal name</dt><dd>{{ a.entity.legal_name }}</dd>{% endif %}
+          {% if a.entity.domain %}<dt>Domain</dt><dd>{{ a.entity.domain }}</dd>{% endif %}
+          {% if a.entity.cin %}<dt>CIN</dt><dd class="mono">{{ a.entity.cin }}</dd>{% endif %}
+          <dt>Rows</dt><dd>{{ a.cp_ids|join(', ') }}</dd>
+        </dl>
+      </div>
+      {% if a.entity.candidates %}
+      <table class="tbl compact">
+        <thead><tr><th>Candidate</th><th>City</th><th class="right">Match</th></tr></thead>
+        {% for c in a.entity.candidates %}<tr>
+          <td><div class="strong">{{ c.name }}</div><div class="small muted">{{ c.domain or 'no domain' }}{% if c.cin %} · <span class="mono">{{ c.cin }}</span>{% endif %}</div></td>
+          <td class="muted">{{ c.city or '—' }}</td><td class="num">{{ '%.0f'|format((c.score or 0) * 100) }}%</td>
+        </tr>{% endfor %}
+      </table>
+      {% endif %}
+    </div>
+  </div>
+</div>
 {% endblock %}

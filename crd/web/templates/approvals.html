@@ -1,40 +1,88 @@
 {% extends "base.html" %}
+{% block title %}Approvals · Counterparty Risk Desk{% endblock %}
 {% block content %}
-<div class="banner">Nothing here is sent until a person approves it. During the event, all messages go to our team inbox only.</div>
-{% if done %}<p class="flash">Decision recorded for {{ done }}.</p>{% endif %}
-{% if err == 'changed' %}<p class="flash err">This action changed since you opened it. Reload.</p>{% endif %}
-{% if err == 'approver' %}<p class="flash err">Enter your name as approver.</p>{% endif %}
+<div class="page-head">
+  <div><h1>Approvals</h1><div class="sub">{{ pending|length }} action{{ '' if pending|length == 1 else 's' }} waiting for a person.</div></div>
+</div>
 
-<h2>Approval queue <span class="muted">({{ pending|length }})</span></h2>
+<div class="callout info">{{ ui.icon('lock', 18) }}
+  <div><span class="title">Nothing here is sent until a person approves it.</span> During the event, all messages go to our team inbox only. Editing a draft after approval sends it back here.</div></div>
+
+{% if err == 'changed' %}<div class="callout err" style="margin-top:12px">{{ ui.icon('alert', 18) }}<div><span class="title">This action changed since you opened it.</span> <a href="/approvals">Reload</a> to see its current state.</div></div>{% endif %}
+{% if err == 'senior' %}<div class="callout err" style="margin-top:12px">{{ ui.icon('alert', 18) }}<div><span class="title">This is a strategic account.</span> A senior approver must tick the box to approve it.</div></div>{% endif %}
+{% if err == 'approver' %}<div class="callout err" style="margin-top:12px">{{ ui.icon('alert', 18) }}<div><span class="title">Enter your name as approver.</span> Every decision is recorded against a person.</div></div>{% endif %}
+
+<div class="stack" style="margin-top:16px">
 {% for p in pending %}{% set x = p.act %}
-<article class="card" id="{{ x.action_id }}">
-  <h3>{{ HUMAN_LABEL.get(x.type|val, x.type|val) }} —
-    {% if p.a %}<a href="/cp/{{ x.run_id }}/{{ x.cp_id }}">{{ p.a.display_name }}</a> <span class="badge r-{{ p.a.rating|val }}">{{ p.a.rating|rating_label }}</span>{% else %}{{ x.cp_id }}{% endif %}</h3>
-  <p class="muted"><strong>to:</strong> {{ x.to }} · <strong>subject:</strong> {{ x.subject }} · key <code>{{ x.idempotency_key }}</code></p>
-  {% if x.error %}<p class="flash err">{{ x.error }} — please review and approve again.</p>{% endif %}
-  {% if p.reasons %}<p><strong>Reasons</strong></p><ul>
-    {% for e in p.reasons %}<li>{{ e.claim }} — {{ e|src }}</li>{% endfor %}</ul>{% endif %}
-  <form method="post" action="/approvals/{{ x.action_id }}">
-    <textarea class="draft" name="draft">{{ x.draft }}</textarea>
-    <div class="grid">
-      <input name="approver" placeholder="Approver name (required)" required>
-      <button name="decision" value="approve">Approve</button>
-      <button name="decision" value="reject" class="secondary outline" formnovalidate>Reject</button>
+<form class="card appr" id="{{ x.action_id }}" method="post" action="/approvals/{{ x.action_id }}">
+  <div class="appr-head">
+    <span class="ic">{{ ui.action_icon(x.type) }}</span>
+    <div style="flex:1;min-width:220px">
+      <div class="ttl">{% if x.priority %}{{ ui.prio(x.priority) }} {% endif %}{{ x|action_label }}</div>
+      <div class="who">
+        {% if p.a %}<a class="strong" href="/cp/{{ x.run_id }}/{{ x.cp_id }}">{{ p.a.display_name }}</a> {{ ui.rating(p.a.rating) }}
+          {% if p.a.inr_at_risk %}<span>{{ p.a.inr_at_risk|inr }} at risk</span>{% endif %}
+        {% else %}<span>{{ x.cp_id }}</span>{% endif %}
+      </div>
     </div>
-  </form>
-</article>
+    <div class="row" style="gap:6px">
+      {% if x.requires_senior %}<span class="tag senior-tag">senior approval</span>{% endif %}
+      <span class="tag irrev">{{ ui.icon('lock', 11) }}&nbsp;irreversible</span>
+    </div>
+  </div>
+  {% if x.why %}<div class="why-line">{{ ui.icon('scale', 15) }} <span><b>Why this action:</b> {{ x.why }}</span></div>{% endif %}
+  {% if x.error %}<div class="callout warn" style="border-radius:0;border-width:0 0 1px">{{ ui.icon('alert', 16) }}<div>{{ x.error|capitalize }} — review and approve again.</div></div>{% endif %}
+  <div class="appr-body">
+    <div class="mail">
+      <dl class="hdr">
+        <dt>{{ 'Note' if x.type|val == 'credit_hold' else 'To' }}</dt><dd>{{ 'ERP credit hold (internal)' if x.type|val == 'credit_hold' else x.to }}</dd>
+        <dt>Subject</dt><dd>{{ x.subject }}</dd>
+      </dl>
+      <label class="sr" for="d-{{ x.action_id }}">Draft</label>
+      <textarea id="d-{{ x.action_id }}" name="draft">{{ x.draft }}</textarea>
+      <div class="hint">You can edit the draft. What you approve is exactly what gets sent, once.</div>
+    </div>
+    <div class="why">
+      <h4>Why we're proposing this</h4>
+      {% if p.reasons %}<ol>{% for e in p.reasons %}<li><div>{{ e.claim }}</div>{{ ui.src(e) }}</li>{% endfor %}</ol>
+      {% else %}<p class="muted small" style="margin:8px 0 14px">Rating {{ p.a.rating|rating_label if p.a else '' }} under the action rules.</p>{% endif %}
+      <h4>Sent once, by key</h4>
+      <div style="margin-top:6px"><span class="keycode">{{ x.idempotency_key }}</span></div>
+    </div>
+  </div>
+  <div class="appr-foot">
+    <input class="input" name="approver" placeholder="Your name (required)" autocomplete="name" required>
+    {% if x.requires_senior %}<label class="senior"><input type="checkbox" name="senior" value="yes"> I am a senior approver (head of credit)</label>{% endif %}
+    <span class="spacer"></span>
+    <button class="btn ghost" name="decision" value="reject" formnovalidate>{{ ui.icon('x', 14) }}Reject</button>
+    <button class="btn approve" name="decision" value="approve">{{ ui.icon('check', 15) }}Approve &amp; send once</button>
+  </div>
+</form>
 {% else %}
-<p class="muted">Nothing waiting for approval.</p>
+<div class="card empty">{{ ui.icon('check', 26) }}<p class="strong" style="margin-top:8px">All clear</p><p>Nothing is waiting for approval.</p></div>
 {% endfor %}
+</div>
 
-<h3>Recently decided</h3>
+<div class="section-title"><h2>Recently decided</h2></div>
+<div class="card" style="overflow:auto">
 {% if decided %}
-<table class="dense"><thead><tr><th>Action</th><th>Counterparty</th><th>Status</th><th>By</th><th>Executed</th><th>Ref</th><th></th></tr></thead><tbody>
-{% for x in decided %}<tr>
-  <td>{{ HUMAN_LABEL.get(x.type|val, x.type|val) }}</td><td>{{ x.cp_id }}</td><td>{{ x.status|val }}</td>
-  <td>{{ x.approved_by or '—' }}</td><td>{{ x.executed_at or '—' }}</td><td class="muted">{{ x.external_ref or x.error or '' }}</td>
-  <td>{% if x.status|val == 'failed' %}<form method="post" action="/actions/{{ x.action_id }}/retry" style="margin:0"><button class="outline" style="padding:.1rem .6rem">Retry</button></form>{% endif %}</td>
-</tr>{% endfor %}
-</tbody></table>
-{% else %}<p class="muted">No decisions yet.</p>{% endif %}
+<table class="tbl compact">
+  <thead><tr><th>Action</th><th>Counterparty</th><th>Status</th><th>Decided by</th><th>Executed</th><th>Reference</th><th></th></tr></thead>
+  <tbody>
+  {% for x in decided %}<tr>
+    <td><span class="row" style="gap:8px;flex-wrap:nowrap"><span class="muted">{{ ui.action_icon(x.type) }}</span>{{ x|action_label }}</span></td>
+    <td><a href="/cp/{{ x.run_id }}/{{ x.cp_id }}">{{ x.cp_id }}</a></td>
+    <td>{{ ui.status(x.status) }}</td>
+    <td>{{ x.approved_by or '—' }}</td>
+    <td class="nowrap muted">{{ (x.executed_at or '—')[:19]|replace('T', ' ') }}</td>
+    <td class="muted small">{% if x.external_ref %}<span class="keycode">{{ x.external_ref }}</span>{% elif x.error %}{{ x.error }}{% endif %}</td>
+    <td class="right">{% if x.status|val == 'failed' %}<form method="post" action="/actions/{{ x.action_id }}/retry" style="margin:0"><button class="btn sm">Retry</button></form>{% endif %}</td>
+  </tr>{% endfor %}
+  </tbody>
+</table>
+{% else %}<div class="empty">No decisions yet.</div>{% endif %}
+</div>
+
+{% if done %}<div class="toast">{{ ui.icon('check', 16) }}
+  {% if decision == 'reject' %}Rejected. Nothing will be sent.{% else %}Approved — sending once. <a href="/outbox">See outbox →</a>{% endif %}</div>{% endif %}
 {% endblock %}

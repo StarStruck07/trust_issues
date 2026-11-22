@@ -1,16 +1,24 @@
 {% extends "base.html" %}
 {% block content %}
-<h2>Runs</h2>
+<div class="page-head">
+  <div><h1>Runs</h1><div class="sub">Every review, with what it cost.</div></div>
+  <a class="btn primary" href="/">{{ ui.icon('play', 14) }}New review</a>
+</div>
+<div class="card" style="overflow:auto">
 {% if runs %}
-<table class="dense striped">
-  <thead><tr><th>Run</th><th>Started</th><th>Status</th><th>N</th><th>Credits</th><th>₹</th><th></th></tr></thead>
+<table class="tbl">
+  <thead><tr><th>Run</th><th>Request</th><th>Started</th><th>Status</th><th class="right">Counterparties</th><th class="right">Credits</th><th class="right">₹ spent</th><th></th></tr></thead>
   <tbody>
   {% for r in runs %}<tr>
-    <td><a href="/runs/{{ r.run_id }}">{{ r.run_id }}</a></td><td>{{ r.started_at }}</td><td>{{ r.status }}</td>
-    <td>{{ r.n }}</td><td>{{ r.costs.credits }}</td><td>{{ r.costs.inr|inr }}</td>
-    <td><a href="/runs/{{ r.run_id }}/report">report</a> · <a href="/ledger?run={{ r.run_id }}">ledger</a></td>
+    <td><a class="rowname mono" href="/runs/{{ r.run_id }}">{{ r.run_id }}</a></td>
+    <td class="reason muted">{{ r.request }}</td>
+    <td class="nowrap muted">{{ (r.started_at or '')[:16]|replace('T', ' ') }}</td>
+    <td>{{ ui.status(r.status) }}</td>
+    <td class="num">{{ r.n }}</td><td class="num">{{ r.costs.credits }}</td><td class="num">{{ r.costs.inr|inr }}</td>
+    <td class="nowrap right"><a class="btn sm" href="/runs/{{ r.run_id }}/report">Report</a> <a class="btn sm" href="/ledger?run={{ r.run_id }}">Ledger</a></td>
   </tr>{% endfor %}
   </tbody>
 </table>
-{% else %}<p class="muted">No runs yet.</p>{% endif %}
+{% else %}<div class="empty">No runs yet. <a href="/">Start one</a>.</div>{% endif %}
+</div>
 {% endblock %}
