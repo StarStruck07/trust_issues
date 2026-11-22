@@ -1,0 +1,488 @@
+[
+  {
+    "matched_on": "https://www.linkedin.com/in/firoze",
+    "match_type": "professional_network_profile_url",
+    "match_status": "matched",
+    "matches": [
+      {
+        "confidence_score": 1.0,
+        "person_data": {
+          "basic_profile": {
+            "current_title": "CSO",
+            "first_name": "Firoze",
+            "headline": "Chief Security Officer | Ex-Superintendent of Police | Expert in Risk, Fraud Prevention & Supply Chain Security | Board-Certified Director",
+            "languages": [
+              "Arabic (Elementary proficiency)",
+              "English (Full professional proficiency)",
+              "Tamil (Full professional proficiency)",
+              "hindi (Full professional proficiency)"
+            ],
+            "last_name": "Hussain",
+            "location": {
+              "city": "Gurugram",
+              "continent": "Asia",
+              "country": "India",
+              "full_location": null,
+              "raw": "Gurgaon, Haryana, India",
+              "state": "Haryana"
+            },
+            "name": "Firoze Zia Hussain",
+            "normalized_title": {
+              "confident": true,
+              "department": "Legal & Compliance",
+              "matched_title": "CSO",
+              "similarity": 0.9998999834060669,
+              "sub_department": "Corporate Legal Affairs"
+            },
+            "professional_network_name": "Firoze Zia Hussain",
+            "profile_picture_permalink": "https://crustdata-media.s3.us-east-2.amazonaws.com/person/f3d1488efcfbef91b494e60a01efdf1f2f78e87b0931849fe48e40f323eab0df.jpg",
+            "summary": "I am a forward-thinking security and risk management leader with 30+ years of experience spanning law enforcement, corporate security, logistics, and technology-led risk prevention. Currently serving as Chief Security Officer at Delhivery, I design and oversee security, trust, and safety frameworks across India’s largest logistics network — covering 24 automated sort centers, 90+ fulfilment hubs, 2,500+ delivery centers, and 58,000+ employees.\n\nPreviously, as a Superintendent of Police in Pondicherry, I specialized in trafficking, narcotics enforcement, cybercrime, and community policing, achieving a 99% conviction rate and pioneering India’s early cybercrime investigations.\n\nI’ve driven business continuity, fraud prevention, safety, and compliance strategies for Fortune 500s, airports, defense, banking, and e-commerce. My leadership philosophy is built on change management, operational excellence, and digital transformation — blending public service discipline with corporate agility.\n\nRecognized with awards including the Golden Peacock Award, SECONA Shield for Security Project of the Year, and Assocham SME Excellence Award, I also hold patents and publications on e-governance, fraud detection, and women’s safety tech solutions.\n\nSpecialties: Corporate Security, Supply Chain Risk, Fraud Analytics, Business Continuity, Regulatory Compliance, Project Management, Independent Directorship"
+          },
+          "crustdata_person_id": 166075739,
+          "experience": {
+            "employment_details": {
+              "current": [
+                {
+                  "company_description": "Delhivery is India’s largest fully-integrated logistics services provider. With a nationwide network spanning over 18,850 pin codes, the company offers a comprehensive range of logistics solutions — including express parcel transportation, partial-truckload (PTL) and full-truckload (FTL) freight, International, supply chain solutions, National & local courier services and technology-enabled logistics. Comprehensive Solutions for Every Need➡️Express Parcel: Send shipments across India, including heavy goods, with value-added services like real-time tracking, NDR Management, WhatsApp based updates, RTO, Protect➡️Delivery App: All-in-one courier service that lets you send anything within the city or anywhere in India➡️Rapid: A sub-2-hour delivery service helping brands offer faster deliveries and a better customer experience➡️Supply Chain Solutions: Store and manage inventory at optimized locations across India, fulfilling orders for both B2B and B2C channels with precision.➡️Partial Truckload (PTL):Leverage India’s large PTL network for door-to-door or hub-to-hub delivery with multimodal freight and smart dashboards.➡️Full Truckload (FTL): Handle high-volume shipments with speed and efficiency through our professional network of truckload partners and our own fleet.➡️International: Reach 220+ countries with door-to-door delivery, end-to-end tracking, and multiple shipping speeds-built for SMEs, D2C brands, and exporters looking to ship➡️TransportOne: Delhivery’s AI‐powered TMS that gives enterprises end‐to‐end optimization, from intelligent sourcing and load stacking to agentic ePOD and automated billingOur Impact at Scale✔️4 Billion+ parcels shipped since inception✔️Coverage of 99.5% of India’s population✔️Trusted by 48,000+ businesses✔️Shipped over 4.7 Million tonnes of freight✔️Managing 22.05 Million+ sqft of logistics infrastructureStart shipping: https://one.delhivery.com/registerDownload Delhivery Direct App: https://appdelhivery.go.link/5YuVn",
+                  "company_headcount_latest": 35300,
+                  "company_headcount_range": "10001+",
+                  "company_industries": [
+                    "Transportation, Logistics, Supply Chain and Storage"
+                  ],
+                  "company_professional_network_industry": "Transportation, Logistics, Supply Chain and Storage",
+                  "company_professional_network_profile_url": "https://linkedin.com/company/2312777",
+                  "company_profile_picture_permalink": "https://crustdata-media.s3.us-east-2.amazonaws.com/company/71b150219cfe4c30f5586301a08cb16fbea70619f7f66cbf8fae2b7c1877a544.jpg",
+                  "company_status": "active",
+                  "company_website": "https://www.delhivery.com/",
+                  "company_website_domain": "delhivery.com",
+                  "crustdata_company_id": 5798,
+                  "description": "Loss Prevention, T&S,BCP, and SHE functions across India’s largest logistics network covering 21 automated sort centers, 90+ fulfilment hubs, 3000+ direct delivery centers,  and 58,000+ staff.\n\nDesigned and implemented preventive security standards & crisis management frameworks for 14,000+ vehicles and 18,000+ pincodes.\n\nPartnered with data sciences to develop security dashboards & analytics models for package fraud detection, improving delivery security across FTL, LTL, B2B, B2C, and cross-border shipments.\n\nAchieved TAPA TSR/FSR certifications across fleet & warehouses, setting industry benchmarks.\n\nDirected high-impact investigations into fraud, package crime, and data breaches, aligning security governance with legal & compliance frameworks.",
+                  "employment_type": "Full-time",
+                  "end_date": null,
+                  "function_category": "",
+                  "is_default": true,
+                  "location": {
+                    "raw": "Gurugram"
+                  },
+                  "name": "Delhivery",
+                  "position_id": 1435208656,
+                  "professional_network_id": "2312777",
+                  "seniority_level": "CXO",
+                  "start_date": "2019-03-01T00:00:00+00:00",
+                  "title": "CSO",
+                  "years_at_company": "6 to 10 years",
+                  "years_at_company_raw": 7.0
+                },
+                {
+                  "company_description": "Delhivery is India’s largest fully-integrated logistics services provider. With a nationwide network spanning over 18,850 pin codes, the company offers a comprehensive range of logistics solutions — including express parcel transportation, partial-truckload (PTL) and full-truckload (FTL) freight, International, supply chain solutions, National & local courier services and technology-enabled logistics. Comprehensive Solutions for Every Need➡️Express Parcel: Send shipments across India, including heavy goods, with value-added services like real-time tracking, NDR Management, WhatsApp based updates, RTO, Protect➡️Delivery App: All-in-one courier service that lets you send anything within the city or anywhere in India➡️Rapid: A sub-2-hour delivery service helping brands offer faster deliveries and a better customer experience➡️Supply Chain Solutions: Store and manage inventory at optimized locations across India, fulfilling orders for both B2B and B2C channels with precision.➡️Partial Truckload (PTL):Leverage India’s large PTL network for door-to-door or hub-to-hub delivery with multimodal freight and smart dashboards.➡️Full Truckload (FTL): Handle high-volume shipments with speed and efficiency through our professional network of truckload partners and our own fleet.➡️International: Reach 220+ countries with door-to-door delivery, end-to-end tracking, and multiple shipping speeds-built for SMEs, D2C brands, and exporters looking to ship➡️TransportOne: Delhivery’s AI‐powered TMS that gives enterprises end‐to‐end optimization, from intelligent sourcing and load stacking to agentic ePOD and automated billingOur Impact at Scale✔️4 Billion+ parcels shipped since inception✔️Coverage of 99.5% of India’s population✔️Trusted by 48,000+ businesses✔️Shipped over 4.7 Million tonnes of freight✔️Managing 22.05 Million+ sqft of logistics infrastructureStart shipping: https://one.delhivery.com/registerDownload Delhivery Direct App: https://appdelhivery.go.link/5YuVn",
+                  "company_headcount_latest": 35300,
+                  "company_headcount_range": "10001+",
+                  "company_industries": [
+                    "Transportation, Logistics, Supply Chain and Storage"
+                  ],
+                  "company_professional_network_industry": "Transportation, Logistics, Supply Chain and Storage",
+                  "company_professional_network_profile_url": "https://linkedin.com/company/2312777",
+                  "company_profile_picture_permalink": "https://crustdata-media.s3.us-east-2.amazonaws.com/company/71b150219cfe4c30f5586301a08cb16fbea70619f7f66cbf8fae2b7c1877a544.jpg",
+                  "company_status": "active",
+                  "company_website": "https://www.delhivery.com/",
+                  "company_website_domain": "delhivery.com",
+                  "crustdata_company_id": 5798,
+                  "description": "Delhivery’s Transport Management System promotes efficiency across all transportation modes. Our customized solutions are designed to accelerate the deployment process while saving time and money. With reliable 24/7 monitoring services, our customers gain immediate visibility and access to a network",
+                  "employment_type": "",
+                  "end_date": null,
+                  "function_category": "",
+                  "is_default": false,
+                  "location": {
+                    "raw": "Gurgaon, India"
+                  },
+                  "name": "Delhivery",
+                  "position_id": 984383662,
+                  "professional_network_id": "2312777",
+                  "seniority_level": "Vice President",
+                  "start_date": "2017-04-01T00:00:00+00:00",
+                  "title": "Vice President Security",
+                  "years_at_company": "6 to 10 years",
+                  "years_at_company_raw": 9.0
+                }
+              ],
+              "past": [
+                {
+                  "company_description": "Delhivery is India’s largest fully-integrated logistics services provider. With a nationwide network spanning over 18,850 pin codes, the company offers a comprehensive range of logistics solutions — including express parcel transportation, partial-truckload (PTL) and full-truckload (FTL) freight, International, supply chain solutions, National & local courier services and technology-enabled logistics. Comprehensive Solutions for Every Need➡️Express Parcel: Send shipments across India, including heavy goods, with value-added services like real-time tracking, NDR Management, WhatsApp based updates, RTO, Protect➡️Delivery App: All-in-one courier service that lets you send anything within the city or anywhere in India➡️Rapid: A sub-2-hour delivery service helping brands offer faster deliveries and a better customer experience➡️Supply Chain Solutions: Store and manage inventory at optimized locations across India, fulfilling orders for both B2B and B2C channels with precision.➡️Partial Truckload (PTL):Leverage India’s large PTL network for door-to-door or hub-to-hub delivery with multimodal freight and smart dashboards.➡️Full Truckload (FTL): Handle high-volume shipments with speed and efficiency through our professional network of truckload partners and our own fleet.➡️International: Reach 220+ countries with door-to-door delivery, end-to-end tracking, and multiple shipping speeds-built for SMEs, D2C brands, and exporters looking to ship➡️TransportOne: Delhivery’s AI‐powered TMS that gives enterprises end‐to‐end optimization, from intelligent sourcing and load stacking to agentic ePOD and automated billingOur Impact at Scale✔️4 Billion+ parcels shipped since inception✔️Coverage of 99.5% of India’s population✔️Trusted by 48,000+ businesses✔️Shipped over 4.7 Million tonnes of freight✔️Managing 22.05 Million+ sqft of logistics infrastructureStart shipping: https://one.delhivery.com/registerDownload Delhivery Direct App: https://appdelhivery.go.link/5YuVn",
+                  "company_headcount_latest": 35300,
+                  "company_headcount_range": "10001+",
+                  "company_industries": [
+                    "Transportation, Logistics, Supply Chain and Storage"
+                  ],
+                  "company_professional_network_industry": "Transportation, Logistics, Supply Chain and Storage",
+                  "company_professional_network_profile_url": "https://linkedin.com/company/2312777",
+                  "company_profile_picture_permalink": "https://crustdata-media.s3.us-east-2.amazonaws.com/company/71b150219cfe4c30f5586301a08cb16fbea70619f7f66cbf8fae2b7c1877a544.jpg",
+                  "company_status": "active",
+                  "company_website": "https://www.delhivery.com/",
+                  "company_website_domain": "delhivery.com",
+                  "crustdata_company_id": 5798,
+                  "description": "Enabling Ecommerce--#100 million and counting --9 million packages monthly \nSpecialties\nOmni-channel solutions, Order fulfillment solutions, Reverse Logistics, Payment collection, Express shipping, Logistics Technology, Channel Analytics, Online Channel Integration, Sourcing, Catalogue Management, Inventory Management, Multi- city fufillment,Skynet International \n\nSafe Secure pickup storage ,level 4 packaging and delivery.Manage security of facilities/assets through 1600 guards  ,law enforcement response team,intrusion alarm,7000 nos of cctv,X ray machines with automated high speed sorter logic and SOC.Use Big Data analytics for fraud prevention and detection.Ensure compliance to rules regulations pertaining to safety security.,Cash management solutions,Financial frauds investigation ,IR & Union  issues ,Manage Transport security for the fleet of vehicles and provide emergency response as per requirement.\n\nMost amazing work culture with high octane teamwork.\nZero Loss implementation pan India across functions-\nDealing with vendor fraud,consignee fraud and transportation issues to tier 4 towns",
+                  "employment_type": "",
+                  "end_date": "2017-04-01T00:00:00+00:00",
+                  "function_category": "",
+                  "is_default": false,
+                  "location": {
+                    "raw": "Gurgaon HQ"
+                  },
+                  "name": "Delhivery",
+                  "position_id": 688411045,
+                  "professional_network_id": "2312777",
+                  "seniority_level": "Director",
+                  "start_date": "2015-07-01T00:00:00+00:00",
+                  "title": "Senior Director Security",
+                  "years_at_company": "1 to 2 years",
+                  "years_at_company_raw": 1.0
+                },
+                {
+                  "company_description": null,
+                  "company_headcount_latest": null,
+                  "company_headcount_range": null,
+                  "company_industries": null,
+                  "company_professional_network_industry": null,
+                  "company_professional_network_profile_url": null,
+                  "company_profile_picture_permalink": null,
+                  "company_status": null,
+                  "company_website": null,
+                  "company_website_domain": null,
+                  "crustdata_company_id": null,
+                  "description": "Assocham Award Winner 2013.Morpho Detection (Safran ) Channel partner Award  Social Ent\n--top ranked in Google play \n solutions for Power quality, infrastructure for airports,aviation defense ,critical industries,hospitality sector.,banks, data centres . integrated safety security solutions based on CBRNe,thermal imaging,RFID,e signature mPOS terminals,\nPower Quality solutions - UPS frm GE Energy 160 kva to 500 kva \n -rugged IT solutions for defense FINSAS\n•\tPPE/SHE/OSHA\n•\tSecurity checkpoint solution\n. IT Solutions\n•\tGE UPS – 1KVA TO 500KVA\nCyber Security solutions/Android apps development for third party/VAPT/PHP website maintenance",
+                  "employment_type": "",
+                  "end_date": "2015-06-01T00:00:00+00:00",
+                  "function_category": "",
+                  "is_default": false,
+                  "location": {
+                    "raw": "Hyderabad Area, India"
+                  },
+                  "name": "Totem International private ltd",
+                  "position_id": 34782309,
+                  "professional_network_id": null,
+                  "seniority_level": "Director",
+                  "start_date": "2009-04-01T00:00:00+00:00",
+                  "title": "Director",
+                  "years_at_company": "6 to 10 years",
+                  "years_at_company_raw": 6.0
+                },
+                {
+                  "company_description": null,
+                  "company_headcount_latest": null,
+                  "company_headcount_range": null,
+                  "company_industries": null,
+                  "company_professional_network_industry": null,
+                  "company_professional_network_profile_url": null,
+                  "company_profile_picture_permalink": null,
+                  "company_status": null,
+                  "company_website": null,
+                  "company_website_domain": null,
+                  "crustdata_company_id": null,
+                  "description": "TotemSOS Women Safety app with remote Bluetooth  AB3 shutter  button in 42 languages",
+                  "employment_type": "",
+                  "end_date": "2015-01-01T00:00:00+00:00",
+                  "function_category": "",
+                  "is_default": false,
+                  "location": {
+                    "raw": "Hyderabad Area, India"
+                  },
+                  "name": "TotemSOS",
+                  "position_id": 685632328,
+                  "professional_network_id": null,
+                  "seniority_level": "Owner / Partner",
+                  "start_date": "2013-01-01T00:00:00+00:00",
+                  "title": "Co-Founder",
+                  "years_at_company": "1 to 2 years",
+                  "years_at_company_raw": 2.0
+                },
+                {
+                  "company_description": null,
+                  "company_headcount_latest": null,
+                  "company_headcount_range": null,
+                  "company_industries": null,
+                  "company_professional_network_industry": null,
+                  "company_professional_network_profile_url": null,
+                  "company_profile_picture_permalink": null,
+                  "company_status": null,
+                  "company_website": null,
+                  "company_website_domain": null,
+                  "crustdata_company_id": null,
+                  "description": "share crime scenario in India",
+                  "employment_type": "",
+                  "end_date": "2011-01-01T00:00:00+00:00",
+                  "function_category": "",
+                  "is_default": false,
+                  "location": {
+                    "raw": ""
+                  },
+                  "name": "ASIS",
+                  "position_id": 97696310,
+                  "professional_network_id": null,
+                  "seniority_level": "Entry Level",
+                  "start_date": "2009-01-01T00:00:00+00:00",
+                  "title": "Council Member -loss/crime prevention council",
+                  "years_at_company": "1 to 2 years",
+                  "years_at_company_raw": 2.0
+                },
+                {
+                  "company_description": "Advance is Asia's 1st and World's 5th largest surfactants manufacturing company, targeting to become World's Number 1 Detergents Chemicals Company in the next 5 years. Advance has 9 manufacturing units across India. The combined capacity of the group is 152,000 metric tpa. Advance has a team of 600 professionals spread over manufacturing facilities at key locations in India with a group turnover of over USD 200 million. Today, Advance has business operations in domains like Surfactants, Speciality Chemicals, Environment & Mine Designing Consultancy, Logistics & Contract Manufacturing.Global ReachAdvance enjoys partnership with clients not only in India but across the globe, some of them being Fortune 500 companies. Advance is currently doing business in North America, Latin America, Africa, Middle East and Asia. The group is now setting up local distribution hubs across the globe to cater to local demand of their customers.VisionTo become a world class, dynamic and ever-evolving organisation that nurtures its ethics, values and ideology of Sustainable Development. HR Mission and Philosophy“To create a very cohesive team of people having expertise in different fields and functions, working towards a common goal while achieving self-actualisation”.Advance’s HR philosophy is to attract, train and retain the best people in the industry and create a spirit of camaraderie and conducive work environment that perpetuates employee growth and contribution.To empower people both as individuals and team players, nurture and develop human capital and provide internal opportunities for growth are some of the guiding philosophies of HR.Career GrowthAdvance is committed to provide opportunity for growth to every individual to highest level of his/her capability and show a clear path of growth so that every individual may plan his/ her goals and work passionately towards achieving the same for self-satisfaction and self-actualisation.",
+                  "company_headcount_latest": 110,
+                  "company_headcount_range": "501-1000",
+                  "company_industries": [
+                    "Chemical Manufacturing",
+                    "Manufacturing"
+                  ],
+                  "company_professional_network_industry": "Chemical Manufacturing",
+                  "company_professional_network_profile_url": "https://linkedin.com/company/200306",
+                  "company_profile_picture_permalink": "https://crustdata-media.s3.us-east-2.amazonaws.com/company/f3fdafb9a04274b7125e958972294a94ba051d4447d0923379699ffe86e5c056.jpg",
+                  "company_status": "active",
+                  "company_website": "http://www.advanceindia.com",
+                  "company_website_domain": "advanceindia.com",
+                  "crustdata_company_id": 1991106,
+                  "description": "Project management for setting up large surfactant and agrochemicals unit\nPrefeasibility study \nGovernment liason--with officials in Colombo\nheaded global business development in marketing of high end surfactants to MNCs across the globe\nachieved triple digit growth rate despite the recession ..Exported 100 crore INR plus of surfactants in 2008-2009 to USA,Kenya ,Ghana,Pakistan,turkey,South Africa,brazil,Colombia,etc",
+                  "employment_type": "",
+                  "end_date": "2009-03-01T00:00:00+00:00",
+                  "function_category": "",
+                  "is_default": false,
+                  "location": {
+                    "raw": "Gurgaon, India"
+                  },
+                  "name": "Advance Group of Companies",
+                  "position_id": 54832052,
+                  "professional_network_id": "200306",
+                  "seniority_level": "Director",
+                  "start_date": "2006-03-01T00:00:00+00:00",
+                  "title": "Head Global Trading",
+                  "years_at_company": "3 to 5 years",
+                  "years_at_company_raw": 3.0
+                },
+                {
+                  "company_description": "he Government of India, officially known as the Union Government, and also known as the Central Government, was established by the Constitution of India, and is the governing authority of a union of 28 states and seven union territories, collectively called the Republic of India. It is seated in New Delhi, the capital of India.The government comprises three branches: the executive, the legislative and the judiciary. The executive branch headed by the President, who is the Head of State and exercises his or her power directly or through officers subordinate to him.[1] The Legislative branch or the Parliament consists of the lower house, the Lok Sabha, and the upper house, the Rajya Sabha, as well as the president. The Judicial branch has the Supreme Court at its apex, 21 High Courts, and numerous civil, criminal and family courts at the district level.The basic civil and criminal laws governing the citizens of India are set down in major parliamentary legislation, such as the Civil Procedure Code, the Indian Penal Code, and the Criminal Procedure Code. The union and individual state governments consist of executive, legislative and judicial branches. The legal system as applicable to the federal and individual state governments is based on the English Common and Statutory Law. India accepts International Court of Justice jurisdiction with several reservations.",
+                  "company_headcount_latest": 25426,
+                  "company_headcount_range": "10001+",
+                  "company_industries": [
+                    "Law Enforcement",
+                    "Administration of Justice",
+                    "Government Administration"
+                  ],
+                  "company_professional_network_industry": "Law Enforcement",
+                  "company_professional_network_profile_url": "https://linkedin.com/company/1695580",
+                  "company_profile_picture_permalink": "https://crustdata-media.s3.us-east-2.amazonaws.com/company/35375a553c7019cba70dd6d7e9e66ad2aeb5c128514056c34c1285c196ee99d0.jpg",
+                  "company_status": "active",
+                  "company_website": "http://www.svpnpa.gov.in",
+                  "company_website_domain": "svpnpa.gov.in",
+                  "crustdata_company_id": 1382539,
+                  "description": "Was actively involved in law enforcement response & e governance implementation in Police department\n-Police Administration-Purchase of Arms and Ammunition ,logistics & fleet management-Recruitment,promotions ,training requirements-\n-Prepared Disaster management plan/Cyber security plan \n-Anti corruption /ethics training-brief/advise the top brass on policy making and development-brief  Ministers during Parliament/Assembly session\n-Selected for sending nomination  for IACP-Chief of Police Award USA New York from different police organizations in India . Law enforcement \nIE2005 ALUMNI of IVP International Visitors Leadership Program on combating International Crime in USA organized by State Department in USA\n-Visited Washington DC,Texas,Sandiego,New York etc, as guest of State department to understand Policing from top level Policy making at Washington DC to duties of Chief of Police, — experiences shared by  US Secret Service,FBI,Coast Guard,NYPD,RFSL, etc",
+                  "employment_type": "",
+                  "end_date": "2006-01-01T00:00:00+00:00",
+                  "function_category": "",
+                  "is_default": false,
+                  "location": {
+                    "raw": "Puducherry Area, India"
+                  },
+                  "name": "Government of India",
+                  "position_id": 10649135,
+                  "professional_network_id": "1695580",
+                  "seniority_level": "Entry Level",
+                  "start_date": "2004-08-01T00:00:00+00:00",
+                  "title": "Superintendent of Police--PHQ Puducherry",
+                  "years_at_company": "1 to 2 years",
+                  "years_at_company_raw": 1.0
+                },
+                {
+                  "company_description": "he Government of India, officially known as the Union Government, and also known as the Central Government, was established by the Constitution of India, and is the governing authority of a union of 28 states and seven union territories, collectively called the Republic of India. It is seated in New Delhi, the capital of India.The government comprises three branches: the executive, the legislative and the judiciary. The executive branch headed by the President, who is the Head of State and exercises his or her power directly or through officers subordinate to him.[1] The Legislative branch or the Parliament consists of the lower house, the Lok Sabha, and the upper house, the Rajya Sabha, as well as the president. The Judicial branch has the Supreme Court at its apex, 21 High Courts, and numerous civil, criminal and family courts at the district level.The basic civil and criminal laws governing the citizens of India are set down in major parliamentary legislation, such as the Civil Procedure Code, the Indian Penal Code, and the Criminal Procedure Code. The union and individual state governments consist of executive, legislative and judicial branches. The legal system as applicable to the federal and individual state governments is based on the English Common and Statutory Law. India accepts International Court of Justice jurisdiction with several reservations.",
+                  "company_headcount_latest": 25426,
+                  "company_headcount_range": "10001+",
+                  "company_industries": [
+                    "Law Enforcement",
+                    "Administration of Justice",
+                    "Government Administration"
+                  ],
+                  "company_professional_network_industry": "Law Enforcement",
+                  "company_professional_network_profile_url": "https://linkedin.com/company/1695580",
+                  "company_profile_picture_permalink": "https://crustdata-media.s3.us-east-2.amazonaws.com/company/35375a553c7019cba70dd6d7e9e66ad2aeb5c128514056c34c1285c196ee99d0.jpg",
+                  "company_status": "active",
+                  "company_website": "http://www.svpnpa.gov.in",
+                  "company_website_domain": "svpnpa.gov.in",
+                  "crustdata_company_id": 1382539,
+                  "description": "Achieved more than 60 major arrests in less than three years with 99% conviction rate \nPerformed search and seizure activities as well as covert surveillance \nProvided testimony in both federal and state court cases \n\n\nInstrumental in bringing down crime rate with help of community policing\nLed crack down on anto social elements\nSolved cases of Murder ,Dacoity,High way robbery having inter state ramifications leading to siezures of property\nLeading monthly magazine India Today adjudged my district as best policed in India\nNarcotics Control Bureau -Drug law enforcement training received",
+                  "employment_type": "",
+                  "end_date": "2004-01-01T00:00:00+00:00",
+                  "function_category": "",
+                  "is_default": false,
+                  "location": {
+                    "raw": "Puducherry Area, India"
+                  },
+                  "name": "Government of India",
+                  "position_id": 54832935,
+                  "professional_network_id": "1695580",
+                  "seniority_level": "Entry Level",
+                  "start_date": "2002-03-01T00:00:00+00:00",
+                  "title": "Superintendent of Police (North)",
+                  "years_at_company": "1 to 2 years",
+                  "years_at_company_raw": 1.0
+                },
+                {
+                  "company_description": null,
+                  "company_headcount_latest": null,
+                  "company_headcount_range": null,
+                  "company_industries": null,
+                  "company_professional_network_industry": null,
+                  "company_professional_network_profile_url": null,
+                  "company_profile_picture_permalink": null,
+                  "company_status": null,
+                  "company_website": null,
+                  "company_website_domain": null,
+                  "crustdata_company_id": null,
+                  "description": "Criminal Investigation Department\nInvestigated Cyber crime cases relating to Paedophilia\nGender violence/children welfare-supervised first case of cyber pornography and paedophilia in India and successfully got conviction-VVIP/VIP security\nAchieved innovations in Crime Criminal Infomation Systems-implemented Common Integrated Police Applications\nComputerisation of all records\nParticipation in International Committee of the Red Cross Training program\nSecure Police Wireless Communications project implementation\nWe received Golden Peacock Award for Police website and Kiosk\nParticipated in National Institute of Crminology and Forensic Sciences program\nInterpol liasoning through proper channel",
+                  "employment_type": "",
+                  "end_date": "2002-01-01T00:00:00+00:00",
+                  "function_category": "",
+                  "is_default": false,
+                  "location": {
+                    "raw": ""
+                  },
+                  "name": "Government of India-Pondicherry UT",
+                  "position_id": 54833017,
+                  "professional_network_id": null,
+                  "seniority_level": "Director",
+                  "start_date": "1996-01-01T00:00:00+00:00",
+                  "title": "Director SCRB State Crime Records Bureau",
+                  "years_at_company": "6 to 10 years",
+                  "years_at_company_raw": 6.0
+                },
+                {
+                  "company_description": null,
+                  "company_headcount_latest": null,
+                  "company_headcount_range": null,
+                  "company_industries": null,
+                  "company_professional_network_industry": null,
+                  "company_professional_network_profile_url": null,
+                  "company_profile_picture_permalink": null,
+                  "company_status": null,
+                  "company_website": null,
+                  "company_website_domain": null,
+                  "crustdata_company_id": null,
+                  "description": "TQM /TPM/ISO 9000 consulting\nTrained Engineers to implement standard operating practices for manufacture of multilayer printed circuit boards at Precision Electronics Noida",
+                  "employment_type": "",
+                  "end_date": "1996-08-01T00:00:00+00:00",
+                  "function_category": "Consulting",
+                  "is_default": false,
+                  "location": {
+                    "raw": ""
+                  },
+                  "name": "self employed",
+                  "position_id": 10649808,
+                  "professional_network_id": null,
+                  "seniority_level": "Entry Level",
+                  "start_date": "1992-08-01T00:00:00+00:00",
+                  "title": "TQM consultant",
+                  "years_at_company": "3 to 5 years",
+                  "years_at_company_raw": 4.0
+                },
+                {
+                  "company_description": null,
+                  "company_headcount_latest": null,
+                  "company_headcount_range": null,
+                  "company_industries": null,
+                  "company_professional_network_industry": null,
+                  "company_professional_network_profile_url": null,
+                  "company_profile_picture_permalink": null,
+                  "company_status": null,
+                  "company_website": null,
+                  "company_website_domain": null,
+                  "crustdata_company_id": null,
+                  "description": "Prepared Business plan for next 20 years considering the technological advances in Printed Circuit Board industry",
+                  "employment_type": "",
+                  "end_date": "1996-01-01T00:00:00+00:00",
+                  "function_category": "Consulting",
+                  "is_default": false,
+                  "location": {
+                    "raw": ""
+                  },
+                  "name": "AT&S, India",
+                  "position_id": 23195261,
+                  "professional_network_id": null,
+                  "seniority_level": "Entry Level",
+                  "start_date": "1992-01-01T00:00:00+00:00",
+                  "title": "Consultant -Multilayer Manufacture",
+                  "years_at_company": "3 to 5 years",
+                  "years_at_company_raw": 4.0
+                },
+                {
+                  "company_description": null,
+                  "company_headcount_latest": null,
+                  "company_headcount_range": null,
+                  "company_industries": null,
+                  "company_professional_network_industry": null,
+                  "company_professional_network_profile_url": null,
+                  "company_profile_picture_permalink": null,
+                  "company_status": null,
+                  "company_website": null,
+                  "company_website_domain": null,
+                  "crustdata_company_id": null,
+                  "description": "start Multilayer fabrication processes",
+                  "employment_type": "",
+                  "end_date": "1994-01-01T00:00:00+00:00",
+                  "function_category": "Consulting",
+                  "is_default": false,
+                  "location": {
+                    "raw": ""
+                  },
+                  "name": "precision electronics ltd",
+                  "position_id": 87160053,
+                  "professional_network_id": null,
+                  "seniority_level": "Entry Level",
+                  "start_date": "1994-01-01T00:00:00+00:00",
+                  "title": "consultant",
+                  "years_at_company": "Less than 1 year",
+                  "years_at_company_raw": 0.0
+                },
+                {
+                  "company_description": null,
+                  "company_headcount_latest": null,
+                  "company_headcount_range": null,
+                  "company_industries": null,
+                  "company_professional_network_industry": null,
+                  "company_professional_network_profile_url": null,
+                  "company_profile_picture_permalink": null,
+                  "company_status": null,
+                  "company_website": null,
+                  "company_website_domain": null,
+                  "crustdata_company_id": null,
+                  "description": "INDAL was part of ALCAN Canada \nManufacturing multilayer printed circuit boards in a world class plant\nElectronics & Communication Engineer in Indal Electronics(now AT&S) –world class Multilayer  Printed   Circuit Board Plant\nsuccesfully excecuted project management tasks assigned and achieved succesful teachnology transfer from Kollmorgen Corporation USA .\nDeveloped innovative solutions to enhance productivity and quality\n\n1988      Three Months in  California USA in PWB-Printed Wire Board  with the technology provider \nCNC and laser inspection equipment training\n\n1990-91 Courses in PWB manufacturing in Singapore",
+                  "employment_type": "",
+                  "end_date": "1992-01-01T00:00:00+00:00",
+                  "function_category": "Engineering",
+                  "is_default": false,
+                  "location": {
+                    "raw": ""
+                  },
+                  "name": "indal electronics",
+                  "position_id": 10649330,
+                  "professional_network_id": null,
+                  "seniority_level": "Entry Level",
+                  "start_date": "1988-01-01T00:00:00+00:00",
+                  "title": "engineer multilayer pcb manufacture",
+                  "years_at_company": "3 to 5 years",
+                  "years_at_company_raw": 4.0
+                }
+              ]
+            }
+          },
+          "social_handles": {
+            "dev_platform_identifier": {
+              "profile_url": null
+            },
+            "professional_network_identifier": {
+              "profile_url": "https://www.linkedin.com/in/firoze"
+            },
+            "twitter_identifier": {
+              "slug": ""
+            }
+          }
+        }
+      }
+    ]
+  }
+]
