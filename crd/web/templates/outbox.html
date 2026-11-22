@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+{% block content %}
+<h2>Outbox</h2>
+<p><strong>{{ executed }} actions executed · each idempotency key appears once</strong>
+  {% if not unique %}<span class="flash err">duplicate key found!</span>{% endif %}</p>
+
+<h3>Sent messages <span class="muted">({{ msgs|length }})</span></h3>
+<table class="dense striped">
+  <thead><tr><th>Time</th><th>Channel</th><th>To</th><th>Subject</th><th>Idempotency key</th></tr></thead>
+  <tbody>
+  {% for m in msgs %}<tr>
+    <td>{{ m.created_at }}</td><td>{{ m.channel }}</td><td>{{ m.to }}</td>
+    <td>{% if m.subject %}<details><summary>{{ m.subject }}</summary><pre style="white-space:pre-wrap">{{ m.body }}</pre></details>{% else %}{{ m.body[:120] }}{% endif %}</td>
+    <td><code>{{ m.idempotency_key }}</code></td>
+  </tr>{% else %}<tr><td colspan="5" class="muted">Nothing sent yet.</td></tr>{% endfor %}
+  </tbody>
+</table>
+
+<h3>ERP holds <span class="muted">({{ holds|length }})</span></h3>
+<table class="dense striped">
+  <thead><tr><th>Time</th><th>Counterparty</th><th>Reason</th><th>Idempotency key</th></tr></thead>
+  <tbody>
+  {% for h in holds %}<tr><td>{{ h.created_at }}</td><td>{{ h.cp_id }}</td><td>{{ h.reason }}</td><td><code>{{ h.idempotency_key }}</code></td></tr>
+  {% else %}<tr><td colspan="4" class="muted">No holds placed.</td></tr>{% endfor %}
+  </tbody>
+</table>
+{% endblock %}

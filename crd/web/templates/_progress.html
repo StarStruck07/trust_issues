@@ -1,0 +1,37 @@
+{% set finished = prog.status in ('done', 'partial') %}
+<div {% if not finished %}hx-get="/runs/{{ run.run_id }}/progress" hx-trigger="every 2s" hx-swap="outerHTML"{% endif %}>
+  <p><strong>Status:</strong> {{ prog.status }} · {{ prog.done }}/{{ prog.total }} counterparties
+    {% if finished %} · <a role="button" href="/runs/{{ run.run_id }}/report">Open report</a>{% endif %}</p>
+  <progress value="{{ prog.done }}" max="{{ prog.total or 1 }}"></progress>
+
+  <div class="grid">
+    <div>
+      <h4>Steps</h4>
+      <table class="dense">
+        <thead><tr><th>Counterparty</th>{% for s in STEPS %}<th>{{ s }}</th>{% endfor %}</tr></thead>
+        <tbody>
+        {% for r in prog.steps %}<tr>
+          <td>{% if r[STEPS[-1]] == 'done' %}<a href="/cp/{{ run.run_id }}/{{ r.cp_id }}">{{ r.display_name or r.cp_id }}</a>{% else %}{{ r.display_name or r.cp_id }}{% endif %}</td>
+          {% for s in STEPS %}{% set st = r[s] %}<td>
+            {%- if st == 'done' %}<span class="step-ok">✓</span>
+            {%- elif st == 'running' %}<span class="step-run">⟳</span>
+            {%- elif st == 'error' %}<span class="step-err">✗</span>
+            {%- else %}<span class="step-wait">·</span>{% endif -%}
+          </td>{% endfor %}
+        </tr>{% endfor %}
+        </tbody>
+      </table>
+    </div>
+    <div>
+      <h4>Ledger <span class="muted">{{ prog.costs.credits }} credits · {{ prog.costs.inr|inr }} · {{ prog.costs.calls }} calls · {{ prog.costs.errors }} errors</span></h4>
+      <table class="dense ticker">
+        <thead><tr><th>endpoint</th><th>credits</th><th>ms</th><th>status</th></tr></thead>
+        <tbody>
+        {% for le in prog.ledger %}<tr class="{{ le.status }}">
+          <td>{{ le.provider }} {{ le.endpoint }}</td><td>{{ le.credits }}</td><td>{{ le.latency_ms }}</td><td>{{ le.status }}</td>
+        </tr>{% else %}<tr><td colspan="4" class="muted">no calls yet</td></tr>{% endfor %}
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>

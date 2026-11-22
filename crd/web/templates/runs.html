@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+{% block content %}
+<h2>Runs</h2>
+{% if runs %}
+<table class="dense striped">
+  <thead><tr><th>Run</th><th>Started</th><th>Status</th><th>N</th><th>Credits</th><th>₹</th><th></th></tr></thead>
+  <tbody>
+  {% for r in runs %}<tr>
+    <td><a href="/runs/{{ r.run_id }}">{{ r.run_id }}</a></td><td>{{ r.started_at }}</td><td>{{ r.status }}</td>
+    <td>{{ r.n }}</td><td>{{ r.costs.credits }}</td><td>{{ r.costs.inr|inr }}</td>
+    <td><a href="/runs/{{ r.run_id }}/report">report</a> · <a href="/ledger?run={{ r.run_id }}">ledger</a></td>
+  </tr>{% endfor %}
+  </tbody>
+</table>
+{% else %}<p class="muted">No runs yet.</p>{% endif %}
+{% endblock %}

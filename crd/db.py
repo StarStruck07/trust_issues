@@ -349,7 +349,8 @@ def run_costs(run_id: str) -> dict:
         tot = c.execute(
             """SELECT COALESCE(SUM(credits),0) credits, COALESCE(SUM(inr),0) inr, COUNT(*) calls,
                       SUM(CASE WHEN status='cached' THEN 1 ELSE 0 END) cached,
-                      SUM(CASE WHEN status IN ('error','timeout') THEN 1 ELSE 0 END) errors
+                      SUM(CASE WHEN status IN ('error','timeout') THEN 1 ELSE 0 END) errors,
+                      COALESCE(SUM(COALESCE(tokens_in,0) + COALESCE(tokens_out,0)),0) tokens
                FROM ledger WHERE run_id=?""",
             (run_id,),
         ).fetchone()
@@ -358,12 +359,22 @@ def run_costs(run_id: str) -> dict:
             " FROM ledger WHERE run_id=? GROUP BY endpoint",
             (run_id,),
         ).fetchall()
+    run = get_run(run_id)
+    minutes = 0.0
+    if run and run.get("started_at"):
+        start = datetime.fromisoformat(run["started_at"])
+        end = datetime.fromisoformat(run["finished_at"]) if run.get("finished_at") else datetime.now(timezone.utc)
+        minutes = round(max((end - start).total_seconds(), 0) / 60, 1)
+    calls, cached = tot["calls"], tot["cached"] or 0
     return {
         "credits": round(tot["credits"], 3),
         "inr": round(tot["inr"], 2),
-        "calls": tot["calls"],
-        "cached": tot["cached"] or 0,
+        "calls": calls,
+        "cached": cached,
+        "cached_pct": round(100 * cached / calls, 1) if calls else 0.0,
         "errors": tot["errors"] or 0,
+        "tokens": tot["tokens"],
+        "minutes": minutes,
         "by_endpoint": {r["endpoint"]: {"calls": r["calls"], "credits": r["credits"], "inr": r["inr"]} for r in by},
     }
 
