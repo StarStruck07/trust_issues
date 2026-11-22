@@ -1,98 +1,78 @@
-# Trust Issues: business and financial architecture
+# Trust Issues: business architecture
 
-**T**hreat and **R**isk **U**nderstanding **S**ystem for **T**racking **I**nstitutional **S**tability.
-The engineering view is in [`TECHNICAL_ARCHITECTURE.md`](TECHNICAL_ARCHITECTURE.md).
+Trust Issues (Threat and Risk Understanding System for Tracking Institutional Stability) is a
+weekly counterparty risk review sold to third-party logistics companies.
 
-Figures marked *measured* come from our probe run and ledger (`tests/fixtures/README.md`,
-README "Costs"). Figures marked *assumption* are planning inputs, not data.
+Costs below marked "measured" come from our own test runs and the cost ledger. Anything marked
+"assumption" is a planning number we have not validated with a customer.
 
-## 1. Value chain
+## 1. The problem
+
+A 3PL depends on two groups of companies. If a carrier or warehouse fails, shipments stop. If a
+customer on credit terms fails, the unpaid invoices are usually lost. Most mid-size 3PLs check these
+companies by hand, once a month or once a quarter, and the check is often skipped when the team is
+busy.
+
+## 2. Who buys and who uses it
+
+The buyer is the CFO or head of credit, paying from the credit-control or insurance budget. The
+daily users are credit analysts, who review customers, and operations or procurement staff, who
+look after carriers and warehouses. Later, trade-credit insurers and supply-chain lenders could take
+the same monitoring as a data feed; we have not spoken to any yet.
 
 ```mermaid
 flowchart LR
-  subgraph Suppliers["What we buy"]
-    CD["Crustdata<br/>company + people + news data<br/>(per-credit)"]
-    AN["Anthropic Claude<br/>extraction + summaries<br/>(per-token)"]
-    REG["Public registries<br/>IBBI (free)"]
-    HOST["Hosting<br/>(small VM / serverless)"]
-  end
-  TI["<b>Trust Issues</b><br/>weekly sourced verdicts ·<br/>drafted actions · approval gate ·<br/>exactly-once execution · audit trail"]
-  subgraph Buyers["Who pays"]
-    CFO["3PL CFO / head of credit<br/>(credit-control + insurance budget)"]
-  end
-  subgraph Users["Who uses it daily"]
-    AN1["Credit-control analysts"]
-    OPS["Ops / procurement<br/>(carrier risk)"]
-  end
-  subgraph Later["Later channels (assumption)"]
-    INS["Trade-credit insurers"]
-    LEND["Supply-chain lenders"]
-  end
-  CD & AN & REG & HOST --> TI
-  TI -- "₹ per counterparty per month" --> CFO
-  TI --> AN1 & OPS
-  TI -. "portfolio monitoring feed" .-> INS & LEND
+  Crustdata -->|data, per credit| TI[Trust Issues]
+  Anthropic -->|LLM, per token| TI
+  IBBI -->|free public data| TI
+  TI -->|monthly fee| Buyer[3PL finance team]
+  TI --> Users[Credit and ops analysts]
+  TI -.->|later| Insurers[Insurers and lenders]
 ```
 
-## 2. The problem we price against
+## 3. Pricing
 
-A 3PL depends on carriers and warehouses (if one fails, shipments stop) and extends credit to
-customers (if one fails, invoices are lost). Today an analyst reviews them by hand, monthly or
-quarterly. Trust Issues does that loop every week, cites every fact, and drafts the follow-up.
+We plan to charge ₹1,500 per counterparty per month, which covers four weekly reviews and re-checks
+when a monitored company's data changes (assumption).
 
-## 3. Revenue model
+For a 3PL the size of our demo portfolio, with 24 suppliers and 400 customers, that comes to about
+₹6.4 lakh a month, or ₹76 lakh a year.
 
-- **Price:** ₹1,500 per counterparty per month (four weekly reviews + Watcher re-checks).
-- **Tiers (assumption):** Starter up to 100 counterparties; Growth up to 500; Enterprise with ERP
-  integration, SSO and custom rules.
-- **Example account (the Kaveri Freight demo shape, assumption):** 24 vendors + 400 customers =
-  424 counterparties → **₹6.36 L per month** (≈ ₹76 L per year).
+## 4. Cost per counterparty
 
-## 4. Unit economics (per counterparty per month)
-
-| Line | Basis | ₹ / month |
+| Item | Basis | ₹ per month |
 |---|---|---|
-| Revenue | list price | **1,500** |
-| Crustdata data | ≈ 4.5–6.5 credits per weekly review *(measured)*, cache makes repeat runs ~0; ₹2–3 per credit *(assumption)* | 50–80 |
-| LLM | ≈ 2–4k tokens per counterparty per review *(measured)* | 10–20 |
-| Hosting + support | *(assumption)* | 50–100 |
-| **Gross margin** | | **≈ 87–93%** |
+| Crustdata | 4.5 to 6.5 credits per review (measured), ₹2 to ₹3 per credit (assumption) | 50 to 80 |
+| Claude | 2,000 to 4,000 tokens per review (measured) | 10 to 20 |
+| Hosting and support | assumption | 50 to 100 |
+| Total | | 110 to 200 |
 
-```mermaid
-pie showData
-  title Where ₹1,500 goes (midpoint, per counterparty per month)
-  "Data (Crustdata)" : 65
-  "LLM" : 15
-  "Hosting + support" : 75
-  "Gross margin" : 1345
-```
+At ₹1,500 per month that leaves a gross margin of roughly 87 to 93 percent. A second review in the
+same week reuses cached data and costs almost nothing, and each run has a credit cap set in
+`config.yaml`, so a large list cannot overspend.
 
-## 5. Why a buyer says yes
+## 5. What a buyer needs to see
 
-| Buyer fear | What Trust Issues does |
-|---|---|
-| "A bad customer slips through" | Weekly checks; RED and AMBER surface with ₹ at risk and a drafted terms change or credit hold |
-| "The tool will be confidently wrong" | Never guesses identity; failed sources → HELD; zero wrong GREENs on the graded set (12/12) |
-| "It will email my customers on its own" | Nothing irreversible without a named approver; senior sign-off for strategic accounts |
-| "I can't audit it" | Every fact links to its source and date; every rating has a points breakdown; every call is in the cost ledger |
+Credit teams will not hand decisions to a tool that might be confidently wrong or that might email
+their customers by itself. So the product is built around a few rules. It never guesses which
+company a name refers to. If a data source fails, the company is put on hold rather than passed. A
+person approves every email, credit hold or supplier request before it is sent. Every fact links to
+where it came from, and every cost is recorded. On our 12 test cases it gave no wrong "trusted"
+verdicts.
 
-## 6. Costs we control
+## 6. Risks
 
-- **Credit caps** per counterparty and per run stop a review cleanly (`limits` in `config.yaml`).
-- **Caching** makes the second review in a week nearly free.
-- **Rules, not an LLM, decide verdicts**, so model costs stay small and predictable.
+- We depend on one main data provider. All calls go through one client, so switching or adding a
+  provider is contained, and the insolvency registry gives an independent check.
+- Small firms with little online presence are hard to assess. They come back as "can't tell" rather
+  than being marked risky; GST and bank data, shared with consent, would close the gap.
+- Personal data. We only look at companies, and at people only in their public roles (name, title,
+  employer, dates).
 
-## 7. Risks
+## 7. Next steps
 
-| Risk | Mitigation |
-|---|---|
-| Data-provider dependency | One client (`crd/data/crustdata.py`) isolates the provider; registries add independent signals |
-| Thin coverage for small firms | CANNOT VERIFY instead of a penalty; GST/bank signals with consent are on the roadmap |
-| Regulatory / personal data | Companies only; people limited to public roles; person data purged per run |
-
-## 8. What comes next (commercial)
-
-1. Pilot with one mid-size 3PL on its real list (live mode).
-2. ERP connectors for credit holds (SAP, Tally) and TMS on-time data for carriers.
-3. Consent-based GST filing and bank-statement signals.
-4. A monitoring feed for trade-credit insurers covering the same portfolios.
+1. Run a pilot with one mid-size 3PL on its real counterparty list.
+2. Connect to the ERPs our customers use (SAP, Tally) for credit holds, and to their transport
+   systems for carrier on-time data.
+3. Add GST filing and bank statement signals, with the counterparty's consent.
+4. Talk to trade-credit insurers about a monitoring feed for the same portfolios.
