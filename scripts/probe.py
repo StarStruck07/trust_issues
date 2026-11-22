@@ -58,7 +58,7 @@ def load_key() -> str:
     key = os.environ.get("CRUSTDATA_API_KEY")
     env = ROOT / ".env"
     if not key and env.exists():
-        for line in env.read_text().splitlines():
+        for line in env.read_text(encoding="utf-8").splitlines():
             if line.strip().startswith("CRUSTDATA_API_KEY="):
                 key = line.split("=", 1)[1].strip().strip('"').strip("'")
     if not key:
@@ -73,7 +73,7 @@ def slug(s: str) -> str:
 def save(endpoint: str, key: str, body) -> Path:
     p = FIX / endpoint / f"{slug(key)}.json"
     p.parent.mkdir(parents=True, exist_ok=True)
-    p.write_text(json.dumps(body, indent=2, ensure_ascii=False))
+    p.write_text(json.dumps(body, indent=2, ensure_ascii=False), encoding="utf-8")
     return p
 
 
@@ -132,7 +132,7 @@ class Probe:
 
     def finish(self):
         FIX.mkdir(parents=True, exist_ok=True)
-        (FIX / "_probe_log.json").write_text(json.dumps(LOG, indent=2, ensure_ascii=False))
+        (FIX / "_probe_log.json").write_text(json.dumps(LOG, indent=2, ensure_ascii=False), encoding="utf-8")
 
 
 def find_credit_fields(obj, prefix="", out=None, depth=0):
