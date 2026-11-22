@@ -1,0 +1,151 @@
+[
+ {
+  "matched_on": "67368692",
+  "match_type": "crustdata_company_id",
+  "matches": [
+   {
+    "confidence_score": 1.0,
+    "company_data": {
+     "crustdata_company_id": 67368692,
+     "basic_info": {
+      "name": "Quasar Infotek Private Limited - India",
+      "crustdata_company_id": 67368692,
+      "primary_domain": "quasarinfotek.com",
+      "all_domains": [
+       "quasarinfotek.com"
+      ],
+      "website": "http://quasarinfotek.com",
+      "professional_network_url": "https://www.linkedin.com/company/quasar-infotek-private-limited---india",
+      "professional_network_id": "7915841",
+      "profile_name": "Quasar Infotek Private Limited - India",
+      "logo_permalink": null,
+      "description": "Quasar Infotek Private Limited - India is a company based out of No. 194, New No. 303, Poonamallee High Road, Kilpauk,, Chennai, Tamil Nadu, India.",
+      "company_type": null,
+      "status": "active",
+      "year_founded": null,
+      "employee_count_range": null,
+      "markets": []
+     },
+     "headcount": {
+      "total": 1,
+      "largest_headcount_country": null,
+      "timeseries": [
+       {
+        "date": "2026-11-09",
+        "employee_count": 1
+       }
+      ],
+      "growth_percent": {
+       "mom": null,
+       "qoq": null,
+       "six_months": null,
+       "two_years": null,
+       "yoy": null
+      },
+      "growth_absolute": {
+       "mom": null,
+       "qoq": null,
+       "six_months": null,
+       "two_years": null,
+       "yoy": null
+      },
+      "by_role_absolute": null,
+      "by_role_percent": null,
+      "by_role_growth_6m_pct": null,
+      "by_role_growth_yoy_pct": null,
+      "by_region_absolute": null,
+      "by_region_percent": null,
+      "by_skill_absolute": null,
+      "by_skill_percent": null
+     },
+     "funding": {
+      "is_investor": false,
+      "contact_email": null,
+      "phone_number": null,
+      "total_investment_usd": null,
+      "last_round_amount_usd": null,
+      "last_fundraise_date": null,
+      "last_round_type": null,
+      "num_funding_rounds": null,
+      "funds_total_usd": null,
+      "num_funds": null,
+      "last_fund_date": null,
+      "investors": null
+     },
+     "hiring": {
+      "recent_titles_csv": null,
+      "openings_count": null,
+      "openings_growth_percent": null,
+      "by_function_qoq_pct": null,
+      "by_function_6m_pct": null
+     },
+     "web_traffic": {
+      "domain_traffic": {
+       "quasarinfotek.com": {
+        "domain": "quasarinfotek.com",
+        "monthly_visitors": 0.0,
+        "mom_pct": 0.0,
+        "qoq_pct": 0.0,
+        "source_search_pct": 0.0,
+        "source_direct_pct": 0.0,
+        "source_social_pct": 0.0,
+        "source_paid_referral_pct": 0.0,
+        "source_referral_pct": 0.0,
+        "monthly_visitors_timeseries": [
+         {
+          "date": "2026-06-01T00:00:00+00:00",
+          "monthly_visitors": 0
+         },
+         {
+          "date": "2026-07-01T00:00:00+00:00",
+          "monthly_visitors": 0
+         },
+         {
+          "date": "2026-08-01T00:00:00+00:00",
+          "monthly_visitors": 0
+         },
+         {
+          "date": "2026-09-01T00:00:00+00:00",
+          "monthly_visitors": 0
+         }
+        ],
+        "source_search_pct_timeseries": [],
+        "source_direct_pct_timeseries": [],
+        "source_social_pct_timeseries": [],
+        "source_paid_referral_pct_timeseries": [],
+        "source_referral_pct_timeseries": []
+       }
+      }
+     },
+     "employee_reviews": {
+      "overall_rating": {
+       "rating": null,
+       "total_count": null,
+       "rating_1_count": null,
+       "rating_2_count": null,
+       "rating_3_count": null,
+       "rating_4_count": null,
+       "rating_5_count": null
+      },
+      "company_ceo": {
+       "ceo_rating": null
+      },
+      "culture_and_values_rating": null,
+      "diversity_and_inclusion_rating": null,
+      "work_life_balance_rating": null,
+      "senior_management_rating": null,
+      "compensation_and_benefits_rating": null,
+      "career_opportunities_rating": null,
+      "recommend_to_friend_rating": null,
+      "business_outlook_rating": null
+     },
+     "people": {
+      "decision_makers": [],
+      "founders": [],
+      "cxos": []
+     }
+    }
+   }
+  ]
+ }
+]

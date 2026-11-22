@@ -44,7 +44,7 @@ priority:
   tiers: {P1: 6, P2: 4, P3: 2}                              # urgency >= threshold; GREEN is always P4
 ```
 
-### 3. `tests/run_cases.py`: apply a case's `env:` block (case 10)
+### 3. `tests/run_cases.py`: apply a case's `env:` block (case 10). DONE by Prachi
 
 `tests/cases/10_source_failure.yaml` has `env: {CRD_FAIL_SOURCES: enrich}`. In `run_case`, after
 `case = yaml.safe_load(f)`:
@@ -74,14 +74,14 @@ the repo is `sample_counterparties.csv`. For the approve-then-kill demo, see
 
 ## For Nilay (P2)
 
-Done since the first version of this note: `registries.py` (IBBI works), the Windows fixes, people,
-and the watcher. 131/131 tests pass.
+All done. Registries (IBBI works), Windows fixes, people, the watcher, and the 12 case companies
+recorded live (mock: 12/12).
 
-- **Mock mode invents a healthy company for unknown domains** (`_synthetic_identify` +
-  `_patch_default_enrich`). In `python -m crd.cli test --mock`, cases 02, 08 and 12 therefore report
-  "WRONG GREEN": Tide and Mahindra Logistics come out GREEN on fake default data. Suggestion: mark
-  synthetic data so it cannot support a GREEN (e.g. Evidence `status="empty"` with claim "mock:
-  no recording for <domain>"), or record real fixtures.
-- Fixtures for the case companies, if credits allow: `tide.co`, `mahindralogistics.com`,
-  `indiaglycols.com`, the IBBI page for "Quasar India Limited", and "Tide Water Oil Co. (India) Ltd.".
-  Then mock mode can grade cases 02, 03, 07, 08 and 12 too.
+Changed by Prachi in `crd/data/crustdata.py` (it blocked the graded
+run): in mock mode, an `enrich` call with no recording now raises
+`SourceUnavailable("mock: no recorded company data for ...")` instead of patching
+`_default.json` into a healthy stand-in company. A fake company can therefore never be rated GREEN.
+The old stand-in is still available with `CRD_MOCK_SYNTHETIC=1`, which the three wiring tests that
+rely on it (`test_p2_pipeline.py`, `test_signals.py::test_unknown_mock_company_flows`,
+`test_crustdata_client.py::test_mock_unknown_name_is_not_found_and_unknown_domain_flows`) now set.
+A new test, `test_mock_unknown_domain_has_no_fake_company_data`, guards the default.

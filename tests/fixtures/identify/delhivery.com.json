@@ -1,39 +1,39 @@
 [
-  {
-    "matched_on": "delhivery.com",
-    "match_type": "domain",
-    "matches": [
-      {
-        "confidence_score": 1.0,
-        "company_data": {
-          "crustdata_company_id": 5798,
-          "basic_info": {
-            "name": "Delhivery",
-            "crustdata_company_id": 5798,
-            "primary_domain": "delhivery.com",
-            "all_domains": [
-              "drl.aero",
-              "delhivery.com"
-            ],
-            "website": "https://www.delhivery.com/",
-            "professional_network_url": "https://www.linkedin.com/company/delhivery",
-            "professional_network_id": "2312777",
-            "profile_name": "Delhivery",
-            "logo_permalink": "https://crustdata-media.s3.us-east-2.amazonaws.com/company/71b150219cfe4c30f5586301a08cb16fbea70619f7f66cbf8fae2b7c1877a544.jpg",
-            "description": "Delhivery is India’s largest fully-integrated logistics services provider. With a nationwide network spanning over 18,850 pin codes, the company offers a comprehensive range of logistics solutions — including express parcel transportation, partial-truckload (PTL) and full-truckload (FTL) freight, International, supply chain solutions, National & local courier services and technology-enabled logistics. Comprehensive Solutions for Every Need➡️Express Parcel: Send shipments across India, including heavy goods, with value-added services like real-time tracking, NDR Management, WhatsApp based updates, RTO, Protect➡️Delivery App: All-in-one courier service that lets you send anything within the city or anywhere in India➡️Rapid: A sub-2-hour delivery service helping brands offer faster deliveries and a better customer experience➡️Supply Chain Solutions: Store and manage inventory at optimized locations across India, fulfilling orders for both B2B and B2C channels with precision.➡️Partial Truckload (PTL):Leverage India’s large PTL network for door-to-door or hub-to-hub delivery with multimodal freight and smart dashboards.➡️Full Truckload (FTL): Handle high-volume shipments with speed and efficiency through our professional network of truckload partners and our own fleet.➡️International: Reach 220+ countries with door-to-door delivery, end-to-end tracking, and multiple shipping speeds-built for SMEs, D2C brands, and exporters looking to ship➡️TransportOne: Delhivery’s AI‐powered TMS that gives enterprises end‐to‐end optimization, from intelligent sourcing and load stacking to agentic ePOD and automated billingOur Impact at Scale✔️4 Billion+ parcels shipped since inception✔️Coverage of 99.5% of India’s population✔️Trusted by 48,000+ businesses✔️Shipped over 4.7 Million tonnes of freight✔️Managing 22.05 Million+ sqft of logistics infrastructureStart shipping: https://one.delhivery.com/registerDownload Delhivery Direct App: https://appdelhivery.go.link/5YuVn",
-            "company_type": "Public Company",
-            "year_founded": 2011,
-            "employee_count_range": "10001+",
-            "markets": [
-              "NSE"
-            ],
-            "industries": [
-              "Transportation, Logistics, Supply Chain and Storage"
-            ]
-          },
-          "social_profiles": null
-        }
-      }
-    ]
-  }
+ {
+  "matched_on": "delhivery.com",
+  "match_type": "domain",
+  "matches": [
+   {
+    "confidence_score": 1.0,
+    "company_data": {
+     "crustdata_company_id": 5798,
+     "basic_info": {
+      "name": "Delhivery",
+      "crustdata_company_id": 5798,
+      "primary_domain": "delhivery.com",
+      "all_domains": [
+       "drl.aero",
+       "delhivery.com"
+      ],
+      "website": "https://www.delhivery.com/",
+      "professional_network_url": "https://www.linkedin.com/company/delhivery",
+      "professional_network_id": "2312777",
+      "profile_name": "Delhivery",
+      "logo_permalink": "https://crustdata-media.s3.us-east-2.amazonaws.com/company/71b150219cfe4c30f5586301a08cb16fbea70619f7f66cbf8fae2b7c1877a544.jpg",
+      "description": "Delhivery is India’s largest fully-integrated logistics services provider. With a nationwide network spanning over 18,850 pin codes, the company offers a comprehensive range of logistics solutions — including express parcel transportation, partial-truckload (PTL) and full-truckload (FTL) freight, International, supply chain solutions, National & local courier services and technology-enabled logistics. Comprehensive Solutions for Every Need➡️Express Parcel: Send shipments across India, including heavy goods, with value-added services like real-time tracking, NDR Management, WhatsApp based updates, RTO, Protect➡️Delivery App: All-in-one courier service that lets you send anything within the city or anywhere in India➡️Rapid: A sub-2-hour delivery service helping brands offer faster deliveries and a better customer experience➡️Supply Chain Solutions: Store and manage inventory at optimized locations across India, fulfilling orders for both B2B and B2C channels with precision.➡️Partial Truckload (PTL):Leverage India’s large PTL network for door-to-door or hub-to-hub delivery with multimodal freight and smart dashboards.➡️Full Truckload (FTL): Handle high-volume shipments with speed and efficiency through our professional network of truckload partners and our own fleet.➡️International: Reach 220+ countries with door-to-door delivery, end-to-end tracking, and multiple shipping speeds-built for SMEs, D2C brands, and exporters looking to ship➡️TransportOne: Delhivery’s AI‐powered TMS that gives enterprises end‐to‐end optimization, from intelligent sourcing and load stacking to agentic ePOD and automated billingOur Impact at Scale✔️4 Billion+ parcels shipped since inception✔️Coverage of 99.5% of India’s population✔️Trusted by 48,000+ businesses✔️Shipped over 4.7 Million tonnes of freight✔️Managing 22.05 Million+ sqft of logistics infrastructureStart shipping: https://one.delhivery.com/registerDownload Delhivery Direct App: https://appdelhivery.go.link/5YuVn",
+      "company_type": "Public Company",
+      "year_founded": 2011,
+      "employee_count_range": "10001+",
+      "markets": [
+       "NSE"
+      ],
+      "industries": [
+       "Transportation, Logistics, Supply Chain and Storage"
+      ]
+     },
+     "social_profiles": null
+    }
+   }
+  ]
+ }
 ]

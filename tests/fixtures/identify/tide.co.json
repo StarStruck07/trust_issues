@@ -1,0 +1,38 @@
+[
+ {
+  "matched_on": "tide.co",
+  "match_type": "domain",
+  "matches": [
+   {
+    "confidence_score": 1.0,
+    "company_data": {
+     "crustdata_company_id": 662394,
+     "basic_info": {
+      "name": "Tide",
+      "crustdata_company_id": 662394,
+      "primary_domain": "tide.co",
+      "all_domains": [
+       "tide.co"
+      ],
+      "website": "https://www.tide.co",
+      "professional_network_url": "https://www.linkedin.com/company/tide-banking",
+      "professional_network_id": "10877408",
+      "profile_name": "Tide",
+      "logo_permalink": "https://crustdata-media.s3.us-east-2.amazonaws.com/company/a19f096ed7c700446f44a3b7ed33d62f1587dffb4b07c76711c13cb5cba5d28f.jpg",
+      "description": "Tide helps SMEs save time (and money) in the running of their businesses by not only offering business accounts and related banking services, but also a comprehensive set of highly usable and connected administrative solutions from invoicing to accounting.Tide is transforming the small business banking market with over 1.6 million globally across the UK, India, Germany and France. Using advanced technology, all solutions are designed with SMEs in mind.With quick onboarding, low fees and innovative features, we thrive on making data-driven decisions to help SMEs save both time and money.Tide facts:> Tide is available for UK, Indian, German and French SMEs> Over 1.6 million members: 800,000 UK and 800,000 in India and growing rapidly > Over $200 million raised in funding> Over 2500 Tideans globally - we’re diversity champions!> We have offices in Central London, with a member support and technology centre in Sofia, Bulgaria, technology centres in Serbia, Romania, Lithuania and Hyderabad and offices in Gurugram and New Delhi, India",
+      "company_type": "Privately Held",
+      "year_founded": 2015,
+      "employee_count_range": "1001-5000",
+      "markets": [
+       "PRIVATE"
+      ],
+      "industries": [
+       "Financial Services"
+      ]
+     },
+     "social_profiles": null
+    }
+   }
+  ]
+ }
+]

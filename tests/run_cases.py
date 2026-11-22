@@ -91,6 +91,10 @@ def _run_case(case: dict, path: str) -> dict:
         w.writeheader()
         for r in rows:
             w.writerow({k: (";".join(v) if isinstance(v, list) else v) for k, v in r.items()})
+    # a case may set env vars for its own run only (case 10: CRD_FAIL_SOURCES=enrich)
+    case_env = {k: str(v) for k, v in (case.get("env") or {}).items()}
+    saved_env = {k: os.environ.get(k) for k in case_env}
+    os.environ.update(case_env)
     t0 = time.time()
     try:
         rid = orchestrator.run_review(case["request"], csv_path)
@@ -98,6 +102,12 @@ def _run_case(case: dict, path: str) -> dict:
         costs = db.run_costs(rid)
     except Exception as e:  # a crash is a fail, not a stop
         ok, why, costs, rid = False, f"crash: {type(e).__name__}: {e}", {"credits": 0}, None
+    finally:
+        for k, v in saved_env.items():
+            if v is None:
+                os.environ.pop(k, None)
+            else:
+                os.environ[k] = v
     return {"id": case.get("id", os.path.basename(path)), "pass": ok, "why": why, "run_id": rid,
             "credits": costs.get("credits", 0), "seconds": round(time.time() - t0, 1)}
 

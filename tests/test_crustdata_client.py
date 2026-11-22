@@ -1,4 +1,6 @@
 """Owner: Nilay (P2). CrustdataClient pipeline: retries, 402, cache, budget, mock, forced failures."""
+import json
+
 import httpx
 import pytest
 
@@ -155,15 +157,17 @@ def test_mock_reads_recorded_fixture(monkeypatch):
     ed = c.enrich(company_id=cid)                      # found via company-id alias
     assert ed["basic_info"]["primary_domain"] == "delhivery.com"
     assert ed["headcount"]["total"] > 0
-    assert c.last_raw_ref.endswith("enrich/delhivery.com.json")
+    assert c.last_raw_ref.endswith(("enrich/delhivery.com.json", "enrich/5798.json"))
     assert c.job_search(company_id=cid)
-    assert c.web_search('"Delhivery"')                 # query mapped to the company's fixture
+    c.web_search('"Delhivery"')                        # query mapped to the recorded fixture
+    assert c.last_raw_ref.endswith(("web_search/delhivery.json", "web_search/delhivery.com.json"))
     led = db.get_ledger("run-m")
     assert led and all(e.status == "cached" and e.credits == 0 and e.note == "mock" for e in led)
 
 
 def test_mock_unknown_name_is_not_found_and_unknown_domain_flows(monkeypatch):
     monkeypatch.setenv("CRD_MOCK", "1")
+    monkeypatch.setenv("CRD_MOCK_SYNTHETIC", "1")  # opt in to the stand-in company
     c = CrustdataClient("run-m")
     assert c.identify(names=["Totally Unknown Pvt Ltd"])[0]["matches"] == []
     ident = c.identify(domains=["example-carrier.in"])
@@ -204,3 +208,41 @@ def test_cache_expires_after_ttl(monkeypatch):
     c2, calls2 = make_client(h, run_id="run-3")
     c2.identify(domains=["acme.in"])
     assert len(calls2) == 1                             # fetched again, not served from cache
+
+
+def test_record_mode_writes_replayable_fixtures(monkeypatch, tmp_path):
+    monkeypatch.setenv("CRD_RECORD", "1")
+    monkeypatch.setattr(crustdata, "FIXTURES", tmp_path)
+    two = [{"matched_on": "a.in", "matches": [{"confidence_score": 1.0, "company_data": {"crustdata_company_id": 1}}]},
+           {"matched_on": "b.in", "matches": []}]
+    c, _ = make_client(lambda req, n: httpx.Response(200, json=two, headers={"x-credits-used": "0.2"}))
+    c.identify(domains=["a.in", "b.in"])
+    assert json.loads((tmp_path / "identify" / "a.in.json").read_text(encoding="utf-8"))[0]["matched_on"] == "a.in"
+    assert (tmp_path / "identify" / "b.in.json").exists()              # split per identifier
+    monkeypatch.setenv("CRD_RECORD", "0")
+    monkeypatch.setenv("CRD_MOCK", "1")
+    crustdata._INDEX = None
+    out = CrustdataClient("run-r").identify(domains=["a.in"])          # replays offline
+    assert out[0]["matches"][0]["company_data"]["crustdata_company_id"] == 1
+    crustdata._INDEX = None
+
+
+def test_mock_exact_fixture_beats_alias_from_another_file(monkeypatch):
+    """tide.co must resolve to Tide, not to Tide Water Oil whose name search also listed Tide."""
+    monkeypatch.setenv("CRD_MOCK", "1")
+    crustdata._INDEX = None
+    m = CrustdataClient("run-m").identify(domains=["tide.co"])[0]["matches"][0]
+    assert m["company_data"]["basic_info"]["name"] == "Tide"
+
+
+def test_mock_unknown_domain_has_no_fake_company_data(monkeypatch):
+    """Default mock mode never invents company data, so it can never rate a company GREEN on it."""
+    import pytest
+
+    from crd.data.errors import SourceUnavailable
+
+    monkeypatch.setenv("CRD_MOCK", "1")
+    monkeypatch.delenv("CRD_MOCK_SYNTHETIC", raising=False)
+    c = CrustdataClient("run-strict")
+    with pytest.raises(SourceUnavailable, match="no recorded company data"):
+        c.enrich(domain="no-such-company-on-record.in")

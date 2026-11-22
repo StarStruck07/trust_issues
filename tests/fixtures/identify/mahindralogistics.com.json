@@ -1,0 +1,38 @@
+[
+ {
+  "matched_on": "mahindralogistics.com",
+  "match_type": "domain",
+  "matches": [
+   {
+    "confidence_score": 1.0,
+    "company_data": {
+     "crustdata_company_id": 2885,
+     "basic_info": {
+      "name": "Mahindra Logistics",
+      "crustdata_company_id": 2885,
+      "primary_domain": "mahindralogistics.com",
+      "all_domains": [
+       "mahindralogistics.com"
+      ],
+      "website": "http://mahindralogistics.com",
+      "professional_network_url": "https://www.linkedin.com/company/mahindralogistics",
+      "professional_network_id": "3538091",
+      "profile_name": "Mahindra Logistics",
+      "logo_permalink": "https://crustdata-media.s3.us-east-2.amazonaws.com/company/62f2bb4eec4d9514eace11aeb574a1bf769efe13b3cb5ceb8f02332b55f5a0da.jpg",
+      "description": "We are one of India’s largest 3PL providers offering integrated logistics solutions. We help our clients across diverse industries manage their supply chain, from pre-production, production, and storage to distribution processes. In addition to mobility services, we offer transport network services, i.e. multi-modal and last-mile delivery solutions. Our endeavour is to orchestrate continuous value and impact for our stakeholders, thus inspiring and igniting success for all. We are driven to deliver clarity and confidence to enterprises through our integrated and customized solutions to enhance their supply chains and mobility operations. We are focused on our Core 3PL Integrated Solutions and Network Transportation Services to give businesses seamless control over every moving part they have, to unlock continuous success. Our Mobility segment provides a host of people mobility services in both B2B and B2C space. Our focus is on growth, digitalization, and becoming a preferred partner for our clients; wherein together with our employees and associates, we are embarking upon a transformative journey of Igniting Success.",
+      "company_type": "Public Company",
+      "year_founded": 2000,
+      "employee_count_range": "10001+",
+      "markets": [
+       "NSE"
+      ],
+      "industries": [
+       "Transportation, Logistics, Supply Chain and Storage"
+      ]
+     },
+     "social_profiles": null
+    }
+   }
+  ]
+ }
+]

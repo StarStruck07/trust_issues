@@ -33,7 +33,7 @@ def test_carrier_signals_from_one_enrich_call():
     evs = run(cp(role="carrier"), resolved(**DELHIVERY))
     qoq = by(evs, "headcount_qoq")[0]
     assert qoq.status == "ok" and qoq.value == pytest.approx(2.84, abs=0.01)
-    assert qoq.field_path == "headcount.growth_percent.qoq" and qoq.raw_ref.endswith("enrich/delhivery.com.json")
+    assert qoq.field_path == "headcount.growth_percent.qoq" and qoq.raw_ref.endswith(("enrich/delhivery.com.json", "enrich/5798.json"))
     assert qoq.record_date == date(2026, 11, 16) and not qoq.stale
     assert by(evs, "headcount_6m")[0].value == pytest.approx(4.88, abs=0.01)
     rv = by(evs, "employee_reviews")[0]
@@ -106,7 +106,8 @@ def test_budget_errors_propagate(monkeypatch):
         run(cp(), resolved(**DELHIVERY))
 
 
-def test_unknown_mock_company_flows():
+def test_unknown_mock_company_flows(monkeypatch):
+    monkeypatch.setenv("CRD_MOCK_SYNTHETIC", "1")  # opt in to the stand-in company
     evs = run(cp(), resolved(cid=None, domain="example-carrier.in", legal_name="Example Carrier"))
     assert by(evs, "headcount_qoq")[0].status == "ok"
     h = by(evs, "hiring")[0]

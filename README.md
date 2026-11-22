@@ -86,14 +86,14 @@ every page. The verdicts and draft actions are real outputs of the scoring engin
 (this run: 248 trusted, 92 doubts, 39 don't trust, 45 can't tell or on hold; 85 drafts awaiting
 approval). It exists to show the product at a realistic scale, not as evidence of accuracy.
 
-### Where it stands (honestly)
+### Where it stands
 
-- **134 unit and integration tests pass**, Windows included.
-- **Graded cases in mock mode: 7 of 12.** The other five (Tide India, Quasar India, India Glycols,
-  Mahindra Logistics, and the kill case) involve companies with no recorded Crustdata response, so
-  mock mode cannot judge them. Scoring tests reproduce their logic on synthetic evidence (shutdown
-  news → AMBER, demerger neutralises a headcount drop, CEO exit → AMBER, CIRP → RED). **The graded
-  result comes from the live run** (`python -m crd.cli test --live`).
+- **176 unit and integration tests pass**, Windows included.
+- **Graded cases: 12/12 pass, 0 wrong GREENs.** Every case company was recorded live on 22 Nov 2026
+  (`CRD_RECORD=1`), so the run replays offline at 0 credits with `python -m crd.cli test --mock`.
+- **Mock mode never invents data.** A company with no recording gets "no recorded company data" →
+  unavailable → HELD or CANNOT VERIFY, never a made-up GREEN (`CRD_MOCK_SYNTHETIC=1` opts into a
+  stand-in company for wiring tests only).
 
 ## 3. What comes next
 
@@ -276,7 +276,7 @@ for "Sharma Transport" alongside four others, so a high score alone is not uniqu
 
 ### How we tested
 
-- **Unit and integration tests** (`python -m pytest -q tests`, **134 tests, all passing**,
+- **Unit and integration tests** (`python -m pytest -q tests`, **176 tests, all passing**,
   Windows included):
   - scoring rules, resolve and dedupe, the orchestrator (including a simulated `kill -9` and resume),
     the Crustdata client on recorded responses, news, registries, people, the watcher, the LLM
@@ -305,13 +305,14 @@ for "Sharma Transport" alongside four others, so a high score alone is not uniqu
 | 11 | Reworded | Case 01 asked as a question | same as 01 |
 | 12 | Kill mid-action | RED/AMBER customer over ₹10 L, terms email approved, server killed | 1 outbox row |
 
-  **Mock mode is a wiring check, not the graded run.** Mock mode only has recorded responses for
-  Delhivery, Blue Dart, Mamaearth and "Sharma Transport". It currently passes 7/12: healthy,
-  reworded, lookalike, duplicate, no footprint, namesake and source failure. For companies with no recording, the
-  mock client stands in a generic healthy company, so Tide, Mahindra Logistics and India Glycols
-  look healthy in mock mode, which is meaningless for those cases. **The graded result comes from
-  the live run** (`python -m crd.cli test --live`), and this table will be updated with it. Case 10
-  passes when the failure is actually forced (`CRD_FAIL_SOURCES=enrich`).
+  **Result: 12/12 pass, 0 wrong GREENs.** Every case company was recorded live on 22 Nov 2026
+  (`CRD_RECORD=1`), so the run replays offline at 0 credits with `python -m crd.cli test --mock`.
+  Ratings: 01 GREEN, 02 AMBER, 03 RED (IBBI hard stop), 04 CANNOT VERIFY, 05 merged GREEN,
+  06 CANNOT VERIFY, 07 GREEN, 08 AMBER, 09 CANNOT VERIFY, 10 CANNOT VERIFY (Enrich forced down),
+  11 GREEN, 12 AMBER. The case runner applies a case's `env:` block, which is how case 10 forces
+  the outage. Mock mode never invents data: a company with no recording is unavailable, never a
+  made-up GREEN.
+
 - **Kill test** (re-run on the merged code and the real database): we started the server with
   `CRD_SLOW_EXECUTE=5`, approved a terms email over HTTP, hard-killed the server mid-send, and
   restarted. The action was in `executing` with 0 outbox rows. After restart it was `done` with

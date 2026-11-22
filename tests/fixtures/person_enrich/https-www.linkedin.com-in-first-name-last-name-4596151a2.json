@@ -1,0 +1,40 @@
+[
+ {
+  "matched_on": "https://www.linkedin.com/in/first-name-last-name-4596151a2",
+  "match_type": "professional_network_profile_url",
+  "match_status": "matched",
+  "matches": [
+   {
+    "confidence_score": 1.0,
+    "person_data": {
+     "basic_profile": {
+      "name": "First Name Last Name",
+      "current_title": "Chief Executive Officer"
+     },
+     "professional_network": {
+      "connections": null
+     },
+     "social_handles": {
+      "professional_network_identifier": {
+       "profile_url": "https://www.linkedin.com/in/first-name-last-name-4596151a2"
+      }
+     },
+     "experience": {
+      "employment_details": {
+       "current": [
+        {
+         "name": "Hike",
+         "title": "Chief Executive Officer",
+         "crustdata_company_id": 5740,
+         "start_date": null,
+         "end_date": null
+        }
+       ],
+       "past": []
+      }
+     }
+    }
+   }
+  ]
+ }
+]

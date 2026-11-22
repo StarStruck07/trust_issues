@@ -1,0 +1,97 @@
+[
+ {
+  "matched_on": "https://www.linkedin.com/in/sagarmpatil",
+  "match_type": "professional_network_profile_url",
+  "match_status": "matched",
+  "matches": [
+   {
+    "confidence_score": 1.0,
+    "person_data": {
+     "basic_profile": {
+      "name": "Sagar P.",
+      "current_title": "Chief Financial Officer"
+     },
+     "professional_network": {
+      "connections": null
+     },
+     "social_handles": {
+      "professional_network_identifier": {
+       "profile_url": "https://www.linkedin.com/in/sagarmpatil"
+      }
+     },
+     "experience": {
+      "employment_details": {
+       "current": [
+        {
+         "name": "Blue Dart",
+         "title": "Chief Financial Officer",
+         "crustdata_company_id": 736,
+         "start_date": "2025-08-01T00:00:00+00:00",
+         "end_date": null
+        }
+       ],
+       "past": [
+        {
+         "name": "Blue Dart",
+         "title": "Head - Corporate Accounts",
+         "crustdata_company_id": 736,
+         "start_date": "2023-09-01T00:00:00+00:00",
+         "end_date": "2025-07-01T00:00:00+00:00"
+        },
+        {
+         "name": "Blue Dart",
+         "title": "Corporate Controller All India",
+         "crustdata_company_id": 736,
+         "start_date": "2016-08-01T00:00:00+00:00",
+         "end_date": "2023-08-01T00:00:00+00:00"
+        },
+        {
+         "name": "Burger King",
+         "title": "Finance Controller",
+         "crustdata_company_id": 52470,
+         "start_date": "2014-07-01T00:00:00+00:00",
+         "end_date": "2016-08-01T00:00:00+00:00"
+        },
+        {
+         "name": "DHL",
+         "title": "CFO, DHL Express India",
+         "crustdata_company_id": 1136329,
+         "start_date": "2008-04-01T00:00:00+00:00",
+         "end_date": "2011-03-01T00:00:00+00:00"
+        },
+        {
+         "name": "DHL",
+         "title": "Finance Manager, DHL Express India",
+         "crustdata_company_id": 1136329,
+         "start_date": "2006-07-01T00:00:00+00:00",
+         "end_date": "2008-04-01T00:00:00+00:00"
+        },
+        {
+         "name": "Shell",
+         "title": "Credit Controller, Bharat Shell Limited",
+         "crustdata_company_id": 6050558,
+         "start_date": "2005-08-01T00:00:00+00:00",
+         "end_date": "2006-07-01T00:00:00+00:00"
+        },
+        {
+         "name": "Shell",
+         "title": "Manager - MI, Bharat Shell Limited",
+         "crustdata_company_id": 6050558,
+         "start_date": "2000-12-01T00:00:00+00:00",
+         "end_date": "2005-07-01T00:00:00+00:00"
+        },
+        {
+         "name": "Owens Corning",
+         "title": "Manager -  Finance, Owens Corning (India) Limited",
+         "crustdata_company_id": 682203,
+         "start_date": "1997-12-01T00:00:00+00:00",
+         "end_date": "2000-11-01T00:00:00+00:00"
+        }
+       ]
+      }
+     }
+    }
+   }
+  ]
+ }
+]

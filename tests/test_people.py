@@ -120,3 +120,16 @@ def test_purge_people_raw(tmp_path, monkeypatch):
     people.purge_people_raw("run-p")
     assert [f.name for f in raw.iterdir()] == ["enrich_ab12cd34.json"]
     people.purge_people_raw("no-such-run")            # no error
+
+
+def test_committed_fixtures_hold_no_extra_personal_data():
+    """Data minimisation also applies to what we commit: no summaries, photos, emails or headlines."""
+    def people_parts(f):
+        for item in json.loads(f.read_text(encoding="utf-8")):
+            for m in item.get("matches") or []:
+                yield (m.get("company_data") or {}).get("people") or m.get("person_data") or {}
+
+    for f in list(Path("tests/fixtures/enrich").glob("*.json")) + list(Path("tests/fixtures/person_enrich").glob("*.json")):
+        text = json.dumps(list(people_parts(f)))       # company fields (e.g. head-office phone) are fine
+        for field in ('"summary"', "profile_picture", '"headline"', '"email', '"phone', '"education"', '"skills"'):
+            assert field not in text, (f.name, field)

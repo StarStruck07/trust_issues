@@ -1,0 +1,125 @@
+[
+ {
+  "matched_on": "https://www.linkedin.com/in/shaun-mccabe-65603431",
+  "match_type": "professional_network_profile_url",
+  "match_status": "matched",
+  "matches": [
+   {
+    "confidence_score": 1.0,
+    "person_data": {
+     "basic_profile": {
+      "name": "Shaun McCabe",
+      "current_title": "Chief Financial Officer"
+     },
+     "professional_network": {
+      "connections": null
+     },
+     "social_handles": {
+      "professional_network_identifier": {
+       "profile_url": "https://www.linkedin.com/in/shaun-mccabe-65603431"
+      }
+     },
+     "experience": {
+      "employment_details": {
+       "current": [
+        {
+         "name": "Tide",
+         "title": "Chief Financial Officer",
+         "crustdata_company_id": 662394,
+         "start_date": "2024-09-01T00:00:00+00:00",
+         "end_date": null
+        },
+        {
+         "name": "TalentUnlocked",
+         "title": "Founding Chair",
+         "crustdata_company_id": 32540616,
+         "start_date": "2026-05-01T00:00:00+00:00",
+         "end_date": null
+        },
+        {
+         "name": "AO",
+         "title": "Non Executive Director",
+         "crustdata_company_id": 780746,
+         "start_date": "2018-07-01T00:00:00+00:00",
+         "end_date": null
+        }
+       ],
+       "past": [
+        {
+         "name": "Boohoo Group PLC",
+         "title": "Chief Financial Officer",
+         "crustdata_company_id": 1227161,
+         "start_date": "2022-10-01T00:00:00+00:00",
+         "end_date": "2024-01-01T00:00:00+00:00"
+        },
+        {
+         "name": "Boohoo Group PLC",
+         "title": "Audit Chair",
+         "crustdata_company_id": 1227161,
+         "start_date": "2020-11-01T00:00:00+00:00",
+         "end_date": "2022-09-01T00:00:00+00:00"
+        },
+        {
+         "name": "Trainline",
+         "title": "Chief Financial Officer",
+         "crustdata_company_id": 1084832,
+         "start_date": "2016-09-01T00:00:00+00:00",
+         "end_date": "2022-09-01T00:00:00+00:00"
+        },
+        {
+         "name": "ASOS.com",
+         "title": "International Director",
+         "crustdata_company_id": 1115819,
+         "start_date": "2013-08-01T00:00:00+00:00",
+         "end_date": "2016-08-01T00:00:00+00:00"
+        },
+        {
+         "name": "Amazon",
+         "title": "VP Finance - CFO Amazon Europe",
+         "crustdata_company_id": 6034577,
+         "start_date": "2007-12-01T00:00:00+00:00",
+         "end_date": "2013-08-01T00:00:00+00:00"
+        },
+        {
+         "name": "Home Retail Group PLC",
+         "title": "Trading Finance Director",
+         "crustdata_company_id": 1287651,
+         "start_date": "2005-01-01T00:00:00+00:00",
+         "end_date": "2007-01-01T00:00:00+00:00"
+        },
+        {
+         "name": "Home Retail Group PLC",
+         "title": "Commercial finance manager - various roles",
+         "crustdata_company_id": 1287651,
+         "start_date": "1999-01-01T00:00:00+00:00",
+         "end_date": "2005-01-01T00:00:00+00:00"
+        },
+        {
+         "name": "Whitbread",
+         "title": "Inns finance manager",
+         "crustdata_company_id": 1064291,
+         "start_date": "1997-01-01T00:00:00+00:00",
+         "end_date": "1999-01-01T00:00:00+00:00"
+        },
+        {
+         "name": "Whitbread",
+         "title": "Group finance manager",
+         "crustdata_company_id": 1064291,
+         "start_date": "1995-01-01T00:00:00+00:00",
+         "end_date": "1997-01-01T00:00:00+00:00"
+        },
+        {
+         "name": "EY",
+         "title": "Audit Supervisor",
+         "crustdata_company_id": 891049,
+         "start_date": "1992-01-01T00:00:00+00:00",
+         "end_date": "1995-01-01T00:00:00+00:00"
+        }
+       ]
+      }
+     }
+    }
+   }
+  ]
+ }
+]

@@ -1,0 +1,118 @@
+[
+ {
+  "matched_on": "https://www.linkedin.com/in/bhallagurjot",
+  "match_type": "professional_network_profile_url",
+  "match_status": "matched",
+  "matches": [
+   {
+    "confidence_score": 1.0,
+    "person_data": {
+     "basic_profile": {
+      "name": "Gurjot Singh Bhalla",
+      "current_title": "Chief Operating Officer- Alyte"
+     },
+     "professional_network": {
+      "connections": null
+     },
+     "social_handles": {
+      "professional_network_identifier": {
+       "profile_url": "https://www.linkedin.com/in/bhallagurjot"
+      }
+     },
+     "experience": {
+      "employment_details": {
+       "current": [
+        {
+         "name": "Mahindra Logistics",
+         "title": "Chief Operating Officer- Alyte",
+         "crustdata_company_id": 2885,
+         "start_date": "2024-06-01T00:00:00+00:00",
+         "end_date": null
+        }
+       ],
+       "past": [
+        {
+         "name": "Ola",
+         "title": "Director, Sales and Operations - India - Mobility",
+         "crustdata_company_id": 5993,
+         "start_date": "2022-03-01T00:00:00+00:00",
+         "end_date": "2024-06-01T00:00:00+00:00"
+        },
+        {
+         "name": "Ola",
+         "title": "Associate Director - Regional Head - North - Mobility",
+         "crustdata_company_id": 5993,
+         "start_date": "2021-03-01T00:00:00+00:00",
+         "end_date": "2022-07-01T00:00:00+00:00"
+        },
+        {
+         "name": "Ola Fleet Technologies Pvt Ltd",
+         "title": "Associate Director - Regional Head - North",
+         "crustdata_company_id": null,
+         "start_date": "2020-03-01T00:00:00+00:00",
+         "end_date": "2021-08-01T00:00:00+00:00"
+        },
+        {
+         "name": "Ola Fleet Technologies Pvt Ltd",
+         "title": "Inventory & Yard Operations - North",
+         "crustdata_company_id": null,
+         "start_date": "2019-03-01T00:00:00+00:00",
+         "end_date": "2020-03-01T00:00:00+00:00"
+        },
+        {
+         "name": "foodpanda India",
+         "title": "City Head - Logistics - Foodpanda",
+         "crustdata_company_id": 6061,
+         "start_date": "2018-08-01T00:00:00+00:00",
+         "end_date": "2019-02-01T00:00:00+00:00"
+        },
+        {
+         "name": "Ola",
+         "title": "Supply Head -Delhi NCR",
+         "crustdata_company_id": 5993,
+         "start_date": "2015-11-01T00:00:00+00:00",
+         "end_date": "2018-08-01T00:00:00+00:00"
+        },
+        {
+         "name": "Ola",
+         "title": "Territory Manager - PB, HR, UK",
+         "crustdata_company_id": 5993,
+         "start_date": "2015-03-01T00:00:00+00:00",
+         "end_date": "2015-11-01T00:00:00+00:00"
+        },
+        {
+         "name": "Ola",
+         "title": "Supply Manager - Amritsar",
+         "crustdata_company_id": 5993,
+         "start_date": "2014-12-01T00:00:00+00:00",
+         "end_date": "2015-03-01T00:00:00+00:00"
+        },
+        {
+         "name": "airtel",
+         "title": "Territory Sales Manager",
+         "crustdata_company_id": 1088621,
+         "start_date": "2013-04-01T00:00:00+00:00",
+         "end_date": "2014-12-01T00:00:00+00:00"
+        },
+        {
+         "name": "Home Store India Ltd.",
+         "title": "Intern",
+         "crustdata_company_id": 4266669,
+         "start_date": "2012-05-01T00:00:00+00:00",
+         "end_date": "2012-07-01T00:00:00+00:00"
+        },
+        {
+         "name": "UnitedLex",
+         "title": "Associate (TMG)",
+         "crustdata_company_id": 669488,
+         "start_date": "2010-12-01T00:00:00+00:00",
+         "end_date": "2011-05-01T00:00:00+00:00"
+        }
+       ]
+      }
+     }
+    }
+   }
+  ]
+ }
+]
