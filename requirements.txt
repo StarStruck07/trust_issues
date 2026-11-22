@@ -1,0 +1,12 @@
+fastapi
+uvicorn[standard]
+jinja2
+python-multipart
+httpx
+pydantic>=2
+pyyaml
+typer
+python-dotenv
+anthropic
+tenacity
+pytest
