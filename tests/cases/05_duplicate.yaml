@@ -27,5 +27,5 @@ notes: >
   (C-202). Blue Dart Express Limited is the listed DHL-group express carrier (bluedart.com);
   mock fixtures in tests/fixtures/*/bluedart.com.json. Correct because both rows resolve to the
   same Crustdata company id, so they must be merged into one assessment that lists both cp_ids,
-  never reviewed twice and never double-counted in ₹ at risk. HELD is accepted while
+  never reviewed twice and never double-counted in Rs at risk. HELD is accepted while
   registries.py is missing (no GREEN on an unavailable required source).
