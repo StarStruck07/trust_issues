@@ -1,0 +1,97 @@
+[
+ {
+  "matched_on": "https://www.linkedin.com/in/praveen-kumar-kj-78476b1",
+  "match_type": "professional_network_profile_url",
+  "match_status": "matched",
+  "matches": [
+   {
+    "confidence_score": 1.0,
+    "person_data": {
+     "basic_profile": {
+      "name": "Praveen Kumar KJ",
+      "current_title": "Chief Financial Officer"
+     },
+     "professional_network": {
+      "connections": null
+     },
+     "social_handles": {
+      "professional_network_identifier": {
+       "profile_url": "https://www.linkedin.com/in/praveen-kumar-kj-78476b1"
+      }
+     },
+     "experience": {
+      "employment_details": {
+       "current": [
+        {
+         "name": "Shadowfax",
+         "title": "Chief Financial Officer",
+         "crustdata_company_id": 5823,
+         "start_date": "2019-03-01T00:00:00+00:00",
+         "end_date": null
+        }
+       ],
+       "past": [
+        {
+         "name": "XSEED Education",
+         "title": "Chief Financial Officer",
+         "crustdata_company_id": 6526,
+         "start_date": "2018-03-01T00:00:00+00:00",
+         "end_date": "2019-03-01T00:00:00+00:00"
+        },
+        {
+         "name": "OnMobile Global Limited",
+         "title": "Group Chief Financial Officer",
+         "crustdata_company_id": 3470,
+         "start_date": "2014-09-01T00:00:00+00:00",
+         "end_date": "2018-03-01T00:00:00+00:00"
+        },
+        {
+         "name": "OnMobile Global Limited",
+         "title": "Head Of Finance",
+         "crustdata_company_id": 3470,
+         "start_date": "2013-09-01T00:00:00+00:00",
+         "end_date": "2014-09-01T00:00:00+00:00"
+        },
+        {
+         "name": "OnMobile Global Limited",
+         "title": "Sr Manager Finance, GM Finance, Director Finance",
+         "crustdata_company_id": 3470,
+         "start_date": "2006-07-01T00:00:00+00:00",
+         "end_date": "2013-09-01T00:00:00+00:00"
+        },
+        {
+         "name": "Hewlett Packard Enterprise",
+         "title": "Business Finance",
+         "crustdata_company_id": 681540,
+         "start_date": "2005-09-01T00:00:00+00:00",
+         "end_date": "2006-07-01T00:00:00+00:00"
+        },
+        {
+         "name": "MetLife",
+         "title": "Deputy Manager - Finance",
+         "crustdata_company_id": 8230,
+         "start_date": "2004-09-01T00:00:00+00:00",
+         "end_date": "2005-09-01T00:00:00+00:00"
+        },
+        {
+         "name": "GE Capital International Services (now GENPACT)",
+         "title": "FP&A",
+         "crustdata_company_id": null,
+         "start_date": "2003-01-01T00:00:00+00:00",
+         "end_date": "2004-09-01T00:00:00+00:00"
+        },
+        {
+         "name": "A F Ferguson & Co",
+         "title": "Internal Audit team - Hindustan Unilever",
+         "crustdata_company_id": 6225378,
+         "start_date": "2001-02-01T00:00:00+00:00",
+         "end_date": "2003-01-01T00:00:00+00:00"
+        }
+       ]
+      }
+     }
+    }
+   }
+  ]
+ }
+]

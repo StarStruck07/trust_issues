@@ -1,0 +1,139 @@
+[
+ {
+  "matched_on": "https://www.linkedin.com/in/rameshbafna",
+  "match_type": "professional_network_profile_url",
+  "match_status": "matched",
+  "matches": [
+   {
+    "confidence_score": 1.0,
+    "person_data": {
+     "basic_profile": {
+      "name": "Ramesh Bafna",
+      "current_title": "CFO & Executive Director"
+     },
+     "professional_network": {
+      "connections": null
+     },
+     "social_handles": {
+      "professional_network_identifier": {
+       "profile_url": "https://www.linkedin.com/in/rameshbafna"
+      }
+     },
+     "experience": {
+      "employment_details": {
+       "current": [
+        {
+         "name": "Zepto",
+         "title": "CFO & Executive Director",
+         "crustdata_company_id": 622940,
+         "start_date": "2023-05-01T00:00:00+00:00",
+         "end_date": null
+        },
+        {
+         "name": "Various Startups",
+         "title": "Investor",
+         "crustdata_company_id": 6035190,
+         "start_date": "2021-05-01T00:00:00+00:00",
+         "end_date": null
+        }
+       ],
+       "past": [
+        {
+         "name": "JITO INCUBATION & INNOVATION FOUNDATION",
+         "title": "Investment Committee",
+         "crustdata_company_id": 710408,
+         "start_date": "2024-10-01T00:00:00+00:00",
+         "end_date": "2026-10-01T00:00:00+00:00"
+        },
+        {
+         "name": "JITO INCUBATION & INNOVATION FOUNDATION",
+         "title": "Vice Chairman",
+         "crustdata_company_id": 710408,
+         "start_date": "2022-11-01T00:00:00+00:00",
+         "end_date": "2024-10-01T00:00:00+00:00"
+        },
+        {
+         "name": "CoinSwitch",
+         "title": "Chief Financial Officer",
+         "crustdata_company_id": 609224,
+         "start_date": "2022-06-01T00:00:00+00:00",
+         "end_date": "2023-04-01T00:00:00+00:00"
+        },
+        {
+         "name": "Zilingo",
+         "title": "Chief Financial Officer",
+         "crustdata_company_id": 623053,
+         "start_date": "2022-03-01T00:00:00+00:00",
+         "end_date": "2022-05-01T00:00:00+00:00"
+        },
+        {
+         "name": "Myntra",
+         "title": "CFO & SVP (Finance, Inventory Planning & Business Intelligence)",
+         "crustdata_company_id": 5764,
+         "start_date": "2018-12-01T00:00:00+00:00",
+         "end_date": "2022-02-01T00:00:00+00:00"
+        },
+        {
+         "name": "Flipkart",
+         "title": "Senior Director, Head of Finance - Fashion, Home & Furniture and Books & General Merchandise",
+         "crustdata_company_id": 5744,
+         "start_date": "2017-07-01T00:00:00+00:00",
+         "end_date": "2018-12-01T00:00:00+00:00"
+        },
+        {
+         "name": "Flipkart",
+         "title": "Director, Head of Finance - Fashion, Marketplace & Retail Product",
+         "crustdata_company_id": 5744,
+         "start_date": "2016-01-01T00:00:00+00:00",
+         "end_date": "2017-06-01T00:00:00+00:00"
+        },
+        {
+         "name": "Flipkart",
+         "title": "Associate Director, Various Roles (Large Supply Chain, FP&A, Marketplace & Electronics BU)",
+         "crustdata_company_id": 5744,
+         "start_date": "2014-11-01T00:00:00+00:00",
+         "end_date": "2015-12-01T00:00:00+00:00"
+        },
+        {
+         "name": "Cisco",
+         "title": "Sales Finance",
+         "crustdata_company_id": 1159125,
+         "start_date": "2014-05-01T00:00:00+00:00",
+         "end_date": "2014-11-01T00:00:00+00:00"
+        },
+        {
+         "name": "Wipro",
+         "title": "Head of Middle Office, Corporate Treasury",
+         "crustdata_company_id": 5619,
+         "start_date": "2013-02-01T00:00:00+00:00",
+         "end_date": "2014-05-01T00:00:00+00:00"
+        },
+        {
+         "name": "Wipro",
+         "title": "Business Finance Head - APJC, France & Germany",
+         "crustdata_company_id": 5619,
+         "start_date": "2008-06-01T00:00:00+00:00",
+         "end_date": "2013-02-01T00:00:00+00:00"
+        },
+        {
+         "name": "Wipro",
+         "title": "Various Roles - Internal Audit, Controllership and FP&A",
+         "crustdata_company_id": 5619,
+         "start_date": "2003-09-01T00:00:00+00:00",
+         "end_date": "2008-06-01T00:00:00+00:00"
+        },
+        {
+         "name": "Kumbhat & Co.",
+         "title": "CA Article Trainee",
+         "crustdata_company_id": null,
+         "start_date": "2002-04-01T00:00:00+00:00",
+         "end_date": "2003-08-01T00:00:00+00:00"
+        }
+       ]
+      }
+     }
+    }
+   }
+  ]
+ }
+]

@@ -1,0 +1,40 @@
+[
+ {
+  "matched_on": "https://www.linkedin.com/in/patti-nelson-4b0a72282",
+  "match_type": "professional_network_profile_url",
+  "match_status": "matched",
+  "matches": [
+   {
+    "confidence_score": 1.0,
+    "person_data": {
+     "basic_profile": {
+      "name": "Patti Nelson",
+      "current_title": "CEO"
+     },
+     "professional_network": {
+      "connections": null
+     },
+     "social_handles": {
+      "professional_network_identifier": {
+       "profile_url": "https://www.linkedin.com/in/patti-nelson-4b0a72282"
+      }
+     },
+     "experience": {
+      "employment_details": {
+       "current": [
+        {
+         "name": "Nykaa",
+         "title": "CEO",
+         "crustdata_company_id": 5730,
+         "start_date": null,
+         "end_date": null
+        }
+       ],
+       "past": []
+      }
+     }
+    }
+   }
+  ]
+ }
+]

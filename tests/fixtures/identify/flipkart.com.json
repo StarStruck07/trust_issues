@@ -1,0 +1,39 @@
+[
+ {
+  "matched_on": "flipkart.com",
+  "match_type": "domain",
+  "matches": [
+   {
+    "confidence_score": 1.0,
+    "company_data": {
+     "crustdata_company_id": 5744,
+     "basic_info": {
+      "name": "Flipkart",
+      "crustdata_company_id": 5744,
+      "primary_domain": "flipkart.com",
+      "all_domains": [
+       "flipkart.com"
+      ],
+      "website": "https://www.flipkart.com",
+      "professional_network_url": "https://www.linkedin.com/company/flipkart",
+      "professional_network_id": "321062",
+      "profile_name": "Flipkart",
+      "logo_permalink": "https://crustdata-media.s3.us-east-2.amazonaws.com/company/bc99cb23c16bea7f4d599808ea43411ea4194bc4e6601f5a3960e560be5d5d07.jpg",
+      "description": "At Flipkart, we're driven by our purpose of empowering every Indian's dream by delivering value through innovation in technology and commerce. With a customer base of over 350 million, product coverage of over 150 million across 80+ categories, a focus on generating direct and indirect employment and a commitment to empowering generations of entrepreneurs and MSMEs, all driven by a sustainable growth strategy – Flipkart is maximising for customers, stakeholders, and the planet at large!At Flipkart, our promise to every Flipster is - getting an opportunity to leave a mark and create their own legacy, the freedom to experiment, learn and grow, work with the industry’s brightest minds as part of a diverse team and we will extend our culture of care to them to ensure that they can focus on doing their best work. Driven by audacity, bias for action, customer first, integrity and inclusion – Flipsters have pioneered solutions that have transformed digital commerce in India. From the industry-first introduction of cash-on-delivery in 2010 to the launch of voice search and multiple vernacular interfaces in 2021 that have made e-commerce a very inclusive experience, Flipkart continues the exciting journey of solving for the Indian customer. We understand that your own aspirations and journeys are unique. So you choose what you want to maximise, and we provide you the platform for it - because when you maximise, we maximise.   Flipkart is a part of the Walmart-owned Flipkart Group, which also includes group companies Flipkart Wholesale, Flipkart Health+, Cleartrip, and Myntra.Get in touch with our experts for support with your orders here: https://www.flipkart.com/helpcentre",
+      "company_type": "Privately Held",
+      "year_founded": 2007,
+      "employee_count_range": "10001+",
+      "markets": [
+       "PRIVATE"
+      ],
+      "industries": [
+       "Technology, Information and Internet",
+       "Technology, Information and Media"
+      ]
+     },
+     "social_profiles": null
+    }
+   }
+  ]
+ }
+]

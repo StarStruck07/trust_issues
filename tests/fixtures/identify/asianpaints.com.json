@@ -1,0 +1,38 @@
+[
+ {
+  "matched_on": "asianpaints.com",
+  "match_type": "domain",
+  "matches": [
+   {
+    "confidence_score": 1.0,
+    "company_data": {
+     "crustdata_company_id": 414,
+     "basic_info": {
+      "name": "Asian Paints",
+      "crustdata_company_id": 414,
+      "primary_domain": "asianpaints.com",
+      "all_domains": [
+       "asianpaints.com"
+      ],
+      "website": "http://www.asianpaints.com",
+      "professional_network_url": "https://www.linkedin.com/company/asian-paints",
+      "professional_network_id": "7185",
+      "profile_name": "Asian Paints",
+      "logo_permalink": "https://crustdata-media.s3.us-east-2.amazonaws.com/company/2881736d0b6e5617d19a3b57a17ebe3bd80d9f0ab446d28decfff50b0b645f1c.jpg",
+      "description": "They say home is where the heart is. Which is why, since 1942, we’ve been helping customers transform empty properties to homes by dressing them up in warm hues, pastel shades and cool colours, to create spaces that truly represent you.Asian Paints has a lot of identities. We have been India’s largest paint company for almost 50 years and are part of the top 10 decorative paint companies worldwide. We have operations in 14 countries, and manufacturing facilities in 27 global locations. Having subsidiaries in India and abroad, Asian Paints encompasses the best of Indian and global traits, homegrown and international qualities. Our subsidiaries are Berger International, Scib, Taubman, Apco, Ess Ess. We have joint ventures with PPG in automotive and industrial paints and Sleek International Modular Kitchens. With different strokes for all types of folks, we have paints ranging from luxury enamels to economic quality distemper in all shades imaginable.Despite our phenomenal growth in the paint segment, we didn’t just stop there. We expanded with our wallpaper range - Nilaya, wall stencils, wood finishes, adhesives and waterproofing solutions. We listened to our customers when they asked for hassle-free painting services and now provide end-to-end servicing in multiple cities. We constantly innovate with service offerings – from colour consultancy at home, online consultancy services, to providing inspiration centres through Colour stores.Our reputation often precedes us but we have never let that be our resting laurel. We constantly strive to push boundaries – not only by creating more sustainable ways of carrying out extensive community initiatives that touch the lives of people, but also through our operations. Our people are passionate, innovative and work with integrity. Our actions reflect these values and our businesses across the globe ensure they maintain the quality of work and standards of excellence we are known for.",
+      "company_type": "Public Company",
+      "year_founded": 1942,
+      "employee_count_range": "10001+",
+      "markets": [
+       "NSE"
+      ],
+      "industries": [
+       "Manufacturing"
+      ]
+     },
+     "social_profiles": null
+    }
+   }
+  ]
+ }
+]

@@ -1,0 +1,76 @@
+[
+ {
+  "matched_on": "https://www.linkedin.com/in/deepak-pareek214",
+  "match_type": "professional_network_profile_url",
+  "match_status": "matched",
+  "matches": [
+   {
+    "confidence_score": 1.0,
+    "person_data": {
+     "basic_profile": {
+      "name": "Deepak Pareek",
+      "current_title": "Chief Financial Officer"
+     },
+     "professional_network": {
+      "connections": null
+     },
+     "social_handles": {
+      "professional_network_identifier": {
+       "profile_url": "https://www.linkedin.com/in/deepak-pareek214"
+      }
+     },
+     "experience": {
+      "employment_details": {
+       "current": [
+        {
+         "name": "Allcargo Logistics",
+         "title": "Chief Financial Officer",
+         "crustdata_company_id": 1613,
+         "start_date": "2025-11-01T00:00:00+00:00",
+         "end_date": null
+        },
+        {
+         "name": "Allcargo Logistics",
+         "title": "Chief Financial Officer",
+         "crustdata_company_id": 1613,
+         "start_date": "2024-11-01T00:00:00+00:00",
+         "end_date": null
+        }
+       ],
+       "past": [
+        {
+         "name": "Felix Advisory Private Limited",
+         "title": "Partner - Transaction Advisory",
+         "crustdata_company_id": 1095466,
+         "start_date": "2020-01-01T00:00:00+00:00",
+         "end_date": "2024-05-01T00:00:00+00:00"
+        },
+        {
+         "name": "IL&FS Financial Services Ltd (IFIN)",
+         "title": "Chief Operating Officer",
+         "crustdata_company_id": 1282524,
+         "start_date": "2006-01-01T00:00:00+00:00",
+         "end_date": "2019-01-01T00:00:00+00:00"
+        },
+        {
+         "name": "IL&FS Ltd",
+         "title": "Vice President Finance",
+         "crustdata_company_id": null,
+         "start_date": "1998-01-01T00:00:00+00:00",
+         "end_date": "2006-01-01T00:00:00+00:00"
+        },
+        {
+         "name": "Birla International Ltd",
+         "title": "Research Manager",
+         "crustdata_company_id": null,
+         "start_date": "1997-01-01T00:00:00+00:00",
+         "end_date": "1998-01-01T00:00:00+00:00"
+        }
+       ]
+      }
+     }
+    }
+   }
+  ]
+ }
+]

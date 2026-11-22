@@ -1,0 +1,40 @@
+[
+ {
+  "matched_on": "zeptonow.com",
+  "match_type": "domain",
+  "matches": [
+   {
+    "confidence_score": 1.0,
+    "company_data": {
+     "crustdata_company_id": 622940,
+     "basic_info": {
+      "name": "Zepto",
+      "crustdata_company_id": 622940,
+      "primary_domain": "zepto.com",
+      "all_domains": [
+       "zeptonow.com",
+       "zepto.com"
+      ],
+      "website": "https://www.zepto.com/",
+      "professional_network_url": "https://www.linkedin.com/company/zeptonow",
+      "professional_network_id": "76108196",
+      "profile_name": "Zepto",
+      "logo_permalink": "https://crustdata-media.s3.us-east-2.amazonaws.com/company/970791c616caacc14b3552c8263151cc2484a6f2557e0d64ac896ccccb740cc3.jpg",
+      "description": "Founded in 2021 by Aadit Palicha and Kaivalya Vohra, Zepto is on a mission to save you time —making every second count towards life's real joys. Our platform has revolutionised rapid commerce in India with cutting-edge technology and strategically optimised delivery hubs. Zepto offers an extensive range of 45,000+ products, from fresh groceries to electronics, beauty essentials, apparels, toys and more, delivering across 50+ cities in minutes*Zepto Café extends our commitment to convenience, featuring a curated menu of over 200 fresh items.",
+      "company_type": "Privately Held",
+      "year_founded": 2021,
+      "employee_count_range": "5001-10000",
+      "markets": [
+       "PRIVATE"
+      ],
+      "industries": [
+       "Technology, Information and Internet",
+       "Technology, Information and Media"
+      ]
+     },
+     "social_profiles": null
+    }
+   }
+  ]
+ }
+]

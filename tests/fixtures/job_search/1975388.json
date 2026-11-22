@@ -1,0 +1,75 @@
+{
+ "job_listings": [
+  {
+   "crustdata_job_id": 764298213252995,
+   "job_details": {
+    "job_id": 764298213252995,
+    "title": "UI/UX Developer",
+    "category": "Engineering",
+    "workplace_type": "On-site",
+    "url": "https://www.linkedin.com/jobs/view/4252900798",
+    "reposted_job": false,
+    "number_of_openings": null,
+    "source": "professional_network",
+    "employment_type": null
+   },
+   "company": {
+    "basic_info": {
+     "crustdata_company_id": 1975388,
+     "name": "VRL LOGISTICS LTD",
+     "primary_domain": "vrlgroup.in",
+     "website": "http://www.vrllogistics.com",
+     "professional_network_id": "92635355",
+     "industries": [
+      "Transportation, Logistics, Supply Chain and Storage"
+     ]
+    },
+    "locations": {
+     "country": "India",
+     "state": "Karnataka",
+     "city": null,
+     "street_address": "VRL Complex, 17th KM, Bengaluru Road,  VARUR, Betdur, Agadi, Varur, Aralikatti, Yaliwal, Chebbi, Karnataka"
+    },
+    "headcount": {
+     "total": 1772,
+     "range": "10001+",
+     "largest_headcount_country": "IND"
+    },
+    "followers": {
+     "count": 16032
+    },
+    "revenue": {
+     "estimated": {
+      "lower_bound_usd": 1000000000,
+      "upper_bound_usd": 1000000000000
+     },
+     "public_markets": {
+      "stock_symbols": [],
+      "fiscal_year_end": ""
+     },
+     "acquisition_status": null
+    },
+    "competitors": {
+     "websites": []
+    }
+   },
+   "location": {
+    "raw": "Hubballi Urban, Karnataka, India",
+    "city": "Hubballi",
+    "district": "Belgaum Division",
+    "state": "Karnataka",
+    "country": "India",
+    "pincode": null
+   },
+   "content": {
+    "description": "Company DescriptionVRL LOGISTICS LTD., founded in 1976, is a publicly listed logistics and transport company on the NSE & BSE Exchange with a market capitalization of INR 55.89 billion. VRL is the largest fleet owner of commercial vehicles in India and has established a safe and reliable logistics network with a focus on last-mile delivery, including remote locations. The company's hub-and-spoke operating model optimizes consignment aggregation across various industries and locations.\nRole DescriptionThis is a full-time on-site role for a UI/UX Developer located in Hubballi Urban. The UI/UX Developer will be responsible for creating mockups, visual design, prototyping, front-end development, and user experience design on a day-to-day basis.\nQualificationsMockups, Visual Design, and Prototyping skillsFront-End Development and User Experience Design (UED) skillsStrong knowledge of UI/UX principles and best practicesProficiency in design tools such as Adobe Creative Suite, Sketch, etc.Experience in responsive design and mobile-first developmentBachelor's degree in Computer Science, Design, or related fieldExcellent problem-solving and communication skills\nJob DescriptionCoordinate with different departments to gather requirements and transform them into real-time solutionsDesign and develop web pages, mobile applications, software interfaces and digital advertisementsTransform design concepts into tangible solutions fostering customer satisfactionEfficiently convert Figma screens into HTMLCreate Mockups, Digital Footprints, and Prototypes\nCandidate SpecificationsExcellent knowledge in Javascript, JQuery, CSS, Bootstrap, HTMLGood at Angular/ReactJSWorking experience on tools like Postman, GIT, etcMinimum qualification - GraduationExperience - 6 - 8 years of relevant experience\nOther informationWork location - HubballiWorking days - Monday to SaturdayShift timings - General shiftDesignation - UI/UX Developer"
+   },
+   "metadata": {
+    "date_added": "2025-06-19T04:11:41",
+    "date_updated": "2025-06-20T00:00:00"
+   }
+  }
+ ],
+ "next_cursor": null,
+ "total_count": 1
+}

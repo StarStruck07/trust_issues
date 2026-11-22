@@ -1,0 +1,40 @@
+[
+ {
+  "matched_on": "allcargologistics.com",
+  "match_type": "domain",
+  "matches": [
+   {
+    "confidence_score": 1.0,
+    "company_data": {
+     "crustdata_company_id": 1613,
+     "basic_info": {
+      "name": "Allcargo Logistics",
+      "crustdata_company_id": 1613,
+      "primary_domain": "allcargologistics.com",
+      "all_domains": [
+       "allcargologistics.com",
+       "allcargogati.com",
+       "gati.com"
+      ],
+      "website": "https://www.allcargologistics.com/",
+      "professional_network_url": "https://www.linkedin.com/company/allcargologistics",
+      "professional_network_id": "63646",
+      "profile_name": "Allcargo Logistics",
+      "logo_permalink": "https://crustdata-media.s3.us-east-2.amazonaws.com/company/aa2b3ddacbb750b1308893a383404b76a1f4d6bf79046e48173bd1373bbcec0d.jpg",
+      "description": "Allcargo Logistics is one of India’s premier Express Logistics and Supply Chain Management companies, committed to delighting customers with seamless, end-to-end logistics solutions backed by future-ready digital tools and technology.With a legacy of over three decades, we bring deep expertise across surface and air express, consultative logistics, providing integrated logistics solutions for retail, MSME, and enterprise customers. Backed by a truly national reach, we serve 100% of India’s PIN codes, enabling businesses to grow with speed, confidence, and reliability.As part of the Allcargo Group, we are uniquely positioned to offer integrated capabilities across International Supply Chain, CFS-ICD operations, Logistics Parks, and more—ensuring a comprehensive, connected logistics ecosystem.Driven by a digital-first approach, we leverage advanced systems including enterprise-wide ERP platforms, digital payment solutions, and the Genie WhatsApp chatbot to deliver swift, safe, and on-time services—every single time.Guided by our core value of caring for the environment and society, we uphold global ESG benchmarks and remain committed to building a sustainable, future-ready logistics landscape.",
+      "company_type": "Public Company",
+      "year_founded": 1993,
+      "employee_count_range": "1001-5000",
+      "markets": [
+       "NSE"
+      ],
+      "industries": [
+       "Transportation, Logistics, Supply Chain and Storage"
+      ]
+     },
+     "social_profiles": null
+    }
+   }
+  ]
+ }
+]

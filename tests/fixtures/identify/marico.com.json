@@ -1,0 +1,38 @@
+[
+ {
+  "matched_on": "marico.com",
+  "match_type": "domain",
+  "matches": [
+   {
+    "confidence_score": 1.0,
+    "company_data": {
+     "crustdata_company_id": 2947,
+     "basic_info": {
+      "name": "Marico Limited",
+      "crustdata_company_id": 2947,
+      "primary_domain": "marico.com",
+      "all_domains": [
+       "marico.com"
+      ],
+      "website": "http://www.marico.com",
+      "professional_network_url": "https://www.linkedin.com/company/maricolimited",
+      "professional_network_id": "1818415",
+      "profile_name": "Marico Limited",
+      "logo_permalink": "https://crustdata-media.s3.us-east-2.amazonaws.com/company/40acfea76efe384a334005272bf1cfeb8111153283c9c59e4bffdb1c72c77518.jpg",
+      "description": "Marico (BSE: 531642, NSE: \"MARICO\") is one of India's leading consumer goods companies operating in the global beauty and wellness categories. In FY 2024-25, Marico recorded a turnover of USD 1.3 billion through its products sold in India and chosen markets in Asia and Africa.Marico touches the lives of 1 out of every 3 Indians, through its portfolio of brands such as Parachute, Saffola, Hair & Care, Parachute Advansed, Nihar Naturals, Mediker, Pure Sense, Coco Soul, Revive, Set Wet, Livon, Beardo, Just Herbs, True Elements and Plix. The international consumer products portfolio contributes to about 25% of the Group’s revenue, with brands like Parachute, Parachute Advansed, HairCode, Fiancée, Purité de Prôvence, Ôliv, Caivil, Hercules, Black Chic, Code 10, Ingwe, X-Men, Thuan Phat and Isoplus.",
+      "company_type": "Public Company",
+      "year_founded": 1990,
+      "employee_count_range": "1001-5000",
+      "markets": [
+       "NSE"
+      ],
+      "industries": [
+       "Manufacturing"
+      ]
+     },
+     "social_profiles": null
+    }
+   }
+  ]
+ }
+]

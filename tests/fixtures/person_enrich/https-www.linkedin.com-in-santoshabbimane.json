@@ -1,0 +1,90 @@
+[
+ {
+  "matched_on": "https://www.linkedin.com/in/santoshabbimane",
+  "match_type": "professional_network_profile_url",
+  "match_status": "matched",
+  "matches": [
+   {
+    "confidence_score": 1.0,
+    "person_data": {
+     "basic_profile": {
+      "name": "Santosh Abbimane",
+      "current_title": "Chief Financial Officer"
+     },
+     "professional_network": {
+      "connections": null
+     },
+     "social_handles": {
+      "professional_network_identifier": {
+       "profile_url": "https://www.linkedin.com/in/santoshabbimane"
+      }
+     },
+     "experience": {
+      "employment_details": {
+       "current": [
+        {
+         "name": "Xpressbees (BusyBees Logistics Solutions Pvt. Ltd.)",
+         "title": "Chief Financial Officer",
+         "crustdata_company_id": 5925,
+         "start_date": "2023-11-01T00:00:00+00:00",
+         "end_date": null
+        }
+       ],
+       "past": [
+        {
+         "name": "LEAP India Limited",
+         "title": "Chief Financial Officer",
+         "crustdata_company_id": 6422,
+         "start_date": "2023-09-01T00:00:00+00:00",
+         "end_date": "2023-11-01T00:00:00+00:00"
+        },
+        {
+         "name": "DTDC Express Limited",
+         "title": "Group Chief Financial & Transformation Officer - Multinational Logistics Firm",
+         "crustdata_company_id": 2037562,
+         "start_date": "2016-04-01T00:00:00+00:00",
+         "end_date": "2023-08-01T00:00:00+00:00"
+        },
+        {
+         "name": "Dell Technologies",
+         "title": "Director Financial Analysis - Business Controller",
+         "crustdata_company_id": 1239024,
+         "start_date": "2014-05-01T00:00:00+00:00",
+         "end_date": "2016-04-01T00:00:00+00:00"
+        },
+        {
+         "name": "Vodafone",
+         "title": "Finance Head for Mobile Commerce",
+         "crustdata_company_id": 1182712,
+         "start_date": "2008-05-01T00:00:00+00:00",
+         "end_date": "2014-04-01T00:00:00+00:00"
+        },
+        {
+         "name": "Accenture",
+         "title": "Lead BPO Centre Finance",
+         "crustdata_company_id": 12287,
+         "start_date": "2007-01-01T00:00:00+00:00",
+         "end_date": "2008-05-01T00:00:00+00:00"
+        },
+        {
+         "name": "Patni - now part of Cap Gemini",
+         "title": "Sr. Manager Finance",
+         "crustdata_company_id": null,
+         "start_date": "2001-10-01T00:00:00+00:00",
+         "end_date": "2007-01-01T00:00:00+00:00"
+        },
+        {
+         "name": "The Arvind Mills Ltd. (Telecom Division)",
+         "title": "Manager Finance",
+         "crustdata_company_id": null,
+         "start_date": "1996-07-01T00:00:00+00:00",
+         "end_date": "2001-09-01T00:00:00+00:00"
+        }
+       ]
+      }
+     }
+    }
+   }
+  ]
+ }
+]

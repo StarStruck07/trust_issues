@@ -1,0 +1,104 @@
+[
+ {
+  "matched_on": "https://www.linkedin.com/in/saugata-gupta-36aa3b14",
+  "match_type": "professional_network_profile_url",
+  "match_status": "matched",
+  "matches": [
+   {
+    "confidence_score": 1.0,
+    "person_data": {
+     "basic_profile": {
+      "name": "Saugata Gupta",
+      "current_title": "Managing Director & CEO"
+     },
+     "professional_network": {
+      "connections": null
+     },
+     "social_handles": {
+      "professional_network_identifier": {
+       "profile_url": "https://www.linkedin.com/in/saugata-gupta-36aa3b14"
+      }
+     },
+     "experience": {
+      "employment_details": {
+       "current": [
+        {
+         "name": "Marico Limited",
+         "title": "Managing Director & CEO",
+         "crustdata_company_id": 2947,
+         "start_date": "2014-01-01T00:00:00+00:00",
+         "end_date": null
+        },
+        {
+         "name": "Ashok Leyland ",
+         "title": "Independent Director",
+         "crustdata_company_id": null,
+         "start_date": "2019-11-01T00:00:00+00:00",
+         "end_date": null
+        }
+       ],
+       "past": [
+        {
+         "name": "Delhivery",
+         "title": "Independent Director",
+         "crustdata_company_id": 5798,
+         "start_date": "2021-10-01T00:00:00+00:00",
+         "end_date": "2026-03-01T00:00:00+00:00"
+        },
+        {
+         "name": "JSW Paints",
+         "title": "Independent Director",
+         "crustdata_company_id": 1185185,
+         "start_date": "2018-10-01T00:00:00+00:00",
+         "end_date": "2021-11-01T00:00:00+00:00"
+        },
+        {
+         "name": "Marico Limited",
+         "title": "Chief Executive Officer, Marico Limited",
+         "crustdata_company_id": 2947,
+         "start_date": "2013-01-01T00:00:00+00:00",
+         "end_date": "2014-01-01T00:00:00+00:00"
+        },
+        {
+         "name": "Marico Limited",
+         "title": "Chief Executive Officer, India",
+         "crustdata_company_id": 2947,
+         "start_date": "2007-01-01T00:00:00+00:00",
+         "end_date": "2013-01-01T00:00:00+00:00"
+        },
+        {
+         "name": "Marico Limited",
+         "title": "Chief Sales & Marketing Officer",
+         "crustdata_company_id": 2947,
+         "start_date": "2006-01-01T00:00:00+00:00",
+         "end_date": "2007-01-01T00:00:00+00:00"
+        },
+        {
+         "name": "Marico Limited",
+         "title": "Head Of Marketing",
+         "crustdata_company_id": 2947,
+         "start_date": "2004-01-01T00:00:00+00:00",
+         "end_date": "2006-01-01T00:00:00+00:00"
+        },
+        {
+         "name": "ICICI Life Insurance Limited",
+         "title": "Chief - Marketing, Corporate Sales and Business Intelligence",
+         "crustdata_company_id": 2043,
+         "start_date": "2000-01-01T00:00:00+00:00",
+         "end_date": "2004-01-01T00:00:00+00:00"
+        },
+        {
+         "name": "Mondelēz International",
+         "title": "Marketing Manager/ Group Product Manager - Chocolates",
+         "crustdata_company_id": 682056,
+         "start_date": "1991-01-01T00:00:00+00:00",
+         "end_date": "2000-01-01T00:00:00+00:00"
+        }
+       ]
+      }
+     }
+    }
+   }
+  ]
+ }
+]

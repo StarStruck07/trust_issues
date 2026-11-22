@@ -1,0 +1,38 @@
+[
+ {
+  "matched_on": "xpressbees.com",
+  "match_type": "domain",
+  "matches": [
+   {
+    "confidence_score": 1.0,
+    "company_data": {
+     "crustdata_company_id": 5925,
+     "basic_info": {
+      "name": "Xpressbees (BusyBees Logistics Solutions Pvt. Ltd.)",
+      "crustdata_company_id": 5925,
+      "primary_domain": "xpressbees.com",
+      "all_domains": [
+       "xpressbees.com"
+      ],
+      "website": "http://xpressbees.com",
+      "professional_network_url": "https://www.linkedin.com/company/xpressbees",
+      "professional_network_id": "3874661",
+      "profile_name": "Xpressbees (BusyBees Logistics Solutions Pvt. Ltd.)",
+      "logo_permalink": "https://crustdata-media.s3.us-east-2.amazonaws.com/company/93f679bce26c61cd1994bb7cbbef61e2ef146cbc956f81f846769367596f03c5.jpg",
+      "description": "Delivering Happines at Every Mile | XpressBeesAt XpressBees, we are redefining logistics solutions with speed, precision, and innovation at our core. As one of India’s leading end-to-end logistics providers, we specialize in express delivery services that encompass e-commerce, logistics, warehousing, and inventory management—ensuring that your packages are delivered on time, every time.With a nationwide reach, state-of-the-art infrastructure, and an extensive fleet, XpressBees serves diverse industry needs, from e-commerce giants to small businesses. Our focus on technology and continuous improvement has made us pioneers in logistics innovation, driving greater efficiency and customer satisfaction at every level.Our VisionEmpower businesses with seamless logistics solutions that accelerate growth and deliver value, enabling the journey from order to doorstep to be faster, simpler, and more reliable.Our Services1. E-commerce Delivery2. Reverse Logistics3. Cross-border Shipments4. Fulfillment and Warehousing Solutions3. B2B and B2C LogisticsAt XpressBees, we believe in making logistics a strategic advantage for businesses, powering growth and driving operational excellence. Whether it's the last mile or cross-border logistics, we are committed to delivering customer delight across every touchpoint.",
+      "company_type": "Privately Held",
+      "year_founded": 2015,
+      "employee_count_range": "10001+",
+      "markets": [
+       "PRIVATE"
+      ],
+      "industries": [
+       "Transportation, Logistics, Supply Chain and Storage"
+      ]
+     },
+     "social_profiles": null
+    }
+   }
+  ]
+ }
+]

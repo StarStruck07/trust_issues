@@ -1,0 +1,97 @@
+[
+ {
+  "matched_on": "https://www.linkedin.com/in/abhishek-gupta-140ab611",
+  "match_type": "professional_network_profile_url",
+  "match_status": "matched",
+  "matches": [
+   {
+    "confidence_score": 1.0,
+    "person_data": {
+     "basic_profile": {
+      "name": "Abhishek Gupta",
+      "current_title": "Chief Financial Officer"
+     },
+     "professional_network": {
+      "connections": null
+     },
+     "social_handles": {
+      "professional_network_identifier": {
+       "profile_url": "https://www.linkedin.com/in/abhishek-gupta-140ab611"
+      }
+     },
+     "experience": {
+      "employment_details": {
+       "current": [
+        {
+         "name": "Lenskart.com",
+         "title": "Chief Financial Officer",
+         "crustdata_company_id": 5862,
+         "start_date": "2024-08-01T00:00:00+00:00",
+         "end_date": null
+        },
+        {
+         "name": "OWNDAYS CO LTD",
+         "title": "Board Member",
+         "crustdata_company_id": 1032759,
+         "start_date": "2026-04-01T00:00:00+00:00",
+         "end_date": null
+        }
+       ],
+       "past": [
+        {
+         "name": "OYO",
+         "title": "Group Chief Financial Officer",
+         "crustdata_company_id": 5725,
+         "start_date": "2015-06-01T00:00:00+00:00",
+         "end_date": "2024-03-01T00:00:00+00:00"
+        },
+        {
+         "name": "Mountainia",
+         "title": "Board Member",
+         "crustdata_company_id": 10577400,
+         "start_date": "2018-11-01T00:00:00+00:00",
+         "end_date": "2023-10-01T00:00:00+00:00"
+        },
+        {
+         "name": "Philips",
+         "title": "Financial Controller - Consumer Lighting",
+         "crustdata_company_id": 6035266,
+         "start_date": "2014-07-01T00:00:00+00:00",
+         "end_date": "2015-06-01T00:00:00+00:00"
+        },
+        {
+         "name": "Philips",
+         "title": "Commercial Leadership Program",
+         "crustdata_company_id": 6035266,
+         "start_date": "2013-08-01T00:00:00+00:00",
+         "end_date": "2014-07-01T00:00:00+00:00"
+        },
+        {
+         "name": "GE India",
+         "title": "Vice President Finance",
+         "crustdata_company_id": null,
+         "start_date": "2010-04-01T00:00:00+00:00",
+         "end_date": "2013-07-01T00:00:00+00:00"
+        },
+        {
+         "name": "GE",
+         "title": "Manager",
+         "crustdata_company_id": 680991,
+         "start_date": "2005-01-01T00:00:00+00:00",
+         "end_date": "2008-01-01T00:00:00+00:00"
+        },
+        {
+         "name": "GE",
+         "title": "Financial Management Program",
+         "crustdata_company_id": 680991,
+         "start_date": "2003-01-01T00:00:00+00:00",
+         "end_date": "2005-01-01T00:00:00+00:00"
+        }
+       ]
+      }
+     }
+    }
+   }
+  ]
+ }
+]

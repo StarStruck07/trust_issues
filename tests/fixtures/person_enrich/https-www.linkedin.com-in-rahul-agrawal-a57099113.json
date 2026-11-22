@@ -1,0 +1,97 @@
+[
+ {
+  "matched_on": "https://www.linkedin.com/in/rahul-agrawal-a57099113",
+  "match_type": "professional_network_profile_url",
+  "match_status": "matched",
+  "matches": [
+   {
+    "confidence_score": 1.0,
+    "person_data": {
+     "basic_profile": {
+      "name": "Rahul Agrawal",
+      "current_title": "Chief Operating Officer"
+     },
+     "professional_network": {
+      "connections": null
+     },
+     "social_handles": {
+      "professional_network_identifier": {
+       "profile_url": "https://www.linkedin.com/in/rahul-agrawal-a57099113"
+      }
+     },
+     "experience": {
+      "employment_details": {
+       "current": [
+        {
+         "name": "Xpressbees (BusyBees Logistics Solutions Pvt. Ltd.)",
+         "title": "Chief Operating Officer",
+         "crustdata_company_id": 5925,
+         "start_date": "2023-11-01T00:00:00+00:00",
+         "end_date": null
+        }
+       ],
+       "past": [
+        {
+         "name": "Xpressbees (BusyBees Logistics Solutions Pvt. Ltd.)",
+         "title": "Chief Financial Officer",
+         "crustdata_company_id": 5925,
+         "start_date": "2022-02-01T00:00:00+00:00",
+         "end_date": "2023-11-01T00:00:00+00:00"
+        },
+        {
+         "name": "Xpressbees (BusyBees Logistics Solutions Pvt. Ltd.)",
+         "title": "VP and Head - Finance and Commercial",
+         "crustdata_company_id": 5925,
+         "start_date": "2021-04-01T00:00:00+00:00",
+         "end_date": "2022-02-01T00:00:00+00:00"
+        },
+        {
+         "name": "Xpressbees (BusyBees Logistics Solutions Pvt. Ltd.)",
+         "title": "AVP & Head - Finance and Commercial",
+         "crustdata_company_id": 5925,
+         "start_date": "2019-04-01T00:00:00+00:00",
+         "end_date": "2021-03-01T00:00:00+00:00"
+        },
+        {
+         "name": "Xpressbees (BusyBees Logistics Solutions Pvt. Ltd.)",
+         "title": "GM & Head - Finance and Commercial",
+         "crustdata_company_id": 5925,
+         "start_date": "2017-12-01T00:00:00+00:00",
+         "end_date": "2019-03-01T00:00:00+00:00"
+        },
+        {
+         "name": "Xpressbees (BusyBees Logistics Solutions Pvt. Ltd.)",
+         "title": "DGM & Head- Finance & Accounts",
+         "crustdata_company_id": 5925,
+         "start_date": "2015-09-01T00:00:00+00:00",
+         "end_date": "2017-11-01T00:00:00+00:00"
+        },
+        {
+         "name": "FirstCry.com (BrainBees Solutions Ltd.)",
+         "title": "DGM Finance",
+         "crustdata_company_id": 5846,
+         "start_date": "2015-02-01T00:00:00+00:00",
+         "end_date": "2015-08-01T00:00:00+00:00"
+        },
+        {
+         "name": "KPMG India",
+         "title": "Assistant Manager",
+         "crustdata_company_id": 17303,
+         "start_date": "2010-06-01T00:00:00+00:00",
+         "end_date": "2015-02-01T00:00:00+00:00"
+        },
+        {
+         "name": "Coal India Limited",
+         "title": "Finance Trainee",
+         "crustdata_company_id": 987,
+         "start_date": "2009-10-01T00:00:00+00:00",
+         "end_date": "2010-06-01T00:00:00+00:00"
+        }
+       ]
+      }
+     }
+    }
+   }
+  ]
+ }
+]

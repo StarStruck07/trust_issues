@@ -1,0 +1,90 @@
+[
+ {
+  "matched_on": "https://www.linkedin.com/in/shubham-raj-0b9012233",
+  "match_type": "professional_network_profile_url",
+  "match_status": "matched",
+  "matches": [
+   {
+    "confidence_score": 1.0,
+    "person_data": {
+     "basic_profile": {
+      "name": "Shubham Raj",
+      "current_title": "Chief Executive Officer"
+     },
+     "professional_network": {
+      "connections": null
+     },
+     "social_handles": {
+      "professional_network_identifier": {
+       "profile_url": "https://www.linkedin.com/in/shubham-raj-0b9012233"
+      }
+     },
+     "experience": {
+      "employment_details": {
+       "current": [
+        {
+         "name": "Asian Paints",
+         "title": "Chief Executive Officer",
+         "crustdata_company_id": 414,
+         "start_date": "2026-09-01T00:00:00+00:00",
+         "end_date": null
+        }
+       ],
+       "past": [
+        {
+         "name": "Asian Paints",
+         "title": "Territory Sales Officer",
+         "crustdata_company_id": 414,
+         "start_date": "2024-06-01T00:00:00+00:00",
+         "end_date": "2026-10-01T00:00:00+00:00"
+        },
+        {
+         "name": "Central Mine Planning & Design Institute",
+         "title": "Business Development Intern",
+         "crustdata_company_id": 6358740,
+         "start_date": "2023-07-01T00:00:00+00:00",
+         "end_date": "2023-08-01T00:00:00+00:00"
+        },
+        {
+         "name": "UltraTech Cement",
+         "title": "Finance Intern",
+         "crustdata_company_id": 5276,
+         "start_date": "2023-07-01T00:00:00+00:00",
+         "end_date": "2023-08-01T00:00:00+00:00"
+        },
+        {
+         "name": "Sleepwell",
+         "title": "Sales And Marketing Intern",
+         "crustdata_company_id": 6317267,
+         "start_date": "2023-05-01T00:00:00+00:00",
+         "end_date": "2023-06-01T00:00:00+00:00"
+        },
+        {
+         "name": "Helping India Feeding India",
+         "title": "PR Head for Ranchi Chapter",
+         "crustdata_company_id": 2109819,
+         "start_date": "2022-11-01T00:00:00+00:00",
+         "end_date": "2023-03-01T00:00:00+00:00"
+        },
+        {
+         "name": "Birla Institute of Technology, Mesra",
+         "title": "Marketing Research Intern",
+         "crustdata_company_id": 1266997,
+         "start_date": "2022-12-01T00:00:00+00:00",
+         "end_date": "2023-01-01T00:00:00+00:00"
+        },
+        {
+         "name": "Helping India Feeding India",
+         "title": "Social Media Manager",
+         "crustdata_company_id": 2109819,
+         "start_date": "2021-08-01T00:00:00+00:00",
+         "end_date": "2022-11-01T00:00:00+00:00"
+        }
+       ]
+      }
+     }
+    }
+   }
+  ]
+ }
+]

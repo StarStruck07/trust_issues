@@ -1,0 +1,39 @@
+[
+ {
+  "matched_on": "nykaa.com",
+  "match_type": "domain",
+  "matches": [
+   {
+    "confidence_score": 1.0,
+    "company_data": {
+     "crustdata_company_id": 5730,
+     "basic_info": {
+      "name": "Nykaa",
+      "crustdata_company_id": 5730,
+      "primary_domain": "nykaa.com",
+      "all_domains": [
+       "nykaa.com"
+      ],
+      "website": "http://www.nykaa.com",
+      "professional_network_url": "https://www.linkedin.com/company/nykaa-com",
+      "professional_network_id": "3545422",
+      "profile_name": "Nykaa",
+      "logo_permalink": "https://crustdata-media.s3.us-east-2.amazonaws.com/company/568184344611091bc626717de42403cbe965dda53d0792ba5d0df957e0df3b0f.jpg",
+      "description": "Nykaa is India’s leading beauty and lifestyle company, built on a vision to bring inspiration and joy to people everywhere, every day.Founded in 2012 by Falguni Nayar, Nykaa has redefined how India discovers, shops, and engages across beauty, fashion, and lifestyle. Today, it serves 55 million+ customers through a connected omnichannel ecosystem of 313+ stores across 99 cities, offering a thoughtfully curated assortment of global icons, luxury labels, homegrown favourites, and emerging cult brands across beauty, personal care, wellness, and fashion.Nykaa’s ecosystem includes Nykaa Beauty, Nykaa Fashion, Nykaa Man, Nykaa Superstore, Nysaa in the Middle East, and Nykaa Now, bringing together content, community, commerce, and convenience to create seamless consumer experiences. Alongside its marketplace, Nykaa has built a growing portfolio of owned brands, including Nykaa Cosmetics, Kay Beauty, Dot & Key, Earth Rhythm, Nykaa Wanderlust, Nykaa Perfumery, Nykd by Nykaa, KICA, RSVP, and Gajra Gang, reflecting its commitment to innovation, quality, and consumer-first design.Innovation is at the heart of the Nykaa experience. From AI-powered innovations like Semantic Search, Virtual Closet, Skin Scan, and AskNykaa to personalised recommendations, expert-led content, immersive retail experiences, and seamless omnichannel journeys, Nykaa is building the next generation of AI-native commerce, where discovery is more intuitive, shopping is more personalised, and every interaction is designed around the consumer.Derived from the Sanskrit word Nayaka, meaning \"one in the spotlight,\" Nykaa celebrates individuality and self-expression. As a trusted companion in beauty and lifestyle, Nykaa empowers every consumer to discover what makes them unique, because every expression deserves to shine.",
+      "company_type": "Public Company",
+      "year_founded": 2012,
+      "employee_count_range": "1001-5000",
+      "markets": [
+       "NSE"
+      ],
+      "industries": [
+       "Technology, Information and Internet",
+       "Technology, Information and Media"
+      ]
+     },
+     "social_profiles": null
+    }
+   }
+  ]
+ }
+]

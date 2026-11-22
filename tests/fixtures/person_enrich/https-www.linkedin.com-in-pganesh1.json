@@ -1,0 +1,90 @@
+[
+ {
+  "matched_on": "https://www.linkedin.com/in/pganesh1",
+  "match_type": "professional_network_profile_url",
+  "match_status": "matched",
+  "matches": [
+   {
+    "confidence_score": 1.0,
+    "person_data": {
+     "basic_profile": {
+      "name": "P Ganesh",
+      "current_title": "Chief Financial Officer"
+     },
+     "professional_network": {
+      "connections": null
+     },
+     "social_handles": {
+      "professional_network_identifier": {
+       "profile_url": "https://www.linkedin.com/in/pganesh1"
+      }
+     },
+     "experience": {
+      "employment_details": {
+       "current": [
+        {
+         "name": "Nykaa",
+         "title": "Chief Financial Officer",
+         "crustdata_company_id": 5730,
+         "start_date": "2023-02-01T00:00:00+00:00",
+         "end_date": null
+        }
+       ],
+       "past": [
+        {
+         "name": "TAFE Group - Tractors and Farm Equipment",
+         "title": "Chief Financial Officer",
+         "crustdata_company_id": null,
+         "start_date": "2019-06-01T00:00:00+00:00",
+         "end_date": "2023-01-01T00:00:00+00:00"
+        },
+        {
+         "name": "Pidilite Industries Limited",
+         "title": "Chief Financial Officer",
+         "crustdata_company_id": null,
+         "start_date": "2017-11-01T00:00:00+00:00",
+         "end_date": "2019-05-01T00:00:00+00:00"
+        },
+        {
+         "name": "Glenmark Pharmaceuticals Limited",
+         "title": "President & CFO",
+         "crustdata_company_id": null,
+         "start_date": "2016-05-01T00:00:00+00:00",
+         "end_date": "2017-11-01T00:00:00+00:00"
+        },
+        {
+         "name": "Godrej Group",
+         "title": "CFO & Company Secretary",
+         "crustdata_company_id": null,
+         "start_date": "2008-06-01T00:00:00+00:00",
+         "end_date": "2016-04-01T00:00:00+00:00"
+        },
+        {
+         "name": "Godrej Consumer Products Limited",
+         "title": "CFO & Company Secretary - Godrej Consumer Products",
+         "crustdata_company_id": 1716,
+         "start_date": "2008-06-01T00:00:00+00:00",
+         "end_date": "2015-03-01T00:00:00+00:00"
+        },
+        {
+         "name": "Keyline Brands Limited, London, UK",
+         "title": "Head of Finance & Company Secretary",
+         "crustdata_company_id": null,
+         "start_date": "2005-11-01T00:00:00+00:00",
+         "end_date": "2008-06-01T00:00:00+00:00"
+        },
+        {
+         "name": "Godrej Consumer Products Limited",
+         "title": "Management Trainee to General Manager (Finance)",
+         "crustdata_company_id": 1716,
+         "start_date": "1995-08-01T00:00:00+00:00",
+         "end_date": "2005-10-01T00:00:00+00:00"
+        }
+       ]
+      }
+     }
+    }
+   }
+  ]
+ }
+]

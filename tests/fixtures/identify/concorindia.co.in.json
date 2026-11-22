@@ -1,0 +1,38 @@
+[
+ {
+  "matched_on": "concorindia.co.in",
+  "match_type": "domain",
+  "matches": [
+   {
+    "confidence_score": 1.0,
+    "company_data": {
+     "crustdata_company_id": 6812839,
+     "basic_info": {
+      "name": "Container Corporation of India Ltd",
+      "crustdata_company_id": 6812839,
+      "primary_domain": "concorindia.co.in",
+      "all_domains": [
+       "concorindia.co.in"
+      ],
+      "website": "http://www.concorindia.co.in",
+      "professional_network_url": "https://www.linkedin.com/company/concorindia",
+      "professional_network_id": "97859415",
+      "profile_name": "Container Corporation of India Ltd",
+      "logo_permalink": "https://crustdata-media.s3.us-east-2.amazonaws.com/company/c2bb2ad988364f22f91ce2fd147b03b88e3da6fa39c6f6083c4b1f7360a2427f.jpg",
+      "description": "Container Corporation of India Ltd. is an undisputed market leader having the largest network of 67 ICDS/CFSs in India . In addition to providing inland transport by rail for containers, it has also expanded to cover management of Ports, air cargo complexes and establishing cold-chain. It has and will continue to play the role of promoting containerization in India by virtue of its modern rail wagon fleet, customer friendly commercial practices and extensively used Information Technology. The company developed multimodal logistics support for India's International and Domestic containerization and trade. Though rail is the main stay of our transportation plan, road services and also provided to cater to the need of door-to-door services, whether in the International or Domestic business.",
+      "company_type": "Government Agency",
+      "year_founded": 1989,
+      "employee_count_range": "1001-5000",
+      "markets": [
+       "PRIVATE"
+      ],
+      "industries": [
+       "Transportation, Logistics, Supply Chain and Storage"
+      ]
+     },
+     "social_profiles": null
+    }
+   }
+  ]
+ }
+]

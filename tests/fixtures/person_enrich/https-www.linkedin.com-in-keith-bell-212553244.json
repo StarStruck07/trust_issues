@@ -1,0 +1,40 @@
+[
+ {
+  "matched_on": "https://www.linkedin.com/in/keith-bell-212553244",
+  "match_type": "professional_network_profile_url",
+  "match_status": "matched",
+  "matches": [
+   {
+    "confidence_score": 1.0,
+    "person_data": {
+     "basic_profile": {
+      "name": "Keith Bell",
+      "current_title": "Chief Financial Officer"
+     },
+     "professional_network": {
+      "connections": null
+     },
+     "social_handles": {
+      "professional_network_identifier": {
+       "profile_url": "https://www.linkedin.com/in/keith-bell-212553244"
+      }
+     },
+     "experience": {
+      "employment_details": {
+       "current": [
+        {
+         "name": "Asian Paints",
+         "title": "Chief Financial Officer",
+         "crustdata_company_id": 414,
+         "start_date": null,
+         "end_date": null
+        }
+       ],
+       "past": []
+      }
+     }
+    }
+   }
+  ]
+ }
+]

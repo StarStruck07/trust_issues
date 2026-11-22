@@ -1,0 +1,6650 @@
+[
+ {
+  "matched_on": "1613",
+  "match_type": "crustdata_company_id",
+  "matches": [
+   {
+    "confidence_score": 1.0,
+    "company_data": {
+     "crustdata_company_id": 1613,
+     "basic_info": {
+      "name": "Allcargo Logistics",
+      "crustdata_company_id": 1613,
+      "primary_domain": "allcargologistics.com",
+      "all_domains": [
+       "allcargologistics.com",
+       "allcargogati.com",
+       "gati.com"
+      ],
+      "website": "https://www.allcargologistics.com/",
+      "professional_network_url": "https://www.linkedin.com/company/allcargologistics",
+      "professional_network_id": "63646",
+      "profile_name": "Allcargo Logistics",
+      "logo_permalink": "https://crustdata-media.s3.us-east-2.amazonaws.com/company/aa2b3ddacbb750b1308893a383404b76a1f4d6bf79046e48173bd1373bbcec0d.jpg",
+      "description": "Allcargo Logistics is one of India’s premier Express Logistics and Supply Chain Management companies, committed to delighting customers with seamless, end-to-end logistics solutions backed by future-ready digital tools and technology.With a legacy of over three decades, we bring deep expertise across surface and air express, consultative logistics, providing integrated logistics solutions for retail, MSME, and enterprise customers. Backed by a truly national reach, we serve 100% of India’s PIN codes, enabling businesses to grow with speed, confidence, and reliability.As part of the Allcargo Group, we are uniquely positioned to offer integrated capabilities across International Supply Chain, CFS-ICD operations, Logistics Parks, and more—ensuring a comprehensive, connected logistics ecosystem.Driven by a digital-first approach, we leverage advanced systems including enterprise-wide ERP platforms, digital payment solutions, and the Genie WhatsApp chatbot to deliver swift, safe, and on-time services—every single time.Guided by our core value of caring for the environment and society, we uphold global ESG benchmarks and remain committed to building a sustainable, future-ready logistics landscape.",
+      "company_type": "Public Company",
+      "status": "active",
+      "year_founded": 1993,
+      "employee_count_range": "1001-5000",
+      "markets": [
+       "NSE"
+      ]
+     },
+     "headcount": {
+      "total": 6103,
+      "largest_headcount_country": "IND",
+      "timeseries": [
+       {
+        "date": "2023-02-27",
+        "employee_count": 5024
+       },
+       {
+        "date": "2023-03-06",
+        "employee_count": 5024
+       },
+       {
+        "date": "2023-03-13",
+        "employee_count": 5024
+       },
+       {
+        "date": "2023-03-20",
+        "employee_count": 5024
+       },
+       {
+        "date": "2023-03-27",
+        "employee_count": 5062
+       },
+       {
+        "date": "2023-04-03",
+        "employee_count": 5062
+       },
+       {
+        "date": "2023-04-10",
+        "employee_count": 5062
+       },
+       {
+        "date": "2023-04-17",
+        "employee_count": 5062
+       },
+       {
+        "date": "2023-04-24",
+        "employee_count": 5062
+       },
+       {
+        "date": "2023-05-01",
+        "employee_count": 5106
+       },
+       {
+        "date": "2023-05-08",
+        "employee_count": 5106
+       },
+       {
+        "date": "2023-05-15",
+        "employee_count": 5106
+       },
+       {
+        "date": "2023-05-22",
+        "employee_count": 5106
+       },
+       {
+        "date": "2023-05-29",
+        "employee_count": 5139
+       },
+       {
+        "date": "2023-06-05",
+        "employee_count": 5139
+       },
+       {
+        "date": "2023-06-12",
+        "employee_count": 5139
+       },
+       {
+        "date": "2023-06-19",
+        "employee_count": 5139
+       },
+       {
+        "date": "2023-06-26",
+        "employee_count": 5166
+       },
+       {
+        "date": "2023-07-03",
+        "employee_count": 5166
+       },
+       {
+        "date": "2023-07-10",
+        "employee_count": 5166
+       },
+       {
+        "date": "2023-07-17",
+        "employee_count": 5166
+       },
+       {
+        "date": "2023-07-24",
+        "employee_count": 5166
+       },
+       {
+        "date": "2023-07-31",
+        "employee_count": 5202
+       },
+       {
+        "date": "2023-08-07",
+        "employee_count": 5202
+       },
+       {
+        "date": "2023-08-14",
+        "employee_count": 5202
+       },
+       {
+        "date": "2023-08-21",
+        "employee_count": 5202
+       },
+       {
+        "date": "2023-08-28",
+        "employee_count": 5228
+       },
+       {
+        "date": "2023-09-04",
+        "employee_count": 5228
+       },
+       {
+        "date": "2023-09-11",
+        "employee_count": 5228
+       },
+       {
+        "date": "2023-09-18",
+        "employee_count": 5228
+       },
+       {
+        "date": "2023-09-25",
+        "employee_count": 5241
+       },
+       {
+        "date": "2023-10-02",
+        "employee_count": 5241
+       },
+       {
+        "date": "2023-10-09",
+        "employee_count": 5241
+       },
+       {
+        "date": "2023-10-16",
+        "employee_count": 5241
+       },
+       {
+        "date": "2023-10-23",
+        "employee_count": 5241
+       },
+       {
+        "date": "2023-10-30",
+        "employee_count": 5264
+       },
+       {
+        "date": "2023-11-06",
+        "employee_count": 5254
+       },
+       {
+        "date": "2023-11-13",
+        "employee_count": 5254
+       },
+       {
+        "date": "2023-11-20",
+        "employee_count": 5254
+       },
+       {
+        "date": "2023-11-27",
+        "employee_count": 5254
+       },
+       {
+        "date": "2023-12-04",
+        "employee_count": 5244
+       },
+       {
+        "date": "2023-12-11",
+        "employee_count": 5244
+       },
+       {
+        "date": "2023-12-18",
+        "employee_count": 5244
+       },
+       {
+        "date": "2023-12-25",
+        "employee_count": 5244
+       },
+       {
+        "date": "2024-01-01",
+        "employee_count": 5234
+       },
+       {
+        "date": "2024-01-08",
+        "employee_count": 5234
+       },
+       {
+        "date": "2024-01-15",
+        "employee_count": 5234
+       },
+       {
+        "date": "2024-01-22",
+        "employee_count": 5234
+       },
+       {
+        "date": "2024-01-29",
+        "employee_count": 5234
+       },
+       {
+        "date": "2024-02-05",
+        "employee_count": 5237
+       },
+       {
+        "date": "2024-02-12",
+        "employee_count": 5237
+       },
+       {
+        "date": "2024-02-19",
+        "employee_count": 5237
+       },
+       {
+        "date": "2024-02-26",
+        "employee_count": 5237
+       },
+       {
+        "date": "2024-03-04",
+        "employee_count": 5237
+       },
+       {
+        "date": "2024-03-11",
+        "employee_count": 5237
+       },
+       {
+        "date": "2024-03-18",
+        "employee_count": 5237
+       },
+       {
+        "date": "2024-03-25",
+        "employee_count": 5237
+       },
+       {
+        "date": "2024-04-01",
+        "employee_count": 5260
+       },
+       {
+        "date": "2024-04-08",
+        "employee_count": 5260
+       },
+       {
+        "date": "2024-04-15",
+        "employee_count": 5260
+       },
+       {
+        "date": "2024-04-22",
+        "employee_count": 5260
+       },
+       {
+        "date": "2024-04-29",
+        "employee_count": 5260
+       },
+       {
+        "date": "2024-05-06",
+        "employee_count": 5288
+       },
+       {
+        "date": "2024-05-13",
+        "employee_count": 5288
+       },
+       {
+        "date": "2024-05-20",
+        "employee_count": 5288
+       },
+       {
+        "date": "2024-05-27",
+        "employee_count": 5288
+       },
+       {
+        "date": "2024-06-03",
+        "employee_count": 5393
+       },
+       {
+        "date": "2024-06-10",
+        "employee_count": 5393
+       },
+       {
+        "date": "2024-06-17",
+        "employee_count": 5393
+       },
+       {
+        "date": "2024-06-24",
+        "employee_count": 5393
+       },
+       {
+        "date": "2024-07-01",
+        "employee_count": 5437
+       },
+       {
+        "date": "2024-07-08",
+        "employee_count": 5437
+       },
+       {
+        "date": "2024-07-15",
+        "employee_count": 5437
+       },
+       {
+        "date": "2024-07-22",
+        "employee_count": 5437
+       },
+       {
+        "date": "2024-07-29",
+        "employee_count": 5437
+       },
+       {
+        "date": "2024-08-05",
+        "employee_count": 5499
+       },
+       {
+        "date": "2024-08-12",
+        "employee_count": 5499
+       },
+       {
+        "date": "2024-08-19",
+        "employee_count": 5499
+       },
+       {
+        "date": "2024-08-26",
+        "employee_count": 5499
+       },
+       {
+        "date": "2024-09-02",
+        "employee_count": 5547
+       },
+       {
+        "date": "2024-09-09",
+        "employee_count": 5547
+       },
+       {
+        "date": "2024-09-16",
+        "employee_count": 5547
+       },
+       {
+        "date": "2024-09-23",
+        "employee_count": 5547
+       },
+       {
+        "date": "2024-09-30",
+        "employee_count": 5547
+       },
+       {
+        "date": "2024-10-07",
+        "employee_count": 5576
+       },
+       {
+        "date": "2024-10-14",
+        "employee_count": 5576
+       },
+       {
+        "date": "2024-10-21",
+        "employee_count": 5576
+       },
+       {
+        "date": "2024-10-28",
+        "employee_count": 5576
+       },
+       {
+        "date": "2024-11-04",
+        "employee_count": 5584
+       },
+       {
+        "date": "2024-11-11",
+        "employee_count": 5584
+       },
+       {
+        "date": "2024-11-18",
+        "employee_count": 5584
+       },
+       {
+        "date": "2024-11-25",
+        "employee_count": 5584
+       },
+       {
+        "date": "2024-12-02",
+        "employee_count": 5597
+       },
+       {
+        "date": "2024-12-09",
+        "employee_count": 5597
+       },
+       {
+        "date": "2024-12-16",
+        "employee_count": 5597
+       },
+       {
+        "date": "2024-12-23",
+        "employee_count": 5597
+       },
+       {
+        "date": "2024-12-30",
+        "employee_count": 5597
+       },
+       {
+        "date": "2025-01-06",
+        "employee_count": 5628
+       },
+       {
+        "date": "2025-01-13",
+        "employee_count": 5628
+       },
+       {
+        "date": "2025-01-20",
+        "employee_count": 5628
+       },
+       {
+        "date": "2025-01-27",
+        "employee_count": 5628
+       },
+       {
+        "date": "2025-02-03",
+        "employee_count": 5649
+       },
+       {
+        "date": "2025-02-10",
+        "employee_count": 5649
+       },
+       {
+        "date": "2025-02-17",
+        "employee_count": 5649
+       },
+       {
+        "date": "2025-02-24",
+        "employee_count": 5649
+       },
+       {
+        "date": "2025-03-03",
+        "employee_count": 5668
+       },
+       {
+        "date": "2025-03-10",
+        "employee_count": 5668
+       },
+       {
+        "date": "2025-03-17",
+        "employee_count": 5668
+       },
+       {
+        "date": "2025-03-24",
+        "employee_count": 5668
+       },
+       {
+        "date": "2025-03-31",
+        "employee_count": 5668
+       },
+       {
+        "date": "2025-04-07",
+        "employee_count": 5686
+       },
+       {
+        "date": "2025-04-14",
+        "employee_count": 5686
+       },
+       {
+        "date": "2025-04-21",
+        "employee_count": 5686
+       },
+       {
+        "date": "2025-04-28",
+        "employee_count": 5686
+       },
+       {
+        "date": "2025-05-05",
+        "employee_count": 5691
+       },
+       {
+        "date": "2025-05-12",
+        "employee_count": 5691
+       },
+       {
+        "date": "2025-05-19",
+        "employee_count": 5691
+       },
+       {
+        "date": "2025-05-26",
+        "employee_count": 5691
+       },
+       {
+        "date": "2025-06-02",
+        "employee_count": 5710
+       },
+       {
+        "date": "2025-06-09",
+        "employee_count": 5710
+       },
+       {
+        "date": "2025-06-16",
+        "employee_count": 5710
+       },
+       {
+        "date": "2025-06-23",
+        "employee_count": 5710
+       },
+       {
+        "date": "2025-06-30",
+        "employee_count": 5710
+       },
+       {
+        "date": "2025-07-07",
+        "employee_count": 5717
+       },
+       {
+        "date": "2025-07-14",
+        "employee_count": 5717
+       },
+       {
+        "date": "2025-07-21",
+        "employee_count": 5717
+       },
+       {
+        "date": "2025-07-28",
+        "employee_count": 5717
+       },
+       {
+        "date": "2025-08-04",
+        "employee_count": 5738
+       },
+       {
+        "date": "2025-08-11",
+        "employee_count": 5738
+       },
+       {
+        "date": "2025-08-18",
+        "employee_count": 5738
+       },
+       {
+        "date": "2025-08-25",
+        "employee_count": 5738
+       },
+       {
+        "date": "2025-09-01",
+        "employee_count": 5766
+       },
+       {
+        "date": "2025-09-08",
+        "employee_count": 5766
+       },
+       {
+        "date": "2025-09-15",
+        "employee_count": 5766
+       },
+       {
+        "date": "2025-09-22",
+        "employee_count": 5766
+       },
+       {
+        "date": "2025-09-29",
+        "employee_count": 5766
+       },
+       {
+        "date": "2025-10-06",
+        "employee_count": 5767
+       },
+       {
+        "date": "2025-10-13",
+        "employee_count": 5767
+       },
+       {
+        "date": "2025-10-20",
+        "employee_count": 5767
+       },
+       {
+        "date": "2025-10-27",
+        "employee_count": 5767
+       },
+       {
+        "date": "2025-11-03",
+        "employee_count": 5780
+       },
+       {
+        "date": "2025-11-10",
+        "employee_count": 5780
+       },
+       {
+        "date": "2025-11-17",
+        "employee_count": 5780
+       },
+       {
+        "date": "2025-11-24",
+        "employee_count": 5780
+       },
+       {
+        "date": "2025-12-01",
+        "employee_count": 5790
+       },
+       {
+        "date": "2025-12-08",
+        "employee_count": 5790
+       },
+       {
+        "date": "2025-12-15",
+        "employee_count": 5790
+       },
+       {
+        "date": "2025-12-22",
+        "employee_count": 5790
+       },
+       {
+        "date": "2025-12-29",
+        "employee_count": 5790
+       },
+       {
+        "date": "2026-01-05",
+        "employee_count": 5796
+       },
+       {
+        "date": "2026-01-12",
+        "employee_count": 5796
+       },
+       {
+        "date": "2026-01-19",
+        "employee_count": 5796
+       },
+       {
+        "date": "2026-01-26",
+        "employee_count": 5796
+       },
+       {
+        "date": "2026-02-02",
+        "employee_count": 5824
+       },
+       {
+        "date": "2026-02-09",
+        "employee_count": 5824
+       },
+       {
+        "date": "2026-02-16",
+        "employee_count": 5824
+       },
+       {
+        "date": "2026-02-23",
+        "employee_count": 5824
+       },
+       {
+        "date": "2026-03-02",
+        "employee_count": 5844
+       },
+       {
+        "date": "2026-03-09",
+        "employee_count": 5844
+       },
+       {
+        "date": "2026-03-16",
+        "employee_count": 5844
+       },
+       {
+        "date": "2026-03-23",
+        "employee_count": 5844
+       },
+       {
+        "date": "2026-03-30",
+        "employee_count": 5844
+       },
+       {
+        "date": "2026-04-06",
+        "employee_count": 5888
+       },
+       {
+        "date": "2026-04-13",
+        "employee_count": 5888
+       },
+       {
+        "date": "2026-04-20",
+        "employee_count": 5888
+       },
+       {
+        "date": "2026-04-27",
+        "employee_count": 5888
+       },
+       {
+        "date": "2026-05-04",
+        "employee_count": 5920
+       },
+       {
+        "date": "2026-05-11",
+        "employee_count": 5920
+       },
+       {
+        "date": "2026-05-18",
+        "employee_count": 5920
+       },
+       {
+        "date": "2026-05-25",
+        "employee_count": 5920
+       },
+       {
+        "date": "2026-06-01",
+        "employee_count": 5990
+       },
+       {
+        "date": "2026-06-08",
+        "employee_count": 5990
+       },
+       {
+        "date": "2026-06-15",
+        "employee_count": 5990
+       },
+       {
+        "date": "2026-06-22",
+        "employee_count": 5990
+       },
+       {
+        "date": "2026-06-29",
+        "employee_count": 5990
+       },
+       {
+        "date": "2026-07-06",
+        "employee_count": 6011
+       },
+       {
+        "date": "2026-07-13",
+        "employee_count": 6011
+       },
+       {
+        "date": "2026-07-20",
+        "employee_count": 6011
+       },
+       {
+        "date": "2026-07-27",
+        "employee_count": 6011
+       },
+       {
+        "date": "2026-08-03",
+        "employee_count": 6015
+       },
+       {
+        "date": "2026-08-10",
+        "employee_count": 6015
+       },
+       {
+        "date": "2026-08-17",
+        "employee_count": 6015
+       },
+       {
+        "date": "2026-08-24",
+        "employee_count": 6015
+       },
+       {
+        "date": "2026-08-31",
+        "employee_count": 6015
+       },
+       {
+        "date": "2026-09-07",
+        "employee_count": 6048
+       },
+       {
+        "date": "2026-11-02",
+        "employee_count": 6103
+       }
+      ],
+      "growth_percent": {
+       "mom": 0.9093915343915343,
+       "qoq": 1.5305273664947596,
+       "six_months": 3.651494565217391,
+       "two_years": 9.451219512195122,
+       "yoy": 5.826252817756199
+      },
+      "growth_absolute": {
+       "mom": 55,
+       "qoq": 92,
+       "six_months": 215,
+       "two_years": 527,
+       "yoy": 336
+      },
+      "by_role_absolute": {
+       "Accounting": 122,
+       "Administrative": 249,
+       "Business Development": 859,
+       "Customer Success and Support": 352,
+       "Human Resources": 117,
+       "Information Technology": 265,
+       "Operations": 1674,
+       "Sales": 735
+      },
+      "by_role_percent": {
+       "Accounting": 1.9990168769457644,
+       "Administrative": 4.07996067507783,
+       "Business Development": 14.075045059806651,
+       "Customer Success and Support": 5.767655251515648,
+       "Human Resources": 1.9170899557594625,
+       "Information Technology": 4.342126822873996,
+       "Operations": 27.429133213173852,
+       "Sales": 12.043257414386368
+      },
+      "by_role_growth_6m_pct": {
+       "Accounting": 74.28571428571429,
+       "Administrative": 85.82089552238806,
+       "Arts and Design": 0.0,
+       "Business Development": 100.70093457943925,
+       "Community and Social Services": 25.0,
+       "Consulting": 0.0,
+       "Customer Success and Support": 93.4065934065934,
+       "Education": 8.333333333333332,
+       "Engineering": 0.0,
+       "Entrepreneurship": 13.333333333333334,
+       "Finance": 15.909090909090908,
+       "Healthcare Services": 5.555555555555555,
+       "Human Resources": 42.68292682926829,
+       "Information Technology": 68.78980891719745,
+       "Legal": 20.0,
+       "Marketing": -4.3478260869565215,
+       "Media and Communication": 0.0,
+       "Military and Protective Services": 4.761904761904762,
+       "Operations": 92.19288174512054,
+       "Product Management": 0.0,
+       "Program and Project Management": 11.11111111111111,
+       "Purchasing": 0.0,
+       "Quality Assurance": 0.0,
+       "Real Estate": 0.0,
+       "Research": 21.73913043478261,
+       "Sales": 62.251655629139066
+      },
+      "by_role_growth_yoy_pct": {
+       "Accounting": 9.90990990990991,
+       "Administrative": 6.866952789699571,
+       "Arts and Design": -16.666666666666664,
+       "Business Development": 5.269607843137255,
+       "Community and Social Services": 25.0,
+       "Consulting": -8.333333333333332,
+       "Customer Success and Support": 1.1494252873563218,
+       "Education": 21.875,
+       "Engineering": 3.8461538461538463,
+       "Entrepreneurship": 13.333333333333334,
+       "Finance": 10.869565217391305,
+       "Healthcare Services": 5.555555555555555,
+       "Human Resources": 15.841584158415841,
+       "Information Technology": 13.733905579399142,
+       "Legal": -14.285714285714285,
+       "Marketing": 0.0,
+       "Media and Communication": 0.0,
+       "Military and Protective Services": -4.3478260869565215,
+       "Operations": 11.525649566955364,
+       "Product Management": 0.0,
+       "Program and Project Management": 25.0,
+       "Purchasing": 0.0,
+       "Quality Assurance": 20.0,
+       "Real Estate": 0.0,
+       "Research": 40.0,
+       "Sales": 9.865470852017937
+      },
+      "by_region_absolute": {
+       "Bengaluru": 218,
+       "Delhi, India": 283,
+       "Greater Bengaluru Area": 226,
+       "Greater Delhi Area": 440,
+       "Greater Hyderabad Area": 268,
+       "Hyderabad": 258,
+       "India": 3000,
+       "Karnataka, India": 254,
+       "Maharashtra, India": 681,
+       "Mumbai": 272,
+       "Mumbai Metropolitan Region": 358,
+       "Tamil Nadu, India": 236,
+       "Telangana, India": 278,
+       "Uttar Pradesh, India": 307,
+       "West Bengal, India": 234
+      },
+      "by_region_percent": {
+       "Bengaluru": 3.57201376372276,
+       "Delhi, India": 4.637063739144684,
+       "Greater Bengaluru Area": 3.7030968376208424,
+       "Greater Delhi Area": 7.209569064394559,
+       "Greater Hyderabad Area": 4.391282975585777,
+       "Hyderabad": 4.227429133213174,
+       "India": 49.15615271178109,
+       "Karnataka, India": 4.161887596264132,
+       "Maharashtra, India": 11.158446665574308,
+       "Mumbai": 4.456824512534819,
+       "Mumbai Metropolitan Region": 5.865967556939211,
+       "Tamil Nadu, India": 3.8669506799934457,
+       "Telangana, India": 4.555136817958381,
+       "Uttar Pradesh, India": 5.030312960838932,
+       "West Bengal, India": 3.834179911518925
+      },
+      "by_skill_absolute": {
+       "Analytical Skills": 223,
+       "Business Development": 239,
+       "Communication": 363,
+       "Customer Relationship Management (CRM)": 231,
+       "Customer Service": 324,
+       "Data Analysis": 227,
+       "Leadership": 286,
+       "Logistics Management": 478,
+       "Management": 260,
+       "Microsoft Excel": 406,
+       "Microsoft Office": 349,
+       "Negotiation": 156,
+       "Operations Management": 380,
+       "Sales": 229,
+       "Supply Chain Management": 371,
+       "Team Management": 320,
+       "Teamwork": 230,
+       "Warehouse Operations": 291
+      },
+      "by_skill_percent": {
+       "Analytical Skills": 3.6539406849090614,
+       "Business Development": 3.9161068327052266,
+       "Communication": 5.947894478125512,
+       "Customer Relationship Management (CRM)": 3.785023758807144,
+       "Customer Service": 5.308864492872358,
+       "Data Analysis": 3.7194822218581023,
+       "Leadership": 4.686219891856465,
+       "Logistics Management": 7.832213665410453,
+       "Management": 4.260199901687694,
+       "Microsoft Excel": 6.652466000327707,
+       "Microsoft Office": 5.718499098803867,
+       "Negotiation": 2.556119941012617,
+       "Operations Management": 6.226446010158939,
+       "Sales": 3.7522529903326234,
+       "Supply Chain Management": 6.078977552023595,
+       "Team Management": 5.2433229559233165,
+       "Teamwork": 3.768638374569884,
+       "Warehouse Operations": 4.768146813042766
+      },
+      "by_function_timeseries": {
+       "CURRENT_FUNCTION": {
+        "Accounting": [
+         {
+          "date": "2024-12-01 00:00:00",
+          "employee_count": 59
+         },
+         {
+          "date": "2025-01-01 00:00:00",
+          "employee_count": 59
+         },
+         {
+          "date": "2025-02-01 00:00:00",
+          "employee_count": 57
+         },
+         {
+          "date": "2025-03-01 00:00:00",
+          "employee_count": 57
+         },
+         {
+          "date": "2025-04-01 00:00:00",
+          "employee_count": 57
+         },
+         {
+          "date": "2025-05-01 00:00:00",
+          "employee_count": 58
+         },
+         {
+          "date": "2025-06-01 00:00:00",
+          "employee_count": 59
+         },
+         {
+          "date": "2025-07-01 00:00:00",
+          "employee_count": 70
+         },
+         {
+          "date": "2025-08-01 00:00:00",
+          "employee_count": 70
+         },
+         {
+          "date": "2025-09-01 00:00:00",
+          "employee_count": 73
+         },
+         {
+          "date": "2025-10-01 00:00:00",
+          "employee_count": 73
+         },
+         {
+          "date": "2025-11-01 00:00:00",
+          "employee_count": 72
+         },
+         {
+          "date": "2025-12-01 00:00:00",
+          "employee_count": 61
+         },
+         {
+          "date": "2026-01-01 00:00:00",
+          "employee_count": 61
+         },
+         {
+          "date": "2026-02-01 00:00:00",
+          "employee_count": 70
+         },
+         {
+          "date": "2026-03-01 00:00:00",
+          "employee_count": 71
+         },
+         {
+          "date": "2026-04-01 00:00:00",
+          "employee_count": 70
+         },
+         {
+          "date": "2026-05-01 00:00:00",
+          "employee_count": 72
+         },
+         {
+          "date": "2026-06-01 00:00:00",
+          "employee_count": 72
+         },
+         {
+          "date": "2026-07-01 00:00:00",
+          "employee_count": 73
+         },
+         {
+          "date": "2026-08-01 00:00:00",
+          "employee_count": 75
+         }
+        ],
+        "Administrative": [
+         {
+          "date": "2024-12-01 00:00:00",
+          "employee_count": 126
+         },
+         {
+          "date": "2025-01-01 00:00:00",
+          "employee_count": 128
+         },
+         {
+          "date": "2025-02-01 00:00:00",
+          "employee_count": 129
+         },
+         {
+          "date": "2025-03-01 00:00:00",
+          "employee_count": 128
+         },
+         {
+          "date": "2025-04-01 00:00:00",
+          "employee_count": 127
+         },
+         {
+          "date": "2025-05-01 00:00:00",
+          "employee_count": 126
+         },
+         {
+          "date": "2025-06-01 00:00:00",
+          "employee_count": 127
+         },
+         {
+          "date": "2025-07-01 00:00:00",
+          "employee_count": 129
+         },
+         {
+          "date": "2025-08-01 00:00:00",
+          "employee_count": 130
+         },
+         {
+          "date": "2025-09-01 00:00:00",
+          "employee_count": 133
+         },
+         {
+          "date": "2025-10-01 00:00:00",
+          "employee_count": 136
+         },
+         {
+          "date": "2025-11-01 00:00:00",
+          "employee_count": 136
+         },
+         {
+          "date": "2025-12-01 00:00:00",
+          "employee_count": 129
+         },
+         {
+          "date": "2026-01-01 00:00:00",
+          "employee_count": 129
+         },
+         {
+          "date": "2026-02-01 00:00:00",
+          "employee_count": 134
+         },
+         {
+          "date": "2026-03-01 00:00:00",
+          "employee_count": 136
+         },
+         {
+          "date": "2026-04-01 00:00:00",
+          "employee_count": 139
+         },
+         {
+          "date": "2026-05-01 00:00:00",
+          "employee_count": 140
+         },
+         {
+          "date": "2026-06-01 00:00:00",
+          "employee_count": 141
+         },
+         {
+          "date": "2026-07-01 00:00:00",
+          "employee_count": 142
+         },
+         {
+          "date": "2026-08-01 00:00:00",
+          "employee_count": 143
+         }
+        ],
+        "Arts and Design": [
+         {
+          "date": "2024-12-01 00:00:00",
+          "employee_count": 6
+         },
+         {
+          "date": "2025-01-01 00:00:00",
+          "employee_count": 6
+         },
+         {
+          "date": "2025-02-01 00:00:00",
+          "employee_count": 7
+         },
+         {
+          "date": "2025-03-01 00:00:00",
+          "employee_count": 7
+         },
+         {
+          "date": "2025-04-01 00:00:00",
+          "employee_count": 7
+         },
+         {
+          "date": "2025-05-01 00:00:00",
+          "employee_count": 7
+         },
+         {
+          "date": "2025-06-01 00:00:00",
+          "employee_count": 6
+         },
+         {
+          "date": "2025-07-01 00:00:00",
+          "employee_count": 7
+         },
+         {
+          "date": "2025-08-01 00:00:00",
+          "employee_count": 6
+         },
+         {
+          "date": "2025-09-01 00:00:00",
+          "employee_count": 6
+         },
+         {
+          "date": "2025-10-01 00:00:00",
+          "employee_count": 6
+         },
+         {
+          "date": "2025-11-01 00:00:00",
+          "employee_count": 6
+         },
+         {
+          "date": "2025-12-01 00:00:00",
+          "employee_count": 5
+         },
+         {
+          "date": "2026-01-01 00:00:00",
+          "employee_count": 5
+         },
+         {
+          "date": "2026-02-01 00:00:00",
+          "employee_count": 5
+         },
+         {
+          "date": "2026-03-01 00:00:00",
+          "employee_count": 5
+         },
+         {
+          "date": "2026-04-01 00:00:00",
+          "employee_count": 5
+         },
+         {
+          "date": "2026-05-01 00:00:00",
+          "employee_count": 5
+         },
+         {
+          "date": "2026-06-01 00:00:00",
+          "employee_count": 5
+         },
+         {
+          "date": "2026-07-01 00:00:00",
+          "employee_count": 5
+         },
+         {
+          "date": "2026-08-01 00:00:00",
+          "employee_count": 5
+         }
+        ],
+        "Business Development": [
+         {
+          "date": "2024-12-01 00:00:00",
+          "employee_count": 403
+         },
+         {
+          "date": "2025-01-01 00:00:00",
+          "employee_count": 406
+         },
+         {
+          "date": "2025-02-01 00:00:00",
+          "employee_count": 408
+         },
+         {
+          "date": "2025-03-01 00:00:00",
+          "employee_count": 405
+         },
+         {
+          "date": "2025-04-01 00:00:00",
+          "employee_count": 404
+         },
+         {
+          "date": "2025-05-01 00:00:00",
+          "employee_count": 404
+         },
+         {
+          "date": "2025-06-01 00:00:00",
+          "employee_count": 406
+         },
+         {
+          "date": "2025-07-01 00:00:00",
+          "employee_count": 422
+         },
+         {
+          "date": "2025-08-01 00:00:00",
+          "employee_count": 432
+         },
+         {
+          "date": "2025-09-01 00:00:00",
+          "employee_count": 431
+         },
+         {
+          "date": "2025-10-01 00:00:00",
+          "employee_count": 431
+         },
+         {
+          "date": "2025-11-01 00:00:00",
+          "employee_count": 441
+         },
+         {
+          "date": "2025-12-01 00:00:00",
+          "employee_count": 402
+         },
+         {
+          "date": "2026-01-01 00:00:00",
+          "employee_count": 402
+         },
+         {
+          "date": "2026-02-01 00:00:00",
+          "employee_count": 428
+         },
+         {
+          "date": "2026-03-01 00:00:00",
+          "employee_count": 435
+         },
+         {
+          "date": "2026-04-01 00:00:00",
+          "employee_count": 440
+         },
+         {
+          "date": "2026-05-01 00:00:00",
+          "employee_count": 441
+         },
+         {
+          "date": "2026-06-01 00:00:00",
+          "employee_count": 443
+         },
+         {
+          "date": "2026-07-01 00:00:00",
+          "employee_count": 454
+         },
+         {
+          "date": "2026-08-01 00:00:00",
+          "employee_count": 463
+         }
+        ],
+        "Community and Social Services": [
+         {
+          "date": "2024-12-01 00:00:00",
+          "employee_count": 4
+         },
+         {
+          "date": "2025-01-01 00:00:00",
+          "employee_count": 4
+         },
+         {
+          "date": "2025-02-01 00:00:00",
+          "employee_count": 4
+         },
+         {
+          "date": "2025-03-01 00:00:00",
+          "employee_count": 4
+         },
+         {
+          "date": "2025-04-01 00:00:00",
+          "employee_count": 4
+         },
+         {
+          "date": "2025-05-01 00:00:00",
+          "employee_count": 4
+         },
+         {
+          "date": "2025-06-01 00:00:00",
+          "employee_count": 4
+         },
+         {
+          "date": "2025-07-01 00:00:00",
+          "employee_count": 4
+         },
+         {
+          "date": "2025-08-01 00:00:00",
+          "employee_count": 4
+         },
+         {
+          "date": "2025-09-01 00:00:00",
+          "employee_count": 4
+         },
+         {
+          "date": "2025-10-01 00:00:00",
+          "employee_count": 4
+         },
+         {
+          "date": "2025-11-01 00:00:00",
+          "employee_count": 4
+         },
+         {
+          "date": "2025-12-01 00:00:00",
+          "employee_count": 4
+         },
+         {
+          "date": "2026-01-01 00:00:00",
+          "employee_count": 4
+         },
+         {
+          "date": "2026-02-01 00:00:00",
+          "employee_count": 4
+         },
+         {
+          "date": "2026-03-01 00:00:00",
+          "employee_count": 4
+         },
+         {
+          "date": "2026-04-01 00:00:00",
+          "employee_count": 5
+         },
+         {
+          "date": "2026-05-01 00:00:00",
+          "employee_count": 5
+         },
+         {
+          "date": "2026-06-01 00:00:00",
+          "employee_count": 5
+         },
+         {
+          "date": "2026-07-01 00:00:00",
+          "employee_count": 5
+         },
+         {
+          "date": "2026-08-01 00:00:00",
+          "employee_count": 5
+         }
+        ],
+        "Consulting": [
+         {
+          "date": "2024-12-01 00:00:00",
+          "employee_count": 12
+         },
+         {
+          "date": "2025-01-01 00:00:00",
+          "employee_count": 12
+         },
+         {
+          "date": "2025-02-01 00:00:00",
+          "employee_count": 12
+         },
+         {
+          "date": "2025-03-01 00:00:00",
+          "employee_count": 12
+         },
+         {
+          "date": "2025-04-01 00:00:00",
+          "employee_count": 12
+         },
+         {
+          "date": "2025-05-01 00:00:00",
+          "employee_count": 12
+         },
+         {
+          "date": "2025-06-01 00:00:00",
+          "employee_count": 12
+         },
+         {
+          "date": "2025-07-01 00:00:00",
+          "employee_count": 11
+         },
+         {
+          "date": "2025-08-01 00:00:00",
+          "employee_count": 12
+         },
+         {
+          "date": "2025-09-01 00:00:00",
+          "employee_count": 12
+         },
+         {
+          "date": "2025-10-01 00:00:00",
+          "employee_count": 12
+         },
+         {
+          "date": "2025-11-01 00:00:00",
+          "employee_count": 12
+         },
+         {
+          "date": "2025-12-01 00:00:00",
+          "employee_count": 11
+         },
+         {
+          "date": "2026-01-01 00:00:00",
+          "employee_count": 11
+         },
+         {
+          "date": "2026-02-01 00:00:00",
+          "employee_count": 11
+         },
+         {
+          "date": "2026-03-01 00:00:00",
+          "employee_count": 11
+         },
+         {
+          "date": "2026-04-01 00:00:00",
+          "employee_count": 10
+         },
+         {
+          "date": "2026-05-01 00:00:00",
+          "employee_count": 10
+         },
+         {
+          "date": "2026-06-01 00:00:00",
+          "employee_count": 10
+         },
+         {
+          "date": "2026-07-01 00:00:00",
+          "employee_count": 12
+         },
+         {
+          "date": "2026-08-01 00:00:00",
+          "employee_count": 11
+         }
+        ],
+        "Customer Success and Support": [
+         {
+          "date": "2024-12-01 00:00:00",
+          "employee_count": 190
+         },
+         {
+          "date": "2025-01-01 00:00:00",
+          "employee_count": 190
+         },
+         {
+          "date": "2025-02-01 00:00:00",
+          "employee_count": 187
+         },
+         {
+          "date": "2025-03-01 00:00:00",
+          "employee_count": 186
+         },
+         {
+          "date": "2025-04-01 00:00:00",
+          "employee_count": 188
+         },
+         {
+          "date": "2025-05-01 00:00:00",
+          "employee_count": 187
+         },
+         {
+          "date": "2025-06-01 00:00:00",
+          "employee_count": 185
+         },
+         {
+          "date": "2025-07-01 00:00:00",
+          "employee_count": 182
+         },
+         {
+          "date": "2025-08-01 00:00:00",
+          "employee_count": 184
+         },
+         {
+          "date": "2025-09-01 00:00:00",
+          "employee_count": 186
+         },
+         {
+          "date": "2025-10-01 00:00:00",
+          "employee_count": 186
+         },
+         {
+          "date": "2025-11-01 00:00:00",
+          "employee_count": 188
+         },
+         {
+          "date": "2025-12-01 00:00:00",
+          "employee_count": 183
+         },
+         {
+          "date": "2026-01-01 00:00:00",
+          "employee_count": 183
+         },
+         {
+          "date": "2026-02-01 00:00:00",
+          "employee_count": 182
+         },
+         {
+          "date": "2026-03-01 00:00:00",
+          "employee_count": 181
+         },
+         {
+          "date": "2026-04-01 00:00:00",
+          "employee_count": 182
+         },
+         {
+          "date": "2026-05-01 00:00:00",
+          "employee_count": 182
+         },
+         {
+          "date": "2026-06-01 00:00:00",
+          "employee_count": 182
+         },
+         {
+          "date": "2026-07-01 00:00:00",
+          "employee_count": 188
+         },
+         {
+          "date": "2026-08-01 00:00:00",
+          "employee_count": 190
+         }
+        ],
+        "Education": [
+         {
+          "date": "2024-12-01 00:00:00",
+          "employee_count": 34
+         },
+         {
+          "date": "2025-01-01 00:00:00",
+          "employee_count": 35
+         },
+         {
+          "date": "2025-02-01 00:00:00",
+          "employee_count": 35
+         },
+         {
+          "date": "2025-03-01 00:00:00",
+          "employee_count": 34
+         },
+         {
+          "date": "2025-04-01 00:00:00",
+          "employee_count": 34
+         },
+         {
+          "date": "2025-05-01 00:00:00",
+          "employee_count": 34
+         },
+         {
+          "date": "2025-06-01 00:00:00",
+          "employee_count": 34
+         },
+         {
+          "date": "2025-07-01 00:00:00",
+          "employee_count": 34
+         },
+         {
+          "date": "2025-08-01 00:00:00",
+          "employee_count": 32
+         },
+         {
+          "date": "2025-09-01 00:00:00",
+          "employee_count": 33
+         },
+         {
+          "date": "2025-10-01 00:00:00",
+          "employee_count": 33
+         },
+         {
+          "date": "2025-11-01 00:00:00",
+          "employee_count": 34
+         },
+         {
+          "date": "2025-12-01 00:00:00",
+          "employee_count": 35
+         },
+         {
+          "date": "2026-01-01 00:00:00",
+          "employee_count": 35
+         },
+         {
+          "date": "2026-02-01 00:00:00",
+          "employee_count": 36
+         },
+         {
+          "date": "2026-03-01 00:00:00",
+          "employee_count": 34
+         },
+         {
+          "date": "2026-04-01 00:00:00",
+          "employee_count": 34
+         },
+         {
+          "date": "2026-05-01 00:00:00",
+          "employee_count": 34
+         },
+         {
+          "date": "2026-06-01 00:00:00",
+          "employee_count": 34
+         },
+         {
+          "date": "2026-07-01 00:00:00",
+          "employee_count": 40
+         },
+         {
+          "date": "2026-08-01 00:00:00",
+          "employee_count": 39
+         }
+        ],
+        "Engineering": [
+         {
+          "date": "2024-12-01 00:00:00",
+          "employee_count": 51
+         },
+         {
+          "date": "2025-01-01 00:00:00",
+          "employee_count": 52
+         },
+         {
+          "date": "2025-02-01 00:00:00",
+          "employee_count": 51
+         },
+         {
+          "date": "2025-03-01 00:00:00",
+          "employee_count": 51
+         },
+         {
+          "date": "2025-04-01 00:00:00",
+          "employee_count": 51
+         },
+         {
+          "date": "2025-05-01 00:00:00",
+          "employee_count": 51
+         },
+         {
+          "date": "2025-06-01 00:00:00",
+          "employee_count": 50
+         },
+         {
+          "date": "2025-07-01 00:00:00",
+          "employee_count": 53
+         },
+         {
+          "date": "2025-08-01 00:00:00",
+          "employee_count": 52
+         },
+         {
+          "date": "2025-09-01 00:00:00",
+          "employee_count": 53
+         },
+         {
+          "date": "2025-10-01 00:00:00",
+          "employee_count": 54
+         },
+         {
+          "date": "2025-11-01 00:00:00",
+          "employee_count": 55
+         },
+         {
+          "date": "2025-12-01 00:00:00",
+          "employee_count": 49
+         },
+         {
+          "date": "2026-01-01 00:00:00",
+          "employee_count": 49
+         },
+         {
+          "date": "2026-02-01 00:00:00",
+          "employee_count": 54
+         },
+         {
+          "date": "2026-03-01 00:00:00",
+          "employee_count": 54
+         },
+         {
+          "date": "2026-04-01 00:00:00",
+          "employee_count": 55
+         },
+         {
+          "date": "2026-05-01 00:00:00",
+          "employee_count": 55
+         },
+         {
+          "date": "2026-06-01 00:00:00",
+          "employee_count": 55
+         },
+         {
+          "date": "2026-07-01 00:00:00",
+          "employee_count": 52
+         },
+         {
+          "date": "2026-08-01 00:00:00",
+          "employee_count": 54
+         }
+        ],
+        "Entrepreneurship": [
+         {
+          "date": "2024-12-01 00:00:00",
+          "employee_count": 15
+         },
+         {
+          "date": "2025-01-01 00:00:00",
+          "employee_count": 15
+         },
+         {
+          "date": "2025-02-01 00:00:00",
+          "employee_count": 15
+         },
+         {
+          "date": "2025-03-01 00:00:00",
+          "employee_count": 15
+         },
+         {
+          "date": "2025-04-01 00:00:00",
+          "employee_count": 15
+         },
+         {
+          "date": "2025-05-01 00:00:00",
+          "employee_count": 15
+         },
+         {
+          "date": "2025-06-01 00:00:00",
+          "employee_count": 14
+         },
+         {
+          "date": "2025-07-01 00:00:00",
+          "employee_count": 15
+         },
+         {
+          "date": "2025-08-01 00:00:00",
+          "employee_count": 15
+         },
+         {
+          "date": "2025-09-01 00:00:00",
+          "employee_count": 17
+         },
+         {
+          "date": "2025-10-01 00:00:00",
+          "employee_count": 16
+         },
+         {
+          "date": "2025-11-01 00:00:00",
+          "employee_count": 16
+         },
+         {
+          "date": "2025-12-01 00:00:00",
+          "employee_count": 14
+         },
+         {
+          "date": "2026-01-01 00:00:00",
+          "employee_count": 14
+         },
+         {
+          "date": "2026-02-01 00:00:00",
+          "employee_count": 15
+         },
+         {
+          "date": "2026-03-01 00:00:00",
+          "employee_count": 15
+         },
+         {
+          "date": "2026-04-01 00:00:00",
+          "employee_count": 15
+         },
+         {
+          "date": "2026-05-01 00:00:00",
+          "employee_count": 16
+         },
+         {
+          "date": "2026-06-01 00:00:00",
+          "employee_count": 16
+         },
+         {
+          "date": "2026-07-01 00:00:00",
+          "employee_count": 16
+         },
+         {
+          "date": "2026-08-01 00:00:00",
+          "employee_count": 17
+         }
+        ],
+        "Finance": [
+         {
+          "date": "2024-12-01 00:00:00",
+          "employee_count": 41
+         },
+         {
+          "date": "2025-01-01 00:00:00",
+          "employee_count": 41
+         },
+         {
+          "date": "2025-02-01 00:00:00",
+          "employee_count": 42
+         },
+         {
+          "date": "2025-03-01 00:00:00",
+          "employee_count": 42
+         },
+         {
+          "date": "2025-04-01 00:00:00",
+          "employee_count": 41
+         },
+         {
+          "date": "2025-05-01 00:00:00",
+          "employee_count": 41
+         },
+         {
+          "date": "2025-06-01 00:00:00",
+          "employee_count": 41
+         },
+         {
+          "date": "2025-07-01 00:00:00",
+          "employee_count": 44
+         },
+         {
+          "date": "2025-08-01 00:00:00",
+          "employee_count": 46
+         },
+         {
+          "date": "2025-09-01 00:00:00",
+          "employee_count": 47
+         },
+         {
+          "date": "2025-10-01 00:00:00",
+          "employee_count": 45
+         },
+         {
+          "date": "2025-11-01 00:00:00",
+          "employee_count": 46
+         },
+         {
+          "date": "2025-12-01 00:00:00",
+          "employee_count": 40
+         },
+         {
+          "date": "2026-01-01 00:00:00",
+          "employee_count": 40
+         },
+         {
+          "date": "2026-02-01 00:00:00",
+          "employee_count": 44
+         },
+         {
+          "date": "2026-03-01 00:00:00",
+          "employee_count": 46
+         },
+         {
+          "date": "2026-04-01 00:00:00",
+          "employee_count": 46
+         },
+         {
+          "date": "2026-05-01 00:00:00",
+          "employee_count": 50
+         },
+         {
+          "date": "2026-06-01 00:00:00",
+          "employee_count": 51
+         },
+         {
+          "date": "2026-07-01 00:00:00",
+          "employee_count": 52
+         },
+         {
+          "date": "2026-08-01 00:00:00",
+          "employee_count": 51
+         }
+        ],
+        "Healthcare Services": [
+         {
+          "date": "2024-12-01 00:00:00",
+          "employee_count": 19
+         },
+         {
+          "date": "2025-01-01 00:00:00",
+          "employee_count": 19
+         },
+         {
+          "date": "2025-02-01 00:00:00",
+          "employee_count": 19
+         },
+         {
+          "date": "2025-03-01 00:00:00",
+          "employee_count": 19
+         },
+         {
+          "date": "2025-04-01 00:00:00",
+          "employee_count": 19
+         },
+         {
+          "date": "2025-05-01 00:00:00",
+          "employee_count": 19
+         },
+         {
+          "date": "2025-06-01 00:00:00",
+          "employee_count": 19
+         },
+         {
+          "date": "2025-07-01 00:00:00",
+          "employee_count": 18
+         },
+         {
+          "date": "2025-08-01 00:00:00",
+          "employee_count": 18
+         },
+         {
+          "date": "2025-09-01 00:00:00",
+          "employee_count": 20
+         },
+         {
+          "date": "2025-10-01 00:00:00",
+          "employee_count": 20
+         },
+         {
+          "date": "2025-11-01 00:00:00",
+          "employee_count": 20
+         },
+         {
+          "date": "2025-12-01 00:00:00",
+          "employee_count": 19
+         },
+         {
+          "date": "2026-01-01 00:00:00",
+          "employee_count": 19
+         },
+         {
+          "date": "2026-02-01 00:00:00",
+          "employee_count": 18
+         },
+         {
+          "date": "2026-03-01 00:00:00",
+          "employee_count": 18
+         },
+         {
+          "date": "2026-04-01 00:00:00",
+          "employee_count": 18
+         },
+         {
+          "date": "2026-05-01 00:00:00",
+          "employee_count": 18
+         },
+         {
+          "date": "2026-06-01 00:00:00",
+          "employee_count": 18
+         },
+         {
+          "date": "2026-07-01 00:00:00",
+          "employee_count": 18
+         },
+         {
+          "date": "2026-08-01 00:00:00",
+          "employee_count": 19
+         }
+        ],
+        "Human Resources": [
+         {
+          "date": "2024-12-01 00:00:00",
+          "employee_count": 70
+         },
+         {
+          "date": "2025-01-01 00:00:00",
+          "employee_count": 68
+         },
+         {
+          "date": "2025-02-01 00:00:00",
+          "employee_count": 69
+         },
+         {
+          "date": "2025-03-01 00:00:00",
+          "employee_count": 70
+         },
+         {
+          "date": "2025-04-01 00:00:00",
+          "employee_count": 70
+         },
+         {
+          "date": "2025-05-01 00:00:00",
+          "employee_count": 70
+         },
+         {
+          "date": "2025-06-01 00:00:00",
+          "employee_count": 72
+         },
+         {
+          "date": "2025-07-01 00:00:00",
+          "employee_count": 83
+         },
+         {
+          "date": "2025-08-01 00:00:00",
+          "employee_count": 84
+         },
+         {
+          "date": "2025-09-01 00:00:00",
+          "employee_count": 87
+         },
+         {
+          "date": "2025-10-01 00:00:00",
+          "employee_count": 86
+         },
+         {
+          "date": "2025-11-01 00:00:00",
+          "employee_count": 87
+         },
+         {
+          "date": "2025-12-01 00:00:00",
+          "employee_count": 74
+         },
+         {
+          "date": "2026-01-01 00:00:00",
+          "employee_count": 73
+         },
+         {
+          "date": "2026-02-01 00:00:00",
+          "employee_count": 82
+         },
+         {
+          "date": "2026-03-01 00:00:00",
+          "employee_count": 82
+         },
+         {
+          "date": "2026-04-01 00:00:00",
+          "employee_count": 84
+         },
+         {
+          "date": "2026-05-01 00:00:00",
+          "employee_count": 85
+         },
+         {
+          "date": "2026-06-01 00:00:00",
+          "employee_count": 84
+         },
+         {
+          "date": "2026-07-01 00:00:00",
+          "employee_count": 90
+         },
+         {
+          "date": "2026-08-01 00:00:00",
+          "employee_count": 92
+         }
+        ],
+        "Information Technology": [
+         {
+          "date": "2024-12-01 00:00:00",
+          "employee_count": 129
+         },
+         {
+          "date": "2025-01-01 00:00:00",
+          "employee_count": 127
+         },
+         {
+          "date": "2025-02-01 00:00:00",
+          "employee_count": 129
+         },
+         {
+          "date": "2025-03-01 00:00:00",
+          "employee_count": 130
+         },
+         {
+          "date": "2025-04-01 00:00:00",
+          "employee_count": 132
+         },
+         {
+          "date": "2025-05-01 00:00:00",
+          "employee_count": 132
+         },
+         {
+          "date": "2025-06-01 00:00:00",
+          "employee_count": 134
+         },
+         {
+          "date": "2025-07-01 00:00:00",
+          "employee_count": 147
+         },
+         {
+          "date": "2025-08-01 00:00:00",
+          "employee_count": 152
+         },
+         {
+          "date": "2025-09-01 00:00:00",
+          "employee_count": 154
+         },
+         {
+          "date": "2025-10-01 00:00:00",
+          "employee_count": 155
+         },
+         {
+          "date": "2025-11-01 00:00:00",
+          "employee_count": 157
+         },
+         {
+          "date": "2025-12-01 00:00:00",
+          "employee_count": 139
+         },
+         {
+          "date": "2026-01-01 00:00:00",
+          "employee_count": 139
+         },
+         {
+          "date": "2026-02-01 00:00:00",
+          "employee_count": 157
+         },
+         {
+          "date": "2026-03-01 00:00:00",
+          "employee_count": 158
+         },
+         {
+          "date": "2026-04-01 00:00:00",
+          "employee_count": 159
+         },
+         {
+          "date": "2026-05-01 00:00:00",
+          "employee_count": 161
+         },
+         {
+          "date": "2026-06-01 00:00:00",
+          "employee_count": 161
+         },
+         {
+          "date": "2026-07-01 00:00:00",
+          "employee_count": 161
+         },
+         {
+          "date": "2026-08-01 00:00:00",
+          "employee_count": 164
+         }
+        ],
+        "Legal": [
+         {
+          "date": "2024-12-01 00:00:00",
+          "employee_count": 11
+         },
+         {
+          "date": "2025-01-01 00:00:00",
+          "employee_count": 11
+         },
+         {
+          "date": "2025-02-01 00:00:00",
+          "employee_count": 12
+         },
+         {
+          "date": "2025-03-01 00:00:00",
+          "employee_count": 12
+         },
+         {
+          "date": "2025-04-01 00:00:00",
+          "employee_count": 12
+         },
+         {
+          "date": "2025-05-01 00:00:00",
+          "employee_count": 12
+         },
+         {
+          "date": "2025-06-01 00:00:00",
+          "employee_count": 13
+         },
+         {
+          "date": "2025-07-01 00:00:00",
+          "employee_count": 13
+         },
+         {
+          "date": "2025-08-01 00:00:00",
+          "employee_count": 14
+         },
+         {
+          "date": "2025-09-01 00:00:00",
+          "employee_count": 14
+         },
+         {
+          "date": "2025-10-01 00:00:00",
+          "employee_count": 14
+         },
+         {
+          "date": "2025-11-01 00:00:00",
+          "employee_count": 12
+         },
+         {
+          "date": "2025-12-01 00:00:00",
+          "employee_count": 11
+         },
+         {
+          "date": "2026-01-01 00:00:00",
+          "employee_count": 11
+         },
+         {
+          "date": "2026-02-01 00:00:00",
+          "employee_count": 10
+         },
+         {
+          "date": "2026-03-01 00:00:00",
+          "employee_count": 10
+         },
+         {
+          "date": "2026-04-01 00:00:00",
+          "employee_count": 11
+         },
+         {
+          "date": "2026-05-01 00:00:00",
+          "employee_count": 11
+         },
+         {
+          "date": "2026-06-01 00:00:00",
+          "employee_count": 11
+         },
+         {
+          "date": "2026-07-01 00:00:00",
+          "employee_count": 12
+         },
+         {
+          "date": "2026-08-01 00:00:00",
+          "employee_count": 12
+         }
+        ],
+        "Marketing": [
+         {
+          "date": "2024-12-01 00:00:00",
+          "employee_count": 21
+         },
+         {
+          "date": "2025-01-01 00:00:00",
+          "employee_count": 21
+         },
+         {
+          "date": "2025-02-01 00:00:00",
+          "employee_count": 21
+         },
+         {
+          "date": "2025-03-01 00:00:00",
+          "employee_count": 22
+         },
+         {
+          "date": "2025-04-01 00:00:00",
+          "employee_count": 23
+         },
+         {
+          "date": "2025-05-01 00:00:00",
+          "employee_count": 23
+         },
+         {
+          "date": "2025-06-01 00:00:00",
+          "employee_count": 23
+         },
+         {
+          "date": "2025-07-01 00:00:00",
+          "employee_count": 22
+         },
+         {
+          "date": "2025-08-01 00:00:00",
+          "employee_count": 22
+         },
+         {
+          "date": "2025-09-01 00:00:00",
+          "employee_count": 23
+         },
+         {
+          "date": "2025-10-01 00:00:00",
+          "employee_count": 23
+         },
+         {
+          "date": "2025-11-01 00:00:00",
+          "employee_count": 23
+         },
+         {
+          "date": "2025-12-01 00:00:00",
+          "employee_count": 23
+         },
+         {
+          "date": "2026-01-01 00:00:00",
+          "employee_count": 23
+         },
+         {
+          "date": "2026-02-01 00:00:00",
+          "employee_count": 23
+         },
+         {
+          "date": "2026-03-01 00:00:00",
+          "employee_count": 22
+         },
+         {
+          "date": "2026-04-01 00:00:00",
+          "employee_count": 23
+         },
+         {
+          "date": "2026-05-01 00:00:00",
+          "employee_count": 23
+         },
+         {
+          "date": "2026-06-01 00:00:00",
+          "employee_count": 23
+         },
+         {
+          "date": "2026-07-01 00:00:00",
+          "employee_count": 22
+         },
+         {
+          "date": "2026-08-01 00:00:00",
+          "employee_count": 22
+         }
+        ],
+        "Media and Communication": [
+         {
+          "date": "2024-12-01 00:00:00",
+          "employee_count": 5
+         },
+         {
+          "date": "2025-01-01 00:00:00",
+          "employee_count": 5
+         },
+         {
+          "date": "2025-02-01 00:00:00",
+          "employee_count": 5
+         },
+         {
+          "date": "2025-03-01 00:00:00",
+          "employee_count": 5
+         },
+         {
+          "date": "2025-04-01 00:00:00",
+          "employee_count": 5
+         },
+         {
+          "date": "2025-05-01 00:00:00",
+          "employee_count": 5
+         },
+         {
+          "date": "2025-06-01 00:00:00",
+          "employee_count": 5
+         },
+         {
+          "date": "2025-07-01 00:00:00",
+          "employee_count": 5
+         },
+         {
+          "date": "2025-08-01 00:00:00",
+          "employee_count": 5
+         },
+         {
+          "date": "2025-09-01 00:00:00",
+          "employee_count": 5
+         },
+         {
+          "date": "2025-10-01 00:00:00",
+          "employee_count": 5
+         },
+         {
+          "date": "2025-11-01 00:00:00",
+          "employee_count": 5
+         },
+         {
+          "date": "2025-12-01 00:00:00",
+          "employee_count": 5
+         },
+         {
+          "date": "2026-01-01 00:00:00",
+          "employee_count": 5
+         },
+         {
+          "date": "2026-02-01 00:00:00",
+          "employee_count": 5
+         },
+         {
+          "date": "2026-03-01 00:00:00",
+          "employee_count": 5
+         },
+         {
+          "date": "2026-04-01 00:00:00",
+          "employee_count": 5
+         },
+         {
+          "date": "2026-05-01 00:00:00",
+          "employee_count": 5
+         },
+         {
+          "date": "2026-06-01 00:00:00",
+          "employee_count": 5
+         },
+         {
+          "date": "2026-07-01 00:00:00",
+          "employee_count": 5
+         },
+         {
+          "date": "2026-08-01 00:00:00",
+          "employee_count": 5
+         }
+        ],
+        "Military and Protective Services": [
+         {
+          "date": "2024-12-01 00:00:00",
+          "employee_count": 20
+         },
+         {
+          "date": "2025-01-01 00:00:00",
+          "employee_count": 20
+         },
+         {
+          "date": "2025-02-01 00:00:00",
+          "employee_count": 20
+         },
+         {
+          "date": "2025-03-01 00:00:00",
+          "employee_count": 20
+         },
+         {
+          "date": "2025-04-01 00:00:00",
+          "employee_count": 20
+         },
+         {
+          "date": "2025-05-01 00:00:00",
+          "employee_count": 21
+         },
+         {
+          "date": "2025-06-01 00:00:00",
+          "employee_count": 21
+         },
+         {
+          "date": "2025-07-01 00:00:00",
+          "employee_count": 22
+         },
+         {
+          "date": "2025-08-01 00:00:00",
+          "employee_count": 23
+         },
+         {
+          "date": "2025-09-01 00:00:00",
+          "employee_count": 23
+         },
+         {
+          "date": "2025-10-01 00:00:00",
+          "employee_count": 22
+         },
+         {
+          "date": "2025-11-01 00:00:00",
+          "employee_count": 21
+         },
+         {
+          "date": "2025-12-01 00:00:00",
+          "employee_count": 22
+         },
+         {
+          "date": "2026-01-01 00:00:00",
+          "employee_count": 22
+         },
+         {
+          "date": "2026-02-01 00:00:00",
+          "employee_count": 21
+         },
+         {
+          "date": "2026-03-01 00:00:00",
+          "employee_count": 21
+         },
+         {
+          "date": "2026-04-01 00:00:00",
+          "employee_count": 21
+         },
+         {
+          "date": "2026-05-01 00:00:00",
+          "employee_count": 21
+         },
+         {
+          "date": "2026-06-01 00:00:00",
+          "employee_count": 21
+         },
+         {
+          "date": "2026-07-01 00:00:00",
+          "employee_count": 22
+         },
+         {
+          "date": "2026-08-01 00:00:00",
+          "employee_count": 22
+         }
+        ],
+        "Operations": [
+         {
+          "date": "2024-12-01 00:00:00",
+          "employee_count": 751
+         },
+         {
+          "date": "2025-01-01 00:00:00",
+          "employee_count": 757
+         },
+         {
+          "date": "2025-02-01 00:00:00",
+          "employee_count": 772
+         },
+         {
+          "date": "2025-03-01 00:00:00",
+          "employee_count": 778
+         },
+         {
+          "date": "2025-04-01 00:00:00",
+          "employee_count": 781
+         },
+         {
+          "date": "2025-05-01 00:00:00",
+          "employee_count": 779
+         },
+         {
+          "date": "2025-06-01 00:00:00",
+          "employee_count": 783
+         },
+         {
+          "date": "2025-07-01 00:00:00",
+          "employee_count": 842
+         },
+         {
+          "date": "2025-08-01 00:00:00",
+          "employee_count": 859
+         },
+         {
+          "date": "2025-09-01 00:00:00",
+          "employee_count": 877
+         },
+         {
+          "date": "2025-10-01 00:00:00",
+          "employee_count": 879
+         },
+         {
+          "date": "2025-11-01 00:00:00",
+          "employee_count": 881
+         },
+         {
+          "date": "2025-12-01 00:00:00",
+          "employee_count": 800
+         },
+         {
+          "date": "2026-01-01 00:00:00",
+          "employee_count": 801
+         },
+         {
+          "date": "2026-02-01 00:00:00",
+          "employee_count": 871
+         },
+         {
+          "date": "2026-03-01 00:00:00",
+          "employee_count": 881
+         },
+         {
+          "date": "2026-04-01 00:00:00",
+          "employee_count": 881
+         },
+         {
+          "date": "2026-05-01 00:00:00",
+          "employee_count": 892
+         },
+         {
+          "date": "2026-06-01 00:00:00",
+          "employee_count": 896
+         },
+         {
+          "date": "2026-07-01 00:00:00",
+          "employee_count": 923
+         },
+         {
+          "date": "2026-08-01 00:00:00",
+          "employee_count": 938
+         }
+        ],
+        "Product Management": [
+         {
+          "date": "2024-12-01 00:00:00",
+          "employee_count": 1
+         },
+         {
+          "date": "2025-01-01 00:00:00",
+          "employee_count": 1
+         },
+         {
+          "date": "2025-02-01 00:00:00",
+          "employee_count": 1
+         },
+         {
+          "date": "2025-03-01 00:00:00",
+          "employee_count": 1
+         },
+         {
+          "date": "2025-04-01 00:00:00",
+          "employee_count": 1
+         },
+         {
+          "date": "2025-05-01 00:00:00",
+          "employee_count": 1
+         },
+         {
+          "date": "2025-06-01 00:00:00",
+          "employee_count": 1
+         },
+         {
+          "date": "2025-07-01 00:00:00",
+          "employee_count": 2
+         },
+         {
+          "date": "2025-08-01 00:00:00",
+          "employee_count": 2
+         },
+         {
+          "date": "2025-09-01 00:00:00",
+          "employee_count": 2
+         },
+         {
+          "date": "2025-10-01 00:00:00",
+          "employee_count": 2
+         },
+         {
+          "date": "2025-11-01 00:00:00",
+          "employee_count": 2
+         },
+         {
+          "date": "2025-12-01 00:00:00",
+          "employee_count": 1
+         },
+         {
+          "date": "2026-01-01 00:00:00",
+          "employee_count": 1
+         },
+         {
+          "date": "2026-02-01 00:00:00",
+          "employee_count": 2
+         },
+         {
+          "date": "2026-03-01 00:00:00",
+          "employee_count": 2
+         },
+         {
+          "date": "2026-04-01 00:00:00",
+          "employee_count": 2
+         },
+         {
+          "date": "2026-05-01 00:00:00",
+          "employee_count": 2
+         },
+         {
+          "date": "2026-06-01 00:00:00",
+          "employee_count": 2
+         },
+         {
+          "date": "2026-07-01 00:00:00",
+          "employee_count": 2
+         },
+         {
+          "date": "2026-08-01 00:00:00",
+          "employee_count": 2
+         }
+        ],
+        "Program and Project Management": [
+         {
+          "date": "2024-12-01 00:00:00",
+          "employee_count": 14
+         },
+         {
+          "date": "2025-01-01 00:00:00",
+          "employee_count": 14
+         },
+         {
+          "date": "2025-02-01 00:00:00",
+          "employee_count": 14
+         },
+         {
+          "date": "2025-03-01 00:00:00",
+          "employee_count": 13
+         },
+         {
+          "date": "2025-04-01 00:00:00",
+          "employee_count": 14
+         },
+         {
+          "date": "2025-05-01 00:00:00",
+          "employee_count": 14
+         },
+         {
+          "date": "2025-06-01 00:00:00",
+          "employee_count": 13
+         },
+         {
+          "date": "2025-07-01 00:00:00",
+          "employee_count": 16
+         },
+         {
+          "date": "2025-08-01 00:00:00",
+          "employee_count": 16
+         },
+         {
+          "date": "2025-09-01 00:00:00",
+          "employee_count": 15
+         },
+         {
+          "date": "2025-10-01 00:00:00",
+          "employee_count": 15
+         },
+         {
+          "date": "2025-11-01 00:00:00",
+          "employee_count": 15
+         },
+         {
+          "date": "2025-12-01 00:00:00",
+          "employee_count": 12
+         },
+         {
+          "date": "2026-01-01 00:00:00",
+          "employee_count": 12
+         },
+         {
+          "date": "2026-02-01 00:00:00",
+          "employee_count": 18
+         },
+         {
+          "date": "2026-03-01 00:00:00",
+          "employee_count": 18
+         },
+         {
+          "date": "2026-04-01 00:00:00",
+          "employee_count": 18
+         },
+         {
+          "date": "2026-05-01 00:00:00",
+          "employee_count": 18
+         },
+         {
+          "date": "2026-06-01 00:00:00",
+          "employee_count": 18
+         },
+         {
+          "date": "2026-07-01 00:00:00",
+          "employee_count": 19
+         },
+         {
+          "date": "2026-08-01 00:00:00",
+          "employee_count": 20
+         }
+        ],
+        "Purchasing": [
+         {
+          "date": "2024-12-01 00:00:00",
+          "employee_count": 2
+         },
+         {
+          "date": "2025-01-01 00:00:00",
+          "employee_count": 2
+         },
+         {
+          "date": "2025-02-01 00:00:00",
+          "employee_count": 2
+         },
+         {
+          "date": "2025-03-01 00:00:00",
+          "employee_count": 2
+         },
+         {
+          "date": "2025-04-01 00:00:00",
+          "employee_count": 2
+         },
+         {
+          "date": "2025-05-01 00:00:00",
+          "employee_count": 2
+         },
+         {
+          "date": "2025-06-01 00:00:00",
+          "employee_count": 2
+         },
+         {
+          "date": "2025-07-01 00:00:00",
+          "employee_count": 3
+         },
+         {
+          "date": "2025-08-01 00:00:00",
+          "employee_count": 4
+         },
+         {
+          "date": "2025-09-01 00:00:00",
+          "employee_count": 4
+         },
+         {
+          "date": "2025-10-01 00:00:00",
+          "employee_count": 4
+         },
+         {
+          "date": "2025-11-01 00:00:00",
+          "employee_count": 4
+         },
+         {
+          "date": "2025-12-01 00:00:00",
+          "employee_count": 3
+         },
+         {
+          "date": "2026-01-01 00:00:00",
+          "employee_count": 3
+         },
+         {
+          "date": "2026-02-01 00:00:00",
+          "employee_count": 4
+         },
+         {
+          "date": "2026-03-01 00:00:00",
+          "employee_count": 4
+         },
+         {
+          "date": "2026-04-01 00:00:00",
+          "employee_count": 4
+         },
+         {
+          "date": "2026-05-01 00:00:00",
+          "employee_count": 4
+         },
+         {
+          "date": "2026-06-01 00:00:00",
+          "employee_count": 3
+         },
+         {
+          "date": "2026-07-01 00:00:00",
+          "employee_count": 4
+         },
+         {
+          "date": "2026-08-01 00:00:00",
+          "employee_count": 4
+         }
+        ],
+        "Quality Assurance": [
+         {
+          "date": "2024-12-01 00:00:00",
+          "employee_count": 6
+         },
+         {
+          "date": "2025-01-01 00:00:00",
+          "employee_count": 6
+         },
+         {
+          "date": "2025-02-01 00:00:00",
+          "employee_count": 6
+         },
+         {
+          "date": "2025-03-01 00:00:00",
+          "employee_count": 6
+         },
+         {
+          "date": "2025-04-01 00:00:00",
+          "employee_count": 6
+         },
+         {
+          "date": "2025-05-01 00:00:00",
+          "employee_count": 6
+         },
+         {
+          "date": "2025-06-01 00:00:00",
+          "employee_count": 6
+         },
+         {
+          "date": "2025-07-01 00:00:00",
+          "employee_count": 5
+         },
+         {
+          "date": "2025-08-01 00:00:00",
+          "employee_count": 5
+         },
+         {
+          "date": "2025-09-01 00:00:00",
+          "employee_count": 5
+         },
+         {
+          "date": "2025-10-01 00:00:00",
+          "employee_count": 6
+         },
+         {
+          "date": "2025-11-01 00:00:00",
+          "employee_count": 6
+         },
+         {
+          "date": "2025-12-01 00:00:00",
+          "employee_count": 6
+         },
+         {
+          "date": "2026-01-01 00:00:00",
+          "employee_count": 6
+         },
+         {
+          "date": "2026-02-01 00:00:00",
+          "employee_count": 6
+         },
+         {
+          "date": "2026-03-01 00:00:00",
+          "employee_count": 6
+         },
+         {
+          "date": "2026-04-01 00:00:00",
+          "employee_count": 6
+         },
+         {
+          "date": "2026-05-01 00:00:00",
+          "employee_count": 6
+         },
+         {
+          "date": "2026-06-01 00:00:00",
+          "employee_count": 6
+         },
+         {
+          "date": "2026-07-01 00:00:00",
+          "employee_count": 6
+         },
+         {
+          "date": "2026-08-01 00:00:00",
+          "employee_count": 6
+         }
+        ],
+        "Real Estate": [
+         {
+          "date": "2024-12-01 00:00:00",
+          "employee_count": 7
+         },
+         {
+          "date": "2025-01-01 00:00:00",
+          "employee_count": 7
+         },
+         {
+          "date": "2025-02-01 00:00:00",
+          "employee_count": 8
+         },
+         {
+          "date": "2025-03-01 00:00:00",
+          "employee_count": 8
+         },
+         {
+          "date": "2025-04-01 00:00:00",
+          "employee_count": 8
+         },
+         {
+          "date": "2025-05-01 00:00:00",
+          "employee_count": 8
+         },
+         {
+          "date": "2025-06-01 00:00:00",
+          "employee_count": 8
+         },
+         {
+          "date": "2025-07-01 00:00:00",
+          "employee_count": 7
+         },
+         {
+          "date": "2025-08-01 00:00:00",
+          "employee_count": 7
+         },
+         {
+          "date": "2025-09-01 00:00:00",
+          "employee_count": 7
+         },
+         {
+          "date": "2025-10-01 00:00:00",
+          "employee_count": 7
+         },
+         {
+          "date": "2025-11-01 00:00:00",
+          "employee_count": 7
+         },
+         {
+          "date": "2025-12-01 00:00:00",
+          "employee_count": 8
+         },
+         {
+          "date": "2026-01-01 00:00:00",
+          "employee_count": 8
+         },
+         {
+          "date": "2026-02-01 00:00:00",
+          "employee_count": 7
+         },
+         {
+          "date": "2026-03-01 00:00:00",
+          "employee_count": 7
+         },
+         {
+          "date": "2026-04-01 00:00:00",
+          "employee_count": 7
+         },
+         {
+          "date": "2026-05-01 00:00:00",
+          "employee_count": 7
+         },
+         {
+          "date": "2026-06-01 00:00:00",
+          "employee_count": 7
+         },
+         {
+          "date": "2026-07-01 00:00:00",
+          "employee_count": 7
+         },
+         {
+          "date": "2026-08-01 00:00:00",
+          "employee_count": 7
+         }
+        ],
+        "Research": [
+         {
+          "date": "2024-12-01 00:00:00",
+          "employee_count": 14
+         },
+         {
+          "date": "2025-01-01 00:00:00",
+          "employee_count": 14
+         },
+         {
+          "date": "2025-02-01 00:00:00",
+          "employee_count": 14
+         },
+         {
+          "date": "2025-03-01 00:00:00",
+          "employee_count": 17
+         },
+         {
+          "date": "2025-04-01 00:00:00",
+          "employee_count": 18
+         },
+         {
+          "date": "2025-05-01 00:00:00",
+          "employee_count": 18
+         },
+         {
+          "date": "2025-06-01 00:00:00",
+          "employee_count": 18
+         },
+         {
+          "date": "2025-07-01 00:00:00",
+          "employee_count": 19
+         },
+         {
+          "date": "2025-08-01 00:00:00",
+          "employee_count": 20
+         },
+         {
+          "date": "2025-09-01 00:00:00",
+          "employee_count": 20
+         },
+         {
+          "date": "2025-10-01 00:00:00",
+          "employee_count": 20
+         },
+         {
+          "date": "2025-11-01 00:00:00",
+          "employee_count": 22
+         },
+         {
+          "date": "2025-12-01 00:00:00",
+          "employee_count": 20
+         },
+         {
+          "date": "2026-01-01 00:00:00",
+          "employee_count": 21
+         },
+         {
+          "date": "2026-02-01 00:00:00",
+          "employee_count": 23
+         },
+         {
+          "date": "2026-03-01 00:00:00",
+          "employee_count": 24
+         },
+         {
+          "date": "2026-04-01 00:00:00",
+          "employee_count": 26
+         },
+         {
+          "date": "2026-05-01 00:00:00",
+          "employee_count": 26
+         },
+         {
+          "date": "2026-06-01 00:00:00",
+          "employee_count": 26
+         },
+         {
+          "date": "2026-07-01 00:00:00",
+          "employee_count": 29
+         },
+         {
+          "date": "2026-08-01 00:00:00",
+          "employee_count": 28
+         }
+        ],
+        "Sales": [
+         {
+          "date": "2024-12-01 00:00:00",
+          "employee_count": 416
+         },
+         {
+          "date": "2025-01-01 00:00:00",
+          "employee_count": 418
+         },
+         {
+          "date": "2025-02-01 00:00:00",
+          "employee_count": 418
+         },
+         {
+          "date": "2025-03-01 00:00:00",
+          "employee_count": 418
+         },
+         {
+          "date": "2025-04-01 00:00:00",
+          "employee_count": 416
+         },
+         {
+          "date": "2025-05-01 00:00:00",
+          "employee_count": 417
+         },
+         {
+          "date": "2025-06-01 00:00:00",
+          "employee_count": 420
+         },
+         {
+          "date": "2025-07-01 00:00:00",
+          "employee_count": 444
+         },
+         {
+          "date": "2025-08-01 00:00:00",
+          "employee_count": 456
+         },
+         {
+          "date": "2025-09-01 00:00:00",
+          "employee_count": 465
+         },
+         {
+          "date": "2025-10-01 00:00:00",
+          "employee_count": 463
+         },
+         {
+          "date": "2025-11-01 00:00:00",
+          "employee_count": 459
+         },
+         {
+          "date": "2025-12-01 00:00:00",
+          "employee_count": 412
+         },
+         {
+          "date": "2026-01-01 00:00:00",
+          "employee_count": 412
+         },
+         {
+          "date": "2026-02-01 00:00:00",
+          "employee_count": 453
+         },
+         {
+          "date": "2026-03-01 00:00:00",
+          "employee_count": 452
+         },
+         {
+          "date": "2026-04-01 00:00:00",
+          "employee_count": 466
+         },
+         {
+          "date": "2026-05-01 00:00:00",
+          "employee_count": 465
+         },
+         {
+          "date": "2026-06-01 00:00:00",
+          "employee_count": 467
+         },
+         {
+          "date": "2026-07-01 00:00:00",
+          "employee_count": 486
+         },
+         {
+          "date": "2026-08-01 00:00:00",
+          "employee_count": 505
+         }
+        ]
+       },
+       "GEO_REGION": {
+        "Bengaluru": [
+         {
+          "date": "2025-09-01 00:00:00",
+          "employee_count": 167
+         },
+         {
+          "date": "2025-10-01 00:00:00",
+          "employee_count": 167
+         },
+         {
+          "date": "2025-11-01 00:00:00",
+          "employee_count": 167
+         },
+         {
+          "date": "2025-12-01 00:00:00",
+          "employee_count": 166
+         },
+         {
+          "date": "2026-01-01 00:00:00",
+          "employee_count": 166
+         },
+         {
+          "date": "2026-02-01 00:00:00",
+          "employee_count": 176
+         },
+         {
+          "date": "2026-03-01 00:00:00",
+          "employee_count": 176
+         },
+         {
+          "date": "2026-04-01 00:00:00",
+          "employee_count": 176
+         },
+         {
+          "date": "2026-05-01 00:00:00",
+          "employee_count": 176
+         },
+         {
+          "date": "2026-06-01 00:00:00",
+          "employee_count": 200
+         },
+         {
+          "date": "2026-07-01 00:00:00",
+          "employee_count": 210
+         },
+         {
+          "date": "2026-08-01 00:00:00",
+          "employee_count": 215
+         },
+         {
+          "date": "2026-09-01 00:00:00",
+          "employee_count": 218
+         }
+        ],
+        "Delhi, India": [
+         {
+          "date": "2025-05-01 00:00:00",
+          "employee_count": 247
+         },
+         {
+          "date": "2025-06-01 00:00:00",
+          "employee_count": 245
+         },
+         {
+          "date": "2025-07-01 00:00:00",
+          "employee_count": 244
+         },
+         {
+          "date": "2025-08-01 00:00:00",
+          "employee_count": 244
+         },
+         {
+          "date": "2025-09-01 00:00:00",
+          "employee_count": 246
+         },
+         {
+          "date": "2025-10-01 00:00:00",
+          "employee_count": 246
+         },
+         {
+          "date": "2025-11-01 00:00:00",
+          "employee_count": 244
+         },
+         {
+          "date": "2025-12-01 00:00:00",
+          "employee_count": 237
+         },
+         {
+          "date": "2026-01-01 00:00:00",
+          "employee_count": 237
+         },
+         {
+          "date": "2026-02-01 00:00:00",
+          "employee_count": 243
+         },
+         {
+          "date": "2026-03-01 00:00:00",
+          "employee_count": 243
+         },
+         {
+          "date": "2026-04-01 00:00:00",
+          "employee_count": 243
+         },
+         {
+          "date": "2026-05-01 00:00:00",
+          "employee_count": 243
+         },
+         {
+          "date": "2026-06-01 00:00:00",
+          "employee_count": 266
+         },
+         {
+          "date": "2026-07-01 00:00:00",
+          "employee_count": 267
+         },
+         {
+          "date": "2026-08-01 00:00:00",
+          "employee_count": 273
+         },
+         {
+          "date": "2026-09-01 00:00:00",
+          "employee_count": 283
+         }
+        ],
+        "Greater Bengaluru Area": [
+         {
+          "date": "2025-05-01 00:00:00",
+          "employee_count": 160
+         },
+         {
+          "date": "2025-06-01 00:00:00",
+          "employee_count": 160
+         },
+         {
+          "date": "2025-07-01 00:00:00",
+          "employee_count": 162
+         },
+         {
+          "date": "2025-08-01 00:00:00",
+          "employee_count": 162
+         },
+         {
+          "date": "2025-09-01 00:00:00",
+          "employee_count": 170
+         },
+         {
+          "date": "2025-10-01 00:00:00",
+          "employee_count": 170
+         },
+         {
+          "date": "2025-11-01 00:00:00",
+          "employee_count": 166
+         },
+         {
+          "date": "2025-12-01 00:00:00",
+          "employee_count": 170
+         },
+         {
+          "date": "2026-01-01 00:00:00",
+          "employee_count": 170
+         },
+         {
+          "date": "2026-02-01 00:00:00",
+          "employee_count": 182
+         },
+         {
+          "date": "2026-03-01 00:00:00",
+          "employee_count": 182
+         },
+         {
+          "date": "2026-04-01 00:00:00",
+          "employee_count": 182
+         },
+         {
+          "date": "2026-05-01 00:00:00",
+          "employee_count": 182
+         },
+         {
+          "date": "2026-06-01 00:00:00",
+          "employee_count": 208
+         },
+         {
+          "date": "2026-07-01 00:00:00",
+          "employee_count": 219
+         },
+         {
+          "date": "2026-08-01 00:00:00",
+          "employee_count": 224
+         },
+         {
+          "date": "2026-09-01 00:00:00",
+          "employee_count": 226
+         }
+        ],
+        "Greater Delhi Area": [
+         {
+          "date": "2025-05-01 00:00:00",
+          "employee_count": 381
+         },
+         {
+          "date": "2025-06-01 00:00:00",
+          "employee_count": 375
+         },
+         {
+          "date": "2025-07-01 00:00:00",
+          "employee_count": 374
+         },
+         {
+          "date": "2025-08-01 00:00:00",
+          "employee_count": 374
+         },
+         {
+          "date": "2025-09-01 00:00:00",
+          "employee_count": 377
+         },
+         {
+          "date": "2025-10-01 00:00:00",
+          "employee_count": 377
+         },
+         {
+          "date": "2025-11-01 00:00:00",
+          "employee_count": 373
+         },
+         {
+          "date": "2025-12-01 00:00:00",
+          "employee_count": 369
+         },
+         {
+          "date": "2026-01-01 00:00:00",
+          "employee_count": 369
+         },
+         {
+          "date": "2026-02-01 00:00:00",
+          "employee_count": 382
+         },
+         {
+          "date": "2026-03-01 00:00:00",
+          "employee_count": 382
+         },
+         {
+          "date": "2026-04-01 00:00:00",
+          "employee_count": 382
+         },
+         {
+          "date": "2026-05-01 00:00:00",
+          "employee_count": 382
+         },
+         {
+          "date": "2026-06-01 00:00:00",
+          "employee_count": 406
+         },
+         {
+          "date": "2026-07-01 00:00:00",
+          "employee_count": 410
+         },
+         {
+          "date": "2026-08-01 00:00:00",
+          "employee_count": 424
+         },
+         {
+          "date": "2026-09-01 00:00:00",
+          "employee_count": 440
+         }
+        ],
+        "Greater Hyderabad Area": [
+         {
+          "date": "2025-05-01 00:00:00",
+          "employee_count": 247
+         },
+         {
+          "date": "2025-06-01 00:00:00",
+          "employee_count": 252
+         },
+         {
+          "date": "2025-07-01 00:00:00",
+          "employee_count": 253
+         },
+         {
+          "date": "2025-08-01 00:00:00",
+          "employee_count": 253
+         },
+         {
+          "date": "2025-09-01 00:00:00",
+          "employee_count": 258
+         },
+         {
+          "date": "2025-10-01 00:00:00",
+          "employee_count": 258
+         },
+         {
+          "date": "2025-11-01 00:00:00",
+          "employee_count": 268
+         },
+         {
+          "date": "2025-12-01 00:00:00",
+          "employee_count": 264
+         },
+         {
+          "date": "2026-01-01 00:00:00",
+          "employee_count": 264
+         },
+         {
+          "date": "2026-02-01 00:00:00",
+          "employee_count": 267
+         },
+         {
+          "date": "2026-03-01 00:00:00",
+          "employee_count": 267
+         },
+         {
+          "date": "2026-04-01 00:00:00",
+          "employee_count": 267
+         },
+         {
+          "date": "2026-05-01 00:00:00",
+          "employee_count": 267
+         },
+         {
+          "date": "2026-06-01 00:00:00",
+          "employee_count": 266
+         },
+         {
+          "date": "2026-07-01 00:00:00",
+          "employee_count": 266
+         },
+         {
+          "date": "2026-08-01 00:00:00",
+          "employee_count": 265
+         },
+         {
+          "date": "2026-09-01 00:00:00",
+          "employee_count": 268
+         }
+        ],
+        "Greater Kolkata Area": [
+         {
+          "date": "2025-11-01 00:00:00",
+          "employee_count": 165
+         }
+        ],
+        "Hyderabad": [
+         {
+          "date": "2025-05-01 00:00:00",
+          "employee_count": 238
+         },
+         {
+          "date": "2025-06-01 00:00:00",
+          "employee_count": 243
+         },
+         {
+          "date": "2025-07-01 00:00:00",
+          "employee_count": 244
+         },
+         {
+          "date": "2025-08-01 00:00:00",
+          "employee_count": 244
+         },
+         {
+          "date": "2025-09-01 00:00:00",
+          "employee_count": 249
+         },
+         {
+          "date": "2025-10-01 00:00:00",
+          "employee_count": 249
+         },
+         {
+          "date": "2025-11-01 00:00:00",
+          "employee_count": 257
+         },
+         {
+          "date": "2025-12-01 00:00:00",
+          "employee_count": 253
+         },
+         {
+          "date": "2026-01-01 00:00:00",
+          "employee_count": 253
+         },
+         {
+          "date": "2026-02-01 00:00:00",
+          "employee_count": 256
+         },
+         {
+          "date": "2026-03-01 00:00:00",
+          "employee_count": 256
+         },
+         {
+          "date": "2026-04-01 00:00:00",
+          "employee_count": 256
+         },
+         {
+          "date": "2026-05-01 00:00:00",
+          "employee_count": 256
+         },
+         {
+          "date": "2026-06-01 00:00:00",
+          "employee_count": 256
+         },
+         {
+          "date": "2026-07-01 00:00:00",
+          "employee_count": 256
+         },
+         {
+          "date": "2026-08-01 00:00:00",
+          "employee_count": 255
+         },
+         {
+          "date": "2026-09-01 00:00:00",
+          "employee_count": 258
+         }
+        ],
+        "India": [
+         {
+          "date": "2025-05-01 00:00:00",
+          "employee_count": 2703
+         },
+         {
+          "date": "2025-06-01 00:00:00",
+          "employee_count": 2805
+         },
+         {
+          "date": "2025-07-01 00:00:00",
+          "employee_count": 2901
+         },
+         {
+          "date": "2025-08-01 00:00:00",
+          "employee_count": 2901
+         },
+         {
+          "date": "2025-09-01 00:00:00",
+          "employee_count": 2625
+         },
+         {
+          "date": "2025-10-01 00:00:00",
+          "employee_count": 2625
+         },
+         {
+          "date": "2025-11-01 00:00:00",
+          "employee_count": 2635
+         },
+         {
+          "date": "2025-12-01 00:00:00",
+          "employee_count": 2581
+         },
+         {
+          "date": "2026-01-01 00:00:00",
+          "employee_count": 2581
+         },
+         {
+          "date": "2026-02-01 00:00:00",
+          "employee_count": 2837
+         },
+         {
+          "date": "2026-03-01 00:00:00",
+          "employee_count": 2837
+         },
+         {
+          "date": "2026-04-01 00:00:00",
+          "employee_count": 2837
+         },
+         {
+          "date": "2026-05-01 00:00:00",
+          "employee_count": 2837
+         },
+         {
+          "date": "2026-06-01 00:00:00",
+          "employee_count": 2892
+         },
+         {
+          "date": "2026-07-01 00:00:00",
+          "employee_count": 3037
+         },
+         {
+          "date": "2026-08-01 00:00:00",
+          "employee_count": 3068
+         },
+         {
+          "date": "2026-09-01 00:00:00",
+          "employee_count": 3000
+         }
+        ],
+        "Karnataka, India": [
+         {
+          "date": "2025-05-01 00:00:00",
+          "employee_count": 182
+         },
+         {
+          "date": "2025-06-01 00:00:00",
+          "employee_count": 184
+         },
+         {
+          "date": "2025-07-01 00:00:00",
+          "employee_count": 186
+         },
+         {
+          "date": "2025-08-01 00:00:00",
+          "employee_count": 186
+         },
+         {
+          "date": "2025-09-01 00:00:00",
+          "employee_count": 195
+         },
+         {
+          "date": "2025-10-01 00:00:00",
+          "employee_count": 195
+         },
+         {
+          "date": "2025-11-01 00:00:00",
+          "employee_count": 190
+         },
+         {
+          "date": "2025-12-01 00:00:00",
+          "employee_count": 195
+         },
+         {
+          "date": "2026-01-01 00:00:00",
+          "employee_count": 195
+         },
+         {
+          "date": "2026-02-01 00:00:00",
+          "employee_count": 206
+         },
+         {
+          "date": "2026-03-01 00:00:00",
+          "employee_count": 206
+         },
+         {
+          "date": "2026-04-01 00:00:00",
+          "employee_count": 206
+         },
+         {
+          "date": "2026-05-01 00:00:00",
+          "employee_count": 206
+         },
+         {
+          "date": "2026-06-01 00:00:00",
+          "employee_count": 234
+         },
+         {
+          "date": "2026-07-01 00:00:00",
+          "employee_count": 247
+         },
+         {
+          "date": "2026-08-01 00:00:00",
+          "employee_count": 253
+         },
+         {
+          "date": "2026-09-01 00:00:00",
+          "employee_count": 254
+         }
+        ],
+        "Maharashtra, India": [
+         {
+          "date": "2025-05-01 00:00:00",
+          "employee_count": 554
+         },
+         {
+          "date": "2025-06-01 00:00:00",
+          "employee_count": 561
+         },
+         {
+          "date": "2025-07-01 00:00:00",
+          "employee_count": 563
+         },
+         {
+          "date": "2025-08-01 00:00:00",
+          "employee_count": 563
+         },
+         {
+          "date": "2025-09-01 00:00:00",
+          "employee_count": 581
+         },
+         {
+          "date": "2025-10-01 00:00:00",
+          "employee_count": 581
+         },
+         {
+          "date": "2025-11-01 00:00:00",
+          "employee_count": 560
+         },
+         {
+          "date": "2025-12-01 00:00:00",
+          "employee_count": 558
+         },
+         {
+          "date": "2026-01-01 00:00:00",
+          "employee_count": 558
+         },
+         {
+          "date": "2026-02-01 00:00:00",
+          "employee_count": 586
+         },
+         {
+          "date": "2026-03-01 00:00:00",
+          "employee_count": 586
+         },
+         {
+          "date": "2026-04-01 00:00:00",
+          "employee_count": 586
+         },
+         {
+          "date": "2026-05-01 00:00:00",
+          "employee_count": 586
+         },
+         {
+          "date": "2026-06-01 00:00:00",
+          "employee_count": 645
+         },
+         {
+          "date": "2026-07-01 00:00:00",
+          "employee_count": 670
+         },
+         {
+          "date": "2026-08-01 00:00:00",
+          "employee_count": 683
+         },
+         {
+          "date": "2026-09-01 00:00:00",
+          "employee_count": 681
+         }
+        ],
+        "Mumbai": [
+         {
+          "date": "2025-05-01 00:00:00",
+          "employee_count": 193
+         },
+         {
+          "date": "2025-06-01 00:00:00",
+          "employee_count": 193
+         },
+         {
+          "date": "2025-07-01 00:00:00",
+          "employee_count": 196
+         },
+         {
+          "date": "2025-08-01 00:00:00",
+          "employee_count": 196
+         },
+         {
+          "date": "2025-09-01 00:00:00",
+          "employee_count": 206
+         },
+         {
+          "date": "2025-10-01 00:00:00",
+          "employee_count": 206
+         },
+         {
+          "date": "2025-11-01 00:00:00",
+          "employee_count": 189
+         },
+         {
+          "date": "2025-12-01 00:00:00",
+          "employee_count": 190
+         },
+         {
+          "date": "2026-01-01 00:00:00",
+          "employee_count": 190
+         },
+         {
+          "date": "2026-02-01 00:00:00",
+          "employee_count": 212
+         },
+         {
+          "date": "2026-03-01 00:00:00",
+          "employee_count": 212
+         },
+         {
+          "date": "2026-04-01 00:00:00",
+          "employee_count": 212
+         },
+         {
+          "date": "2026-05-01 00:00:00",
+          "employee_count": 212
+         },
+         {
+          "date": "2026-06-01 00:00:00",
+          "employee_count": 246
+         },
+         {
+          "date": "2026-07-01 00:00:00",
+          "employee_count": 261
+         },
+         {
+          "date": "2026-08-01 00:00:00",
+          "employee_count": 267
+         },
+         {
+          "date": "2026-09-01 00:00:00",
+          "employee_count": 272
+         }
+        ],
+        "Mumbai Metropolitan Region": [
+         {
+          "date": "2025-05-01 00:00:00",
+          "employee_count": 265
+         },
+         {
+          "date": "2025-06-01 00:00:00",
+          "employee_count": 269
+         },
+         {
+          "date": "2025-07-01 00:00:00",
+          "employee_count": 275
+         },
+         {
+          "date": "2025-08-01 00:00:00",
+          "employee_count": 275
+         },
+         {
+          "date": "2025-09-01 00:00:00",
+          "employee_count": 285
+         },
+         {
+          "date": "2025-10-01 00:00:00",
+          "employee_count": 285
+         },
+         {
+          "date": "2025-11-01 00:00:00",
+          "employee_count": 266
+         },
+         {
+          "date": "2025-12-01 00:00:00",
+          "employee_count": 266
+         },
+         {
+          "date": "2026-01-01 00:00:00",
+          "employee_count": 266
+         },
+         {
+          "date": "2026-02-01 00:00:00",
+          "employee_count": 288
+         },
+         {
+          "date": "2026-03-01 00:00:00",
+          "employee_count": 288
+         },
+         {
+          "date": "2026-04-01 00:00:00",
+          "employee_count": 288
+         },
+         {
+          "date": "2026-05-01 00:00:00",
+          "employee_count": 288
+         },
+         {
+          "date": "2026-06-01 00:00:00",
+          "employee_count": 334
+         },
+         {
+          "date": "2026-07-01 00:00:00",
+          "employee_count": 352
+         },
+         {
+          "date": "2026-08-01 00:00:00",
+          "employee_count": 358
+         },
+         {
+          "date": "2026-09-01 00:00:00",
+          "employee_count": 358
+         }
+        ],
+        "New Delhi": [
+         {
+          "date": "2025-05-01 00:00:00",
+          "employee_count": 162
+         },
+         {
+          "date": "2025-06-01 00:00:00",
+          "employee_count": 161
+         },
+         {
+          "date": "2025-07-01 00:00:00",
+          "employee_count": 161
+         }
+        ],
+        "Tamil Nadu, India": [
+         {
+          "date": "2025-05-01 00:00:00",
+          "employee_count": 188
+         },
+         {
+          "date": "2025-06-01 00:00:00",
+          "employee_count": 189
+         },
+         {
+          "date": "2025-07-01 00:00:00",
+          "employee_count": 193
+         },
+         {
+          "date": "2025-08-01 00:00:00",
+          "employee_count": 193
+         },
+         {
+          "date": "2025-09-01 00:00:00",
+          "employee_count": 202
+         },
+         {
+          "date": "2025-10-01 00:00:00",
+          "employee_count": 202
+         },
+         {
+          "date": "2025-11-01 00:00:00",
+          "employee_count": 202
+         },
+         {
+          "date": "2025-12-01 00:00:00",
+          "employee_count": 203
+         },
+         {
+          "date": "2026-01-01 00:00:00",
+          "employee_count": 203
+         },
+         {
+          "date": "2026-02-01 00:00:00",
+          "employee_count": 204
+         },
+         {
+          "date": "2026-03-01 00:00:00",
+          "employee_count": 204
+         },
+         {
+          "date": "2026-04-01 00:00:00",
+          "employee_count": 204
+         },
+         {
+          "date": "2026-05-01 00:00:00",
+          "employee_count": 204
+         },
+         {
+          "date": "2026-06-01 00:00:00",
+          "employee_count": 223
+         },
+         {
+          "date": "2026-07-01 00:00:00",
+          "employee_count": 227
+         },
+         {
+          "date": "2026-08-01 00:00:00",
+          "employee_count": 234
+         },
+         {
+          "date": "2026-09-01 00:00:00",
+          "employee_count": 236
+         }
+        ],
+        "Telangana, India": [
+         {
+          "date": "2025-05-01 00:00:00",
+          "employee_count": 257
+         },
+         {
+          "date": "2025-06-01 00:00:00",
+          "employee_count": 262
+         },
+         {
+          "date": "2025-07-01 00:00:00",
+          "employee_count": 263
+         },
+         {
+          "date": "2025-08-01 00:00:00",
+          "employee_count": 263
+         },
+         {
+          "date": "2025-09-01 00:00:00",
+          "employee_count": 267
+         },
+         {
+          "date": "2025-10-01 00:00:00",
+          "employee_count": 267
+         },
+         {
+          "date": "2025-11-01 00:00:00",
+          "employee_count": 277
+         },
+         {
+          "date": "2025-12-01 00:00:00",
+          "employee_count": 273
+         },
+         {
+          "date": "2026-01-01 00:00:00",
+          "employee_count": 273
+         },
+         {
+          "date": "2026-02-01 00:00:00",
+          "employee_count": 276
+         },
+         {
+          "date": "2026-03-01 00:00:00",
+          "employee_count": 276
+         },
+         {
+          "date": "2026-04-01 00:00:00",
+          "employee_count": 276
+         },
+         {
+          "date": "2026-05-01 00:00:00",
+          "employee_count": 276
+         },
+         {
+          "date": "2026-06-01 00:00:00",
+          "employee_count": 273
+         },
+         {
+          "date": "2026-07-01 00:00:00",
+          "employee_count": 275
+         },
+         {
+          "date": "2026-08-01 00:00:00",
+          "employee_count": 274
+         },
+         {
+          "date": "2026-09-01 00:00:00",
+          "employee_count": 278
+         }
+        ],
+        "Uttar Pradesh, India": [
+         {
+          "date": "2025-05-01 00:00:00",
+          "employee_count": 275
+         },
+         {
+          "date": "2025-06-01 00:00:00",
+          "employee_count": 275
+         },
+         {
+          "date": "2025-07-01 00:00:00",
+          "employee_count": 277
+         },
+         {
+          "date": "2025-08-01 00:00:00",
+          "employee_count": 277
+         },
+         {
+          "date": "2025-09-01 00:00:00",
+          "employee_count": 277
+         },
+         {
+          "date": "2025-10-01 00:00:00",
+          "employee_count": 277
+         },
+         {
+          "date": "2025-11-01 00:00:00",
+          "employee_count": 273
+         },
+         {
+          "date": "2025-12-01 00:00:00",
+          "employee_count": 275
+         },
+         {
+          "date": "2026-01-01 00:00:00",
+          "employee_count": 275
+         },
+         {
+          "date": "2026-02-01 00:00:00",
+          "employee_count": 280
+         },
+         {
+          "date": "2026-03-01 00:00:00",
+          "employee_count": 280
+         },
+         {
+          "date": "2026-04-01 00:00:00",
+          "employee_count": 280
+         },
+         {
+          "date": "2026-05-01 00:00:00",
+          "employee_count": 280
+         },
+         {
+          "date": "2026-06-01 00:00:00",
+          "employee_count": 297
+         },
+         {
+          "date": "2026-07-01 00:00:00",
+          "employee_count": 299
+         },
+         {
+          "date": "2026-08-01 00:00:00",
+          "employee_count": 303
+         },
+         {
+          "date": "2026-09-01 00:00:00",
+          "employee_count": 307
+         }
+        ],
+        "West Bengal, India": [
+         {
+          "date": "2025-05-01 00:00:00",
+          "employee_count": 176
+         },
+         {
+          "date": "2025-06-01 00:00:00",
+          "employee_count": 180
+         },
+         {
+          "date": "2025-07-01 00:00:00",
+          "employee_count": 184
+         },
+         {
+          "date": "2025-08-01 00:00:00",
+          "employee_count": 184
+         },
+         {
+          "date": "2025-09-01 00:00:00",
+          "employee_count": 192
+         },
+         {
+          "date": "2025-10-01 00:00:00",
+          "employee_count": 192
+         },
+         {
+          "date": "2025-11-01 00:00:00",
+          "employee_count": 194
+         },
+         {
+          "date": "2025-12-01 00:00:00",
+          "employee_count": 192
+         },
+         {
+          "date": "2026-01-01 00:00:00",
+          "employee_count": 192
+         },
+         {
+          "date": "2026-02-01 00:00:00",
+          "employee_count": 202
+         },
+         {
+          "date": "2026-03-01 00:00:00",
+          "employee_count": 202
+         },
+         {
+          "date": "2026-04-01 00:00:00",
+          "employee_count": 202
+         },
+         {
+          "date": "2026-05-01 00:00:00",
+          "employee_count": 202
+         },
+         {
+          "date": "2026-06-01 00:00:00",
+          "employee_count": 223
+         },
+         {
+          "date": "2026-07-01 00:00:00",
+          "employee_count": 226
+         },
+         {
+          "date": "2026-08-01 00:00:00",
+          "employee_count": 230
+         },
+         {
+          "date": "2026-09-01 00:00:00",
+          "employee_count": 234
+         }
+        ]
+       }
+      }
+     },
+     "funding": {
+      "is_investor": false,
+      "contact_email": "marcom@allcargologistics.com",
+      "phone_number": "+91 22 6679 8100",
+      "total_investment_usd": 20305238.0,
+      "last_round_amount_usd": 20305238.0,
+      "last_fundraise_date": "2024-06-28",
+      "last_round_type": "post_ipo_equity",
+      "num_funding_rounds": 1,
+      "funds_total_usd": null,
+      "num_funds": 0,
+      "last_fund_date": null,
+      "milestones": [
+       {
+        "date": "2024-06-28",
+        "funding_date": "2024-06-28",
+        "amount_usd": 20305238.0,
+        "round_type": "post_ipo_equity",
+        "is_fund": false,
+        "investors": null,
+        "lead_investors": null,
+        "permalink": "gati-limited-post-ipo-equity--7b257436",
+        "investors_detailed": []
+       }
+      ],
+      "investors": null,
+      "acquisitions": [
+       {
+        "acquiree_company_id": 102790928,
+        "acquiree_company_name": "Kausar India Ltd.",
+        "acquiree_crunchbase_url": "https://crunchbase.com/organization/kausar-india-ltd",
+        "acquirer_company_id": 1613,
+        "acquirer_company_name": "Gati",
+        "acquirer_crunchbase_url": "https://crunchbase.com/organization/gati-limited",
+        "announced_on_date": "2007-08-27",
+        "transaction_text": "Kausar India Ltd. acquired by Gati"
+       },
+       {
+        "acquiree_company_id": 1613,
+        "acquiree_company_name": "Gati",
+        "acquiree_crunchbase_url": "https://crunchbase.com/organization/gati-limited",
+        "acquirer_company_id": 1613,
+        "acquirer_company_name": "All Cargo Logistics",
+        "acquirer_crunchbase_url": "https://crunchbase.com/organization/all-cargo-logistics-services",
+        "announced_on_date": "2019-12-05",
+        "transaction_text": "Gati acquired by All Cargo Logistics"
+       },
+       {
+        "acquiree_company_id": 1894983,
+        "acquiree_company_name": "Econocaribe Consolidators",
+        "acquiree_crunchbase_url": "https://crunchbase.com/organization/econocaribe-consolidators",
+        "acquirer_company_id": 1613,
+        "acquirer_company_name": "All Cargo Logistics",
+        "acquirer_crunchbase_url": "https://crunchbase.com/organization/all-cargo-logistics-services",
+        "announced_on_date": "2013-09-28",
+        "transaction_text": "Econocaribe Consolidators acquired by All Cargo Logistics"
+       }
+      ],
+      "acquired_by": [
+       {
+        "name": "All Cargo Logistics",
+        "crustdata_company_id": 1613,
+        "date": "2019-12-05",
+        "amount_usd": 58400000.0
+       }
+      ]
+     },
+     "hiring": {
+      "recent_titles_csv": null,
+      "openings_count": null,
+      "openings_growth_percent": null,
+      "by_function_qoq_pct": null,
+      "by_function_6m_pct": null
+     },
+     "web_traffic": {
+      "domain_traffic": {
+       "allcargogati.com": {
+        "domain": "allcargogati.com",
+        "monthly_visitors": 20058.0,
+        "mom_pct": 1508.5,
+        "qoq_pct": 0.0,
+        "source_search_pct": 37.94659940227263,
+        "source_direct_pct": 40.547134608727895,
+        "source_social_pct": 3.7971088973090885,
+        "source_paid_referral_pct": 2.5361935361664534,
+        "source_referral_pct": 8.358810315282465,
+        "monthly_visitors_timeseries": [
+         {
+          "date": "2025-09-01T00:00:00+00:00",
+          "monthly_visitors": 327843
+         },
+         {
+          "date": "2025-10-01T00:00:00+00:00",
+          "monthly_visitors": 444839
+         },
+         {
+          "date": "2025-11-01T00:00:00+00:00",
+          "monthly_visitors": 295454
+         },
+         {
+          "date": "2025-12-01T00:00:00+00:00",
+          "monthly_visitors": 181741
+         },
+         {
+          "date": "2026-01-01T00:00:00+00:00",
+          "monthly_visitors": 107104
+         },
+         {
+          "date": "2026-02-01T00:00:00+00:00",
+          "monthly_visitors": 30019
+         },
+         {
+          "date": "2026-03-01T00:00:00+00:00",
+          "monthly_visitors": 4802
+         },
+         {
+          "date": "2026-04-01T00:00:00+00:00",
+          "monthly_visitors": 8256
+         },
+         {
+          "date": "2026-05-01T00:00:00+00:00",
+          "monthly_visitors": 5855
+         },
+         {
+          "date": "2026-06-01T00:00:00+00:00",
+          "monthly_visitors": 1773
+         },
+         {
+          "date": "2026-07-01T00:00:00+00:00",
+          "monthly_visitors": 0
+         },
+         {
+          "date": "2026-08-01T00:00:00+00:00",
+          "monthly_visitors": 0
+         },
+         {
+          "date": "2026-09-01T00:00:00+00:00",
+          "monthly_visitors": 1247
+         },
+         {
+          "date": "2026-10-01T00:00:00+00:00",
+          "monthly_visitors": 20058
+         }
+        ],
+        "source_search_pct_timeseries": [
+         {
+          "date": "2025-11-01T00:00:00+00:00",
+          "traffic_source_search_pct": 58.07250909341051
+         },
+         {
+          "date": "2025-12-01T00:00:00+00:00",
+          "traffic_source_search_pct": 58.58686608714092
+         },
+         {
+          "date": "2026-01-01T00:00:00+00:00",
+          "traffic_source_search_pct": 57.92895577734374
+         },
+         {
+          "date": "2026-02-01T00:00:00+00:00",
+          "traffic_source_search_pct": 44.3724857640187
+         },
+         {
+          "date": "2026-03-01T00:00:00+00:00",
+          "traffic_source_search_pct": 59.86225493760059
+         },
+         {
+          "date": "2026-09-01T00:00:00+00:00",
+          "traffic_source_search_pct": 36.86434531006821
+         },
+         {
+          "date": "2026-10-01T00:00:00+00:00",
+          "traffic_source_search_pct": 37.94659940227263
+         }
+        ],
+        "source_direct_pct_timeseries": [
+         {
+          "date": "2025-11-01T00:00:00+00:00",
+          "traffic_source_direct_pct": 36.67902523500516
+         },
+         {
+          "date": "2025-12-01T00:00:00+00:00",
+          "traffic_source_direct_pct": 36.519406868893284
+         },
+         {
+          "date": "2026-01-01T00:00:00+00:00",
+          "traffic_source_direct_pct": 35.926854198128574
+         },
+         {
+          "date": "2026-02-01T00:00:00+00:00",
+          "traffic_source_direct_pct": 30.585930217726293
+         },
+         {
+          "date": "2026-03-01T00:00:00+00:00",
+          "traffic_source_direct_pct": 36.14518431408678
+         },
+         {
+          "date": "2026-09-01T00:00:00+00:00",
+          "traffic_source_direct_pct": 40.16297631776084
+         },
+         {
+          "date": "2026-10-01T00:00:00+00:00",
+          "traffic_source_direct_pct": 40.547134608727895
+         }
+        ],
+        "source_social_pct_timeseries": [
+         {
+          "date": "2025-11-01T00:00:00+00:00",
+          "traffic_source_social_pct": 0.2878883101136853
+         },
+         {
+          "date": "2025-12-01T00:00:00+00:00",
+          "traffic_source_social_pct": 0.22510014626305969
+         },
+         {
+          "date": "2026-01-01T00:00:00+00:00",
+          "traffic_source_social_pct": 0.41038735824553435
+         },
+         {
+          "date": "2026-02-01T00:00:00+00:00",
+          "traffic_source_social_pct": 3.558699379792471
+         },
+         {
+          "date": "2026-03-01T00:00:00+00:00",
+          "traffic_source_social_pct": 0.10316455535130994
+         },
+         {
+          "date": "2026-09-01T00:00:00+00:00",
+          "traffic_source_social_pct": 3.582678728845433
+         },
+         {
+          "date": "2026-10-01T00:00:00+00:00",
+          "traffic_source_social_pct": 3.7971088973090885
+         }
+        ],
+        "source_paid_referral_pct_timeseries": [
+         {
+          "date": "2025-11-01T00:00:00+00:00",
+          "traffic_source_paid_referral_pct": 0.24420705545501126
+         },
+         {
+          "date": "2025-12-01T00:00:00+00:00",
+          "traffic_source_paid_referral_pct": 0.2364312281430691
+         },
+         {
+          "date": "2026-01-01T00:00:00+00:00",
+          "traffic_source_paid_referral_pct": 0.2728949649005262
+         },
+         {
+          "date": "2026-02-01T00:00:00+00:00",
+          "traffic_source_paid_referral_pct": 0.9035125704072244
+         },
+         {
+          "date": "2026-03-01T00:00:00+00:00",
+          "traffic_source_paid_referral_pct": 0.2255157894271055
+         },
+         {
+          "date": "2026-09-01T00:00:00+00:00",
+          "traffic_source_paid_referral_pct": 2.9826099327953224
+         },
+         {
+          "date": "2026-10-01T00:00:00+00:00",
+          "traffic_source_paid_referral_pct": 2.5361935361664534
+         }
+        ],
+        "source_referral_pct_timeseries": [
+         {
+          "date": "2025-11-01T00:00:00+00:00",
+          "traffic_source_referral_pct": 4.680612866426583
+         },
+         {
+          "date": "2025-12-01T00:00:00+00:00",
+          "traffic_source_referral_pct": 4.388284947652047
+         },
+         {
+          "date": "2026-01-01T00:00:00+00:00",
+          "traffic_source_referral_pct": 5.389114493991965
+         },
+         {
+          "date": "2026-02-01T00:00:00+00:00",
+          "traffic_source_referral_pct": 20.067473593490526
+         },
+         {
+          "date": "2026-03-01T00:00:00+00:00",
+          "traffic_source_referral_pct": 3.6520178005262123
+         },
+         {
+          "date": "2026-09-01T00:00:00+00:00",
+          "traffic_source_referral_pct": 8.722314659712085
+         },
+         {
+          "date": "2026-10-01T00:00:00+00:00",
+          "traffic_source_referral_pct": 8.358810315282465
+         }
+        ]
+       },
+       "allcargologistics.com": {
+        "domain": "allcargologistics.com",
+        "monthly_visitors": 321073.0,
+        "mom_pct": 6.24,
+        "qoq_pct": -6.45,
+        "source_search_pct": 52.152669697708674,
+        "source_direct_pct": 37.627324423611,
+        "source_social_pct": 1.8768460619077947,
+        "source_paid_referral_pct": 0.0,
+        "source_referral_pct": 3.2915250066913213,
+        "monthly_visitors_timeseries": [
+         {
+          "date": "2024-03-01T00:00:00+00:00",
+          "monthly_visitors": 25742
+         },
+         {
+          "date": "2024-04-01T00:00:00+00:00",
+          "monthly_visitors": 32636
+         },
+         {
+          "date": "2025-02-01T00:00:00+00:00",
+          "monthly_visitors": 31773
+         },
+         {
+          "date": "2025-03-01T00:00:00+00:00",
+          "monthly_visitors": 30120
+         },
+         {
+          "date": "2025-04-01T00:00:00+00:00",
+          "monthly_visitors": 33812
+         },
+         {
+          "date": "2025-05-01T00:00:00+00:00",
+          "monthly_visitors": 31677
+         },
+         {
+          "date": "2025-06-01T00:00:00+00:00",
+          "monthly_visitors": 29544
+         },
+         {
+          "date": "2025-07-01T00:00:00+00:00",
+          "monthly_visitors": 35678
+         },
+         {
+          "date": "2025-08-01T00:00:00+00:00",
+          "monthly_visitors": 40400
+         },
+         {
+          "date": "2025-09-01T00:00:00+00:00",
+          "monthly_visitors": 42337
+         },
+         {
+          "date": "2025-10-01T00:00:00+00:00",
+          "monthly_visitors": 49498
+         },
+         {
+          "date": "2025-11-01T00:00:00+00:00",
+          "monthly_visitors": 55382
+         },
+         {
+          "date": "2025-12-01T00:00:00+00:00",
+          "monthly_visitors": 44599
+         },
+         {
+          "date": "2026-01-01T00:00:00+00:00",
+          "monthly_visitors": 75806
+         },
+         {
+          "date": "2026-02-01T00:00:00+00:00",
+          "monthly_visitors": 256448
+         },
+         {
+          "date": "2026-03-01T00:00:00+00:00",
+          "monthly_visitors": 308531
+         },
+         {
+          "date": "2026-04-01T00:00:00+00:00",
+          "monthly_visitors": 343509
+         },
+         {
+          "date": "2026-05-01T00:00:00+00:00",
+          "monthly_visitors": 312380
+         },
+         {
+          "date": "2026-06-01T00:00:00+00:00",
+          "monthly_visitors": 389207
+         },
+         {
+          "date": "2026-07-01T00:00:00+00:00",
+          "monthly_visitors": 343217
+         },
+         {
+          "date": "2026-08-01T00:00:00+00:00",
+          "monthly_visitors": 332423
+         },
+         {
+          "date": "2026-09-01T00:00:00+00:00",
+          "monthly_visitors": 302223
+         },
+         {
+          "date": "2026-10-01T00:00:00+00:00",
+          "monthly_visitors": 321073
+         }
+        ],
+        "source_search_pct_timeseries": [
+         {
+          "date": "2024-04-01T00:00:00+00:00",
+          "traffic_source_search_pct": 42.3974256792328
+         },
+         {
+          "date": "2025-03-01T00:00:00+00:00",
+          "traffic_source_search_pct": 62.8072621695393
+         },
+         {
+          "date": "2025-04-01T00:00:00+00:00",
+          "traffic_source_search_pct": 62.44772618512957
+         },
+         {
+          "date": "2025-05-01T00:00:00+00:00",
+          "traffic_source_search_pct": 63.216780056074604
+         },
+         {
+          "date": "2025-06-01T00:00:00+00:00",
+          "traffic_source_search_pct": 65.28525413373083
+         },
+         {
+          "date": "2025-07-01T00:00:00+00:00",
+          "traffic_source_search_pct": 67.75243032483337
+         },
+         {
+          "date": "2025-08-01T00:00:00+00:00",
+          "traffic_source_search_pct": 67.85708455034028
+         },
+         {
+          "date": "2025-11-01T00:00:00+00:00",
+          "traffic_source_search_pct": 67.47417189319748
+         },
+         {
+          "date": "2025-12-01T00:00:00+00:00",
+          "traffic_source_search_pct": 67.94504632486168
+         },
+         {
+          "date": "2026-01-01T00:00:00+00:00",
+          "traffic_source_search_pct": 72.4275141328215
+         },
+         {
+          "date": "2026-02-01T00:00:00+00:00",
+          "traffic_source_search_pct": 74.16360063237933
+         },
+         {
+          "date": "2026-03-01T00:00:00+00:00",
+          "traffic_source_search_pct": 60.35688536007194
+         },
+         {
+          "date": "2026-05-01T00:00:00+00:00",
+          "traffic_source_search_pct": 56.590698813984496
+         },
+         {
+          "date": "2026-06-01T00:00:00+00:00",
+          "traffic_source_search_pct": 61.83261575122062
+         },
+         {
+          "date": "2026-07-01T00:00:00+00:00",
+          "traffic_source_search_pct": 60.19304285095021
+         },
+         {
+          "date": "2026-08-01T00:00:00+00:00",
+          "traffic_source_search_pct": 54.76681381186135
+         },
+         {
+          "date": "2026-09-01T00:00:00+00:00",
+          "traffic_source_search_pct": 54.64865471944225
+         },
+         {
+          "date": "2026-10-01T00:00:00+00:00",
+          "traffic_source_search_pct": 52.152669697708674
+         }
+        ],
+        "source_direct_pct_timeseries": [
+         {
+          "date": "2024-04-01T00:00:00+00:00",
+          "traffic_source_direct_pct": 37.59091330143164
+         },
+         {
+          "date": "2025-03-01T00:00:00+00:00",
+          "traffic_source_direct_pct": 30.38098179454309
+         },
+         {
+          "date": "2025-04-01T00:00:00+00:00",
+          "traffic_source_direct_pct": 30.385204119962662
+         },
+         {
+          "date": "2025-05-01T00:00:00+00:00",
+          "traffic_source_direct_pct": 29.64630540084644
+         },
+         {
+          "date": "2025-06-01T00:00:00+00:00",
+          "traffic_source_direct_pct": 27.759839306771305
+         },
+         {
+          "date": "2025-07-01T00:00:00+00:00",
+          "traffic_source_direct_pct": 26.40745715117006
+         },
+         {
+          "date": "2025-08-01T00:00:00+00:00",
+          "traffic_source_direct_pct": 26.4542516437775
+         },
+         {
+          "date": "2025-11-01T00:00:00+00:00",
+          "traffic_source_direct_pct": 27.955332234961567
+         },
+         {
+          "date": "2025-12-01T00:00:00+00:00",
+          "traffic_source_direct_pct": 27.545196585907483
+         },
+         {
+          "date": "2026-01-01T00:00:00+00:00",
+          "traffic_source_direct_pct": 24.28223742507051
+         },
+         {
+          "date": "2026-02-01T00:00:00+00:00",
+          "traffic_source_direct_pct": 23.053801686006747
+         },
+         {
+          "date": "2026-03-01T00:00:00+00:00",
+          "traffic_source_direct_pct": 32.14151235964811
+         },
+         {
+          "date": "2026-05-01T00:00:00+00:00",
+          "traffic_source_direct_pct": 37.789971749375546
+         },
+         {
+          "date": "2026-06-01T00:00:00+00:00",
+          "traffic_source_direct_pct": 33.437313647492296
+         },
+         {
+          "date": "2026-07-01T00:00:00+00:00",
+          "traffic_source_direct_pct": 36.28987011669117
+         },
+         {
+          "date": "2026-08-01T00:00:00+00:00",
+          "traffic_source_direct_pct": 38.8160482255868
+         },
+         {
+          "date": "2026-09-01T00:00:00+00:00",
+          "traffic_source_direct_pct": 34.9582586982475
+         },
+         {
+          "date": "2026-10-01T00:00:00+00:00",
+          "traffic_source_direct_pct": 37.627324423611
+         }
+        ],
+        "source_social_pct_timeseries": [
+         {
+          "date": "2024-04-01T00:00:00+00:00",
+          "traffic_source_social_pct": 0.0
+         },
+         {
+          "date": "2025-03-01T00:00:00+00:00",
+          "traffic_source_social_pct": 0.6958152466869868
+         },
+         {
+          "date": "2025-04-01T00:00:00+00:00",
+          "traffic_source_social_pct": 0.786863387354856
+         },
+         {
+          "date": "2025-05-01T00:00:00+00:00",
+          "traffic_source_social_pct": 0.904815297875283
+         },
+         {
+          "date": "2025-06-01T00:00:00+00:00",
+          "traffic_source_social_pct": 0.8084776790098033
+         },
+         {
+          "date": "2025-07-01T00:00:00+00:00",
+          "traffic_source_social_pct": 0.6184690637664219
+         },
+         {
+          "date": "2025-08-01T00:00:00+00:00",
+          "traffic_source_social_pct": 0.6794898607627088
+         },
+         {
+          "date": "2025-11-01T00:00:00+00:00",
+          "traffic_source_social_pct": 0.6569049168706059
+         },
+         {
+          "date": "2025-12-01T00:00:00+00:00",
+          "traffic_source_social_pct": 0.6230885539371601
+         },
+         {
+          "date": "2026-01-01T00:00:00+00:00",
+          "traffic_source_social_pct": 0.2999132623625696
+         },
+         {
+          "date": "2026-02-01T00:00:00+00:00",
+          "traffic_source_social_pct": 0.13395210288931647
+         },
+         {
+          "date": "2026-03-01T00:00:00+00:00",
+          "traffic_source_social_pct": 0.2672772134198469
+         },
+         {
+          "date": "2026-05-01T00:00:00+00:00",
+          "traffic_source_social_pct": 0.5657767476640709
+         },
+         {
+          "date": "2026-06-01T00:00:00+00:00",
+          "traffic_source_social_pct": 0.21036952516539675
+         },
+         {
+          "date": "2026-07-01T00:00:00+00:00",
+          "traffic_source_social_pct": 0.7551568609805452
+         },
+         {
+          "date": "2026-08-01T00:00:00+00:00",
+          "traffic_source_social_pct": 1.5418933340682202
+         },
+         {
+          "date": "2026-09-01T00:00:00+00:00",
+          "traffic_source_social_pct": 1.1201928406299833
+         },
+         {
+          "date": "2026-10-01T00:00:00+00:00",
+          "traffic_source_social_pct": 1.8768460619077947
+         }
+        ],
+        "source_paid_referral_pct_timeseries": [
+         {
+          "date": "2024-04-01T00:00:00+00:00",
+          "traffic_source_paid_referral_pct": 0.0
+         },
+         {
+          "date": "2025-03-01T00:00:00+00:00",
+          "traffic_source_paid_referral_pct": 0.7454041641678407
+         },
+         {
+          "date": "2025-04-01T00:00:00+00:00",
+          "traffic_source_paid_referral_pct": 1.0357701302763527
+         },
+         {
+          "date": "2025-05-01T00:00:00+00:00",
+          "traffic_source_paid_referral_pct": 1.1395337531111
+         },
+         {
+          "date": "2025-06-01T00:00:00+00:00",
+          "traffic_source_paid_referral_pct": 1.279683307922869
+         },
+         {
+          "date": "2025-07-01T00:00:00+00:00",
+          "traffic_source_paid_referral_pct": 1.282290427256407
+         },
+         {
+          "date": "2025-08-01T00:00:00+00:00",
+          "traffic_source_paid_referral_pct": 1.2190165328443088
+         },
+         {
+          "date": "2025-11-01T00:00:00+00:00",
+          "traffic_source_paid_referral_pct": 0.8731730109008123
+         },
+         {
+          "date": "2025-12-01T00:00:00+00:00",
+          "traffic_source_paid_referral_pct": 0.8166019071621742
+         },
+         {
+          "date": "2026-01-01T00:00:00+00:00",
+          "traffic_source_paid_referral_pct": 0.6462262958479057
+         },
+         {
+          "date": "2026-02-01T00:00:00+00:00",
+          "traffic_source_paid_referral_pct": 0.5569995810783226
+         },
+         {
+          "date": "2026-03-01T00:00:00+00:00",
+          "traffic_source_paid_referral_pct": 0.0
+         },
+         {
+          "date": "2026-05-01T00:00:00+00:00",
+          "traffic_source_paid_referral_pct": 0.0
+         },
+         {
+          "date": "2026-06-01T00:00:00+00:00",
+          "traffic_source_paid_referral_pct": 0.0
+         },
+         {
+          "date": "2026-07-01T00:00:00+00:00",
+          "traffic_source_paid_referral_pct": 0.0
+         },
+         {
+          "date": "2026-08-01T00:00:00+00:00",
+          "traffic_source_paid_referral_pct": 0.0
+         },
+         {
+          "date": "2026-09-01T00:00:00+00:00",
+          "traffic_source_paid_referral_pct": 0.0
+         },
+         {
+          "date": "2026-10-01T00:00:00+00:00",
+          "traffic_source_paid_referral_pct": 0.0
+         }
+        ],
+        "source_referral_pct_timeseries": [
+         {
+          "date": "2024-04-01T00:00:00+00:00",
+          "traffic_source_referral_pct": 20.011661019335566
+         },
+         {
+          "date": "2025-03-01T00:00:00+00:00",
+          "traffic_source_referral_pct": 5.290923710073084
+         },
+         {
+          "date": "2025-04-01T00:00:00+00:00",
+          "traffic_source_referral_pct": 5.219632276002952
+         },
+         {
+          "date": "2025-05-01T00:00:00+00:00",
+          "traffic_source_referral_pct": 4.908297502898127
+         },
+         {
+          "date": "2025-06-01T00:00:00+00:00",
+          "traffic_source_referral_pct": 4.6628106242813825
+         },
+         {
+          "date": "2025-07-01T00:00:00+00:00",
+          "traffic_source_referral_pct": 3.838697919401047
+         },
+         {
+          "date": "2025-08-01T00:00:00+00:00",
+          "traffic_source_referral_pct": 3.649230184802444
+         },
+         {
+          "date": "2025-11-01T00:00:00+00:00",
+          "traffic_source_referral_pct": 2.975028587362539
+         },
+         {
+          "date": "2025-12-01T00:00:00+00:00",
+          "traffic_source_referral_pct": 3.004357086722174
+         },
+         {
+          "date": "2026-01-01T00:00:00+00:00",
+          "traffic_source_referral_pct": 2.2828151725136645
+         },
+         {
+          "date": "2026-02-01T00:00:00+00:00",
+          "traffic_source_referral_pct": 2.0549255060382543
+         },
+         {
+          "date": "2026-03-01T00:00:00+00:00",
+          "traffic_source_referral_pct": 4.822872352856968
+         },
+         {
+          "date": "2026-05-01T00:00:00+00:00",
+          "traffic_source_referral_pct": 3.1860529074400157
+         },
+         {
+          "date": "2026-06-01T00:00:00+00:00",
+          "traffic_source_referral_pct": 1.4464949648324013
+         },
+         {
+          "date": "2026-07-01T00:00:00+00:00",
+          "traffic_source_referral_pct": 1.812711795090223
+         },
+         {
+          "date": "2026-08-01T00:00:00+00:00",
+          "traffic_source_referral_pct": 2.7207162001397367
+         },
+         {
+          "date": "2026-09-01T00:00:00+00:00",
+          "traffic_source_referral_pct": 5.33891423611949
+         },
+         {
+          "date": "2026-10-01T00:00:00+00:00",
+          "traffic_source_referral_pct": 3.2915250066913213
+         }
+        ]
+       },
+       "gati.com": {
+        "domain": "gati.com",
+        "monthly_visitors": 78802.0,
+        "mom_pct": -6.92,
+        "qoq_pct": -11.05,
+        "source_search_pct": 8.279747850495893,
+        "source_direct_pct": 62.64888048030839,
+        "source_social_pct": 1.3404590829898484,
+        "source_paid_referral_pct": 0.001916829150158358,
+        "source_referral_pct": 23.80140996619135,
+        "monthly_visitors_timeseries": [
+         {
+          "date": "2024-03-01T00:00:00+00:00",
+          "monthly_visitors": 397566
+         },
+         {
+          "date": "2024-04-01T00:00:00+00:00",
+          "monthly_visitors": 361149
+         },
+         {
+          "date": "2025-08-01T00:00:00+00:00",
+          "monthly_visitors": 75778
+         },
+         {
+          "date": "2025-09-01T00:00:00+00:00",
+          "monthly_visitors": 78537
+         },
+         {
+          "date": "2025-10-01T00:00:00+00:00",
+          "monthly_visitors": 76802
+         },
+         {
+          "date": "2025-11-01T00:00:00+00:00",
+          "monthly_visitors": 67872
+         },
+         {
+          "date": "2025-12-01T00:00:00+00:00",
+          "monthly_visitors": 54316
+         },
+         {
+          "date": "2026-01-01T00:00:00+00:00",
+          "monthly_visitors": 52704
+         },
+         {
+          "date": "2026-02-01T00:00:00+00:00",
+          "monthly_visitors": 53647
+         },
+         {
+          "date": "2026-03-01T00:00:00+00:00",
+          "monthly_visitors": 68657
+         },
+         {
+          "date": "2026-04-01T00:00:00+00:00",
+          "monthly_visitors": 73743
+         },
+         {
+          "date": "2026-05-01T00:00:00+00:00",
+          "monthly_visitors": 66889
+         },
+         {
+          "date": "2026-06-01T00:00:00+00:00",
+          "monthly_visitors": 88593
+         },
+         {
+          "date": "2026-07-01T00:00:00+00:00",
+          "monthly_visitors": 70171
+         },
+         {
+          "date": "2026-08-01T00:00:00+00:00",
+          "monthly_visitors": 84661
+         },
+         {
+          "date": "2026-09-01T00:00:00+00:00",
+          "monthly_visitors": 78802
+         }
+        ],
+        "source_search_pct_timeseries": [
+         {
+          "date": "2024-04-01T00:00:00+00:00",
+          "traffic_source_search_pct": 50.71430463198027
+         },
+         {
+          "date": "2025-08-01T00:00:00+00:00",
+          "traffic_source_search_pct": 47.46912493823328
+         },
+         {
+          "date": "2025-10-01T00:00:00+00:00",
+          "traffic_source_search_pct": 39.98963716707557
+         },
+         {
+          "date": "2025-11-01T00:00:00+00:00",
+          "traffic_source_search_pct": 37.76589659656276
+         },
+         {
+          "date": "2025-12-01T00:00:00+00:00",
+          "traffic_source_search_pct": 36.5192902888988
+         },
+         {
+          "date": "2026-01-01T00:00:00+00:00",
+          "traffic_source_search_pct": 33.64702993640929
+         },
+         {
+          "date": "2026-02-01T00:00:00+00:00",
+          "traffic_source_search_pct": 30.651247575994173
+         },
+         {
+          "date": "2026-03-01T00:00:00+00:00",
+          "traffic_source_search_pct": 27.369154504101644
+         },
+         {
+          "date": "2026-05-01T00:00:00+00:00",
+          "traffic_source_search_pct": 7.187229736522522
+         },
+         {
+          "date": "2026-07-01T00:00:00+00:00",
+          "traffic_source_search_pct": 3.260745451060456
+         },
+         {
+          "date": "2026-08-01T00:00:00+00:00",
+          "traffic_source_search_pct": 7.53708182183967
+         },
+         {
+          "date": "2026-09-01T00:00:00+00:00",
+          "traffic_source_search_pct": 8.279747850495893
+         }
+        ],
+        "source_direct_pct_timeseries": [
+         {
+          "date": "2024-04-01T00:00:00+00:00",
+          "traffic_source_direct_pct": 46.90151650267241
+         },
+         {
+          "date": "2025-08-01T00:00:00+00:00",
+          "traffic_source_direct_pct": 35.998310381628876
+         },
+         {
+          "date": "2025-10-01T00:00:00+00:00",
+          "traffic_source_direct_pct": 40.757258204576566
+         },
+         {
+          "date": "2025-11-01T00:00:00+00:00",
+          "traffic_source_direct_pct": 43.4893674989339
+         },
+         {
+          "date": "2025-12-01T00:00:00+00:00",
+          "traffic_source_direct_pct": 45.34114118277222
+         },
+         {
+          "date": "2026-01-01T00:00:00+00:00",
+          "traffic_source_direct_pct": 49.49865070341672
+         },
+         {
+          "date": "2026-02-01T00:00:00+00:00",
+          "traffic_source_direct_pct": 53.31370843554972
+         },
+         {
+          "date": "2026-03-01T00:00:00+00:00",
+          "traffic_source_direct_pct": 57.737192563446015
+         },
+         {
+          "date": "2026-05-01T00:00:00+00:00",
+          "traffic_source_direct_pct": 62.13242351456143
+         },
+         {
+          "date": "2026-07-01T00:00:00+00:00",
+          "traffic_source_direct_pct": 69.60894809552428
+         },
+         {
+          "date": "2026-08-01T00:00:00+00:00",
+          "traffic_source_direct_pct": 59.99103044032078
+         },
+         {
+          "date": "2026-09-01T00:00:00+00:00",
+          "traffic_source_direct_pct": 62.64888048030839
+         }
+        ],
+        "source_social_pct_timeseries": [
+         {
+          "date": "2024-04-01T00:00:00+00:00",
+          "traffic_source_social_pct": 0.7859510901695276
+         },
+         {
+          "date": "2025-08-01T00:00:00+00:00",
+          "traffic_source_social_pct": 0.25256496690519
+         },
+         {
+          "date": "2025-10-01T00:00:00+00:00",
+          "traffic_source_social_pct": 0.25824699260329387
+         },
+         {
+          "date": "2025-11-01T00:00:00+00:00",
+          "traffic_source_social_pct": 0.3285752623712865
+         },
+         {
+          "date": "2025-12-01T00:00:00+00:00",
+          "traffic_source_social_pct": 0.38404870540165176
+         },
+         {
+          "date": "2026-01-01T00:00:00+00:00",
+          "traffic_source_social_pct": 0.29910487541486475
+         },
+         {
+          "date": "2026-02-01T00:00:00+00:00",
+          "traffic_source_social_pct": 0.28587041554785086
+         },
+         {
+          "date": "2026-03-01T00:00:00+00:00",
+          "traffic_source_social_pct": 0.1902278573259607
+         },
+         {
+          "date": "2026-05-01T00:00:00+00:00",
+          "traffic_source_social_pct": 0.36845209518452365
+         },
+         {
+          "date": "2026-07-01T00:00:00+00:00",
+          "traffic_source_social_pct": 0.4459770323240038
+         },
+         {
+          "date": "2026-08-01T00:00:00+00:00",
+          "traffic_source_social_pct": 1.581583931082076
+         },
+         {
+          "date": "2026-09-01T00:00:00+00:00",
+          "traffic_source_social_pct": 1.3404590829898484
+         }
+        ],
+        "source_paid_referral_pct_timeseries": [
+         {
+          "date": "2024-04-01T00:00:00+00:00",
+          "traffic_source_paid_referral_pct": 0.0
+         },
+         {
+          "date": "2025-08-01T00:00:00+00:00",
+          "traffic_source_paid_referral_pct": 0.1021281591828323
+         },
+         {
+          "date": "2025-10-01T00:00:00+00:00",
+          "traffic_source_paid_referral_pct": 0.13457024287539596
+         },
+         {
+          "date": "2025-11-01T00:00:00+00:00",
+          "traffic_source_paid_referral_pct": 0.13629135784666918
+         },
+         {
+          "date": "2025-12-01T00:00:00+00:00",
+          "traffic_source_paid_referral_pct": 0.1647304167815934
+         },
+         {
+          "date": "2026-01-01T00:00:00+00:00",
+          "traffic_source_paid_referral_pct": 0.1610191052444217
+         },
+         {
+          "date": "2026-02-01T00:00:00+00:00",
+          "traffic_source_paid_referral_pct": 0.178257666027144
+         },
+         {
+          "date": "2026-03-01T00:00:00+00:00",
+          "traffic_source_paid_referral_pct": 0.17897289775922925
+         },
+         {
+          "date": "2026-05-01T00:00:00+00:00",
+          "traffic_source_paid_referral_pct": 0.0
+         },
+         {
+          "date": "2026-07-01T00:00:00+00:00",
+          "traffic_source_paid_referral_pct": 0.0
+         },
+         {
+          "date": "2026-08-01T00:00:00+00:00",
+          "traffic_source_paid_referral_pct": 0.0
+         },
+         {
+          "date": "2026-09-01T00:00:00+00:00",
+          "traffic_source_paid_referral_pct": 0.001916829150158358
+         }
+        ],
+        "source_referral_pct_timeseries": [
+         {
+          "date": "2024-04-01T00:00:00+00:00",
+          "traffic_source_referral_pct": 1.4336200640672117
+         },
+         {
+          "date": "2025-08-01T00:00:00+00:00",
+          "traffic_source_referral_pct": 16.139004201715895
+         },
+         {
+          "date": "2025-10-01T00:00:00+00:00",
+          "traffic_source_referral_pct": 18.817574919016945
+         },
+         {
+          "date": "2025-11-01T00:00:00+00:00",
+          "traffic_source_referral_pct": 18.24033634000904
+         },
+         {
+          "date": "2025-12-01T00:00:00+00:00",
+          "traffic_source_referral_pct": 17.535604622406854
+         },
+         {
+          "date": "2026-01-01T00:00:00+00:00",
+          "traffic_source_referral_pct": 16.360679562896742
+         },
+         {
+          "date": "2026-02-01T00:00:00+00:00",
+          "traffic_source_referral_pct": 15.535665950188735
+         },
+         {
+          "date": "2026-03-01T00:00:00+00:00",
+          "traffic_source_referral_pct": 14.493017723240403
+         },
+         {
+          "date": "2026-05-01T00:00:00+00:00",
+          "traffic_source_referral_pct": 26.028491265147323
+         },
+         {
+          "date": "2026-07-01T00:00:00+00:00",
+          "traffic_source_referral_pct": 24.523520137066853
+         },
+         {
+          "date": "2026-08-01T00:00:00+00:00",
+          "traffic_source_referral_pct": 27.649798743909187
+         },
+         {
+          "date": "2026-09-01T00:00:00+00:00",
+          "traffic_source_referral_pct": 23.80140996619135
+         }
+        ]
+       }
+      }
+     },
+     "employee_reviews": {
+      "overall_rating": {
+       "rating": 3.9,
+       "total_count": 221,
+       "rating_1_count": 16,
+       "rating_2_count": 11,
+       "rating_3_count": 42,
+       "rating_4_count": 75,
+       "rating_5_count": 77
+      },
+      "company_ceo": {
+       "ceo_rating": 0.92
+      },
+      "culture_and_values_rating": 3.7,
+      "diversity_and_inclusion_rating": 3.9,
+      "work_life_balance_rating": 3.7,
+      "senior_management_rating": 3.7,
+      "compensation_and_benefits_rating": 3.5,
+      "career_opportunities_rating": 3.8,
+      "recommend_to_friend_rating": 0.79,
+      "business_outlook_rating": 0.69
+     },
+     "people": {
+      "decision_makers": [],
+      "founders": [],
+      "cxos": [
+       {
+        "basic_profile": {
+         "name": "Deepak Pareek",
+         "current_title": "Chief Financial Officer"
+        },
+        "professional_network": {
+         "connections": 7193
+        },
+        "social_handles": {
+         "professional_network_identifier": {
+          "profile_url": "https://www.linkedin.com/in/deepak-pareek214"
+         }
+        },
+        "experience": {
+         "employment_details": {
+          "current": [
+           {
+            "name": null,
+            "title": null,
+            "crustdata_company_id": null,
+            "start_date": null,
+            "end_date": null
+           },
+           {
+            "name": null,
+            "title": null,
+            "crustdata_company_id": null,
+            "start_date": null,
+            "end_date": null
+           }
+          ],
+          "past": [
+           {
+            "name": null,
+            "title": null,
+            "crustdata_company_id": null,
+            "start_date": null,
+            "end_date": null
+           },
+           {
+            "name": null,
+            "title": null,
+            "crustdata_company_id": null,
+            "start_date": null,
+            "end_date": null
+           },
+           {
+            "name": null,
+            "title": null,
+            "crustdata_company_id": null,
+            "start_date": null,
+            "end_date": null
+           },
+           {
+            "name": null,
+            "title": null,
+            "crustdata_company_id": null,
+            "start_date": null,
+            "end_date": null
+           }
+          ]
+         }
+        }
+       },
+       {
+        "basic_profile": {
+         "name": "Bipin Reghunathan",
+         "current_title": "Chief Business Officer - Consultative Logistics"
+        },
+        "professional_network": {
+         "connections": 2714
+        },
+        "social_handles": {
+         "professional_network_identifier": {
+          "profile_url": "https://www.linkedin.com/in/bipin-reghunathan-aaa57314"
+         }
+        },
+        "experience": {
+         "employment_details": {
+          "current": [
+           {
+            "name": null,
+            "title": null,
+            "crustdata_company_id": null,
+            "start_date": null,
+            "end_date": null
+           }
+          ],
+          "past": [
+           {
+            "name": null,
+            "title": null,
+            "crustdata_company_id": null,
+            "start_date": null,
+            "end_date": null
+           },
+           {
+            "name": null,
+            "title": null,
+            "crustdata_company_id": null,
+            "start_date": null,
+            "end_date": null
+           },
+           {
+            "name": null,
+            "title": null,
+            "crustdata_company_id": null,
+            "start_date": null,
+            "end_date": null
+           },
+           {
+            "name": null,
+            "title": null,
+            "crustdata_company_id": null,
+            "start_date": null,
+            "end_date": null
+           },
+           {
+            "name": null,
+            "title": null,
+            "crustdata_company_id": null,
+            "start_date": null,
+            "end_date": null
+           },
+           {
+            "name": null,
+            "title": null,
+            "crustdata_company_id": null,
+            "start_date": null,
+            "end_date": null
+           },
+           {
+            "name": null,
+            "title": null,
+            "crustdata_company_id": null,
+            "start_date": null,
+            "end_date": null
+           },
+           {
+            "name": null,
+            "title": null,
+            "crustdata_company_id": null,
+            "start_date": null,
+            "end_date": null
+           },
+           {
+            "name": null,
+            "title": null,
+            "crustdata_company_id": null,
+            "start_date": null,
+            "end_date": null
+           }
+          ]
+         }
+        }
+       },
+       {
+        "basic_profile": {
+         "name": "Vijay Nehra",
+         "current_title": "Chief Transformation Officer & MD Designate"
+        },
+        "professional_network": {
+         "connections": 1205
+        },
+        "social_handles": {
+         "professional_network_identifier": {
+          "profile_url": "https://www.linkedin.com/in/vijay-nehra"
+         }
+        },
+        "experience": {
+         "employment_details": {
+          "current": [
+           {
+            "name": null,
+            "title": null,
+            "crustdata_company_id": null,
+            "start_date": null,
+            "end_date": null
+           }
+          ],
+          "past": [
+           {
+            "name": null,
+            "title": null,
+            "crustdata_company_id": null,
+            "start_date": null,
+            "end_date": null
+           },
+           {
+            "name": null,
+            "title": null,
+            "crustdata_company_id": null,
+            "start_date": null,
+            "end_date": null
+           },
+           {
+            "name": null,
+            "title": null,
+            "crustdata_company_id": null,
+            "start_date": null,
+            "end_date": null
+           },
+           {
+            "name": null,
+            "title": null,
+            "crustdata_company_id": null,
+            "start_date": null,
+            "end_date": null
+           },
+           {
+            "name": null,
+            "title": null,
+            "crustdata_company_id": null,
+            "start_date": null,
+            "end_date": null
+           },
+           {
+            "name": null,
+            "title": null,
+            "crustdata_company_id": null,
+            "start_date": null,
+            "end_date": null
+           },
+           {
+            "name": null,
+            "title": null,
+            "crustdata_company_id": null,
+            "start_date": null,
+            "end_date": null
+           },
+           {
+            "name": null,
+            "title": null,
+            "crustdata_company_id": null,
+            "start_date": null,
+            "end_date": null
+           },
+           {
+            "name": null,
+            "title": null,
+            "crustdata_company_id": null,
+            "start_date": null,
+            "end_date": null
+           },
+           {
+            "name": null,
+            "title": null,
+            "crustdata_company_id": null,
+            "start_date": null,
+            "end_date": null
+           },
+           {
+            "name": null,
+            "title": null,
+            "crustdata_company_id": null,
+            "start_date": null,
+            "end_date": null
+           }
+          ]
+         }
+        }
+       },
+       {
+        "basic_profile": {
+         "name": "Ashwani Joshi",
+         "current_title": "Chief HR Officer"
+        },
+        "professional_network": {
+         "connections": 15
+        },
+        "social_handles": {
+         "professional_network_identifier": {
+          "profile_url": "https://www.linkedin.com/in/ashwani-joshi-295ba112"
+         }
+        },
+        "experience": {
+         "employment_details": {
+          "current": [
+           {
+            "name": null,
+            "title": null,
+            "crustdata_company_id": null,
+            "start_date": null,
+            "end_date": null
+           },
+           {
+            "name": null,
+            "title": null,
+            "crustdata_company_id": null,
+            "start_date": null,
+            "end_date": null
+           },
+           {
+            "name": null,
+            "title": null,
+            "crustdata_company_id": null,
+            "start_date": null,
+            "end_date": null
+           },
+           {
+            "name": null,
+            "title": null,
+            "crustdata_company_id": null,
+            "start_date": null,
+            "end_date": null
+           }
+          ],
+          "past": []
+         }
+        }
+       },
+       {
+        "basic_profile": {
+         "name": "Sandhu As",
+         "current_title": "CFO"
+        },
+        "professional_network": {
+         "connections": 1
+        },
+        "social_handles": {
+         "professional_network_identifier": {
+          "profile_url": "https://www.linkedin.com/in/sandhu-as-755284a"
+         }
+        },
+        "experience": {
+         "employment_details": {
+          "current": [
+           {
+            "name": null,
+            "title": null,
+            "crustdata_company_id": null,
+            "start_date": null,
+            "end_date": null
+           }
+          ],
+          "past": []
+         }
+        }
+       },
+       {
+        "basic_profile": {
+         "name": "Howard James-Scott",
+         "current_title": "Chief SCM Officer"
+        },
+        "professional_network": {
+         "connections": 0
+        },
+        "social_handles": {
+         "professional_network_identifier": {
+          "profile_url": "https://www.linkedin.com/in/howard-james-scott-8539629"
+         }
+        },
+        "experience": {
+         "employment_details": {
+          "current": [
+           {
+            "name": null,
+            "title": null,
+            "crustdata_company_id": null,
+            "start_date": null,
+            "end_date": null
+           },
+           {
+            "name": null,
+            "title": null,
+            "crustdata_company_id": null,
+            "start_date": null,
+            "end_date": null
+           }
+          ],
+          "past": []
+         }
+        }
+       }
+      ]
+     },
+     "news": [
+      {
+       "source": "google_news",
+       "article_url": "https://propnewstime.com/latestnewsstories/Mzk4MjM=/allcargo-terminals-records-nearly-two-fold-rise-in-september-quarter-profit",
+       "article_title": "Allcargo Terminals records nearly two-fold rise in September-quarter profit",
+       "article_publisher_name": "Prop News Time",
+       "article_publish_date": "2026-11-09",
+       "publisher_domain": "propnewstime.com",
+       "confidence_score": 0.95
+      },
+      {
+       "source": "google_news",
+       "article_url": "https://propnewstime.com/latestnewsstories/Mzk3MTg=/allcargo-logistics-returns-to-profit-with-inr-19-crore-pat-in-q2-fy27",
+       "article_title": "Allcargo Logistics returns to profit with INR 19 crore PAT in Q2 FY27",
+       "article_publisher_name": "Prop News Time",
+       "article_publish_date": "2026-11-06",
+       "publisher_domain": "propnewstime.com",
+       "confidence_score": 0.95
+      },
+      {
+       "source": "google_news",
+       "article_url": "https://www.livemint.com/market/market-stats/allcargo-logistics-q2-results-s0003327",
+       "article_title": "Allcargo Logistics Q2 Results 2026 - Find Allcargo Logistics Q2 Earnings Result | ALLCARGO Q2 results",
+       "article_publisher_name": "Livemint",
+       "article_publish_date": "2026-11-06",
+       "publisher_domain": "livemint.com",
+       "confidence_score": 0.95
+      },
+      {
+       "source": "google_news",
+       "article_url": "https://finance.yahoo.com/markets/stocks/articles/allcargo-logistics-ltd-bom-532749-051847145.html",
+       "article_title": "Allcargo Logistics Ltd (BOM:532749) (Q2 2027) Earnings Call Highlights: Margin Expansion ...",
+       "article_publisher_name": "Yahoo Finance",
+       "article_publish_date": "2026-11-06",
+       "publisher_domain": "yahoo.com",
+       "confidence_score": 0.95
+      },
+      {
+       "source": "google_news",
+       "article_url": "https://indiashippingnews.com/company/allcargo-logistics-reports-pat-of-%E2%82%B933-cr-a-%E2%82%B948-cr-turnaround-and-12-gross-profit-growth-in-h1-fy-2027/",
+       "article_title": "Allcargo Logistics reports PAT of ₹33 Cr, a ₹48 cr turnaround, and 12% gross profit growth in H1 FY 2027",
+       "article_publisher_name": "India Shipping News",
+       "article_publish_date": "2026-11-05",
+       "publisher_domain": "indiashippingnews.com",
+       "confidence_score": 0.95
+      },
+      {
+       "source": "google_news",
+       "article_url": "https://www.ndtvprofit.com/markets/allcargo-logistics-posts-rs-19-crore-profit-in-q2fy27-revenue-rises-3-4-12284499",
+       "article_title": "Allcargo Logistics Posts Rs 19 Crore Profit In Q2FY27; Revenue Rises 3.4%",
+       "article_publisher_name": "NDTV Profit",
+       "article_publish_date": "2026-11-04",
+       "publisher_domain": "ndtvprofit.com",
+       "confidence_score": 1.0
+      },
+      {
+       "source": "google_news",
+       "article_url": "https://www.multibagg.ai/market-pulse/articles/allcargo-logistics-limited-tax-refund-receivable-announcement-cmw2dnb0t007r2mtk0tgg8exf",
+       "article_title": "Allcargo Logistics Limited records Rs 44.83 crore receivable",
+       "article_publisher_name": "Multibagg AI",
+       "article_publish_date": "2026-11-04",
+       "publisher_domain": "multibagg.ai",
+       "confidence_score": 0.95
+      },
+      {
+       "source": "google_news",
+       "article_url": "https://www.multibagg.ai/market-pulse/articles/allcargo-logistics-quarterly-profit-announcement-cmw2dkze7007p2mtkpowtnh9c",
+       "article_title": "Allcargo Logistics Limited returns to Rs 18 crore quarterly profit",
+       "article_publisher_name": "Multibagg AI",
+       "article_publish_date": "2026-11-04",
+       "publisher_domain": "multibagg.ai",
+       "confidence_score": 0.95
+      },
+      {
+       "source": "google_news",
+       "article_url": "https://www.multibagg.ai/market-pulse/articles/allcargo-logistics-esos-2026-pool-announcement-cmw2diuus007n2mtkrd4my8kc",
+       "article_title": "Allcargo Logistics sets 2.99 crore-share ESOS 2026 framework",
+       "article_publisher_name": "Multibagg AI",
+       "article_publish_date": "2026-11-04",
+       "publisher_domain": "multibagg.ai",
+       "confidence_score": 0.95
+      },
+      {
+       "source": "google_news",
+       "article_url": "https://www.multibagg.ai/market-pulse/articles/allcargo-logistics-q2fy27-profit-turnaround-ppt-cmw2crwju006p2mtke49v89ac",
+       "article_title": "Allcargo Logistics returns to Rs 19 crore Q2FY27 profit after loss",
+       "article_publisher_name": "Multibagg AI",
+       "article_publish_date": "2026-11-04",
+       "publisher_domain": "multibagg.ai",
+       "confidence_score": 0.95
+      },
+      {
+       "source": "google_news",
+       "article_url": "https://www.multibagg.ai/market-pulse/articles/allcargo-logistics-q2-ebitda-growth-ppt-cmw2cpugy006o2mtk3qr52qkf",
+       "article_title": "Allcargo Logistics Q2 EBITDA rises 24.2% to Rs 77 crore",
+       "article_publisher_name": "Multibagg AI",
+       "article_publish_date": "2026-11-04",
+       "publisher_domain": "multibagg.ai",
+       "confidence_score": 0.95
+      },
+      {
+       "source": "google_news",
+       "article_url": "https://www.multibagg.ai/market-pulse/articles/allcargo-logistics-ceo-transition-2027-ppt-cmw2cnjnu006m2mtkvjpmz8en",
+       "article_title": "Allcargo Logistics appoints Vijay Nehra CEO in January 2027",
+       "article_publisher_name": "Multibagg AI",
+       "article_publish_date": "2026-11-04",
+       "publisher_domain": "multibagg.ai",
+       "confidence_score": 0.95
+      },
+      {
+       "source": "google_news",
+       "article_url": "https://www.multibagg.ai/market-pulse/articles/allcargo-logistics-yield-volume-q2-ppt-cmw2clhc0006l2mtkbc46lmek",
+       "article_title": "Allcargo Logistics yield rises 7.5% as Q2 volume falls",
+       "article_publisher_name": "Multibagg AI",
+       "article_publish_date": "2026-11-04",
+       "publisher_domain": "multibagg.ai",
+       "confidence_score": 0.95
+      },
+      {
+       "source": "google_news",
+       "article_url": "https://www.multibagg.ai/market-pulse/articles/allcargo-logistics-revenue-space-optimization-ppt-cmw2cjbo6006k2mtkcstg06we",
+       "article_title": "Allcargo Logistics grows revenue despite less warehouse space",
+       "article_publisher_name": "Multibagg AI",
+       "article_publish_date": "2026-11-04",
+       "publisher_domain": "multibagg.ai",
+       "confidence_score": 0.95
+      },
+      {
+       "source": "google_news",
+       "article_url": "https://www.multibagg.ai/market-pulse/articles/allcargo-logistics-h1-pat-turnaround-announcement-cmw2c19vl005x2mtkk5bi2w0h",
+       "article_title": "Allcargo Logistics Limited reports Rs 33 crore H1FY27 PAT",
+       "article_publisher_name": "Multibagg AI",
+       "article_publish_date": "2026-11-04",
+       "publisher_domain": "multibagg.ai",
+       "confidence_score": 0.95
+      },
+      {
+       "source": "google_news",
+       "article_url": "http://infra.economictimes.indiatimes.com/news/logistics/allcargo-logistics-returns-to-profit-with-9-crore-pat-in-q2-fy27-revenue-rises-3-4/135528796",
+       "article_title": "Allcargo Logistics returns to profit with ₹9 crore PAT in Q2 FY27, revenue rises 3.4%",
+       "article_publisher_name": "ET Infra",
+       "article_publish_date": "2026-11-04",
+       "publisher_domain": "indiatimes.com",
+       "confidence_score": 0.95
+      },
+      {
+       "source": "google_news",
+       "article_url": "https://money.rediff.com/news/market/allcargo-terminals-profit-jumps-to-rs-21-cr-in-sept-quarter/57517220261104",
+       "article_title": "Allcargo Terminals Profit Jumps to Rs 21 Cr in Sept Quarter",
+       "article_publisher_name": "Rediff MoneyWiz",
+       "article_publish_date": "2026-11-04",
+       "publisher_domain": "rediff.com",
+       "confidence_score": 0.9
+      },
+      {
+       "source": "google_news",
+       "article_url": "https://in.investing.com/news/stock-market-news/earnings-call-transcript-allcargo-logistics-posts-stronger-q2-2027-profit-growth-93CH-5677949",
+       "article_title": "Earnings call transcript: Allcargo Logistics posts stronger Q2 2027 profit growth By Investing.com",
+       "article_publisher_name": "Investing.com India",
+       "article_publish_date": "2026-11-04",
+       "publisher_domain": "investing.com",
+       "confidence_score": 0.95
+      },
+      {
+       "source": "google_news",
+       "article_url": "https://www.tradingview.com/news/urn:live_audio:quartr.com:748600:0-allcargo-logistics-q2-2027-earnings-call-is-live/",
+       "article_title": "Allcargo Logistics Q2 2027 Earnings Call Is Live",
+       "article_publisher_name": "TradingView",
+       "article_publish_date": "2026-11-04",
+       "publisher_domain": "tradingview.com",
+       "confidence_score": 0.95
+      },
+      {
+       "source": "google_news",
+       "article_url": "https://www.manufacturingtodayindia.com/allcargo-logistics-167-per-cent",
+       "article_title": "Allcargo Logistics reports 167 per cent growth in Q2FY27",
+       "article_publisher_name": "Manufacturing Today India",
+       "article_publish_date": "2026-11-04",
+       "publisher_domain": "manufacturingtodayindia.com",
+       "confidence_score": 0.95
+      },
+      {
+       "source": "google_news",
+       "article_url": "https://www.tradingview.com/news/moodys:7b0fc9d25e624:0-allcargo-logistics-reports-rs-33-crore-pat-in-h1-fy27-marks-rs-48-crore-turnaround/",
+       "article_title": "Allcargo Logistics Reports Rs 33 Crore PAT In H1 FY27, Marks Rs 48 Crore Turnaround",
+       "article_publisher_name": "TradingView",
+       "article_publish_date": "2026-11-04",
+       "publisher_domain": "tradingview.com",
+       "confidence_score": 0.95
+      },
+      {
+       "source": "google_news",
+       "article_url": "https://hdfcsky.com/news/allcargo-logistics-posts-rs-19-crore-profit-in-q2fy27-revenue-rises-3-4-pc",
+       "article_title": "Allcargo Returns to Profit; Q2 PAT at ₹19 Cr, Revenue Up 3%",
+       "article_publisher_name": "HDFC Sky",
+       "article_publish_date": "2026-11-04",
+       "publisher_domain": "hdfcsky.com",
+       "confidence_score": 0.95
+      },
+      {
+       "source": "google_news",
+       "article_url": "https://money.rediff.com/news/market/allcargo-logistics-q2fy27-profit-rs-19-cr-revenue-up-3-4/57483720261104",
+       "article_title": "Allcargo Logistics Q2FY27 Profit: Rs 19 Cr, Revenue Up 3.4%",
+       "article_publisher_name": "Rediff MoneyWiz",
+       "article_publish_date": "2026-11-04",
+       "publisher_domain": "rediff.com",
+       "confidence_score": 0.95
+      },
+      {
+       "source": "google_news",
+       "article_url": "https://www.investywise.com/allcargo-logistics-monitoring-agency-report-for-q2-fy2027/",
+       "article_title": "Allcargo Logistics QIP proceeds update for September 2026",
+       "article_publisher_name": "InvestyWise",
+       "article_publish_date": "2026-11-04",
+       "publisher_domain": "investywise.com",
+       "confidence_score": 0.95
+      },
+      {
+       "source": "google_news",
+       "article_url": "https://www.maritimegateway.com/allcargo-logistics-reports-%E2%82%B933-crore-pat-in-h1-fy27-ebitda-rises-31/",
+       "article_title": "Allcargo Logistics Reports ₹33 Crore PAT in H1 FY27, EBITDA Rises 31%",
+       "article_publisher_name": "Maritime Gateway",
+       "article_publish_date": "2026-11-04",
+       "publisher_domain": "maritimegateway.com",
+       "confidence_score": 0.95
+      },
+      {
+       "source": "crunchbase",
+       "article_url": "https://www.indianweb2.com/2026/11/allcargo-logistics-reports-33-cr-pat-in.html",
+       "article_title": "Allcargo Logistics Reports ₹33 Cr PAT in H1 FY27, Delivers ₹48 Cr Profit Turnaround",
+       "article_publisher_name": "Indianweb2.com",
+       "article_publish_date": "2026-11-04",
+       "publisher_domain": null,
+       "confidence_score": null
+      },
+      {
+       "source": "crunchbase",
+       "article_url": "https://economictimes.indiatimes.com/markets/stocks/earnings/allcargo-logistics-q2-results-co-posts-rs-19-crore-profit-revenue-rises-3-4/articleshow/135535457.cms",
+       "article_title": "Allcargo Logistics Q2 Results: Co posts Rs 19 crore profit; revenue rises 3.4%",
+       "article_publisher_name": "IndiaTimes",
+       "article_publish_date": "2026-11-04",
+       "publisher_domain": null,
+       "confidence_score": null
+      },
+      {
+       "source": "crunchbase",
+       "article_url": "https://www.thehindubusinessline.com/economy/logistics/allcargo-logistics-turns-corner-logs-18-crore-profit-in-q2/article71665777.ece",
+       "article_title": "Allcargo Logistics turns corner, logs ₹18-crore profit in Q2",
+       "article_publisher_name": "Hindu Business Line",
+       "article_publish_date": "2026-11-04",
+       "publisher_domain": null,
+       "confidence_score": null
+      },
+      {
+       "source": "google_news",
+       "article_url": "https://www.multibagg.ai/market-pulse/articles/allcargo-q2-profit-turnaround-cmw10rsl4004631qlig66p34n",
+       "article_title": "Allcargo Logistics Reports ₹18 Crore Q2 Profit Turnaround",
+       "article_publisher_name": "Multibagg AI",
+       "article_publish_date": "2026-11-03",
+       "publisher_domain": "multibagg.ai",
+       "confidence_score": 0.95
+      },
+      {
+       "source": "google_news",
+       "article_url": "https://www.marketscreener.com/news/allcargo-logistics-limited-reports-earnings-results-for-the-second-quarter-and-six-months-ended-sept-ce785fdedf8cf124",
+       "article_title": "Allcargo Logistics Limited Reports Earnings Results for the Second Quarter and Six Months Ended September 30, 2026",
+       "article_publisher_name": "www.marketscreener.com",
+       "article_publish_date": "2026-11-03",
+       "publisher_domain": "marketscreener.com",
+       "confidence_score": 0.95
+      },
+      {
+       "source": "google_news",
+       "article_url": "https://www.siam.in/aticles-market/Allcargo-Logistics-ALLCARGONS-Climbs-328-to-946-Nearing-Resistance-at-993-62-8604",
+       "article_title": "Allcargo Logistics (ALLCARGO.NS) Climbs 3.28% to ₹9.46, Nearing Resistance at ₹9.93 - Post-Earnings Moves",
+       "article_publisher_name": "https://www.siam.in/",
+       "article_publish_date": "2026-10-29",
+       "publisher_domain": "siam.in",
+       "confidence_score": 0.95
+      },
+      {
+       "source": "google_news",
+       "article_url": "https://www.siam.in/aticles-market/Allcargo-Logistics-ALLCARGONS-Rises-270-to-950-as-Buyers-Defend-903-Support-62-7789",
+       "article_title": "Allcargo Logistics (ALLCARGO.NS) Rises 2.70% to ₹9.50 as Buyers Defend ₹9.03 Support - Momentum ETF",
+       "article_publisher_name": "https://www.siam.in/",
+       "article_publish_date": "2026-10-27",
+       "publisher_domain": "siam.in",
+       "confidence_score": 0.95
+      },
+      {
+       "source": "google_news",
+       "article_url": "https://scanx.trade/stock-market-news/companies/allcargo-logistics-seeks-shareholder-approval-vijay-nehra-md-ceo/54199718",
+       "article_title": "Allcargo Logistics seeks shareholder approval for Vijay Nehra as MD and CEO",
+       "article_publisher_name": "scanx.trade",
+       "article_publish_date": "2026-10-23",
+       "publisher_domain": "scanx.trade",
+       "confidence_score": 1.0
+      },
+      {
+       "source": "google_news",
+       "article_url": "https://www.expresscomputer.in/news/allcargo-logistics-oracle-fusion-cloud-erp/140337/",
+       "article_title": "Allcargo Logistics cuts month-end financial close time by 30% with Oracle Cloud",
+       "article_publisher_name": "Express Computer",
+       "article_publish_date": "2026-10-23",
+       "publisher_domain": "expresscomputer.in",
+       "confidence_score": 0.95
+      },
+      {
+       "source": "google_news",
+       "article_url": "https://www.dqindia.com/news/allcargo-logistics-cuts-month-end-close-time-oracle-cloud-12716722",
+       "article_title": "Allcargo Logistics cuts month-end close time by 30% with Oracle Cloud",
+       "article_publisher_name": "DQ",
+       "article_publish_date": "2026-10-22",
+       "publisher_domain": "dqindia.com",
+       "confidence_score": 0.95
+      },
+      {
+       "source": "google_news",
+       "article_url": "https://techobserver.in/news/enterprise-it/allcargo-logistics-oracle-fusion-cloud-erp-finance-330119/",
+       "article_title": "Allcargo Logistics cuts month-end close time by 30% with Oracle cloud",
+       "article_publisher_name": "Tech Observer Magazine",
+       "article_publish_date": "2026-10-22",
+       "publisher_domain": "techobserver.in",
+       "confidence_score": 0.95
+      },
+      {
+       "source": "google_news",
+       "article_url": "https://www.oracle.com/in/news/announcement/allcargo-logistics-transforms-financial-processes-with-oracle-fusion-cloud-applications-2026-10-21/",
+       "article_title": "Allcargo Logistics Transforms Financial Processes with Oracle Fusion Cloud Applications",
+       "article_publisher_name": "Oracle",
+       "article_publish_date": "2026-10-21",
+       "publisher_domain": "oracle.com",
+       "confidence_score": 0.95
+      },
+      {
+       "source": "google_news",
+       "article_url": "https://www.livemint.com/cio/inside-c-suite/allcargo-logistics-cio-sanjay-kkhiyani-on-cutting-finance-close-time-by-30-pc-291792563472262.html",
+       "article_title": "Allcargo Logistics CIO Sanjay Khiyani on cutting finance close time by 30%",
+       "article_publisher_name": "Livemint",
+       "article_publish_date": "2026-10-21",
+       "publisher_domain": "livemint.com",
+       "confidence_score": 0.95
+      },
+      {
+       "source": "google_news",
+       "article_url": "https://themachinemaker.com/news/allcargo-logistics-reduces-month-end-financial-closing-time-by-30-with-oracle-cloud-applications/",
+       "article_title": "Allcargo Logistics Reduces Month-End Financial Closing Time by 30% with Oracle Cloud Applications",
+       "article_publisher_name": "Machine Maker",
+       "article_publish_date": "2026-10-21",
+       "publisher_domain": "themachinemaker.com",
+       "confidence_score": 0.95
+      },
+      {
+       "source": "google_news",
+       "article_url": "https://hdfcsky.com/news/allcargo-logistics-adopts-oracle-cloud-to-streamline-finance-operations",
+       "article_title": "Allcargo Logistics Cuts Month-End Closing Time by 30%",
+       "article_publisher_name": "HDFC Sky",
+       "article_publish_date": "2026-10-21",
+       "publisher_domain": "hdfcsky.com",
+       "confidence_score": 0.95
+      },
+      {
+       "source": "google_news",
+       "article_url": "https://www.investywise.com/allcargo-logistics-transforms-financial-processes-with-oracle-cloud/",
+       "article_title": "Allcargo Logistics: Transforms Financial Processes with Oracle Cloud",
+       "article_publisher_name": "InvestyWise",
+       "article_publish_date": "2026-10-21",
+       "publisher_domain": "investywise.com",
+       "confidence_score": 0.95
+      },
+      {
+       "source": "google_news",
+       "article_url": "https://scanx.trade/stock-market-news/companies/allcargo-logistics-cuts-month-end-close-time-30-oracle/54106742",
+       "article_title": "Allcargo Logistics cuts month-end close time 30% with Oracle",
+       "article_publisher_name": "scanx.trade",
+       "article_publish_date": "2026-10-20",
+       "publisher_domain": "scanx.trade",
+       "confidence_score": 0.95
+      },
+      {
+       "source": "google_news",
+       "article_url": "https://www.moneycontrol.com/news/business/sebi-waives-open-offer-for-allcargo-logistics-promoter-s-34-41-stake-transfer-to-family-trust-14052246.html/amp",
+       "article_title": "Sebi waives open offer for Allcargo Logistics promoter's 34.41% stake transfer to family trust",
+       "article_publisher_name": "Moneycontrol.com",
+       "article_publish_date": "2026-10-14",
+       "publisher_domain": "moneycontrol.com",
+       "confidence_score": 1.0
+      },
+      {
+       "source": "google_news",
+       "article_url": "https://www.kalkine.co.in/article/announcements/allcargo-logistics-nseallcargo-what-does-its-q2-fy27-depository-certificate-mean",
+       "article_title": "Allcargo Logistics ALLCARGO Q2 FY27 Depository Certificate Filed",
+       "article_publisher_name": "Kalkine India",
+       "article_publish_date": "2026-10-13",
+       "publisher_domain": "kalkine.co.in",
+       "confidence_score": 0.95
+      },
+      {
+       "source": "google_news",
+       "article_url": "https://univest.in/blogs/why-allcargo-global-ltd-share-near-52-week-consecutive-low-2026",
+       "article_title": "Allcargo Global 52 Week Low Streak: Price, Valuation, Sector",
+       "article_publisher_name": "Univest",
+       "article_publish_date": "2026-10-09",
+       "publisher_domain": "univest.in",
+       "confidence_score": 0.95
+      },
+      {
+       "source": "google_news",
+       "article_url": "https://www.businesstoday.in/stocks/allcargo-global-ltd-share-price-547987",
+       "article_title": "Allcargo Global Ltd Share Price Today,, AGL Share Price NSE, BSE",
+       "article_publisher_name": "Business Today",
+       "article_publish_date": "2026-10-08",
+       "publisher_domain": "businesstoday.in",
+       "confidence_score": 0.85
+      },
+      {
+       "source": "google_news",
+       "article_url": "https://www.kalkine.co.in/article/industrials/allcargo-terminals-volumes-slip-to-61800-teus-down-7-year-on-year-what-container-throughput-says-about-trade",
+       "article_title": "Allcargo Terminals Volumes Slip to 61,800 TEUs, Down 7% YoY",
+       "article_publisher_name": "Kalkine India",
+       "article_publish_date": "2026-10-08",
+       "publisher_domain": "kalkine.co.in",
+       "confidence_score": 0.9
+      },
+      {
+       "source": "google_news",
+       "article_url": "https://univest.in/blogs/why-allcargo-global-ltd-share-price-near-52-week-low-today-2026",
+       "article_title": "Allcargo Global Share Price Near 52-Week Low: Stock News",
+       "article_publisher_name": "Univest",
+       "article_publish_date": "2026-10-08",
+       "publisher_domain": "univest.in",
+       "confidence_score": 0.95
+      },
+      {
+       "source": "google_news",
+       "article_url": "https://www.businessworld.in/article/allcargo-terminals-handles-61-800-teus-in-september-volumes-fall-7-627415",
+       "article_title": "Allcargo Terminals Handles 61,800 TEUs In September, Volumes Fall 7%",
+       "article_publisher_name": "BW Businessworld",
+       "article_publish_date": "2026-10-08",
+       "publisher_domain": "businessworld.in",
+       "confidence_score": 0.85
+      },
+      {
+       "source": "google_news",
+       "article_url": "https://www.sahi.com/news/allcargo-terminals-reports-september-2026-volume-at-61-8-000-teus-down-7-yoy",
+       "article_title": "Allcargo Terminals Reports September 2026 Volume At 61.8 '000 TEUs, Down 7% YoY",
+       "article_publisher_name": "Sahi",
+       "article_publish_date": "2026-10-08",
+       "publisher_domain": "sahi.com",
+       "confidence_score": 0.95
+      },
+      {
+       "source": "google_news",
+       "article_url": "https://scanx.trade/stock-market-news/companies/allcargo-terminals-volume-down-7-yoy-61-8-000-teus-september/52920877",
+       "article_title": "Allcargo Terminals volumes down 7% YoY at 61.8 '000 TEUs in September",
+       "article_publisher_name": "scanx.trade",
+       "article_publish_date": "2026-10-07",
+       "publisher_domain": "scanx.trade",
+       "confidence_score": 0.95
+      },
+      {
+       "source": "google_news",
+       "article_url": "https://newskarnataka.com/business/allcargo-bets-on-ai-to-reach-10-margin-by-fy28/07102026/",
+       "article_title": "Allcargo bets on AI to reach 10% margin by FY28",
+       "article_publisher_name": "News Karnataka",
+       "article_publish_date": "2026-10-07",
+       "publisher_domain": "newskarnataka.com",
+       "confidence_score": 0.95
+      },
+      {
+       "source": "google_news",
+       "article_url": "https://www.siam.in/aticles-market/Allcargo-Logistics-Slips-219-to-1027-Testing-Support-Near-976-62-3598",
+       "article_title": "Allcargo Logistics Slips 2.19% to ₹10.27, Testing Support Near ₹9.76 - Momentum ETF",
+       "article_publisher_name": "www.siam.in",
+       "article_publish_date": "2026-10-07",
+       "publisher_domain": "siam.in",
+       "confidence_score": 0.95
+      },
+      {
+       "source": "google_news",
+       "article_url": "https://www.ndtvprofit.com/business/cracking-10-margin-allcargo-explains-why-ai-is-the-new-playbook-for-indian-logistics-interview-12149191",
+       "article_title": "Cracking 10% Margin: Allcargo Explains Why AI Is The New Playbook For Indian Logistics | Interview",
+       "article_publisher_name": "NDTV Profit",
+       "article_publish_date": "2026-10-07",
+       "publisher_domain": "ndtvprofit.com",
+       "confidence_score": 0.95
+      },
+      {
+       "source": "google_news",
+       "article_url": "https://indiashippingnews.com/company/allcargo-group-targets-3-lakh-plantations-under-maitree-project-to-create-sustainable-livelihoods-for-5000-farmers-in-fy27/",
+       "article_title": "Allcargo Group Targets 3 Lakh Plantations under Maitree Project to Create Sustainable Livelihoods for 5,000 Farmers in FY27",
+       "article_publisher_name": "India Shipping News",
+       "article_publish_date": "2026-10-06",
+       "publisher_domain": "indiashippingnews.com",
+       "confidence_score": 0.95
+      },
+      {
+       "source": "google_news",
+       "article_url": "https://www.newindianexpress.com/business/2026/Oct/04/allcargo-sees-stronger-growth-as-domestic-arm-turnaround-gains-pace",
+       "article_title": "‘Allcargo sees stronger growth as domestic arm turnaround gains pace’",
+       "article_publisher_name": "The New Indian Express",
+       "article_publish_date": "2026-10-04",
+       "publisher_domain": "newindianexpress.com",
+       "confidence_score": 0.95
+      },
+      {
+       "source": "google_news",
+       "article_url": "https://www.fintechbiznews.com/exchanges-stock-exchanges/allcargo-global-starts-trading-on-nse-bse-",
+       "article_title": "Allcargo Global Starts Trading On NSE, BSE",
+       "article_publisher_name": "https://www.fintechbiznews.com/",
+       "article_publish_date": "2026-10-03",
+       "publisher_domain": "fintechbiznews.com",
+       "confidence_score": 0.95
+      },
+      {
+       "source": "google_news",
+       "article_url": "https://hrtoday.in/vijay-nehra-joins-allcargo-logistics-as-chief-transformation-officer-managing-director-designate/",
+       "article_title": "Vijay Nehra Joins Allcargo Logistics as Chief Transformation Officer & Managing Director Designate",
+       "article_publisher_name": "https://hrtoday.in/",
+       "article_publish_date": "2026-10-03",
+       "publisher_domain": "hrtoday.in",
+       "confidence_score": 0.95
+      },
+      {
+       "source": "google_news",
+       "article_url": "https://scanx.trade/stock-market-news/companies/allcargo-global-appoints-essa-al-saleh-ravi-jakhar-additional/52483156",
+       "article_title": "Allcargo Global appoints Essa Al Saleh, Ravi Jakhar as additional directors",
+       "article_publisher_name": "scanx.trade",
+       "article_publish_date": "2026-10-02",
+       "publisher_domain": "scanx.trade",
+       "confidence_score": 0.95
+      },
+      {
+       "source": "google_news",
+       "article_url": "https://www.kalkine.co.in/article/industrials/allcargo-logistics-nse-allcargo-announces-leadership-transition-ahead-of-2027",
+       "article_title": "Allcargo Logistics (NSE: ALLCARGO) Announces Leadership Transition Ahead of 2027",
+       "article_publisher_name": "Kalkine India",
+       "article_publish_date": "2026-09-30",
+       "publisher_domain": "kalkine.co.in",
+       "confidence_score": 0.95
+      },
+      {
+       "source": "google_news",
+       "article_url": "https://themachinemaker.com/news/allcargo-logistics-announces-leadership-transition-to-drive-next-phase-of-growth/",
+       "article_title": "Allcargo Logistics Announces Leadership Transition to Drive Next Phase of Growth",
+       "article_publisher_name": "Machine Maker",
+       "article_publish_date": "2026-09-30",
+       "publisher_domain": "themachinemaker.com",
+       "confidence_score": 0.95
+      },
+      {
+       "source": "google_news",
+       "article_url": "https://www.peoplematters.in/news/leadership/allcargo-logistics-names-vijay-nehra-md-designate-ceo-from-january-2027-52432",
+       "article_title": "Allcargo Logistics names Vijay Nehra MD designate, CEO from January 2027 - People Matters",
+       "article_publisher_name": "People Matters - HR News",
+       "article_publish_date": "2026-09-30",
+       "publisher_domain": "peoplematters.in",
+       "confidence_score": 0.95
+      },
+      {
+       "source": "crunchbase",
+       "article_url": "https://www.tradingview.com/news/moodys:c1e2bd7344b8f:0-20-stocks-to-hog-the-limelight-in-wednesday-s-trade-including-tata-steel-time-technoplast-shiva-cement-jsw-cement-kpi-energy-exide-industries-ganesh-benzoplast-and-power-mech-projects/",
+       "article_title": "20 stocks to hog the limelight in Wednesday’s trade, including Tata Steel, Time Technoplast, Shiva Cement/JSW Cement, KPI Energy, Exide Industries, Ganesh Benzoplast, and Power Mech Projects",
+       "article_publisher_name": "TradingView",
+       "article_publish_date": "2026-09-30",
+       "publisher_domain": null,
+       "confidence_score": null
+      },
+      {
+       "source": "google_news",
+       "article_url": "https://infra.economictimes.indiatimes.com/news/logistics/allcargo-logistics-names-vijay-nehra-as-md-designate-ketan-kulkarni-gets-group-growth-role/134571909",
+       "article_title": "Allcargo Logistics names Vijay Nehra as MD designate; Ketan Kulkarni gets Group growth role",
+       "article_publisher_name": "ET Infra",
+       "article_publish_date": "2026-09-29",
+       "publisher_domain": "indiatimes.com",
+       "confidence_score": 0.95
+      },
+      {
+       "source": "google_news",
+       "article_url": "https://www.businessworld.in/article/allcargo-logistics-names-vijay-nehra-next-ceo-reshuffles-top-leadership-626162",
+       "article_title": "Allcargo Logistics Names Vijay Nehra Next CEO, Reshuffles Top Leadership",
+       "article_publisher_name": "BW Businessworld",
+       "article_publish_date": "2026-09-29",
+       "publisher_domain": "businessworld.in",
+       "confidence_score": 0.95
+      },
+      {
+       "source": "google_news",
+       "article_url": "https://www.equitybulls.com/category.php?id=375994",
+       "article_title": "Allcargo Logistics announces strategic leadership transition as Allcargo Group enters next phase of growth",
+       "article_publisher_name": "EquityBulls",
+       "article_publish_date": "2026-09-29",
+       "publisher_domain": "equitybulls.com",
+       "confidence_score": 0.95
+      },
+      {
+       "source": "google_news",
+       "article_url": "https://www.moneycontrol.com/news/business/price-action-allcargo-logistics-sheds-2-on-md-ceo-resignation-ola-electric-down-4-as-hsbc-maintains-reduce-14040499.html",
+       "article_title": "Price Action: Allcargo Logistics sheds 2% on MD, CEO resignation; Ola Electric down 4% as HSBC maintains...",
+       "article_publisher_name": "Moneycontrol.com",
+       "article_publish_date": "2026-09-29",
+       "publisher_domain": "moneycontrol.com",
+       "confidence_score": 0.85
+      },
+      {
+       "source": "google_news",
+       "article_url": "https://www.ndtvprofit.com/business/allcargo-logistics-appoints-vijay-nehra-as-managing-director-ceo-12116785",
+       "article_title": "Allcargo Logistics Appoints Vijay Nehra As Managing Director & CEO",
+       "article_publisher_name": "NDTV Profit",
+       "article_publish_date": "2026-09-29",
+       "publisher_domain": "ndtvprofit.com",
+       "confidence_score": 0.95
+      },
+      {
+       "source": "google_news",
+       "article_url": "https://www.sahi.com/news/allcargo-logistics-appoints-vijay-nehra-chief-transformation-officer-and-md-designate",
+       "article_title": "Allcargo Logistics Appoints Vijay Nehra Chief Transformation Officer And MD Designate",
+       "article_publisher_name": "Sahi",
+       "article_publish_date": "2026-09-29",
+       "publisher_domain": "sahi.com",
+       "confidence_score": 0.95
+      },
+      {
+       "source": "google_news",
+       "article_url": "https://univest.in/blogs/bls-international-vs-allcargo-terminals-vs-aegis-vopak",
+       "article_title": "BLS International vs Allcargo Terminals vs Aegis Vopak: Which Stock Should You Track",
+       "article_publisher_name": "Univest",
+       "article_publish_date": "2026-09-29",
+       "publisher_domain": "univest.in",
+       "confidence_score": 0.85
+      },
+      {
+       "source": "google_news",
+       "article_url": "https://whispersinthecorridors.net/news/allcargo-logistics-names-vijay-nehra-md-ceo-designate-ketan-kulkarni-to-take-group-role",
+       "article_title": "Allcargo Logistics names Vijay Nehra MD & CEO designate; Ketan Kulkarni to take group role",
+       "article_publisher_name": "https://whispersinthecorridors.net/",
+       "article_publish_date": "2026-09-29",
+       "publisher_domain": "whispersinthecorridors.net",
+       "confidence_score": 0.95
+      },
+      {
+       "source": "google_news",
+       "article_url": "https://www.marketscreener.com/news/allcargo-logistics-limited-announces-resignation-of-ketan-kulkarni-as-chief-executive-officer-effec-ce785ddbdc8df72d",
+       "article_title": "Allcargo Logistics Limited Announces Resignation of Ketan Kulkarni as Chief Executive Officer, Effective December 31, 2026",
+       "article_publisher_name": "www.marketscreener.com",
+       "article_publish_date": "2026-09-28",
+       "publisher_domain": "marketscreener.com",
+       "confidence_score": 1.0
+      },
+      {
+       "source": "google_news",
+       "article_url": "https://www.marketscreener.com/news/allcargo-logistics-limited-announces-management-changes-ce785ddbdc8bf124",
+       "article_title": "Allcargo Logistics Limited Announces Management Changes",
+       "article_publisher_name": "www.marketscreener.com",
+       "article_publish_date": "2026-09-28",
+       "publisher_domain": "marketscreener.com",
+       "confidence_score": 0.95
+      },
+      {
+       "source": "google_news",
+       "article_url": "https://www.cnbctv18.com/business/companies/allcargo-logistics-ceo-ketan-kulkarni-to-step-down-move-to-chief-growth-officer-role-20000209.htm",
+       "article_title": "Allcargo Logistics CEO Ketan Kulkarni to step down, move to Chief Growth Officer role",
+       "article_publisher_name": "CNBC TV18",
+       "article_publish_date": "2026-09-28",
+       "publisher_domain": "cnbctv18.com",
+       "confidence_score": 0.95
+      },
+      {
+       "source": "google_news",
+       "article_url": "https://www.kalkine.co.in/article/industrials/allcargo-logistics-limited-nse-allcargo-highlights-fy26-performance-with-domestic-logistics-focus-after-restructuring",
+       "article_title": "Allcargo Logistics Limited (NSE: ALLCARGO) FY26 Revenue and EBITDA Performance Updates After Restructuring",
+       "article_publisher_name": "Kalkine India",
+       "article_publish_date": "2026-09-26",
+       "publisher_domain": "kalkine.co.in",
+       "confidence_score": 0.95
+      },
+      {
+       "source": "google_news",
+       "article_url": "https://www.sahi.com/news/allcargo-logistics-agm-highlights-fy26-revenue-of-2-058-crore-with-16-ebitda-rise",
+       "article_title": "Allcargo Logistics AGM Highlights FY26 Revenue Of ₹2,058 Crore With 16% EBITDA Rise",
+       "article_publisher_name": "Sahi",
+       "article_publish_date": "2026-09-25",
+       "publisher_domain": "sahi.com",
+       "confidence_score": 0.95
+      },
+      {
+       "source": "google_news",
+       "article_url": "https://scanx.trade/stock-market-news/companies/allcargo-logistics-invests-1-77-lakh-associate-allcargo-group-services/51789178",
+       "article_title": "Allcargo Logistics invests ₹1.77 lakh in associate Allcargo Group Services",
+       "article_publisher_name": "scanx.trade",
+       "article_publish_date": "2026-09-24",
+       "publisher_domain": "scanx.trade",
+       "confidence_score": 0.95
+      },
+      {
+       "source": "google_news",
+       "article_url": "https://www.freepressjournal.in/business/allcargo-logistics-invests-176-lakh-in-associate-allcargo-group-services",
+       "article_title": "Allcargo Logistics Invests ₹1.76 Lakh In Associate Allcargo Group Services",
+       "article_publisher_name": "Free Press Journal",
+       "article_publish_date": "2026-09-24",
+       "publisher_domain": "freepressjournal.in",
+       "confidence_score": 0.95
+      },
+      {
+       "source": "google_news",
+       "article_url": "https://scanx.trade/stock-market-news/companies/allcargo-logistics-fy26-results-ebitda-up-16-233-crore/51797324",
+       "article_title": "Allcargo Logistics FY26 Results: EBITDA up 16% to ₹233 crore",
+       "article_publisher_name": "scanx.trade",
+       "article_publish_date": "2026-09-24",
+       "publisher_domain": "scanx.trade",
+       "confidence_score": 0.95
+      },
+      {
+       "source": "google_news",
+       "article_url": "https://www.etnownews.com/videos/shows/all-about-your-company/all-cargo-global-discusses-restructuring-and-future-growth-strategies-video-156202017",
+       "article_title": "Allcargo Global FY27 Outlook: Sluggish Volumes, But Profitability To Hold Up | Ravi Jakhar",
+       "article_publisher_name": "ET Now",
+       "article_publish_date": "2026-09-22",
+       "publisher_domain": "etnownews.com",
+       "confidence_score": 0.95
+      },
+      {
+       "source": "google_news",
+       "article_url": "https://scanx.trade/stock-market-news/companies/allcargo-terminals-volumes-up-6-yoy-65-6-000-teus-august/51625437",
+       "article_title": "Allcargo Terminals volumes up 6% YoY to 65.6 '000 TEUs in August",
+       "article_publisher_name": "scanx.trade",
+       "article_publish_date": "2026-09-22",
+       "publisher_domain": "scanx.trade",
+       "confidence_score": 0.9
+      },
+      {
+       "source": "google_news",
+       "article_url": "https://www.cnbctv18.com/business/companies/allcargo-shipping-volumes-fall-as-company-cuts-loss-making-routes-19995129.htm",
+       "article_title": "Allcargo shipping volumes fall as company cuts loss-making routes",
+       "article_publisher_name": "CNBC TV18",
+       "article_publish_date": "2026-09-21",
+       "publisher_domain": "cnbctv18.com",
+       "confidence_score": 0.9
+      },
+      {
+       "source": "google_news",
+       "article_url": "https://univest.in/blogs/allcargo-terminals-best-stock-in-its-sector",
+       "article_title": "Allcargo Terminals: Best Stock in Its Sector? Key Metrics",
+       "article_publisher_name": "Univest",
+       "article_publish_date": "2026-09-18",
+       "publisher_domain": "univest.in",
+       "confidence_score": 0.85
+      },
+      {
+       "source": "google_news",
+       "article_url": "https://scanx.trade/stock-market-news/companies/allcargo-logistics-hosts-virtual-investor-meeting-september-21/51105659",
+       "article_title": "Allcargo Logistics hosts virtual investor meeting on September 21",
+       "article_publisher_name": "scanx.trade",
+       "article_publish_date": "2026-09-16",
+       "publisher_domain": "scanx.trade",
+       "confidence_score": 0.95
+      },
+      {
+       "source": "google_news",
+       "article_url": "https://scanx.trade/stock-market-news/companies/allcargo-logistics-shareholders-approve-all-four-resolutions-33rd-agm/51116446",
+       "article_title": "Allcargo Logistics shareholders approve all four resolutions at 33rd AGM",
+       "article_publisher_name": "scanx.trade",
+       "article_publish_date": "2026-09-16",
+       "publisher_domain": "scanx.trade",
+       "confidence_score": 0.95
+      },
+      {
+       "source": "google_news",
+       "article_url": "https://www.maritimegateway.com/allcargo-textile-logistics/",
+       "article_title": "Allcargo Expands Textile Logistics Network",
+       "article_publisher_name": "Maritime Gateway",
+       "article_publish_date": "2026-09-10",
+       "publisher_domain": "maritimegateway.com",
+       "confidence_score": 0.9
+      },
+      {
+       "source": "google_news",
+       "article_url": "https://www.manufacturingtodayindia.com/allcargo-logistics-textile-msme",
+       "article_title": "Allcargo Logistics strengthens textile MSME supply chains across India",
+       "article_publisher_name": "Manufacturing Today India",
+       "article_publish_date": "2026-09-09",
+       "publisher_domain": "manufacturingtodayindia.com",
+       "confidence_score": 0.95
+      },
+      {
+       "source": "google_news",
+       "article_url": "https://univest.in/blogs/allcargo-logistics-q2-results-fy27-preview-date-expectations",
+       "article_title": "Allcargo Logistics Q2 Results FY27: Date and Outlook",
+       "article_publisher_name": "Univest",
+       "article_publish_date": "2026-09-08",
+       "publisher_domain": "univest.in",
+       "confidence_score": 0.95
+      },
+      {
+       "source": "google_news",
+       "article_url": "https://univest.in/blogs/why-allcargo-global-ltd-share-price-rise-today-2026",
+       "article_title": "Allcargo Global Ltd. Share Price Today: Price and Valuation",
+       "article_publisher_name": "Univest",
+       "article_publish_date": "2026-09-08",
+       "publisher_domain": "univest.in",
+       "confidence_score": 0.85
+      },
+      {
+       "source": "google_news",
+       "article_url": "https://univest.in/blogs/allcargo-terminals-share-price-buy-hold-or-sell",
+       "article_title": "Allcargo Terminals Share Price: Buy or Sell",
+       "article_publisher_name": "Univest",
+       "article_publish_date": "2026-09-07",
+       "publisher_domain": "univest.in",
+       "confidence_score": 0.95
+      },
+      {
+       "source": "crunchbase",
+       "article_url": "https://economictimes.indiatimes.com/markets/stocks/news/buying-the-smallcap-rally-bear-markets-biggest-losers-crash-further-in-2026-after-falling-up-to-80/articleshow/133862989.cms",
+       "article_title": "Buying the smallcap rally? Bear market’s biggest losers crash further in 2026 after falling up to 80%",
+       "article_publisher_name": "IndiaTimes",
+       "article_publish_date": "2026-09-07",
+       "publisher_domain": null,
+       "confidence_score": null
+      },
+      {
+       "source": "google_news",
+       "article_url": "https://www.hrkatha.com/people/movement/dalbir-singh-nanua-to-head-ta-at-allcargo-global/",
+       "article_title": "Dalbir Singh Nanua to head TA at Allcargo Global",
+       "article_publisher_name": "HR Katha",
+       "article_publish_date": "2026-09-04",
+       "publisher_domain": "hrkatha.com",
+       "confidence_score": 0.95
+      },
+      {
+       "source": "google_news",
+       "article_url": "https://www.valueresearchonline.com/stocks/40974/allcargo-logistics-ltd/key-ratios/",
+       "article_title": "Allcargo Logistics Ltd. Key Financial Ratios – Valuation, Profitability & More",
+       "article_publisher_name": "Value Research",
+       "article_publish_date": "2026-09-02",
+       "publisher_domain": "valueresearchonline.com",
+       "confidence_score": 0.95
+      },
+      {
+       "source": "google_news",
+       "article_url": "https://www.valueresearchonline.com/stocks/40974/allcargo-logistics-ltd/peer-comparison/",
+       "article_title": "Allcargo Logistics Ltd. Peer Comparison – Compare with Others",
+       "article_publisher_name": "Value Research",
+       "article_publish_date": "2026-09-01",
+       "publisher_domain": "valueresearchonline.com",
+       "confidence_score": 0.95
+      },
+      {
+       "source": "google_news",
+       "article_url": "https://manufacturing.economictimes.indiatimes.com/news/industry/allcargo-terminals-appoints-pranav-choudhary-as-managing-director/133666525",
+       "article_title": "Allcargo Terminals appoints Pranav Choudhary as Managing Director",
+       "article_publisher_name": "ET Manufacturing",
+       "article_publish_date": "2026-09-01",
+       "publisher_domain": "indiatimes.com",
+       "confidence_score": 0.95
+      },
+      {
+       "source": "google_news",
+       "article_url": "https://www.thehindubusinessline.com/economy/logistics/pranav-choudhary-appointed-md-of-allcargo-terminals/article71409912.ece",
+       "article_title": "Pranav Choudhary appointed MD of Allcargo Terminals",
+       "article_publisher_name": "BusinessLine",
+       "article_publish_date": "2026-08-31",
+       "publisher_domain": "thehindubusinessline.com",
+       "confidence_score": 0.95
+      },
+      {
+       "source": "google_news",
+       "article_url": "https://www.businessworld.in/article/pranav-choudhary-to-take-charge-as-allcargo-terminals-md-621555",
+       "article_title": "Pranav Choudhary To Take Charge As Allcargo Terminals MD",
+       "article_publisher_name": "BW Businessworld",
+       "article_publish_date": "2026-08-31",
+       "publisher_domain": "businessworld.in",
+       "confidence_score": 0.95
+      },
+      {
+       "source": "google_news",
+       "article_url": "https://upstox.com/news/market-news/stocks/allcargo-global-shares-drop-2-as-west-asia-crisis-impacts-container-volumes-what-investors-should-know/article-199420/",
+       "article_title": "Allcargo Global shares drop 2% as West Asia crisis impacts container volumes; what investors should know",
+       "article_publisher_name": "Upstox",
+       "article_publish_date": "2026-08-28",
+       "publisher_domain": "upstox.com",
+       "confidence_score": 0.95
+      },
+      {
+       "source": "google_news",
+       "article_url": "https://manufacturing.economictimes.indiatimes.com/news/industry/allcargo-logistics-to-scale-workforce-by-20-to-meet-festive-season-retail-demand/133534150",
+       "article_title": "Allcargo Logistics to scale workforce by 20% to meet festive-season retail demand",
+       "article_publisher_name": "ET Manufacturing",
+       "article_publish_date": "2026-08-26",
+       "publisher_domain": "indiatimes.com",
+       "confidence_score": 0.95
+      },
+      {
+       "source": "google_news",
+       "article_url": "https://m.economictimes.com/news/company/corporate-trends/allcargo-logistics-scales-up-its-blue-collar-workforce-to-cater-to-festive-demand/articleshow/133535859.cms",
+       "article_title": "Allcargo Logistics scales up its blue-collar workforce to cater to festive demand",
+       "article_publisher_name": "The Economic Times",
+       "article_publish_date": "2026-08-26",
+       "publisher_domain": "economictimes.com",
+       "confidence_score": 0.95
+      }
+     ]
+    }
+   }
+  ]
+ }
+]

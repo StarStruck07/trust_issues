@@ -1,0 +1,37 @@
+[
+ {
+  "matched_on": "vrlgroup.in",
+  "match_type": "domain",
+  "matches": [
+   {
+    "confidence_score": 1.0,
+    "company_data": {
+     "crustdata_company_id": 1975388,
+     "basic_info": {
+      "name": "VRL LOGISTICS LTD",
+      "crustdata_company_id": 1975388,
+      "primary_domain": "vrlgroup.in",
+      "all_domains": [
+       "vrlgroup.in",
+       "vrllogistics.com"
+      ],
+      "website": "http://www.vrllogistics.com",
+      "professional_network_url": "https://www.linkedin.com/company/vrl-logistics-ltd",
+      "professional_network_id": "92635355",
+      "profile_name": "VRL LOGISTICS LTD",
+      "logo_permalink": "https://crustdata-media.s3.us-east-2.amazonaws.com/company/429eca52f433e6dfd02de78dcf8dbacfbc74fd9b1693583754fea1a7283773d1.jpg",
+      "description": "Founded in 1976, VRL is public listed company on NSE & BSE Exchange with a Market capitalization of INR 55.89 billion (as on 31.03.2023), we grown into a nationally renowned logistics and transport company which is also currently the largest fleet owner of commercial vehicles in India. VRL has pioneered in providing a safe and reliable logistics network in the field of parcel service, ensuring last mile delivery even in remote locations. We integrated hub-and-spoke operating model which enables optimal aggregation of consignments from a diversified customer base across multiple industries and locations",
+      "company_type": "Public Company",
+      "year_founded": 1976,
+      "employee_count_range": "10001+",
+      "markets": [],
+      "industries": [
+       "Transportation, Logistics, Supply Chain and Storage"
+      ]
+     },
+     "social_profiles": null
+    }
+   }
+  ]
+ }
+]

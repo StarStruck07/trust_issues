@@ -1,0 +1,4798 @@
+[
+ {
+  "matched_on": "6812839",
+  "match_type": "crustdata_company_id",
+  "matches": [
+   {
+    "confidence_score": 1.0,
+    "company_data": {
+     "crustdata_company_id": 6812839,
+     "basic_info": {
+      "name": "Container Corporation of India Ltd",
+      "crustdata_company_id": 6812839,
+      "primary_domain": "concorindia.co.in",
+      "all_domains": [
+       "concorindia.co.in"
+      ],
+      "website": "http://www.concorindia.co.in",
+      "professional_network_url": "https://www.linkedin.com/company/concorindia",
+      "professional_network_id": "97859415",
+      "profile_name": "Container Corporation of India Ltd",
+      "logo_permalink": "https://crustdata-media.s3.us-east-2.amazonaws.com/company/c2bb2ad988364f22f91ce2fd147b03b88e3da6fa39c6f6083c4b1f7360a2427f.jpg",
+      "description": "Container Corporation of India Ltd. is an undisputed market leader having the largest network of 67 ICDS/CFSs in India . In addition to providing inland transport by rail for containers, it has also expanded to cover management of Ports, air cargo complexes and establishing cold-chain. It has and will continue to play the role of promoting containerization in India by virtue of its modern rail wagon fleet, customer friendly commercial practices and extensively used Information Technology. The company developed multimodal logistics support for India's International and Domestic containerization and trade. Though rail is the main stay of our transportation plan, road services and also provided to cater to the need of door-to-door services, whether in the International or Domestic business.",
+      "company_type": "Government Agency",
+      "status": "active",
+      "year_founded": 1989,
+      "employee_count_range": "1001-5000",
+      "markets": [
+       "PRIVATE"
+      ]
+     },
+     "headcount": {
+      "total": 149,
+      "largest_headcount_country": "IND",
+      "timeseries": [
+       {
+        "date": "2023-05-29",
+        "employee_count": 34
+       },
+       {
+        "date": "2023-06-05",
+        "employee_count": 34
+       },
+       {
+        "date": "2023-06-12",
+        "employee_count": 34
+       },
+       {
+        "date": "2023-06-19",
+        "employee_count": 34
+       },
+       {
+        "date": "2023-06-26",
+        "employee_count": 34
+       },
+       {
+        "date": "2023-07-03",
+        "employee_count": 34
+       },
+       {
+        "date": "2023-07-10",
+        "employee_count": 34
+       },
+       {
+        "date": "2023-07-17",
+        "employee_count": 34
+       },
+       {
+        "date": "2023-07-24",
+        "employee_count": 34
+       },
+       {
+        "date": "2023-07-31",
+        "employee_count": 32
+       },
+       {
+        "date": "2023-08-07",
+        "employee_count": 32
+       },
+       {
+        "date": "2023-08-14",
+        "employee_count": 32
+       },
+       {
+        "date": "2023-08-21",
+        "employee_count": 32
+       },
+       {
+        "date": "2023-08-28",
+        "employee_count": 33
+       },
+       {
+        "date": "2023-09-04",
+        "employee_count": 33
+       },
+       {
+        "date": "2023-09-11",
+        "employee_count": 33
+       },
+       {
+        "date": "2023-09-18",
+        "employee_count": 33
+       },
+       {
+        "date": "2023-09-25",
+        "employee_count": 34
+       },
+       {
+        "date": "2023-10-02",
+        "employee_count": 40
+       },
+       {
+        "date": "2023-10-09",
+        "employee_count": 40
+       },
+       {
+        "date": "2023-10-16",
+        "employee_count": 40
+       },
+       {
+        "date": "2023-10-23",
+        "employee_count": 40
+       },
+       {
+        "date": "2023-10-30",
+        "employee_count": 40
+       },
+       {
+        "date": "2023-11-06",
+        "employee_count": 40
+       },
+       {
+        "date": "2023-11-13",
+        "employee_count": 40
+       },
+       {
+        "date": "2023-11-20",
+        "employee_count": 40
+       },
+       {
+        "date": "2023-11-27",
+        "employee_count": 40
+       },
+       {
+        "date": "2023-12-04",
+        "employee_count": 41
+       },
+       {
+        "date": "2023-12-11",
+        "employee_count": 41
+       },
+       {
+        "date": "2023-12-18",
+        "employee_count": 41
+       },
+       {
+        "date": "2023-12-25",
+        "employee_count": 41
+       },
+       {
+        "date": "2024-01-01",
+        "employee_count": 43
+       },
+       {
+        "date": "2024-01-08",
+        "employee_count": 43
+       },
+       {
+        "date": "2024-01-15",
+        "employee_count": 43
+       },
+       {
+        "date": "2024-01-22",
+        "employee_count": 43
+       },
+       {
+        "date": "2024-01-29",
+        "employee_count": 43
+       },
+       {
+        "date": "2024-02-05",
+        "employee_count": 44
+       },
+       {
+        "date": "2024-02-12",
+        "employee_count": 44
+       },
+       {
+        "date": "2024-02-19",
+        "employee_count": 44
+       },
+       {
+        "date": "2024-02-26",
+        "employee_count": 44
+       },
+       {
+        "date": "2024-03-04",
+        "employee_count": 45
+       },
+       {
+        "date": "2024-03-11",
+        "employee_count": 45
+       },
+       {
+        "date": "2024-03-18",
+        "employee_count": 45
+       },
+       {
+        "date": "2024-03-25",
+        "employee_count": 45
+       },
+       {
+        "date": "2024-04-01",
+        "employee_count": 49
+       },
+       {
+        "date": "2024-04-08",
+        "employee_count": 49
+       },
+       {
+        "date": "2024-04-15",
+        "employee_count": 49
+       },
+       {
+        "date": "2024-04-22",
+        "employee_count": 49
+       },
+       {
+        "date": "2024-04-29",
+        "employee_count": 49
+       },
+       {
+        "date": "2024-05-06",
+        "employee_count": 66
+       },
+       {
+        "date": "2024-05-13",
+        "employee_count": 66
+       },
+       {
+        "date": "2024-05-20",
+        "employee_count": 66
+       },
+       {
+        "date": "2024-05-27",
+        "employee_count": 66
+       },
+       {
+        "date": "2024-06-03",
+        "employee_count": 75
+       },
+       {
+        "date": "2024-06-10",
+        "employee_count": 75
+       },
+       {
+        "date": "2024-06-17",
+        "employee_count": 75
+       },
+       {
+        "date": "2024-06-24",
+        "employee_count": 75
+       },
+       {
+        "date": "2024-07-01",
+        "employee_count": 77
+       },
+       {
+        "date": "2024-07-08",
+        "employee_count": 77
+       },
+       {
+        "date": "2024-07-15",
+        "employee_count": 77
+       },
+       {
+        "date": "2024-07-22",
+        "employee_count": 77
+       },
+       {
+        "date": "2024-07-29",
+        "employee_count": 77
+       },
+       {
+        "date": "2024-08-05",
+        "employee_count": 72
+       },
+       {
+        "date": "2024-08-12",
+        "employee_count": 72
+       },
+       {
+        "date": "2024-08-19",
+        "employee_count": 72
+       },
+       {
+        "date": "2024-08-26",
+        "employee_count": 72
+       },
+       {
+        "date": "2024-09-02",
+        "employee_count": 77
+       },
+       {
+        "date": "2024-09-09",
+        "employee_count": 77
+       },
+       {
+        "date": "2024-09-16",
+        "employee_count": 77
+       },
+       {
+        "date": "2024-09-23",
+        "employee_count": 77
+       },
+       {
+        "date": "2024-09-30",
+        "employee_count": 77
+       },
+       {
+        "date": "2024-10-07",
+        "employee_count": 78
+       },
+       {
+        "date": "2024-10-14",
+        "employee_count": 78
+       },
+       {
+        "date": "2024-10-21",
+        "employee_count": 78
+       },
+       {
+        "date": "2024-10-28",
+        "employee_count": 78
+       },
+       {
+        "date": "2024-11-04",
+        "employee_count": 82
+       },
+       {
+        "date": "2024-11-11",
+        "employee_count": 82
+       },
+       {
+        "date": "2024-11-18",
+        "employee_count": 82
+       },
+       {
+        "date": "2024-11-25",
+        "employee_count": 82
+       },
+       {
+        "date": "2024-12-02",
+        "employee_count": 88
+       },
+       {
+        "date": "2024-12-09",
+        "employee_count": 88
+       },
+       {
+        "date": "2024-12-16",
+        "employee_count": 88
+       },
+       {
+        "date": "2024-12-23",
+        "employee_count": 88
+       },
+       {
+        "date": "2024-12-30",
+        "employee_count": 88
+       },
+       {
+        "date": "2025-01-06",
+        "employee_count": 92
+       },
+       {
+        "date": "2025-01-13",
+        "employee_count": 92
+       },
+       {
+        "date": "2025-01-20",
+        "employee_count": 92
+       },
+       {
+        "date": "2025-01-27",
+        "employee_count": 92
+       },
+       {
+        "date": "2025-02-03",
+        "employee_count": 94
+       },
+       {
+        "date": "2025-02-10",
+        "employee_count": 94
+       },
+       {
+        "date": "2025-02-17",
+        "employee_count": 94
+       },
+       {
+        "date": "2025-02-24",
+        "employee_count": 94
+       },
+       {
+        "date": "2025-03-03",
+        "employee_count": 94
+       },
+       {
+        "date": "2025-03-10",
+        "employee_count": 94
+       },
+       {
+        "date": "2025-03-17",
+        "employee_count": 94
+       },
+       {
+        "date": "2025-03-24",
+        "employee_count": 94
+       },
+       {
+        "date": "2025-03-31",
+        "employee_count": 94
+       },
+       {
+        "date": "2025-04-07",
+        "employee_count": 96
+       },
+       {
+        "date": "2025-04-14",
+        "employee_count": 96
+       },
+       {
+        "date": "2025-04-21",
+        "employee_count": 96
+       },
+       {
+        "date": "2025-04-28",
+        "employee_count": 96
+       },
+       {
+        "date": "2025-05-05",
+        "employee_count": 99
+       },
+       {
+        "date": "2025-05-12",
+        "employee_count": 99
+       },
+       {
+        "date": "2025-05-19",
+        "employee_count": 99
+       },
+       {
+        "date": "2025-05-26",
+        "employee_count": 99
+       },
+       {
+        "date": "2025-06-02",
+        "employee_count": 107
+       },
+       {
+        "date": "2025-06-09",
+        "employee_count": 107
+       },
+       {
+        "date": "2025-06-16",
+        "employee_count": 107
+       },
+       {
+        "date": "2025-06-23",
+        "employee_count": 107
+       },
+       {
+        "date": "2025-06-30",
+        "employee_count": 107
+       },
+       {
+        "date": "2025-07-07",
+        "employee_count": 108
+       },
+       {
+        "date": "2025-07-14",
+        "employee_count": 108
+       },
+       {
+        "date": "2025-07-21",
+        "employee_count": 108
+       },
+       {
+        "date": "2025-07-28",
+        "employee_count": 108
+       },
+       {
+        "date": "2025-08-04",
+        "employee_count": 106
+       },
+       {
+        "date": "2025-08-11",
+        "employee_count": 106
+       },
+       {
+        "date": "2025-08-18",
+        "employee_count": 106
+       },
+       {
+        "date": "2025-08-25",
+        "employee_count": 106
+       },
+       {
+        "date": "2025-09-01",
+        "employee_count": 108
+       },
+       {
+        "date": "2025-09-08",
+        "employee_count": 108
+       },
+       {
+        "date": "2025-09-15",
+        "employee_count": 108
+       },
+       {
+        "date": "2025-09-22",
+        "employee_count": 108
+       },
+       {
+        "date": "2025-09-29",
+        "employee_count": 108
+       },
+       {
+        "date": "2025-10-06",
+        "employee_count": 110
+       },
+       {
+        "date": "2025-10-13",
+        "employee_count": 110
+       },
+       {
+        "date": "2025-10-20",
+        "employee_count": 110
+       },
+       {
+        "date": "2025-10-27",
+        "employee_count": 110
+       },
+       {
+        "date": "2025-11-03",
+        "employee_count": 119
+       },
+       {
+        "date": "2025-11-10",
+        "employee_count": 119
+       },
+       {
+        "date": "2025-11-17",
+        "employee_count": 119
+       },
+       {
+        "date": "2025-11-24",
+        "employee_count": 119
+       },
+       {
+        "date": "2025-12-01",
+        "employee_count": 120
+       },
+       {
+        "date": "2025-12-08",
+        "employee_count": 120
+       },
+       {
+        "date": "2025-12-15",
+        "employee_count": 120
+       },
+       {
+        "date": "2025-12-22",
+        "employee_count": 120
+       },
+       {
+        "date": "2025-12-29",
+        "employee_count": 120
+       },
+       {
+        "date": "2026-01-05",
+        "employee_count": 123
+       },
+       {
+        "date": "2026-01-12",
+        "employee_count": 123
+       },
+       {
+        "date": "2026-01-19",
+        "employee_count": 123
+       },
+       {
+        "date": "2026-01-26",
+        "employee_count": 123
+       },
+       {
+        "date": "2026-02-02",
+        "employee_count": 123
+       },
+       {
+        "date": "2026-02-09",
+        "employee_count": 123
+       },
+       {
+        "date": "2026-02-16",
+        "employee_count": 123
+       },
+       {
+        "date": "2026-02-23",
+        "employee_count": 123
+       },
+       {
+        "date": "2026-03-02",
+        "employee_count": 122
+       },
+       {
+        "date": "2026-03-09",
+        "employee_count": 122
+       },
+       {
+        "date": "2026-03-16",
+        "employee_count": 122
+       },
+       {
+        "date": "2026-03-23",
+        "employee_count": 122
+       },
+       {
+        "date": "2026-03-30",
+        "employee_count": 122
+       },
+       {
+        "date": "2026-04-06",
+        "employee_count": 131
+       },
+       {
+        "date": "2026-04-13",
+        "employee_count": 131
+       },
+       {
+        "date": "2026-04-20",
+        "employee_count": 131
+       },
+       {
+        "date": "2026-04-27",
+        "employee_count": 131
+       },
+       {
+        "date": "2026-05-04",
+        "employee_count": 142
+       },
+       {
+        "date": "2026-05-11",
+        "employee_count": 142
+       },
+       {
+        "date": "2026-05-18",
+        "employee_count": 142
+       },
+       {
+        "date": "2026-05-25",
+        "employee_count": 142
+       },
+       {
+        "date": "2026-06-01",
+        "employee_count": 150
+       },
+       {
+        "date": "2026-06-08",
+        "employee_count": 150
+       },
+       {
+        "date": "2026-06-15",
+        "employee_count": 150
+       },
+       {
+        "date": "2026-06-22",
+        "employee_count": 150
+       },
+       {
+        "date": "2026-06-29",
+        "employee_count": 150
+       },
+       {
+        "date": "2026-07-06",
+        "employee_count": 147
+       },
+       {
+        "date": "2026-07-13",
+        "employee_count": 147
+       },
+       {
+        "date": "2026-07-20",
+        "employee_count": 147
+       },
+       {
+        "date": "2026-07-27",
+        "employee_count": 147
+       },
+       {
+        "date": "2026-08-03",
+        "employee_count": 147
+       },
+       {
+        "date": "2026-08-10",
+        "employee_count": 147
+       },
+       {
+        "date": "2026-08-17",
+        "employee_count": 147
+       },
+       {
+        "date": "2026-08-24",
+        "employee_count": 147
+       },
+       {
+        "date": "2026-08-31",
+        "employee_count": 147
+       },
+       {
+        "date": "2026-09-21",
+        "employee_count": 149
+       },
+       {
+        "date": "2026-11-02",
+        "employee_count": 149
+       }
+      ],
+      "growth_percent": {
+       "mom": 0.0,
+       "qoq": 1.3605442176870748,
+       "six_months": 13.740458015267176,
+       "two_years": 91.02564102564102,
+       "yoy": 35.45454545454545
+      },
+      "growth_absolute": {
+       "mom": 0,
+       "qoq": 2,
+       "six_months": 18,
+       "two_years": 71,
+       "yoy": 39
+      },
+      "by_role_absolute": {
+       "Administrative": 4,
+       "Business Development": 21,
+       "Education": 6,
+       "Finance": 5,
+       "Information Technology": 10,
+       "Military and Protective Services": 8,
+       "Operations": 51
+      },
+      "by_role_percent": {
+       "Administrative": 2.684563758389262,
+       "Business Development": 14.093959731543624,
+       "Education": 4.026845637583892,
+       "Finance": 3.3557046979865772,
+       "Information Technology": 6.7114093959731544,
+       "Military and Protective Services": 5.369127516778524,
+       "Operations": 34.22818791946309
+      },
+      "by_role_growth_6m_pct": {
+       "Administrative": 0.0,
+       "Business Development": 23.52941176470588,
+       "Consulting": 0.0,
+       "Customer Success and Support": 0.0,
+       "Education": 200.0,
+       "Engineering": 100.0,
+       "Finance": 25.0,
+       "Human Resources": -50.0,
+       "Information Technology": 11.11111111111111,
+       "Legal": 0.0,
+       "Marketing": -50.0,
+       "Media and Communication": 0.0,
+       "Military and Protective Services": 60.0,
+       "Operations": 15.909090909090908,
+       "Real Estate": 0.0,
+       "Research": 0.0,
+       "Sales": 100.0
+      },
+      "by_role_growth_yoy_pct": {
+       "Administrative": 33.33333333333333,
+       "Business Development": 16.666666666666664,
+       "Consulting": 0.0,
+       "Customer Success and Support": 0.0,
+       "Education": 200.0,
+       "Engineering": -33.33333333333333,
+       "Finance": 25.0,
+       "Human Resources": 0.0,
+       "Information Technology": 42.857142857142854,
+       "Legal": 100.0,
+       "Marketing": 0.0,
+       "Media and Communication": 0.0,
+       "Military and Protective Services": 33.33333333333333,
+       "Operations": 50.0,
+       "Real Estate": 0.0,
+       "Research": 0.0,
+       "Sales": 100.0
+      },
+      "by_region_absolute": {
+       "Chennai": 8,
+       "Delhi, India": 56,
+       "Greater Chennai Area": 8,
+       "Greater Delhi Area": 63,
+       "Greater Hyderabad Area": 6,
+       "Gujarat, India": 7,
+       "Haryana, India": 12,
+       "Hyderabad": 6,
+       "India": 148,
+       "Maharashtra, India": 8,
+       "New Delhi": 49,
+       "Rajasthan, India": 6,
+       "Tamil Nadu, India": 10,
+       "Telangana, India": 6,
+       "Uttar Pradesh, India": 18
+      },
+      "by_region_percent": {
+       "Chennai": 5.369127516778524,
+       "Delhi, India": 37.58389261744966,
+       "Greater Chennai Area": 5.369127516778524,
+       "Greater Delhi Area": 42.281879194630875,
+       "Greater Hyderabad Area": 4.026845637583892,
+       "Gujarat, India": 4.697986577181208,
+       "Haryana, India": 8.053691275167784,
+       "Hyderabad": 4.026845637583892,
+       "India": 99.32885906040269,
+       "Maharashtra, India": 5.369127516778524,
+       "New Delhi": 32.88590604026846,
+       "Rajasthan, India": 4.026845637583892,
+       "Tamil Nadu, India": 6.7114093959731544,
+       "Telangana, India": 4.026845637583892,
+       "Uttar Pradesh, India": 12.080536912751679
+      },
+      "by_skill_absolute": {
+       "Accounting": 11,
+       "Analytical Skills": 9,
+       "Communication": 13,
+       "Container Shipping": 4,
+       "Customer Service": 6,
+       "Data Analysis": 7,
+       "English": 6,
+       "Finance": 7,
+       "Financial Analysis": 9,
+       "Leadership": 9,
+       "Logistics Management": 15,
+       "Management": 11,
+       "Microsoft Excel": 13,
+       "Microsoft Office": 9,
+       "Microsoft PowerPoint": 7,
+       "Microsoft Word": 7,
+       "Operations Management": 12,
+       "Project Management": 12,
+       "Project Planning": 6,
+       "Rail Operations": 8,
+       "Supply Chain Management": 9,
+       "Team Leadership": 4,
+       "Team Management": 8
+      },
+      "by_skill_percent": {
+       "Accounting": 7.38255033557047,
+       "Analytical Skills": 6.0402684563758395,
+       "Communication": 8.724832214765101,
+       "Container Shipping": 2.684563758389262,
+       "Customer Service": 4.026845637583892,
+       "Data Analysis": 4.697986577181208,
+       "English": 4.026845637583892,
+       "Finance": 4.697986577181208,
+       "Financial Analysis": 6.0402684563758395,
+       "Leadership": 6.0402684563758395,
+       "Logistics Management": 10.06711409395973,
+       "Management": 7.38255033557047,
+       "Microsoft Excel": 8.724832214765101,
+       "Microsoft Office": 6.0402684563758395,
+       "Microsoft PowerPoint": 4.697986577181208,
+       "Microsoft Word": 4.697986577181208,
+       "Operations Management": 8.053691275167784,
+       "Project Management": 8.053691275167784,
+       "Project Planning": 4.026845637583892,
+       "Rail Operations": 5.369127516778524,
+       "Supply Chain Management": 6.0402684563758395,
+       "Team Leadership": 2.684563758389262,
+       "Team Management": 5.369127516778524
+      },
+      "by_function_timeseries": {
+       "CURRENT_FUNCTION": {
+        "Administrative": [
+         {
+          "date": "2024-11-01 00:00:00",
+          "employee_count": 3
+         },
+         {
+          "date": "2024-12-01 00:00:00",
+          "employee_count": 3
+         },
+         {
+          "date": "2025-01-01 00:00:00",
+          "employee_count": 3
+         },
+         {
+          "date": "2025-02-01 00:00:00",
+          "employee_count": 3
+         },
+         {
+          "date": "2025-03-01 00:00:00",
+          "employee_count": 3
+         },
+         {
+          "date": "2025-04-01 00:00:00",
+          "employee_count": 3
+         },
+         {
+          "date": "2025-05-01 00:00:00",
+          "employee_count": 3
+         },
+         {
+          "date": "2025-06-01 00:00:00",
+          "employee_count": 3
+         },
+         {
+          "date": "2025-07-01 00:00:00",
+          "employee_count": 3
+         },
+         {
+          "date": "2025-08-01 00:00:00",
+          "employee_count": 3
+         },
+         {
+          "date": "2025-09-01 00:00:00",
+          "employee_count": 3
+         },
+         {
+          "date": "2025-10-01 00:00:00",
+          "employee_count": 3
+         },
+         {
+          "date": "2025-11-01 00:00:00",
+          "employee_count": 4
+         },
+         {
+          "date": "2025-12-01 00:00:00",
+          "employee_count": 3
+         },
+         {
+          "date": "2026-01-01 00:00:00",
+          "employee_count": 3
+         },
+         {
+          "date": "2026-02-01 00:00:00",
+          "employee_count": 4
+         },
+         {
+          "date": "2026-03-01 00:00:00",
+          "employee_count": 4
+         },
+         {
+          "date": "2026-04-01 00:00:00",
+          "employee_count": 4
+         },
+         {
+          "date": "2026-05-01 00:00:00",
+          "employee_count": 4
+         },
+         {
+          "date": "2026-06-01 00:00:00",
+          "employee_count": 4
+         },
+         {
+          "date": "2026-07-01 00:00:00",
+          "employee_count": 4
+         },
+         {
+          "date": "2026-08-01 00:00:00",
+          "employee_count": 4
+         }
+        ],
+        "Business Development": [
+         {
+          "date": "2024-11-01 00:00:00",
+          "employee_count": 15
+         },
+         {
+          "date": "2024-12-01 00:00:00",
+          "employee_count": 15
+         },
+         {
+          "date": "2025-01-01 00:00:00",
+          "employee_count": 15
+         },
+         {
+          "date": "2025-02-01 00:00:00",
+          "employee_count": 15
+         },
+         {
+          "date": "2025-03-01 00:00:00",
+          "employee_count": 15
+         },
+         {
+          "date": "2025-04-01 00:00:00",
+          "employee_count": 16
+         },
+         {
+          "date": "2025-05-01 00:00:00",
+          "employee_count": 16
+         },
+         {
+          "date": "2025-06-01 00:00:00",
+          "employee_count": 17
+         },
+         {
+          "date": "2025-07-01 00:00:00",
+          "employee_count": 17
+         },
+         {
+          "date": "2025-08-01 00:00:00",
+          "employee_count": 18
+         },
+         {
+          "date": "2025-09-01 00:00:00",
+          "employee_count": 18
+         },
+         {
+          "date": "2025-10-01 00:00:00",
+          "employee_count": 18
+         },
+         {
+          "date": "2025-11-01 00:00:00",
+          "employee_count": 18
+         },
+         {
+          "date": "2025-12-01 00:00:00",
+          "employee_count": 16
+         },
+         {
+          "date": "2026-01-01 00:00:00",
+          "employee_count": 16
+         },
+         {
+          "date": "2026-02-01 00:00:00",
+          "employee_count": 17
+         },
+         {
+          "date": "2026-03-01 00:00:00",
+          "employee_count": 18
+         },
+         {
+          "date": "2026-04-01 00:00:00",
+          "employee_count": 19
+         },
+         {
+          "date": "2026-05-01 00:00:00",
+          "employee_count": 19
+         },
+         {
+          "date": "2026-06-01 00:00:00",
+          "employee_count": 21
+         },
+         {
+          "date": "2026-07-01 00:00:00",
+          "employee_count": 21
+         },
+         {
+          "date": "2026-08-01 00:00:00",
+          "employee_count": 21
+         }
+        ],
+        "Consulting": [
+         {
+          "date": "2025-08-01 00:00:00",
+          "employee_count": 1
+         },
+         {
+          "date": "2025-09-01 00:00:00",
+          "employee_count": 1
+         },
+         {
+          "date": "2025-10-01 00:00:00",
+          "employee_count": 1
+         },
+         {
+          "date": "2025-11-01 00:00:00",
+          "employee_count": 1
+         },
+         {
+          "date": "2025-12-01 00:00:00",
+          "employee_count": 1
+         },
+         {
+          "date": "2026-01-01 00:00:00",
+          "employee_count": 1
+         },
+         {
+          "date": "2026-02-01 00:00:00",
+          "employee_count": 1
+         },
+         {
+          "date": "2026-03-01 00:00:00",
+          "employee_count": 1
+         },
+         {
+          "date": "2026-04-01 00:00:00",
+          "employee_count": 1
+         },
+         {
+          "date": "2026-05-01 00:00:00",
+          "employee_count": 1
+         },
+         {
+          "date": "2026-06-01 00:00:00",
+          "employee_count": 1
+         },
+         {
+          "date": "2026-07-01 00:00:00",
+          "employee_count": 1
+         },
+         {
+          "date": "2026-08-01 00:00:00",
+          "employee_count": 1
+         }
+        ],
+        "Customer Success and Support": [
+         {
+          "date": "2024-11-01 00:00:00",
+          "employee_count": 1
+         },
+         {
+          "date": "2024-12-01 00:00:00",
+          "employee_count": 1
+         },
+         {
+          "date": "2025-01-01 00:00:00",
+          "employee_count": 1
+         },
+         {
+          "date": "2025-02-01 00:00:00",
+          "employee_count": 1
+         },
+         {
+          "date": "2025-03-01 00:00:00",
+          "employee_count": 1
+         },
+         {
+          "date": "2025-04-01 00:00:00",
+          "employee_count": 1
+         },
+         {
+          "date": "2025-05-01 00:00:00",
+          "employee_count": 1
+         },
+         {
+          "date": "2025-06-01 00:00:00",
+          "employee_count": 3
+         },
+         {
+          "date": "2025-07-01 00:00:00",
+          "employee_count": 3
+         },
+         {
+          "date": "2025-08-01 00:00:00",
+          "employee_count": 2
+         },
+         {
+          "date": "2025-09-01 00:00:00",
+          "employee_count": 2
+         },
+         {
+          "date": "2025-10-01 00:00:00",
+          "employee_count": 2
+         },
+         {
+          "date": "2025-12-01 00:00:00",
+          "employee_count": 2
+         },
+         {
+          "date": "2026-01-01 00:00:00",
+          "employee_count": 2
+         },
+         {
+          "date": "2026-02-01 00:00:00",
+          "employee_count": 2
+         },
+         {
+          "date": "2026-03-01 00:00:00",
+          "employee_count": 2
+         },
+         {
+          "date": "2026-04-01 00:00:00",
+          "employee_count": 2
+         },
+         {
+          "date": "2026-05-01 00:00:00",
+          "employee_count": 2
+         },
+         {
+          "date": "2026-06-01 00:00:00",
+          "employee_count": 2
+         },
+         {
+          "date": "2026-07-01 00:00:00",
+          "employee_count": 2
+         },
+         {
+          "date": "2026-08-01 00:00:00",
+          "employee_count": 2
+         }
+        ],
+        "Education": [
+         {
+          "date": "2024-11-01 00:00:00",
+          "employee_count": 1
+         },
+         {
+          "date": "2024-12-01 00:00:00",
+          "employee_count": 1
+         },
+         {
+          "date": "2025-01-01 00:00:00",
+          "employee_count": 2
+         },
+         {
+          "date": "2025-02-01 00:00:00",
+          "employee_count": 2
+         },
+         {
+          "date": "2025-03-01 00:00:00",
+          "employee_count": 2
+         },
+         {
+          "date": "2025-04-01 00:00:00",
+          "employee_count": 2
+         },
+         {
+          "date": "2025-05-01 00:00:00",
+          "employee_count": 3
+         },
+         {
+          "date": "2025-06-01 00:00:00",
+          "employee_count": 8
+         },
+         {
+          "date": "2025-07-01 00:00:00",
+          "employee_count": 4
+         },
+         {
+          "date": "2025-08-01 00:00:00",
+          "employee_count": 2
+         },
+         {
+          "date": "2025-09-01 00:00:00",
+          "employee_count": 2
+         },
+         {
+          "date": "2025-10-01 00:00:00",
+          "employee_count": 2
+         },
+         {
+          "date": "2025-11-01 00:00:00",
+          "employee_count": 2
+         },
+         {
+          "date": "2025-12-01 00:00:00",
+          "employee_count": 3
+         },
+         {
+          "date": "2026-01-01 00:00:00",
+          "employee_count": 3
+         },
+         {
+          "date": "2026-02-01 00:00:00",
+          "employee_count": 2
+         },
+         {
+          "date": "2026-03-01 00:00:00",
+          "employee_count": 2
+         },
+         {
+          "date": "2026-04-01 00:00:00",
+          "employee_count": 6
+         },
+         {
+          "date": "2026-05-01 00:00:00",
+          "employee_count": 6
+         },
+         {
+          "date": "2026-06-01 00:00:00",
+          "employee_count": 10
+         },
+         {
+          "date": "2026-07-01 00:00:00",
+          "employee_count": 10
+         },
+         {
+          "date": "2026-08-01 00:00:00",
+          "employee_count": 6
+         }
+        ],
+        "Engineering": [
+         {
+          "date": "2024-11-01 00:00:00",
+          "employee_count": 1
+         },
+         {
+          "date": "2024-12-01 00:00:00",
+          "employee_count": 1
+         },
+         {
+          "date": "2025-01-01 00:00:00",
+          "employee_count": 1
+         },
+         {
+          "date": "2025-02-01 00:00:00",
+          "employee_count": 1
+         },
+         {
+          "date": "2025-03-01 00:00:00",
+          "employee_count": 1
+         },
+         {
+          "date": "2025-04-01 00:00:00",
+          "employee_count": 1
+         },
+         {
+          "date": "2025-05-01 00:00:00",
+          "employee_count": 1
+         },
+         {
+          "date": "2025-06-01 00:00:00",
+          "employee_count": 2
+         },
+         {
+          "date": "2025-07-01 00:00:00",
+          "employee_count": 2
+         },
+         {
+          "date": "2025-08-01 00:00:00",
+          "employee_count": 3
+         },
+         {
+          "date": "2025-09-01 00:00:00",
+          "employee_count": 3
+         },
+         {
+          "date": "2025-10-01 00:00:00",
+          "employee_count": 2
+         },
+         {
+          "date": "2025-11-01 00:00:00",
+          "employee_count": 1
+         },
+         {
+          "date": "2025-12-01 00:00:00",
+          "employee_count": 1
+         },
+         {
+          "date": "2026-01-01 00:00:00",
+          "employee_count": 1
+         },
+         {
+          "date": "2026-02-01 00:00:00",
+          "employee_count": 1
+         },
+         {
+          "date": "2026-03-01 00:00:00",
+          "employee_count": 1
+         },
+         {
+          "date": "2026-04-01 00:00:00",
+          "employee_count": 1
+         },
+         {
+          "date": "2026-05-01 00:00:00",
+          "employee_count": 1
+         },
+         {
+          "date": "2026-06-01 00:00:00",
+          "employee_count": 2
+         },
+         {
+          "date": "2026-07-01 00:00:00",
+          "employee_count": 2
+         },
+         {
+          "date": "2026-08-01 00:00:00",
+          "employee_count": 2
+         }
+        ],
+        "Finance": [
+         {
+          "date": "2024-11-01 00:00:00",
+          "employee_count": 3
+         },
+         {
+          "date": "2024-12-01 00:00:00",
+          "employee_count": 3
+         },
+         {
+          "date": "2025-01-01 00:00:00",
+          "employee_count": 3
+         },
+         {
+          "date": "2025-02-01 00:00:00",
+          "employee_count": 4
+         },
+         {
+          "date": "2025-03-01 00:00:00",
+          "employee_count": 4
+         },
+         {
+          "date": "2025-04-01 00:00:00",
+          "employee_count": 4
+         },
+         {
+          "date": "2025-05-01 00:00:00",
+          "employee_count": 3
+         },
+         {
+          "date": "2025-06-01 00:00:00",
+          "employee_count": 3
+         },
+         {
+          "date": "2025-07-01 00:00:00",
+          "employee_count": 3
+         },
+         {
+          "date": "2025-08-01 00:00:00",
+          "employee_count": 4
+         },
+         {
+          "date": "2025-09-01 00:00:00",
+          "employee_count": 4
+         },
+         {
+          "date": "2025-10-01 00:00:00",
+          "employee_count": 4
+         },
+         {
+          "date": "2025-11-01 00:00:00",
+          "employee_count": 4
+         },
+         {
+          "date": "2025-12-01 00:00:00",
+          "employee_count": 3
+         },
+         {
+          "date": "2026-01-01 00:00:00",
+          "employee_count": 3
+         },
+         {
+          "date": "2026-02-01 00:00:00",
+          "employee_count": 4
+         },
+         {
+          "date": "2026-03-01 00:00:00",
+          "employee_count": 4
+         },
+         {
+          "date": "2026-04-01 00:00:00",
+          "employee_count": 5
+         },
+         {
+          "date": "2026-05-01 00:00:00",
+          "employee_count": 5
+         },
+         {
+          "date": "2026-06-01 00:00:00",
+          "employee_count": 5
+         },
+         {
+          "date": "2026-07-01 00:00:00",
+          "employee_count": 5
+         },
+         {
+          "date": "2026-08-01 00:00:00",
+          "employee_count": 5
+         }
+        ],
+        "Human Resources": [
+         {
+          "date": "2025-02-01 00:00:00",
+          "employee_count": 1
+         },
+         {
+          "date": "2025-03-01 00:00:00",
+          "employee_count": 1
+         },
+         {
+          "date": "2025-04-01 00:00:00",
+          "employee_count": 1
+         },
+         {
+          "date": "2025-05-01 00:00:00",
+          "employee_count": 1
+         },
+         {
+          "date": "2025-06-01 00:00:00",
+          "employee_count": 1
+         },
+         {
+          "date": "2025-07-01 00:00:00",
+          "employee_count": 1
+         },
+         {
+          "date": "2025-08-01 00:00:00",
+          "employee_count": 1
+         },
+         {
+          "date": "2025-09-01 00:00:00",
+          "employee_count": 1
+         },
+         {
+          "date": "2025-10-01 00:00:00",
+          "employee_count": 1
+         },
+         {
+          "date": "2025-11-01 00:00:00",
+          "employee_count": 1
+         },
+         {
+          "date": "2025-12-01 00:00:00",
+          "employee_count": 1
+         },
+         {
+          "date": "2026-01-01 00:00:00",
+          "employee_count": 1
+         },
+         {
+          "date": "2026-02-01 00:00:00",
+          "employee_count": 2
+         },
+         {
+          "date": "2026-03-01 00:00:00",
+          "employee_count": 1
+         },
+         {
+          "date": "2026-04-01 00:00:00",
+          "employee_count": 1
+         },
+         {
+          "date": "2026-05-01 00:00:00",
+          "employee_count": 1
+         },
+         {
+          "date": "2026-06-01 00:00:00",
+          "employee_count": 1
+         },
+         {
+          "date": "2026-07-01 00:00:00",
+          "employee_count": 1
+         },
+         {
+          "date": "2026-08-01 00:00:00",
+          "employee_count": 1
+         }
+        ],
+        "Information Technology": [
+         {
+          "date": "2024-11-01 00:00:00",
+          "employee_count": 3
+         },
+         {
+          "date": "2024-12-01 00:00:00",
+          "employee_count": 4
+         },
+         {
+          "date": "2025-01-01 00:00:00",
+          "employee_count": 4
+         },
+         {
+          "date": "2025-02-01 00:00:00",
+          "employee_count": 5
+         },
+         {
+          "date": "2025-03-01 00:00:00",
+          "employee_count": 5
+         },
+         {
+          "date": "2025-04-01 00:00:00",
+          "employee_count": 5
+         },
+         {
+          "date": "2025-05-01 00:00:00",
+          "employee_count": 5
+         },
+         {
+          "date": "2025-06-01 00:00:00",
+          "employee_count": 7
+         },
+         {
+          "date": "2025-07-01 00:00:00",
+          "employee_count": 7
+         },
+         {
+          "date": "2025-08-01 00:00:00",
+          "employee_count": 7
+         },
+         {
+          "date": "2025-09-01 00:00:00",
+          "employee_count": 8
+         },
+         {
+          "date": "2025-10-01 00:00:00",
+          "employee_count": 8
+         },
+         {
+          "date": "2025-11-01 00:00:00",
+          "employee_count": 9
+         },
+         {
+          "date": "2025-12-01 00:00:00",
+          "employee_count": 7
+         },
+         {
+          "date": "2026-01-01 00:00:00",
+          "employee_count": 7
+         },
+         {
+          "date": "2026-02-01 00:00:00",
+          "employee_count": 9
+         },
+         {
+          "date": "2026-03-01 00:00:00",
+          "employee_count": 8
+         },
+         {
+          "date": "2026-04-01 00:00:00",
+          "employee_count": 8
+         },
+         {
+          "date": "2026-05-01 00:00:00",
+          "employee_count": 8
+         },
+         {
+          "date": "2026-06-01 00:00:00",
+          "employee_count": 9
+         },
+         {
+          "date": "2026-07-01 00:00:00",
+          "employee_count": 9
+         },
+         {
+          "date": "2026-08-01 00:00:00",
+          "employee_count": 10
+         }
+        ],
+        "Legal": [
+         {
+          "date": "2025-02-01 00:00:00",
+          "employee_count": 1
+         },
+         {
+          "date": "2025-03-01 00:00:00",
+          "employee_count": 1
+         },
+         {
+          "date": "2025-04-01 00:00:00",
+          "employee_count": 1
+         },
+         {
+          "date": "2025-05-01 00:00:00",
+          "employee_count": 1
+         },
+         {
+          "date": "2025-06-01 00:00:00",
+          "employee_count": 1
+         },
+         {
+          "date": "2025-07-01 00:00:00",
+          "employee_count": 1
+         },
+         {
+          "date": "2025-08-01 00:00:00",
+          "employee_count": 1
+         },
+         {
+          "date": "2025-09-01 00:00:00",
+          "employee_count": 1
+         },
+         {
+          "date": "2025-10-01 00:00:00",
+          "employee_count": 2
+         },
+         {
+          "date": "2025-11-01 00:00:00",
+          "employee_count": 2
+         },
+         {
+          "date": "2025-12-01 00:00:00",
+          "employee_count": 2
+         },
+         {
+          "date": "2026-01-01 00:00:00",
+          "employee_count": 2
+         },
+         {
+          "date": "2026-02-01 00:00:00",
+          "employee_count": 2
+         },
+         {
+          "date": "2026-03-01 00:00:00",
+          "employee_count": 2
+         },
+         {
+          "date": "2026-04-01 00:00:00",
+          "employee_count": 2
+         },
+         {
+          "date": "2026-05-01 00:00:00",
+          "employee_count": 2
+         },
+         {
+          "date": "2026-06-01 00:00:00",
+          "employee_count": 2
+         },
+         {
+          "date": "2026-07-01 00:00:00",
+          "employee_count": 2
+         },
+         {
+          "date": "2026-08-01 00:00:00",
+          "employee_count": 2
+         }
+        ],
+        "Marketing": [
+         {
+          "date": "2024-11-01 00:00:00",
+          "employee_count": 1
+         },
+         {
+          "date": "2024-12-01 00:00:00",
+          "employee_count": 1
+         },
+         {
+          "date": "2025-01-01 00:00:00",
+          "employee_count": 1
+         },
+         {
+          "date": "2025-02-01 00:00:00",
+          "employee_count": 1
+         },
+         {
+          "date": "2025-03-01 00:00:00",
+          "employee_count": 1
+         },
+         {
+          "date": "2025-04-01 00:00:00",
+          "employee_count": 1
+         },
+         {
+          "date": "2025-05-01 00:00:00",
+          "employee_count": 2
+         },
+         {
+          "date": "2025-06-01 00:00:00",
+          "employee_count": 2
+         },
+         {
+          "date": "2025-07-01 00:00:00",
+          "employee_count": 1
+         },
+         {
+          "date": "2025-08-01 00:00:00",
+          "employee_count": 1
+         },
+         {
+          "date": "2025-09-01 00:00:00",
+          "employee_count": 1
+         },
+         {
+          "date": "2025-10-01 00:00:00",
+          "employee_count": 1
+         },
+         {
+          "date": "2025-11-01 00:00:00",
+          "employee_count": 1
+         },
+         {
+          "date": "2025-12-01 00:00:00",
+          "employee_count": 1
+         },
+         {
+          "date": "2026-01-01 00:00:00",
+          "employee_count": 1
+         },
+         {
+          "date": "2026-02-01 00:00:00",
+          "employee_count": 2
+         },
+         {
+          "date": "2026-03-01 00:00:00",
+          "employee_count": 2
+         },
+         {
+          "date": "2026-04-01 00:00:00",
+          "employee_count": 2
+         },
+         {
+          "date": "2026-05-01 00:00:00",
+          "employee_count": 2
+         },
+         {
+          "date": "2026-06-01 00:00:00",
+          "employee_count": 1
+         },
+         {
+          "date": "2026-07-01 00:00:00",
+          "employee_count": 1
+         },
+         {
+          "date": "2026-08-01 00:00:00",
+          "employee_count": 1
+         }
+        ],
+        "Media and Communication": [
+         {
+          "date": "2024-11-01 00:00:00",
+          "employee_count": 1
+         },
+         {
+          "date": "2024-12-01 00:00:00",
+          "employee_count": 1
+         },
+         {
+          "date": "2025-01-01 00:00:00",
+          "employee_count": 1
+         },
+         {
+          "date": "2025-02-01 00:00:00",
+          "employee_count": 1
+         },
+         {
+          "date": "2025-03-01 00:00:00",
+          "employee_count": 1
+         },
+         {
+          "date": "2025-04-01 00:00:00",
+          "employee_count": 1
+         },
+         {
+          "date": "2025-05-01 00:00:00",
+          "employee_count": 1
+         },
+         {
+          "date": "2025-06-01 00:00:00",
+          "employee_count": 1
+         },
+         {
+          "date": "2025-07-01 00:00:00",
+          "employee_count": 1
+         },
+         {
+          "date": "2025-08-01 00:00:00",
+          "employee_count": 1
+         },
+         {
+          "date": "2025-09-01 00:00:00",
+          "employee_count": 1
+         },
+         {
+          "date": "2025-10-01 00:00:00",
+          "employee_count": 1
+         },
+         {
+          "date": "2025-11-01 00:00:00",
+          "employee_count": 1
+         },
+         {
+          "date": "2025-12-01 00:00:00",
+          "employee_count": 1
+         },
+         {
+          "date": "2026-01-01 00:00:00",
+          "employee_count": 1
+         },
+         {
+          "date": "2026-02-01 00:00:00",
+          "employee_count": 1
+         },
+         {
+          "date": "2026-03-01 00:00:00",
+          "employee_count": 1
+         },
+         {
+          "date": "2026-04-01 00:00:00",
+          "employee_count": 1
+         },
+         {
+          "date": "2026-05-01 00:00:00",
+          "employee_count": 1
+         },
+         {
+          "date": "2026-06-01 00:00:00",
+          "employee_count": 1
+         },
+         {
+          "date": "2026-07-01 00:00:00",
+          "employee_count": 1
+         },
+         {
+          "date": "2026-08-01 00:00:00",
+          "employee_count": 1
+         }
+        ],
+        "Military and Protective Services": [
+         {
+          "date": "2024-11-01 00:00:00",
+          "employee_count": 3
+         },
+         {
+          "date": "2024-12-01 00:00:00",
+          "employee_count": 3
+         },
+         {
+          "date": "2025-01-01 00:00:00",
+          "employee_count": 3
+         },
+         {
+          "date": "2025-02-01 00:00:00",
+          "employee_count": 4
+         },
+         {
+          "date": "2025-03-01 00:00:00",
+          "employee_count": 4
+         },
+         {
+          "date": "2025-04-01 00:00:00",
+          "employee_count": 4
+         },
+         {
+          "date": "2025-05-01 00:00:00",
+          "employee_count": 4
+         },
+         {
+          "date": "2025-06-01 00:00:00",
+          "employee_count": 4
+         },
+         {
+          "date": "2025-07-01 00:00:00",
+          "employee_count": 5
+         },
+         {
+          "date": "2025-08-01 00:00:00",
+          "employee_count": 6
+         },
+         {
+          "date": "2025-09-01 00:00:00",
+          "employee_count": 6
+         },
+         {
+          "date": "2025-10-01 00:00:00",
+          "employee_count": 6
+         },
+         {
+          "date": "2025-11-01 00:00:00",
+          "employee_count": 6
+         },
+         {
+          "date": "2025-12-01 00:00:00",
+          "employee_count": 4
+         },
+         {
+          "date": "2026-01-01 00:00:00",
+          "employee_count": 4
+         },
+         {
+          "date": "2026-02-01 00:00:00",
+          "employee_count": 5
+         },
+         {
+          "date": "2026-03-01 00:00:00",
+          "employee_count": 5
+         },
+         {
+          "date": "2026-04-01 00:00:00",
+          "employee_count": 6
+         },
+         {
+          "date": "2026-05-01 00:00:00",
+          "employee_count": 6
+         },
+         {
+          "date": "2026-06-01 00:00:00",
+          "employee_count": 8
+         },
+         {
+          "date": "2026-07-01 00:00:00",
+          "employee_count": 8
+         },
+         {
+          "date": "2026-08-01 00:00:00",
+          "employee_count": 8
+         }
+        ],
+        "Operations": [
+         {
+          "date": "2024-11-01 00:00:00",
+          "employee_count": 20
+         },
+         {
+          "date": "2024-12-01 00:00:00",
+          "employee_count": 24
+         },
+         {
+          "date": "2025-01-01 00:00:00",
+          "employee_count": 25
+         },
+         {
+          "date": "2025-02-01 00:00:00",
+          "employee_count": 25
+         },
+         {
+          "date": "2025-03-01 00:00:00",
+          "employee_count": 24
+         },
+         {
+          "date": "2025-04-01 00:00:00",
+          "employee_count": 25
+         },
+         {
+          "date": "2025-05-01 00:00:00",
+          "employee_count": 29
+         },
+         {
+          "date": "2025-06-01 00:00:00",
+          "employee_count": 32
+         },
+         {
+          "date": "2025-07-01 00:00:00",
+          "employee_count": 34
+         },
+         {
+          "date": "2025-08-01 00:00:00",
+          "employee_count": 34
+         },
+         {
+          "date": "2025-09-01 00:00:00",
+          "employee_count": 36
+         },
+         {
+          "date": "2025-10-01 00:00:00",
+          "employee_count": 37
+         },
+         {
+          "date": "2025-11-01 00:00:00",
+          "employee_count": 42
+         },
+         {
+          "date": "2025-12-01 00:00:00",
+          "employee_count": 38
+         },
+         {
+          "date": "2026-01-01 00:00:00",
+          "employee_count": 38
+         },
+         {
+          "date": "2026-02-01 00:00:00",
+          "employee_count": 44
+         },
+         {
+          "date": "2026-03-01 00:00:00",
+          "employee_count": 44
+         },
+         {
+          "date": "2026-04-01 00:00:00",
+          "employee_count": 46
+         },
+         {
+          "date": "2026-05-01 00:00:00",
+          "employee_count": 46
+         },
+         {
+          "date": "2026-06-01 00:00:00",
+          "employee_count": 49
+         },
+         {
+          "date": "2026-07-01 00:00:00",
+          "employee_count": 50
+         },
+         {
+          "date": "2026-08-01 00:00:00",
+          "employee_count": 51
+         }
+        ],
+        "Real Estate": [
+         {
+          "date": "2024-11-01 00:00:00",
+          "employee_count": 2
+         },
+         {
+          "date": "2024-12-01 00:00:00",
+          "employee_count": 2
+         },
+         {
+          "date": "2025-01-01 00:00:00",
+          "employee_count": 2
+         },
+         {
+          "date": "2025-02-01 00:00:00",
+          "employee_count": 2
+         },
+         {
+          "date": "2025-03-01 00:00:00",
+          "employee_count": 2
+         },
+         {
+          "date": "2025-04-01 00:00:00",
+          "employee_count": 2
+         },
+         {
+          "date": "2025-05-01 00:00:00",
+          "employee_count": 2
+         },
+         {
+          "date": "2025-06-01 00:00:00",
+          "employee_count": 1
+         },
+         {
+          "date": "2025-07-01 00:00:00",
+          "employee_count": 1
+         },
+         {
+          "date": "2025-08-01 00:00:00",
+          "employee_count": 1
+         },
+         {
+          "date": "2025-09-01 00:00:00",
+          "employee_count": 1
+         },
+         {
+          "date": "2025-10-01 00:00:00",
+          "employee_count": 1
+         },
+         {
+          "date": "2025-11-01 00:00:00",
+          "employee_count": 1
+         },
+         {
+          "date": "2025-12-01 00:00:00",
+          "employee_count": 2
+         },
+         {
+          "date": "2026-01-01 00:00:00",
+          "employee_count": 2
+         },
+         {
+          "date": "2026-02-01 00:00:00",
+          "employee_count": 1
+         },
+         {
+          "date": "2026-03-01 00:00:00",
+          "employee_count": 1
+         },
+         {
+          "date": "2026-04-01 00:00:00",
+          "employee_count": 1
+         },
+         {
+          "date": "2026-05-01 00:00:00",
+          "employee_count": 1
+         },
+         {
+          "date": "2026-06-01 00:00:00",
+          "employee_count": 1
+         },
+         {
+          "date": "2026-07-01 00:00:00",
+          "employee_count": 1
+         },
+         {
+          "date": "2026-08-01 00:00:00",
+          "employee_count": 1
+         }
+        ],
+        "Research": [
+         {
+          "date": "2025-08-01 00:00:00",
+          "employee_count": 1
+         },
+         {
+          "date": "2025-09-01 00:00:00",
+          "employee_count": 1
+         },
+         {
+          "date": "2025-10-01 00:00:00",
+          "employee_count": 1
+         },
+         {
+          "date": "2025-11-01 00:00:00",
+          "employee_count": 1
+         },
+         {
+          "date": "2025-12-01 00:00:00",
+          "employee_count": 1
+         },
+         {
+          "date": "2026-01-01 00:00:00",
+          "employee_count": 1
+         },
+         {
+          "date": "2026-02-01 00:00:00",
+          "employee_count": 1
+         },
+         {
+          "date": "2026-03-01 00:00:00",
+          "employee_count": 1
+         },
+         {
+          "date": "2026-04-01 00:00:00",
+          "employee_count": 1
+         },
+         {
+          "date": "2026-05-01 00:00:00",
+          "employee_count": 1
+         },
+         {
+          "date": "2026-06-01 00:00:00",
+          "employee_count": 1
+         },
+         {
+          "date": "2026-07-01 00:00:00",
+          "employee_count": 1
+         },
+         {
+          "date": "2026-08-01 00:00:00",
+          "employee_count": 1
+         }
+        ],
+        "Sales": [
+         {
+          "date": "2025-06-01 00:00:00",
+          "employee_count": 1
+         },
+         {
+          "date": "2025-07-01 00:00:00",
+          "employee_count": 1
+         },
+         {
+          "date": "2025-08-01 00:00:00",
+          "employee_count": 1
+         },
+         {
+          "date": "2025-09-01 00:00:00",
+          "employee_count": 1
+         },
+         {
+          "date": "2025-10-01 00:00:00",
+          "employee_count": 1
+         },
+         {
+          "date": "2025-11-01 00:00:00",
+          "employee_count": 1
+         },
+         {
+          "date": "2025-12-01 00:00:00",
+          "employee_count": 1
+         },
+         {
+          "date": "2026-01-01 00:00:00",
+          "employee_count": 1
+         },
+         {
+          "date": "2026-02-01 00:00:00",
+          "employee_count": 1
+         },
+         {
+          "date": "2026-03-01 00:00:00",
+          "employee_count": 1
+         },
+         {
+          "date": "2026-04-01 00:00:00",
+          "employee_count": 1
+         },
+         {
+          "date": "2026-05-01 00:00:00",
+          "employee_count": 2
+         },
+         {
+          "date": "2026-06-01 00:00:00",
+          "employee_count": 2
+         },
+         {
+          "date": "2026-07-01 00:00:00",
+          "employee_count": 2
+         },
+         {
+          "date": "2026-08-01 00:00:00",
+          "employee_count": 2
+         }
+        ]
+       },
+       "GEO_REGION": {
+        "Ahmedabad": [
+         {
+          "date": "2025-06-01 00:00:00",
+          "employee_count": 5
+         },
+         {
+          "date": "2025-07-01 00:00:00",
+          "employee_count": 5
+         },
+         {
+          "date": "2025-08-01 00:00:00",
+          "employee_count": 4
+         },
+         {
+          "date": "2025-09-01 00:00:00",
+          "employee_count": 4
+         },
+         {
+          "date": "2025-10-01 00:00:00",
+          "employee_count": 4
+         },
+         {
+          "date": "2025-11-01 00:00:00",
+          "employee_count": 4
+         },
+         {
+          "date": "2025-12-01 00:00:00",
+          "employee_count": 4
+         },
+         {
+          "date": "2026-01-01 00:00:00",
+          "employee_count": 4
+         },
+         {
+          "date": "2026-02-01 00:00:00",
+          "employee_count": 4
+         }
+        ],
+        "Chennai": [
+         {
+          "date": "2025-10-01 00:00:00",
+          "employee_count": 4
+         },
+         {
+          "date": "2025-11-01 00:00:00",
+          "employee_count": 4
+         },
+         {
+          "date": "2025-12-01 00:00:00",
+          "employee_count": 4
+         },
+         {
+          "date": "2026-01-01 00:00:00",
+          "employee_count": 4
+         },
+         {
+          "date": "2026-02-01 00:00:00",
+          "employee_count": 4
+         },
+         {
+          "date": "2026-03-01 00:00:00",
+          "employee_count": 4
+         },
+         {
+          "date": "2026-04-01 00:00:00",
+          "employee_count": 5
+         },
+         {
+          "date": "2026-05-01 00:00:00",
+          "employee_count": 5
+         },
+         {
+          "date": "2026-06-01 00:00:00",
+          "employee_count": 9
+         },
+         {
+          "date": "2026-07-01 00:00:00",
+          "employee_count": 8
+         },
+         {
+          "date": "2026-08-01 00:00:00",
+          "employee_count": 8
+         },
+         {
+          "date": "2026-09-01 00:00:00",
+          "employee_count": 8
+         }
+        ],
+        "Delhi, India": [
+         {
+          "date": "2025-06-01 00:00:00",
+          "employee_count": 32
+         },
+         {
+          "date": "2025-07-01 00:00:00",
+          "employee_count": 31
+         },
+         {
+          "date": "2025-08-01 00:00:00",
+          "employee_count": 35
+         },
+         {
+          "date": "2025-09-01 00:00:00",
+          "employee_count": 38
+         },
+         {
+          "date": "2025-10-01 00:00:00",
+          "employee_count": 39
+         },
+         {
+          "date": "2025-11-01 00:00:00",
+          "employee_count": 39
+         },
+         {
+          "date": "2025-12-01 00:00:00",
+          "employee_count": 43
+         },
+         {
+          "date": "2026-01-01 00:00:00",
+          "employee_count": 43
+         },
+         {
+          "date": "2026-02-01 00:00:00",
+          "employee_count": 45
+         },
+         {
+          "date": "2026-03-01 00:00:00",
+          "employee_count": 45
+         },
+         {
+          "date": "2026-04-01 00:00:00",
+          "employee_count": 51
+         },
+         {
+          "date": "2026-05-01 00:00:00",
+          "employee_count": 51
+         },
+         {
+          "date": "2026-06-01 00:00:00",
+          "employee_count": 58
+         },
+         {
+          "date": "2026-07-01 00:00:00",
+          "employee_count": 61
+         },
+         {
+          "date": "2026-08-01 00:00:00",
+          "employee_count": 56
+         },
+         {
+          "date": "2026-09-01 00:00:00",
+          "employee_count": 56
+         }
+        ],
+        "Faridabad": [
+         {
+          "date": "2026-04-01 00:00:00",
+          "employee_count": 4
+         }
+        ],
+        "Greater Ahmedabad Area": [
+         {
+          "date": "2025-06-01 00:00:00",
+          "employee_count": 5
+         },
+         {
+          "date": "2025-07-01 00:00:00",
+          "employee_count": 6
+         },
+         {
+          "date": "2025-08-01 00:00:00",
+          "employee_count": 5
+         },
+         {
+          "date": "2025-09-01 00:00:00",
+          "employee_count": 5
+         },
+         {
+          "date": "2025-10-01 00:00:00",
+          "employee_count": 5
+         },
+         {
+          "date": "2025-11-01 00:00:00",
+          "employee_count": 5
+         },
+         {
+          "date": "2025-12-01 00:00:00",
+          "employee_count": 5
+         },
+         {
+          "date": "2026-01-01 00:00:00",
+          "employee_count": 5
+         },
+         {
+          "date": "2026-02-01 00:00:00",
+          "employee_count": 5
+         },
+         {
+          "date": "2026-03-01 00:00:00",
+          "employee_count": 5
+         },
+         {
+          "date": "2026-04-01 00:00:00",
+          "employee_count": 5
+         },
+         {
+          "date": "2026-05-01 00:00:00",
+          "employee_count": 5
+         },
+         {
+          "date": "2026-06-01 00:00:00",
+          "employee_count": 5
+         }
+        ],
+        "Greater Chennai Area": [
+         {
+          "date": "2025-06-01 00:00:00",
+          "employee_count": 5
+         },
+         {
+          "date": "2025-07-01 00:00:00",
+          "employee_count": 5
+         },
+         {
+          "date": "2025-08-01 00:00:00",
+          "employee_count": 5
+         },
+         {
+          "date": "2025-09-01 00:00:00",
+          "employee_count": 5
+         },
+         {
+          "date": "2025-10-01 00:00:00",
+          "employee_count": 6
+         },
+         {
+          "date": "2025-11-01 00:00:00",
+          "employee_count": 6
+         },
+         {
+          "date": "2025-12-01 00:00:00",
+          "employee_count": 5
+         },
+         {
+          "date": "2026-01-01 00:00:00",
+          "employee_count": 5
+         },
+         {
+          "date": "2026-02-01 00:00:00",
+          "employee_count": 5
+         },
+         {
+          "date": "2026-03-01 00:00:00",
+          "employee_count": 5
+         },
+         {
+          "date": "2026-04-01 00:00:00",
+          "employee_count": 5
+         },
+         {
+          "date": "2026-05-01 00:00:00",
+          "employee_count": 5
+         },
+         {
+          "date": "2026-06-01 00:00:00",
+          "employee_count": 9
+         },
+         {
+          "date": "2026-07-01 00:00:00",
+          "employee_count": 8
+         },
+         {
+          "date": "2026-08-01 00:00:00",
+          "employee_count": 8
+         },
+         {
+          "date": "2026-09-01 00:00:00",
+          "employee_count": 8
+         }
+        ],
+        "Greater Delhi Area": [
+         {
+          "date": "2025-06-01 00:00:00",
+          "employee_count": 33
+         },
+         {
+          "date": "2025-07-01 00:00:00",
+          "employee_count": 32
+         },
+         {
+          "date": "2025-08-01 00:00:00",
+          "employee_count": 36
+         },
+         {
+          "date": "2025-09-01 00:00:00",
+          "employee_count": 39
+         },
+         {
+          "date": "2025-10-01 00:00:00",
+          "employee_count": 41
+         },
+         {
+          "date": "2025-11-01 00:00:00",
+          "employee_count": 41
+         },
+         {
+          "date": "2025-12-01 00:00:00",
+          "employee_count": 45
+         },
+         {
+          "date": "2026-01-01 00:00:00",
+          "employee_count": 45
+         },
+         {
+          "date": "2026-02-01 00:00:00",
+          "employee_count": 47
+         },
+         {
+          "date": "2026-03-01 00:00:00",
+          "employee_count": 47
+         },
+         {
+          "date": "2026-04-01 00:00:00",
+          "employee_count": 56
+         },
+         {
+          "date": "2026-05-01 00:00:00",
+          "employee_count": 56
+         },
+         {
+          "date": "2026-06-01 00:00:00",
+          "employee_count": 64
+         },
+         {
+          "date": "2026-07-01 00:00:00",
+          "employee_count": 67
+         },
+         {
+          "date": "2026-08-01 00:00:00",
+          "employee_count": 64
+         },
+         {
+          "date": "2026-09-01 00:00:00",
+          "employee_count": 63
+         }
+        ],
+        "Greater Hyderabad Area": [
+         {
+          "date": "2026-07-01 00:00:00",
+          "employee_count": 6
+         },
+         {
+          "date": "2026-08-01 00:00:00",
+          "employee_count": 6
+         },
+         {
+          "date": "2026-09-01 00:00:00",
+          "employee_count": 6
+         }
+        ],
+        "Greater Kolkata Area": [
+         {
+          "date": "2025-07-01 00:00:00",
+          "employee_count": 4
+         },
+         {
+          "date": "2025-08-01 00:00:00",
+          "employee_count": 4
+         },
+         {
+          "date": "2025-09-01 00:00:00",
+          "employee_count": 4
+         },
+         {
+          "date": "2025-10-01 00:00:00",
+          "employee_count": 4
+         }
+        ],
+        "Gujarat, India": [
+         {
+          "date": "2025-06-01 00:00:00",
+          "employee_count": 6
+         },
+         {
+          "date": "2025-07-01 00:00:00",
+          "employee_count": 7
+         },
+         {
+          "date": "2025-08-01 00:00:00",
+          "employee_count": 5
+         },
+         {
+          "date": "2025-09-01 00:00:00",
+          "employee_count": 5
+         },
+         {
+          "date": "2025-10-01 00:00:00",
+          "employee_count": 5
+         },
+         {
+          "date": "2025-11-01 00:00:00",
+          "employee_count": 5
+         },
+         {
+          "date": "2025-12-01 00:00:00",
+          "employee_count": 5
+         },
+         {
+          "date": "2026-01-01 00:00:00",
+          "employee_count": 5
+         },
+         {
+          "date": "2026-02-01 00:00:00",
+          "employee_count": 5
+         },
+         {
+          "date": "2026-03-01 00:00:00",
+          "employee_count": 5
+         },
+         {
+          "date": "2026-04-01 00:00:00",
+          "employee_count": 5
+         },
+         {
+          "date": "2026-05-01 00:00:00",
+          "employee_count": 5
+         },
+         {
+          "date": "2026-06-01 00:00:00",
+          "employee_count": 6
+         },
+         {
+          "date": "2026-07-01 00:00:00",
+          "employee_count": 6
+         },
+         {
+          "date": "2026-08-01 00:00:00",
+          "employee_count": 6
+         },
+         {
+          "date": "2026-09-01 00:00:00",
+          "employee_count": 7
+         }
+        ],
+        "Haryana, India": [
+         {
+          "date": "2025-06-01 00:00:00",
+          "employee_count": 3
+         },
+         {
+          "date": "2025-07-01 00:00:00",
+          "employee_count": 3
+         },
+         {
+          "date": "2025-08-01 00:00:00",
+          "employee_count": 3
+         },
+         {
+          "date": "2025-09-01 00:00:00",
+          "employee_count": 3
+         },
+         {
+          "date": "2025-10-01 00:00:00",
+          "employee_count": 3
+         },
+         {
+          "date": "2025-11-01 00:00:00",
+          "employee_count": 3
+         },
+         {
+          "date": "2025-12-01 00:00:00",
+          "employee_count": 5
+         },
+         {
+          "date": "2026-01-01 00:00:00",
+          "employee_count": 5
+         },
+         {
+          "date": "2026-02-01 00:00:00",
+          "employee_count": 5
+         },
+         {
+          "date": "2026-03-01 00:00:00",
+          "employee_count": 5
+         },
+         {
+          "date": "2026-04-01 00:00:00",
+          "employee_count": 6
+         },
+         {
+          "date": "2026-05-01 00:00:00",
+          "employee_count": 6
+         },
+         {
+          "date": "2026-06-01 00:00:00",
+          "employee_count": 12
+         },
+         {
+          "date": "2026-07-01 00:00:00",
+          "employee_count": 11
+         },
+         {
+          "date": "2026-08-01 00:00:00",
+          "employee_count": 12
+         },
+         {
+          "date": "2026-09-01 00:00:00",
+          "employee_count": 12
+         }
+        ],
+        "Hyderabad": [
+         {
+          "date": "2025-09-01 00:00:00",
+          "employee_count": 4
+         },
+         {
+          "date": "2025-10-01 00:00:00",
+          "employee_count": 4
+         },
+         {
+          "date": "2025-11-01 00:00:00",
+          "employee_count": 4
+         },
+         {
+          "date": "2025-12-01 00:00:00",
+          "employee_count": 4
+         },
+         {
+          "date": "2026-01-01 00:00:00",
+          "employee_count": 4
+         },
+         {
+          "date": "2026-02-01 00:00:00",
+          "employee_count": 4
+         },
+         {
+          "date": "2026-03-01 00:00:00",
+          "employee_count": 4
+         },
+         {
+          "date": "2026-04-01 00:00:00",
+          "employee_count": 4
+         },
+         {
+          "date": "2026-05-01 00:00:00",
+          "employee_count": 4
+         },
+         {
+          "date": "2026-06-01 00:00:00",
+          "employee_count": 5
+         },
+         {
+          "date": "2026-07-01 00:00:00",
+          "employee_count": 6
+         },
+         {
+          "date": "2026-08-01 00:00:00",
+          "employee_count": 6
+         },
+         {
+          "date": "2026-09-01 00:00:00",
+          "employee_count": 6
+         }
+        ],
+        "India": [
+         {
+          "date": "2025-06-01 00:00:00",
+          "employee_count": 74
+         },
+         {
+          "date": "2025-07-01 00:00:00",
+          "employee_count": 77
+         },
+         {
+          "date": "2025-08-01 00:00:00",
+          "employee_count": 83
+         },
+         {
+          "date": "2025-09-01 00:00:00",
+          "employee_count": 88
+         },
+         {
+          "date": "2025-10-01 00:00:00",
+          "employee_count": 90
+         },
+         {
+          "date": "2025-11-01 00:00:00",
+          "employee_count": 90
+         },
+         {
+          "date": "2025-12-01 00:00:00",
+          "employee_count": 104
+         },
+         {
+          "date": "2026-01-01 00:00:00",
+          "employee_count": 104
+         },
+         {
+          "date": "2026-02-01 00:00:00",
+          "employee_count": 105
+         },
+         {
+          "date": "2026-03-01 00:00:00",
+          "employee_count": 105
+         },
+         {
+          "date": "2026-04-01 00:00:00",
+          "employee_count": 119
+         },
+         {
+          "date": "2026-05-01 00:00:00",
+          "employee_count": 119
+         },
+         {
+          "date": "2026-06-01 00:00:00",
+          "employee_count": 143
+         },
+         {
+          "date": "2026-07-01 00:00:00",
+          "employee_count": 147
+         },
+         {
+          "date": "2026-08-01 00:00:00",
+          "employee_count": 148
+         },
+         {
+          "date": "2026-09-01 00:00:00",
+          "employee_count": 148
+         }
+        ],
+        "Jaipur": [
+         {
+          "date": "2025-06-01 00:00:00",
+          "employee_count": 3
+         },
+         {
+          "date": "2025-07-01 00:00:00",
+          "employee_count": 3
+         }
+        ],
+        "Kerala, India": [
+         {
+          "date": "2025-12-01 00:00:00",
+          "employee_count": 4
+         },
+         {
+          "date": "2026-01-01 00:00:00",
+          "employee_count": 4
+         },
+         {
+          "date": "2026-02-01 00:00:00",
+          "employee_count": 4
+         }
+        ],
+        "Madhya Pradesh, India": [
+         {
+          "date": "2025-06-01 00:00:00",
+          "employee_count": 3
+         },
+         {
+          "date": "2025-07-01 00:00:00",
+          "employee_count": 3
+         },
+         {
+          "date": "2025-08-01 00:00:00",
+          "employee_count": 3
+         }
+        ],
+        "Maharashtra, India": [
+         {
+          "date": "2025-08-01 00:00:00",
+          "employee_count": 4
+         },
+         {
+          "date": "2025-09-01 00:00:00",
+          "employee_count": 4
+         },
+         {
+          "date": "2025-10-01 00:00:00",
+          "employee_count": 4
+         },
+         {
+          "date": "2025-11-01 00:00:00",
+          "employee_count": 4
+         },
+         {
+          "date": "2025-12-01 00:00:00",
+          "employee_count": 5
+         },
+         {
+          "date": "2026-01-01 00:00:00",
+          "employee_count": 5
+         },
+         {
+          "date": "2026-02-01 00:00:00",
+          "employee_count": 6
+         },
+         {
+          "date": "2026-03-01 00:00:00",
+          "employee_count": 6
+         },
+         {
+          "date": "2026-04-01 00:00:00",
+          "employee_count": 8
+         },
+         {
+          "date": "2026-05-01 00:00:00",
+          "employee_count": 8
+         },
+         {
+          "date": "2026-06-01 00:00:00",
+          "employee_count": 7
+         },
+         {
+          "date": "2026-07-01 00:00:00",
+          "employee_count": 8
+         },
+         {
+          "date": "2026-08-01 00:00:00",
+          "employee_count": 8
+         },
+         {
+          "date": "2026-09-01 00:00:00",
+          "employee_count": 8
+         }
+        ],
+        "Mumbai Metropolitan Region": [
+         {
+          "date": "2026-04-01 00:00:00",
+          "employee_count": 5
+         }
+        ],
+        "New Delhi": [
+         {
+          "date": "2025-06-01 00:00:00",
+          "employee_count": 29
+         },
+         {
+          "date": "2025-07-01 00:00:00",
+          "employee_count": 29
+         },
+         {
+          "date": "2025-08-01 00:00:00",
+          "employee_count": 33
+         },
+         {
+          "date": "2025-09-01 00:00:00",
+          "employee_count": 36
+         },
+         {
+          "date": "2025-10-01 00:00:00",
+          "employee_count": 37
+         },
+         {
+          "date": "2025-11-01 00:00:00",
+          "employee_count": 37
+         },
+         {
+          "date": "2025-12-01 00:00:00",
+          "employee_count": 40
+         },
+         {
+          "date": "2026-01-01 00:00:00",
+          "employee_count": 40
+         },
+         {
+          "date": "2026-02-01 00:00:00",
+          "employee_count": 42
+         },
+         {
+          "date": "2026-03-01 00:00:00",
+          "employee_count": 42
+         },
+         {
+          "date": "2026-04-01 00:00:00",
+          "employee_count": 47
+         },
+         {
+          "date": "2026-05-01 00:00:00",
+          "employee_count": 47
+         },
+         {
+          "date": "2026-06-01 00:00:00",
+          "employee_count": 51
+         },
+         {
+          "date": "2026-07-01 00:00:00",
+          "employee_count": 54
+         },
+         {
+          "date": "2026-08-01 00:00:00",
+          "employee_count": 49
+         },
+         {
+          "date": "2026-09-01 00:00:00",
+          "employee_count": 49
+         }
+        ],
+        "Rajasthan, India": [
+         {
+          "date": "2025-06-01 00:00:00",
+          "employee_count": 4
+         },
+         {
+          "date": "2025-07-01 00:00:00",
+          "employee_count": 4
+         },
+         {
+          "date": "2025-08-01 00:00:00",
+          "employee_count": 4
+         },
+         {
+          "date": "2025-09-01 00:00:00",
+          "employee_count": 4
+         },
+         {
+          "date": "2025-10-01 00:00:00",
+          "employee_count": 4
+         },
+         {
+          "date": "2025-11-01 00:00:00",
+          "employee_count": 4
+         },
+         {
+          "date": "2025-12-01 00:00:00",
+          "employee_count": 4
+         },
+         {
+          "date": "2026-01-01 00:00:00",
+          "employee_count": 4
+         },
+         {
+          "date": "2026-02-01 00:00:00",
+          "employee_count": 4
+         },
+         {
+          "date": "2026-03-01 00:00:00",
+          "employee_count": 4
+         },
+         {
+          "date": "2026-04-01 00:00:00",
+          "employee_count": 4
+         },
+         {
+          "date": "2026-05-01 00:00:00",
+          "employee_count": 4
+         },
+         {
+          "date": "2026-06-01 00:00:00",
+          "employee_count": 6
+         },
+         {
+          "date": "2026-07-01 00:00:00",
+          "employee_count": 7
+         },
+         {
+          "date": "2026-08-01 00:00:00",
+          "employee_count": 6
+         },
+         {
+          "date": "2026-09-01 00:00:00",
+          "employee_count": 6
+         }
+        ],
+        "Tamil Nadu, India": [
+         {
+          "date": "2025-06-01 00:00:00",
+          "employee_count": 5
+         },
+         {
+          "date": "2025-07-01 00:00:00",
+          "employee_count": 5
+         },
+         {
+          "date": "2025-08-01 00:00:00",
+          "employee_count": 5
+         },
+         {
+          "date": "2025-09-01 00:00:00",
+          "employee_count": 5
+         },
+         {
+          "date": "2025-10-01 00:00:00",
+          "employee_count": 6
+         },
+         {
+          "date": "2025-11-01 00:00:00",
+          "employee_count": 6
+         },
+         {
+          "date": "2025-12-01 00:00:00",
+          "employee_count": 6
+         },
+         {
+          "date": "2026-01-01 00:00:00",
+          "employee_count": 6
+         },
+         {
+          "date": "2026-02-01 00:00:00",
+          "employee_count": 6
+         },
+         {
+          "date": "2026-03-01 00:00:00",
+          "employee_count": 6
+         },
+         {
+          "date": "2026-04-01 00:00:00",
+          "employee_count": 7
+         },
+         {
+          "date": "2026-05-01 00:00:00",
+          "employee_count": 7
+         },
+         {
+          "date": "2026-06-01 00:00:00",
+          "employee_count": 11
+         },
+         {
+          "date": "2026-07-01 00:00:00",
+          "employee_count": 10
+         },
+         {
+          "date": "2026-08-01 00:00:00",
+          "employee_count": 10
+         },
+         {
+          "date": "2026-09-01 00:00:00",
+          "employee_count": 10
+         }
+        ],
+        "Telangana, India": [
+         {
+          "date": "2025-06-01 00:00:00",
+          "employee_count": 3
+         },
+         {
+          "date": "2025-07-01 00:00:00",
+          "employee_count": 3
+         },
+         {
+          "date": "2025-08-01 00:00:00",
+          "employee_count": 3
+         },
+         {
+          "date": "2025-09-01 00:00:00",
+          "employee_count": 4
+         },
+         {
+          "date": "2025-10-01 00:00:00",
+          "employee_count": 4
+         },
+         {
+          "date": "2025-11-01 00:00:00",
+          "employee_count": 4
+         },
+         {
+          "date": "2025-12-01 00:00:00",
+          "employee_count": 4
+         },
+         {
+          "date": "2026-01-01 00:00:00",
+          "employee_count": 4
+         },
+         {
+          "date": "2026-02-01 00:00:00",
+          "employee_count": 4
+         },
+         {
+          "date": "2026-03-01 00:00:00",
+          "employee_count": 4
+         },
+         {
+          "date": "2026-04-01 00:00:00",
+          "employee_count": 4
+         },
+         {
+          "date": "2026-05-01 00:00:00",
+          "employee_count": 4
+         },
+         {
+          "date": "2026-06-01 00:00:00",
+          "employee_count": 5
+         },
+         {
+          "date": "2026-07-01 00:00:00",
+          "employee_count": 6
+         },
+         {
+          "date": "2026-08-01 00:00:00",
+          "employee_count": 6
+         },
+         {
+          "date": "2026-09-01 00:00:00",
+          "employee_count": 6
+         }
+        ],
+        "Uttar Pradesh, India": [
+         {
+          "date": "2025-06-01 00:00:00",
+          "employee_count": 5
+         },
+         {
+          "date": "2025-07-01 00:00:00",
+          "employee_count": 6
+         },
+         {
+          "date": "2025-08-01 00:00:00",
+          "employee_count": 6
+         },
+         {
+          "date": "2025-09-01 00:00:00",
+          "employee_count": 6
+         },
+         {
+          "date": "2025-10-01 00:00:00",
+          "employee_count": 7
+         },
+         {
+          "date": "2025-11-01 00:00:00",
+          "employee_count": 7
+         },
+         {
+          "date": "2025-12-01 00:00:00",
+          "employee_count": 9
+         },
+         {
+          "date": "2026-01-01 00:00:00",
+          "employee_count": 9
+         },
+         {
+          "date": "2026-02-01 00:00:00",
+          "employee_count": 9
+         },
+         {
+          "date": "2026-03-01 00:00:00",
+          "employee_count": 9
+         },
+         {
+          "date": "2026-04-01 00:00:00",
+          "employee_count": 13
+         },
+         {
+          "date": "2026-05-01 00:00:00",
+          "employee_count": 13
+         },
+         {
+          "date": "2026-06-01 00:00:00",
+          "employee_count": 16
+         },
+         {
+          "date": "2026-07-01 00:00:00",
+          "employee_count": 16
+         },
+         {
+          "date": "2026-08-01 00:00:00",
+          "employee_count": 19
+         },
+         {
+          "date": "2026-09-01 00:00:00",
+          "employee_count": 18
+         }
+        ],
+        "West Bengal, India": [
+         {
+          "date": "2025-07-01 00:00:00",
+          "employee_count": 4
+         },
+         {
+          "date": "2025-08-01 00:00:00",
+          "employee_count": 4
+         },
+         {
+          "date": "2025-09-01 00:00:00",
+          "employee_count": 4
+         },
+         {
+          "date": "2025-10-01 00:00:00",
+          "employee_count": 4
+         }
+        ]
+       }
+      }
+     },
+     "funding": {
+      "is_investor": false,
+      "contact_email": "co.pro@concorindia.com",
+      "phone_number": "+91 011 41222500",
+      "total_investment_usd": 0.0,
+      "last_round_amount_usd": null,
+      "last_fundraise_date": null,
+      "last_round_type": null,
+      "num_funding_rounds": 0,
+      "funds_total_usd": null,
+      "num_funds": 0,
+      "last_fund_date": null,
+      "investors": null,
+      "acquisitions": [],
+      "acquired_by": []
+     },
+     "hiring": {
+      "recent_titles_csv": null,
+      "openings_count": null,
+      "openings_growth_percent": null,
+      "by_function_qoq_pct": null,
+      "by_function_6m_pct": null
+     },
+     "web_traffic": {
+      "domain_traffic": {
+       "concorindia.co.in": {
+        "domain": "concorindia.co.in",
+        "monthly_visitors": 258019.0,
+        "mom_pct": -59.66,
+        "qoq_pct": 98.19,
+        "source_search_pct": 47.28522922533006,
+        "source_direct_pct": 42.67492540299631,
+        "source_social_pct": 2.38800117103067,
+        "source_paid_referral_pct": 0.23827682334725372,
+        "source_referral_pct": 4.811265716436051,
+        "monthly_visitors_timeseries": [
+         {
+          "date": "2025-02-01T00:00:00+00:00",
+          "monthly_visitors": 210298
+         },
+         {
+          "date": "2025-03-01T00:00:00+00:00",
+          "monthly_visitors": 210394
+         },
+         {
+          "date": "2025-04-01T00:00:00+00:00",
+          "monthly_visitors": 136011
+         },
+         {
+          "date": "2025-05-01T00:00:00+00:00",
+          "monthly_visitors": 170411
+         },
+         {
+          "date": "2025-06-01T00:00:00+00:00",
+          "monthly_visitors": 188442
+         },
+         {
+          "date": "2025-07-01T00:00:00+00:00",
+          "monthly_visitors": 165331
+         },
+         {
+          "date": "2025-08-01T00:00:00+00:00",
+          "monthly_visitors": 118122
+         },
+         {
+          "date": "2025-09-01T00:00:00+00:00",
+          "monthly_visitors": 115739
+         },
+         {
+          "date": "2025-10-01T00:00:00+00:00",
+          "monthly_visitors": 112919
+         },
+         {
+          "date": "2025-11-01T00:00:00+00:00",
+          "monthly_visitors": 111518
+         },
+         {
+          "date": "2025-12-01T00:00:00+00:00",
+          "monthly_visitors": 111358
+         },
+         {
+          "date": "2026-01-01T00:00:00+00:00",
+          "monthly_visitors": 106424
+         },
+         {
+          "date": "2026-02-01T00:00:00+00:00",
+          "monthly_visitors": 94281
+         },
+         {
+          "date": "2026-03-01T00:00:00+00:00",
+          "monthly_visitors": 127198
+         },
+         {
+          "date": "2026-04-01T00:00:00+00:00",
+          "monthly_visitors": 103665
+         },
+         {
+          "date": "2026-05-01T00:00:00+00:00",
+          "monthly_visitors": 106044
+         },
+         {
+          "date": "2026-06-01T00:00:00+00:00",
+          "monthly_visitors": 121423
+         },
+         {
+          "date": "2026-07-01T00:00:00+00:00",
+          "monthly_visitors": 130189
+         },
+         {
+          "date": "2026-08-01T00:00:00+00:00",
+          "monthly_visitors": 210414
+         },
+         {
+          "date": "2026-09-01T00:00:00+00:00",
+          "monthly_visitors": 639664
+         },
+         {
+          "date": "2026-10-01T00:00:00+00:00",
+          "monthly_visitors": 258019
+         }
+        ],
+        "source_search_pct_timeseries": [
+         {
+          "date": "2025-04-01T00:00:00+00:00",
+          "traffic_source_search_pct": 56.65542381346429
+         },
+         {
+          "date": "2025-05-01T00:00:00+00:00",
+          "traffic_source_search_pct": 54.855433594462234
+         },
+         {
+          "date": "2025-06-01T00:00:00+00:00",
+          "traffic_source_search_pct": 58.38018069859934
+         },
+         {
+          "date": "2025-07-01T00:00:00+00:00",
+          "traffic_source_search_pct": 58.95040173644279
+         },
+         {
+          "date": "2025-08-01T00:00:00+00:00",
+          "traffic_source_search_pct": 62.195581421646054
+         },
+         {
+          "date": "2025-09-01T00:00:00+00:00",
+          "traffic_source_search_pct": 64.25157173092761
+         },
+         {
+          "date": "2025-10-01T00:00:00+00:00",
+          "traffic_source_search_pct": 65.50685087222372
+         },
+         {
+          "date": "2025-11-01T00:00:00+00:00",
+          "traffic_source_search_pct": 64.93378340370481
+         },
+         {
+          "date": "2025-12-01T00:00:00+00:00",
+          "traffic_source_search_pct": 64.60946178452647
+         },
+         {
+          "date": "2026-01-01T00:00:00+00:00",
+          "traffic_source_search_pct": 64.7219142870103
+         },
+         {
+          "date": "2026-02-01T00:00:00+00:00",
+          "traffic_source_search_pct": 64.77490343376832
+         },
+         {
+          "date": "2026-03-01T00:00:00+00:00",
+          "traffic_source_search_pct": 62.89327436345358
+         },
+         {
+          "date": "2026-05-01T00:00:00+00:00",
+          "traffic_source_search_pct": 44.18931536393725
+         },
+         {
+          "date": "2026-06-01T00:00:00+00:00",
+          "traffic_source_search_pct": 33.086028937663976
+         },
+         {
+          "date": "2026-07-01T00:00:00+00:00",
+          "traffic_source_search_pct": 29.961590244420066
+         },
+         {
+          "date": "2026-08-01T00:00:00+00:00",
+          "traffic_source_search_pct": 45.464212565322654
+         },
+         {
+          "date": "2026-09-01T00:00:00+00:00",
+          "traffic_source_search_pct": 42.75100827819132
+         },
+         {
+          "date": "2026-10-01T00:00:00+00:00",
+          "traffic_source_search_pct": 47.28522922533006
+         }
+        ],
+        "source_direct_pct_timeseries": [
+         {
+          "date": "2025-04-01T00:00:00+00:00",
+          "traffic_source_direct_pct": 41.945826574618536
+         },
+         {
+          "date": "2025-05-01T00:00:00+00:00",
+          "traffic_source_direct_pct": 43.599081214606244
+         },
+         {
+          "date": "2025-06-01T00:00:00+00:00",
+          "traffic_source_direct_pct": 39.837467055082854
+         },
+         {
+          "date": "2025-07-01T00:00:00+00:00",
+          "traffic_source_direct_pct": 38.88467064892094
+         },
+         {
+          "date": "2025-08-01T00:00:00+00:00",
+          "traffic_source_direct_pct": 35.53664085916428
+         },
+         {
+          "date": "2025-09-01T00:00:00+00:00",
+          "traffic_source_direct_pct": 33.520273454099986
+         },
+         {
+          "date": "2025-10-01T00:00:00+00:00",
+          "traffic_source_direct_pct": 32.50631943753039
+         },
+         {
+          "date": "2025-11-01T00:00:00+00:00",
+          "traffic_source_direct_pct": 33.084981717754644
+         },
+         {
+          "date": "2025-12-01T00:00:00+00:00",
+          "traffic_source_direct_pct": 33.32451672160172
+         },
+         {
+          "date": "2026-01-01T00:00:00+00:00",
+          "traffic_source_direct_pct": 33.48880215521523
+         },
+         {
+          "date": "2026-02-01T00:00:00+00:00",
+          "traffic_source_direct_pct": 33.32598329812815
+         },
+         {
+          "date": "2026-03-01T00:00:00+00:00",
+          "traffic_source_direct_pct": 34.80941132582655
+         },
+         {
+          "date": "2026-05-01T00:00:00+00:00",
+          "traffic_source_direct_pct": 53.56084055686586
+         },
+         {
+          "date": "2026-06-01T00:00:00+00:00",
+          "traffic_source_direct_pct": 63.735159732205794
+         },
+         {
+          "date": "2026-07-01T00:00:00+00:00",
+          "traffic_source_direct_pct": 67.0391994849362
+         },
+         {
+          "date": "2026-08-01T00:00:00+00:00",
+          "traffic_source_direct_pct": 47.328702186951816
+         },
+         {
+          "date": "2026-09-01T00:00:00+00:00",
+          "traffic_source_direct_pct": 41.7375590575238
+         },
+         {
+          "date": "2026-10-01T00:00:00+00:00",
+          "traffic_source_direct_pct": 42.67492540299631
+         }
+        ],
+        "source_social_pct_timeseries": [
+         {
+          "date": "2025-04-01T00:00:00+00:00",
+          "traffic_source_social_pct": 0.24676263150303726
+         },
+         {
+          "date": "2025-05-01T00:00:00+00:00",
+          "traffic_source_social_pct": 0.24543526005381375
+         },
+         {
+          "date": "2025-06-01T00:00:00+00:00",
+          "traffic_source_social_pct": 0.2416580208017798
+         },
+         {
+          "date": "2025-07-01T00:00:00+00:00",
+          "traffic_source_social_pct": 0.2772582651681478
+         },
+         {
+          "date": "2025-08-01T00:00:00+00:00",
+          "traffic_source_social_pct": 0.2161340739623384
+         },
+         {
+          "date": "2025-09-01T00:00:00+00:00",
+          "traffic_source_social_pct": 0.1741021418580574
+         },
+         {
+          "date": "2025-10-01T00:00:00+00:00",
+          "traffic_source_social_pct": 0.09375774595505623
+         },
+         {
+          "date": "2025-11-01T00:00:00+00:00",
+          "traffic_source_social_pct": 0.11160136769074044
+         },
+         {
+          "date": "2025-12-01T00:00:00+00:00",
+          "traffic_source_social_pct": 0.15594017034933888
+         },
+         {
+          "date": "2026-01-01T00:00:00+00:00",
+          "traffic_source_social_pct": 0.1201116585912721
+         },
+         {
+          "date": "2026-02-01T00:00:00+00:00",
+          "traffic_source_social_pct": 0.14984557727962886
+         },
+         {
+          "date": "2026-03-01T00:00:00+00:00",
+          "traffic_source_social_pct": 0.18059401368193054
+         },
+         {
+          "date": "2026-05-01T00:00:00+00:00",
+          "traffic_source_social_pct": 0.0
+         },
+         {
+          "date": "2026-06-01T00:00:00+00:00",
+          "traffic_source_social_pct": 0.0
+         },
+         {
+          "date": "2026-07-01T00:00:00+00:00",
+          "traffic_source_social_pct": 0.5703253802541931
+         },
+         {
+          "date": "2026-08-01T00:00:00+00:00",
+          "traffic_source_social_pct": 1.1543544440509839
+         },
+         {
+          "date": "2026-09-01T00:00:00+00:00",
+          "traffic_source_social_pct": 4.097810448183985
+         },
+         {
+          "date": "2026-10-01T00:00:00+00:00",
+          "traffic_source_social_pct": 2.38800117103067
+         }
+        ],
+        "source_paid_referral_pct_timeseries": [
+         {
+          "date": "2025-04-01T00:00:00+00:00",
+          "traffic_source_paid_referral_pct": 0.013129789275140207
+         },
+         {
+          "date": "2025-05-01T00:00:00+00:00",
+          "traffic_source_paid_referral_pct": 0.03709066388059738
+         },
+         {
+          "date": "2025-06-01T00:00:00+00:00",
+          "traffic_source_paid_referral_pct": 0.08235386664627456
+         },
+         {
+          "date": "2025-07-01T00:00:00+00:00",
+          "traffic_source_paid_referral_pct": 0.13192057835862453
+         },
+         {
+          "date": "2025-08-01T00:00:00+00:00",
+          "traffic_source_paid_referral_pct": 0.10040672642179145
+         },
+         {
+          "date": "2025-09-01T00:00:00+00:00",
+          "traffic_source_paid_referral_pct": 0.10742838893268883
+         },
+         {
+          "date": "2025-10-01T00:00:00+00:00",
+          "traffic_source_paid_referral_pct": 0.09629371973450834
+         },
+         {
+          "date": "2025-11-01T00:00:00+00:00",
+          "traffic_source_paid_referral_pct": 0.10388562539376237
+         },
+         {
+          "date": "2025-12-01T00:00:00+00:00",
+          "traffic_source_paid_referral_pct": 0.11005337253583254
+         },
+         {
+          "date": "2026-01-01T00:00:00+00:00",
+          "traffic_source_paid_referral_pct": 0.10042994734364977
+         },
+         {
+          "date": "2026-02-01T00:00:00+00:00",
+          "traffic_source_paid_referral_pct": 0.13764179841185317
+         },
+         {
+          "date": "2026-03-01T00:00:00+00:00",
+          "traffic_source_paid_referral_pct": 0.18904758652008655
+         },
+         {
+          "date": "2026-05-01T00:00:00+00:00",
+          "traffic_source_paid_referral_pct": 0.3085799943803176
+         },
+         {
+          "date": "2026-06-01T00:00:00+00:00",
+          "traffic_source_paid_referral_pct": 0.0
+         },
+         {
+          "date": "2026-07-01T00:00:00+00:00",
+          "traffic_source_paid_referral_pct": 0.0
+         },
+         {
+          "date": "2026-08-01T00:00:00+00:00",
+          "traffic_source_paid_referral_pct": 0.0
+         },
+         {
+          "date": "2026-09-01T00:00:00+00:00",
+          "traffic_source_paid_referral_pct": 0.13547850904726053
+         },
+         {
+          "date": "2026-10-01T00:00:00+00:00",
+          "traffic_source_paid_referral_pct": 0.23827682334725372
+         }
+        ],
+        "source_referral_pct_timeseries": [
+         {
+          "date": "2025-04-01T00:00:00+00:00",
+          "traffic_source_referral_pct": 1.1232612063845202
+         },
+         {
+          "date": "2025-05-01T00:00:00+00:00",
+          "traffic_source_referral_pct": 1.2384780148522299
+         },
+         {
+          "date": "2025-06-01T00:00:00+00:00",
+          "traffic_source_referral_pct": 1.4336760088505902
+         },
+         {
+          "date": "2025-07-01T00:00:00+00:00",
+          "traffic_source_referral_pct": 1.720314095604552
+         },
+         {
+          "date": "2025-08-01T00:00:00+00:00",
+          "traffic_source_referral_pct": 1.9168796593363684
+         },
+         {
+          "date": "2025-09-01T00:00:00+00:00",
+          "traffic_source_referral_pct": 1.9213628927494306
+         },
+         {
+          "date": "2025-10-01T00:00:00+00:00",
+          "traffic_source_referral_pct": 1.779657704036183
+         },
+         {
+          "date": "2025-11-01T00:00:00+00:00",
+          "traffic_source_referral_pct": 1.7498850918695317
+         },
+         {
+          "date": "2025-12-01T00:00:00+00:00",
+          "traffic_source_referral_pct": 1.7748062851028878
+         },
+         {
+          "date": "2026-01-01T00:00:00+00:00",
+          "traffic_source_referral_pct": 1.5479946418694348
+         },
+         {
+          "date": "2026-02-01T00:00:00+00:00",
+          "traffic_source_referral_pct": 1.5808133432925315
+         },
+         {
+          "date": "2026-03-01T00:00:00+00:00",
+          "traffic_source_referral_pct": 1.893115255061286
+         },
+         {
+          "date": "2026-05-01T00:00:00+00:00",
+          "traffic_source_referral_pct": 1.4954292160422142
+         },
+         {
+          "date": "2026-06-01T00:00:00+00:00",
+          "traffic_source_referral_pct": 1.0124701049375568
+         },
+         {
+          "date": "2026-07-01T00:00:00+00:00",
+          "traffic_source_referral_pct": 1.3158891414635114
+         },
+         {
+          "date": "2026-08-01T00:00:00+00:00",
+          "traffic_source_referral_pct": 3.5359152033713106
+         },
+         {
+          "date": "2026-09-01T00:00:00+00:00",
+          "traffic_source_referral_pct": 9.067401968470872
+         },
+         {
+          "date": "2026-10-01T00:00:00+00:00",
+          "traffic_source_referral_pct": 4.811265716436051
+         }
+        ]
+       }
+      }
+     },
+     "employee_reviews": {
+      "overall_rating": {
+       "rating": null,
+       "total_count": null,
+       "rating_1_count": null,
+       "rating_2_count": null,
+       "rating_3_count": null,
+       "rating_4_count": null,
+       "rating_5_count": null
+      },
+      "company_ceo": {
+       "ceo_rating": null
+      },
+      "culture_and_values_rating": null,
+      "diversity_and_inclusion_rating": null,
+      "work_life_balance_rating": null,
+      "senior_management_rating": null,
+      "compensation_and_benefits_rating": null,
+      "career_opportunities_rating": null,
+      "recommend_to_friend_rating": null,
+      "business_outlook_rating": null
+     },
+     "people": {
+      "decision_makers": [],
+      "founders": [],
+      "cxos": []
+     },
+     "news": [
+      {
+       "source": "google_news",
+       "article_url": "https://upstox.com/news/market-news/stocks/dabur-nbcc-india-concor-dividends-record-dates-this-week-upcoming-rights-issue-and-other-corporate-actions/article-203170/",
+       "article_title": "Dabur, NBCC India, CONCOR and others: Dividend record dates this week; check full list",
+       "article_publisher_name": "Upstox",
+       "article_publish_date": "2026-11-08",
+       "publisher_domain": "upstox.com",
+       "confidence_score": 0.85
+      },
+      {
+       "source": "google_news",
+       "article_url": "https://www.livemint.com/market/stock-market-news/upcoming-psu-dividend-record-dates-concor-ongc-nbcc-rites-hudco-nlc-india-check-amount-record-date-payment-tim-11794120757556.html",
+       "article_title": "PSU dividend record dates this week: CONCOR, ONGC, NBCC, RITES, HUDCO, NLC- Check amount, record date, payment timeline",
+       "article_publisher_name": "Livemint",
+       "article_publish_date": "2026-11-08",
+       "publisher_domain": "livemint.com",
+       "confidence_score": 0.95
+      },
+      {
+       "source": "google_news",
+       "article_url": "https://simplywall.st/stocks/in/transportation/nse-concor/container-corporation-of-india-shares/news/is-it-worth-considering-container-corporation-of-india-limit-1/amp",
+       "article_title": "Is It Worth Considering Container Corporation of India Limited (NSE:CONCOR) For Its Upcoming Dividend?",
+       "article_publisher_name": "Simply Wall St",
+       "article_publish_date": "2026-11-07",
+       "publisher_domain": "simplywall.st",
+       "confidence_score": 0.95
+      },
+      {
+       "source": "google_news",
+       "article_url": "https://sg.finance.yahoo.com/news/container-corporation-india-ltd-bom-090227501.html",
+       "article_title": "Container Corporation of India Ltd (BOM:531344) (Q2 2027) Earnings Call Highlights: Record ...",
+       "article_publisher_name": "Yahoo Finance Singapore",
+       "article_publish_date": "2026-11-04",
+       "publisher_domain": "yahoo.com",
+       "confidence_score": 0.95
+      },
+      {
+       "source": "google_news",
+       "article_url": "https://www.multibagg.ai/market-pulse/articles/concor-q2-profit-falls-announcement-cmvzlrqrc00312vpeqcxwffaq",
+       "article_title": "Container Corporation of India Limited Q2 profit falls 7%",
+       "article_publisher_name": "Multibagg AI",
+       "article_publish_date": "2026-11-02",
+       "publisher_domain": "multibagg.ai",
+       "confidence_score": 0.95
+      },
+      {
+       "source": "google_news",
+       "article_url": "https://www.adda247.com/jobs/concor-recruitment-2026/",
+       "article_title": "CONCOR Exam Date 2026 Out for 77 Management Trainee and Assistant Officer Posts",
+       "article_publisher_name": "Adda247",
+       "article_publish_date": "2026-10-31",
+       "publisher_domain": "adda247.com",
+       "confidence_score": 0.95
+      },
+      {
+       "source": "google_news",
+       "article_url": "https://univest.in/blogs/why-container-corporation-of-india-ltd-share-near-52-week-consecutive-low-2026",
+       "article_title": "CONCOR 52 Week Low Streak: Price, Peers and Fundamentals",
+       "article_publisher_name": "Univest",
+       "article_publish_date": "2026-10-22",
+       "publisher_domain": "univest.in",
+       "confidence_score": 0.95
+      },
+      {
+       "source": "google_news",
+       "article_url": "https://univest.in/blogs/concor-best-stock-in-its-sector",
+       "article_title": "Is Container Corporation of India the Best Stock in Its Sector? A Look at the Numbers",
+       "article_publisher_name": "Univest",
+       "article_publish_date": "2026-10-16",
+       "publisher_domain": "univest.in",
+       "confidence_score": 0.95
+      },
+      {
+       "source": "google_news",
+       "article_url": "https://univest.in/blogs/why-container-corporation-of-india-ltd-share-price-rise-today-2026",
+       "article_title": "Container Corporation Of India Ltd. (CONCOR) Share Price Rises 2.05% Today",
+       "article_publisher_name": "Univest",
+       "article_publish_date": "2026-10-13",
+       "publisher_domain": "univest.in",
+       "confidence_score": 0.95
+      },
+      {
+       "source": "crunchbase",
+       "article_url": "https://www.livemint.com/market/stock-market-news/dividend-kings-of-railway-shares-irfc-vs-rvnl-vs-irctc-vs-rites-vs-concor-which-psu-stock-wins-the-crown-11791615271148.html",
+       "article_title": "Dividend kings of Railway shares: IRFC vs RVNL vs IRCTC vs RITES vs CONCOR - Which PSU stock wins the crown?",
+       "article_publisher_name": "Livemint.com",
+       "article_publish_date": "2026-10-10",
+       "publisher_domain": null,
+       "confidence_score": null
+      },
+      {
+       "source": "google_news",
+       "article_url": "https://www.psuconnect.in/new-faces-in-psus/concor-extends-additional-charge-of-director-projects-services-to-vijoy-kumar-singh",
+       "article_title": "CONCOR Extends Additional Charge of Director (Projects & Services) to Vijoy Kumar Singh",
+       "article_publisher_name": "PSU Connect",
+       "article_publish_date": "2026-10-09",
+       "publisher_domain": "psuconnect.in",
+       "confidence_score": 0.85
+      },
+      {
+       "source": "google_news",
+       "article_url": "https://www.kalkine.co.in/article/announcements/container-corporation-of-india-nseconcor-what-does-the-extended-additional-charge-for-director-projects-services-mean",
+       "article_title": "CONCOR Director Charge Extended: What Investors Should Know",
+       "article_publisher_name": "Kalkine India",
+       "article_publish_date": "2026-10-09",
+       "publisher_domain": "kalkine.co.in",
+       "confidence_score": 0.95
+      },
+      {
+       "source": "google_news",
+       "article_url": "https://indianmasterminds.com/news/concor-8715-crore-contract-12-blss-wagon-rakes-southern-railway-240582/",
+       "article_title": "CONCOR Awards ₹87.15 Crore Contract for 12 BLSS Wagon Rakes to Southern Railway Workshop",
+       "article_publisher_name": "Indianmasterminds",
+       "article_publish_date": "2026-10-08",
+       "publisher_domain": "indianmasterminds.com",
+       "confidence_score": 0.95
+      },
+      {
+       "source": "google_news",
+       "article_url": "https://whispersinthecorridors.net/news/vijay-kumar-singh-gets-extension-as-director-projects-services-concor",
+       "article_title": "Vijay Kumar Singh gets extension as Director (Projects & Services), CONCOR",
+       "article_publisher_name": "https://whispersinthecorridors.net/",
+       "article_publish_date": "2026-10-08",
+       "publisher_domain": "whispersinthecorridors.net",
+       "confidence_score": 0.9
+      },
+      {
+       "source": "google_news",
+       "article_url": "https://www.maritimegateway.com/concor-blss-wagon-order-2/",
+       "article_title": "CONCOR Places Rs 87.15 Cr BLSS Wagon Order",
+       "article_publisher_name": "Maritime Gateway",
+       "article_publish_date": "2026-10-07",
+       "publisher_domain": "maritimegateway.com",
+       "confidence_score": 0.95
+      },
+      {
+       "source": "google_news",
+       "article_url": "https://www.psuconnect.in/psu-news/concor-places-87-15-crore-order-for-12-rakes-of-blss-wagons",
+       "article_title": "CONCOR Places ₹87.15 Crore Order for 12 Rakes of BLSS Wagons",
+       "article_publisher_name": "PSU Connect",
+       "article_publish_date": "2026-10-06",
+       "publisher_domain": "psuconnect.in",
+       "confidence_score": 0.95
+      },
+      {
+       "source": "google_news",
+       "article_url": "https://www.logisticsinsider.in/concors-mmlp-dadri-sets-new-record-for-reefer-container-movement-in-september/",
+       "article_title": "CONCOR’s MMLP Dadri sets new record for reefer container movement in September",
+       "article_publisher_name": "Logistics Insider",
+       "article_publish_date": "2026-10-06",
+       "publisher_domain": "logisticsinsider.in",
+       "confidence_score": 0.95
+      },
+      {
+       "source": "google_news",
+       "article_url": "https://www.marketscreener.com/news/container-corporation-of-india-ltd-announces-redesignation-of-rama-kant-singh-from-ggm-c-o-to-exe-ce785ddcda8ff42c",
+       "article_title": "Container Corporation of India Ltd. Announces Redesignation of Rama Kant Singh from GGM (C&O) to Executive Director (C&O), Effective September 16, 2026",
+       "article_publisher_name": "www.marketscreener.com",
+       "article_publish_date": "2026-10-05",
+       "publisher_domain": "marketscreener.com",
+       "confidence_score": 1.0
+      },
+      {
+       "source": "google_news",
+       "article_url": "https://univest.in/blogs/why-container-corporation-of-india-share-consecutive-price-fall-2026",
+       "article_title": "CONCOR Share Price Fall Streak: Second Straight Decline",
+       "article_publisher_name": "Univest",
+       "article_publish_date": "2026-10-05",
+       "publisher_domain": "univest.in",
+       "confidence_score": 0.95
+      },
+      {
+       "source": "google_news",
+       "article_url": "https://www.maritimegateway.com/concor-handles-first-machinery-export-to-singapore-from-icd-khodiyar-in-own-containers/",
+       "article_title": "CONCOR handles first machinery export to Singapore from ICD-Khodiyar in own containers",
+       "article_publisher_name": "Maritime Gateway",
+       "article_publish_date": "2026-10-03",
+       "publisher_domain": "maritimegateway.com",
+       "confidence_score": 0.9
+      },
+      {
+       "source": "google_news",
+       "article_url": "https://www.equitypandit.com/concor-outlook-for-the-week/",
+       "article_title": "CONCOR Outlook for the Week",
+       "article_publisher_name": "Equitypandit",
+       "article_publish_date": "2026-10-01",
+       "publisher_domain": "equitypandit.com",
+       "confidence_score": 0.9
+      },
+      {
+       "source": "google_news",
+       "article_url": "https://indiashippingnews.com/export/concor-achieves-milestone-with-first-own-container-export-movement-from-icd-khodiyar-to-singapore/",
+       "article_title": "CONCOR achieves milestone with first own-container export movement from ICD Khodiyar to Singapore",
+       "article_publisher_name": "India Shipping News",
+       "article_publish_date": "2026-09-30",
+       "publisher_domain": "indiashippingnews.com",
+       "confidence_score": 0.95
+      },
+      {
+       "source": "google_news",
+       "article_url": "https://www.psuconnect.in/psu-news/concor-38th-agm-results-declared-all-resolutions-passed-with-requisite-majority",
+       "article_title": "CONCOR 38th AGM Results Declared: All Resolutions Passed with Requisite Majority",
+       "article_publisher_name": "PSU Connect",
+       "article_publish_date": "2026-09-29",
+       "publisher_domain": "psuconnect.in",
+       "confidence_score": 0.95
+      },
+      {
+       "source": "google_news",
+       "article_url": "https://www.kalkine.co.in/article/announcements/container-corporation-of-india-nseconcor-what-did-the-chairman-say-at-the-38th-agm",
+       "article_title": "CONCOR NSE AGM 2026 Chairman Speech Key Highlights",
+       "article_publisher_name": "Kalkine India",
+       "article_publish_date": "2026-09-29",
+       "publisher_domain": "kalkine.co.in",
+       "confidence_score": 0.95
+      },
+      {
+       "source": "google_news",
+       "article_url": "https://www.maritimegateway.com/container-corporation-of-india-reports-record-fy26-throughput-consolidated-profit-at-rs-1246-crore/",
+       "article_title": "Container Corporation of India reports record FY26 throughput, consolidated profit at Rs 1,246 crore",
+       "article_publisher_name": "Maritime Gateway",
+       "article_publish_date": "2026-09-29",
+       "publisher_domain": "maritimegateway.com",
+       "confidence_score": 1.0
+      },
+      {
+       "source": "google_news",
+       "article_url": "https://scanx.trade/stock-market-news/companies/concor-schedules-38th-agm-sep-28-proposes-1-dividend/50062547",
+       "article_title": "Concor schedules 38th AGM on Sep 28, proposes ₹1 dividend",
+       "article_publisher_name": "scanx.trade",
+       "article_publish_date": "2026-09-28",
+       "publisher_domain": "scanx.trade",
+       "confidence_score": 0.95
+      },
+      {
+       "source": "google_news",
+       "article_url": "https://univest.in/blogs/why-container-corporation-of-india-share-price-price-fall-2026-09-28",
+       "article_title": "Container Corporation Of India Share Price News and Analysis",
+       "article_publisher_name": "Univest",
+       "article_publish_date": "2026-09-28",
+       "publisher_domain": "univest.in",
+       "confidence_score": 0.95
+      },
+      {
+       "source": "google_news",
+       "article_url": "https://indiashippingnews.com/logistics/concor-connect-2026-in-kanpur-highlights-expansion-of-rail-led-logistics-network/",
+       "article_title": "CONCOR Connect–2026 in Kanpur highlights expansion of rail-led logistics network",
+       "article_publisher_name": "India Shipping News",
+       "article_publish_date": "2026-09-26",
+       "publisher_domain": "indiashippingnews.com",
+       "confidence_score": 0.85
+      },
+      {
+       "source": "google_news",
+       "article_url": "https://www.kalkine.co.in/article/industrials/container-corporation-of-india-nse-concor-schedules-investor-meeting-after-operational-updates",
+       "article_title": "Container Corporation of India (NSE: CONCOR) Analyst Meeting and Business Performance Update",
+       "article_publisher_name": "Kalkine India",
+       "article_publish_date": "2026-09-23",
+       "publisher_domain": "kalkine.co.in",
+       "confidence_score": 0.95
+      },
+      {
+       "source": "google_news",
+       "article_url": "https://univest.in/blogs/container-corporation-of-india-vs-blue-dart-express-vs-transport-corporation-of-india",
+       "article_title": "Container Corporation of India vs Blue Dart Express vs Transport",
+       "article_publisher_name": "Univest",
+       "article_publish_date": "2026-09-23",
+       "publisher_domain": "univest.in",
+       "confidence_score": 0.95
+      },
+      {
+       "source": "google_news",
+       "article_url": "https://univest.in/blogs/container-corporation-of-india-stock-signals-investors-are-watching",
+       "article_title": "Container Corporation of India: 7 Stock Signals Investors Are Watching Right Now",
+       "article_publisher_name": "Univest",
+       "article_publish_date": "2026-09-21",
+       "publisher_domain": "univest.in",
+       "confidence_score": 0.95
+      },
+      {
+       "source": "google_news",
+       "article_url": "https://indiashippingnews.com/container/concor-signs-mou-with-apeda-to-strengthen-export-cold-chain-and-logistics-ecosystem/",
+       "article_title": "CONCOR signs MoU with APEDA to strengthen export cold chain and logistics ecosystem",
+       "article_publisher_name": "India Shipping News",
+       "article_publish_date": "2026-09-18",
+       "publisher_domain": "indiashippingnews.com",
+       "confidence_score": 0.95
+      },
+      {
+       "source": "google_news",
+       "article_url": "https://indiashippingnews.com/logistics/concors-mmlp-dadri-sets-new-record-with-seven-double-stack-trains-loaded-in-a-single-day/",
+       "article_title": "CONCOR’s MMLP Dadri sets new record with seven double-stack trains loaded in a single day",
+       "article_publisher_name": "India Shipping News",
+       "article_publish_date": "2026-09-17",
+       "publisher_domain": "indiashippingnews.com",
+       "confidence_score": 0.95
+      },
+      {
+       "source": "google_news",
+       "article_url": "https://scanx.trade/stock-market-news/companies/container-corporation-india-appoints-rama-kant-singh-group-gm/51198480",
+       "article_title": "Container Corporation Of India appoints Rama Kant Singh as Group GM",
+       "article_publisher_name": "scanx.trade",
+       "article_publish_date": "2026-09-17",
+       "publisher_domain": "scanx.trade",
+       "confidence_score": 0.95
+      },
+      {
+       "source": "google_news",
+       "article_url": "https://www.kalkine.co.in/article/announcements/container-corporation-of-india-nseconcor-why-is-it-meeting-analysts-and-investors-in-september-2026",
+       "article_title": "CONCOR Analyst Investor Meet September 2026 Schedule",
+       "article_publisher_name": "Kalkine India",
+       "article_publish_date": "2026-09-16",
+       "publisher_domain": "kalkine.co.in",
+       "confidence_score": 0.95
+      },
+      {
+       "source": "google_news",
+       "article_url": "https://www.kalkine.co.in/article/announcements/container-corporation-nseconcor-what-do-scheduled-investor-meets-in-september-2026-signal",
+       "article_title": "CONCOR Investor Meets Sep 2026: What Analysts Need to Know",
+       "article_publisher_name": "Kalkine India",
+       "article_publish_date": "2026-09-16",
+       "publisher_domain": "kalkine.co.in",
+       "confidence_score": 0.95
+      },
+      {
+       "source": "google_news",
+       "article_url": "https://indiashippingnews.com/railway/concors-assured-transit-time-train-reaches-delhi-well-ahead-of-schedule-on-2509-km-route/",
+       "article_title": "CONCOR’s “Assured Transit Time” Train reaches Delhi well ahead of Schedule on 2,509-Km Route",
+       "article_publisher_name": "India Shipping News",
+       "article_publish_date": "2026-09-12",
+       "publisher_domain": "indiashippingnews.com",
+       "confidence_score": 0.9
+      },
+      {
+       "source": "google_news",
+       "article_url": "https://www.investywise.com/container-corporation-of-india-ltd-appointment-of-statutory-auditors/",
+       "article_title": "Container Corporation of India: Appoints Statutory Auditors for 2026-27",
+       "article_publisher_name": "InvestyWise",
+       "article_publish_date": "2026-09-10",
+       "publisher_domain": "investywise.com",
+       "confidence_score": 0.95
+      },
+      {
+       "source": "google_news",
+       "article_url": "https://businessupturn.com/business/container-corporation-of-india-appoints-bhatia-bhatia-as-statutory-auditors-for-2026-27/",
+       "article_title": "Container Corporation of India appoints Bhatia & Bhatia as statutory auditors for 2026-27",
+       "article_publisher_name": "Business Upturn",
+       "article_publish_date": "2026-09-10",
+       "publisher_domain": "businessupturn.com",
+       "confidence_score": 0.95
+      },
+      {
+       "source": "google_news",
+       "article_url": "https://www.kalkine.co.in/article/announcements/container-corporation-of-india-nseconcor-who-has-been-appointed-statutory-auditor-for-fy27",
+       "article_title": "CONCOR Statutory Auditor Appointment FY27 by C&AG",
+       "article_publisher_name": "Kalkine India",
+       "article_publish_date": "2026-09-10",
+       "publisher_domain": "kalkine.co.in",
+       "confidence_score": 0.95
+      },
+      {
+       "source": "google_news",
+       "article_url": "https://www.psuconnect.in/financial/concor-38th-agm-on-28-sept-2026-record-date-for-final-dividend-fixed-as-21-sept",
+       "article_title": "CONCOR 38th AGM on 28 Sept 2026; Record Date for Final Dividend Fixed as 21 Sept",
+       "article_publisher_name": "PSU Connect",
+       "article_publish_date": "2026-09-08",
+       "publisher_domain": "psuconnect.in",
+       "confidence_score": 0.95
+      },
+      {
+       "source": "google_news",
+       "article_url": "https://whispersinthecorridors.net/news/container-corporation-of-india-limited-seeks-candidate-as-director-p-s",
+       "article_title": "Container Corporation of India Limited seeks candidate as Director (P&S)",
+       "article_publisher_name": "whispersinthecorridors.net",
+       "article_publish_date": "2026-09-08",
+       "publisher_domain": "whispersinthecorridors.net",
+       "confidence_score": 0.95
+      },
+      {
+       "source": "google_news",
+       "article_url": "https://www.equitybulls.com/category.php?id=374851",
+       "article_title": "Container Corporation of India Ltd awards order worth Rs. 89.09 crores",
+       "article_publisher_name": "EquityBulls",
+       "article_publish_date": "2026-09-07",
+       "publisher_domain": "equitybulls.com",
+       "confidence_score": 0.95
+      },
+      {
+       "source": "google_news",
+       "article_url": "https://scanx.trade/stock-market-news/companies/concor-wins-rs-89-09-crore-work-order-eastern-railway-blss-wagons/50334162",
+       "article_title": "Concor wins Rs 89.09 crore work order from Eastern Railway for BLSS wagons",
+       "article_publisher_name": "scanx.trade",
+       "article_publish_date": "2026-09-07",
+       "publisher_domain": "scanx.trade",
+       "confidence_score": 0.85
+      },
+      {
+       "source": "google_news",
+       "article_url": "https://indianmasterminds.com/news/concor-89-crore-contract-12-blss-wagon-rakes-eastern-railway-231067/",
+       "article_title": "CONCOR Awards ₹89.09 Crore Contract to Eastern Railway for 12 BLSS Wagon Rakes",
+       "article_publisher_name": "Indianmasterminds",
+       "article_publish_date": "2026-09-07",
+       "publisher_domain": "indianmasterminds.com",
+       "confidence_score": 0.95
+      },
+      {
+       "source": "google_news",
+       "article_url": "https://www.investywise.com/container-corporation-of-india-ltd-awarded-contract-for-blss-wagons/",
+       "article_title": "CONCOR Wins ₹89 Crore Wagon Supply Contract",
+       "article_publisher_name": "InvestyWise",
+       "article_publish_date": "2026-09-07",
+       "publisher_domain": "investywise.com",
+       "confidence_score": 0.95
+      },
+      {
+       "source": "google_news",
+       "article_url": "https://www.investywise.com/container-corporation-of-india-ltd-notice-of-38th-annual-general-meeting-and-book-closure/",
+       "article_title": "CONCOR: Record Throughput & Income",
+       "article_publisher_name": "InvestyWise",
+       "article_publish_date": "2026-09-07",
+       "publisher_domain": "investywise.com",
+       "confidence_score": 0.85
+      },
+      {
+       "source": "google_news",
+       "article_url": "https://indiashippingnews.com/container/concor-launches-assured-transit-time-domestic-rail-service-from-bengaluru-to-delhi-2/",
+       "article_title": "CONCOR launches “assured transit time” Domestic Rail Service from Bengaluru to Delhi",
+       "article_publisher_name": "indiashippingnews.com",
+       "article_publish_date": "2026-09-07",
+       "publisher_domain": "indiashippingnews.com",
+       "confidence_score": 0.95
+      },
+      {
+       "source": "google_news",
+       "article_url": "https://www.thehindu.com/news/national/karnataka/assured-transit-time-container-train-service-launched-between-bengaluru-and-delhi/article71432004.ece",
+       "article_title": "Assured transit-time container train service launched between Bengaluru and Delhi",
+       "article_publisher_name": "The Hindu",
+       "article_publish_date": "2026-09-05",
+       "publisher_domain": "thehindu.com",
+       "confidence_score": 0.85
+      },
+      {
+       "source": "google_news",
+       "article_url": "https://www.whalesbook.com/news/Marathi/transportation/CONCOR-Launches-Assured-Transit-Rail-Service-on-Bengaluru-Delhi-Route/6a9be65c40007e01b83aa7ae",
+       "article_title": "CONCOR चा मोठा निर्णय: बेंगळुरू-दिल्ली मार्गावर आता 'Assured Transit' ट्रेन धावणार",
+       "article_publisher_name": "Whalesbook",
+       "article_publish_date": "2026-09-05",
+       "publisher_domain": "whalesbook.com",
+       "confidence_score": 0.85
+      },
+      {
+       "source": "google_news",
+       "article_url": "https://www.investywise.com/container-corporation-of-india-ltd-agm-notice-issued-and-book-closure-announced/",
+       "article_title": "CONCOR Reports Record Financial Performance",
+       "article_publisher_name": "InvestyWise",
+       "article_publish_date": "2026-09-04",
+       "publisher_domain": "investywise.com",
+       "confidence_score": 0.9
+      },
+      {
+       "source": "google_news",
+       "article_url": "https://www.kalkine.co.in/article/announcements/container-corporation-nseconcor-what-is-the-38th-agm-and-final-dividend-about",
+       "article_title": "CONCOR 38th AGM 2026: Final Dividend and Key Dates",
+       "article_publisher_name": "Kalkine India",
+       "article_publish_date": "2026-09-04",
+       "publisher_domain": "kalkine.co.in",
+       "confidence_score": 0.95
+      },
+      {
+       "source": "google_news",
+       "article_url": "https://www.psuindia.com/psu-news/concor-launches-jnpt-bound-export-services-from-ludhiana-via-dadri-multi-modal-hub-556696",
+       "article_title": "CONCOR Launches JNPT-Bound Export Services from Ludhiana via Dadri Multi-Modal Hub",
+       "article_publisher_name": "psuindia.com",
+       "article_publish_date": "2026-09-04",
+       "publisher_domain": "psuindia.com",
+       "confidence_score": 0.95
+      },
+      {
+       "source": "google_news",
+       "article_url": "https://indianmasterminds.com/news/concor-appoints-v-kashiho-sangtam-independent-director-229408/",
+       "article_title": "CONCOR Appoints V. Kashiho Sangtam as Non-Official Independent Director for Three Years",
+       "article_publisher_name": "Indianmasterminds",
+       "article_publish_date": "2026-09-01",
+       "publisher_domain": "indianmasterminds.com",
+       "confidence_score": 0.95
+      },
+      {
+       "source": "google_news",
+       "article_url": "https://www.psuconnect.in/new-faces-in-psus/concor-appoints-v-kashiho-sangtam-as-independent-director-for-3-years",
+       "article_title": "CONCOR Appoints V. Kashiho Sangtam as Independent Director for 3 Years",
+       "article_publisher_name": "PSU Connect",
+       "article_publish_date": "2026-09-01",
+       "publisher_domain": "psuconnect.in",
+       "confidence_score": 0.95
+      },
+      {
+       "source": "google_news",
+       "article_url": "https://www.investywise.com/concor-appoints-new-independent-director/",
+       "article_title": "CONCOR Appoints Independent Director",
+       "article_publisher_name": "InvestyWise",
+       "article_publish_date": "2026-09-01",
+       "publisher_domain": "investywise.com",
+       "confidence_score": 0.9
+      },
+      {
+       "source": "google_news",
+       "article_url": "https://www.marketscreener.com/news/container-corporation-of-india-ltd-announces-appointment-of-shri-v-kashiho-sangtam-as-non-official-ce785bdbdf8ff320",
+       "article_title": "Container Corporation of India Ltd. Announces Appointment of Shri V. Kashiho Sangtam as Non-Official (Independent) Director, Effective August 26, 2026",
+       "article_publisher_name": "marketscreener.com",
+       "article_publish_date": "2026-09-01",
+       "publisher_domain": "marketscreener.com",
+       "confidence_score": 1.0
+      },
+      {
+       "source": "google_news",
+       "article_url": "https://scanx.trade/stock-market-news/companies/concor-appoints-v-kashiho-sangtam-independent-director-three-year-term/49824911",
+       "article_title": "CONCOR appoints V. Kashiho Sangtam as independent director for three-year term",
+       "article_publisher_name": "scanx.trade",
+       "article_publish_date": "2026-09-01",
+       "publisher_domain": "scanx.trade",
+       "confidence_score": 0.95
+      },
+      {
+       "source": "google_news",
+       "article_url": "https://m.economictimes.com/markets/stocks/news/tejas-networks-among-6-stocks-showing-bullish-rsi-upswing/container-corporation-of-india/slideshow/133641214.cms",
+       "article_title": "Container Corporation of India - Tejas Networks among 6 stocks showing bullish RSI upswing",
+       "article_publisher_name": "The Economic Times",
+       "article_publish_date": "2026-08-31",
+       "publisher_domain": "economictimes.com",
+       "confidence_score": 0.85
+      },
+      {
+       "source": "google_news",
+       "article_url": "https://www.marketscreener.com/news/container-corporation-of-india-ltd-announces-superannuation-of-sharad-verma-from-principal-executiv-ce785bdbdb80f427",
+       "article_title": "Container Corporation of India Ltd. Announces Superannuation of Sharad Verma from Principal Executive Director (C&O), Effective August 31, 2026",
+       "article_publisher_name": "marketscreener.com",
+       "article_publish_date": "2026-08-31",
+       "publisher_domain": "marketscreener.com",
+       "confidence_score": 1.0
+      },
+      {
+       "source": "google_news",
+       "article_url": "https://www.investywise.com/concor-senior-management-change/",
+       "article_title": "CONCOR: Senior Executive Shri Sharad Verma to Retire",
+       "article_publisher_name": "InvestyWise",
+       "article_publish_date": "2026-08-31",
+       "publisher_domain": "investywise.com",
+       "confidence_score": 0.9
+      },
+      {
+       "source": "google_news",
+       "article_url": "https://whispersinthecorridors.com/news/post-of-dir-proj-ser-in-concor-advertised",
+       "article_title": "Post of Dir (Proj&Ser) in CONCOR Advertised",
+       "article_publisher_name": "Whispers in the Corridors",
+       "article_publish_date": "2026-08-31",
+       "publisher_domain": "whispersinthecorridors.com",
+       "confidence_score": 0.95
+      },
+      {
+       "source": "google_news",
+       "article_url": "https://www.jagranjosh.com/articles/concor-recruitment-2026-apply-online-for-management-trainee-and-assistant-officer-posts-check-eligiblity-1800015978-1",
+       "article_title": "CONCOR Recruitment 2026: Apply Online For Management Trainee and Assistant Officer Posts, Check Eligibility",
+       "article_publisher_name": "Jagran Josh",
+       "article_publish_date": "2026-08-31",
+       "publisher_domain": "jagranjosh.com",
+       "confidence_score": 0.95
+      },
+      {
+       "source": "google_news",
+       "article_url": "https://indiashippingnews.com/export/concor-fast-tracks-north-indias-exports-with-new-ludhiana-jn-port-express-service/",
+       "article_title": "CONCOR Fast-Tracks North India’s Exports with New Ludhiana–JN Port Express Service",
+       "article_publisher_name": "indiashippingnews.com",
+       "article_publish_date": "2026-08-31",
+       "publisher_domain": "indiashippingnews.com",
+       "confidence_score": 0.95
+      },
+      {
+       "source": "google_news",
+       "article_url": "https://www.pw.live/gate/exams/container-corporation-india-mt-recruitment-2026",
+       "article_title": "Container Corporation of India MT Recruitment 2026: 77 Vacancies, Apply Online, Dates, Posts & More",
+       "article_publisher_name": "PW",
+       "article_publish_date": "2026-08-27",
+       "publisher_domain": "pw.live",
+       "confidence_score": 0.95
+      },
+      {
+       "source": "google_news",
+       "article_url": "https://www.marketscreener.com/news/container-corporation-of-india-ltd-announces-board-promotions-ce7858dcd88cf124",
+       "article_title": "Container Corporation of India Ltd. Announces Board Promotions",
+       "article_publisher_name": "marketscreener.com",
+       "article_publish_date": "2026-08-25",
+       "publisher_domain": "marketscreener.com",
+       "confidence_score": 0.95
+      },
+      {
+       "source": "google_news",
+       "article_url": "https://scanx.trade/stock-market-news/companies/container-corporation-india-schedules-investor-meets-sep-2026/49200551",
+       "article_title": "Container Corporation of India schedules investor meets in Sep 2026",
+       "article_publisher_name": "scanx.trade",
+       "article_publish_date": "2026-08-25",
+       "publisher_domain": "scanx.trade",
+       "confidence_score": 0.95
+      },
+      {
+       "source": "google_news",
+       "article_url": "https://univest.in/blogs/why-container-corporation-of-india-ltd-share-price-rise-2026-08-13",
+       "article_title": "Container Corporation Of India Ltd. (CONCOR) Share Price Rises 3.79% Today",
+       "article_publisher_name": "Univest",
+       "article_publish_date": "2026-08-13",
+       "publisher_domain": "univest.in",
+       "confidence_score": 0.95
+      },
+      {
+       "source": "google_news",
+       "article_url": "https://www.whalesbook.com/news/English/transportation/Container-Corp-Reports-Steady-Q1-Profit-Amid-Competitive-Headwinds/6a7cf9426ffbe1e64616f14f",
+       "article_title": "Container Corp Reports Steady Q1 Profit Amid Competitive Headwinds",
+       "article_publisher_name": "Whalesbook",
+       "article_publish_date": "2026-08-12",
+       "publisher_domain": "whalesbook.com",
+       "confidence_score": 0.95
+      },
+      {
+       "source": "google_news",
+       "article_url": "https://www.moneycontrol.com/news/business/stocks/container-corporation-of-india-shares-gain-2-03-alpha-article-14002638.html",
+       "article_title": "Container Corporation of India shares gain 2.03%",
+       "article_publisher_name": "Moneycontrol.com",
+       "article_publish_date": "2026-08-12",
+       "publisher_domain": "moneycontrol.com",
+       "confidence_score": 0.95
+      },
+      {
+       "source": "google_news",
+       "article_url": "https://infra.economictimes.indiatimes.com/amp/news/logistics/customs-revokes-suspension-of-concors-dronagiri-rail-terminal-cfs/133168235",
+       "article_title": "Customs revokes suspension of Concor’s Dronagiri Rail Terminal CFS",
+       "article_publisher_name": "ET Infra",
+       "article_publish_date": "2026-08-12",
+       "publisher_domain": "indiatimes.com",
+       "confidence_score": 0.85
+      },
+      {
+       "source": "crunchbase",
+       "article_url": "https://www.thehindubusinessline.com/economy/logistics/container-rail-movement-commences-between-chennai-port-and-icd-sanathnagar/article71337004.ece",
+       "article_title": "Container rail movement commences between Chennai port and ICD Sanathnagar",
+       "article_publisher_name": "Hindu Business Line",
+       "article_publish_date": "2026-08-12",
+       "publisher_domain": null,
+       "confidence_score": null
+      },
+      {
+       "source": "google_news",
+       "article_url": "https://www.whalesbook.com/news/English/transportation/AISATS-Concor-Air-Sign-Pact-to-Link-Dadri-ICD-to-Noida-Airport/6a7b77b16ffbe1e646137c3e",
+       "article_title": "AISATS, Concor Air Sign Pact to Link Dadri ICD to Noida Airport",
+       "article_publisher_name": "Whalesbook",
+       "article_publish_date": "2026-08-11",
+       "publisher_domain": "whalesbook.com",
+       "confidence_score": 0.8
+      },
+      {
+       "source": "google_news",
+       "article_url": "https://businessnewsthisweek.com/business/air-india-sats-signs-mou-with-concor-air-limited-wholly-owned-subsidiary-of-concor-to-speed-up-cargo-movement-from-icd-dadri-to-nia/",
+       "article_title": "Air India SATS Signs MOU with CONCOR Air Limited (wholly owned subsidiary of CONCOR) to Speed Up Cargo Movement from ICD Dadri to NIA",
+       "article_publisher_name": "businessnewsthisweek.com",
+       "article_publish_date": "2026-08-11",
+       "publisher_domain": "businessnewsthisweek.com",
+       "confidence_score": 0.85
+      },
+      {
+       "source": "google_news",
+       "article_url": "https://indiaeducationdiary.in/air-india-sats-signs-mou-with-concor-air-limited-wholly-owned-subsidiary-of-concor-to-speed-up-cargo-movement-from-icd-dadri-to-nia/",
+       "article_title": "Air India SATS Signs MOU with CONCOR Air Limited (wholly owned subsidiary of CONCOR) to Speed Up Cargo Movement from ICD Dadri to NIA",
+       "article_publisher_name": "India Education Diary",
+       "article_publish_date": "2026-08-11",
+       "publisher_domain": "indiaeducationdiary.in",
+       "confidence_score": 0.8
+      },
+      {
+       "source": "crunchbase",
+       "article_url": "https://www.tradingview.com/news/moneycontrol:bee6d738b094b:0-container-corporation-of-india-shares-gain-2-21-driven-by-bullish-sentiment/",
+       "article_title": "Container Corporation of India Shares Gain 2.21%, Driven by Bullish Sentiment",
+       "article_publisher_name": "TradingView",
+       "article_publish_date": "2026-08-05",
+       "publisher_domain": null,
+       "confidence_score": null
+      },
+      {
+       "source": "google_news",
+       "article_url": "https://indianmasterminds.com/news/concor-appoints-ajit-kumar-panda-chairman-and-managing-director-221179/",
+       "article_title": "CONCOR Appoints Ajit Kumar Panda as Chairman and Managing Director, Succeeds Sanjay Swarup",
+       "article_publisher_name": "indianmasterminds.com",
+       "article_publish_date": "2026-08-03",
+       "publisher_domain": "indianmasterminds.com",
+       "confidence_score": 0.9
+      },
+      {
+       "source": "google_news",
+       "article_url": "https://infra.economictimes.indiatimes.com/news/ports-shipping/shipping-corporation-of-india-launches-720-million-global-tender-for-6-new-cellular-container-ships/132817012",
+       "article_title": "SCI floats global tender to build 6 cellular container ships of 8,000 TEU capacity worth $720 million",
+       "article_publisher_name": "ET Infra",
+       "article_publish_date": "2026-08-03",
+       "publisher_domain": "indiatimes.com",
+       "confidence_score": 0.9
+      },
+      {
+       "source": "google_news",
+       "article_url": "https://scanx.trade/stock-market-news/companies/container-corporation-of-india-q1-results-pat-up-7-7-yoy-ebitda-margin-at-23-6/47331484",
+       "article_title": "Container Corporation of India Q1 Results: PAT up 7.7% YoY, EBITDA margin at 23.6%",
+       "article_publisher_name": "scanx.trade",
+       "article_publish_date": "2026-08-03",
+       "publisher_domain": "scanx.trade",
+       "confidence_score": 0.89
+      },
+      {
+       "source": "google_news",
+       "article_url": "https://www.marketscreener.com/news/container-corporation-of-india-limited-announces-appointment-of-shri-vijoy-kumar-sing-as-post-of-dir-ce7f50d2d08ff020",
+       "article_title": "Container Corporation of India Limited Announces Appointment of Shri Vijoy Kumar Sing as Post of Director (Projects & Services), Effective on or After August 1, 2026",
+       "article_publisher_name": "marketscreener.com",
+       "article_publish_date": "2026-08-01",
+       "publisher_domain": "marketscreener.com",
+       "confidence_score": 0.95
+      },
+      {
+       "source": "google_news",
+       "article_url": "https://www.cnbctv18.com/market/earnings/concor-q1-results-raises-fy27-volume-growth-guidance-19959452.htm",
+       "article_title": "CONCOR raises FY27 volume growth guidance to 18%, sees domestic volumes rising 25%",
+       "article_publisher_name": "CNBC TV18",
+       "article_publish_date": "2026-08-01",
+       "publisher_domain": "cnbctv18.com",
+       "confidence_score": 0.91
+      },
+      {
+       "source": "google_news",
+       "article_url": "https://infra.economictimes.indiatimes.com/news/ports-shipping/ajit-kumar-panda-assumes-charge-as-concor-cmd/132784124",
+       "article_title": "Ajit Kumar Panda assumes charge as CONCOR CMD",
+       "article_publisher_name": "ET Infra",
+       "article_publish_date": "2026-08-01",
+       "publisher_domain": "indiatimes.com",
+       "confidence_score": 0.85
+      },
+      {
+       "source": "google_news",
+       "article_url": "https://www.whalesbook.com/corporate-news/English/transportation/Container-Corp-Appoints-Ajit-Kumar-Panda-as-New-Chairman-and-MD/6a6d890f10bce1fd2037ece4",
+       "article_title": "Container Corp Appoints Ajit Kumar Panda as New Chairman and MD",
+       "article_publisher_name": "Whalesbook",
+       "article_publish_date": "2026-08-01",
+       "publisher_domain": "whalesbook.com",
+       "confidence_score": 0.9
+      },
+      {
+       "source": "google_news",
+       "article_url": "https://www.marketscreener.com/news/container-corporation-of-india-ltd-announces-board-changes-ce7f50d2d08ff023",
+       "article_title": "Container Corporation of India Ltd. Announces Board Changes",
+       "article_publisher_name": "marketscreener.com",
+       "article_publish_date": "2026-08-01",
+       "publisher_domain": "marketscreener.com",
+       "confidence_score": 0.8
+      },
+      {
+       "source": "google_news",
+       "article_url": "https://simplywall.st/stocks/in/transportation/nse-concor/container-corporation-of-india-shares/news/container-corporation-of-india-limited-nseconcor-will-pay-a-1",
+       "article_title": "Container Corporation of India Limited (NSE:CONCOR) Will Pay A ₹1.60 Dividend In Three Days",
+       "article_publisher_name": "simplywall.st",
+       "article_publish_date": "2026-07-31",
+       "publisher_domain": "simplywall.st",
+       "confidence_score": 0.8
+      },
+      {
+       "source": "google_news",
+       "article_url": "https://scanx.trade/stock-market-news/companies/container-corporation-of-india-q1-results-net-profit-steady-at-2-67b-rupees-ebitda-margin-improves/46441532",
+       "article_title": "CONCOR fixes Aug 4 record date for ₹1.60 interim dividend",
+       "article_publisher_name": "scanx.trade",
+       "article_publish_date": "2026-07-31",
+       "publisher_domain": "scanx.trade",
+       "confidence_score": 0.88
+      },
+      {
+       "source": "crunchbase",
+       "article_url": "https://www.business-standard.com/industry/news/will-clear-jnpa-container-backlog-by-mid-august-says-concor-cmd-126073001331_1.html",
+       "article_title": "Will clear JNPA container backlog by mid-August, says Concor CMD",
+       "article_publisher_name": "Business Standard India",
+       "article_publish_date": "2026-07-30",
+       "publisher_domain": null,
+       "confidence_score": null
+      },
+      {
+       "source": "google_news",
+       "article_url": "https://m.economictimes.com/markets/stocks/news/kfin-technologies-among-4-stocks-showing-bullish-rsi-upswing/container-corporation-of-india/slideshow/132674066.cms",
+       "article_title": "Container Corporation Of India - KFin Technologies among 4 stocks showing bullish RSI upswing",
+       "article_publisher_name": "The Economic Times",
+       "article_publish_date": "2026-07-28",
+       "publisher_domain": "economictimes.com",
+       "confidence_score": 0.9
+      },
+      {
+       "source": "google_news",
+       "article_url": "https://www.indianmandarins.com/news/railway-board-approves-permanent-absorption-of-irsme-officer-swayambhu-arya-in-concor/33027",
+       "article_title": "Railway Board Approves Permanent Absorption of IRSME Officer Swayambhu Arya In CONCOR",
+       "article_publisher_name": "IndianMandarins",
+       "article_publish_date": "2026-07-28",
+       "publisher_domain": "indianmandarins.com",
+       "confidence_score": 0.9
+      },
+      {
+       "source": "crunchbase",
+       "article_url": "https://www.livemint.com/market/stock-market-news/raja-venkatraman-recommends-three-stocks-for-28-july-11785153779486.html",
+       "article_title": "Raja Venkatraman recommends three stocks for 28 July",
+       "article_publisher_name": "Livemint.com",
+       "article_publish_date": "2026-07-28",
+       "publisher_domain": null,
+       "confidence_score": null
+      },
+      {
+       "source": "google_news",
+       "article_url": "https://www.marketscreener.com/news/container-corporation-of-india-limited-declares-interim-dividend-for-financial-year-2026-27-payable-ce7f51dcd88ef72c",
+       "article_title": "Container Corporation of India Limited Declares Interim Dividend for Financial Year 2026-27, Payable on or After August 12, 2026",
+       "article_publisher_name": "marketscreener.com",
+       "article_publish_date": "2026-07-24",
+       "publisher_domain": "marketscreener.com",
+       "confidence_score": 0.86
+      },
+      {
+       "source": "google_news",
+       "article_url": "https://indiashippingnews.com/logistics/concor-icd-agra-reinforces-global-supply-chain-security-through-c-tpat-compliance/",
+       "article_title": "CONCOR ICD Agra reinforces Global Supply Chain Security through C-TPAT Compliance",
+       "article_publisher_name": "indiashippingnews.com",
+       "article_publish_date": "2026-07-24",
+       "publisher_domain": "indiashippingnews.com",
+       "confidence_score": 0.8
+      },
+      {
+       "source": "google_news",
+       "article_url": "https://www.freepressjournal.in/business/concor-q1-fy27-net-profit-rises-5-to-2725-crore-interim-dividend-declared",
+       "article_title": "CONCOR Q1 FY27 Net Profit Rises 5% To ₹272.5 Crore, Interim Dividend Declared",
+       "article_publisher_name": "Free Press Journal",
+       "article_publish_date": "2026-07-24",
+       "publisher_domain": "freepressjournal.in",
+       "confidence_score": 0.8
+      },
+      {
+       "source": "google_news",
+       "article_url": "https://www.cnbctv18.com/market/stocks/concor-share-price-q1-net-profit-flat-at-rs-267-crore-as-revenue-stays-muted-declares-rs-1-60-dividend-19953559.htm",
+       "article_title": "CONCOR Q1 net profit flat at ₹267 crore as revenue stays muted; declares ₹1.60 dividend",
+       "article_publisher_name": "CNBC TV18",
+       "article_publish_date": "2026-07-24",
+       "publisher_domain": "cnbctv18.com",
+       "confidence_score": 0.92
+      },
+      {
+       "source": "google_news",
+       "article_url": "https://infra.economictimes.indiatimes.com/news/ports-shipping/customs-suspends-concors-dronagiri-cfs-permit-further-straining-jn-port-operations/132596681",
+       "article_title": "Exclusive: Customs suspends CONCOR’s Dronagiri CFS permit near Jawaharlal Nehru Port",
+       "article_publisher_name": "ET Infra",
+       "article_publish_date": "2026-07-24",
+       "publisher_domain": "indiatimes.com",
+       "confidence_score": 0.9
+      },
+      {
+       "source": "google_news",
+       "article_url": "https://ekantipur.com/business/2026/07/18/en/cargo-train-from-kolkata-arriving-in-biratnagar-on-sunday-30-29.html",
+       "article_title": "Cargo train from Kolkata arriving in Biratnagar on Sunday",
+       "article_publisher_name": "Ekantipur",
+       "article_publish_date": "2026-07-18",
+       "publisher_domain": "ekantipur.com",
+       "confidence_score": 0.85
+      },
+      {
+       "source": "crunchbase",
+       "article_url": "https://www.livemint.com/market/mark-to-market/concor-q1-volumes-concor-earnings-new-rail-corridor-india-concor-shares-11784094695979.html",
+       "article_title": "Concor Q1 volumes beat trade headwinds; new rail corridor can fuel growth",
+       "article_publisher_name": "Livemint.com",
+       "article_publish_date": "2026-07-15",
+       "publisher_domain": null,
+       "confidence_score": null
+      },
+      {
+       "source": "crunchbase",
+       "article_url": "https://www.business-standard.com/markets/news/container-corp-share-price-rises-6-up-17-from-52-week-low-what-s-ading-navratna-stock-126071400470_1.html",
+       "article_title": "Container Corp share price jumps 6%; here's what's fuelling Navratna stock",
+       "article_publisher_name": "Business Standard India",
+       "article_publish_date": "2026-07-14",
+       "publisher_domain": null,
+       "confidence_score": null
+      },
+      {
+       "source": "google_news",
+       "article_url": "https://www.cnbctv18.com/business/companies/concors-q1-cargo-volumes-grow-nearly-9-as-export-import-business-picks-up-19944268.htm",
+       "article_title": "CONCOR's Q1 cargo volumes grow nearly 9% as export-import business picks up",
+       "article_publisher_name": "CNBC TV18",
+       "article_publish_date": "2026-07-13",
+       "publisher_domain": "cnbctv18.com",
+       "confidence_score": 0.93
+      },
+      {
+       "source": "crunchbase",
+       "article_url": "https://www.thehindu.com/business/government-intervenes-as-shipping-shocks-expose-container-vulnerability/article71211176.ece",
+       "article_title": "Government intervenes as shipping shocks expose container vulnerability",
+       "article_publisher_name": "The Hindu",
+       "article_publish_date": "2026-07-12",
+       "publisher_domain": null,
+       "confidence_score": null
+      }
+     ]
+    }
+   }
+  ]
+ }
+]

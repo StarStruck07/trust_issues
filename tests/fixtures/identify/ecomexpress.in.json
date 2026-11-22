@@ -1,0 +1,66 @@
+[
+ {
+  "matched_on": "ecomexpress.in",
+  "match_type": "domain",
+  "matches": [
+   {
+    "confidence_score": 1.0,
+    "company_data": {
+     "crustdata_company_id": 5967,
+     "basic_info": {
+      "name": "Ecom Express Limited",
+      "crustdata_company_id": 5967,
+      "primary_domain": "ecomexpress.in",
+      "all_domains": [
+       "ecomexpress.in"
+      ],
+      "website": "http://www.ecomexpress.in",
+      "professional_network_url": "https://www.linkedin.com/company/ecom-express-ltd",
+      "professional_network_id": "3151123",
+      "profile_name": "Ecom Express Limited",
+      "logo_permalink": "https://crustdata-media.s3.us-east-2.amazonaws.com/company/674126e4abe3f49908297f37c0fae032151295d56aeac3c38a25279e762074fb.jpg",
+      "description": "Ecom Express: Delivering Over 1.9 Billion Reasons to Trust UsBased in Gurugram, Ecom Express was established in 2012 by veterans backed by 100+ years of collective logistics expertise. We aren't just a logistics provider—we're your partner in bridging distances and making connections. Our network reaches every corner, covering 27,000+ PIN codes in 2700+ towns, meticulously handled over 1.9 billion parcels in the past 10+ years.We're not just delivering; we're innovating with solutions like Ecom Magnum, comprehensive shipping services, fulfillment capabilities, Bulls.ai and drone technology—ensuring every package is delivered to the right location on time.Connect | Deliver| Grow https://bit.ly/4d0sHpV",
+      "company_type": "Privately Held",
+      "year_founded": 2012,
+      "employee_count_range": "10001+",
+      "markets": [
+       "PRIVATE"
+      ],
+      "industries": [
+       "Transportation, Logistics, Supply Chain and Storage"
+      ]
+     },
+     "social_profiles": null
+    }
+   },
+   {
+    "confidence_score": 1.0,
+    "company_data": {
+     "crustdata_company_id": 18665104,
+     "basic_info": {
+      "name": "Ecom Express Support",
+      "crustdata_company_id": 18665104,
+      "primary_domain": "ecomexpress.in",
+      "all_domains": [
+       "ecomexpress.in"
+      ],
+      "website": "http://www.ecomexpress.in",
+      "professional_network_url": "https://www.linkedin.com/company/ecom-express-support",
+      "professional_network_id": "105056215",
+      "profile_name": "Ecom Express Support",
+      "logo_permalink": "https://crustdata-media.s3.us-east-2.amazonaws.com/company/3bed42b3ad262b6e67eec95f6e13ffce80982cd0d74533640b508558ffcb0383.jpg",
+      "description": "Ecom Express: Delivering Over 1.9 Billion Reasons to Trust UsBased in Gurugram, Ecom Express was established in 2012 by veterans backed by 100+ years of collective logistics expertise. We aren't just a logistics provider—we're your partner in bridging distances and making connections. Our network reaches every corner, covering 27,000+ PIN codes in 2700+ towns, meticulously handled over 1.9 billion parcels in the past 10+ years.We're not just delivering; we're innovating with solutions like Ecom Magnum, comprehensive shipping services, fulfillment capabilities, Bulls.ai and drone technology—ensuring every package is delivered to the right location on time.Connect | Deliver| Grow",
+      "company_type": "Privately Held",
+      "year_founded": null,
+      "employee_count_range": "10001+",
+      "markets": [],
+      "industries": [
+       "Transportation, Logistics, Supply Chain and Storage"
+      ]
+     },
+     "social_profiles": null
+    }
+   }
+  ]
+ }
+]

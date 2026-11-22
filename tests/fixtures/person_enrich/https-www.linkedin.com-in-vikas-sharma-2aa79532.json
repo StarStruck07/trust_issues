@@ -1,0 +1,104 @@
+[
+ {
+  "matched_on": "https://www.linkedin.com/in/vikas-sharma-2aa79532",
+  "match_type": "professional_network_profile_url",
+  "match_status": "matched",
+  "matches": [
+   {
+    "confidence_score": 1.0,
+    "person_data": {
+     "basic_profile": {
+      "name": "Vikas Sharma",
+      "current_title": "Chief Operating Officer"
+     },
+     "professional_network": {
+      "connections": null
+     },
+     "social_handles": {
+      "professional_network_identifier": {
+       "profile_url": "https://www.linkedin.com/in/vikas-sharma-2aa79532"
+      }
+     },
+     "experience": {
+      "employment_details": {
+       "current": [
+        {
+         "name": "Zepto",
+         "title": "Chief Operating Officer",
+         "crustdata_company_id": 622940,
+         "start_date": "2023-04-01T00:00:00+00:00",
+         "end_date": null
+        }
+       ],
+       "past": [
+        {
+         "name": "Zepto",
+         "title": "SVP Operations",
+         "crustdata_company_id": 622940,
+         "start_date": "2021-09-01T00:00:00+00:00",
+         "end_date": "2023-03-01T00:00:00+00:00"
+        },
+        {
+         "name": "Flipkart",
+         "title": "Head of Hyperlocal Ops",
+         "crustdata_company_id": 5744,
+         "start_date": "2021-02-01T00:00:00+00:00",
+         "end_date": "2021-09-01T00:00:00+00:00"
+        },
+        {
+         "name": "Flipkart",
+         "title": "Head Central Ops- First Mile and Last Mile",
+         "crustdata_company_id": 5744,
+         "start_date": "2019-09-01T00:00:00+00:00",
+         "end_date": "2021-01-01T00:00:00+00:00"
+        },
+        {
+         "name": "Pepperfry",
+         "title": "Head- Supply Chain",
+         "crustdata_company_id": 5826,
+         "start_date": "2018-04-01T00:00:00+00:00",
+         "end_date": "2019-09-01T00:00:00+00:00"
+        },
+        {
+         "name": "Pepperfry",
+         "title": "Regional Head- Supply Chain",
+         "crustdata_company_id": 5826,
+         "start_date": "2016-10-01T00:00:00+00:00",
+         "end_date": "2018-03-01T00:00:00+00:00"
+        },
+        {
+         "name": "Pepperfry",
+         "title": "Regional Head- Last Mile",
+         "crustdata_company_id": 5826,
+         "start_date": "2014-12-01T00:00:00+00:00",
+         "end_date": "2016-09-01T00:00:00+00:00"
+        },
+        {
+         "name": "SuperMaxWorld",
+         "title": "Procurement Head- India",
+         "crustdata_company_id": 1272518,
+         "start_date": "2012-04-01T00:00:00+00:00",
+         "end_date": "2014-12-01T00:00:00+00:00"
+        },
+        {
+         "name": "JSW",
+         "title": "MBA Summers Internship- Supply Chain Management",
+         "crustdata_company_id": 1131723,
+         "start_date": "2011-04-01T00:00:00+00:00",
+         "end_date": "2011-06-01T00:00:00+00:00"
+        },
+        {
+         "name": "Tata Consultancy Services",
+         "title": "Business Analyst",
+         "crustdata_company_id": 5057,
+         "start_date": "2008-09-01T00:00:00+00:00",
+         "end_date": "2010-06-01T00:00:00+00:00"
+        }
+       ]
+      }
+     }
+    }
+   }
+  ]
+ }
+]

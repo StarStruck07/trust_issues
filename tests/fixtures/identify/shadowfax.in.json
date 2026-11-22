@@ -1,0 +1,38 @@
+[
+ {
+  "matched_on": "shadowfax.in",
+  "match_type": "domain",
+  "matches": [
+   {
+    "confidence_score": 1.0,
+    "company_data": {
+     "crustdata_company_id": 5823,
+     "basic_info": {
+      "name": "Shadowfax",
+      "crustdata_company_id": 5823,
+      "primary_domain": "shadowfax.in",
+      "all_domains": [
+       "shadowfax.in"
+      ],
+      "website": "https://www.shadowfax.in/",
+      "professional_network_url": "https://www.linkedin.com/company/shadowfax",
+      "professional_network_id": "9480715",
+      "profile_name": "Shadowfax",
+      "logo_permalink": "https://crustdata-media.s3.us-east-2.amazonaws.com/company/33b44cf5b44ecae5480eb9522eb77db7bae4fcfd35c65a8c411e46f1873854a2.jpg",
+      "description": "Shadowfax is building the infrastructure behind India's fast-moving commerce economy.For over 11 years, we have enabled businesses to move faster, reach further, and serve customers better. Today, leading brands including Nykaa, Myntra, AJIO, Meesho, Mokobara, and Dot & Key rely on Shadowfax to power deliveries across the country.As consumer expectations continue to evolve, speed has become a defining force in commerce. Shadowfax enables businesses to meet those expectations through a technology-driven logistics platform built on scale, reliability, and operational excellence.From same-day and next-day delivery to 30-minute hyperlocal fulfilment, express parcel, reverse logistics, and supply chain solutions, we support the full spectrum of modern commerce. Whether enabling rapid deliveries for quick commerce brands or helping enterprises serve customers across India, our platform is built to move commerce at speed.Our network spans 15,656+ PIN codes across India and is powered by 2.6 lakh+ quarterly delivery partners, 3,500+ trucks, and 4.7 million+ square feet of operational infrastructure. Having delivered more than 1.5 billion shipments, Shadowfax has emerged as one of India's largest logistics platforms and a trusted partner to some of the country's most recognised brands.We believe logistics is no longer just about moving parcels. It is the infrastructure that powers growth, shapes customer experience, and keeps commerce moving. Through technology, intelligent automation, sustainable mobility, and relentless execution, we are building the future of commerce movement in India.Because commerce moves at Shadowfax speed.",
+      "company_type": "Privately Held",
+      "year_founded": 2015,
+      "employee_count_range": "1001-5000",
+      "markets": [
+       "NSE"
+      ],
+      "industries": [
+       "Transportation, Logistics, Supply Chain and Storage"
+      ]
+     },
+     "social_profiles": null
+    }
+   }
+  ]
+ }
+]

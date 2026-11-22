@@ -1,0 +1,71 @@
+[
+ {
+  "matched_on": "tcil.com",
+  "match_type": "domain",
+  "matches": [
+   {
+    "confidence_score": 1.0,
+    "company_data": {
+     "crustdata_company_id": 1131959,
+     "basic_info": {
+      "name": "TCI Group (Transport Corporation of India Limited)",
+      "crustdata_company_id": 1131959,
+      "primary_domain": "tcifreight.in",
+      "all_domains": [
+       "tciscs.com",
+       "tcifreight.in",
+       "tciconcor.com",
+       "tciseaways.com",
+       "tcil.com"
+      ],
+      "website": "http://www.tcil.com/",
+      "professional_network_url": "https://www.linkedin.com/company/tci.transportcorporationofindia",
+      "professional_network_id": "13233641",
+      "profile_name": "TCI Group (Transport Corporation of India Limited)",
+      "logo_permalink": "https://crustdata-media.s3.us-east-2.amazonaws.com/company/e19d6d1140a2ca334819d52f9f18ce14ffa4fe84b62444b4a7720c9321a8b4eb.jpg",
+      "description": "TCI has grown from a single truck plying on a single route to becoming India's leading integrated multimodal logistics service provider. TCI's range of services encompasses the entire gamut of supply chain services from the point of origin to the end customer. TCI has been continuously introducing new and innovative services. From multimodal transportation (road, rail, air, sea) to express delivery solutions, from freight forwarding and customs clearances to warehouse management services, each of the services are linked under a single Customer Relationship management system for maximum benefit to clients. TCI is ready and well-equipped to take on new challenges with a host of exciting services that will further strengthen its presence in India and Asia. The company's strategy is to cross-sell its broad range of services, deliver to any corner of the country through specialized and trained professional teams to create superlative value for our customers. We continuously invest in state-of-the-art, large scale, multi-user multi-product warehouses, ships, trucks and trailers, and technology to set newer benchmarks and drive excellence in logistics and supply chain.",
+      "company_type": "Public Company",
+      "year_founded": 1958,
+      "employee_count_range": "5001-10000",
+      "markets": [
+       "PRIVATE"
+      ],
+      "industries": [
+       "Transportation, Logistics, Supply Chain and Storage"
+      ]
+     },
+     "social_profiles": null
+    }
+   },
+   {
+    "confidence_score": 1.0,
+    "company_data": {
+     "crustdata_company_id": 3255666,
+     "basic_info": {
+      "name": "Transystem Logistics International Pvt. Ltd",
+      "crustdata_company_id": 3255666,
+      "primary_domain": "transystem.co.in",
+      "all_domains": [
+       "tcil.com",
+       "transystem.co.in"
+      ],
+      "website": "http://transystem.co.in",
+      "professional_network_url": "https://www.linkedin.com/company/transystem-logistics-international-pvt-ltd",
+      "professional_network_id": "91381458",
+      "profile_name": "Transystem Logistics International Pvt. Ltd",
+      "logo_permalink": "https://crustdata-media.s3.us-east-2.amazonaws.com/company/f3e922630a5fdb8db635addd6df20e9930206907391c35d4aac12cd384085551.jpg",
+      "description": "Transystem Logistics International Pvt Ltd (“TLI”), a Joint Venture between the Japanese Mitsui & Co. Ltd, and Transport Corporation of India, has carved its own niche by offering high quality Logistics solutions to Japanese automotive manufacturers and Suppliers operating in India.Established in February 1999, TLI has risen to become a leader as  an integrated logistics solution provider in India by providing all-inclusive Logistics Solutions for automotive manufacturers and parts suppliers across India. TLI has wide range of services from pre-production, storage to delivering the product to end-users.TLI has a range of services, which covers entire supply chain from the point of origin to the end customer. TLI has expertise in Inbound LogisticsoJust-In-TimeoCrossdockingoDirect TransportationoMilk-runOutbound Logistics oVehicles transportationoService Parts transportationIn-Plant LogisticsImport/Export container transportationWarehouse ManagementTLI has been introducing and implementing new initiatives and innovative ideas to provide optimized solutions and high quality services to its customers.TLI is certified with ISO 14001 & 45001, ensuring best safety practices across its operation.Our focus is on becoming a preferred partner for our clients; wherein together with our employees and associates, we are embarking upon a transformative journey of Igniting Success.",
+      "company_type": "Privately Held",
+      "year_founded": 1999,
+      "employee_count_range": "501-1000",
+      "markets": [],
+      "industries": [
+       "Transportation, Logistics, Supply Chain and Storage"
+      ]
+     },
+     "social_profiles": null
+    }
+   }
+  ]
+ }
+]

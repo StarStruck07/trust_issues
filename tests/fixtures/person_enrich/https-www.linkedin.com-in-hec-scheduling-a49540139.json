@@ -1,0 +1,40 @@
+[
+ {
+  "matched_on": "https://www.linkedin.com/in/hec-scheduling-a49540139",
+  "match_type": "professional_network_profile_url",
+  "match_status": "matched",
+  "matches": [
+   {
+    "confidence_score": 1.0,
+    "person_data": {
+     "basic_profile": {
+      "name": "HeC Scheduling",
+      "current_title": "Chief Executive Officer"
+     },
+     "professional_network": {
+      "connections": null
+     },
+     "social_handles": {
+      "professional_network_identifier": {
+       "profile_url": "https://www.linkedin.com/in/hec-scheduling-a49540139"
+      }
+     },
+     "experience": {
+      "employment_details": {
+       "current": [
+        {
+         "name": "Lenskart.com",
+         "title": "Chief Executive Officer",
+         "crustdata_company_id": 5862,
+         "start_date": null,
+         "end_date": null
+        }
+       ],
+       "past": []
+      }
+     }
+    }
+   }
+  ]
+ }
+]

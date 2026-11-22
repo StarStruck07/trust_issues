@@ -1,0 +1,83 @@
+[
+ {
+  "matched_on": "https://www.linkedin.com/in/sakait-chaudhary-8780a9122",
+  "match_type": "professional_network_profile_url",
+  "match_status": "matched",
+  "matches": [
+   {
+    "confidence_score": 1.0,
+    "person_data": {
+     "basic_profile": {
+      "name": "Sakait Chaudhary",
+      "current_title": "Chief Financial Officer, Flipkart"
+     },
+     "professional_network": {
+      "connections": null
+     },
+     "social_handles": {
+      "professional_network_identifier": {
+       "profile_url": "https://www.linkedin.com/in/sakait-chaudhary-8780a9122"
+      }
+     },
+     "experience": {
+      "employment_details": {
+       "current": [
+        {
+         "name": "Flipkart",
+         "title": "Chief Financial Officer, Flipkart",
+         "crustdata_company_id": 5744,
+         "start_date": "2015-07-01T00:00:00+00:00",
+         "end_date": null
+        }
+       ],
+       "past": [
+        {
+         "name": "Flipkart Internet Limited",
+         "title": "Head Business Finance, Investor Relations",
+         "crustdata_company_id": null,
+         "start_date": "2015-07-01T00:00:00+00:00",
+         "end_date": "2015-07-01T00:00:00+00:00"
+        },
+        {
+         "name": "Tata Communications Limited",
+         "title": "Head",
+         "crustdata_company_id": null,
+         "start_date": "2012-01-01T00:00:00+00:00",
+         "end_date": "2015-01-01T00:00:00+00:00"
+        },
+        {
+         "name": "Aircel Ltd",
+         "title": "DGM,  Management Accounting & Treasury",
+         "crustdata_company_id": null,
+         "start_date": "2008-01-01T00:00:00+00:00",
+         "end_date": "2012-01-01T00:00:00+00:00"
+        },
+        {
+         "name": "Bharti Airtel Limited",
+         "title": "Sr. Manager",
+         "crustdata_company_id": null,
+         "start_date": "2004-12-01T00:00:00+00:00",
+         "end_date": "2008-03-01T00:00:00+00:00"
+        },
+        {
+         "name": "Grace Enterprises Ltd",
+         "title": "Business Development Manager",
+         "crustdata_company_id": null,
+         "start_date": "2003-06-01T00:00:00+00:00",
+         "end_date": "2004-11-01T00:00:00+00:00"
+        },
+        {
+         "name": "GE Consumer Financial Services Ltd",
+         "title": "Asst Manager",
+         "crustdata_company_id": null,
+         "start_date": "2000-09-01T00:00:00+00:00",
+         "end_date": "2002-03-01T00:00:00+00:00"
+        }
+       ]
+      }
+     }
+    }
+   }
+  ]
+ }
+]
