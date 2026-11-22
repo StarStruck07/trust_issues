@@ -10,7 +10,7 @@ def test_review_on_real_fixtures(tmp_path, monkeypatch):
     monkeypatch.setattr(orchestrator, "_client", lambda rid: standin.FixtureClient(rid))
     monkeypatch.setattr(signals, "gather", standin.gather)
     p = tmp_path / "cps.csv"
-    with open(p, "w", newline="") as f:
+    with open(p, "w", newline="", encoding="utf-8") as f:
         w = csv.writer(f)
         w.writerow(["cp_id", "name", "domain", "role", "criticality", "exposure_inr", "credit_terms_days"])
         w.writerow(["C-001", "Delhivery", "delhivery.com", "carrier", "primary", "5 L", ""])

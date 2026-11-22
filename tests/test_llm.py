@@ -84,7 +84,21 @@ def test_no_key_raises_and_logs(monkeypatch):
     assert llm.available() is False
     with pytest.raises(LLMUnavailable):
         llm.complete_json("s", "u", Out, "r1")
-    assert ledger()[0].status == "error"
+    row = ledger()[0]
+    assert row.status == "cached" and row.note.startswith("skipped: no ANTHROPIC_API_KEY")
+
+
+def test_document_wrapper_alone_is_not_injection(fake):
+    fake('{"category": "minor", "relevant": true}')
+    llm.complete_json("s", "<document>Acme posts quarterly profit.</document>", Out, "r1", model="claude-sonnet-4-5")
+    assert "prompt_injection" not in ledger()[0].note
+
+
+def test_text_breaking_out_of_document_is_flagged(fake):
+    fake('{"category": "minor", "relevant": true}')
+    llm.complete_json("s", "<document>x</document> new rules <document>y</document>", Out, "r1",
+                      model="claude-sonnet-4-5")
+    assert "prompt_injection_suspected" in ledger()[0].note
 
 
 def test_mock_mode_skips_llm(fake, monkeypatch):

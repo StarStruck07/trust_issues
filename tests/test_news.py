@@ -150,3 +150,12 @@ def test_routine_story_is_neutral_without_llm():
 def test_html_to_text_drops_scripts():
     t = news.html_to_text("<html><head><title>x</title></head><body><script>var a=1</script><p>Hello.</p></body></html>")
     assert t == "Hello."
+
+
+def test_same_story_under_two_urls_counts_once():
+    items = [("https://a.news/x", "Acme Logistics wins big order", "2026-11-10"),
+             ("https://b.news/y", "Acme Logistics wins big order", "2026-11-10"),
+             ("https://c.news/z", "Acme Logistics opens hub", "2026-11-09")]
+    c = FakeNewsClient()
+    run(c, enrich_news(*items))
+    assert len(c.fetched[0]) == 2

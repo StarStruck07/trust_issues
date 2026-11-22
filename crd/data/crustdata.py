@@ -43,7 +43,10 @@ DEFAULT_FIELDS = ["basic_info", "headcount", "funding", "people", "news", "emplo
 
 # requests per 60 s, per endpoint (observed headers; override with CRD_RATE_<ENDPOINT>=n)
 RATE_LIMITS = {"identify": 5, "enrich": 5, "job_search": 5, "person_enrich": 5,
-               "web_search": 10, "web_fetch": 10, "watch": 10, "credits": 300}
+               "web_search": 10, "web_fetch": 10, "watch": 10, "credits": 300, "registries": 10}
+# Public government pages fetched directly (no Crustdata auth header, 0 credits, ledger provider "registry").
+PUBLIC_ENDPOINTS = {"registries"}
+PUBLIC_UA = "Mozilla/5.0 (compatible; CounterpartyRiskDesk/0.1)"
 BACKOFF = [1, 3, 9]
 MAX_TRIES = 3
 TIMEOUT_S = float(os.getenv("CRD_HTTP_TIMEOUT", "45"))   # first enrich call took 31 s in the probe
@@ -68,7 +71,7 @@ def _load_key() -> str | None:
         return key
     env = Path(".env")
     if env.exists():
-        for line in env.read_text().splitlines():
+        for line in env.read_text(encoding="utf-8").splitlines():
             if line.strip().startswith("CRUSTDATA_API_KEY="):
                 return line.split("=", 1)[1].strip().strip('"').strip("'") or None
     return None
@@ -143,7 +146,7 @@ class _FixtureIndex:
         self.alias: dict[str, str] = {}
         log = root / "_probe_log.json"
         if log.exists():
-            for row in json.loads(log.read_text()):
+            for row in json.loads(log.read_text(encoding="utf-8")):
                 if row.get("status") != 200:
                     continue
                 for v in _lookup_values(row.get("request") or {}):
@@ -153,7 +156,7 @@ class _FixtureIndex:
                 if f.stem.startswith("_"):
                     continue
                 try:
-                    data = json.loads(f.read_text())
+                    data = json.loads(f.read_text(encoding="utf-8"))
                 except ValueError:
                     continue
                 for item in data if isinstance(data, list) else []:
@@ -186,6 +189,8 @@ def _lookup_values(payload: dict) -> list[str]:
         out += [_norm(v) for v in payload.get(k) or []]
     if payload.get("query"):
         out.append(_norm(payload["query"]))
+    if payload.get("key"):
+        out.append(_norm(payload["key"]))
     f = payload.get("filters")
     stack = [f] if f else []
     while stack:
@@ -295,6 +300,16 @@ class CrustdataClient:
         resp = self._call("POST", "/watch/company", body, "watch", use_cache=False)
         return resp if isinstance(resp, dict) else {}
 
+    def public_get(self, url: str, *, key: str, day: str | None = None) -> dict:
+        """GET a public registry page (IBBI). Returns {"url", "status", "html"}. Never sends the API key.
+
+        `key` names the mock fixture (tests/fixtures/registries/<slug(key)>.json); `day` scopes the cache
+        to one day so a weekly re-run re-reads the registry.
+        """
+        payload = {"url": url, "key": key, "day": day or _now().date().isoformat()}
+        resp = self._call("GET", url, payload, "registries")
+        return resp if isinstance(resp, dict) else {}
+
     def test_company_watch(self, watch_id: str, body: dict | None = None) -> dict:
         resp = self._call("POST", f"/watch/company/{watch_id}/test", body or {}, "watch", use_cache=False)
         return resp if isinstance(resp, dict) else {}
@@ -319,7 +334,7 @@ class CrustdataClient:
 
         # 2. cache
         if use_cache:
-            hit = db.cache_get(rhash)
+            hit = _cache_get_fresh(rhash)
             if hit is not None:
                 self.last_raw_ref = self._store_raw(endpoint, rhash, hit)
                 self._ledger(endpoint, rhash, status="cached", note="cache hit")
@@ -359,7 +374,7 @@ class CrustdataClient:
         self._ledger(endpoint, rhash, status="ok", credits=credits, inr=inr, latency_ms=latency,
                      note="" if credits_hdr is not None else "price from config")
         if use_cache:
-            db.cache_put(rhash, endpoint, resp)
+            db.cache_put(rhash, endpoint, {CACHE_WRAP: _now().isoformat(), "response": resp})
         self.last_raw_ref = self._store_raw(endpoint, rhash, resp)
         return resp
 
@@ -374,10 +389,17 @@ class CrustdataClient:
                          "x-api-version": API_VERSION})
         return self._http
 
+    def _public_http(self) -> httpx.Client:
+        if getattr(self, "_pub", None) is None:
+            self._pub = httpx.Client(timeout=TIMEOUT_S, follow_redirects=True, transport=self._transport,
+                                     headers={"user-agent": PUBLIC_UA})
+        return self._pub
+
     def _http_with_retries(self, method: str, path: str, payload: dict | None, endpoint: str,
                            rhash: str) -> tuple[Any, float | None, int]:
         bucket = _bucket(endpoint, self._sleep)
-        http = self._client()
+        public = endpoint in PUBLIC_ENDPOINTS
+        http = self._public_http() if public else self._client()
         fails = 0          # 5xx / timeout / network
         limited = 0        # 429
         last_err = ""
@@ -385,7 +407,12 @@ class CrustdataClient:
             bucket.take()
             t0 = time.perf_counter()
             try:
-                r = http.request(method, path, json=payload) if payload is not None else http.request(method, path)
+                if public:
+                    r = http.request(method, payload["url"])
+                elif payload is not None:
+                    r = http.request(method, path, json=payload)
+                else:
+                    r = http.request(method, path)
             except httpx.TimeoutException as e:
                 ms = int((time.perf_counter() - t0) * 1000)
                 fails += 1
@@ -413,6 +440,8 @@ class CrustdataClient:
             code = r.status_code
 
             if code == 200 or code == 201:
+                if public:
+                    return {"url": str(r.url), "status": code, "html": r.text}, 0.0, ms
                 credits = _num(r.headers.get("x-credits-used"))
                 try:
                     return r.json(), credits, ms
@@ -430,7 +459,7 @@ class CrustdataClient:
                 bucket.hold(wait)
                 self._sleep(wait)
                 continue
-            if code == 402 or (code == 400 and "credit" in text.lower()):
+            if not public and (code == 402 or (code == 400 and "credit" in text.lower())):
                 self._ledger(endpoint, rhash, status="error", latency_ms=ms, note=f"{code} credits exhausted")
                 raise CreditsExhausted(f"{endpoint}: HTTP {code} {text}")
             if code in (401, 403):
@@ -483,7 +512,8 @@ class CrustdataClient:
     def _ledger(self, endpoint: str, rhash: str, *, status: str, credits: float = 0.0, inr: float = 0.0,
                 latency_ms: int = 0, note: str = "") -> None:
         db.insert_ledger(LedgerEntry(
-            call_id=uuid.uuid4().hex, run_id=self.run_id, provider="crustdata", endpoint=endpoint,
+            call_id=uuid.uuid4().hex, run_id=self.run_id,
+            provider="registry" if endpoint in PUBLIC_ENDPOINTS else "crustdata", endpoint=endpoint,
             request_hash=rhash, credits=credits, inr=inr, latency_ms=latency_ms, status=status,
             note=note, ts=_now()))
 
@@ -492,15 +522,25 @@ class CrustdataClient:
         d.mkdir(parents=True, exist_ok=True)
         p = d / f"{endpoint}_{rhash[:8]}.json"
         if not p.exists():
-            p.write_text(json.dumps(resp, ensure_ascii=False, default=str))
-        return str(p)
+            p.write_text(json.dumps(resp, ensure_ascii=False, default=str), encoding="utf-8")
+        return p.as_posix()
 
     # ---------------------------------------------------------------- mock
     def _mock_response(self, endpoint: str, payload: dict) -> tuple[Any, str]:
         idx = _index()
+        if endpoint == "identify":  # batch: answer each identifier on its own, like the real API
+            kind = "domains" if payload.get("domains") else "names"
+            ids = payload.get(kind) or []
+            if len(ids) > 1:
+                out, refs = [], []
+                for v in ids:
+                    resp, ref = self._mock_response(endpoint, {kind: [v]})
+                    out += resp if isinstance(resp, list) else []
+                    refs.append(ref)
+                return out, refs[0]
         path = idx.find(endpoint, payload)
         if path is not None:
-            return json.loads(path.read_text()), str(path)
+            return json.loads(path.read_text(encoding="utf-8")), path.as_posix()
 
         if endpoint == "identify":
             if payload.get("names"):  # unknown name -> no match (realistic not_found)
@@ -511,15 +551,40 @@ class CrustdataClient:
         default = FIXTURES / endpoint / "_default.json"
         if not default.exists():
             raise SourceUnavailable(f"mock: no fixture for {endpoint} and no _default.json")
-        resp = json.loads(default.read_text())
+        resp = json.loads(default.read_text(encoding="utf-8"))
         if endpoint == "enrich":
             resp = _patch_default_enrich(resp, payload)
         elif endpoint == "web_fetch":
             resp = [dict(resp[0], url=u) for u in payload.get("urls") or []] if resp else []
-        return resp, str(default)
+        return resp, default.as_posix()
 
 
 # --------------------------------------------------------------------------- helpers
+CACHE_WRAP = "_cached_at"
+
+
+def _cache_ttl_hours() -> float:
+    try:
+        return float(os.getenv("CRD_CACHE_TTL_HOURS", "24"))
+    except ValueError:
+        return 24.0
+
+
+def _cache_get_fresh(rhash: str) -> Any:
+    """Cached response if it is younger than CRD_CACHE_TTL_HOURS (default 24 h), else None.
+
+    Same-day re-runs and resume-after-kill stay free; a weekly review fetches fresh data.
+    """
+    hit = db.cache_get(rhash)
+    if not isinstance(hit, dict) or CACHE_WRAP not in hit:
+        return None                      # unknown age (older format): treat as expired
+    try:
+        age_h = (_now() - datetime.fromisoformat(hit[CACHE_WRAP])).total_seconds() / 3600
+    except (TypeError, ValueError):
+        return None
+    return hit.get("response") if age_h <= _cache_ttl_hours() else None
+
+
 def _num(v: Any) -> float | None:
     try:
         return float(v) if v not in (None, "") else None

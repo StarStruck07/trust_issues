@@ -28,7 +28,7 @@ def setup(tmp_path, monkeypatch):
     monkeypatch.setattr(orchestrator, "_client", lambda rid: FakeClient(TABLE))
     monkeypatch.setattr(signals, "gather", fake_gather)
     p = tmp_path / "cps.csv"
-    with open(p, "w", newline="") as f:
+    with open(p, "w", newline="", encoding="utf-8") as f:
         w = csv.writer(f)
         w.writerow(["Company", "Website", "Type", "Outstanding", "Terms"])
         w.writerow(["Acme Logistics", "https://www.acme.in/", "Transporter", "5 L", "30 days"])

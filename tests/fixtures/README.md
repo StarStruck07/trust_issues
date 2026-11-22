@@ -43,3 +43,50 @@ Probe run cost: **15.83 credits** (balance 15200.00 → 15184.17), which matches
 - Enrich `basic_info` has `status`, which may be useful for legal-status hints.
 - Identify and enrich responses are a top-level array: `[{matched_on, match_type, matches:[{confidence_score, company_data}]}]`.
 - Webhook signature header: `x-crustdata-signature: t=<unix>,v1=<hex>`, HMAC-SHA256 over `"<t>.<raw body>"`, keyed by the API key (docs).
+
+## Registries (checked 2026-11-22)
+
+| Registry | Reached how | Works? | Cost | Notes |
+|---|---|---|---|---|
+| IBBI public announcements | `GET https://ibbi.gov.in/public-announcement?title=<name>` via `client.public_get` | **Yes**, no login or CAPTCHA | free (ledger provider `registry`) | Table: type of PA, date, debtor, applicant, IP, PDF. Fixtures in `registries/` (`noel-pharma.json` = a real CIRP of 25 Jul 2026) |
+| MCA company master data | portal | **No**: HTTP 403 to automated access, plus a CAPTCHA | n/a | Not bypassed. `legal_status` comes from Crustdata `basic_info.status`, and its claim says MCA was not checked |
+| GST taxpayer search | portal | **No**: JavaScript app behind a CAPTCHA | n/a | Not bypassed. Reported as `empty` ("not checked") when a GSTIN is given |
+
+## Costs (measured 2026-11-22, live run on 5 counterparties)
+
+Run `run_e062d856`: Delhivery, Blue Dart, Mamaearth, Ecom Express (resolved) + Sharma Transport (ambiguous).
+**32.13 credits**, equal to the account balance drop (15184.17 → 15152.04), so the ledger is exact.
+Reproduce with `python scripts/costs.py <run_id>`.
+
+| Endpoint | Calls | Credits | Per resolved counterparty | List price (docs) |
+|---|---|---|---|---|
+| identify (batch) | 2 | 1.00 | 0.25 | 0.2 per matched identifier |
+| enrich | 4 | 8.00 | 2.00 | 2 per record (+2 technographics, not used) |
+| job_search (25 results max) | 4 | 2.13 | 0.53 | 0.03 per result |
+| web_search | 8 | 1.00 | 0.25 | 1 per page; 0 when no results |
+| web_fetch (3 URLs per call) | 4 | 12.00 | 3.00 | 1 per page |
+| person_enrich (≤3 leaders) | 8 | 8.00 | 2.00 | 1 per record (basic profile + experience) |
+| IBBI registry | 4 | 0 | 0 | free |
+| **Total** | | **32.13** | **8.03** | |
+
+- Same-day re-run (`run_cd74e09a`): 3.00 credits, cache-hit rate 97% (49/50 calls). The cache lasts
+  `CRD_CACHE_TTL_HOURS` (default 24 h), so a weekly review refetches; resume after a kill is free.
+- An ambiguous name costs 0.2 credits (identify only) and stops there.
+- Ceiling per counterparty: about 11 credits (all 3 leaders enriched, 2 web searches with results).
+- LLM: no `ANTHROPIC_API_KEY` in this run, so 0. Estimate with a key: about 4 calls per counterparty
+  (3 news + 1 explanation), ~12k input and ~0.7k output tokens → about $0.05 per counterparty at $3/$15 per MTok.
+- Costs are reported in **credits only**: Crustdata does not publish a $ price per credit (it is only on the
+  logged-in billing page), so `inr_per_credit` stays 0 and the ledger's `inr` column is 0 for Crustdata calls.
+
+### Summary for the README and finance pitch (credits)
+
+| Item | Credits |
+|---|---|
+| New counterparty, full review | 8.03 average (about 11 at most) |
+| Ambiguous name (stops at identify) | 0.2 |
+| Same-day re-run or resume after a kill | ~0 (97% from cache) |
+| Weekly re-check (cache expires after 24 h, data refetched) | ~8 |
+| Watcher notification (only on change) | 5 |
+| LLM per counterparty | 0 credits (separate Anthropic bill; ~$0.05 estimated with a key) |
+| **50-counterparty weekly review** | **~400** |
+| 50 counterparties on Watcher, re-review only on change | 5 + ~8 per changed company; quiet companies 0 |

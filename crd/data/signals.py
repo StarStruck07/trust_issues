@@ -105,6 +105,14 @@ def _last_ts_date(series: Any) -> date | None:
     return max(dates) if dates else None
 
 
+def _month_end(d: date | None) -> date | None:
+    """Monthly buckets are dated the 1st; the data covers the whole month, so it is as fresh as its last day."""
+    if d is None:
+        return None
+    nxt = date(d.year + (d.month == 12), d.month % 12 + 1, 1)
+    return nxt - timedelta(days=1)
+
+
 def _months_between(a: date, b: date) -> int:
     return (b.year - a.year) * 12 + (b.month - a.month) - (1 if b.day < a.day else 0)
 
@@ -144,12 +152,15 @@ def gather(cp: Counterparty, entity: ResolvedEntity, client, cfg) -> list[Eviden
         if not enrich:
             out.append(ctx.make_ev("headcount_qoq", "Company Enrich returned no record for this company", None,
                                    "Company Enrich", None, None, status="empty", raw_ref=raw))
+            out.append(ctx.unavailable("legal_status", "Company status", "no company record (MCA not checked)"))
         else:
             out += enrich_signals(ctx, enrich, raw)
+            out.append(legal_status_from_enrich(ctx, enrich, raw))
     except STOP:
         raise
     except Exception as e:  # noqa: BLE001
         out.append(ctx.unavailable("headcount_qoq", "Company Enrich", e))
+        out.append(ctx.unavailable("legal_status", "Company status (Company Enrich)", e))
 
     # 3. hiring via Job Search
     try:
@@ -193,7 +204,8 @@ def payment_behaviour(ctx: _Ctx) -> list[Evidence]:
         claim += f"; ₹{cp.overdue_inr:,.0f} overdue"
     return [ctx.make_ev("payment_behaviour", claim,
                         {"dso": cp.dso_days, "terms": cp.credit_terms_days, "overdue_inr": cp.overdue_inr},
-                        "client receivables record", "dso_days", ctx.as_of, source_type="client_record")]
+                        "client receivables record", "dso_days", ctx.as_of, source_type="client_record",
+                        raw_ref=f"counterparties/{cp.cp_id}")]
 
 
 # --------------------------------------------------------------------------- enrich-derived
@@ -265,6 +277,20 @@ def enrich_signals(ctx: _Ctx, d: dict, raw: str | None) -> list[Evidence]:
     return out
 
 
+def legal_status_from_enrich(ctx: _Ctx, d: dict, raw: str | None) -> Evidence:
+    """MCA cannot be checked (CAPTCHA), so company status comes from Crustdata's record and says so."""
+    from crd.data.registries import MCA_NOTE
+    status = str(((d.get("basic_info") or {}).get("status")) or "").strip().lower()
+    if not status:
+        return ctx.unavailable("legal_status", "Company status",
+                               "Crustdata company record has no status; " + MCA_NOTE)
+    h_date = _last_ts_date((d.get("headcount") or {}).get("timeseries"))
+    rec = _date(d.get("updated_at")) or _date(d.get("indexed_at")) or h_date
+    return ctx.make_ev("legal_status", f"Company status '{status}' per Crustdata company record. {MCA_NOTE}",
+                       {"status": status, "registry_checked": False}, "Company Enrich", "basic_info.status",
+                       rec, raw_ref=raw)
+
+
 def _web_traffic(ctx: _Ctx, d: dict, raw: str | None) -> Evidence | None:
     traffic = ((d.get("web_traffic") or {}).get("domain_traffic")) or {}
     if not traffic:
@@ -286,7 +312,7 @@ def _web_traffic(ctx: _Ctx, d: dict, raw: str | None) -> Evidence | None:
                  f"({_date(start['date'])} to {_date(series[-1]['date'])})")
         return ctx.make_ev("web_traffic", claim, {"pct": round(pct, 1), "from": a, "to": b, "domain": domain},
                            "Company Enrich", "web_traffic.domain_traffic.monthly_visitors_timeseries",
-                           _date(series[-1]["date"]), raw_ref=raw)
+                           _month_end(_date(series[-1]["date"])), raw_ref=raw)
     pct = _num((entry or {}).get("qoq_pct"))
     if pct is None:
         return None
@@ -324,10 +350,14 @@ def hiring(ctx: _Ctx) -> list[Evidence]:
         if any(w in title.lower() for w in DISTRESS_WORDS) and title not in distress:
             distress.append(title)
     page_full = len(jobs or []) >= JOB_PAGE
-    more = "+" if page_full and recent >= JOB_PAGE else ""
-    claim = f"{recent}{more} job postings in the last 30 days vs {prior} in the 90 before"
-    if page_full and recent < JOB_PAGE:
-        claim += f" (latest {JOB_PAGE} postings checked)"
+    if page_full and recent >= JOB_PAGE:
+        # the page filled with recent postings: the earlier window was never seen, so don't report it as 0
+        prior = None
+        claim = f"{JOB_PAGE}+ job postings in the last 30 days (earlier period not measured)"
+    else:
+        claim = f"{recent} job postings in the last 30 days vs {prior} in the 90 before"
+        if page_full:
+            claim += f" (latest {JOB_PAGE} postings checked)"
     if distress:
         claim += f"; distress roles: {', '.join(distress[:3])}"
     return [ctx.make_ev("hiring", claim,

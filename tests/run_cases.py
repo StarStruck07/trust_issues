@@ -59,7 +59,7 @@ def _grade(case: dict, run_id: str) -> tuple[bool, str]:
 
 
 def run_case(path: str) -> dict:
-    with open(path) as f:
+    with open(path, encoding="utf-8") as f:
         case = yaml.safe_load(f)
     tmp = tempfile.mkdtemp(prefix="crdcase_")
     os.environ["CRD_DB_PATH"] = os.path.join(tmp, "case.db")
@@ -70,7 +70,7 @@ def run_case(path: str) -> dict:
     csv_path = os.path.join(tmp, "input.csv")
     rows = case.get("input_rows", [])
     keys = sorted({k for r in rows for k in r})
-    with open(csv_path, "w", newline="") as f:
+    with open(csv_path, "w", newline="", encoding="utf-8") as f:
         w = csv.DictWriter(f, fieldnames=keys)
         w.writeheader()
         for r in rows:
@@ -101,7 +101,7 @@ def main(pattern: str = "*") -> int:
     n = sum(r["pass"] for r in results)
     print(f"\n{n}/{len(results)} passed")
     os.makedirs("var", exist_ok=True)
-    with open("var/test_report.json", "w") as f:
+    with open("var/test_report.json", "w", encoding="utf-8") as f:
         json.dump(results, f, indent=2)
     return 0 if n == len(results) else 1
 
