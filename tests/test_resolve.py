@@ -87,5 +87,5 @@ def test_real_fixture_domain_and_lookalike():
     st = {g[0].cp_ids[0]: g[0] for g in out}
     assert st["C-1"].status == "resolved" and st["C-1"].crustdata_company_id == 5798
     assert st["C-2"].status == "resolved"
-    assert st["C-3"].status == "ambiguous" and len(st["C-3"].candidates) == 5
+    assert st["C-3"].status == "ambiguous" and len(st["C-3"].candidates) == 9
     assert c.calls == 2          # one batched domain call + one batched name call

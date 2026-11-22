@@ -181,7 +181,7 @@ def resolve_one(cp: Counterparty, client, run_id: str, cfg, pre: Prefetch | None
             return e, [ev]
         if len(good) >= 2:
             cands = [{k: m.get(k) for k in ("name", "domain", "location", "confidence", "crustdata_company_id")}
-                     for m in good[:5]]
+                     for m in good[:10]]
             ev = _ev(run_id, cp.cp_id, f"'{qname}' matches {len(good)} companies at confidence >= {min_conf}",
                      cands, client.last_raw_ref, status="empty")
             return ResolvedEntity(cp_ids=[cp.cp_id], status="ambiguous", candidates=cands,
