@@ -1,0 +1,16 @@
+cp_id,name,legal_name,domain,city,role,criticality,importance,depends_on_us,exposure_inr,credit_terms_days,account_owner
+F-001,Delhivery,Delhivery Limited,delhivery.com,Gurugram,carrier,primary,core,na,2500000,,ops-team
+F-002,Blue Dart,Blue Dart Express Limited,bluedart.com,Mumbai,carrier,backup,standard,na,1200000,,ops-team
+F-003,Rivigo,Rivigo Services Private Limited,rivigo.com,Gurugram,carrier,sole_source,strategic,na,1800000,,ops-team
+F-004,Mahindra Logistics,Mahindra Logistics Limited,mahindralogistics.com,Mumbai,warehouse_lessor,primary,core,na,3000000,,ops-team
+F-005,Sharma Transport,,,,carrier,backup,standard,na,150000,,ops-team
+F-006,Shree Ganesh Roadlines Bhiwandi,,,Bhiwandi,carrier,backup,standard,na,90000,,ops-team
+F-007,Mamaearth,Honasa Consumer Limited,mamaearth.in,Gurugram,customer,na,core,medium,4200000,45,credit-team
+F-008,Byju's,Think and Learn Private Limited,byjus.com,Bengaluru,customer,na,strategic,low,6500000,30,credit-team
+F-009,Dunzo,Dunzo Digital Private Limited,dunzo.com,Bengaluru,customer,na,standard,low,1500000,30,credit-team
+F-010,Go First,Go Airlines (India) Limited,flygofirst.com,Mumbai,customer,na,standard,low,2200000,30,credit-team
+F-011,Hike,Hike Private Limited,hike.in,New Delhi,customer,na,standard,low,600000,30,credit-team
+F-012,Tide India,Tide Platform India Private Limited,tide.co,Hyderabad,customer,na,core,low,1800000,30,credit-team
+F-013,India Glycols,India Glycols Limited,indiaglycols.com,Noida,customer,na,core,medium,2500000,45,credit-team
+F-014,Quasar India,Quasar India Limited,,New Delhi,customer,na,standard,low,3500000,45,credit-team
+F-015,Tide Water Oil,Tide Water Oil Co. (India) Ltd.,,Kolkata,customer,na,standard,medium,900000,45,credit-team
