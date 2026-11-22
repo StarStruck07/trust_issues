@@ -1,0 +1,40 @@
+[
+  {
+    "matched_on": "mamaearth.in",
+    "match_type": "domain",
+    "matches": [
+      {
+        "confidence_score": 1.0,
+        "company_data": {
+          "crustdata_company_id": 5844,
+          "basic_info": {
+            "name": "Mamaearth",
+            "crustdata_company_id": 5844,
+            "primary_domain": "mamaearth.in",
+            "all_domains": [
+              "mamaearth.in",
+              "honasa.in",
+              "mamaearth.com"
+            ],
+            "website": "https://mamaearth.in",
+            "professional_network_url": "https://www.linkedin.com/company/mama-earth-in",
+            "professional_network_id": "18636572",
+            "profile_name": "Mamaearth",
+            "logo_permalink": "https://crustdata-media.s3.us-east-2.amazonaws.com/company/abd84a21b10e518981d74550fda7ed2fe68897b9d2b87becedd30e498f036e51.jpg",
+            "description": "We are parents just like you. Our journey began when we, Ghazal and Varun, were expecting our first child. That’s the time we turned from a bungee jumping, pub hopping, carefree couple to basically a couple of safety wardens. Everything had to be safe, kosher & googled. When the morning sickness became a routine, we were shocked to find that there were no safer alternatives to pills and ended up having to struggle a lot.After 9 rigorous months, we were finally blessed with our tiny little bundle of joy and just like you and every other parent in the world; we too wanted the best for our cute bambino. So we wore our spyglasses & did all the possible research available. Whoa, we were shocked to see how most baby products, be it lotion or shampoo contained toxins which have proven to be harmful to the little ones. We were worried sick and it wasn’t just our baby we were worried about but also for all the little ones we knew in our friend circle. That’s when we decided to do something about it & create products which were completely safe & certified toxin free. A brand, by a parent, for the parent. A brand which develops products from world-class research and attempts to solve every little problem that we as parents face. With the aim of making products which are mum-baby friendly, toxin-free, meet stringent international standards & are basically ultra-awesome, Mamaearth was born.",
+            "company_type": "Privately Held",
+            "year_founded": 2016,
+            "employee_count_range": "51-200",
+            "markets": [
+              "PRIVATE"
+            ],
+            "industries": [
+              "Health, Wellness & Fitness"
+            ]
+          },
+          "social_profiles": null
+        }
+      }
+    ]
+  }
+]

@@ -1,0 +1,31 @@
+{
+  "account": {
+    "credits": 15184.17,
+    "recurring_credits": 0,
+    "recurring_credits_frequency": null,
+    "recurring_credits_refresh_date": null,
+    "wallets": [
+      {
+        "type": "recurring",
+        "credits": 14984.17,
+        "next_refresh_date": null,
+        "expires_at": null
+      },
+      {
+        "type": "topup",
+        "credits": 200.0,
+        "next_refresh_date": null,
+        "expires_at": "2026-12-06T04:02:41.383784+00:00"
+      }
+    ],
+    "credit_topups": [
+      {
+        "type": "granted",
+        "granted_credits": 200.0,
+        "remaining_credits": 200.0,
+        "granted_at": "2026-11-22T04:02:41.383784+00:00",
+        "expires_at": "2026-12-06T04:02:41.383784+00:00"
+      }
+    ]
+  }
+}
