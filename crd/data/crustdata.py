@@ -71,7 +71,7 @@ def _load_key() -> str | None:
         return key
     env = Path(".env")
     if env.exists():
-        for line in env.read_text().splitlines():
+        for line in env.read_text(encoding="utf-8").splitlines():
             if line.strip().startswith("CRUSTDATA_API_KEY="):
                 return line.split("=", 1)[1].strip().strip('"').strip("'") or None
     return None
@@ -146,7 +146,7 @@ class _FixtureIndex:
         self.alias: dict[str, str] = {}
         log = root / "_probe_log.json"
         if log.exists():
-            for row in json.loads(log.read_text()):
+            for row in json.loads(log.read_text(encoding="utf-8")):
                 if row.get("status") != 200:
                     continue
                 for v in _lookup_values(row.get("request") or {}):
@@ -156,7 +156,7 @@ class _FixtureIndex:
                 if f.stem.startswith("_"):
                     continue
                 try:
-                    data = json.loads(f.read_text())
+                    data = json.loads(f.read_text(encoding="utf-8"))
                 except ValueError:
                     continue
                 for item in data if isinstance(data, list) else []:
@@ -522,8 +522,8 @@ class CrustdataClient:
         d.mkdir(parents=True, exist_ok=True)
         p = d / f"{endpoint}_{rhash[:8]}.json"
         if not p.exists():
-            p.write_text(json.dumps(resp, ensure_ascii=False, default=str))
-        return str(p)
+            p.write_text(json.dumps(resp, ensure_ascii=False, default=str), encoding="utf-8")
+        return p.as_posix()
 
     # ---------------------------------------------------------------- mock
     def _mock_response(self, endpoint: str, payload: dict) -> tuple[Any, str]:
@@ -540,7 +540,7 @@ class CrustdataClient:
                 return out, refs[0]
         path = idx.find(endpoint, payload)
         if path is not None:
-            return json.loads(path.read_text()), str(path)
+            return json.loads(path.read_text(encoding="utf-8")), path.as_posix()
 
         if endpoint == "identify":
             if payload.get("names"):  # unknown name -> no match (realistic not_found)
@@ -551,12 +551,12 @@ class CrustdataClient:
         default = FIXTURES / endpoint / "_default.json"
         if not default.exists():
             raise SourceUnavailable(f"mock: no fixture for {endpoint} and no _default.json")
-        resp = json.loads(default.read_text())
+        resp = json.loads(default.read_text(encoding="utf-8"))
         if endpoint == "enrich":
             resp = _patch_default_enrich(resp, payload)
         elif endpoint == "web_fetch":
             resp = [dict(resp[0], url=u) for u in payload.get("urls") or []] if resp else []
-        return resp, str(default)
+        return resp, default.as_posix()
 
 
 # --------------------------------------------------------------------------- helpers

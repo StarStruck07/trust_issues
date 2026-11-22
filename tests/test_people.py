@@ -15,7 +15,7 @@ ENT = resolved(cid=5798, domain="delhivery.com", legal_name="Delhivery")
 
 
 def delhivery_enrich():
-    d = json.loads(Path("tests/fixtures/enrich/delhivery.com.json").read_text())
+    d = json.loads(Path("tests/fixtures/enrich/delhivery.com.json").read_text(encoding="utf-8"))
     return d[0]["matches"][0]["company_data"]
 
 
@@ -115,8 +115,8 @@ def test_purge_people_raw(tmp_path, monkeypatch):
     monkeypatch.chdir(tmp_path)
     raw = tmp_path / "var" / "runs" / "run-p" / "raw"
     raw.mkdir(parents=True)
-    (raw / "person_enrich_ab12cd34.json").write_text("{}")
-    (raw / "enrich_ab12cd34.json").write_text("{}")
+    (raw / "person_enrich_ab12cd34.json").write_text("{}", encoding="utf-8")
+    (raw / "enrich_ab12cd34.json").write_text("{}", encoding="utf-8")
     people.purge_people_raw("run-p")
     assert [f.name for f in raw.iterdir()] == ["enrich_ab12cd34.json"]
     people.purge_people_raw("no-such-run")            # no error

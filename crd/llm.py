@@ -47,7 +47,7 @@ def _api_key() -> str | None:
         return key
     env = Path(".env")
     if env.exists():
-        for line in env.read_text().splitlines():
+        for line in env.read_text(encoding="utf-8").splitlines():
             if line.strip().startswith("ANTHROPIC_API_KEY="):
                 return line.split("=", 1)[1].strip().strip('"').strip("'") or None
     return None
