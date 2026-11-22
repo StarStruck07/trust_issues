@@ -1,7 +1,8 @@
+.env
+var/
 __pycache__/
 *.pyc
 .venv/
 venv/
-.env
-var/
 .pytest_cache/
+*.bundle

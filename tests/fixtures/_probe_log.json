@@ -1,0 +1,415 @@
+[
+  {
+    "endpoint": "identify",
+    "key": "delhivery.com",
+    "path": "/company/identify",
+    "method": "POST",
+    "status": 200,
+    "latency_ms": 891,
+    "x_credits_used": "0.2",
+    "body_credit_fields": {},
+    "ratelimit": {
+      "x-ratelimit-limit": "5",
+      "x-ratelimit-remaining": "4",
+      "x-ratelimit-reset": "60"
+    },
+    "request": {
+      "domains": [
+        "delhivery.com"
+      ]
+    }
+  },
+  {
+    "endpoint": "enrich",
+    "key": "delhivery.com",
+    "path": "/company/enrich",
+    "method": "POST",
+    "status": 200,
+    "latency_ms": 31409,
+    "x_credits_used": "2",
+    "body_credit_fields": {},
+    "ratelimit": {
+      "x-ratelimit-limit": "5",
+      "x-ratelimit-remaining": "4",
+      "x-ratelimit-reset": "60"
+    },
+    "request": {
+      "crustdata_company_ids": [
+        5798
+      ],
+      "fields": [
+        "basic_info",
+        "headcount",
+        "funding",
+        "people",
+        "news",
+        "employee_reviews",
+        "web_traffic",
+        "hiring",
+        "updated_at",
+        "indexed_at"
+      ]
+    }
+  },
+  {
+    "endpoint": "job_search",
+    "key": "delhivery.com",
+    "path": "/job/search",
+    "method": "POST",
+    "status": 200,
+    "latency_ms": 3563,
+    "x_credits_used": "1.5",
+    "body_credit_fields": {},
+    "ratelimit": {
+      "x-ratelimit-limit": "5",
+      "x-ratelimit-remaining": "4",
+      "x-ratelimit-reset": "60"
+    },
+    "request": {
+      "filters": {
+        "field": "company.basic_info.crustdata_company_id",
+        "type": "=",
+        "value": 5798
+      },
+      "sorts": [
+        {
+          "field": "metadata.date_added",
+          "order": "desc"
+        }
+      ],
+      "limit": 50
+    }
+  },
+  {
+    "endpoint": "web_search",
+    "key": "delhivery.com",
+    "path": "/web/search/live",
+    "method": "POST",
+    "status": 200,
+    "latency_ms": 5990,
+    "x_credits_used": "1",
+    "body_credit_fields": {},
+    "ratelimit": {
+      "x-ratelimit-limit": "10",
+      "x-ratelimit-remaining": "9",
+      "x-ratelimit-reset": "60"
+    },
+    "request": {
+      "query": "\"Delhivery\"",
+      "sources": [
+        "news"
+      ],
+      "location": "IN"
+    }
+  },
+  {
+    "endpoint": "web_fetch",
+    "key": "delhivery.com",
+    "path": "/web/enrich/live",
+    "method": "POST",
+    "status": 200,
+    "latency_ms": 4132,
+    "x_credits_used": "1",
+    "body_credit_fields": {},
+    "ratelimit": {
+      "x-ratelimit-limit": "10",
+      "x-ratelimit-remaining": "9",
+      "x-ratelimit-reset": "60"
+    },
+    "request": {
+      "urls": [
+        "https://www.google.com/goto?url=CAES2gMBxCJF19vHlJboazUR-n-y-lWCoXtv4I5PEknz7Od-hSuSO8EtKi8ERzp3uTriEfodkP6LdfwnhbPO0OkhQh5EjmonLyOdkOACPXpteEIxaaTH4gMDlgY760gVDFBA4CZy5d7jnpr6tGXC6kOPGjBchxdyazP0YtvDk5akd_aevi5CRiJo2ohYmyW_jCOitjFlr5aJ-muHYMkLdQ7WtvdA9bBk-24kVoRS2mrAQoJRkJw9O5FhPaXInVcuRWM-HkIgCDhH1PgDMHSii1kZYY3ju-sO4I3xcS5nf6QQlSx0u5SuL8rYisQ0IVdhMw-o5felstKV6zxWzbFfBnjKK6iY1IqtGvX4TZdNYglUxQQ7mw3tWUxoa-EWT_ltiCXnrbjdSrIQaRQKQIY8Bu4cn--Qp4-9d1NJKsuLyOsTFDuakaKbOJUcY3xacCelmF2qyYupnTr8HEj7aEln3Z63LoJPbQeNWC_cDu93T-MMtDoN3F-089JfiOdBYdYgHk8s078qK7sdMjT861Xj7W-P3kUsIbDe3e4-w9KKzoaasUlbeitKy3xKzl1XDTr-nXvAdQfoBPdyk2HLFebjFv2-IUG4-vlUA4TDxVeXKBZyNdT2SDjftJj8x8PyaQo&gsessionid=UvFWmWheUwQNzD-KL8mJJfkbcuAgtH0HS0z9TLzoDzx2BfWz_9CxMg"
+      ]
+    }
+  },
+  {
+    "endpoint": "person_enrich",
+    "key": "delhivery.com",
+    "path": "/person/enrich",
+    "method": "POST",
+    "status": 200,
+    "latency_ms": 1902,
+    "x_credits_used": "1",
+    "body_credit_fields": {},
+    "ratelimit": {
+      "x-ratelimit-limit": "5",
+      "x-ratelimit-remaining": "4",
+      "x-ratelimit-reset": "60"
+    },
+    "request": {
+      "professional_network_profile_urls": [
+        "https://www.linkedin.com/in/firoze"
+      ],
+      "fields": [
+        "basic_profile",
+        "experience"
+      ]
+    }
+  },
+  {
+    "endpoint": "identify",
+    "key": "bluedart.com",
+    "path": "/company/identify",
+    "method": "POST",
+    "status": 200,
+    "latency_ms": 1859,
+    "x_credits_used": "0.2",
+    "body_credit_fields": {},
+    "ratelimit": {
+      "x-ratelimit-limit": "5",
+      "x-ratelimit-remaining": "3",
+      "x-ratelimit-reset": "11"
+    },
+    "request": {
+      "domains": [
+        "bluedart.com"
+      ]
+    }
+  },
+  {
+    "endpoint": "enrich",
+    "key": "bluedart.com",
+    "path": "/company/enrich",
+    "method": "POST",
+    "status": 200,
+    "latency_ms": 2978,
+    "x_credits_used": "2",
+    "body_credit_fields": {},
+    "ratelimit": {
+      "x-ratelimit-limit": "5",
+      "x-ratelimit-remaining": "3",
+      "x-ratelimit-reset": "11"
+    },
+    "request": {
+      "crustdata_company_ids": [
+        736
+      ],
+      "fields": [
+        "basic_info",
+        "headcount",
+        "funding",
+        "people",
+        "news",
+        "employee_reviews",
+        "web_traffic",
+        "hiring",
+        "updated_at",
+        "indexed_at"
+      ]
+    }
+  },
+  {
+    "endpoint": "job_search",
+    "key": "bluedart.com",
+    "path": "/job/search",
+    "method": "POST",
+    "status": 200,
+    "latency_ms": 6327,
+    "x_credits_used": "1.5",
+    "body_credit_fields": {},
+    "ratelimit": {
+      "x-ratelimit-limit": "5",
+      "x-ratelimit-remaining": "3",
+      "x-ratelimit-reset": "40"
+    },
+    "request": {
+      "filters": {
+        "field": "company.basic_info.crustdata_company_id",
+        "type": "=",
+        "value": 736
+      },
+      "sorts": [
+        {
+          "field": "metadata.date_added",
+          "order": "desc"
+        }
+      ],
+      "limit": 50
+    }
+  },
+  {
+    "endpoint": "web_search",
+    "key": "bluedart.com",
+    "path": "/web/search/live",
+    "method": "POST",
+    "status": 200,
+    "latency_ms": 4723,
+    "x_credits_used": "0",
+    "body_credit_fields": {},
+    "ratelimit": {
+      "x-ratelimit-limit": "10",
+      "x-ratelimit-remaining": "8",
+      "x-ratelimit-reset": "37"
+    },
+    "request": {
+      "query": "\"Blue Dart Express\"",
+      "sources": [
+        "news"
+      ],
+      "location": "IN"
+    }
+  },
+  {
+    "endpoint": "web_fetch",
+    "key": "bluedart.com",
+    "path": "/web/enrich/live",
+    "method": "POST",
+    "status": 200,
+    "latency_ms": 6257,
+    "x_credits_used": "1",
+    "body_credit_fields": {},
+    "ratelimit": {
+      "x-ratelimit-limit": "10",
+      "x-ratelimit-remaining": "8",
+      "x-ratelimit-reset": "38"
+    },
+    "request": {
+      "urls": [
+        "https://businessupturn.com/finance/stock-market/why-are-blue-dart-shares-down-over-3-today-explained/"
+      ]
+    }
+  },
+  {
+    "endpoint": "identify",
+    "key": "mamaearth.in",
+    "path": "/company/identify",
+    "method": "POST",
+    "status": 200,
+    "latency_ms": 4418,
+    "x_credits_used": "0.2",
+    "body_credit_fields": {},
+    "ratelimit": {
+      "x-ratelimit-limit": "5",
+      "x-ratelimit-remaining": "4",
+      "x-ratelimit-reset": "60"
+    },
+    "request": {
+      "domains": [
+        "mamaearth.in"
+      ]
+    }
+  },
+  {
+    "endpoint": "enrich",
+    "key": "mamaearth.in",
+    "path": "/company/enrich",
+    "method": "POST",
+    "status": 200,
+    "latency_ms": 6104,
+    "x_credits_used": "2",
+    "body_credit_fields": {},
+    "ratelimit": {
+      "x-ratelimit-limit": "5",
+      "x-ratelimit-remaining": "4",
+      "x-ratelimit-reset": "60"
+    },
+    "request": {
+      "crustdata_company_ids": [
+        5844
+      ],
+      "fields": [
+        "basic_info",
+        "headcount",
+        "funding",
+        "people",
+        "news",
+        "employee_reviews",
+        "web_traffic",
+        "hiring",
+        "updated_at",
+        "indexed_at"
+      ]
+    }
+  },
+  {
+    "endpoint": "job_search",
+    "key": "mamaearth.in",
+    "path": "/job/search",
+    "method": "POST",
+    "status": 200,
+    "latency_ms": 1923,
+    "x_credits_used": "0.03",
+    "body_credit_fields": {},
+    "ratelimit": {
+      "x-ratelimit-limit": "5",
+      "x-ratelimit-remaining": "2",
+      "x-ratelimit-reset": "11"
+    },
+    "request": {
+      "filters": {
+        "field": "company.basic_info.crustdata_company_id",
+        "type": "=",
+        "value": 5844
+      },
+      "sorts": [
+        {
+          "field": "metadata.date_added",
+          "order": "desc"
+        }
+      ],
+      "limit": 50
+    }
+  },
+  {
+    "endpoint": "web_search",
+    "key": "mamaearth.in",
+    "path": "/web/search/live",
+    "method": "POST",
+    "status": 200,
+    "latency_ms": 6005,
+    "x_credits_used": "1",
+    "body_credit_fields": {},
+    "ratelimit": {
+      "x-ratelimit-limit": "10",
+      "x-ratelimit-remaining": "7",
+      "x-ratelimit-reset": "13"
+    },
+    "request": {
+      "query": "\"Mamaearth\"",
+      "sources": [
+        "news"
+      ],
+      "location": "IN"
+    }
+  },
+  {
+    "endpoint": "web_fetch",
+    "key": "mamaearth.in",
+    "path": "/web/enrich/live",
+    "method": "POST",
+    "status": 200,
+    "latency_ms": 3903,
+    "x_credits_used": "1",
+    "body_credit_fields": {},
+    "ratelimit": {
+      "x-ratelimit-limit": "10",
+      "x-ratelimit-remaining": "7",
+      "x-ratelimit-reset": "13"
+    },
+    "request": {
+      "urls": [
+        "https://www.google.com/goto?url=CAES0wEBxCJF10PzlEGRqzAKUT2aeLuBa5yDhLttQq6eOcbE1yIOhe5tMTnFD5j-Yk7gFivEYKv4eQsTLgv_tBcEBogMxSyLvcG8wLaec_hez8UFO6jxia5cYzHU0g4FlfjPACdzkUBsLm1RTQVV1GyJCKgadPZv4p-VFCeUKIHmCNoUuf9XIUc0Ijoql-Nhvzh6KctsSG2nGI7nbZvaUDlNnKx4jqeGFXvuD8tCOJbtYM010bZXimLeI8dKEcNTym9DuIAqTGBeWRDcPXDTlbz13BUM23w3&gsessionid=Iiagvlx8xxuh9sfDSf1U7I2zyzmYdt15J7GuYUSh75f_kZ2qft6f-g"
+      ]
+    }
+  },
+  {
+    "endpoint": "identify",
+    "key": "Sharma Transport",
+    "path": "/company/identify",
+    "method": "POST",
+    "status": 200,
+    "latency_ms": 2194,
+    "x_credits_used": "0.2",
+    "body_credit_fields": {},
+    "ratelimit": {
+      "x-ratelimit-limit": "5",
+      "x-ratelimit-remaining": "3",
+      "x-ratelimit-reset": "41"
+    },
+    "request": {
+      "names": [
+        "Sharma Transport"
+      ]
+    }
+  }
+]

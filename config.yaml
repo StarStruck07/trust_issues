@@ -1,0 +1,50 @@
+# Counterparty Risk Desk — all tunable behaviour lives here (re-read at the start of every run).
+version: 1
+client_name: "Client 3PL"            # replace with the kickoff client name
+as_of: null                          # null = today (YYYY-MM-DD to replay a date)
+staleness_days: 45
+webhook_url: ""                      # ngrok URL + /webhooks/crustdata
+limits: {max_credits_per_run: 400, max_inr_llm_per_run: 50, max_minutes: 25, max_credits_per_cp: 15}
+inr_per_credit: 0.0                  # Nilay fills from the Crustdata pricing page
+prices: {identify: 0.2, enrich: 2.0, job_search: 0.0, web_search: 0.0, web_fetch: 0.0, person_enrich: 0.0,
+         watch_notification: 5.0, llm_inr_per_1k_in: 0.0, llm_inr_per_1k_out: 0.0}
+llm: {model: "claude-sonnet-4-5", max_tokens: 800}
+identity: {min_confidence: 0.8, name_second_max: 0.9}
+scoring:
+  start: 70
+  green_min: 65
+  amber_min: 40
+  positive_cap: 15
+  positive_points: {recent_raise: 5, headcount_growth: 5, big_contract: 5}
+  coverage_min_signals: 3
+  coverage_required_any: [headcount_qoq, headcount_6m, hiring, news]
+  coverage_exclude: [{signal: insolvency, value: none_found}]
+  points:
+    headcount_qoq: [[-20, -20], [-10, -10]]
+    headcount_6m:  [[-30, -15], [-15, -8]]
+    role_mix: -5
+    hiring_stopped: -5
+    hiring_distress_roles: -10
+    leadership_exit: -10
+    funding_runway_months: 18
+    funding_runway: -10
+    employee_reviews_min_rating: 3.0
+    employee_reviews_min_count: 20
+    employee_reviews_low: -5
+    web_traffic_drop_pct: -30
+    web_traffic_drop: -5
+    payment_dso_over_terms_days: 15
+    payment_behaviour: -10
+  news_floor: -30
+  news_severity: {hard_stop: hard_stop, fraud_or_raid: -25, layoffs_or_shutdown: -20, operations_halt: -15,
+                  lost_client_or_downgrade: -15, leadership_exit: -10, minor: -5, positive: 0, irrelevant: 0}
+  hard_stops: [struck_off, liquidation, gst_cancelled, cirp_admitted]
+risk_probability: {GREEN: 0.05, AMBER: 0.3, RED: 0.7, CANNOT_VERIFY: 0.5, HELD: 0.5}
+actions:
+  customer_terms_email: {min_exposure_inr: 1000000, on: [AMBER, RED], new_terms: {RED: 15, AMBER: half}}
+  credit_hold: {on: [RED]}
+  backup_rfq: {on: [RED, AMBER], only_criticality: [sole_source, primary]}
+  internal_alert: {on_change: true}
+  raise_watch_frequency: {on: [AMBER, RED], every_hours: 24}
+report:
+  fields: [display_name, role, rating, score, inr_at_risk, top_reason, sources, action_status]
