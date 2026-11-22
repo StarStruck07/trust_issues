@@ -1,158 +1,125 @@
 {% extends "base.html" %}
 {% block title %}Desk · Trust Issues{% endblock %}
-{% block head %}<link rel="stylesheet" href="/static/front.css?v={{ css_v('front.css') }}">{% endblock %}
+{% block body_class %}night app{% endblock %}
 {% block content %}
+<div class="db-head">
+  <div>
+    <h1>Desk</h1>
+    <div class="db-meta">{% if run %}Review <a href="/runs/{{ run.run_id }}">{{ run.run_id }}</a> · {{ run.as_of or '—' }} · {{ ui.status(run.status) }}{% else %}No review yet{% endif %}</div>
+  </div>
+  <div class="db-actions">
+    {% if run %}<a class="btn" href="/runs/{{ run.run_id }}/report">Report</a>{% endif %}
+    <a class="btn primary" href="#ask">New review</a>
+  </div>
+</div>
+
 {% if run %}
 {%- set rows = data.rows -%}
-{%- set ns = namespace(red=0, amber=0, total=0) -%}
-{%- for r in rows -%}
-  {%- set ns.total = ns.total + (r.a.inr_at_risk or 0) -%}
-  {%- if r.rating == 'RED' %}{% set ns.red = ns.red + (r.a.inr_at_risk or 0) %}
-  {%- elif r.rating == 'AMBER' %}{% set ns.amber = ns.amber + (r.a.inr_at_risk or 0) %}{% endif -%}
-{%- endfor -%}
-{% endif %}
+{%- set n = rows|length or 1 -%}
+<!-- headline numbers -->
+<section class="db-kpis">
+  <div class="kp big"><span class="l">At risk</span><span class="v risk">{{ kpi.at_risk|inr }}</span><span class="s">of {{ kpi.exposure|inr }} exposure</span></div>
+  <div class="kp"><span class="l">Companies</span><span class="v">{{ kpi.n }}</span><span class="s">reviewed</span></div>
+  <a class="kp" href="#attention"><span class="l">Need attention</span><span class="v {{ 'warn' if kpi.attention }}">{{ kpi.attention }}</span><span class="s">not trusted</span></a>
+  <a class="kp" href="/approvals"><span class="l">Awaiting you</span><span class="v">{{ pending_count }}</span><span class="s">approvals</span></a>
+  <a class="kp" href="/sources"><span class="l">Sourced</span><span class="v">{{ kpi.sourced_pct }}<small>%</small></span><span class="s">{{ kpi.sourced }} of {{ kpi.facts }} facts</span></a>
+  <a class="kp" href="/ledger"><span class="l">Spend</span><span class="v">{{ data.costs.credits }}</span><span class="s">credits · {{ data.costs.calls }} calls</span></a>
+</section>
 
-{% if run %}
-<nav class="fx-rail desk-rail" aria-label="Sections">
-  <a href="#top" data-ch="top"><i></i><span>Verdicts</span></a>
-  <a href="#needs" data-ch="needs"><i></i><span>Needs you</span></a>
-  <a href="#sits" data-ch="sits"><i></i><span>Where everyone sits</span></a>
-  <a href="#ranked-h" data-ch="ranked-h"><i></i><span>Ranked</span></a>
-  <a href="#ask-anchor" data-ch="ask-anchor"><i></i><span>Ask</span></a>
-</nav>
-{% endif %}
-<div class="page-head" id="top">
-  <div>
-    <h1>The desk</h1>
-    <div class="sub">{% if run %}Edition <a href="/runs/{{ run.run_id }}">{{ run.run_id }}</a> · as of {{ run.as_of or '—' }} · {{ ui.status(run.status) }}{% else %}No review has run yet.{% endif %}</div>
-  </div>
-  {% if run %}<div class="row">
-    <a class="btn" href="/runs/{{ run.run_id }}/files/review.json">{{ ui.icon('download', 15) }}JSON</a>
-    <a class="btn primary" href="/runs/{{ run.run_id }}/report">{{ ui.icon('file', 15) }}Open report</a>
-  </div>{% endif %}
-</div>
-
-{% if run %}
-<div class="kpis">
-  <button type="button" class="kpi k-RED" data-filter="RED"><div class="n">{{ counts.RED }}</div><div class="l">Red</div><div class="s">{{ ns.red|inr }} at risk</div></button>
-  <button type="button" class="kpi k-AMBER" data-filter="AMBER"><div class="n">{{ counts.AMBER }}</div><div class="l">Amber</div><div class="s">{{ ns.amber|inr }} at risk</div></button>
-  <button type="button" class="kpi k-CV" data-filter="CV"><div class="n">{{ counts.CV }}</div><div class="l">Won't guess</div><div class="s">cannot verify · held</div></button>
-  <button type="button" class="kpi k-GREEN" data-filter="GREEN"><div class="n">{{ counts.GREEN }}</div><div class="l">Green</div><div class="s">no action needed</div></button>
-</div>
-<div class="metrics" style="padding:10px 0 0">
-  <span><b>{{ rows|length }}</b> counterparties</span>
-  <span><b>{{ ns.total|inr }}</b> total at risk</span>
-  <span><b>{{ pending_count }}</b> awaiting approval</span>
-  <span><b>{{ data.costs.credits }}</b> credits · <b>{{ data.costs.inr|inr }}</b></span>
-  <span><b>{{ data.costs.calls }}</b> calls{% if data.costs.cached_pct %} · {{ data.costs.cached_pct }}% cached{% endif %}</span>
-</div>
-
-{%- set worry = rows|rejectattr('rating', 'equalto', 'GREEN')|list -%}
-{% if worry %}
-<div class="section-title" style="margin-top:40px" id="needs"><h2>Needs you</h2><span class="count">{{ worry|length }}</span><span class="desk-hint" style="margin-left:auto">scroll through the files · click one to open it</span></div>
-<div class="desk-files">
-  {% for r in worry %}{% set a = r.a %}
-  <a class="desk-file" href="/cp/{{ run.run_id }}/{{ r.cp_id }}" style="--k: {{ loop.index0 }}" data-cursor="open">
-    <div class="cf r-{{ r.rating }}">
-      <div class="cf-tab">FILE {{ r.cp_id }}</div>
-      <div class="cf-top"><span class="cf-role">{{ a.role|human }} · {{ r.importance }} · priority {{ r.priority }}</span>{{ ui.rating(r.rating) }}</div>
-      <div class="cf-name">{{ a.display_name }}</div>
-      <div class="cf-mid">
-        <div class="cf-score"><b>{{ '?' if r.rating in ('CANNOT_VERIFY', 'HELD') else a.score }}</b><span>trust score</span></div>
-        <div class="cf-money"><div><span>owed / exposed</span><b>{{ a.exposure_inr|inr if a.exposure_inr else '—' }}</b></div><div><span>at risk</span><b class="risk">{{ a.inr_at_risk|inr if a.inr_at_risk else '—' }}</b></div></div>
-      </div>
-      <p class="cf-reason">{{ r.top_reason|reason }}</p>
-      <div class="cf-open">open the file →</div>
-    </div>
-  </a>
+<!-- verdict mix: click a segment to filter -->
+<section class="db-mix">
+  {% for key, label in [('RED', "Don't trust"), ('AMBER', 'Doubts'), ('CV', "Can't tell"), ('GREEN', 'Trusted')] %}
+  <button type="button" class="mix m-{{ key }}" data-filter="{{ key }}" style="--w: {{ [counts[key] / n * 100, 0]|max }}">
+    <span class="mix-bar"></span><span class="mix-n">{{ counts[key] }}</span><span class="mix-l">{{ label }}</span>
+  </button>
   {% endfor %}
-</div>
-{% endif %}
+</section>
 
-<div class="section-title" style="margin-top:26px" id="sits"><h2>Where everyone sits</h2><span class="desk-hint" style="margin-left:auto">drag to simulate · click for the dossier</span></div>
-<div class="riskline" id="riskline" style="margin-top:10px"></div>
+<div class="db-grid">
+  <!-- needs attention -->
+  <section class="panel" id="attention">
+    <header><h2>Needs attention</h2><span class="tally">{{ kpi.attention }}</span></header>
+    {%- set worry = rows|rejectattr('rating', 'equalto', 'GREEN')|list -%}
+    {% for r in worry %}
+    <a class="att" href="/cp/{{ run.run_id }}/{{ r.cp_id }}" data-cursor="open">
+      <span class="att-score r-{{ r.rating }}">{{ '?' if r.rating in ('CANNOT_VERIFY', 'HELD') else r.a.score }}</span>
+      <span class="att-main"><b>{{ r.a.display_name }}</b><small>{{ r.top_reason|reason }}</small></span>
+      <span class="att-side">{{ ui.rating(r.rating, 'sm') }}<span class="att-risk">{{ r.a.inr_at_risk|inr if r.a.inr_at_risk else '—' }}</span></span>
+    </a>
+    {% else %}<p class="panel-empty">Everyone's trusted this week.</p>{% endfor %}
+  </section>
 
-{% if data.changes %}
-<div class="section-title" style="margin-top:26px"><h2>Changed since last review</h2><span class="count">{{ data.changes|length }}</span></div>
-<div class="changes">
-  {% for a in data.changes %}<a class="change" href="/cp/{{ run.run_id }}/{{ a.cp_ids[0] }}">{{ a.display_name }} {{ a.change_since_last|move }}</a>{% endfor %}
-</div>
-{% endif %}
-
-<div class="section-title" style="margin-top:30px">
-  <h2 id="ranked-h">Who to worry about first</h2><span class="count" id="shown">{{ rows|length }}</span>
-  <span style="flex:1"></span>
-  <button type="button" class="btn sm" data-filter="ALL" id="clear" hidden>Show all</button>
-</div>
-<div class="desk-tools" style="margin-top:12px">
-  <label class="search"><span class="sr">Search</span><input id="desk-search" type="search" placeholder="Find a counterparty, reason or role…" autocomplete="off"></label>
-  <div class="seg" role="group" aria-label="Role">
-    <button type="button" class="on" data-rf="">All</button>
-    <button type="button" data-rf="customer">Customers</button>
-    <button type="button" data-rf="supplier">Suppliers</button>
-  </div>
-  <span class="desk-hint"><kbd>/</kbd> search · <kbd>j</kbd><kbd>k</kbd> move · <kbd>↵</kbd> dossier</span>
-</div>
-<div class="table-wrap">
-  <table class="tbl" id="ranked">
-    <thead><tr>{% for f in data.ui_fields %}<th class="{{ 'right' if f in ('inr_at_risk','exposure_inr') }}">{{ f|human|replace('inr', '₹')|replace('display name', 'counterparty') }}</th>{% endfor %}</tr></thead>
-    <tbody>
-    {% for r in rows %}
-      <tr class="rated" data-r="{{ r.rating }}" data-g="{{ 'CV' if r.rating in ('CANNOT_VERIFY','HELD') else r.rating }}"
-          data-role="{{ 'customer' if (r.a.role|val) == 'customer' else 'supplier' }}"
-          data-q="{{ (r.a.display_name ~ ' ' ~ r.cp_id ~ ' ' ~ (r.a.role|val) ~ ' ' ~ r.top_reason ~ ' ' ~ r.rating)|lower }}">
-        {% for f in data.ui_fields %}{{ ui.field_cell(f, r.cells[f], r, run.run_id) }}{% endfor %}
-      </tr>
-    {% endfor %}
-    </tbody>
-  </table>
+  <!-- priority matrix: numbers only -->
+  <section class="panel">
+    <header><h2>Priority</h2><span class="hint">rating × importance</span></header>
+    <table class="pm">
+      <tr><th></th><th>Don't trust</th><th>Doubts</th><th>Can't tell</th><th>Trusted</th></tr>
+      {% for imp in ['strategic', 'core', 'standard'] %}<tr>
+        <th>{{ imp }}</th>
+        {% for col in ['RED', 'AMBER', 'CV', 'GREEN'] %}{% set cell = data.matrix[imp][col] %}
+        <td class="{{ 'z' if not cell }} {{ 'hot' if cell and col in ('RED', 'AMBER') }}" title="{{ cell|map(attribute='name')|join(', ') }}">{{ cell|length }}</td>
+        {% endfor %}
+      </tr>{% endfor %}
+    </table>
+  </section>
 </div>
 
-<div class="grid-2" style="margin-top:34px;align-items:start">
-  <div class="card">
-    <div class="card-head"><h3>Priority = rating × importance</h3><span class="muted small">same rating, different urgency</span></div>
-    <div class="card-body" style="padding:8px 0 10px">
-      <table class="matrix">
-        <tr><th class="rowh"></th><th>Red</th><th>Amber</th><th>Won't guess</th><th>Green</th></tr>
-        {% for imp in ['strategic', 'core', 'standard'] %}<tr>
-          <th class="rowh imp-{{ imp }}">{{ imp }}</th>
-          {% for col in ['RED', 'AMBER', 'CV', 'GREEN'] %}{% set cell = data.matrix[imp][col] %}
-          <td class="{{ 'zero' if not cell }} {{ 'hot' if cell and col == 'RED' and imp != 'standard' else ('warm' if cell and (col == 'AMBER' or col == 'RED')) }}">
-            <div class="n">{{ cell|length }}</div>
-            {% if cell %}<div class="who">{% for c in cell[:3] %}<a href="/cp/{{ run.run_id }}/{{ c.cp_id }}">{{ c.name }}</a>{% endfor %}</div>{% endif %}
-          </td>{% endfor %}
-        </tr>{% endfor %}
-      </table>
+<!-- what if -->
+<section class="panel wide">
+  <header><h2>What if</h2><span class="hint">drag a company along the line · nothing is saved</span></header>
+  <div class="riskline" id="riskline" data-cursor="drag"></div>
+</section>
+
+<!-- everyone -->
+<section class="panel wide" id="all">
+  <header>
+    <h2>All companies</h2><span class="tally" id="shown">{{ rows|length }}</span>
+    <span class="grow"></span>
+    <label class="db-search"><span class="sr">Search</span><input id="desk-search" type="search" placeholder="Search" autocomplete="off"></label>
+    <div class="seg" role="group" aria-label="Role">
+      <button type="button" class="on" data-rf="">All</button><button type="button" data-rf="customer">Customers</button><button type="button" data-rf="supplier">Suppliers</button>
     </div>
+    <button type="button" class="btn sm" data-filter="ALL" id="clear" hidden>Clear</button>
+  </header>
+  <div class="table-wrap">
+    <table class="tbl" id="ranked">
+      <thead><tr><th>Priority</th><th>Company</th><th>Verdict</th><th class="right">Score</th><th class="right">Exposure</th><th class="right">At risk</th><th>Next step</th></tr></thead>
+      <tbody>
+      {% for r in rows %}{% set a = r.a %}
+        <tr class="rated" data-r="{{ r.rating }}" data-g="{{ 'CV' if r.rating in ('CANNOT_VERIFY','HELD') else r.rating }}"
+            data-role="{{ 'customer' if (a.role|val) == 'customer' else 'supplier' }}"
+            data-q="{{ (a.display_name ~ ' ' ~ r.cp_id ~ ' ' ~ (a.role|val) ~ ' ' ~ r.top_reason ~ ' ' ~ (r.rating|verdict))|lower }}">
+          <td>{{ ui.prio(r.priority, r.prio.label ~ ' — ' ~ r.prio.reason) }}</td>
+          <td><a class="rowname" href="/cp/{{ run.run_id }}/{{ r.cp_id }}">{{ a.display_name }}</a><div class="sub">{{ a.role|human }} · {{ r.importance }}</div></td>
+          <td>{{ ui.rating(r.rating, 'sm') }}</td>
+          <td class="num">{{ '—' if r.rating in ('CANNOT_VERIFY', 'HELD') else a.score }}</td>
+          <td class="num">{{ a.exposure_inr|inr if a.exposure_inr else '—' }}</td>
+          <td class="num {{ 'risk' if a.inr_at_risk }}">{{ a.inr_at_risk|inr if a.inr_at_risk else '—' }}</td>
+          <td>{% set st = r.action_status %}{% if st and st != '—' %}{% for s in st.split(', ') %}{{ ui.status(s) }} {% endfor %}{% else %}<span class="faint">—</span>{% endif %}</td>
+        </tr>
+      {% endfor %}
+      </tbody>
+    </table>
   </div>
-  <div class="card">
-    <div class="card-head"><h3>How importance changes the action</h3></div>
-    <div class="card-body small" style="line-height:1.65">
-      <div class="row" style="gap:6px;margin-bottom:6px">{{ ui.prio('P1') }} act now {{ ui.prio('P2') }} this week {{ ui.prio('P3') }} monitor {{ ui.prio('P4') }} no action</div>
-      <ul style="margin:4px 0 0;padding-left:18px">
-        <li><b>Sole-source or strategic supplier</b> on Amber → line up a backup carrier now.</li>
-        <li><b>Customer who relies on us</b> on Amber → account-owner call, not a terms cut. They usually keep paying.</li>
-        <li><b>Customer who can switch easily</b> → terms email at half the usual exposure bar.</li>
-        <li><b>Strategic accounts</b> → irreversible actions need a senior approver.</li>
-      </ul>
-    </div>
-  </div>
-</div>
+</section>
 {% endif %}
 
-<div class="section-title" style="margin-top:34px" id="ask-anchor"><h2>Ask <em>anything</em></h2></div>
-<form method="post" action="/runs" enctype="multipart/form-data" style="margin-top:12px" id="ask">
-  <div class="ask">
-    <textarea id="ask-text" name="request_text" rows="1" aria-label="Ask Trust Issues" placeholder="Ask Trust Issues…"></textarea>
-    <button type="submit">Run it →</button>
-  </div>
-  <div class="ask-chips">
-    <button type="button" data-ask="{{ default_request }}">This week's full review</button>
-    <button type="button" data-ask="Run this week's risk review on our carriers.">Carriers only</button>
-    <button type="button" data-ask="Run this week's risk review on our customers only.">Customers only</button>
-  </div>
-  <div class="ask-file">New list? <label>attach a CSV <input type="file" name="csv_file" accept=".csv" style="font:inherit"></label></div>
-</form>
+<!-- ask -->
+<section class="panel wide" id="ask">
+  <header><h2>New review</h2></header>
+  <form method="post" action="/runs" enctype="multipart/form-data">
+    <div class="ask">
+      <textarea id="ask-text" name="request_text" rows="1" aria-label="Ask Trust Issues" placeholder="Ask Trust Issues…"></textarea>
+      <button type="submit" data-cursor="open">Run</button>
+    </div>
+    <div class="ask-chips">
+      <button type="button" data-ask="{{ default_request }}">Full weekly review</button>
+      <button type="button" data-ask="Run this week's risk review on our carriers.">Carriers</button>
+      <button type="button" data-ask="Run this week's risk review on our customers only.">Customers</button>
+      <label class="chip-file">CSV <input type="file" name="csv_file" accept=".csv"></label>
+    </div>
+  </form>
+</section>
 {% endblock %}
 
 {% block scripts %}
@@ -160,9 +127,7 @@
 <script>
   window.CRD_POINTS = {{ points|tojson }};
   window.CRD_RUN = {{ run.run_id|tojson }};
-  CRD.riskLine(document.getElementById("riskline"), window.CRD_POINTS, {{ scale|tojson }}, {
-    onOpen: p => CRD.openDossier(p.url)
-  });
+  CRD.riskLine(document.getElementById("riskline"), window.CRD_POINTS, {{ scale|tojson }}, { onOpen: p => CRD.openDossier(p.url) });
   (function () {
     const rows = Array.from(document.querySelectorAll('#ranked tbody tr'));
     const tiles = document.querySelectorAll('[data-filter]');
@@ -173,15 +138,19 @@
       const q = search.value.trim().toLowerCase();
       let n = 0;
       rows.forEach(r => {
-        const on = (rating === 'ALL' || r.dataset.g === rating) && (!role || r.dataset.role === role) &&
-                   (!q || q.split(/\s+/).every(w => r.dataset.q.includes(w)));
+        const on = (rating === 'ALL' || r.dataset.g === rating) && (!role || r.dataset.role === role) && (!q || q.split(/\s+/).every(w => r.dataset.q.includes(w)));
         r.classList.toggle('hidden', !on); if (on) n++;
       });
       tiles.forEach(t => t.classList.toggle('on', t.dataset.filter === rating));
+      document.querySelector('.db-mix').classList.toggle('filtering', rating !== 'ALL');
       document.getElementById('shown').textContent = n;
       clear.hidden = rating === 'ALL';
     }
-    tiles.forEach(t => t.addEventListener('click', () => { const f = t.dataset.filter; rating = (f === rating || f === 'ALL') ? 'ALL' : f; apply(); }));
+    tiles.forEach(t => t.addEventListener('click', () => {
+      const f = t.dataset.filter; rating = (f === rating || f === 'ALL') ? 'ALL' : f; apply();
+      if (t.classList.contains('mix')) document.getElementById('all').scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }));
+    const h = location.hash.slice(1); if (['RED', 'AMBER', 'CV', 'GREEN'].includes(h)) { rating = h; apply(); }
     search.addEventListener('input', apply);
     document.querySelectorAll('[data-rf]').forEach(b => b.addEventListener('click', () => {
       role = b.dataset.rf; document.querySelectorAll('[data-rf]').forEach(x => x.classList.toggle('on', x === b)); apply();

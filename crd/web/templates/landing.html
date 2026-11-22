@@ -3,7 +3,6 @@
 {% block body_class %}front night{% endblock %}
 {% block head %}
 <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@500;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="/static/front.css?v={{ css_v('front.css') }}">
 {% endblock %}
 {% block content %}
 {%- set c = counts or {'RED': 0, 'AMBER': 0, 'CV': 0, 'GREEN': 0} -%}
@@ -24,6 +23,8 @@
 
 <nav class="fx-rail" aria-label="Chapters">
   <a href="#hello" data-ch="hello"><i></i><span>Hello</span></a>
+  <a href="#what" data-ch="what"><i></i><span>What we do</span></a>
+  {% if examples %}<a href="#catches" data-ch="catches"><i></i><span>What it catches</span></a>{% endif %}
   {% if points %}<a href="#files" data-ch="files"><i></i><span>The files</span></a>{% endif %}
   <a href="#creed" data-ch="creed"><i></i><span>The creed</span></a>
   <a href="#rules" data-ch="rules"><i></i><span>House rules</span></a>
@@ -35,7 +36,7 @@
 <section class="fx-hero" id="hello" data-chapter="hello">
   <div class="fx-hero-line">
     <span class="fx-scribble" aria-hidden="true">with your counterparties<svg viewBox="0 0 60 40" width="46" height="30"><path d="M5 4 C 30 6, 44 14, 40 34 M40 34 L 31 26 M40 34 L 49 27" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/></svg></span>
-    <h1>We have <em>trust issues.</em></h1>
+    <h1>Trust <em>issues.</em></h1>
     <p class="fx-sub">{% if run %}This week we checked <b>{{ n }}</b> companies that owe you money or move your goods, read <b>{{ facts }}</b> facts about them, and wrote down where every one came from.{% else %}Every company that owes you money, checked. Every claim sourced. Nothing sent without you.{% endif %}</p>
   </div>
 
@@ -57,8 +58,42 @@
   <div class="fx-obj tally" data-drag style="--x: 12%; --y: 66%; --r: 3deg" data-cursor="drag">
     <span class="t-r">{{ c.RED }}</span> don't trust<br><span class="t-a">{{ c.AMBER }}</span> doubts<br><span class="t-c">{{ c.CV }}</span> can't tell<br><span class="t-g">{{ c.GREEN }}</span> trusted
   </div>
-  <a class="fx-scroll" href="#files">scroll</a>
+  <a class="fx-scroll" href="#what">scroll</a>
 </section>
+
+<!-- what we do: one paragraph, three steps -->
+<section class="fx-what" id="what" data-chapter="what">
+  <div class="fx-wrap">
+    <span class="fx-kick">What we do</span>
+    <p class="fx-intro">Trust Issues is a counterparty risk desk for logistics companies. Every week it checks the carriers, warehouses and customers you depend on, gives each one a <em>sourced</em> verdict, and drafts the next step for a person to approve.</p>
+    <ol class="fx-steps">
+      <li><b>01</b><h3>Check</h3><p>Identity, headcount, hiring, news and insolvency registries, through Crustdata.</p></li>
+      <li><b>02</b><h3>Judge</h3><p>Trusted, doubts, don't trust, or can't tell. Every fact cited and dated.</p></li>
+      <li><b>03</b><h3>Act</h3><p>Terms email, credit hold, backup quote. Drafted, approved by you, sent once.</p></li>
+    </ol>
+  </div>
+</section>
+
+{% if examples %}
+<!-- what it catches: real situations from our test set, drag sideways -->
+<section class="fx-catches" id="catches" data-chapter="catches">
+  <div class="fx-wrap fx-catches-head">
+    <h2 class="fx-h2">Built for <em>situations like these.</em></h2>
+    <p class="fx-lede">Real companies, real events after September 2026, each from our test set with its source. Drag to browse.</p>
+  </div>
+  <div class="fx-strip" id="fx-strip" data-cursor="drag">
+    {% for e in examples %}
+    <article class="ex r-{{ e.verdict }}" style="--r: {{ [-2, 1.5, -1, 2, -1.5, 1][loop.index0 % 6] }}deg">
+      <div class="ex-top"><span class="ex-n">{{ '%02d'|format(loop.index) }}</span>{{ ui.rating(e.verdict, 'sm') }}</div>
+      <h3>{{ e.title }}</h3>
+      <div class="ex-who">{{ e.name }} · {{ e.role }}</div>
+      <p>{{ e.text }}</p>
+      {% if e.url %}<a class="ex-src" href="{{ e.url }}" target="_blank" rel="noopener" data-cursor="open">source ↗</a>{% endif %}
+    </article>
+    {% endfor %}
+  </div>
+</section>
+{% endif %}
 
 {% if points %}
 <!-- 2 · the files: pinned; one company per scene, the next one peeking in -->

@@ -311,6 +311,39 @@ def _facts(data: dict | None, limit: int = 18) -> tuple[int, int, list[dict]]:
     return len(evs), len(sourced), wire
 
 
+# Example situations for the front page, from the graded test set (tests/cases). The title is our framing;
+# the description and source link come from the case's own notes. Shown as "what it's built to catch",
+# never as this week's results.
+EXAMPLES = [("04_lookalike", "Nine companies, one name"), ("03_insolvency", "Admitted to insolvency"),
+            ("02_distressed_customer", "A customer winding down"), ("08_leadership_exit", "The CEO walked out"),
+            ("07_false_alarm", "A false alarm"), ("09_namesake_news", "Same name, different company"),
+            ("06_no_footprint", "No footprint at all"), ("10_source_failure", "A source went quiet")]
+
+
+def _examples() -> list[dict]:
+    import yaml
+
+    out = []
+    for cid, title in EXAMPLES:
+        p = Path("tests") / "cases" / f"{cid}.yaml"
+        try:
+            case = yaml.safe_load(p.read_text(encoding="utf-8"))
+        except (OSError, ValueError, yaml.YAMLError):
+            continue
+        row = (case.get("input_rows") or [{}])[0]
+        want = (case.get("expected") or {}).get("rating")
+        verdict = (want[0] if isinstance(want, list) else want) or "CANNOT_VERIFY"
+        notes = " ".join(str(case.get("notes") or "").split())
+        sents = [s for s in re.split(r"(?<=[.!?])\s+", re.sub(r"Sources?:.*", "", notes)) if s and "http" not in s]
+        first = sents[0] if sents else ""
+        if cid == "10_source_failure":  # the case notes describe the test harness; say what the system does
+            first = "A healthy company, but a data source times out mid-review. Silence is not health, so no green light."
+        url = next((u.rstrip(".,)") for u in re.findall(r"https?://\S+", notes)), None)
+        out.append({"title": title, "name": row.get("name", ""), "role": human(row.get("role", "")),
+                    "verdict": verdict, "text": first if len(first) <= 190 else first[:189] + "…", "url": url})
+    return out
+
+
 @app.get("/", response_class=HTMLResponse)
 def landing(request: Request):
     run = _run_view(_latest_run())
@@ -324,7 +357,7 @@ def landing(request: Request):
     return page(request, "landing.html", run=run, data=data, default_request=DEFAULT_REQUEST,
                 counts=_counts(data["assessments"]) if data else None,
                 points=_points(data, run and run["run_id"]), scale=_scale(),
-                facts=facts, sourced=sourced, wire=wire, names=names,
+                facts=facts, sourced=sourced, wire=wire, names=names, examples=_examples(),
                 ledger=db.get_ledger(run["run_id"], limit=12) if run else [])
 
 
@@ -332,8 +365,13 @@ def landing(request: Request):
 def dashboard(request: Request):
     run = _run_view(_latest_run())
     data = report.build(run["run_id"]) if run else None
+    facts, sourced, _ = _facts(data, 0)
+    rows = (data or {}).get("rows", [])
+    kpi = {"exposure": sum(r["a"].exposure_inr or 0 for r in rows), "at_risk": sum(r["a"].inr_at_risk or 0 for r in rows),
+           "n": len(rows), "attention": sum(1 for r in rows if r["rating"] != "GREEN"),
+           "facts": facts, "sourced": sourced, "sourced_pct": round(100 * sourced / facts) if facts else 0}
     return page(request, "dashboard.html", run=run, data=data, default_request=DEFAULT_REQUEST,
-                counts=_counts(data["assessments"]) if data else None,
+                counts=_counts(data["assessments"]) if data else None, kpi=kpi,
                 points=_points(data, run and run["run_id"]), scale=_scale())
 
 

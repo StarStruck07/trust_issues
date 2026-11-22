@@ -11,11 +11,12 @@
   <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..900;1,9..144,300..900&family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="/static/style.css?v={{ css_v() }}">
   <link rel="stylesheet" href="/static/theme.css?v={{ css_v('theme.css') }}">
+  <link rel="stylesheet" href="/static/front.css?v={{ css_v('front.css') }}">
   {% block head %}{% endblock %}
   <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'><rect width='24' height='24' fill='%231a1712'/><text x='12' y='17' font-family='Georgia' font-style='italic' font-size='15' text-anchor='middle' fill='%23f2ede3'>?</text></svg>">
   <script src="https://unpkg.com/htmx.org@1.9.12"></script>
 </head>
-<body class="{% block body_class %}{% endblock %}">
+<body class="{% block body_class %}night app{% endblock %}">
 <header class="topbar">
   <div class="inner">
     <a class="brand" href="/" aria-label="Trust Issues, front page"><span class="mark">?</span><span class="word">Trust <em>Issues</em></span></a>

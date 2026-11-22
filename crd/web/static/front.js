@@ -130,6 +130,20 @@
   const line = $("#riskline");
   if (line && P.length) window.CRD.riskLine(line, P, window.CRD_SCALE, { onOpen: p => window.CRD.openDossier(p.url) });
 
+  // ------------------------------------------------------------- example strip: drag sideways, with a little momentum
+  const strip = $("#fx-strip");
+  if (strip) {
+    let down = null, vx = 0, last = 0;
+    strip.addEventListener("pointerdown", e => { if (e.pointerType !== "mouse" || e.target.closest("a")) return; down = { x: e.clientX, s: strip.scrollLeft }; last = e.clientX; vx = 0; strip.setPointerCapture(e.pointerId); strip.classList.add("dragging"); });
+    strip.addEventListener("pointermove", e => { if (!down) return; strip.scrollLeft = down.s - (e.clientX - down.x); vx = e.clientX - last; last = e.clientX; });
+    const up = () => {
+      if (!down) return; down = null; strip.classList.remove("dragging");
+      (function glide() { if (Math.abs(vx) < .5 || still) return; strip.scrollLeft -= vx; vx *= .92; requestAnimationFrame(glide); })();
+    };
+    strip.addEventListener("pointerup", up); strip.addEventListener("pointercancel", up);
+    strip.addEventListener("wheel", e => { if (Math.abs(e.deltaY) > Math.abs(e.deltaX) && e.shiftKey) { strip.scrollLeft += e.deltaY; e.preventDefault(); } }, { passive: false });
+  }
+
   // ------------------------------------------------------------- entrance
   requestAnimationFrame(() => document.body.classList.add("ready"));
 })();
