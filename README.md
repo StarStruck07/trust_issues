@@ -9,7 +9,7 @@ executes each one exactly once.
 ContextCon 05 · BITS Pilani · 22 Nov 2026 · Theme: Supply chain + Trust and compliance
 Team: Arth (P1 Core) · Nilay (P2 Data) · Prachi (P3 Product)
 
-Architecture: [`docs/architecture.md`](docs/architecture.md) · Demo video: _link on the submission form_
+Technical architecture: [`docs/TECHNICAL_ARCHITECTURE.md`](docs/TECHNICAL_ARCHITECTURE.md) · Business architecture: [`docs/BUSINESS_ARCHITECTURE.md`](docs/BUSINESS_ARCHITECTURE.md) · Run notes: [`docs/architecture.md`](docs/architecture.md) · Demo video: _link on the submission form_
 
 **Contents:** [The service](#1-the-service) · [What it does now](#2-what-it-does-now) ·
 [What comes next](#3-what-comes-next) · [How it runs](#4-how-it-runs) ·
