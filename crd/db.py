@@ -287,9 +287,13 @@ def get_action_by_key(idempotency_key: str) -> Action | None:
     return Action.model_validate_json(r["json"]) if r else None
 
 
-def get_actions(status: str | None = None, run_id: str | None = None) -> list[Action]:
+def get_actions(status: str | list[str] | None = None, run_id: str | None = None) -> list[Action]:
     q, p = "SELECT json FROM actions WHERE 1=1", []
-    if status:
+    if isinstance(status, (list, tuple)):
+        if status:
+            q += f" AND status IN ({','.join('?' * len(status))})"
+            p.extend(status)
+    elif status:
         q += " AND status=?"
         p.append(status)
     if run_id:
@@ -344,22 +348,24 @@ def get_ledger(run_id: str | None = None, limit: int = 500) -> list[LedgerEntry]
     return [LedgerEntry.model_validate(dict(r)) for r in rows]
 
 
-def run_costs(run_id: str) -> dict:
+def run_costs(run_id: str | None = None) -> dict:
+    """Costs for one run, or for all runs when run_id is None (ledger page "All runs")."""
+    where, p = ("WHERE run_id=?", (run_id,)) if run_id else ("", ())
     with conn() as c:
         tot = c.execute(
-            """SELECT COALESCE(SUM(credits),0) credits, COALESCE(SUM(inr),0) inr, COUNT(*) calls,
+            f"""SELECT COALESCE(SUM(credits),0) credits, COALESCE(SUM(inr),0) inr, COUNT(*) calls,
                       SUM(CASE WHEN status='cached' THEN 1 ELSE 0 END) cached,
                       SUM(CASE WHEN status IN ('error','timeout') THEN 1 ELSE 0 END) errors,
                       COALESCE(SUM(COALESCE(tokens_in,0) + COALESCE(tokens_out,0)),0) tokens
-               FROM ledger WHERE run_id=?""",
-            (run_id,),
+               FROM ledger {where}""",
+            p,
         ).fetchone()
         by = c.execute(
             "SELECT endpoint, COUNT(*) calls, COALESCE(SUM(credits),0) credits, COALESCE(SUM(inr),0) inr"
-            " FROM ledger WHERE run_id=? GROUP BY endpoint",
-            (run_id,),
+            f" FROM ledger {where} GROUP BY endpoint",
+            p,
         ).fetchall()
-    run = get_run(run_id)
+    run = get_run(run_id) if run_id else None
     minutes = 0.0
     if run and run.get("started_at"):
         start = datetime.fromisoformat(run["started_at"])

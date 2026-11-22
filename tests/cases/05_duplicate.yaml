@@ -1,0 +1,31 @@
+id: "05_duplicate"
+request: "Run this week's risk review on all our carriers."
+as_of: "2026-11-22"
+input_rows:
+  - cp_id: "C-201"
+    name: "Blue Dart"
+    role: "carrier"
+    criticality: "primary"
+    exposure_inr: 0
+    account_owner: "ops-team"
+  - cp_id: "C-202"
+    name: "Blue Dart Express Limited"
+    legal_name: "Blue Dart Express Limited"
+    domain: "bluedart.com"
+    city: "Mumbai"
+    role: "carrier"
+    criticality: "primary"
+    exposure_inr: 0
+    account_owner: "ops-team"
+expected:
+  cp_id: "C-202"
+  merged_cp_ids: ["C-201", "C-202"]
+  rating: ["GREEN", "HELD"]
+  must_not: ["RED"]
+notes: >
+  One real company entered twice: brand name only (C-201), then legal name plus domain
+  (C-202). Blue Dart Express Limited is the listed DHL-group express carrier (bluedart.com);
+  mock fixtures in tests/fixtures/*/bluedart.com.json. Correct because both rows resolve to the
+  same Crustdata company id, so they must be merged into one assessment that lists both cp_ids,
+  never reviewed twice and never double-counted in Rs at risk. HELD is accepted while
+  registries.py is missing (no GREEN on an unavailable required source).

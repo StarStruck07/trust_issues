@@ -1,11 +1,15 @@
 {% extends "base.html" %}
+{% block title %}Report {{ run_id }} · Counterparty Risk Desk{% endblock %}
 {% block content %}
-<h2>Report · {{ run_id }}</h2>
-<p>
-  <a href="/runs/{{ run_id }}/files/review.json">review.json</a> ·
-  <a href="/runs/{{ run_id }}/files/review.md">review.md</a> ·
-  <a href="/runs/{{ run_id }}/files/review.html" target="_blank">review.html</a> ·
-  <a href="/runs/{{ run_id }}/files/ledger.csv">ledger.csv</a>
-</p>
-<iframe class="report" src="/runs/{{ run_id }}/files/review.html"></iframe>
+<div class="crumbs"><a href="/runs">Runs</a> / <a href="/runs/{{ run_id }}">{{ run_id }}</a> / report</div>
+<div class="page-head">
+  <div><h1>Review report</h1><div class="sub">Self-contained and printable. Every row links to its source.</div></div>
+  <div class="row">
+    <a class="btn" href="/runs/{{ run_id }}/files/review.json">{{ ui.icon('download', 15) }}JSON</a>
+    <a class="btn" href="/runs/{{ run_id }}/files/review.md">{{ ui.icon('download', 15) }}Markdown</a>
+    <a class="btn" href="/runs/{{ run_id }}/files/ledger.csv">{{ ui.icon('download', 15) }}Ledger CSV</a>
+    <a class="btn primary" href="/runs/{{ run_id }}/files/review.html" target="_blank">{{ ui.icon('link', 15) }}Open full page</a>
+  </div>
+</div>
+<iframe class="report" src="/runs/{{ run_id }}/files/review.html" title="Review report"></iframe>
 {% endblock %}

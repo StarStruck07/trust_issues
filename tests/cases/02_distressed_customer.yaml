@@ -1,0 +1,28 @@
+id: "02_distressed_customer"
+request: "Check our customer Tide India before we renew 30-day terms."
+as_of: "2026-11-22"
+input_rows:
+  - cp_id: "C-102"
+    name: "Tide India"
+    legal_name: "Tide Platform India Private Limited"
+    domain: "tide.co"
+    city: "Hyderabad"
+    role: "customer"
+    criticality: "na"
+    exposure_inr: 1800000
+    credit_terms_days: 30
+    account_owner: "credit-team"
+expected:
+  rating: ["AMBER", "RED"]
+  must_cite: ["tide"]
+  must_not: ["GREEN"]
+notes: >
+  Startup customer with a shutdown reported after 1 Sep 2026. On 11 Nov 2026 Tide announced it
+  will wind down its member-facing business in India after a strategic review found no viable
+  path to profitability; about 400 colleagues are affected, and member accounts are being
+  closed. Sources: https://www.tide.co/en-IN/blog/tide-update/tide-india-strategic-announcement/ ,
+  https://www.tide.co/en-IN/member-faqs/ . Plausible 3PL customer: it ships card and welcome
+  kits to over a million SME members. Correct because a wind-down of the business we serve is
+  a layoffs_or_shutdown news event (-20). With Rs 18 L exposure the agent should also propose a
+  terms email and wait for approval. Pairs with case 09, where the namesake Tide Water Oil
+  must NOT pick up this news.

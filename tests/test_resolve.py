@@ -74,7 +74,7 @@ class FixtureClient:
         for k in (domains or names):
             slug = k.lower().replace(" ", "-")
             p = os.path.join(FIX, f"{slug}.json")
-            out.extend(json.load(open(p)) if os.path.exists(p) else [{"matched_on": k, "matches": []}])
+            out.extend(json.load(open(p, encoding="utf-8")) if os.path.exists(p) else [{"matched_on": k, "matches": []}])
         return out
 
 

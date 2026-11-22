@@ -1,0 +1,28 @@
+id: "07_false_alarm"
+request: "Check our customer India Glycols; their headcount dropped."
+as_of: "2026-11-22"
+input_rows:
+  - cp_id: "C-107"
+    name: "India Glycols"
+    legal_name: "India Glycols Limited"
+    domain: "indiaglycols.com"
+    city: "Noida"
+    role: "customer"
+    criticality: "na"
+    exposure_inr: 2500000
+    credit_terms_days: 45
+    account_owner: "credit-team"
+expected:
+  rating: ["GREEN", "AMBER", "HELD"]
+  must_cite: ["demerg"]
+  must_not: ["RED"]
+notes: >
+  Headcount fell because of a demerger, not distress. India Glycols' scheme of arrangement
+  became effective on 1 Sep 2026 (record date 2 Sep): the potable-spirits business moved to
+  IGL Spirits and the biopharma business to Ennature Bio Pharma, and the employees of those
+  undertakings were transferred with them. The resulting companies were reported listed on
+  4 Nov 2026. Sources: https://www.sahi.com/news/india-glycols-splits-into-three-different-companies-effective-september-1-2026-494-PE1_CORP ,
+  https://nsearchives.nseindia.com/corporate/INDIAGLYCO_21082026184049_SE_RECORD_DATE.pdf ,
+  https://www.indianchemicalnews.com/chemical/india-glycols-demerged-into-three-entities-india-glycols-igl-spirits-and-ennature-bio-pharma-31716 .
+  Correct because the scoring rule "acquisition or merger news neutralises a headcount drop"
+  must apply: the drop is explained by the cited demerger news, so this must not be RED.

@@ -12,6 +12,11 @@ h1{font-size:1.5rem}h2{font-size:1.15rem;margin-top:2rem;border-bottom:2px solid
 a{color:#1d4ed8}
 @media print{a{color:inherit}.card{break-inside:avoid}}
 {{ css | safe }}
+body{background:#fff;max-width:1120px;margin:0 auto;padding:28px 28px 48px}
+h2{margin-top:2rem;border-bottom:2px solid #101828;padding-bottom:.3rem}
+h3{display:flex;gap:8px;align-items:center;flex-wrap:wrap}
+table{font-size:13px}
+.card{padding:14px 18px;margin-bottom:14px}
 </style>
 </head>
 <body>
@@ -27,14 +32,15 @@ a{color:#1d4ed8}
 {% if d.changes %}<ul>{% for a in d.changes %}<li>{{ a.display_name }}: <b>{{ a.change_since_last }}</b></li>{% endfor %}</ul>
 {% else %}<p class="muted">No rating moved.</p>{% endif %}
 
-<h2>Ranked by ₹ at risk</h2>
+<h2>Ranked by priority, then ₹ at risk</h2>
+<p class="muted">Priority = rating × how much the relationship matters. P1 act now · P2 this week · P3 monitor · P4 no action.</p>
 <table>
 <thead><tr>{% for f in d.fields %}<th>{{ f.replace('_',' ') }}</th>{% endfor %}</tr></thead>
 <tbody>
 {% for r in d.rows %}<tr>
 {% for f in d.fields %}{% set v = r.cells[f] %}<td>
-{%- if f == 'rating' -%}<span class="badge r-{{ v }}">{{ v|rating_label }}</span>
-{%- elif f in ('inr_at_risk','exposure_inr') -%}{{ inr(v) }}
+{%- if f == 'rating' -%}<span class="pill r-{{ v }}">{{ v|rating_label }}</span>
+{%- elif f in ('inr_at_risk','exposure_inr') -%}<span class="nowrap">{{ inr(v) }}</span>
 {%- elif f == 'sources' -%}{% for s in v %}{% if s.url %}<a class="src" href="{{ s.url }}" target="_blank">{{ s.label }} ↗</a>{% else %}{{ s.label }}{% endif %}{% if s.record_date %} · {{ s.record_date }}{% endif %}{% if not loop.last %}<br>{% endif %}{% endfor %}
 {%- else -%}{{ v }}{%- endif -%}
 </td>{% endfor %}
@@ -56,7 +62,7 @@ a{color:#1d4ed8}
 <h2>Counterparties</h2>
 {% for a in d.assessments %}
 <div class="card">
-<h3>{{ a.display_name }} <span class="badge r-{{ a.rating|val }}">{{ a.rating|rating_label }}</span> <span class="muted">{{ a.score }}/100 · {{ a.role }} · {{ inr(a.inr_at_risk) }} at risk</span></h3>
+<h3>{{ a.display_name }} <span class="pill r-{{ a.rating|val }}">{{ a.rating|rating_label }}</span> <span class="muted">{{ a.score }}/100 · {{ a.role }} · {{ inr(a.inr_at_risk) }} at risk</span></h3>
 <p>{{ a.explanation }}</p>
 <table><thead><tr><th>Signal</th><th>Points</th><th>Claim</th><th>Source</th><th>Date</th></tr></thead><tbody>
 {% for s in a.signals %}{% for eid in s.evidence_ids or [None] %}{% set e = d.ev_by_id.get(eid) if eid else None %}

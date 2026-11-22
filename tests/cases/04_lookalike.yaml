@@ -1,0 +1,20 @@
+id: "04_lookalike"
+request: "Run this week's risk review on our backup carriers."
+as_of: "2026-11-22"
+input_rows:
+  - cp_id: "C-104"
+    name: "Sharma Transport"
+    role: "carrier"
+    criticality: "backup"
+    exposure_inr: 150000
+    account_owner: "ops-team"
+expected:
+  rating: "CANNOT_VERIFY"
+  must_not: ["GREEN", "RED"]
+notes: >
+  Common name with no domain, CIN, GSTIN or city. Crustdata Identify returns 5+ matches
+  (tests/fixtures/identify/sharma-transport.json): one at confidence 1.0 with no domain,
+  "Sharma Transports" at 0.95 (sharmatransports.com), and "SHARMA TRANSPORT LTD",
+  "SHARMA TRANSPORT SERVICES" and "Sharma Transport (Regd)" at 0.8. Correct because a 1.0
+  score is not uniqueness. Rating any one of them would risk judging the wrong company, so the
+  answer is CANNOT VERIFY with "Missing: domain, CIN or city", never GREEN or RED.

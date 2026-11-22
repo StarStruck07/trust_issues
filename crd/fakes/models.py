@@ -25,6 +25,10 @@ class Counterparty(BaseModel):
     credit_terms_days: int = 0
     account_owner: str = "credit-team"
     alt_suppliers: list[str] = Field(default_factory=list)
+    # how much the relationship matters to us: strategic | core | standard
+    importance: str = "standard"
+    # customers only: how much THEY depend on us (high = we are hard to replace) | na
+    depends_on_us: str = "na"
 
 
 class ResolvedEntity(BaseModel):
@@ -120,6 +124,10 @@ class Action(BaseModel):
     executed_at: str | None = None
     external_ref: str | None = None
     error: str | None = None
+    # decision context (requested from Arth's model): P1..P4, why this action, senior sign-off
+    priority: str | None = None
+    why: str | None = None
+    requires_senior: bool = False
 
 
 class LedgerEntry(BaseModel):

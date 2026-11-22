@@ -1,32 +1,41 @@
+{% import "_macros.html" as ui %}
+{%- set path = request.url.path -%}
 <!doctype html>
-<html lang="en" data-theme="light">
+<html lang="en">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>{% block title %}Counterparty Risk Desk{% endblock %}</title>
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.min.css">
-  <link rel="stylesheet" href="/static/style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/static/style.css?v={{ css_v() }}">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'><rect width='24' height='24' rx='6' fill='%232563eb'/><path d='M12 19s5-2.5 5-6.5V8l-5-2-5 2v4.5c0 4 5 6.5 5 6.5z' fill='none' stroke='white' stroke-width='2'/></svg>">
   <script src="https://unpkg.com/htmx.org@1.9.12"></script>
 </head>
 <body>
-<header class="container">
-  <nav>
-    <ul><li><a href="/" class="contrast"><strong>Counterparty Risk Desk</strong></a></li></ul>
-    <ul>
-      <li><a href="/">Dashboard</a></li>
-      <li><a href="/approvals">Approvals{% if pending_count %}<span class="nav-badge">{{ pending_count }}</span>{% endif %}</a></li>
-      <li><a href="/outbox">Outbox</a></li>
-      <li><a href="/ledger">Ledger</a></li>
-      <li><a href="/runs">Runs</a></li>
-    </ul>
-  </nav>
+<header class="topbar">
+  <div class="inner">
+    <a class="brand" href="/"><span class="mark">{{ ui.icon('shield', 17) }}</span>Counterparty Risk Desk</a>
+    <nav class="nav">
+      <a href="/" class="{{ 'active' if path == '/' or path.startswith('/cp/') }}">Dashboard</a>
+      <a href="/approvals" class="{{ 'active' if path.startswith('/approvals') }}">Approvals{% if pending_count %}<span class="count">{{ pending_count }}</span>{% endif %}</a>
+      <a href="/outbox" class="{{ 'active' if path.startswith('/outbox') }}">Outbox</a>
+      <a href="/ledger" class="{{ 'active' if path.startswith('/ledger') }}">Ledger</a>
+      <a href="/runs" class="{{ 'active' if path.startswith('/runs') }}">Runs</a>
+    </nav>
+    <span class="spacer"></span>
+    {% if MOCK %}<span class="env-pill" title="{% if USING_FAKE_DB %}Stand-in data layer (crd.fakes). Swaps to the real crd.db automatically when it lands.{% else %}Mock providers{% endif %}"><span class="dot"></span>MOCK DATA</span>
+    {% else %}<span class="env-pill live"><span class="dot"></span>LIVE</span>{% endif %}
+  </div>
 </header>
-<main class="container">
-{% if USING_FAKE_DB %}<p class="muted">Mock data layer (crd.fakes) — swaps to the real crd.db automatically when it lands.</p>{% endif %}
+<main>
 {% block content %}{% endblock %}
 </main>
-<footer class="container site">
-  Every fact links to its source · Irreversible actions need approval · Costs recorded per call
+<footer class="site">
+  <span>{{ ui.icon('link', 13) }} Every fact links to its source</span>
+  <span>{{ ui.icon('lock', 13) }} Irreversible actions need approval</span>
+  <span>{{ ui.icon('coins', 13) }} Costs recorded per call</span>
 </footer>
 </body>
 </html>
