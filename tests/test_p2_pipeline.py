@@ -25,6 +25,8 @@ def mock_env(monkeypatch):
     monkeypatch.setenv("CRD_MOCK", "1")
     monkeypatch.setenv("CRD_AS_OF", "2026-11-22")
     monkeypatch.delenv("CRD_FAIL_SOURCES", raising=False)
+    # the sample CSV's example-*.in companies have no recording: these wiring tests use the stand-in
+    monkeypatch.setenv("CRD_MOCK_SYNTHETIC", "1")
     crustdata._BUCKETS.clear()
 
 

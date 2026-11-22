@@ -167,6 +167,7 @@ def test_mock_reads_recorded_fixture(monkeypatch):
 
 def test_mock_unknown_name_is_not_found_and_unknown_domain_flows(monkeypatch):
     monkeypatch.setenv("CRD_MOCK", "1")
+    monkeypatch.setenv("CRD_MOCK_SYNTHETIC", "1")  # opt in to the stand-in company
     c = CrustdataClient("run-m")
     assert c.identify(names=["Totally Unknown Pvt Ltd"])[0]["matches"] == []
     ident = c.identify(domains=["example-carrier.in"])
@@ -232,3 +233,16 @@ def test_mock_exact_fixture_beats_alias_from_another_file(monkeypatch):
     crustdata._INDEX = None
     m = CrustdataClient("run-m").identify(domains=["tide.co"])[0]["matches"][0]
     assert m["company_data"]["basic_info"]["name"] == "Tide"
+
+
+def test_mock_unknown_domain_has_no_fake_company_data(monkeypatch):
+    """Default mock mode never invents company data, so it can never rate a company GREEN on it."""
+    import pytest
+
+    from crd.data.errors import SourceUnavailable
+
+    monkeypatch.setenv("CRD_MOCK", "1")
+    monkeypatch.delenv("CRD_MOCK_SYNTHETIC", raising=False)
+    c = CrustdataClient("run-strict")
+    with pytest.raises(SourceUnavailable, match="no recorded company data"):
+        c.enrich(domain="no-such-company-on-record.in")

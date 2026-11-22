@@ -106,7 +106,8 @@ def test_budget_errors_propagate(monkeypatch):
         run(cp(), resolved(**DELHIVERY))
 
 
-def test_unknown_mock_company_flows():
+def test_unknown_mock_company_flows(monkeypatch):
+    monkeypatch.setenv("CRD_MOCK_SYNTHETIC", "1")  # opt in to the stand-in company
     evs = run(cp(), resolved(cid=None, domain="example-carrier.in", legal_name="Example Carrier"))
     assert by(evs, "headcount_qoq")[0].status == "ok"
     h = by(evs, "hiring")[0]

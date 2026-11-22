@@ -558,6 +558,13 @@ class CrustdataClient:
                     "mock:identify:no-match"
             return [_synthetic_identify(d) for d in payload.get("domains") or []], "mock:identify:synthetic"
 
+        # No recording for this company. Inventing a healthy default company would let mock mode
+        # rate a company GREEN on fake data, so the company-data call is unavailable instead
+        # (-> HELD, "silence is not health"). CRD_MOCK_SYNTHETIC=1 restores the old stand-in.
+        if endpoint == "enrich" and os.getenv("CRD_MOCK_SYNTHETIC") != "1":
+            who = (payload.get("domains") or payload.get("crustdata_company_ids") or ["?"])[0]
+            raise SourceUnavailable(f"mock: no recorded company data for {who}")
+
         default = FIXTURES / endpoint / "_default.json"
         if not default.exists():
             raise SourceUnavailable(f"mock: no fixture for {endpoint} and no _default.json")
