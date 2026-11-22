@@ -1,5 +1,6 @@
 {% extends "base.html" %}
 {% block title %}Desk · Trust Issues{% endblock %}
+{% block head %}<link rel="stylesheet" href="/static/front.css?v={{ css_v('front.css') }}">{% endblock %}
 {% block content %}
 {% if run %}
 {%- set rows = data.rows -%}
@@ -11,7 +12,16 @@
 {%- endfor -%}
 {% endif %}
 
-<div class="page-head">
+{% if run %}
+<nav class="fx-rail desk-rail" aria-label="Sections">
+  <a href="#top" data-ch="top"><i></i><span>Verdicts</span></a>
+  <a href="#needs" data-ch="needs"><i></i><span>Needs you</span></a>
+  <a href="#sits" data-ch="sits"><i></i><span>Where everyone sits</span></a>
+  <a href="#ranked-h" data-ch="ranked-h"><i></i><span>Ranked</span></a>
+  <a href="#ask-anchor" data-ch="ask-anchor"><i></i><span>Ask</span></a>
+</nav>
+{% endif %}
+<div class="page-head" id="top">
   <div>
     <h1>The desk</h1>
     <div class="sub">{% if run %}Edition <a href="/runs/{{ run.run_id }}">{{ run.run_id }}</a> · as of {{ run.as_of or '—' }} · {{ ui.status(run.status) }}{% else %}No review has run yet.{% endif %}</div>
@@ -37,7 +47,29 @@
   <span><b>{{ data.costs.calls }}</b> calls{% if data.costs.cached_pct %} · {{ data.costs.cached_pct }}% cached{% endif %}</span>
 </div>
 
-<div class="section-title" style="margin-top:26px"><h2>Where everyone sits</h2><span class="desk-hint" style="margin-left:auto">drag to simulate · click for the dossier</span></div>
+{%- set worry = rows|rejectattr('rating', 'equalto', 'GREEN')|list -%}
+{% if worry %}
+<div class="section-title" style="margin-top:40px" id="needs"><h2>Needs you</h2><span class="count">{{ worry|length }}</span><span class="desk-hint" style="margin-left:auto">scroll through the files · click one to open it</span></div>
+<div class="desk-files">
+  {% for r in worry %}{% set a = r.a %}
+  <a class="desk-file" href="/cp/{{ run.run_id }}/{{ r.cp_id }}" style="--k: {{ loop.index0 }}" data-cursor="open">
+    <div class="cf r-{{ r.rating }}">
+      <div class="cf-tab">FILE {{ r.cp_id }}</div>
+      <div class="cf-top"><span class="cf-role">{{ a.role|human }} · {{ r.importance }} · priority {{ r.priority }}</span>{{ ui.rating(r.rating) }}</div>
+      <div class="cf-name">{{ a.display_name }}</div>
+      <div class="cf-mid">
+        <div class="cf-score"><b>{{ '?' if r.rating in ('CANNOT_VERIFY', 'HELD') else a.score }}</b><span>trust score</span></div>
+        <div class="cf-money"><div><span>owed / exposed</span><b>{{ a.exposure_inr|inr if a.exposure_inr else '—' }}</b></div><div><span>at risk</span><b class="risk">{{ a.inr_at_risk|inr if a.inr_at_risk else '—' }}</b></div></div>
+      </div>
+      <p class="cf-reason">{{ r.top_reason|reason }}</p>
+      <div class="cf-open">open the file →</div>
+    </div>
+  </a>
+  {% endfor %}
+</div>
+{% endif %}
+
+<div class="section-title" style="margin-top:26px" id="sits"><h2>Where everyone sits</h2><span class="desk-hint" style="margin-left:auto">drag to simulate · click for the dossier</span></div>
 <div class="riskline" id="riskline" style="margin-top:10px"></div>
 
 {% if data.changes %}
@@ -48,7 +80,7 @@
 {% endif %}
 
 <div class="section-title" style="margin-top:30px">
-  <h2>Ranked by priority, then ₹ at risk</h2><span class="count" id="shown">{{ rows|length }}</span>
+  <h2 id="ranked-h">Who to worry about first</h2><span class="count" id="shown">{{ rows|length }}</span>
   <span style="flex:1"></span>
   <button type="button" class="btn sm" data-filter="ALL" id="clear" hidden>Show all</button>
 </div>
@@ -108,10 +140,10 @@
 </div>
 {% endif %}
 
-<div class="section-title" style="margin-top:34px" id="ask-anchor"><h2>Ask the desk</h2></div>
+<div class="section-title" style="margin-top:34px" id="ask-anchor"><h2>Ask <em>anything</em></h2></div>
 <form method="post" action="/runs" enctype="multipart/form-data" style="margin-top:12px" id="ask">
   <div class="ask">
-    <textarea id="ask-text" name="request_text" rows="1" aria-label="Ask the desk" placeholder="Ask the desk…"></textarea>
+    <textarea id="ask-text" name="request_text" rows="1" aria-label="Ask Trust Issues" placeholder="Ask Trust Issues…"></textarea>
     <button type="submit">Run it →</button>
   </div>
   <div class="ask-chips">

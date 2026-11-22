@@ -588,3 +588,33 @@ button.kpi.on .n, button.kpi.on .l, button.kpi.on .s { color: inherit; }
 .jtree { width: 100%; overflow-x: auto; }
 
 html, body { overflow-x: clip; }
+
+/* ------------------------------------------------------------- the cursor (desktop, fine pointer only) */
+.cursor { position: fixed; left: 0; top: 0; z-index: 9999; width: 0; height: 0; pointer-events: none; opacity: 0; transition: opacity .3s; }
+.cursor.on { opacity: 1; }
+.cursor span { position: absolute; left: 0; top: 0; width: 12px; height: 12px; transform: translate(-50%, -50%); border-radius: 50%;
+  background: #fff; mix-blend-mode: difference; display: grid; place-items: center; font: 600 13px var(--sans); color: transparent; white-space: nowrap;
+  transition: width .35s var(--ease), height .35s var(--ease), background .25s, color .2s; }
+.cursor.big span { width: 44px; height: 44px; background: rgba(255, 255, 255, .9); }
+.cursor.lab span { width: 76px; height: 76px; mix-blend-mode: normal; background: var(--ink); color: var(--paper); }
+.cursor.text span { width: 3px; height: 26px; border-radius: 2px; }
+.cursor.press span { transform: translate(-50%, -50%) scale(.8); }
+body.has-cursor, body.has-cursor a, body.has-cursor button, body.has-cursor .tok, body.has-cursor [data-cursor], body.has-cursor summary, body.has-cursor tr.rated { cursor: none; }
+/* ------------------------------------------------------------- desk: Estheet/Flora language in a working tool */
+.rv { filter: blur(6px); transition: opacity .9s var(--ease), transform .9s var(--ease), filter 1s var(--ease); transition-delay: var(--d, 0ms); }
+.rv.in { filter: none; }
+.desk-rail { left: 22px; }
+.desk-rail a { color: var(--ink-3); }
+.desk-rail i { background: var(--rule); }
+.desk-rail a.on { color: var(--ink); } .desk-rail a.on i { background: var(--ink); }
+.desk-rail a:hover span { background: var(--paper); box-shadow: 0 6px 16px -8px rgba(26, 23, 18, .4); }
+@media (max-width: 1100px) { .fx-rail.desk-rail { display: none; } }
+.desk-files { position: relative; margin-top: 30px; padding-bottom: 10px; }
+.desk-file { position: sticky; top: calc(88px + var(--k) * 26px); display: block; max-width: 760px; margin: 0 auto 26vh; text-decoration: none !important; color: inherit;
+  transition: transform .4s var(--ease); }
+.desk-file:last-child { margin-bottom: 30px; }
+.desk-file:hover { transform: translateY(-4px); background: transparent; }
+.desk-file .cf { box-shadow: 0 30px 60px -30px rgba(26, 23, 18, .55), 0 0 0 1px rgba(26, 23, 18, .06); background: #f7f2e8; }
+.desk-file .cf-tab { background: #f7f2e8; }
+.desk-file .cf-name { font-size: clamp(30px, 3.4vw, 44px); }
+.desk-file .cf-score b { font-size: 60px; }
