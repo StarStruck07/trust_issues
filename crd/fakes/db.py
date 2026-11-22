@@ -33,7 +33,8 @@ CREATE TABLE IF NOT EXISTS actions (
   action_id TEXT PRIMARY KEY, run_id TEXT, cp_id TEXT, type TEXT,
   idempotency_key TEXT UNIQUE, reversible INTEGER, status TEXT, "to" TEXT, subject TEXT,
   draft TEXT, draft_hash TEXT, reason_evidence TEXT, approved_by TEXT, approved_at TEXT,
-  executed_at TEXT, external_ref TEXT, error TEXT, note TEXT, created_at TEXT, updated_at TEXT);
+  executed_at TEXT, external_ref TEXT, error TEXT, note TEXT, created_at TEXT, updated_at TEXT,
+  priority TEXT, why TEXT, requires_senior INTEGER DEFAULT 0);
 CREATE TABLE IF NOT EXISTS ledger (
   call_id TEXT PRIMARY KEY, run_id TEXT, provider TEXT, endpoint TEXT, request_hash TEXT,
   credits REAL, inr REAL, tokens_in INTEGER, tokens_out INTEGER, latency_ms INTEGER,
@@ -176,6 +177,7 @@ def get_evidence_by_ids(ids: list[str]) -> list[Evidence]:
 def _action(r) -> Action:
     d = dict(r)
     d["reversible"] = bool(d["reversible"])
+    d["requires_senior"] = bool(d.get("requires_senior") or 0)
     d["reason_evidence"] = json.loads(d.get("reason_evidence") or "[]")
     for k in ("note", "created_at", "updated_at"):
         d.pop(k, None)
@@ -189,13 +191,14 @@ def insert_action(a: Action) -> bool:
             c.execute(
                 'INSERT INTO actions (action_id, run_id, cp_id, type, idempotency_key, reversible, '
                 'status, "to", subject, draft, draft_hash, reason_evidence, approved_by, '
-                "approved_at, executed_at, external_ref, error, created_at, updated_at) "
-                "VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)",
+                "approved_at, executed_at, external_ref, error, created_at, updated_at, priority, why, "
+                "requires_senior) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)",
                 (
                     a.action_id, a.run_id, a.cp_id, a.type.value, a.idempotency_key,
                     int(a.reversible), a.status.value, a.to, a.subject, a.draft, a.draft_hash,
                     json.dumps(a.reason_evidence), a.approved_by, a.approved_at, a.executed_at,
-                    a.external_ref, a.error, now(), now(),
+                    a.external_ref, a.error, now(), now(), getattr(a, "priority", None),
+                    getattr(a, "why", None), int(bool(getattr(a, "requires_senior", False))),
                 ),
             )
             return True

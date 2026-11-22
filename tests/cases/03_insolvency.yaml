@@ -1,0 +1,29 @@
+id: "03_insolvency"
+request: "Check our vendor Quasar India Limited before we release the next purchase order."
+as_of: "2026-11-22"
+input_rows:
+  - cp_id: "C-103"
+    name: "Quasar India"
+    legal_name: "Quasar India Limited"
+    city: "New Delhi"
+    role: "customer"
+    criticality: "na"
+    exposure_inr: 3500000
+    credit_terms_days: 45
+    account_owner: "credit-team"
+expected:
+  rating: "RED"
+  hard_stop: "cirp_admitted"
+  must_cite: ["ibbi"]
+  must_not: ["GREEN", "AMBER"]
+notes: >
+  Company admitted into CIRP after 1 Sep 2026. NCLT New Delhi admitted operational creditor
+  Bikit Private Limited's Section 9 petition against Quasar India Limited (BSE 538452) in
+  CP (IB) No. 697/ND/2025, over a claim of about Rs 6.145 crore for agricultural goods that
+  were paid for but neither delivered nor refunded. Raghunath Bhandari was appointed IRP and the
+  moratorium applies. Reports differ on the admission date (31 Oct vs 4 Nov 2026); both are
+  after 1 Sep. Sources: https://www.multibagg.ai/market-pulse/articles/quasar-india-cirp-nclt-claim-cmw3il7ge000g2bo2uiu6u9eb ,
+  https://www.multibagg.ai/market-pulse/articles/quasar-india-cirp-petition-admission-cmw28r9kg002m2mtkfmw7ps4d ,
+  IBBI public announcements https://ibbi.gov.in/public-announcement . A commodities trader is a
+  plausible 3PL customer. Correct because cirp_admitted is a hard stop: RED regardless of other
+  signals. must_cite "ibbi" needs registries.py; until then this case fails, and it should.

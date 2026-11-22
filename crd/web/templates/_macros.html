@@ -1,0 +1,82 @@
+{# Shared UI pieces. Import with: {% import "_macros.html" as ui %} #}
+
+{% macro icon(name, size=16) -%}
+<svg width="{{ size }}" height="{{ size }}" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+{%- if name == 'shield' -%}<path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="m9 12 2 2 4-4"/>
+{%- elif name == 'mail' -%}<rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-10 6L2 7"/>
+{%- elif name == 'lock' -%}<rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/>
+{%- elif name == 'pause' -%}<circle cx="12" cy="12" r="10"/><path d="M10 15V9M14 15V9"/>
+{%- elif name == 'truck' -%}<path d="M1 3h15v13H1z"/><path d="M16 8h4l3 3v5h-7z"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/>
+{%- elif name == 'bell' -%}<path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.7 21a2 2 0 0 1-3.4 0"/>
+{%- elif name == 'eye' -%}<path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/>
+{%- elif name == 'file' -%}<path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/>
+{%- elif name == 'link' -%}<path d="M7 17 17 7"/><path d="M7 7h10v10"/>
+{%- elif name == 'check' -%}<path d="M20 6 9 17l-5-5"/>
+{%- elif name == 'x' -%}<path d="M18 6 6 18M6 6l12 12"/>
+{%- elif name == 'alert' -%}<path d="M10.3 3.9 1.8 18a2 2 0 0 0 1.7 3h17a2 2 0 0 0 1.7-3L13.7 3.9a2 2 0 0 0-3.4 0z"/><path d="M12 9v4M12 17h.01"/>
+{%- elif name == 'info' -%}<circle cx="12" cy="12" r="10"/><path d="M12 16v-4M12 8h.01"/>
+{%- elif name == 'help' -%}<circle cx="12" cy="12" r="10"/><path d="M9.1 9a3 3 0 0 1 5.8 1c0 2-3 3-3 3M12 17h.01"/>
+{%- elif name == 'play' -%}<path d="m6 3 14 9-14 9z"/>
+{%- elif name == 'download' -%}<path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><path d="m7 10 5 5 5-5M12 15V3"/>
+{%- elif name == 'coins' -%}<circle cx="8" cy="8" r="6"/><path d="M18.1 10.4A6 6 0 1 1 10.3 18"/><path d="M7 6h1v4"/>
+{%- elif name == 'slack' -%}<path d="M14.5 10a1.5 1.5 0 0 1 0-3h5a1.5 1.5 0 0 1 0 3z"/><path d="M10 9.5a1.5 1.5 0 0 1-3 0v-5a1.5 1.5 0 0 1 3 0z"/><path d="M9.5 14a1.5 1.5 0 0 1 0 3h-5a1.5 1.5 0 0 1 0-3z"/><path d="M14 14.5a1.5 1.5 0 0 1 3 0v5a1.5 1.5 0 0 1-3 0z"/>
+{%- elif name == 'clock' -%}<circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/>
+{%- elif name == 'users' -%}<path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.9M16 3.1a4 4 0 0 1 0 7.8"/>
+{%- elif name == 'scale' -%}<path d="M12 3v18M5 21h14M3 7h18"/><path d="m6 7-3 7a3 3 0 0 0 6 0zM18 7l-3 7a3 3 0 0 0 6 0z"/>
+{%- else -%}<circle cx="12" cy="12" r="9"/>
+{%- endif -%}
+</svg>
+{%- endmacro %}
+
+{% macro rating(r, size='') -%}
+{%- set r = r|val -%}<span class="pill r-{{ r }} {{ size }}">{{ r|rating_label }}</span>
+{%- endmacro %}
+
+{% macro status(s) -%}
+{%- set s = s|val -%}<span class="status s-{{ s }}">{{ s|status_label }}</span>
+{%- endmacro %}
+
+{% macro score(n, r) -%}
+{%- set r = r|val -%}
+<span class="score"><span class="bar"><i style="width:{{ [n, 0]|max }}%;background:var(--{{ {'GREEN':'green','AMBER':'amber','RED':'red','HELD':'purple'}.get(r, 'grey') }})"></i></span>{{ n }}</span>
+{%- endmacro %}
+
+{# a source chip for an Evidence object #}
+{% macro src(e, label=None) -%}
+{%- set href = e|href -%}
+{%- if href -%}<a class="chip" href="{{ href }}" target="_blank" rel="noopener" title="{{ e.source }}{% if e.field_path %} · {{ e.field_path }}{% endif %}">{{ icon('link', 12) }}{{ label or e.source or 'source' }}{% if e.record_date %} <span class="date">· {{ e.record_date }}</span>{% endif %}</a>
+{%- else -%}<span class="chip" title="no link stored">{{ label or e.source or 'no link' }}{% if e.record_date %} <span class="date">· {{ e.record_date }}</span>{% endif %}</span>
+{%- endif -%}
+{%- endmacro %}
+
+{# a source chip for a {url,label,record_date} dict (report rows) #}
+{% macro srcd(s) -%}
+{%- if s.url -%}<a class="chip" href="{{ s.url }}" target="_blank" rel="noopener">{{ icon('link', 12) }}{{ s.label }}{% if s.record_date %} <span class="date">· {{ s.record_date }}</span>{% endif %}</a>
+{%- else -%}<span class="chip">{{ s.label }}</span>{%- endif -%}
+{%- endmacro %}
+
+{% macro action_icon(t) -%}
+{%- set t = t|val -%}
+{{ icon({'customer_terms_email':'mail','backup_rfq':'truck','credit_hold':'lock','internal_alert':'bell','raise_watch_frequency':'eye','guarantee_request':'file'}.get(t, 'file'), 18) }}
+{%- endmacro %}
+
+{% macro prio(tier, title='') -%}
+<span class="prio {{ tier }}" title="{{ title }}">{{ tier }}</span>
+{%- endmacro %}
+
+{# one table cell for a config-driven report field #}
+{% macro field_cell(f, v, row, run_id) -%}
+{%- if f == 'priority' -%}<td>{{ prio(v, row.prio.label ~ ' — ' ~ row.prio.reason) }}</td>
+{%- elif f == 'display_name' -%}
+  <td><a class="rowname" href="/cp/{{ run_id }}/{{ row.cp_id }}">{{ v }}</a>
+  {%- if row.a.cp_ids|length > 1 %}<div class="small muted">merged {{ row.a.cp_ids|join(' + ') }}</div>{% else %}<div class="small faint">{{ row.cp_id }}</div>{% endif %}</td>
+{%- elif f == 'rating' -%}<td>{{ rating(v) }}</td>
+{%- elif f == 'score' -%}<td>{{ score(v, row.rating) }}</td>
+{%- elif f in ('inr_at_risk', 'exposure_inr') -%}<td class="num strong">{{ v|inr if v else '—' }}</td>
+{%- elif f == 'role' -%}<td class="nowrap"><span class="muted">{{ v|human }}</span><div class="small"><span class="imp-{{ row.importance }}">{{ row.importance }}</span>{% if row.prio.depends_on_us not in ('na', none) %}<span class="muted"> · relies on us: {{ row.prio.depends_on_us }}</span>{% endif %}</div></td>
+{%- elif f == 'top_reason' -%}<td><div class="reason clamp" title="{{ v|reason }}">{{ v|reason }}</div></td>
+{%- elif f == 'sources' -%}<td><div class="row" style="gap:5px">{% for s in v %}{{ srcd(s) }}{% else %}<span class="faint">—</span>{% endfor %}</div></td>
+{%- elif f == 'action_status' -%}<td>{% if v and v != '—' %}<div class="row" style="gap:4px">{% for s in v.split(', ') %}{{ status(s) }}{% endfor %}</div>{% else %}<span class="faint">—</span>{% endif %}</td>
+{%- else -%}<td>{{ v if v is not none else '—' }}</td>
+{%- endif -%}
+{%- endmacro %}

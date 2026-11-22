@@ -72,14 +72,93 @@ def src_link(e) -> Markup:
 
 def evlinks(text: str) -> Markup:
     """Turn [ev_xxx] markers into superscript links to the evidence row."""
-    out = re.sub(r"\[(ev_[A-Za-z0-9]+)\]",
-                 lambda m: f'<sup><a href="#{m.group(1)}">[{m.group(1)}]</a></sup>',
-                 str(escape(text or "")))
-    return Markup(out)
+    seen: dict[str, int] = {}
+
+    def cite(m):
+        eid = m.group(1)
+        n = seen.setdefault(eid, len(seen) + 1)
+        return f'<a class="cite" href="#{eid}" title="{eid}">{n}</a>'
+
+    return Markup(re.sub(r"\s*\[(ev_[A-Za-z0-9]+)\]", cite, str(escape(text or ""))))
+
+
+STATUS_LABEL = {
+    "proposed": "Draft only", "pending_approval": "Awaiting approval", "approved": "Approved · queued",
+    "executing": "Sending…", "done": "Done", "rejected": "Rejected", "held": "Held", "failed": "Failed",
+    "running": "Running", "partial": "Partial", "ok": "OK", "cached": "Cached", "error": "Error",
+    "unknown": "Unknown",
+}
+HUMAN = {
+    "headcount_qoq": "Headcount · quarter", "headcount_6m": "Headcount · 6 months", "hiring": "Hiring",
+    "news": "News", "leadership": "Leadership", "insolvency": "Insolvency", "mca_status": "MCA status",
+    "identity": "Identity", "warehouse_lessor": "warehouse lessor", "layoffs_or_shutdown": "Layoffs or shutdown reported",
+    "cirp_admitted": "insolvency (CIRP) admitted", "sole_source": "sole source",
+}
+
+
+def status_label(s) -> str:
+    s = _val(s)
+    return STATUS_LABEL.get(s, str(s).replace("_", " ").capitalize())
+
+
+def human(s) -> str:
+    s = str(_val(s) or "")
+    return HUMAN.get(s, s.replace("_", " "))
+
+
+def reason(text) -> str:
+    """Make a rule note readable: 'qoq -22.1% <= -20% -> -20' -> 'qoq -22.1% ≤ -20%'."""
+    t = str(text or "")
+    if t.startswith("hard stop: "):
+        return "Hard stop: " + human(t[len("hard stop: "):])
+    if t in HUMAN:
+        return HUMAN[t]
+    t = re.sub(r"\s*->\s*[+-]?\d+\s*$", "", t).replace("<=", "≤").replace(">=", "≥").replace("->", "→")
+    return t[:1].upper() + t[1:]
+
+
+def move(text) -> Markup:
+    """'AMBER → RED' as two small rating pills with an arrow."""
+    parts = re.split(r"\s*(?:→|->)\s*", str(text or ""))
+    if len(parts) != 2:
+        return Markup(escape(text or ""))
+    pill = lambda r: (f'<span class="pill sm r-{escape(r.strip().replace(" ", "_"))}">'
+                      f'{escape(report.rating_label(r.strip()))}</span>')
+    return Markup(f'<span class="move">{pill(parts[0])}<span class="arrow">→</span>{pill(parts[1])}</span>')
+
+
+def action_label(x) -> str:
+    if (getattr(x, "idempotency_key", "") or "").endswith(":account_call"):
+        return "Account owner call (instead of a terms change)"
+    t = _val(x.type)
+    return HUMAN_LABEL.get(t, t)
+
+
+def ts(v, n: int = 19) -> str:
+    """'2026-11-22T09:13:55.12+00:00' or a datetime -> '2026-11-22 09:13:55' (n chars)."""
+    if v is None or v == "":
+        return "—"
+    s = v.isoformat() if hasattr(v, "isoformat") else str(v)
+    return s.replace("T", " ")[:n]
+
+
+def clock(v) -> str:
+    s = ts(v)
+    return s[11:19] if len(s) >= 19 else s
 
 
 env = templates.env
+env.filters["ts"] = ts
+env.filters["clock"] = clock
+env.filters["action_label"] = action_label
+env.filters["move"] = move
 env.filters["inr"] = report.inr
+env.filters["status_label"] = status_label
+env.filters["human"] = human
+env.filters["reason"] = reason
+env.filters["href"] = report.source_href
+env.globals["css_v"] = lambda: int((HERE / "static" / "style.css").stat().st_mtime)
+env.globals["MOCK"] = USING_FAKE_DB or os.getenv("CRD_MOCK", "1") == "1"
 env.filters["rating_label"] = report.rating_label
 env.filters["val"] = _val
 env.filters["src"] = src_link
@@ -111,10 +190,94 @@ def _counts(assessments) -> dict:
     return c
 
 
+FINISHED = ("done", "partial", "failed", "needs_clarification")
+
+
+def _run_view(run: dict | None) -> dict | None:
+    """Normalise a run row from either db: request text, as_of, n."""
+    if not run:
+        return run
+    req = run.get("request")
+    v = dict(run)
+    if isinstance(req, dict):
+        v["request_text"] = req.get("raw_text") or ""
+        v["as_of"] = req.get("as_of") or run.get("as_of")
+    else:
+        v["request_text"] = req or ""
+    if "n" not in v:
+        try:
+            v["n"] = len(db.get_assessments(run["run_id"]))
+        except Exception:
+            v["n"] = 0
+    return v
+
+
+def _cp_name(cp_id: str) -> str:
+    getter = getattr(db, "get_counterparty", None)
+    try:
+        cp = getter(cp_id) if getter else None
+    except Exception:
+        cp = None
+    return cp.name if cp else cp_id
+
+
+def _progress_view(run_id: str) -> dict:
+    """Normalise orchestrator.run_progress (real: flat step rows) into one row per counterparty."""
+    p = orchestrator.run_progress(run_id)
+    steps = p.get("steps") or []
+    status = p.get("status") or (db.get_run(run_id) or {}).get("status") or "unknown"
+    if steps and isinstance(steps[0], dict) and "step" in steps[0]:
+        by_cp: dict[str, dict] = {}
+        resolve_all = "pending"
+        for s in steps:
+            if s["cp_id"] == "__all__":
+                if s["step"] == "resolve":
+                    resolve_all = s["status"]
+                continue
+            row = by_cp.setdefault(s["cp_id"], {"cp_id": s["cp_id"], "display_name": _cp_name(s["cp_id"]),
+                                                **{k: "pending" for k in STEPS}})
+            row[s["step"]] = s["status"]
+        groups = (db.get_step_output(run_id, "__all__", "resolve") or {}).get("groups", []) \
+            if hasattr(db, "get_step_output") else []
+        for g in groups:
+            cid = (g.get("cp_ids") or [None])[0]
+            if cid and cid not in by_cp:
+                by_cp[cid] = {"cp_id": cid, "display_name": _cp_name(cid), **{k: "pending" for k in STEPS}}
+        rows = list(by_cp.values())
+        for r in rows:
+            r["resolve"] = "done" if resolve_all == "done" else resolve_all
+            if status in FINISHED:  # a step left 'running' by a stopped run is not spinning any more
+                for k in STEPS:
+                    if r[k] == "running":
+                        r[k] = "error"
+    else:
+        rows = steps
+    ledger = p.get("ledger") or p.get("recent_calls") or []
+    total = p.get("total") or len(rows)
+    return {"status": status, "done": p.get("done", 0), "total": total, "steps": rows,
+            "ledger": ledger, "costs": p.get("costs") or db.run_costs(run_id), "note": p.get("note")}
+
+
+def _costs_all() -> dict:
+    rows = db.get_ledger(None)
+    calls = len(rows)
+    cached = sum(1 for r in rows if _val(r.status) == "cached")
+    return {"credits": round(sum(r.credits for r in rows), 2), "inr": round(sum(r.inr for r in rows), 2),
+            "calls": calls, "cached": cached, "cached_pct": round(100 * cached / calls, 1) if calls else 0.0,
+            "errors": sum(1 for r in rows if _val(r.status) in ("error", "timeout")), "minutes": 0}
+
+
+def _actions(statuses) -> list:
+    out = []
+    for s in statuses:
+        out += db.get_actions(s)
+    return out
+
+
 # ---------------------------------------------------------------- dashboard / runs
 @app.get("/", response_class=HTMLResponse)
 def dashboard(request: Request):
-    run = _latest_run()
+    run = _run_view(_latest_run())
     data = report.build(run["run_id"]) if run else None
     return page(request, "dashboard.html", run=run, data=data, default_request=DEFAULT_REQUEST,
                 counts=_counts(data["assessments"]) if data else None)
@@ -136,23 +299,22 @@ async def start_run(request_text: str = Form(DEFAULT_REQUEST), csv_file: UploadF
 
 @app.get("/runs", response_class=HTMLResponse)
 def runs(request: Request):
-    rows = [{**r, "costs": db.run_costs(r["run_id"])} for r in db.list_runs()]
+    rows = [{**_run_view(r), "costs": db.run_costs(r["run_id"])} for r in db.list_runs()]
     return page(request, "runs.html", runs=rows)
 
 
 @app.get("/runs/{run_id}", response_class=HTMLResponse)
 def run_live(request: Request, run_id: str):
-    run = db.get_run(run_id)
+    run = _run_view(db.get_run(run_id))
     if not run:
         raise HTTPException(404, "run not found")
-    return page(request, "run_live.html", run=run, prog=orchestrator.run_progress(run_id))
+    return page(request, "run_live.html", run=run, prog=_progress_view(run_id))
 
 
 @app.get("/runs/{run_id}/progress", response_class=HTMLResponse)
 def run_progress(request: Request, run_id: str):
-    run = db.get_run(run_id) or {"run_id": run_id, "status": "unknown"}
-    return templates.TemplateResponse(request, "_progress.html",
-                                      {"run": run, "prog": orchestrator.run_progress(run_id)})
+    run = _run_view(db.get_run(run_id)) or {"run_id": run_id, "status": "unknown"}
+    return templates.TemplateResponse(request, "_progress.html", {"run": run, "prog": _progress_view(run_id)})
 
 
 @app.get("/runs/{run_id}/report", response_class=HTMLResponse)
@@ -183,8 +345,14 @@ def cp_detail(request: Request, run_id: str, cp_id: str):
     if not a:
         raise HTTPException(404, "assessment not found")
     evidence = [e for cp in a.cp_ids for e in db.get_evidence(run_id, cp)]
-    actions = [x for x in db.get_actions(None, run_id) if x.cp_id in a.cp_ids]
+    from crd.actions import policy, priority
+
+    cfg = config.get()
+    cp = policy._counterparty(a.cp_ids[0])
+    actions = [{"act": x, "ctx": policy.context(x, a, cp, cfg)}
+               for x in db.get_actions(None, run_id) if x.cp_id in a.cp_ids]
     return page(request, "cp_detail.html", a=a, why=explain.why(run_id, cp_id) or {},
+                prio=priority.for_assessment(a, cp, cfg=cfg),
                 evidence=evidence, actions=actions, run_id=run_id)
 
 
@@ -201,16 +369,27 @@ def _assessment_for(act):
 
 
 @app.get("/approvals", response_class=HTMLResponse)
-def approvals(request: Request, done: str | None = None, err: str | None = None):
-    pending = [{"act": x, "a": _assessment_for(x), "reasons": _reasons(x)}
-               for x in db.get_actions("pending_approval")]
-    decided = [x for x in db.get_actions(["approved", "executing", "done", "rejected", "failed"])
-               if not x.reversible][:10]
-    return page(request, "approvals.html", pending=pending, decided=decided, done=done, err=err)
+def approvals(request: Request, done: str | None = None, err: str | None = None,
+              decision: str | None = None):
+    from crd.actions import policy
+
+    order = {"P1": 0, "P2": 1, "P3": 2, "P4": 3}
+    cfg = config.get()
+    pending = []
+    for x in db.get_actions("pending_approval"):
+        a = _assessment_for(x)
+        pending.append({"act": x, "a": a, "reasons": _reasons(x), "ctx": policy.context(x, a, cfg=cfg)})
+    pending.sort(key=lambda p: order.get(p["ctx"]["priority"] or "P4", 3))
+    decided = [x for x in _actions(["approved", "executing", "done", "rejected", "failed"]) if not x.reversible]
+    decided.sort(key=lambda x: str(x.executed_at or x.approved_at or ""), reverse=True)
+    decided = decided[:10]
+    return page(request, "approvals.html", pending=pending, decided=decided, done=done, err=err,
+                decision=decision)
 
 
 @app.post("/approvals/{action_id}")
-def decide(action_id: str, decision: str = Form(...), approver: str = Form(""), draft: str = Form("")):
+def decide(action_id: str, decision: str = Form(...), approver: str = Form(""), draft: str = Form(""),
+           senior: str = Form("")):
     approver = approver.strip()
     if not approver:
         return RedirectResponse(f"/approvals?err=approver#{action_id}", status_code=303)
@@ -218,6 +397,12 @@ def decide(action_id: str, decision: str = Form(...), approver: str = Form(""), 
     if not act:
         raise HTTPException(404, "action not found")
     if decision == "approve":
+        from crd.actions import policy
+
+        if policy.context(act)["requires_senior"]:
+            if senior != "yes":
+                return RedirectResponse(f"/approvals?err=senior#{action_id}", status_code=303)
+            approver = f"{approver} (senior)"
         draft = draft.replace("\r\n", "\n")
         ok = db.transition_action(action_id, "pending_approval", "approved", draft=draft,
                                   draft_hash=sha256(draft), approved_by=approver, approved_at=_now(),
@@ -232,7 +417,7 @@ def decide(action_id: str, decision: str = Form(...), approver: str = Form(""), 
             return RedirectResponse(f"/approvals?err=changed#{action_id}", status_code=303)
     else:
         raise HTTPException(400, "decision must be approve or reject")
-    return RedirectResponse(f"/approvals?done={action_id}", status_code=303)
+    return RedirectResponse(f"/approvals?done={action_id}&decision={decision}", status_code=303)
 
 
 @app.post("/actions/{action_id}/retry")
@@ -254,7 +439,7 @@ def outbox(request: Request):
 @app.get("/ledger", response_class=HTMLResponse)
 def ledger(request: Request, run: str | None = None):
     run = run or None
-    return page(request, "ledger.html", rows=db.get_ledger(run), costs=db.run_costs(run),
+    return page(request, "ledger.html", rows=db.get_ledger(run), costs=db.run_costs(run) if run else _costs_all(),
                 runs=db.list_runs(), run=run)
 
 
@@ -289,6 +474,19 @@ def raw(run_id: str, file: str):
     return FileResponse(p, media_type="application/json")
 
 
+FIXTURES = Path("tests") / "fixtures"
+
+
+@app.get("/fixture/{rel:path}")
+def fixture(rel: str):
+    """Mock mode: evidence points at a recorded response in tests/fixtures."""
+    root = FIXTURES.resolve()
+    p = (FIXTURES / rel).resolve()
+    if root not in p.parents or not p.is_file() or p.suffix != ".json":
+        raise HTTPException(404, "fixture not found")
+    return FileResponse(p, media_type="application/json")
+
+
 @app.post("/webhooks/crustdata")
 async def crustdata_webhook(request: Request):
     raw_body = await request.body()
@@ -300,7 +498,13 @@ async def crustdata_webhook(request: Request):
         return JSONResponse({"ok": False, "error": "bad json"}, status_code=400)
     event_id = (request.headers.get("x-crustdata-event-id") or body.get("event_id")
                 or hashlib.sha256(raw_body).hexdigest()[:24])
-    if not db.save_watch_event(event_id, raw_body.decode("utf-8", "replace")):
+    import inspect
+
+    if len(inspect.signature(db.save_watch_event).parameters) >= 3:
+        fresh = db.save_watch_event(event_id, str(body.get("watch_id") or ""), body)
+    else:
+        fresh = db.save_watch_event(event_id, raw_body.decode("utf-8", "replace"))
+    if not fresh:
         return {"ok": True, "duplicate": True}
     domains = watcher.parse_payload(body)
     for d in domains:

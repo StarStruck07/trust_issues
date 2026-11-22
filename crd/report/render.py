@@ -82,9 +82,15 @@ def top_sources(a, evidence: dict) -> list[dict]:
 def source_href(e) -> str | None:
     if getattr(e, "url", None):
         return e.url
-    if getattr(e, "raw_ref", None):
-        return f"/raw/{e.run_id}/{e.raw_ref}"
-    return None
+    ref = getattr(e, "raw_ref", None)
+    if not ref:
+        return None
+    ref = str(ref).replace("\\", "/")
+    if "tests/fixtures/" in ref:
+        return "/fixture/" + ref.split("tests/fixtures/", 1)[1]
+    name = ref.rsplit("/", 1)[-1]
+    run = ref.split("/runs/", 1)[1].split("/", 1)[0] if "/runs/" in ref else e.run_id
+    return f"/raw/{run}/{name}"
 
 
 def field_value(a, name: str, ctx: dict):
@@ -113,8 +119,20 @@ def action_status(a, actions_by_cp: dict) -> str:
 
 
 def build(run_id: str) -> dict:
-    run = db.get_run(run_id) or {"run_id": run_id, "status": "unknown"}
-    assessments = sorted(db.get_assessments(run_id), key=lambda a: -(a.inr_at_risk or 0))
+    run = dict(db.get_run(run_id) or {"run_id": run_id, "status": "unknown"})
+    req = run.get("request")
+    if isinstance(req, dict):  # real db: request is the ReviewRequest dict
+        run["request"] = req.get("raw_text") or ""
+        run["as_of"] = req.get("as_of") or run.get("as_of")
+    from crd.actions import priority
+
+    cfg = config.get()
+    prio = {}
+    for a in db.get_assessments(run_id):
+        prio[a.cp_ids[0]] = priority.for_assessment(a, cfg=cfg)
+    # most urgent first, then most ₹ at risk
+    assessments = sorted(db.get_assessments(run_id),
+                         key=lambda a: (prio[a.cp_ids[0]]["tier"], -(a.inr_at_risk or 0)))
     actions = db.get_actions(None, run_id)
     by_cp: dict[str, list] = {}
     for x in actions:
@@ -135,20 +153,41 @@ def build(run_id: str) -> dict:
             "action_status": action_status(a, by_cp),
             "rating": _val(a.rating),
             "cp_id": a.cp_ids[0],
+            "priority": prio[a.cp_ids[0]]["tier"],
+            "prio": prio[a.cp_ids[0]],
+            "importance": prio[a.cp_ids[0]]["importance"],
         }
-        rows.append({"a": a, "cells": {f: field_value(a, f, ctx) for f in fields}, **ctx})
+        cells = {f: field_value(a, f, ctx) for f in fields}
+        cells.setdefault("priority", ctx["priority"])
+        rows.append({"a": a, "cells": cells, **ctx})
     costs = db.run_costs(run_id)
     return {
         "run": run, "request": run.get("request"), "as_of": run.get("as_of"), "costs": costs,
-        "fields": fields, "rows": rows, "assessments": assessments, "actions": actions,
+        "fields": fields, "rows": rows,
+        # the dashboard always leads with priority; exported reports follow config exactly
+        "ui_fields": fields if "priority" in fields else ["priority"] + fields, "assessments": assessments, "actions": actions,
         "evidence": evidence, "ev_by_id": ev_by_id,
         "changes": [a for a in assessments if a.change_since_last],
         "cannot_verify": [(a, line) for a in assessments for line in a.cannot_verify],
         "pending": [x for x in actions if _val(x.status) == "pending_approval"],
         "row_errors": (run.get("doc") or {}).get("row_errors", []),
-        "not_reviewed": (run.get("doc") or {}).get("not_reviewed", []),
+        "not_reviewed": (run.get("doc") or {}).get("not_reviewed", []) or ([run["note"]] if run.get("note") else []),
         "footer": FOOTER,
+        "prio": prio,
+        "matrix": _matrix(assessments, prio),
     }
+
+
+def _matrix(assessments, prio) -> dict:
+    """importance (rows) × rating group (cols) -> list of (cp_id, display_name)."""
+    cols = ["RED", "AMBER", "CV", "GREEN"]
+    m = {imp: {c: [] for c in cols} for imp in ("strategic", "core", "standard")}
+    for a in assessments:
+        r = _val(a.rating)
+        col = "CV" if r in ("CANNOT_VERIFY", "HELD") else r
+        p = prio[a.cp_ids[0]]
+        m[p["importance"]][col].append({"cp_id": a.cp_ids[0], "name": a.display_name, "tier": p["tier"]})
+    return m
 
 
 # ---------------------------------------------------------------- outputs
@@ -172,7 +211,8 @@ def to_markdown(d: dict) -> str:
         L += ["**Not reviewed:**"] + [f"- {x}" for x in d["not_reviewed"]] + [""]
     L += ["## Changes since the last review", ""]
     L += [f"- {a.display_name}: {a.change_since_last}" for a in d["changes"]] or ["- none"]
-    L += ["", "## Ranked by ₹ at risk", "", "| " + " | ".join(d["fields"]) + " |",
+    L += ["", "## Ranked by priority, then ₹ at risk", "",
+          "_Priority = rating × how much the relationship matters (P1 act now · P2 this week · P3 monitor · P4 no action)._", "", "| " + " | ".join(d["fields"]) + " |",
           "|" + "---|" * len(d["fields"])]
     for r in d["rows"]:
         cells = []

@@ -1,0 +1,24 @@
+id: "09_namesake_news"
+request: "Check our customer Tide Water Oil before the quarter-end renewal."
+as_of: "2026-11-22"
+input_rows:
+  - cp_id: "C-109"
+    name: "Tide Water Oil"
+    legal_name: "Tide Water Oil Co. (India) Ltd."
+    city: "Kolkata"
+    role: "customer"
+    criticality: "na"
+    exposure_inr: 2200000
+    credit_terms_days: 45
+    account_owner: "credit-team"
+expected:
+  rating: ["GREEN", "AMBER", "CANNOT_VERIFY", "HELD"]
+  must_not: ["RED"]
+notes: >
+  Bad news about a different company with a similar name. On 11 Nov 2026 Tide (the UK
+  small-business banking platform) announced the wind-down of its India member business
+  (https://www.tide.co/en-IN/blog/tide-update/tide-india-strategic-announcement/). The test row
+  is Tide Water Oil Co. (India) Ltd., the Kolkata-based lubricants maker (Veedol), a different
+  company with no link to Tide. Correct because the news filter must drop articles whose
+  subject is not our resolved entity (namesake), so this customer's rating must not move to RED
+  on Tide's shutdown. Pairs with case 02, where the same article correctly hits Tide India.

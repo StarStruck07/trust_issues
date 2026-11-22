@@ -1,0 +1,21 @@
+id: "06_no_footprint"
+request: "Review our small fleet owners before the festive peak."
+as_of: "2026-11-22"
+input_rows:
+  - cp_id: "C-106"
+    name: "Shree Ganesh Roadlines Bhiwandi"
+    city: "Bhiwandi"
+    role: "carrier"
+    criticality: "backup"
+    exposure_inr: 80000
+    account_owner: "ops-team"
+expected:
+  rating: "CANNOT_VERIFY"
+  must_not: ["GREEN", "RED"]
+notes: >
+  A typical single-depot fleet owner: a generic local name, no website, no CIN and no GSTIN on
+  the row. Firms like this have no Crustdata profile and no news coverage. Correct because
+  "no data" must not become a rating: absence of evidence is not health (no GREEN) and not
+  distress (no RED). The agent should answer CANNOT VERIFY and say what is missing (a GSTIN or
+  CIN) so a person can confirm. This protects small firms from being punished for having no web
+  presence (README, Ethics).

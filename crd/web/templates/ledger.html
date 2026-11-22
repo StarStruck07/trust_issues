@@ -1,26 +1,39 @@
 {% extends "base.html" %}
+{% block title %}Ledger · Counterparty Risk Desk{% endblock %}
 {% block content %}
-<h2>Ledger</h2>
-<form method="get" action="/ledger" class="grid">
-  <select name="run" onchange="this.form.submit()">
-    <option value="">All runs</option>
-    {% for r in runs %}<option value="{{ r.run_id }}" {% if r.run_id == run %}selected{% endif %}>{{ r.run_id }} · {{ r.started_at }}</option>{% endfor %}
-  </select>
-  <a role="button" class="outline" href="/ledger.csv{% if run %}?run={{ run }}{% endif %}">Download CSV</a>
-</form>
-<div class="tiles">
-  <div class="tile"><div class="n">{{ costs.credits }}</div>credits</div>
-  <div class="tile"><div class="n">{{ costs.inr|inr }}</div>₹ spent</div>
-  <div class="tile"><div class="n">{{ costs.calls }}</div>calls · {{ costs.cached_pct }}% cached</div>
-  <div class="tile"><div class="n">{{ costs.errors }}</div>errors</div>
+<div class="page-head">
+  <div><h1>Cost ledger</h1><div class="sub">Every external call: provider, credits, ₹, tokens and latency.</div></div>
+  <form method="get" action="/ledger" class="row">
+    <select name="run" onchange="this.form.submit()" aria-label="Filter by run">
+      <option value="">All runs</option>
+      {% for r in runs %}<option value="{{ r.run_id }}" {% if r.run_id == run %}selected{% endif %}>{{ r.run_id }} · {{ r.started_at|ts(10) }}</option>{% endfor %}
+    </select>
+    <a class="btn" href="/ledger.csv{% if run %}?run={{ run }}{% endif %}">{{ ui.icon('download', 15) }}CSV</a>
+  </form>
 </div>
-<table class="dense ticker">
-  <thead><tr><th>ts</th><th>provider</th><th>endpoint</th><th>credits</th><th>₹</th><th>tokens</th><th>ms</th><th>status</th><th>note</th></tr></thead>
+
+<div class="kpis">
+  <div class="kpi k-accent"><div class="n">{{ costs.credits }}</div><div class="l">Credits</div><div class="s">Crustdata</div></div>
+  <div class="kpi k-accent"><div class="n">{{ costs.inr|inr }}</div><div class="l">Spent</div><div class="s">credits + model tokens</div></div>
+  <div class="kpi"><div class="n">{{ costs.calls }}</div><div class="l">Calls</div><div class="s">{{ costs.cached_pct }}% served from cache</div></div>
+  <div class="kpi {{ 'k-RED' if costs.errors }}"><div class="n">{{ costs.errors }}</div><div class="l">Errors</div><div class="s">recorded as unavailable, never as “no news”</div></div>
+</div>
+
+<div class="card" style="overflow:auto;margin-top:16px">
+{% if rows %}
+<table class="tbl compact">
+  <thead><tr><th>Time</th><th>Provider</th><th>Endpoint</th><th class="right">Credits</th><th class="right">₹</th><th class="right">Tokens</th><th class="right">ms</th><th>Status</th><th>Note</th></tr></thead>
   <tbody>
-  {% for le in rows %}<tr class="{{ le.status }}">
-    <td>{{ le.ts }}</td><td>{{ le.provider }}</td><td>{{ le.endpoint }}</td><td>{{ le.credits }}</td><td>{{ le.inr }}</td>
-    <td>{{ le.tokens_in + le.tokens_out }}</td><td>{{ le.latency_ms }}</td><td>{{ le.status }}</td><td>{{ le.note }}</td>
-  </tr>{% else %}<tr><td colspan="9" class="muted">No calls recorded.</td></tr>{% endfor %}
+  {% for le in rows %}<tr>
+    <td class="nowrap muted">{{ le.ts|clock }}</td>
+    <td class="strong">{{ le.provider }}</td>
+    <td class="mono">{{ le.endpoint }}</td>
+    <td class="num">{{ le.credits }}</td><td class="num">{{ '%.2f'|format(le.inr) }}</td>
+    <td class="num">{{ (le.tokens_in + le.tokens_out) or '—' }}</td><td class="num">{{ le.latency_ms }}</td>
+    <td>{{ ui.status(le.status|val) }}</td><td class="muted small">{{ le.note }}</td>
+  </tr>{% endfor %}
   </tbody>
 </table>
+{% else %}<div class="empty">No calls recorded.</div>{% endif %}
+</div>
 {% endblock %}

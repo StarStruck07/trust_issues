@@ -1,27 +1,62 @@
 {% extends "base.html" %}
+{% block title %}Outbox · Counterparty Risk Desk{% endblock %}
 {% block content %}
-<h2>Outbox</h2>
-<p><strong>{{ executed }} actions executed · each idempotency key appears once</strong>
-  {% if not unique %}<span class="flash err">duplicate key found!</span>{% endif %}</p>
+{%- set ns = namespace(email=0, slack=0, watch=0) -%}
+{%- for m in msgs -%}
+  {%- if m.channel == 'email' %}{% set ns.email = ns.email + 1 %}{% elif m.channel == 'slack' %}{% set ns.slack = ns.slack + 1 %}{% elif m.channel == 'watch' %}{% set ns.watch = ns.watch + 1 %}{% endif -%}
+{%- endfor -%}
+<div class="page-head">
+  <div><h1>Outbox</h1><div class="sub">Everything the desk actually did, keyed by idempotency key.</div></div>
+</div>
 
-<h3>Sent messages <span class="muted">({{ msgs|length }})</span></h3>
-<table class="dense striped">
-  <thead><tr><th>Time</th><th>Channel</th><th>To</th><th>Subject</th><th>Idempotency key</th></tr></thead>
+<div class="hero-ok {{ 'bad' if not unique }}">
+  <span class="icon">{{ ui.icon('check' if unique else 'alert', 24) }}</span>
+  <div>
+    {% if unique %}<div class="big">Exactly once</div>
+      <div>{{ executed }} actions executed · {{ msgs|length + holds|length }} records · each idempotency key appears once</div>
+    {% else %}<div class="big">Duplicate key found</div><div>An idempotency key appears more than once. Investigate before sending anything else.</div>{% endif %}
+  </div>
+</div>
+
+<div class="channels" style="margin-top:12px">
+  <div class="kpi k-accent"><div class="n">{{ ns.email }}</div><div class="l">{{ ui.icon('mail', 12) }} Emails</div><div class="s">to team inbox only</div></div>
+  <div class="kpi k-RED"><div class="n" style="color:var(--text)">{{ holds|length }}</div><div class="l">{{ ui.icon('lock', 12) }} ERP holds</div><div class="s">new credit shipments</div></div>
+  <div class="kpi"><div class="n">{{ ns.slack }}</div><div class="l">{{ ui.icon('bell', 12) }} Alerts</div><div class="s">internal channel</div></div>
+  <div class="kpi"><div class="n">{{ ns.watch }}</div><div class="l">{{ ui.icon('eye', 12) }} Watches</div><div class="s">daily re-checks</div></div>
+</div>
+
+<div class="section-title"><h2>Sent messages</h2><span class="count">{{ msgs|length }}</span></div>
+<div class="card" style="overflow:auto">
+{% if msgs %}
+<table class="tbl">
+  <thead><tr><th>Time</th><th>Channel</th><th>To</th><th>Message</th><th>Idempotency key</th></tr></thead>
   <tbody>
   {% for m in msgs %}<tr>
-    <td>{{ m.created_at }}</td><td>{{ m.channel }}</td><td>{{ m.to }}</td>
-    <td>{% if m.subject %}<details><summary>{{ m.subject }}</summary><pre style="white-space:pre-wrap">{{ m.body }}</pre></details>{% else %}{{ m.body[:120] }}{% endif %}</td>
-    <td><code>{{ m.idempotency_key }}</code></td>
-  </tr>{% else %}<tr><td colspan="5" class="muted">Nothing sent yet.</td></tr>{% endfor %}
+    <td class="nowrap muted top">{{ (m.sent_at or m.created_at)|ts }}</td>
+    <td class="top"><span class="row nowrap" style="gap:6px;flex-wrap:nowrap"><span class="muted">{{ ui.icon({'email':'mail','slack':'bell','watch':'eye'}.get(m.channel, 'file'), 15) }}</span>{{ m.channel }}</span></td>
+    <td class="top small">{{ m.to_addr or m.to }}</td>
+    <td class="top" style="min-width:280px">
+      {% if m.subject and m.channel == 'email' %}<details class="body"><summary>{{ m.subject }}</summary><pre>{{ m.body }}</pre></details>
+      {% else %}<span class="small">{{ m.body|truncate(140) }}</span>{% endif %}</td>
+    <td class="top"><span class="keycode">{{ m.idempotency_key }}</span></td>
+  </tr>{% endfor %}
   </tbody>
 </table>
+{% else %}<div class="empty">Nothing sent yet. Approve an action to see it here — once.</div>{% endif %}
+</div>
 
-<h3>ERP holds <span class="muted">({{ holds|length }})</span></h3>
-<table class="dense striped">
-  <thead><tr><th>Time</th><th>Counterparty</th><th>Reason</th><th>Idempotency key</th></tr></thead>
+<div class="section-title"><h2>ERP credit holds</h2><span class="count">{{ holds|length }}</span></div>
+<div class="card" style="overflow:auto">
+{% if holds %}
+<table class="tbl">
+  <thead><tr><th>Time</th><th>Counterparty</th><th>Hold note</th><th>Idempotency key</th></tr></thead>
   <tbody>
-  {% for h in holds %}<tr><td>{{ h.created_at }}</td><td>{{ h.cp_id }}</td><td>{{ h.reason }}</td><td><code>{{ h.idempotency_key }}</code></td></tr>
-  {% else %}<tr><td colspan="4" class="muted">No holds placed.</td></tr>{% endfor %}
+  {% for h in holds %}<tr>
+    <td class="nowrap muted top">{{ h.created_at|ts }}</td><td class="top strong">{{ h.cp_id }}</td>
+    <td class="small">{{ h.reason }}</td><td class="top"><span class="keycode">{{ h.idempotency_key }}</span></td>
+  </tr>{% endfor %}
   </tbody>
 </table>
+{% else %}<div class="empty">No holds placed.</div>{% endif %}
+</div>
 {% endblock %}

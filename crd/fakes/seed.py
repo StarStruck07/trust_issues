@@ -12,23 +12,28 @@ from crd.fakes.models import (
 COUNTERPARTIES = [
     Counterparty(cp_id="C-101", name="Northline Freight", legal_name="Northline Freight Limited",
                  domain="northlinefreight.example", role="carrier", criticality="primary",
-                 exposure_inr=0, credit_terms_days=0, alt_suppliers=["Brightway Carriers", "Coastal Roadlines"]),
+                 exposure_inr=0, credit_terms_days=0, alt_suppliers=["Brightway Carriers", "Coastal Roadlines"],
+                 importance="core"),
     Counterparty(cp_id="C-102", name="Kestrel Home", legal_name="Kestrel Home Private Limited",
                  domain="kestrelhome.example", role="customer", exposure_inr=4_200_000,
-                 credit_terms_days=45),
+                 credit_terms_days=45, importance="core", depends_on_us="low"),
     Counterparty(cp_id="C-103", name="Orbit Retail", legal_name="Orbit Retail Private Limited",
                  domain="orbitretail.example", role="customer", exposure_inr=3_500_000,
-                 credit_terms_days=45),
+                 credit_terms_days=45, importance="core", depends_on_us="medium"),
     Counterparty(cp_id="C-104", name="Shree Transport", role="carrier", criticality="backup"),
     Counterparty(cp_id="C-201", name="Lumen Foods", role="customer", exposure_inr=1_800_000,
-                 credit_terms_days=30),
+                 credit_terms_days=30, importance="strategic", depends_on_us="high"),
     Counterparty(cp_id="C-202", name="Lumen Foods India Pvt Ltd", legal_name="Lumen Foods India Private Limited",
-                 domain="lumenfoods.example", role="customer", exposure_inr=900_000, credit_terms_days=30),
+                 domain="lumenfoods.example", role="customer", exposure_inr=900_000, credit_terms_days=30,
+                 importance="strategic", depends_on_us="high", account_owner="Ritika (key accounts)"),
     Counterparty(cp_id="C-105", name="Vardhan Warehousing", legal_name="Vardhan Warehousing LLP",
                  domain="vardhanwh.example", role="warehouse_lessor", criticality="sole_source"),
     Counterparty(cp_id="C-106", name="Pinecrest Logistics", legal_name="Pinecrest Logistics Private Limited",
                  domain="pinecrestlog.example", role="carrier", criticality="sole_source",
                  alt_suppliers=["Northline Freight"]),
+    Counterparty(cp_id="C-107", name="Brisk Basket", legal_name="Brisk Basket Private Limited",
+                 domain="briskbasket.example", role="customer", exposure_inr=650_000,
+                 credit_terms_days=30, importance="standard", depends_on_us="low"),
 ]
 
 
@@ -174,6 +179,32 @@ def build(run_id: str):
                  SignalScore(signal="news", points=-8, evidence_ids=[e13.evidence_id], note="lost anchor client")],
         explanation=f"Headcount fell 12% last quarter [{e12.evidence_id}] and its largest contract was not renewed [{e13.evidence_id}]. It is our sole source on its lanes.",
     ))
+
+    # C-107 small customer, can switch easily -> AMBER, terms email despite exposure < 10 L
+    e14 = _ev(run_id, "C-107", "headcount_6m", "Headcount changed -14.8% over 6 months", value=-14.8,
+              source="Crustdata Company Enrich", field_path="headcount.growth_percent.six_months",
+              raw_ref="C-107_company_enrich.json", record_date="2026-11-13")
+    e15 = _ev(run_id, "C-107", "news", "Brisk Basket exits two cities", source_type="news",
+              source="example-startup-news.in", url="https://example-startup-news.in/brisk-basket-exits",
+              passage="The quick-commerce startup is shutting dark stores in two cities.", record_date="2026-11-05")
+    E += [e14, e15]
+    A.append(Assessment(
+        run_id=run_id, cp_ids=["C-107"], display_name="Brisk Basket", role="customer",
+        entity=ResolvedEntity(match_type="exact", confidence=0.94, legal_name="Brisk Basket Private Limited",
+                              domain="briskbasket.example"),
+        rating=Rating.AMBER, score=50,
+        signals=[SignalScore(signal="headcount_6m", points=-12, evidence_ids=[e14.evidence_id], note="6m -14.8% <= -10% -> -12"),
+                 SignalScore(signal="news", points=-8, evidence_ids=[e15.evidence_id], note="market exit")],
+        exposure_inr=650_000, inr_at_risk=260_000,
+        explanation=f"Headcount fell 14.8% over six months [{e14.evidence_id}] and it is exiting two cities [{e15.evidence_id}].",
+    ))
+
+    # copy each row's relationship profile into extra, as the orchestrator does
+    for a in A:
+        cp = cp_by_id(a.cp_ids[0])
+        if cp:
+            a.extra.update({"criticality": cp.criticality, "importance": cp.importance,
+                            "depends_on_us": cp.depends_on_us})
     return A, E
 
 
@@ -227,5 +258,10 @@ def seed_demo() -> str:
         acts = policy.propose(a, cp_by_id(a.cp_ids[0]), config.get(), rv)
         a.action_ids = [x.action_id for x in acts]
         db.save_assessment(a)
-    db.update_run(run_id, finished_at=db.now())
+    import json
+
+    steps = {"resolve": "done", "gather": "done", "score": "done", "propose": "done"}
+    prog = {a.cp_ids[0]: {"display_name": a.display_name, **steps,
+                          **({"gather": "error"} if a.cp_ids[0] == "C-105" else {})} for a in A}
+    db.update_run(run_id, finished_at=db.now(), doc=json.dumps({"progress": prog}))
     return run_id
