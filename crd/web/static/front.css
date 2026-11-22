@@ -15,6 +15,22 @@ body.night {
   --hand: "Caveat", "Segoe Print", cursive;
   background: var(--paper); background-image: radial-gradient(ellipse at 50% -10%, #23201a 0, transparent 60%); color: var(--ink);
 }
+/* The aliases below are computed once at :root from the light theme (theme.css), so redefining --ink here
+   does not reach them: headings, table names and titles stayed near-black on the dark page. Re-declare them. */
+body.night {
+  --bg: var(--paper); --surface-2: var(--paper-2);
+  --border: var(--rule-soft); --border-strong: var(--rule);
+  --text: var(--ink); --text-2: var(--ink-2); --muted: var(--ink-3);
+  --accent: var(--ink); --accent-ink: var(--ink); --accent-soft: var(--paper-2);
+}
+body.night .callout.ok, body.night .hero-ok { color: var(--green); border-color: rgba(99, 192, 138, .35); }
+/* callouts had light-theme text colours (navy, deep purple) baked in */
+body.night .callout.info, body.night .callout.held, body.night .callout.warn, body.night .callout.err { color: var(--ink-2); }
+body.night .callout .title { color: var(--ink); }
+/* the light paper example cards on the front page keep dark text (the night aliases above are inherited) */
+body.night .cf, body.night .ex { --ink: #1a1712; --text: #1a1712; --text-2: #4b4438; --muted: #7a705f; }
+body.night .src-tools button { color: var(--ink); background: transparent; border: 1px solid var(--rule);
+  height: 32px; padding: 0 12px; font: 500 13px var(--sans); cursor: pointer; }
 body.front .topbar, body.front footer.site { display: none; }
 body.front main { max-width: none; padding: 0; margin: 0; }
 body.night ::selection { background: var(--amber); color: #13120f; }

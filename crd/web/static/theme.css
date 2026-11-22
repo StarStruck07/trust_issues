@@ -599,7 +599,7 @@ html, body { overflow-x: clip; }
 .cursor.lab span { width: 76px; height: 76px; mix-blend-mode: normal; background: var(--ink); color: var(--paper); }
 .cursor.text span { width: 3px; height: 26px; border-radius: 2px; }
 .cursor.press span { transform: translate(-50%, -50%) scale(.8); }
-body.has-cursor, body.has-cursor a, body.has-cursor button, body.has-cursor .tok, body.has-cursor [data-cursor], body.has-cursor summary, body.has-cursor tr.rated { cursor: none; }
+/* custom cursor removed: never hide the system cursor */
 /* ------------------------------------------------------------- desk: Estheet/Flora language in a working tool */
 .rv { filter: blur(6px); transition: opacity .9s var(--ease), transform .9s var(--ease), filter 1s var(--ease); transition-delay: var(--d, 0ms); }
 .rv.in { filter: none; }

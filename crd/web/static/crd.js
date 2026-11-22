@@ -419,29 +419,7 @@
     drail.forEach(a => { const t = document.getElementById(a.dataset.ch); if (t) io.observe(t); });
   }
 
-  // ------------------------------------------------------------------ the cursor: a soft ring that says what you can do
-  if (!still && matchMedia("(hover: hover) and (pointer: fine)").matches) {
-    const ring = document.createElement("div");
-    ring.className = "cursor"; ring.innerHTML = "<span></span>";
-    document.body.appendChild(ring); document.body.classList.add("has-cursor");
-    const label = ring.firstChild;
-    let x = innerWidth / 2, y = innerHeight / 2, tx = x, ty = y, shown = false;
-    addEventListener("pointermove", e => {
-      if (e.pointerType !== "mouse") return;
-      tx = e.clientX; ty = e.clientY;
-      if (!shown) { x = tx; y = ty; shown = true; ring.classList.add("on"); }
-      const t = e.target.closest && e.target.closest("[data-cursor], a, button, summary, .tok, .tbl tr.rated, input, textarea, select, label");
-      const word = t ? (t.dataset.cursor || (t.matches("input, textarea") ? "" : t.matches(".tok") ? "drag" : t.matches(".tbl tr.rated") ? "open" : "")) : "";
-      ring.classList.toggle("big", !!t && !t.matches("input, textarea, select"));
-      ring.classList.toggle("text", !!t && t.matches("input, textarea"));
-      label.textContent = word;
-      ring.classList.toggle("lab", !!word);
-    }, { passive: true });
-    addEventListener("pointerdown", () => ring.classList.add("press"));
-    addEventListener("pointerup", () => ring.classList.remove("press"));
-    document.addEventListener("pointerleave", () => ring.classList.remove("on"));
-    (function loop() { x += (tx - x) * .2; y += (ty - y) * .2; ring.style.transform = `translate(${x}px, ${y}px)`; requestAnimationFrame(loop); })();
-  }
+  // (custom cursor removed: the system cursor is used everywhere)
 
   // ------------------------------------------------------------------ ask the desk
   const ask = $("#ask-text");
