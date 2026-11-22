@@ -124,7 +124,15 @@ def collect(entity: ResolvedEntity, cp: Counterparty, enrich_resp: dict, client,
     # 2. fetch the top few (risk headlines first, then most recent)
     def rank(c: dict):
         return (0 if RISK_WORDS.search(c["title"]) else 1, -(c["date"].toordinal() if c["date"] else 0))
-    top = sorted(cands.values(), key=rank)[:FETCH_TOP]
+    top, seen_titles = [], set()
+    for c in sorted(cands.values(), key=rank):         # same story under two URLs counts once
+        t = _norm_ws(c["title"])
+        if t and t in seen_titles:
+            continue
+        seen_titles.add(t)
+        top.append(c)
+        if len(top) >= FETCH_TOP:
+            break
     try:
         pages = ctx.call(client.web_fetch, [c["url"] for c in top]) or []
     except STOP:

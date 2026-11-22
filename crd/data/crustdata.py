@@ -334,7 +334,7 @@ class CrustdataClient:
 
         # 2. cache
         if use_cache:
-            hit = db.cache_get(rhash)
+            hit = _cache_get_fresh(rhash)
             if hit is not None:
                 self.last_raw_ref = self._store_raw(endpoint, rhash, hit)
                 self._ledger(endpoint, rhash, status="cached", note="cache hit")
@@ -374,7 +374,7 @@ class CrustdataClient:
         self._ledger(endpoint, rhash, status="ok", credits=credits, inr=inr, latency_ms=latency,
                      note="" if credits_hdr is not None else "price from config")
         if use_cache:
-            db.cache_put(rhash, endpoint, resp)
+            db.cache_put(rhash, endpoint, {CACHE_WRAP: _now().isoformat(), "response": resp})
         self.last_raw_ref = self._store_raw(endpoint, rhash, resp)
         return resp
 
@@ -560,6 +560,31 @@ class CrustdataClient:
 
 
 # --------------------------------------------------------------------------- helpers
+CACHE_WRAP = "_cached_at"
+
+
+def _cache_ttl_hours() -> float:
+    try:
+        return float(os.getenv("CRD_CACHE_TTL_HOURS", "24"))
+    except ValueError:
+        return 24.0
+
+
+def _cache_get_fresh(rhash: str) -> Any:
+    """Cached response if it is younger than CRD_CACHE_TTL_HOURS (default 24 h), else None.
+
+    Same-day re-runs and resume-after-kill stay free; a weekly review fetches fresh data.
+    """
+    hit = db.cache_get(rhash)
+    if not isinstance(hit, dict) or CACHE_WRAP not in hit:
+        return None                      # unknown age (older format): treat as expired
+    try:
+        age_h = (_now() - datetime.fromisoformat(hit[CACHE_WRAP])).total_seconds() / 3600
+    except (TypeError, ValueError):
+        return None
+    return hit.get("response") if age_h <= _cache_ttl_hours() else None
+
+
 def _num(v: Any) -> float | None:
     try:
         return float(v) if v not in (None, "") else None

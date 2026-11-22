@@ -57,7 +57,8 @@ def test_customer_gets_role_mix_and_web_traffic():
     assert set(rm.value) >= {"ops_sales", "finance", "flag"}
     wt = by(evs, "web_traffic")[0]
     assert wt.value["domain"] == "mamaearth.in" and wt.value["pct"] < 0
-    assert wt.record_date and wt.stale            # Sept monthly data is > 45 days old on 22 Nov
+    # monthly bucket "2026-10-01" covers October: dated 31 Oct, 22 days old on 22 Nov -> fresh
+    assert wt.record_date == date(2026, 10, 31) and not wt.stale
     assert not by(evs, "funding_runway")          # no funding data is not a negative
 
 
@@ -110,3 +111,20 @@ def test_unknown_mock_company_flows():
     assert by(evs, "headcount_qoq")[0].status == "ok"
     h = by(evs, "hiring")[0]
     assert h.value["recent"] == 0 and h.value["prior"] == 0
+
+
+def test_full_job_page_does_not_claim_zero_prior(monkeypatch):
+    jobs = [{"metadata": {"date_added": "2026-11-20T10:00:00"}, "job_details": {"title": "Driver"}}] * 25
+    monkeypatch.setattr(CrustdataClient, "job_search", lambda self, **kw: jobs)
+    h = by(run(cp(), resolved(**DELHIVERY)), "hiring")[0]
+    assert h.value["recent"] == 25 and h.value["prior"] is None and "earlier period not measured" in h.claim
+
+
+def test_monthly_web_traffic_dated_to_month_end():
+    from crd.data.signals import _month_end
+    assert _month_end(date(2026, 10, 1)) == date(2026, 10, 31) and _month_end(date(2026, 12, 1)) == date(2026, 12, 31)
+
+
+def test_payment_behaviour_points_to_client_record():
+    pb = by(run(cp(dso_days=60, credit_terms_days=30), resolved(**DELHIVERY)), "payment_behaviour")[0]
+    assert pb.raw_ref == "counterparties/C-1"

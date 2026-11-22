@@ -189,3 +189,18 @@ def test_mock_batch_identify_answers_each_identifier(monkeypatch):
     assert ids[:2] == [5798, 736] and len(ids) == 3
     names = CrustdataClient("run-m").identify(names=["Sharma Transport", "Nobody Pvt Ltd"])
     assert len(names) == 2 and names[0]["matches"] and names[1]["matches"] == []
+
+
+def test_cache_expires_after_ttl(monkeypatch):
+    calls = []
+
+    def h(req, n):
+        calls.append(n)
+        return httpx.Response(200, json=IDENTIFY_OK, headers={"x-credits-used": "0.2"})
+
+    c, _ = make_client(h)
+    c.identify(domains=["acme.in"])
+    monkeypatch.setenv("CRD_CACHE_TTL_HOURS", "0")      # everything is now too old
+    c2, calls2 = make_client(h, run_id="run-3")
+    c2.identify(domains=["acme.in"])
+    assert len(calls2) == 1                             # fetched again, not served from cache
