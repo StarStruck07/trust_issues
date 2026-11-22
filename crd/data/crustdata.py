@@ -528,6 +528,16 @@ class CrustdataClient:
     # ---------------------------------------------------------------- mock
     def _mock_response(self, endpoint: str, payload: dict) -> tuple[Any, str]:
         idx = _index()
+        if endpoint == "identify":  # batch: answer each identifier on its own, like the real API
+            kind = "domains" if payload.get("domains") else "names"
+            ids = payload.get(kind) or []
+            if len(ids) > 1:
+                out, refs = [], []
+                for v in ids:
+                    resp, ref = self._mock_response(endpoint, {kind: [v]})
+                    out += resp if isinstance(resp, list) else []
+                    refs.append(ref)
+                return out, refs[0]
         path = idx.find(endpoint, payload)
         if path is not None:
             return json.loads(path.read_text()), str(path)

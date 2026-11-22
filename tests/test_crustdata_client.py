@@ -180,3 +180,12 @@ def test_mock_lookalike_name_returns_recorded_matches(monkeypatch):
     c = CrustdataClient("run-m")
     ms = c.identify(names=["Sharma Transport"])[0]["matches"]
     assert len(ms) >= 2
+
+
+def test_mock_batch_identify_answers_each_identifier(monkeypatch):
+    monkeypatch.setenv("CRD_MOCK", "1")
+    out = CrustdataClient("run-m").identify(domains=["delhivery.com", "bluedart.com", "example-carrier.in"])
+    ids = [e["matches"][0]["company_data"]["crustdata_company_id"] for e in out]
+    assert ids[:2] == [5798, 736] and len(ids) == 3
+    names = CrustdataClient("run-m").identify(names=["Sharma Transport", "Nobody Pvt Ltd"])
+    assert len(names) == 2 and names[0]["matches"] and names[1]["matches"] == []
