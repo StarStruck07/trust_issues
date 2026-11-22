@@ -2,6 +2,7 @@
 from __future__ import annotations
 
 import threading
+from datetime import datetime, timezone
 
 import pytest
 
@@ -9,6 +10,7 @@ import pytest
 @pytest.fixture()
 def env(tmp_path, monkeypatch):
     monkeypatch.setenv("CRD_DB", str(tmp_path / "test.db"))
+    monkeypatch.setenv("CRD_DB_PATH", str(tmp_path / "test.db"))  # the real crd.db reads this
     monkeypatch.setenv("CRD_VAR", str(tmp_path / "var"))
     monkeypatch.setenv("CRD_FAKE_SEED", "0")
     monkeypatch.setenv("CRD_SLOW_EXECUTE", "0")
@@ -26,6 +28,7 @@ def _red_customer(run_id="run_t"):
 
     a = models.Assessment(
         run_id=run_id, cp_ids=["C-900"], display_name="Test Retail", role="customer",
+        entity=models.ResolvedEntity(cp_ids=["C-900"], status="resolved"),
         rating=models.Rating.RED, score=30, exposure_inr=3_000_000, inr_at_risk=2_000_000,
         signals=[models.SignalScore(signal="news", points=-20, evidence_ids=[], note="layoffs reported")],
         explanation="Test.",
@@ -52,7 +55,8 @@ def _approve(db, act, draft=None):
 
     draft = act.draft if draft is None else draft
     assert db.transition_action(act.action_id, "pending_approval", "approved", draft=draft,
-                                draft_hash=sha256(draft), approved_by="tester", approved_at="now")
+                                draft_hash=sha256(draft), approved_by="tester",
+                                approved_at=datetime.now(timezone.utc).isoformat())
     return db.get_action(act.action_id)
 
 

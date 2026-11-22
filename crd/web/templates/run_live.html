@@ -4,7 +4,7 @@
 <div class="page-head">
   <div>
     <h1>Reviewing counterparties</h1>
-    <div class="sub">“{{ run.request }}” · as of {{ run.as_of }} · started {{ (run.started_at or '')[:19]|replace('T', ' ') }}</div>
+    <div class="sub">“{{ run.request_text }}” · as of {{ run.as_of or '—' }} · started {{ run.started_at|ts }}</div>
   </div>
 </div>
 {% include "_progress.html" %}

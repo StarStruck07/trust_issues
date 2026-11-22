@@ -1,5 +1,5 @@
 {% import "_macros.html" as ui %}
-{%- set finished = prog.status in ('done', 'partial') -%}
+{%- set finished = prog.status in ('done', 'partial', 'failed', 'needs_clarification') -%}
 {%- set pct = (100 * prog.done / prog.total) if prog.total else (100 if finished else 0) -%}
 <div id="progress" {% if not finished %}hx-get="/runs/{{ run.run_id }}/progress" hx-trigger="every 2s" hx-swap="outerHTML"{% endif %} class="stack">
   <div class="card">
@@ -7,7 +7,8 @@
       <div class="row" style="justify-content:space-between;margin-bottom:10px">
         <div class="row">{{ ui.status(prog.status) }}
           <span class="strong">{{ prog.done }} of {{ prog.total }} counterparties</span></div>
-        {% if finished %}<a class="btn primary" href="/runs/{{ run.run_id }}/report">{{ ui.icon('file', 15) }}Open report</a>
+        {% if prog.note %}<span class="muted small" style="flex-basis:100%">{{ prog.note }}</span>{% endif %}
+        {% if finished and prog.status != 'needs_clarification' %}<a class="btn primary" href="/runs/{{ run.run_id }}/report">{{ ui.icon('file', 15) }}Open report</a>
         {% else %}<span class="muted small">updates every 2 s</span>{% endif %}
       </div>
       <div class="progress {{ 'done' if finished else 'live' }}"><i style="width:{{ pct }}%"></i></div>

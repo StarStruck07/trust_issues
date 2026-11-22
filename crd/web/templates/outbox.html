@@ -32,9 +32,9 @@
   <thead><tr><th>Time</th><th>Channel</th><th>To</th><th>Message</th><th>Idempotency key</th></tr></thead>
   <tbody>
   {% for m in msgs %}<tr>
-    <td class="nowrap muted top">{{ (m.created_at or '')[:19]|replace('T', ' ') }}</td>
+    <td class="nowrap muted top">{{ (m.sent_at or m.created_at)|ts }}</td>
     <td class="top"><span class="row nowrap" style="gap:6px;flex-wrap:nowrap"><span class="muted">{{ ui.icon({'email':'mail','slack':'bell','watch':'eye'}.get(m.channel, 'file'), 15) }}</span>{{ m.channel }}</span></td>
-    <td class="top small">{{ m.to }}</td>
+    <td class="top small">{{ m.to_addr or m.to }}</td>
     <td class="top" style="min-width:280px">
       {% if m.subject and m.channel == 'email' %}<details class="body"><summary>{{ m.subject }}</summary><pre>{{ m.body }}</pre></details>
       {% else %}<span class="small">{{ m.body|truncate(140) }}</span>{% endif %}</td>
@@ -52,7 +52,7 @@
   <thead><tr><th>Time</th><th>Counterparty</th><th>Hold note</th><th>Idempotency key</th></tr></thead>
   <tbody>
   {% for h in holds %}<tr>
-    <td class="nowrap muted top">{{ (h.created_at or '')[:19]|replace('T', ' ') }}</td><td class="top strong">{{ h.cp_id }}</td>
+    <td class="nowrap muted top">{{ h.created_at|ts }}</td><td class="top strong">{{ h.cp_id }}</td>
     <td class="small">{{ h.reason }}</td><td class="top"><span class="keycode">{{ h.idempotency_key }}</span></td>
   </tr>{% endfor %}
   </tbody>

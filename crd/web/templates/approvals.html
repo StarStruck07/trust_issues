@@ -13,12 +13,12 @@
 {% if err == 'approver' %}<div class="callout err" style="margin-top:12px">{{ ui.icon('alert', 18) }}<div><span class="title">Enter your name as approver.</span> Every decision is recorded against a person.</div></div>{% endif %}
 
 <div class="stack" style="margin-top:16px">
-{% for p in pending %}{% set x = p.act %}
+{% for p in pending %}{% set x = p.act %}{% set c = p.ctx %}
 <form class="card appr" id="{{ x.action_id }}" method="post" action="/approvals/{{ x.action_id }}">
   <div class="appr-head">
     <span class="ic">{{ ui.action_icon(x.type) }}</span>
     <div style="flex:1;min-width:220px">
-      <div class="ttl">{% if x.priority %}{{ ui.prio(x.priority) }} {% endif %}{{ x|action_label }}</div>
+      <div class="ttl">{% if c.priority %}{{ ui.prio(c.priority, c.label) }} {% endif %}{{ x|action_label }}</div>
       <div class="who">
         {% if p.a %}<a class="strong" href="/cp/{{ x.run_id }}/{{ x.cp_id }}">{{ p.a.display_name }}</a> {{ ui.rating(p.a.rating) }}
           {% if p.a.inr_at_risk %}<span>{{ p.a.inr_at_risk|inr }} at risk</span>{% endif %}
@@ -26,11 +26,11 @@
       </div>
     </div>
     <div class="row" style="gap:6px">
-      {% if x.requires_senior %}<span class="tag senior-tag">senior approval</span>{% endif %}
+      {% if c.requires_senior %}<span class="tag senior-tag">senior approval</span>{% endif %}
       <span class="tag irrev">{{ ui.icon('lock', 11) }}&nbsp;irreversible</span>
     </div>
   </div>
-  {% if x.why %}<div class="why-line">{{ ui.icon('scale', 15) }} <span><b>Why this action:</b> {{ x.why }}</span></div>{% endif %}
+  {% if c.why %}<div class="why-line">{{ ui.icon('scale', 15) }} <span><b>Why this action:</b> {{ c.why }}</span></div>{% endif %}
   {% if x.error %}<div class="callout warn" style="border-radius:0;border-width:0 0 1px">{{ ui.icon('alert', 16) }}<div>{{ x.error|capitalize }} — review and approve again.</div></div>{% endif %}
   <div class="appr-body">
     <div class="mail">
@@ -52,7 +52,7 @@
   </div>
   <div class="appr-foot">
     <input class="input" name="approver" placeholder="Your name (required)" autocomplete="name" required>
-    {% if x.requires_senior %}<label class="senior"><input type="checkbox" name="senior" value="yes"> I am a senior approver (head of credit)</label>{% endif %}
+    {% if c.requires_senior %}<label class="senior"><input type="checkbox" name="senior" value="yes"> I am a senior approver (head of credit)</label>{% endif %}
     <span class="spacer"></span>
     <button class="btn ghost" name="decision" value="reject" formnovalidate>{{ ui.icon('x', 14) }}Reject</button>
     <button class="btn approve" name="decision" value="approve">{{ ui.icon('check', 15) }}Approve &amp; send once</button>
@@ -74,7 +74,7 @@
     <td><a href="/cp/{{ x.run_id }}/{{ x.cp_id }}">{{ x.cp_id }}</a></td>
     <td>{{ ui.status(x.status) }}</td>
     <td>{{ x.approved_by or '—' }}</td>
-    <td class="nowrap muted">{{ (x.executed_at or '—')[:19]|replace('T', ' ') }}</td>
+    <td class="nowrap muted">{{ x.executed_at|ts }}</td>
     <td class="muted small">{% if x.external_ref %}<span class="keycode">{{ x.external_ref }}</span>{% elif x.error %}{{ x.error }}{% endif %}</td>
     <td class="right">{% if x.status|val == 'failed' %}<form method="post" action="/actions/{{ x.action_id }}/retry" style="margin:0"><button class="btn sm">Retry</button></form>{% endif %}</td>
   </tr>{% endfor %}

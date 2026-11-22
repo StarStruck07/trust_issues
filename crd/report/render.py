@@ -82,9 +82,15 @@ def top_sources(a, evidence: dict) -> list[dict]:
 def source_href(e) -> str | None:
     if getattr(e, "url", None):
         return e.url
-    if getattr(e, "raw_ref", None):
-        return f"/raw/{e.run_id}/{e.raw_ref}"
-    return None
+    ref = getattr(e, "raw_ref", None)
+    if not ref:
+        return None
+    ref = str(ref).replace("\\", "/")
+    if "tests/fixtures/" in ref:
+        return "/fixture/" + ref.split("tests/fixtures/", 1)[1]
+    name = ref.rsplit("/", 1)[-1]
+    run = ref.split("/runs/", 1)[1].split("/", 1)[0] if "/runs/" in ref else e.run_id
+    return f"/raw/{run}/{name}"
 
 
 def field_value(a, name: str, ctx: dict):
@@ -113,7 +119,11 @@ def action_status(a, actions_by_cp: dict) -> str:
 
 
 def build(run_id: str) -> dict:
-    run = db.get_run(run_id) or {"run_id": run_id, "status": "unknown"}
+    run = dict(db.get_run(run_id) or {"run_id": run_id, "status": "unknown"})
+    req = run.get("request")
+    if isinstance(req, dict):  # real db: request is the ReviewRequest dict
+        run["request"] = req.get("raw_text") or ""
+        run["as_of"] = req.get("as_of") or run.get("as_of")
     from crd.actions import priority
 
     cfg = config.get()
@@ -157,7 +167,7 @@ def build(run_id: str) -> dict:
         "cannot_verify": [(a, line) for a in assessments for line in a.cannot_verify],
         "pending": [x for x in actions if _val(x.status) == "pending_approval"],
         "row_errors": (run.get("doc") or {}).get("row_errors", []),
-        "not_reviewed": (run.get("doc") or {}).get("not_reviewed", []),
+        "not_reviewed": (run.get("doc") or {}).get("not_reviewed", []) or ([run["note"]] if run.get("note") else []),
         "footer": FOOTER,
         "prio": prio,
         "matrix": _matrix(assessments, prio),

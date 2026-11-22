@@ -38,6 +38,10 @@ def sha256(text: str | None) -> str:
     return hashlib.sha256((text or "").encode("utf-8")).hexdigest()
 
 
+def _val(v):
+    return getattr(v, "value", v)
+
+
 def _rating(a) -> str:
     return getattr(a.rating, "value", a.rating)
 
@@ -69,10 +73,10 @@ def _join(reasons: list[str]) -> str:
     return "; ".join(reasons) if reasons else "changes in our periodic indicators"
 
 
-def _new_terms(cfg_actions, rating: str, current: int) -> int:
-    nt = cfg_get(cfg_actions, "new_terms_days")
+def _new_terms(cfg_actions, rating: str, current: int, nt=None) -> int:
+    nt = nt if nt is not None else cfg_get(cfg_actions, "new_terms_days")
     fixed = cfg_get(nt, rating) if nt is not None else None
-    if fixed is not None:
+    if fixed is not None and str(fixed).isdigit():
         return int(fixed)
     if rating == "RED":
         return 15
@@ -83,7 +87,8 @@ def _new_terms(cfg_actions, rating: str, current: int) -> int:
 def draft_terms_email(cp, a, reasons, cfg) -> tuple[str, str]:
     acts = cfg_get(cfg, "actions")
     terms = cp.credit_terms_days or 30
-    new = _new_terms(acts, _rating(a), terms)
+    new = _new_terms(acts, _rating(a), terms,
+                     cfg_get(cfg_get(acts, "customer_terms_email"), "new_terms"))
     start = (date.today() + timedelta(days=7)).strftime("%d %b %Y")
     client = cfg_get(cfg, "client_name", "our company")
     subject = f"Review of credit terms — {cp.name}"
@@ -163,33 +168,21 @@ def _inr(v) -> str:
     return inr(v)
 
 
-def propose(a, cp, cfg, review_id: str) -> list:
+def plan(a, cp, cfg) -> list[dict]:
+    """Pure: which actions this assessment calls for, with drafts and a one-line why.
+    Used by propose() and, at display/approval time, by context()."""
     acts_cfg = cfg_get(cfg, "actions")
     rating = _rating(a)
     exposure = a.exposure_inr or getattr(cp, "exposure_inr", 0) or 0
-    role = cp.role
+    role = _val(cp.role)
     reasons, ids = _reasons(a)
-    inbox = os.getenv("TEAM_INBOX", "team-inbox@example.com")
     pr = priority.assess(rating, priority.profile(a, cp), cfg)
     imp, dep = pr["importance"], pr["depends_on_us"]
-    senior_for = cfg_get(acts_cfg, "senior_approval_for", ["strategic"]) or []
-    out = []
+    out: list[dict] = []
 
     def add(t, status, subject, draft, reversible, why, tag=""):
-        key = f"{cp.cp_id}:{t.value}:{review_id}" + (f":{tag}" if tag else "")
-        act = Action(
-            action_id="act_" + uuid.uuid4().hex[:8], run_id=a.run_id, cp_id=cp.cp_id, type=t,
-            idempotency_key=key, reversible=reversible, status=status, to=inbox,
-            subject=subject, draft=draft,
-            draft_hash=sha256(draft) if status == ActionStatus.approved else None,
-            reason_evidence=ids, priority=pr["tier"], why=why,
-            requires_senior=(not reversible) and imp in senior_for,
-        )
-        if not db.insert_action(act):
-            existing = _existing(key, a.run_id)
-            if existing is not None:
-                act = existing
-        out.append(act)
+        out.append({"type": t, "status": status, "subject": subject, "draft": draft,
+                    "reversible": reversible, "why": why, "tag": tag, "evidence": ids})
 
     # internal_alert: rating moved, RED, or needs a person
     if a.change_since_last or rating in ("RED", "CANNOT_VERIFY", "HELD"):
@@ -214,26 +207,26 @@ def propose(a, cp, cfg, review_id: str) -> list:
         soften = (rating == "AMBER" and dep == "high"
                   and cfg_get(acts_cfg, "high_dependence_amber", "account_call") == "account_call")
         if soften:
-            s, b = draft_account_call(cp, a, reasons, pr)
-            add(ActionType.internal_alert, ActionStatus.approved, s, b, True,
+            sub, body = draft_account_call(cp, a, reasons, pr)
+            add(ActionType.internal_alert, ActionStatus.approved, sub, body, True,
                 "AMBER, but they depend on us: a call from the account owner instead of a terms change",
                 tag="account_call")
         elif tcfg is not None and rating in cfg_get(tcfg, "on", ["AMBER", "RED"]) and exposure >= threshold:
             why = f"{rating} {imp} customer, {_inr(exposure)} exposure ≥ {_inr(threshold)}"
             if dep == "low":
                 why += " (lower bar: they can switch easily)"
-            s, b = draft_terms_email(cp, a, reasons, cfg)
-            add(ActionType.customer_terms_email, ActionStatus.pending_approval, s, b, False, why)
+            sub, body = draft_terms_email(cp, a, reasons, cfg)
+            add(ActionType.customer_terms_email, ActionStatus.pending_approval, sub, body, False, why)
         hcfg = cfg_get(acts_cfg, "credit_hold")
         if hcfg is not None and rating in cfg_get(hcfg, "on", ["RED"]):
-            s, b = draft_credit_hold(cp, a, reasons, ids)
-            add(ActionType.credit_hold, ActionStatus.pending_approval, s, b, False,
-                f"RED customer: stop new credit until a person reviews"
+            sub, body = draft_credit_hold(cp, a, reasons, ids)
+            add(ActionType.credit_hold, ActionStatus.pending_approval, sub, body, False,
+                "RED customer: stop new credit until a person reviews"
                 + ("; hard stop " + a.hard_stop.replace("_", " ") if a.hard_stop else ""))
         gcfg = cfg_get(acts_cfg, "guarantee_request")
         if gcfg is not None and rating == "RED" and exposure >= 2 * min_exp:
-            s, b = draft_guarantee(cp, a, reasons)
-            add(ActionType.guarantee_request, ActionStatus.proposed, s, b, False,
+            sub, body = draft_guarantee(cp, a, reasons)
+            add(ActionType.guarantee_request, ActionStatus.proposed, sub, body, False,
                 f"RED with {_inr(exposure)} exposure ≥ {_inr(2 * min_exp)}: draft only")
 
     if role in SUPPLIER_ROLES:
@@ -241,11 +234,70 @@ def propose(a, cp, cfg, review_id: str) -> list:
         crit_ok = cp.criticality in cfg_get(rcfg, "only_criticality", ["sole_source", "primary"]) if rcfg else False
         if rcfg is not None and rating in cfg_get(rcfg, "on", ["AMBER", "RED"]) and (crit_ok or imp == "strategic"):
             crit = (cp.criticality or "").replace("_", " ")
-            s, b = draft_backup_rfq(cp, a, cfg)
-            add(ActionType.backup_rfq, ActionStatus.pending_approval, s, b, False,
-                f"{rating} {crit or imp} supplier: line up a backup before it fails")
-
+            sub, body = draft_backup_rfq(cp, a, cfg)
+            add(ActionType.backup_rfq, ActionStatus.pending_approval, sub, body, False,
+                f"{rating} {crit if crit and crit != 'na' else imp} supplier: line up a backup before it fails")
     return out
+
+
+def _senior_needed(pr: dict, reversible: bool, cfg) -> bool:
+    senior_for = cfg_get(cfg_get(cfg, "actions"), "senior_approval_for", ["strategic"]) or []
+    return (not reversible) and pr["importance"] in senior_for
+
+
+def propose(a, cp, cfg, review_id: str) -> list:
+    inbox = os.getenv("TEAM_INBOX", "team-inbox@example.com")
+    out = []
+    for spec in plan(a, cp, cfg):
+        t = spec["type"]
+        key = f"{cp.cp_id}:{t.value}:{review_id}" + (f":{spec['tag']}" if spec["tag"] else "")
+        act = Action(
+            action_id="act_" + uuid.uuid4().hex[:8], run_id=a.run_id, cp_id=cp.cp_id, type=t,
+            idempotency_key=key, reversible=spec["reversible"], status=spec["status"], to=inbox,
+            subject=spec["subject"], draft=spec["draft"],
+            draft_hash=sha256(spec["draft"]) if spec["status"] == ActionStatus.approved else "",
+            reason_evidence=spec["evidence"],
+        )
+        if not db.insert_action(act):
+            existing = _existing(key, a.run_id)
+            if existing is not None:
+                act = existing
+        out.append(act)
+    return out
+
+
+def _counterparty(cp_id: str):
+    getter = getattr(db, "get_counterparty", None)
+    try:
+        return getter(cp_id) if getter else None
+    except Exception:
+        return None
+
+
+def context(act, a=None, cp=None, cfg=None) -> dict:
+    """Decision context for one stored action: {priority, label, why, requires_senior}.
+    Recomputed from the same rules as propose(), so nothing extra needs storing."""
+    from crd.deps import config
+
+    cfg = cfg or config.get()
+    if a is None:
+        try:
+            a = db.get_assessment(act.run_id, act.cp_id)
+        except Exception:
+            a = None
+    cp = cp or _counterparty(act.cp_id)
+    if a is None:
+        return {"priority": None, "label": "", "why": "", "requires_senior": False}
+    pr = priority.assess(a.rating, priority.profile(a, cp), cfg)
+    why = ""
+    if cp is not None:
+        tag = "account_call" if (act.idempotency_key or "").endswith(":account_call") else ""
+        for spec in plan(a, cp, cfg):
+            if _val(spec["type"]) == _val(act.type) and spec["tag"] == tag:
+                why = spec["why"]
+                break
+    return {"priority": pr["tier"], "label": pr["label"], "why": why,
+            "requires_senior": _senior_needed(pr, act.reversible, cfg)}
 
 
 def _existing(key: str, run_id: str):

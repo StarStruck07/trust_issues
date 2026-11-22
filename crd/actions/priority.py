@@ -51,7 +51,7 @@ def profile(a=None, cp=None) -> dict:
         v = getattr(cp, key, None) if cp is not None else None
         return v if v not in (None, "") else extra.get(key, default)
 
-    role = pick("role", getattr(a, "role", "customer") if a is not None else "customer")
+    role = _val(pick("role", getattr(a, "role", "customer") if a is not None else "customer"))
     return {
         "role": role,
         "criticality": pick("criticality", "na"),
@@ -105,4 +105,12 @@ def assess(rating, p: dict, cfg=None) -> dict:
 
 
 def for_assessment(a, cp=None, cfg=None) -> dict:
+    if cp is None:  # real db keeps the input row; fall back to assessment.extra if it doesn't
+        from crd.deps import db
+
+        getter = getattr(db, "get_counterparty", None)
+        try:
+            cp = getter(a.cp_ids[0]) if getter else None
+        except Exception:
+            cp = None
     return assess(a.rating, profile(a, cp), cfg)

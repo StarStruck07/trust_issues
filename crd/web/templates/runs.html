@@ -11,8 +11,8 @@
   <tbody>
   {% for r in runs %}<tr>
     <td><a class="rowname mono" href="/runs/{{ r.run_id }}">{{ r.run_id }}</a></td>
-    <td class="reason muted">{{ r.request }}</td>
-    <td class="nowrap muted">{{ (r.started_at or '')[:16]|replace('T', ' ') }}</td>
+    <td class="reason muted">{{ r.request_text }}</td>
+    <td class="nowrap muted">{{ r.started_at|ts(16) }}</td>
     <td>{{ ui.status(r.status) }}</td>
     <td class="num">{{ r.n }}</td><td class="num">{{ r.costs.credits }}</td><td class="num">{{ r.costs.inr|inr }}</td>
     <td class="nowrap right"><a class="btn sm" href="/runs/{{ r.run_id }}/report">Report</a> <a class="btn sm" href="/ledger?run={{ r.run_id }}">Ledger</a></td>

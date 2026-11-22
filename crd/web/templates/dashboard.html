@@ -16,7 +16,7 @@
 <div class="page-head">
   <div>
     <h1>Weekly counterparty review</h1>
-    <div class="sub">{% if run %}Latest run <a href="/runs/{{ run.run_id }}">{{ run.run_id }}</a> · as of {{ run.as_of }} · {{ ui.status(run.status) }}{% else %}No review has run yet.{% endif %}</div>
+    <div class="sub">{% if run %}Latest run <a href="/runs/{{ run.run_id }}">{{ run.run_id }}</a> · as of {{ run.as_of or '—' }} · {{ ui.status(run.status) }}{% else %}No review has run yet.{% endif %}</div>
   </div>
   {% if run %}<div class="row">
     <a class="btn" href="/runs/{{ run.run_id }}/files/review.json">{{ ui.icon('download', 15) }}JSON</a>

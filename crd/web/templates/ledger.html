@@ -6,7 +6,7 @@
   <form method="get" action="/ledger" class="row">
     <select name="run" onchange="this.form.submit()" aria-label="Filter by run">
       <option value="">All runs</option>
-      {% for r in runs %}<option value="{{ r.run_id }}" {% if r.run_id == run %}selected{% endif %}>{{ r.run_id }} · {{ (r.started_at or '')[:10] }}</option>{% endfor %}
+      {% for r in runs %}<option value="{{ r.run_id }}" {% if r.run_id == run %}selected{% endif %}>{{ r.run_id }} · {{ r.started_at|ts(10) }}</option>{% endfor %}
     </select>
     <a class="btn" href="/ledger.csv{% if run %}?run={{ run }}{% endif %}">{{ ui.icon('download', 15) }}CSV</a>
   </form>
@@ -25,12 +25,12 @@
   <thead><tr><th>Time</th><th>Provider</th><th>Endpoint</th><th class="right">Credits</th><th class="right">₹</th><th class="right">Tokens</th><th class="right">ms</th><th>Status</th><th>Note</th></tr></thead>
   <tbody>
   {% for le in rows %}<tr>
-    <td class="nowrap muted">{{ (le.ts or '')[11:19] }}</td>
+    <td class="nowrap muted">{{ le.ts|clock }}</td>
     <td class="strong">{{ le.provider }}</td>
     <td class="mono">{{ le.endpoint }}</td>
     <td class="num">{{ le.credits }}</td><td class="num">{{ '%.2f'|format(le.inr) }}</td>
     <td class="num">{{ (le.tokens_in + le.tokens_out) or '—' }}</td><td class="num">{{ le.latency_ms }}</td>
-    <td>{{ ui.status(le.status) }}</td><td class="muted small">{{ le.note }}</td>
+    <td>{{ ui.status(le.status|val) }}</td><td class="muted small">{{ le.note }}</td>
   </tr>{% endfor %}
   </tbody>
 </table>
