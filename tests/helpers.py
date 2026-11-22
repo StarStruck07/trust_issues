@@ -37,8 +37,7 @@ class FakeClient:
         self.calls.append(("identify", domains, names))
         if self.fail:
             raise SourceUnavailable("timeout x3")
-        key = (domains or names)[0]
-        ms = self.table.get(key, [])
         return [{"matched_on": key, "matches": [
             {"confidence_score": c, "company_data": {"crustdata_company_id": i,
-             "basic_info": {"name": n, "primary_domain": d, "location": loc}}} for (n, d, c, i, loc) in ms]}]
+             "basic_info": {"name": n, "primary_domain": d, "location": loc}}}
+            for (n, d, c, i, loc) in self.table.get(key, [])]} for key in (domains or names)]

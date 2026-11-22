@@ -71,13 +71,72 @@ def _entity(cp: Counterparty, m: dict, match_type: str) -> ResolvedEntity:
     )
 
 
-def resolve_one(cp: Counterparty, client, run_id: str, cfg) -> tuple[ResolvedEntity, list[Evidence]]:
+class Prefetch:
+    """Batched identify results: Crustdata rate-limits identify to ~5 calls/min, but one call takes many
+    identifiers. key (lower-case domain or name) -> (matches, raw_ref) or an exception."""
+
+    def __init__(self) -> None:
+        self.hits: dict[str, tuple[list[dict], str | None]] = {}
+        self.errors: dict[str, Exception] = {}
+
+    def get(self, client, kind: str, key: str) -> list[dict]:
+        k = key.lower().strip()
+        if k in self.errors:
+            raise self.errors[k]
+        if k in self.hits:
+            ms, ref = self.hits[k]
+            client.last_raw_ref = ref
+            return ms
+        return _matches(client.identify(**{kind: [key]}))
+
+
+def _by_identifier(resp: Any) -> dict[str, list[dict]]:
+    out: dict[str, list[dict]] = {}
+    items = resp if isinstance(resp, list) else (resp or {}).get("results") or []
+    for item in items or []:
+        if isinstance(item, dict) and item.get("matched_on") is not None:
+            out[str(item["matched_on"]).lower().strip()] = _matches([item])
+    return out
+
+
+def prefetch(cps: list[Counterparty], client, chunk: int = 25) -> Prefetch:
+    """Two batched phases: all domains first; names only for rows a domain did not settle (saves credits)."""
+    pre = Prefetch()
+
+    def batch(kind: str, keys: list[str]) -> None:
+        for i in range(0, len(keys), chunk):
+            part = keys[i:i + chunk]
+            try:
+                got = _by_identifier(client.identify(**{kind: part}))
+                ref = getattr(client, "last_raw_ref", None)
+                for k in part:
+                    pre.hits[k.lower().strip()] = (got.get(k.lower().strip(), []), ref)
+            except (BudgetExceeded, CreditsExhausted):
+                raise
+            except Exception as e:
+                for k in part:
+                    pre.errors[k.lower().strip()] = e
+
+    batch("domains", sorted({c.domain for c in cps if c.domain}))
+    need = []
+    for c in cps:
+        hit = pre.hits.get((c.domain or "").lower().strip())
+        if not (hit and hit[0] and hit[0][0]["confidence"] >= 0.99):
+            need.append(c.legal_name or c.name)
+    batch("names", sorted(set(need)))
+    return pre
+
+
+def resolve_one(cp: Counterparty, client, run_id: str, cfg, pre: Prefetch | None = None
+                ) -> tuple[ResolvedEntity, list[Evidence]]:
     min_conf = float(cfg.identity.min_confidence)
+    second_max = float(cfg.identity.get("name_second_max", 0.9))
+    pre = pre or Prefetch()
     tried: list[str] = []
     try:
         # 1. domain
         if cp.domain:
-            ms = _matches(client.identify(domains=[cp.domain]))
+            ms = pre.get(client, "domains", cp.domain)
             tried.append(f"Company Identify by domain ({len(ms)} matches)")
             if ms and ms[0]["confidence"] >= 0.99:
                 e = _entity(cp, ms[0], "domain")
@@ -101,9 +160,13 @@ def resolve_one(cp: Counterparty, client, run_id: str, cfg) -> tuple[ResolvedEnt
                     return e, [ev]
         # 3. name
         qname = cp.legal_name or cp.name
-        ms = _matches(client.identify(names=[qname]))
+        ms = pre.get(client, "names", qname)
         tried.append(f"Company Identify by name '{qname}' ({len(ms)} matches)")
         good = [m for m in ms if m["confidence"] >= min_conf]
+        # a single exact (1.0, same normalised name) match with a clear margin over the next one is unique
+        if len(good) > 1 and good[0]["confidence"] >= 0.99 and norm(good[0]["name"]) == norm(qname) \
+                and good[1]["confidence"] < second_max:
+            good = good[:1]
         loc = " ".join(x for x in (cp.city, cp.state) if x).lower()
         if loc and len(good) > 1:
             located = [m for m in good if any(t in (m.get("location") or "").lower() for t in loc.split())]
@@ -179,8 +242,9 @@ def dedupe(items: list[tuple[ResolvedEntity, Counterparty, list[Evidence]]]
 
 def resolve_all(cps: list[Counterparty], client, run_id: str, cfg
                 ) -> list[tuple[ResolvedEntity, list[Counterparty], list[Evidence]]]:
+    pre = prefetch(cps, client)
     items = []
     for cp in cps:
-        ent, ev = resolve_one(cp, client, run_id, cfg)
+        ent, ev = resolve_one(cp, client, run_id, cfg, pre)
         items.append((ent, cp, ev))
     return dedupe(items)

@@ -4,12 +4,12 @@ client_name: "Client 3PL"            # replace with the kickoff client name
 as_of: null                          # null = today (YYYY-MM-DD to replay a date)
 staleness_days: 45
 webhook_url: ""                      # ngrok URL + /webhooks/crustdata
-limits: {max_credits_per_run: 400, max_inr_llm_per_run: 50, max_minutes: 10, max_credits_per_cp: 15}
+limits: {max_credits_per_run: 400, max_inr_llm_per_run: 50, max_minutes: 25, max_credits_per_cp: 15}
 inr_per_credit: 0.0                  # Nilay fills from the Crustdata pricing page
 prices: {identify: 0.2, enrich: 2.0, job_search: 0.0, web_search: 0.0, web_fetch: 0.0, person_enrich: 0.0,
          watch_notification: 5.0, llm_inr_per_1k_in: 0.0, llm_inr_per_1k_out: 0.0}
 llm: {model: "claude-sonnet-4-5", max_tokens: 800}
-identity: {min_confidence: 0.8}
+identity: {min_confidence: 0.8, name_second_max: 0.9}
 scoring:
   start: 70
   green_min: 65
