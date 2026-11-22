@@ -1,5 +1,5 @@
 {% extends "base.html" %}
-{% block title %}The desk · Trust Issues{% endblock %}
+{% block title %}Desk · Trust Issues{% endblock %}
 {% block content %}
 {% if run %}
 {%- set rows = data.rows -%}
@@ -14,7 +14,7 @@
 <div class="page-head">
   <div>
     <h1>The desk</h1>
-    <div class="sub">{% if run %}Review <a href="/runs/{{ run.run_id }}">{{ run.run_id }}</a> · as of {{ run.as_of or '—' }} · {{ ui.status(run.status) }}{% else %}No review has run yet.{% endif %}</div>
+    <div class="sub">{% if run %}Edition <a href="/runs/{{ run.run_id }}">{{ run.run_id }}</a> · as of {{ run.as_of or '—' }} · {{ ui.status(run.status) }}{% else %}No review has run yet.{% endif %}</div>
   </div>
   {% if run %}<div class="row">
     <a class="btn" href="/runs/{{ run.run_id }}/files/review.json">{{ ui.icon('download', 15) }}JSON</a>
@@ -24,10 +24,10 @@
 
 {% if run %}
 <div class="kpis">
-  <button type="button" class="kpi k-RED" data-filter="RED"><div class="n">{{ counts.RED }}</div><div class="l">Don't trust</div><div class="s">{{ ns.red|inr }} at risk</div></button>
-  <button type="button" class="kpi k-AMBER" data-filter="AMBER"><div class="n">{{ counts.AMBER }}</div><div class="l">Doubts</div><div class="s">{{ ns.amber|inr }} at risk</div></button>
-  <button type="button" class="kpi k-CV" data-filter="CV"><div class="n">{{ counts.CV }}</div><div class="l">Can't tell</div><div class="s">cannot verify · on hold</div></button>
-  <button type="button" class="kpi k-GREEN" data-filter="GREEN"><div class="n">{{ counts.GREEN }}</div><div class="l">Trusted</div><div class="s">no action needed</div></button>
+  <button type="button" class="kpi k-RED" data-filter="RED"><div class="n">{{ counts.RED }}</div><div class="l">Red</div><div class="s">{{ ns.red|inr }} at risk</div></button>
+  <button type="button" class="kpi k-AMBER" data-filter="AMBER"><div class="n">{{ counts.AMBER }}</div><div class="l">Amber</div><div class="s">{{ ns.amber|inr }} at risk</div></button>
+  <button type="button" class="kpi k-CV" data-filter="CV"><div class="n">{{ counts.CV }}</div><div class="l">Won't guess</div><div class="s">cannot verify · held</div></button>
+  <button type="button" class="kpi k-GREEN" data-filter="GREEN"><div class="n">{{ counts.GREEN }}</div><div class="l">Green</div><div class="s">no action needed</div></button>
 </div>
 <div class="metrics" style="padding:10px 0 0">
   <span><b>{{ rows|length }}</b> counterparties</span>
@@ -37,8 +37,8 @@
   <span><b>{{ data.costs.calls }}</b> calls{% if data.costs.cached_pct %} · {{ data.costs.cached_pct }}% cached{% endif %}</span>
 </div>
 
-<div class="section-title"><h2>The lineup</h2><span class="desk-hint" style="margin-left:auto">height = trust · drag a figure to ask “what if?” · click a name plate for the file</span></div>
-<div class="lineup" id="lineup-chart" style="margin-top:16px"></div>
+<div class="section-title" style="margin-top:26px"><h2>Where everyone sits</h2><span class="desk-hint" style="margin-left:auto">drag to simulate · click for the dossier</span></div>
+<div class="riskline" id="riskline" style="margin-top:10px"></div>
 
 {% if data.changes %}
 <div class="section-title" style="margin-top:26px"><h2>Changed since last review</h2><span class="count">{{ data.changes|length }}</span></div>
@@ -48,18 +48,18 @@
 {% endif %}
 
 <div class="section-title" style="margin-top:30px">
-  <h2>Who to worry about first</h2><span class="count" id="shown">{{ rows|length }}</span>
+  <h2>Ranked by priority, then ₹ at risk</h2><span class="count" id="shown">{{ rows|length }}</span>
   <span style="flex:1"></span>
   <button type="button" class="btn sm" data-filter="ALL" id="clear" hidden>Show all</button>
 </div>
 <div class="desk-tools" style="margin-top:12px">
-  <label class="search"><span class="sr">Search</span><input id="desk-search" type="search" placeholder="Find a company, a reason, a role…" autocomplete="off"></label>
+  <label class="search"><span class="sr">Search</span><input id="desk-search" type="search" placeholder="Find a counterparty, reason or role…" autocomplete="off"></label>
   <div class="seg" role="group" aria-label="Role">
     <button type="button" class="on" data-rf="">All</button>
     <button type="button" data-rf="customer">Customers</button>
     <button type="button" data-rf="supplier">Suppliers</button>
   </div>
-  <span class="desk-hint"><kbd>/</kbd> search · <kbd>j</kbd><kbd>k</kbd> move · <kbd>↵</kbd> open file</span>
+  <span class="desk-hint"><kbd>/</kbd> search · <kbd>j</kbd><kbd>k</kbd> move · <kbd>↵</kbd> dossier</span>
 </div>
 <div class="table-wrap">
   <table class="tbl" id="ranked">
@@ -81,7 +81,7 @@
     <div class="card-head"><h3>Priority = rating × importance</h3><span class="muted small">same rating, different urgency</span></div>
     <div class="card-body" style="padding:8px 0 10px">
       <table class="matrix">
-        <tr><th class="rowh"></th><th>Don't trust</th><th>Doubts</th><th>Can't tell</th><th>Trusted</th></tr>
+        <tr><th class="rowh"></th><th>Red</th><th>Amber</th><th>Won't guess</th><th>Green</th></tr>
         {% for imp in ['strategic', 'core', 'standard'] %}<tr>
           <th class="rowh imp-{{ imp }}">{{ imp }}</th>
           {% for col in ['RED', 'AMBER', 'CV', 'GREEN'] %}{% set cell = data.matrix[imp][col] %}
@@ -108,11 +108,11 @@
 </div>
 {% endif %}
 
-<div class="section-title" id="ask-anchor"><h2>Ask anything</h2></div>
+<div class="section-title" style="margin-top:34px" id="ask-anchor"><h2>Ask the desk</h2></div>
 <form method="post" action="/runs" enctype="multipart/form-data" style="margin-top:12px" id="ask">
   <div class="ask">
-    <textarea id="ask-text" name="request_text" rows="1" aria-label="Ask Trust Issues" placeholder="Ask Trust Issues…"></textarea>
-    <button type="submit">Run it</button>
+    <textarea id="ask-text" name="request_text" rows="1" aria-label="Ask the desk" placeholder="Ask the desk…"></textarea>
+    <button type="submit">Run it →</button>
   </div>
   <div class="ask-chips">
     <button type="button" data-ask="{{ default_request }}">This week's full review</button>
@@ -128,7 +128,7 @@
 <script>
   window.CRD_POINTS = {{ points|tojson }};
   window.CRD_RUN = {{ run.run_id|tojson }};
-  CRD.lineup(document.getElementById("lineup-chart"), window.CRD_POINTS, {{ scale|tojson }}, {
+  CRD.riskLine(document.getElementById("riskline"), window.CRD_POINTS, {{ scale|tojson }}, {
     onOpen: p => CRD.openDossier(p.url)
   });
   (function () {
@@ -150,7 +150,6 @@
       clear.hidden = rating === 'ALL';
     }
     tiles.forEach(t => t.addEventListener('click', () => { const f = t.dataset.filter; rating = (f === rating || f === 'ALL') ? 'ALL' : f; apply(); }));
-    const h = location.hash.slice(1); if (['RED', 'AMBER', 'CV', 'GREEN'].includes(h)) { rating = h; apply(); }
     search.addEventListener('input', apply);
     document.querySelectorAll('[data-rf]').forEach(b => b.addEventListener('click', () => {
       role = b.dataset.rf; document.querySelectorAll('[data-rf]').forEach(x => x.classList.toggle('on', x === b)); apply();

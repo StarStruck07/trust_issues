@@ -8,20 +8,21 @@
   <title>{% block title %}Trust Issues{% endblock %}</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Archivo:ital,wdth,wght@0,62..125,100..900;1,62..125,100..900&family=Instrument+Serif:ital@0;1&family=JetBrains+Mono:wght@500;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..900;1,9..144,300..900&family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="/static/style.css?v={{ css_v() }}">
   <link rel="stylesheet" href="/static/theme.css?v={{ css_v('theme.css') }}">
-  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'><rect width='24' height='24' fill='%230f0f0e'/><text x='12' y='18' font-family='Arial Black,Arial' font-weight='900' font-size='16' text-anchor='middle' fill='%23ffe24a'>?!</text></svg>">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'><rect width='24' height='24' fill='%231a1712'/><text x='12' y='17' font-family='Georgia' font-style='italic' font-size='15' text-anchor='middle' fill='%23f2ede3'>?</text></svg>">
   <script src="https://unpkg.com/htmx.org@1.9.12"></script>
 </head>
 <body class="{% block body_class %}{% endblock %}">
 <header class="topbar">
   <div class="inner">
-    <a class="brand" href="/" aria-label="Trust Issues, front page"><span class="mark">?!</span><span class="word">Trust<span class="q">/</span>Issues</span></a>
+    <a class="brand" href="/" aria-label="Trust Issues, front page"><span class="mark">?</span><span class="word">Trust <em>Issues</em></span></a>
     <nav class="nav">
       <a href="/desk" class="{{ 'active' if path == '/desk' or path.startswith('/cp/') }}">Desk</a>
       <a href="/approvals" class="{{ 'active' if path.startswith('/approvals') }}">Approvals{% if pending_count %}<span class="count">{{ pending_count }}</span>{% endif %}</a>
       <a href="/outbox" class="{{ 'active' if path.startswith('/outbox') }}">Outbox</a>
+      <a href="/sources" class="{{ 'active' if path.startswith('/sources') }}">Sources</a>
       <a href="/ledger" class="{{ 'active' if path.startswith('/ledger') }}">Ledger</a>
       <a href="/runs" class="{{ 'active' if path.startswith('/runs') }}">Runs</a>
     </nav>
@@ -49,7 +50,7 @@
   </div>
 </div>
 <aside class="drawer" id="drawer" hidden aria-label="Counterparty dossier">
-  <div class="drawer-bar"><span class="drawer-kicker">The file</span><a id="drawer-full" href="#">Open full page ↗</a><button type="button" id="drawer-close" aria-label="Close">×</button></div>
+  <div class="drawer-bar"><span class="drawer-kicker">Dossier</span><a id="drawer-full" href="#">Open full page ↗</a><button type="button" id="drawer-close" aria-label="Close">×</button></div>
   <div class="drawer-body" id="drawer-body"></div>
 </aside>
 <script src="/static/crd.js?v={{ css_v('crd.js') }}"></script>

@@ -1,5 +1,5 @@
 /* Trust Issues: shared interactions (no framework).
-   - lineup(): counterparties on a height chart (height = trust score); drag one to simulate a change (never saved)
+   - riskLine(): counterparties on a 0-100 line; drag one to simulate a rating change (never saved)
    - command palette (Ctrl/Cmd+K), dossier drawer for /cp/ links, desk keyboard nav, scroll reveals */
 (function () {
   "use strict";
@@ -18,72 +18,76 @@
   const UNSCORED = r => r === "CANNOT_VERIFY" || r === "HELD";
   window.CRD = { inr };
 
-  // ------------------------------------------------------------------ the lineup
-  // Each counterparty stands against a height chart: height = trust score, on the real scoring bands.
-  // Drag a figure up or down to simulate a different score; ₹ at risk is recomputed with the configured
-  // risk probabilities. Nothing is saved. Unidentified companies are blurred silhouettes with a "?".
-  window.CRD.lineup = function (root, points, scale, opts = {}) {
-    if (!root || !points || !points.length) return;
-    root.innerHTML = '<div class="lu-wall"></div><div class="lu-plates"></div><div class="lu-tip"></div><div class="lu-bar"></div>';
-    const wall = $(".lu-wall", root), plates = $(".lu-plates", root), tip = $(".lu-tip", root), bar = $(".lu-bar", root);
+  // ------------------------------------------------------------------ risk line
+  window.CRD.riskLine = function (root, points, scale, opts = {}) {
+    if (!root || !points) return;
+    const tray = points.some(p => UNSCORED(p.rating));
+    const trayW = tray ? (opts.trayW || 170) : 0;
+    root.style.setProperty("--tray-w", trayW + "px");
+    root.innerHTML = '<div class="rl-track"></div><div class="rl-tip"></div><div class="rl-bar"></div>';
+    const track = $(".rl-track", root), tip = $(".rl-tip", root), bar = $(".rl-bar", root);
     const G = scale.green_min, A = scale.amber_min, P = scale.prob;
     const maxExp = Math.max(1, ...points.map(p => p.exposure || 0));
-    // order: least trusted on the left, the unidentified last
-    const order = p => (UNSCORED(p.rating) ? 1000 : p.score);
-    const state = points.slice().sort((a, b) => order(a) - order(b))
-      .map(p => ({ ...p, orig: { rating: p.rating, score: p.score, at_risk: p.at_risk }, sim: false }));
+    const state = points.map(p => ({ ...p, orig: { rating: p.rating, score: p.score, at_risk: p.at_risk }, sim: false }));
     const baseTotal = state.reduce((s, p) => s + (p.at_risk || 0), 0);
     const bandOf = s => (s >= G ? "GREEN" : s >= A ? "AMBER" : "RED");
-    const H = () => wall.clientHeight;
-    const yOf = s => (Math.max(0, Math.min(100, s)) / 100) * (H() - 70);   // leave room for the head
-    const sOf = y => (y / (H() - 70)) * 100;
 
-    function drawWall() {
-      let html = "";
-      const band = (cls, from, to, label) => `<div class="lu-band b-${cls}" style="bottom:${yOf(from)}px;height:${yOf(to) - yOf(from)}px"><em>${label}</em></div>`;
-      html += band("RED", 0, A, "Don't trust") + band("AMBER", A, G, "Doubts") + band("GREEN", G, 100, "Trusted");
-      for (let t = 0; t <= 100; t += 5) {
-        const major = t % 10 === 0;
-        html += `<div class="lu-line${major ? " major" : ""}" style="bottom:${yOf(t)}px"></div>`;
-      }
-      wall.innerHTML = html;
-      let nums = "";
-      for (let t = 0; t <= 100; t += 10) nums += `<div class="lu-num${t % 50 === 0 ? " major" : ""}" style="top:${H() - yOf(t)}px">${t}</div>`;
-      root.querySelectorAll(".lu-nums").forEach(e => e.remove());
-      wall.insertAdjacentHTML("beforebegin", `<div class="lu-nums" style="position:absolute;left:${wall.offsetLeft}px;top:0;height:${H()}px;width:0">${nums}</div>`);
+    function geom() {
+      const W = track.clientWidth, pad = 14;
+      const scaleW = W - trayW - pad * 2;
+      return { W, pad, scaleW, x: s => pad + (Math.max(0, Math.min(100, s)) / 100) * scaleW, s: x => ((x - pad) / scaleW) * 100 };
     }
 
-    function xOf(i) { const W = wall.clientWidth; return (W / state.length) * (i + .5); }
-    function width(p) { return Math.round(54 + 46 * Math.sqrt((p.exposure || 0) / maxExp)); }
+    function drawStatic() {
+      const g = geom();
+      const z = (cls, from, to, title, sub) =>
+        `<div class="rl-zone z-${cls}" style="left:${g.x(from)}px;width:${g.x(to) - g.x(from)}px"><span><b>${title}</b>${sub}</span></div>`;
+      let html = z("RED", 0, A, "Don't trust", `0–${A - 1} · act now`) + z("AMBER", A, G, "Doubts", `${A}–${G - 1} · watch`) +
+        z("GREEN", G, 100, "Trusted", `${G}–100 · clear`) + '<div class="rl-axis"></div>';
+      for (let t = 0; t <= 100; t += 10) html += `<div class="rl-tick" style="left:${g.x(t)}px"><i>${t}</i></div>`;
+      if (tray) html += `<div class="rl-tray"><span><b>Can't tell</b>cannot verify · on hold</span></div>`;
+      track.innerHTML = html;
+    }
 
-    function render(first) {
+    function size(p) { return Math.round(26 + 34 * Math.sqrt((p.exposure || 0) / maxExp)); }
+
+    function layout() {
+      const g = geom();
+      const base = 62 + 30; // above the axis labels
+      const scored = state.filter(p => !(UNSCORED(p.rating) && !p.sim)).sort((a, b) => a.score - b.score);
+      const lanes = [];
+      scored.forEach(p => {
+        const x = g.x(p.score), d = size(p);
+        let lane = 0;
+        while (lanes[lane] !== undefined && x - lanes[lane] < d + 70) lane++;
+        lanes[lane] = x;
+        p._x = x; p._y = base + lane * 74 + d / 2;
+      });
+      const tx = g.W - trayW / 2;
+      state.filter(p => UNSCORED(p.rating) && !p.sim).forEach((p, i) => { p._x = tx; p._y = base + i * 74 + size(p) / 2; });
+      const h = Math.max(230, ...state.map(p => p._y + size(p) / 2 + 40));
+      track.style.height = h + "px";
+    }
+
+    function render(animate) {
+      layout();
       state.forEach((p, i) => {
-        if (!p._el) {
-          p._el = document.createElement("div");
-          p._el.className = "lu-suspect";
-          p._el.innerHTML = '<div class="lu-fig"><span class="lu-score"></span></div>';
-          p._el.tabIndex = 0; p._el.setAttribute("role", "slider");
-          p._el.setAttribute("aria-valuemin", "0"); p._el.setAttribute("aria-valuemax", "100");
-          wall.appendChild(p._el);
-          p._plate = document.createElement("div");
-          p._plate.className = "lu-plate";
-          plates.appendChild(p._plate);
-          p._plate.addEventListener("click", () => open(p));
-          bind(p);
+        let el = p._el;
+        if (!el) {
+          el = p._el = document.createElement("div");
+          el.className = "tok" + (animate ? " in" : "");
+          if (animate) el.style.animationDelay = (120 + i * 90) + "ms";
+          el.tabIndex = 0;
+          el.setAttribute("role", "button");
+          track.appendChild(el);
+          bind(el, p);
         }
-        const unknown = UNSCORED(p.rating) && !p.sim;
-        const h = unknown ? yOf(78) : Math.max(28, yOf(p.score));
-        p._el.className = "lu-suspect r-" + p.rating + (p.sim ? " sim" : "");
-        p._el.style.left = xOf(i) + "px";
-        p._el.style.setProperty("--w", width(p) + "px");
-        const fig = $(".lu-fig", p._el);
-        if (first) { fig.style.height = "0px"; requestAnimationFrame(() => setTimeout(() => { fig.style.height = h + "px"; }, 120 + i * 110)); }
-        else fig.style.height = h + "px";
-        $(".lu-score", p._el).textContent = unknown ? "?" : Math.round(p.score);
-        p._el.setAttribute("aria-valuenow", Math.round(p.score));
-        p._el.setAttribute("aria-label", `${p.name}: ${LABEL[p.rating]}, trust score ${p.score}. Arrow keys simulate a change.`);
-        p._plate.style.left = xOf(i) + "px";
-        p._plate.innerHTML = `<b>${esc(p.name.length > 24 ? p.name.slice(0, 23) + "…" : p.name)}</b><span>${esc(p.cp_id)} · ${inr(p.exposure)}</span>`;
+        const d = size(p);
+        el.className = el.className.replace(/\br-\w+/g, "").trim() + " r-" + p.rating + (p.sim ? " sim" : "");
+        Object.assign(el.style, { left: p._x + "px", bottom: p._y + "px", width: d + "px", height: d + "px" });
+        el.textContent = UNSCORED(p.rating) && !p.sim ? "?" : Math.round(p.score);
+        el.dataset.label = p.name.length > 22 ? p.name.slice(0, 21) + "…" : p.name;
+        el.setAttribute("aria-label", `${p.name}: ${LABEL[p.rating]}, score ${p.score}`);
       });
       summary();
     }
@@ -91,13 +95,16 @@
     function summary() {
       const total = state.reduce((s, p) => s + (p.at_risk || 0), 0);
       const diff = total - baseTotal, sims = state.filter(p => p.sim);
+      const by = r => state.filter(p => (r === "CV" ? UNSCORED(p.rating) : p.rating === r)).length;
       bar.innerHTML =
-        `<span><span class="big">${inr(total)}</span> at risk${diff ? `<span class="delta ${diff > 0 ? "up" : "down"}">${diff > 0 ? "+" : "−"}${inr(Math.abs(diff))}</span>` : ""}</span>` +
-        (sims.length
-          ? `<span class="sim-note">What if: ${sims.map(p => esc(p.name) + " → " + LABEL[p.rating]).join(", ")}. Not saved.</span><button type="button" data-reset>Put them back</button>`
-          : `<span>Figure width = how much they owe you. Grab a head and drag it.</span>`);
+        `<span><b>${inr(total)}</b> at risk${diff ? `<span class="delta ${diff > 0 ? "up" : "down"}">${diff > 0 ? "▲" : "▼"} ${inr(Math.abs(diff))}</span>` : ""}</span>` +
+        `<span>${by("RED")} red · ${by("AMBER")} amber · ${by("GREEN")} green · ${by("CV")} unverified</span>` +
+        `<span>size = exposure</span>` +
+        (sims.length ? `<span class="sim-note">What-if: ${sims.map(p => esc(p.name) + " → " + LABEL[p.rating]).join(", ")}. Not saved.</span> <button type="button" data-reset>Reset</button>`
+          : `<span class="faint">Drag a counterparty to ask “what if?”</span>`);
       const r = $("[data-reset]", bar);
       if (r) r.onclick = reset;
+      if (opts.onChange) opts.onChange(state, total);
     }
 
     function reset() {
@@ -105,73 +112,85 @@
       render(false);
     }
 
-    function simulate(p, s) {
-      s = Math.round(Math.max(0, Math.min(100, s)));
-      p.score = s; p.rating = bandOf(s);
-      p.at_risk = Math.round((p.exposure || 0) * (P[p.rating] ?? 0.5));
-      p.sim = !(p.rating === p.orig.rating && p.score === p.orig.score);
-      if (!p.sim) p.at_risk = p.orig.at_risk;
-    }
-
-    function showTip(p) {
-      const was = p.sim ? `<div class="k" style="color:var(--hi)">What if · really ${LABEL[p.orig.rating]}${UNSCORED(p.orig.rating) ? "" : " at " + p.orig.score}</div>` : "";
-      tip.innerHTML = `<div class="k">${esc(p.role)} · ${esc(p.importance || "")} · priority ${esc(p.prio || "—")}</div>
+    function showTip(p, el) {
+      const sim = p.sim ? `<div class="k" style="color:#e8c98a">simulated · was ${LABEL[p.orig.rating]} ${p.orig.score}</div>` : "";
+      tip.innerHTML = `<div class="k">${esc(p.role)} · ${esc(p.importance || "")} · ${esc(p.prio || "")}</div>
         <h5>${esc(p.name)}</h5><span class="pill sm r-${p.rating}">${LABEL[p.rating]}</span>
-        <span class="k" style="margin-left:8px">${inr(p.at_risk)} at risk of ${inr(p.exposure)}</span>${was}
-        <p>${esc(p.reason)}</p><div class="hint">Click the name plate for the full file</div>`;
-      const r = root.getBoundingClientRect(), e = $(".lu-fig", p._el).getBoundingClientRect();
-      let left = e.left - r.left + e.width / 2 + 24;
-      if (left + 330 > r.width) left = e.left - r.left - 344;
-      tip.style.left = Math.max(0, left) + "px";
-      tip.style.top = Math.max(0, e.top - r.top - 30) + "px";
+        <span class="k" style="margin-left:8px">score ${Math.round(p.score)} · ${inr(p.at_risk)} at risk of ${inr(p.exposure)}</span>${sim}
+        <p>${esc(p.orig.rating === p.rating ? p.reason : "Simulated: real rating is " + LABEL[p.orig.rating] + ". " + p.reason)}</p>
+        <div class="k" style="margin-top:8px">click to open the dossier · drag to simulate</div>`;
+      const r = root.getBoundingClientRect(), e = el.getBoundingClientRect();
+      let left = e.left - r.left + e.width / 2 - 145;
+      left = Math.max(0, Math.min(left, r.width - 290));
+      tip.style.left = left + "px";
+      tip.style.top = Math.max(0, e.top - r.top - tip.offsetHeight - 14) + "px";
       tip.classList.add("on");
     }
     const hideTip = () => tip.classList.remove("on");
 
-    function bind(p) {
-      const el = p._el;
-      let start = null, moved = false;
-      el.addEventListener("pointerenter", () => showTip(p));
+    function bind(el, p) {
+      let start = null, moved = false, ghost = null;
+      el.addEventListener("pointerenter", () => showTip(p, el));
       el.addEventListener("pointerleave", () => { if (!start) hideTip(); });
-      el.addEventListener("focus", () => showTip(p));
+      el.addEventListener("focus", () => showTip(p, el));
       el.addEventListener("blur", hideTip);
       el.addEventListener("keydown", ev => {
-        if (ev.key === "Enter") return open(p);
-        const step = { ArrowUp: 5, ArrowRight: 5, ArrowDown: -5, ArrowLeft: -5 }[ev.key];
-        if (!step) return;
-        ev.preventDefault();
-        simulate(p, (UNSCORED(p.rating) && !p.sim ? 78 : p.score) + step);
-        render(false); showTip(p);
+        if (ev.key === "Enter") open(p);
+        if (ev.key === "ArrowLeft" || ev.key === "ArrowRight") { ev.preventDefault(); simulate(p, (p.sim || !UNSCORED(p.rating) ? p.score : 50) + (ev.key === "ArrowLeft" ? -5 : 5)); render(false); showTip(p, el); }
       });
       el.addEventListener("pointerdown", ev => {
-        start = { y: ev.clientY, h: $(".lu-fig", el).getBoundingClientRect().height };
-        moved = false; el.setPointerCapture(ev.pointerId);
+        start = { x: ev.clientX, left: parseFloat(el.style.left) };
+        moved = false;
+        el.setPointerCapture(ev.pointerId);
       });
       el.addEventListener("pointermove", ev => {
         if (!start) return;
-        const dy = start.y - ev.clientY;
-        if (!moved && Math.abs(dy) < 4) return;
-        if (!moved) { moved = true; el.classList.add("drag"); }
-        simulate(p, sOf(Math.max(0, start.h + dy)));
-        el.className = "lu-suspect drag r-" + p.rating + (p.sim ? " sim" : "");
-        $(".lu-fig", el).style.height = Math.max(28, yOf(p.score)) + "px";
-        $(".lu-score", el).textContent = Math.round(p.score);
-        summary(); showTip(p);
+        const dx = ev.clientX - start.x;
+        if (!moved && Math.abs(dx) < 4) return;
+        if (!moved) {
+          moved = true; el.classList.add("drag");
+          ghost = document.createElement("div"); ghost.className = "rl-ghost";
+          ghost.style.left = start.left + "px"; ghost.style.height = (parseFloat(el.style.bottom) - 62) + "px";
+          track.appendChild(ghost);
+        }
+        const g = geom();
+        const x = Math.max(g.pad, Math.min(g.pad + g.scaleW, start.left + dx));
+        el.style.left = x + "px";
+        simulate(p, g.s(x));
+        el.className = el.className.replace(/\br-\w+/g, "").trim() + " r-" + p.rating;
+        el.textContent = Math.round(p.score);
+        summary(); showTip(p, el);
       });
       const end = () => {
         if (!start) return;
         start = null; el.classList.remove("drag");
+        if (ghost) { ghost.remove(); ghost = null; }
         if (moved) render(false); else open(p);
       };
       el.addEventListener("pointerup", end);
       el.addEventListener("pointercancel", end);
     }
 
+    function simulate(p, score) {
+      score = Math.max(0, Math.min(100, score));
+      p.score = Math.round(score);
+      p.rating = bandOf(score);
+      p.at_risk = Math.round((p.exposure || 0) * (P[p.rating] ?? 0.5));
+      p.sim = !(p.rating === p.orig.rating && p.score === p.orig.score);
+      if (!p.sim) p.at_risk = p.orig.at_risk;
+    }
+
     function open(p) { hideTip(); if (opts.onOpen) opts.onOpen(p); else location.href = p.url; }
 
-    drawWall(); render(true);
+    // counterparties drop in when the line scrolls into view, not before
+    drawStatic();
+    if ("IntersectionObserver" in window && !matchMedia("(prefers-reduced-motion: reduce)").matches) {
+      const io = new IntersectionObserver(es => { if (es.some(e => e.isIntersecting)) { io.disconnect(); render(true); } }, { threshold: .25 });
+      io.observe(root);
+      summary();
+    } else render(true);
     let rt;
-    window.addEventListener("resize", () => { clearTimeout(rt); rt = setTimeout(() => { const els = state.map(p => p._el); drawWall(); els.forEach(e => wall.appendChild(e)); render(false); }, 120); });
+    window.addEventListener("resize", () => { clearTimeout(rt); rt = setTimeout(() => { drawStatic(); state.forEach(p => { if (p._el) track.appendChild(p._el); }); render(false); }, 120); });
     return { reset, state };
   };
 
@@ -188,6 +207,7 @@
       const main = doc.querySelector("main");
       dbody.innerHTML = main ? main.innerHTML : html;
       dbody.scrollTop = 0;
+      if (window.CRD.animate) window.CRD.animate(dbody, dbody);
     } catch (e) {
       dbody.innerHTML = `<p class="drawer-loading">Could not load. <a href="${esc(url)}">Open the full page</a>.</p>`;
     }
@@ -213,6 +233,7 @@
     { kind: "page", label: "Desk", hint: "ranked counterparties", go: "/desk" },
     { kind: "page", label: "Approvals", hint: "drafts waiting for a human", go: "/approvals" },
     { kind: "page", label: "Outbox", hint: "what was actually sent", go: "/outbox" },
+    { kind: "page", label: "Sources", hint: "raw Crustdata answers", go: "/sources" },
     { kind: "page", label: "Ledger", hint: "every call and its cost", go: "/ledger" },
     { kind: "page", label: "Runs", hint: "past reviews", go: "/runs" },
     { kind: "command", label: "New review…", hint: "ask the desk", go: "/desk#ask" },
@@ -241,7 +262,7 @@
     cur = Math.min(cur, Math.max(0, shown.length - 1));
     plist.innerHTML = shown.length ? shown.map((it, i) =>
       `<li class="${i === cur ? "on" : ""}" data-i="${i}"><span class="kind">${it.kind}</span><span class="main">${esc(it.label)}<small>${esc(it.hint || "")}</small></span>${it.rating ? `<span class="pill sm r-${it.rating}">${LABEL[it.rating]}</span>` : ""}</li>`).join("")
-      : '<li class="palette-empty">Nothing matches. Try a name, “approvals” or “trusted”.</li>';
+      : '<li class="palette-empty">Nothing matches. Try a name, “approvals” or “red”.</li>';
     const on = $("li.on", plist); if (on) on.scrollIntoView({ block: "nearest" });
   }
   function go(it) {
@@ -282,11 +303,97 @@
     }
   });
 
-  // ------------------------------------------------------------------ reveal on scroll
-  if ("IntersectionObserver" in window) {
-    const io = new IntersectionObserver(es => es.forEach(e => { if (e.isIntersecting) { e.target.classList.add("seen"); io.unobserve(e.target); } }), { threshold: .12 });
-    $$(".reveal").forEach(el => io.observe(el));
-  } else $$(".reveal").forEach(el => el.classList.add("seen"));
+  // ------------------------------------------------------------------ motion: everything arrives as you scroll
+  const still = matchMedia("(prefers-reduced-motion: reduce)").matches || !("IntersectionObserver" in window);
+  // what rises in, and how; siblings stagger
+  const RISE = [".page-head", ".section-title", ".kpi", ".metrics", ".card", ".tbl tbody tr", ".ev-item", ".appr", ".fp-col",
+    ".fp-stat", ".fp-sec-head", ".src-co", ".used", ".changes .change", ".hero", ".lead", ".why-line", ".wf tr", ".callout",
+    ".ask", ".ask-chips button", ".fp-cta .btn", ".desk-tools", ".promise", ".runs-row", ".feed", ".mail", ".colophon", "dl.kv > *"];
+  const SLIDE = [".section-title h2", ".fp-kicker"];
+  const COUNT = [".kpi .n", ".fp-stat .v", ".metrics b", ".rl-bar b", ".money .v", ".gauge .val b"];
+  const WORDS = [".fp-head", ".page-head h1", ".fp-sec-head h2"];
+
+  function countUp(el) {
+    const txt = el.textContent, m = txt.match(/-?[\d,]*\.?\d+/);
+    if (!m) return;
+    const target = parseFloat(m[0].replace(/,/g, "")), dec = (m[0].split(".")[1] || "").length, comma = m[0].includes(",");
+    if (!isFinite(target) || target === 0) return;
+    const pre = txt.slice(0, m.index), post = txt.slice(m.index + m[0].length), t0 = performance.now(), dur = 1100;
+    const fmt = v => { let s = v.toFixed(dec); if (comma) s = Number(s).toLocaleString("en-IN", { minimumFractionDigits: dec, maximumFractionDigits: dec }); return pre + s + post; };
+    (function step(t) { const k = Math.min(1, (t - t0) / dur), e = 1 - Math.pow(1 - k, 3); el.textContent = fmt(target * e); if (k < 1) requestAnimationFrame(step); else el.textContent = txt; })(t0);
+  }
+
+  function splitWords(el) {
+    if (el.dataset.split || el.querySelector(".pill, a, .w")) return false;
+    // keep inline markup (em, b, .hl) by splitting text nodes only
+    let i = 0;
+    (function walk(n) {
+      [...n.childNodes].forEach(c => {
+        if (c.nodeType === 3) {
+          const frag = document.createDocumentFragment();
+          c.textContent.split(/(\s+)/).forEach(part => {
+            if (!part) return;
+            if (/^\s+$/.test(part)) { frag.appendChild(document.createTextNode(part)); return; }
+            const w = document.createElement("span"); w.className = "w";
+            const s = document.createElement("span"); s.textContent = part; s.style.setProperty("--d", (i++ * 55) + "ms");
+            w.appendChild(s); frag.appendChild(w);
+          });
+          c.replaceWith(frag);
+        } else if (c.nodeType === 1 && !c.classList.contains("hl")) walk(c);
+        else if (c.nodeType === 1) { const w = document.createElement("span"); w.className = "w"; const s = document.createElement("span"); s.style.setProperty("--d", (i++ * 55) + "ms"); c.replaceWith(w); s.appendChild(c); w.appendChild(s); }
+      });
+    })(el);
+    el.dataset.split = "1"; el.classList.add("words");
+    return true;
+  }
+
+  window.CRD.animate = function (scope = document, rootEl = null) {
+    if (still) return;
+    const io = new IntersectionObserver(es => es.forEach(e => {
+      if (!e.isIntersecting) return;
+      const el = e.target; io.unobserve(el);
+      el.classList.add("in");
+      if (el.dataset.count) countUp(el);
+    }), { root: rootEl, threshold: .12, rootMargin: "0px 0px -6% 0px" });
+    const seen = new Set();
+    const tag = (sel, cls) => $$(sel, scope).forEach(el => {
+      if (seen.has(el) || el.closest(".palette, .rl-tip, .topbar, .jtree") || el.classList.contains("rv")) return;
+      seen.add(el);
+      const sibs = el.parentElement ? [...el.parentElement.children].filter(x => x.matches(sel)) : [el];
+      el.classList.add("rv"); if (cls) el.classList.add(cls);
+      el.style.setProperty("--d", Math.min(sibs.indexOf(el), 8) * 70 + "ms");
+      io.observe(el);
+    });
+    WORDS.forEach(sel => $$(sel, scope).forEach(el => { if (splitWords(el)) io.observe(el); }));
+    SLIDE.forEach(sel => tag(sel, "rv-x"));
+    RISE.forEach(sel => tag(sel));
+    COUNT.forEach(sel => $$(sel, scope).forEach(el => { if (!el.closest(".rl-bar")) { el.dataset.count = "1"; io.observe(el); } }));
+    $$(".hl", scope).forEach(el => io.observe(el));
+  };
+
+  if (!still) {
+    // reading progress
+    const bar = document.createElement("div"); bar.className = "scrollbar"; document.body.appendChild(bar);
+    // masthead parallax
+    const title = $(".fp-title"), dateline = $(".fp-dateline");
+    let ticking = false;
+    const onScroll = () => {
+      if (ticking) return; ticking = true;
+      requestAnimationFrame(() => {
+        const h = document.documentElement.scrollHeight - innerHeight;
+        bar.style.transform = `scaleX(${h > 0 ? scrollY / h : 0})`;
+        if (title && scrollY < 900) {
+          title.style.transform = `translateY(${scrollY * .28}px)`;
+          title.style.opacity = String(Math.max(0, 1 - scrollY / 700));
+          if (dateline) dateline.style.opacity = String(Math.max(0, 1 - scrollY / 300));
+        }
+        ticking = false;
+      });
+    };
+    addEventListener("scroll", onScroll, { passive: true }); onScroll();
+    window.CRD.animate(document);
+  }
+  $$(".reveal").forEach(el => el.classList.add("seen"));
 
   // ------------------------------------------------------------------ ask the desk
   const ask = $("#ask-text");

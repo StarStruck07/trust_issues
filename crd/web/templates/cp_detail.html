@@ -93,6 +93,7 @@
           </div>
           <div class="where">
             {{ ui.src(e) }}
+            {% if (e.source_type|val) in ('crustdata_api', 'registry') and e.raw_ref and not e.raw_ref.startswith('mock:') %}<a class="raw" href="/sources?run={{ run_id }}&cp={{ a.cp_ids[0] }}&ref={{ e.raw_ref|urlencode }}">see the raw answer →</a>{% endif %}
             <div class="row" style="gap:4px">
               {% if e.stale %}<span class="tag stale">stale</span>{% endif %}
               {% if e.status == 'unavailable' %}<span class="tag unavailable">unavailable</span>{% endif %}

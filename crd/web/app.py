@@ -337,6 +337,109 @@ def dashboard(request: Request):
                 points=_points(data, run and run["run_id"]), scale=_scale())
 
 
+# ---------------------------------------------------------------- sources: what Crustdata actually said
+SOURCE_TYPES = ("crustdata_api", "registry")
+# Rule 8 (personal data minimum): never show person-level endpoints, and withhold contact-type fields anywhere.
+PERSONAL_KEY = re.compile(r"(e-?mail|phone|mobile|photo|picture|avatar|profile_pic|linkedin|twitter|facebook|"
+                          r"instagram|personal|home_address|date_of_birth|dob)", re.I)
+ENDPOINT_LABEL = {"identify": "Company Identify", "enrich": "Company Enrich", "job_search": "Job Search",
+                  "web_search": "Web Search", "web_fetch": "Web Fetch", "registries": "Registries (IBBI / MCA / GST)"}
+
+
+def _raw_roots() -> list[Path]:
+    return [p.resolve() for p in (FIXTURES, Path("var") / "runs", VAR / "runs")]
+
+
+def _raw_path(ref: str | None) -> Path | None:
+    """Resolve an evidence raw_ref to a stored JSON file, only inside fixtures or run raw folders."""
+    if not ref or ref.startswith("mock:") or "person_enrich" in ref:
+        return None
+    try:
+        p = Path(ref).resolve()
+    except (OSError, ValueError):
+        return None
+    if p.suffix != ".json" or not p.is_file():
+        return None
+    return p if any(root == p or root in p.parents for root in _raw_roots()) else None
+
+
+def _raw_kind(p: Path) -> str:
+    if FIXTURES.resolve() in p.parents:
+        return "placeholder" if p.name.startswith("_default") else "fixture"
+    return "live"
+
+
+def _redact(obj):
+    if isinstance(obj, dict):
+        return {k: ("[withheld: personal data]" if PERSONAL_KEY.search(str(k)) else _redact(v)) for k, v in obj.items()}
+    if isinstance(obj, list):
+        return [_redact(v) for v in obj]
+    return obj
+
+
+def _endpoint_of(ref: str, source: str) -> str:
+    parts = Path(ref).parts if ref and not ref.startswith("mock:") else ()
+    for name in ENDPOINT_LABEL:
+        if name in parts or Path(ref or "").name.startswith(name + "_") or (ref or "").startswith(f"mock:{name}"):
+            return name
+    return source
+
+
+def _short(v, n: int = 60) -> str:
+    s = json.dumps(v, ensure_ascii=False, default=str) if not isinstance(v, str) else v
+    return s if len(s) <= n else s[: n - 1] + "…"
+
+
+@app.get("/sources", response_class=HTMLResponse)
+def sources(request: Request, run: str | None = None, cp: str | None = None, ref: str | None = None):
+    run_row = _run_view(db.get_run(run) if run else _latest_run())
+    companies = []
+    if run_row:
+        rid = run_row["run_id"]
+        for a in db.get_assessments(rid):
+            calls: dict[str, dict] = {}
+            for cid in a.cp_ids:
+                for e in db.get_evidence(rid, cid):
+                    if _val(e.source_type) not in SOURCE_TYPES:
+                        continue
+                    key = e.raw_ref or f"none:{e.source}"
+                    path = _raw_path(e.raw_ref)
+                    c = calls.setdefault(key, {
+                        "ref": e.raw_ref or "", "viewable": path is not None,
+                        "kind": _raw_kind(path) if path else ("synthetic" if (e.raw_ref or "").startswith("mock:") else "missing"),
+                        "endpoint": _endpoint_of(e.raw_ref or "", e.source), "source": e.source, "used": []})
+                    c["used"].append({"signal": e.signal, "claim": e.claim, "path": e.field_path or "",
+                                      "value": _short(e.value), "date": str(e.record_date or ""),
+                                      "status": _val(e.status), "id": e.evidence_id})
+            for c in calls.values():
+                c["label"] = ENDPOINT_LABEL.get(c["endpoint"], c["source"])
+            companies.append({"cp_id": a.cp_ids[0], "name": a.display_name, "rating": _val(a.rating),
+                              "calls": sorted(calls.values(), key=lambda c: (not c["viewable"], c["label"]))})
+        order = {"RED": 0, "AMBER": 1, "HELD": 2, "CANNOT_VERIFY": 3, "GREEN": 4}
+        companies.sort(key=lambda c: (order.get(c["rating"], 5), c["name"]))
+    led = [le for le in db.get_ledger(run_row["run_id"])] if run_row else []
+    stats = {"calls": sum(1 for le in led if le.provider in ("crustdata", "registry")),
+             "cached": sum(1 for le in led if le.provider in ("crustdata", "registry") and _val(le.status) == "cached"),
+             "credits": round(sum(le.credits for le in led if le.provider == "crustdata"), 2)}
+    return page(request, "sources.html", run=run_row, companies=companies, stats=stats, sel_cp=cp, sel_ref=ref,
+                runs=db.list_runs())
+
+
+@app.get("/api/source")
+def api_source(ref: str, download: int = 0):
+    p = _raw_path(ref)
+    if not p:
+        raise HTTPException(404, "no stored response for this reference")
+    try:
+        data = _redact(json.loads(p.read_text(encoding="utf-8")))
+    except ValueError:
+        raise HTTPException(422, "stored response is not valid JSON")
+    if download:
+        return Response(json.dumps(data, ensure_ascii=False, indent=2), media_type="application/json",
+                        headers={"Content-Disposition": f'attachment; filename="{p.name}"'})
+    return {"ref": ref, "file": p.name, "kind": _raw_kind(p), "bytes": p.stat().st_size, "data": data}
+
+
 @app.get("/api/points")
 def api_points():
     """Latest run's counterparties, for the command palette on every page."""
