@@ -1,0 +1,70 @@
+{% extends "base.html" %}
+{% block content %}
+{% set r = a.rating|val %}
+<p class="muted"><a href="/runs/{{ run_id }}/report">← report {{ run_id }}</a></p>
+<h2>{{ a.display_name }} <span class="badge r-{{ r }}">{{ r|rating_label }}</span></h2>
+<p>
+  {{ a.role }} · score <strong>{{ a.score }}/100</strong> · exposure {{ a.exposure_inr|inr }} · at risk <strong>{{ a.inr_at_risk|inr }}</strong>
+  {% if a.change_since_last %} · <strong>{{ a.change_since_last }}</strong>{% endif %}
+  {% if a.cp_ids|length > 1 %} · merged rows {{ a.cp_ids|join(', ') }}{% endif %}
+</p>
+<p>{{ a.explanation|evlinks }}</p>
+
+<h4>Why this rating</h4>
+<table class="dense">
+  <thead><tr><th>Step</th><th>Points</th><th>Note</th><th>Evidence</th></tr></thead>
+  <tbody>
+    <tr><td>Start</td><td>{{ why.start or 70 }}</td><td class="muted">every counterparty starts here</td><td></td></tr>
+    {% for s in why.signals or [] %}<tr>
+      <td>{{ s.signal }}</td><td>{{ '%+d'|format(s.points) }}</td><td>{{ s.note }}</td>
+      <td>{% for e in s.evidence %}<a href="#{{ e.id }}">{{ e.id }}</a>{% if e.url %} <a class="src" href="{{ e.url }}" target="_blank">source ↗</a>{% elif e.raw_ref %} <a class="src" href="/raw/{{ run_id }}/{{ e.raw_ref }}" target="_blank">raw ↗</a>{% endif %}{% if e.record_date %} <span class="muted">· {{ e.record_date }}</span>{% endif %}{% if not loop.last %}<br>{% endif %}{% endfor %}</td>
+    </tr>{% endfor %}
+    <tr><td>Hard stop</td><td></td><td>{{ why.hard_stop or a.hard_stop or 'none' }}</td><td></td></tr>
+    {% if why.coverage %}<tr><td>Coverage check</td><td></td>
+      <td>{{ 'passed' if why.coverage.passed else 'failed' }} · have: {{ why.coverage.ok_signals|join(', ') }} · required: {{ why.coverage.required|join(', ') }}</td><td></td></tr>{% endif %}
+    <tr><td><strong>Final score</strong></td><td><strong>{{ why.final_score if why.final_score is not none else a.score }}</strong></td><td><span class="badge r-{{ r }}">{{ r|rating_label }}</span></td><td></td></tr>
+  </tbody>
+</table>
+
+{% if a.cannot_verify or why.unavailable %}
+<div class="box {{ 'held' if r == 'HELD' else '' }}">
+  <strong>{{ 'Held' if r == 'HELD' else 'Cannot verify' }}</strong>
+  <ul>{% for line in a.cannot_verify %}<li>{{ line }}</li>{% endfor %}
+  {% for u in why.unavailable or [] %}<li>{{ u }}</li>{% endfor %}</ul>
+</div>
+{% endif %}
+{% if a.conflicts %}
+<div class="box conflict"><strong>Conflicts</strong><ul>{% for c in a.conflicts %}<li>{{ c }}</li>{% endfor %}</ul></div>
+{% endif %}
+
+<h4>Evidence</h4>
+<table class="dense">
+  <thead><tr><th>Id</th><th>Signal</th><th>Claim</th><th>Source</th><th>Field</th><th>Link · date</th></tr></thead>
+  <tbody>
+  {% for e in evidence %}<tr id="{{ e.evidence_id }}">
+    <td class="muted">{{ e.evidence_id }}</td><td>{{ e.signal }}</td>
+    <td>{{ e.claim }}{% if e.passage %}<br><span class="muted">“{{ e.passage }}”</span>{% endif %}
+      {% if e.stale %} <span class="tag stale">stale</span>{% endif %}
+      {% if e.status == 'unavailable' %} <span class="tag unavailable">unavailable</span>{% endif %}</td>
+    <td>{{ e.source }}</td><td class="muted">{{ e.field_path or '' }}</td><td>{{ e|src }}</td>
+  </tr>{% else %}<tr><td colspan="6" class="muted">No evidence stored.</td></tr>{% endfor %}
+  </tbody>
+</table>
+
+<h4>Identity</h4>
+<p>Match: <strong>{{ a.entity.match_type }}</strong> · confidence {{ '%.0f'|format((a.entity.confidence or 0) * 100) }}%
+  {% if a.entity.legal_name %} · {{ a.entity.legal_name }}{% endif %}{% if a.entity.domain %} · {{ a.entity.domain }}{% endif %}{% if a.entity.cin %} · CIN {{ a.entity.cin }}{% endif %}</p>
+{% if a.entity.candidates %}
+<table class="dense"><thead><tr><th>Candidate</th><th>City</th><th>Domain</th><th>CIN</th><th>Score</th></tr></thead><tbody>
+{% for c in a.entity.candidates %}<tr><td>{{ c.name }}</td><td>{{ c.city or '—' }}</td><td>{{ c.domain or '—' }}</td><td>{{ c.cin or '—' }}</td><td>{{ c.score }}</td></tr>{% endfor %}
+</tbody></table>
+{% endif %}
+
+<h4>Actions for this counterparty</h4>
+{% if actions %}
+<table class="dense"><thead><tr><th>Action</th><th>Status</th><th>Approved by</th><th></th></tr></thead><tbody>
+{% for x in actions %}<tr><td>{{ HUMAN_LABEL.get(x.type|val, x.type|val) }}</td><td>{{ x.status|val }}</td><td>{{ x.approved_by or '—' }}</td>
+<td>{% if x.status|val == 'pending_approval' %}<a href="/approvals#{{ x.action_id }}">review →</a>{% endif %}</td></tr>{% endfor %}
+</tbody></table>
+{% else %}<p class="muted">No actions proposed.</p>{% endif %}
+{% endblock %}

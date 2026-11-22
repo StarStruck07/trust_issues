@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Risk review {{ d.run.run_id }}</title>
+<style>
+body{font-family:system-ui,-apple-system,"Segoe UI",sans-serif;color:#1f2937;max-width:1100px;margin:2rem auto;padding:0 1rem;font-size:14px;line-height:1.45}
+table{border-collapse:collapse;width:100%;margin:.5rem 0 1.5rem}
+th,td{border-bottom:1px solid #e5e7eb;padding:.35rem .5rem;text-align:left;vertical-align:top}
+th{font-size:12px;text-transform:uppercase;letter-spacing:.04em;color:#6b7280}
+h1{font-size:1.5rem}h2{font-size:1.15rem;margin-top:2rem;border-bottom:2px solid #111827;padding-bottom:.2rem}
+a{color:#1d4ed8}
+@media print{a{color:inherit}.card{break-inside:avoid}}
+{{ css | safe }}
+</style>
+</head>
+<body>
+<h1>Counterparty risk review</h1>
+<p class="muted">
+  <b>Run</b> {{ d.run.run_id }} · <b>As of</b> {{ d.as_of }} · <b>Status</b> {{ d.run.status }}<br>
+  <b>Request:</b> “{{ d.request }}”<br>
+  {{ d.assessments|length }} counterparties reviewed · {{ d.costs.credits }} credits · {{ inr(d.costs.inr) }} · {{ d.costs.minutes }} min
+</p>
+{% if d.not_reviewed %}<p><b>Not reviewed:</b></p><ul>{% for x in d.not_reviewed %}<li>{{ x }}</li>{% endfor %}</ul>{% endif %}
+
+<h2>Changes since the last review</h2>
+{% if d.changes %}<ul>{% for a in d.changes %}<li>{{ a.display_name }}: <b>{{ a.change_since_last }}</b></li>{% endfor %}</ul>
+{% else %}<p class="muted">No rating moved.</p>{% endif %}
+
+<h2>Ranked by ₹ at risk</h2>
+<table>
+<thead><tr>{% for f in d.fields %}<th>{{ f.replace('_',' ') }}</th>{% endfor %}</tr></thead>
+<tbody>
+{% for r in d.rows %}<tr>
+{% for f in d.fields %}{% set v = r.cells[f] %}<td>
+{%- if f == 'rating' -%}<span class="badge r-{{ v }}">{{ v|rating_label }}</span>
+{%- elif f in ('inr_at_risk','exposure_inr') -%}{{ inr(v) }}
+{%- elif f == 'sources' -%}{% for s in v %}{% if s.url %}<a class="src" href="{{ s.url }}" target="_blank">{{ s.label }} ↗</a>{% else %}{{ s.label }}{% endif %}{% if s.record_date %} · {{ s.record_date }}{% endif %}{% if not loop.last %}<br>{% endif %}{% endfor %}
+{%- else -%}{{ v }}{%- endif -%}
+</td>{% endfor %}
+</tr>{% endfor %}
+</tbody>
+</table>
+
+<h2>Cannot verify / Held</h2>
+{% if d.cannot_verify %}<ul>{% for a, line in d.cannot_verify %}<li class="{{ 'held' if a.rating|val == 'HELD' else 'cv' }}">{{ line }}</li>{% endfor %}</ul>
+{% else %}<p class="muted">None.</p>{% endif %}
+
+<h2>Approval queue</h2>
+{% if d.pending %}<table><thead><tr><th>Action</th><th>Counterparty</th><th>Subject</th><th>Reasons</th></tr></thead><tbody>
+{% for x in d.pending %}<tr><td>{{ x.type|val }}</td><td>{{ x.cp_id }}</td><td>{{ x.subject }}</td>
+<td>{% for eid in x.reason_evidence %}{% set e = d.ev_by_id.get(eid) %}{% if e %}{{ e.claim }}{% set h = source_href(e) %}{% if h %} <a class="src" href="{{ h }}" target="_blank">source ↗</a>{% endif %}<br>{% endif %}{% endfor %}</td></tr>{% endfor %}
+</tbody></table>
+{% else %}<p class="muted">Nothing pending.</p>{% endif %}
+
+<h2>Counterparties</h2>
+{% for a in d.assessments %}
+<div class="card">
+<h3>{{ a.display_name }} <span class="badge r-{{ a.rating|val }}">{{ a.rating|rating_label }}</span> <span class="muted">{{ a.score }}/100 · {{ a.role }} · {{ inr(a.inr_at_risk) }} at risk</span></h3>
+<p>{{ a.explanation }}</p>
+<table><thead><tr><th>Signal</th><th>Points</th><th>Claim</th><th>Source</th><th>Date</th></tr></thead><tbody>
+{% for s in a.signals %}{% for eid in s.evidence_ids or [None] %}{% set e = d.ev_by_id.get(eid) if eid else None %}
+<tr><td>{{ s.signal }}</td><td>{{ '%+d' % s.points }}</td><td>{{ e.claim if e else s.note }}</td>
+<td>{% if e %}{% set h = source_href(e) %}{% if h %}<a class="src" href="{{ h }}" target="_blank">{{ e.source or 'source' }} ↗</a>{% else %}{{ e.source }}{% endif %}{% endif %}</td>
+<td>{{ e.record_date if e else '' }}{% if e and e.stale %} <span class="tag stale">stale</span>{% endif %}</td></tr>
+{% endfor %}{% endfor %}
+</tbody></table>
+</div>
+{% endfor %}
+
+<hr><p class="muted">{{ d.footer }}</p>
+</body>
+</html>

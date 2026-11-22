@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+{% block content %}
+<h2>Ledger</h2>
+<form method="get" action="/ledger" class="grid">
+  <select name="run" onchange="this.form.submit()">
+    <option value="">All runs</option>
+    {% for r in runs %}<option value="{{ r.run_id }}" {% if r.run_id == run %}selected{% endif %}>{{ r.run_id }} · {{ r.started_at }}</option>{% endfor %}
+  </select>
+  <a role="button" class="outline" href="/ledger.csv{% if run %}?run={{ run }}{% endif %}">Download CSV</a>
+</form>
+<div class="tiles">
+  <div class="tile"><div class="n">{{ costs.credits }}</div>credits</div>
+  <div class="tile"><div class="n">{{ costs.inr|inr }}</div>₹ spent</div>
+  <div class="tile"><div class="n">{{ costs.calls }}</div>calls · {{ costs.cached_pct }}% cached</div>
+  <div class="tile"><div class="n">{{ costs.errors }}</div>errors</div>
+</div>
+<table class="dense ticker">
+  <thead><tr><th>ts</th><th>provider</th><th>endpoint</th><th>credits</th><th>₹</th><th>tokens</th><th>ms</th><th>status</th><th>note</th></tr></thead>
+  <tbody>
+  {% for le in rows %}<tr class="{{ le.status }}">
+    <td>{{ le.ts }}</td><td>{{ le.provider }}</td><td>{{ le.endpoint }}</td><td>{{ le.credits }}</td><td>{{ le.inr }}</td>
+    <td>{{ le.tokens_in + le.tokens_out }}</td><td>{{ le.latency_ms }}</td><td>{{ le.status }}</td><td>{{ le.note }}</td>
+  </tr>{% else %}<tr><td colspan="9" class="muted">No calls recorded.</td></tr>{% endfor %}
+  </tbody>
+</table>
+{% endblock %}
