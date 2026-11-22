@@ -218,13 +218,30 @@ def resume() -> str | None:
 
 def run_progress(run_id: str) -> dict:
     run = db.get_run(run_id) or {}
-    steps = db.list_steps(run_id)
+    flat = db.list_steps(run_id)
     groups = db.get_step_output(run_id, "__all__", "resolve") or {"groups": []}
-    total = len(groups["groups"])
-    done = sum(1 for s in steps if s["step"] == "propose" and s["status"] == "done")
+    # One row per entity (keyed by its first cp_id), one column per step, for the live page.
+    # Resolve is batched under "__all__", so every row shares its status.
+    resolve_all_status = next((s["status"] for s in flat if s["cp_id"] == "__all__" and s["step"] == "resolve"),
+                              "running" if run.get("status") == "running" else None)
+    names = {c.cp_id: c.name for c in db.list_counterparties()}
+    rows: dict[str, dict] = {}
+    for g in groups["groups"]:
+        cid = g["cp_ids"][0]
+        rows[cid] = {"cp_id": cid, "display_name": names.get(cid), "resolve": resolve_all_status}
+    for s in flat:
+        if s["cp_id"] == "__all__":
+            continue
+        rows.setdefault(s["cp_id"], {"cp_id": s["cp_id"], "display_name": names.get(s["cp_id"]),
+                                     "resolve": resolve_all_status})[s["step"]] = s["status"]
+    for r in rows.values():
+        for st in STEPS:
+            r.setdefault(st, None)
+    done = sum(1 for r in rows.values() if r["propose"] == "done")
+    ledger = [l.model_dump(mode="json") for l in db.get_ledger(run_id, limit=10)]
     return {
         "run_id": run_id, "status": run.get("status"), "note": run.get("note"),
         "request": run.get("request", {}).get("raw_text"),
-        "total": total, "done": done, "steps": steps, "costs": db.run_costs(run_id),
-        "recent_calls": [l.model_dump(mode="json") for l in db.get_ledger(run_id, limit=10)],
+        "total": len(rows), "done": done, "steps": list(rows.values()), "costs": db.run_costs(run_id),
+        "ledger": ledger, "recent_calls": ledger,
     }
