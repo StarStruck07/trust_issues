@@ -1,6 +1,6 @@
 # Nilay — P2 Data (live sources, API client, cost ledger)
 
-> Counterparty Risk Desk · ContextCon 05 · BITS Pilani · 22 Nov 2026
+> Trust Issues · ContextCon 05 · BITS Pilani · 22 Nov 2026
 > Teammates: **Arth** (P1 Core, lead/integrator) · **Prachi** (P3 Product)
 > Shared rules: `CLAUDE.md` · Team overview: `docs/TEAM_PLAN.md` · This file: `docs/NILAY_data.md`
 

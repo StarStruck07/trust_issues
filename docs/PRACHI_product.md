@@ -1,6 +1,6 @@
 # Prachi — P3 Product (UI, approvals, exactly-once actions, delivery)
 
-> Counterparty Risk Desk · ContextCon 05 · BITS Pilani · 22 Nov 2026
+> Trust Issues · ContextCon 05 · BITS Pilani · 22 Nov 2026
 > Teammates: **Arth** (P1 Core, lead/integrator) · **Nilay** (P2 Data)
 > Shared rules: `CLAUDE.md` · Team overview: `docs/TEAM_PLAN.md` · This file: `docs/PRACHI_product.md`
 
@@ -128,7 +128,7 @@ Keep a sources list in each case's `notes`. These double as the README's "How we
   ```
 - Run: `uvicorn crd.web.app:app --reload --port 8000`.
 - `crd/web/templates/base.html`:
-    - A top nav: **Counterparty Risk Desk** · Dashboard · Approvals (with a badge showing the pending count) · Outbox · Ledger · Runs.
+    - A top nav: **Trust Issues** · Dashboard · Approvals (with a badge showing the pending count) · Outbox · Ledger · Runs.
     - A footer: "Every fact links to its source · Irreversible actions need approval · Costs recorded per call".
 
 ### 5.2 Visual language

@@ -1,4 +1,4 @@
-# CLAUDE.md — Counterparty Risk Desk
+# CLAUDE.md — Trust Issues
 
 Read `docs/TEAM_PLAN.md` before any task. It holds the contracts, the ownership of every file, and each person's checklist.
 

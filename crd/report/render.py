@@ -202,7 +202,7 @@ def _env() -> Environment:
 
 def to_markdown(d: dict) -> str:
     run, c = d["run"], d["costs"]
-    L = [f"# Counterparty risk review — {run.get('run_id')}", "",
+    L = [f"# Trust Issues · counterparty risk review — {run.get('run_id')}", "",
          f"- **As of:** {d['as_of']}", f"- **Request:** {d['request']}",
          f"- **Counterparties reviewed:** {len(d['assessments'])}",
          f"- **Cost:** {c['credits']} credits · {inr(c['inr'])} · {c['minutes']} min",

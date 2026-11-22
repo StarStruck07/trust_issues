@@ -1,4 +1,4 @@
-# Counterparty Risk Desk
+# Trust Issues
 
 **An agent that runs the weekly counterparty risk review for a 3PL.** It gives every carrier,
 warehouse and customer a sourced rating, proposes protective actions that a person approves, and

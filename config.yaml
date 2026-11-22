@@ -1,4 +1,4 @@
-# Counterparty Risk Desk — all tunable behaviour lives here (re-read at the start of every run).
+# Trust Issues — all tunable behaviour lives here (re-read at the start of every run).
 version: 1
 client_name: "Client 3PL"            # replace with the kickoff client name
 as_of: null                          # null = today (YYYY-MM-DD to replay a date)

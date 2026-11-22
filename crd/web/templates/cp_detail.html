@@ -1,5 +1,5 @@
 {% extends "base.html" %}
-{% block title %}{{ a.display_name }} · Counterparty Risk Desk{% endblock %}
+{% block title %}{{ a.display_name }} · Trust Issues{% endblock %}
 {% block content %}
 {%- set r = a.rating|val -%}
 {%- set rc = {'GREEN':'green','AMBER':'amber','RED':'red','HELD':'purple'}.get(r, 'grey') -%}

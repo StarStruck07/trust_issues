@@ -1,4 +1,4 @@
-"""Counterparty Risk Desk web UI (PRACHI_product.md section 5).
+"""Trust Issues web UI (PRACHI_product.md section 5).
 
 Run: uvicorn crd.web.app:app --reload --port 8000
 """
@@ -51,7 +51,7 @@ async def lifespan(_app: FastAPI):
     yield
 
 
-app = FastAPI(title="Counterparty Risk Desk", lifespan=lifespan)
+app = FastAPI(title="Trust Issues", lifespan=lifespan)
 app.mount("/static", StaticFiles(directory=str(HERE / "static")), name="static")
 templates = Jinja2Templates(directory=str(HERE / "templates"))
 
@@ -93,6 +93,7 @@ HUMAN = {
     "news": "News", "leadership": "Leadership", "insolvency": "Insolvency", "mca_status": "MCA status",
     "identity": "Identity", "warehouse_lessor": "warehouse lessor", "layoffs_or_shutdown": "Layoffs or shutdown reported",
     "cirp_admitted": "insolvency (CIRP) admitted", "sole_source": "sole source",
+    "rating": "verdict", "score": "trust score", "action_status": "next step", "display_name": "company",
 }
 
 
@@ -161,6 +162,11 @@ env.globals["css_v"] = lambda name="style.css": int((HERE / "static" / name).sta
     if (HERE / "static" / name).exists() else 0
 env.globals["MOCK"] = USING_FAKE_DB or os.getenv("CRD_MOCK", "1") == "1"
 env.filters["rating_label"] = report.rating_label
+# Trust Issues voice for the UI only; reports and exports keep the formal rating names.
+VERDICT = {"GREEN": "Trusted", "AMBER": "Doubts", "RED": "Don't trust", "CANNOT_VERIFY": "Can't tell",
+           "HELD": "On hold"}
+env.filters["verdict"] = lambda r: VERDICT.get(str(_val(r)), report.rating_label(r))
+env.globals["VERDICT"] = VERDICT
 env.filters["val"] = _val
 env.filters["src"] = src_link
 env.filters["evlinks"] = evlinks
