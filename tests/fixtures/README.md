@@ -75,4 +75,18 @@ Reproduce with `python scripts/costs.py <run_id>`.
 - Ceiling per counterparty: about 11 credits (all 3 leaders enriched, 2 web searches with results).
 - LLM: no `ANTHROPIC_API_KEY` in this run, so 0. Estimate with a key: about 4 calls per counterparty
   (3 news + 1 explanation), ~12k input and ~0.7k output tokens → about $0.05 per counterparty at $3/$15 per MTok.
-- The $ price per credit is not public (only on the logged-in billing page), so `inr_per_credit` is still to be filled.
+- Costs are reported in **credits only**: Crustdata does not publish a $ price per credit (it is only on the
+  logged-in billing page), so `inr_per_credit` stays 0 and the ledger's `inr` column is 0 for Crustdata calls.
+
+### Summary for the README and finance pitch (credits)
+
+| Item | Credits |
+|---|---|
+| New counterparty, full review | 8.03 average (about 11 at most) |
+| Ambiguous name (stops at identify) | 0.2 |
+| Same-day re-run or resume after a kill | ~0 (97% from cache) |
+| Weekly re-check (cache expires after 24 h, data refetched) | ~8 |
+| Watcher notification (only on change) | 5 |
+| LLM per counterparty | 0 credits (separate Anthropic bill; ~$0.05 estimated with a key) |
+| **50-counterparty weekly review** | **~400** |
+| 50 counterparties on Watcher, re-review only on change | 5 + ~8 per changed company; quiet companies 0 |
