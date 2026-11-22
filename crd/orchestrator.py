@@ -13,13 +13,14 @@ import traceback
 from typing import Callable, Optional
 
 from crd import config, db, explain, request_parser, scoring
-from crd.actions import executor, policy
 from crd.data import people, signals
 from crd.data.crustdata import CrustdataClient
 from crd.data.errors import BudgetExceeded, CreditsExhausted
 from crd.models import Action, Assessment, Counterparty, Evidence, ResolvedEntity, ReviewRequest, SUPPLIER_ROLES
-from crd.report import render
 from crd.resolve import resolve_all
+
+# crd.actions.* and crd.report.* are imported inside the functions that use them:
+# they import crd.deps, which imports this module, so a top-level import is circular.
 
 STEPS = ["resolve", "gather", "score", "propose"]
 _lock = threading.Lock()
@@ -85,6 +86,7 @@ def process_entity(run_id: str, entity: ResolvedEntity, group: list[Counterparty
     a = Assessment.model_validate(_cached(run_id, cid, "score", score)["assessment"])
 
     def propose() -> dict:
+        from crd.actions import policy
         acts: list[Action] = policy.propose(a, group[0], cfg, config.review_id(req.as_of)) or []
         a.action_ids = [x.action_id for x in acts]
         db.save_assessment(a)
@@ -159,6 +161,8 @@ def run_review(raw_text: str, input_path: Optional[str] = None, run_id: Optional
                 note = f"{type(e).__name__}: {e}; not reviewed: " + ", ".join(
                     x["cp_ids"][0] for x in groups[i:])
                 break
+        from crd.actions import executor
+        from crd.report import render
         executor.execute_approved(run_id)
         render.render(run_id)
     except Exception as e:
@@ -202,6 +206,7 @@ def run_single(domain_or_cp_id: str, trigger: str = "watcher") -> str | None:
 
 
 def resume() -> str | None:
+    from crd.actions import executor
     db.init_db()
     executor.reconcile()
     rid = db.last_unfinished_run()
