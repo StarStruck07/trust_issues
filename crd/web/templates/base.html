@@ -34,6 +34,7 @@
     {% else %}<span class="env-pill live"><span class="dot"></span>LIVE</span>{% endif %}
   </div>
 </header>
+{% if demo %}<div class="demo-bar">Demo portfolio · <b>Kaveri Freight</b> and every company here are fictional, with synthetic evidence. Not real data.</div>{% endif %}
 <main class="{% block main_class %}{% endblock %}">
 {% block content %}{% endblock %}
 </main>

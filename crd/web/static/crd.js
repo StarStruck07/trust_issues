@@ -49,11 +49,26 @@
       track.innerHTML = html;
     }
 
-    function size(p) { return Math.round(26 + 34 * Math.sqrt((p.exposure || 0) / maxExp)); }
+    // big portfolios: small dots scattered within their score, no labels (hover still explains each one)
+    const compact = state.length > 40;
+    if (compact) root.classList.add("compact");
+    const rnd = s => { let h = 2166136261; for (const ch of s) h = Math.imul(h ^ ch.charCodeAt(0), 16777619); return ((h >>> 0) % 10000) / 10000; };
+    function size(p) { return compact ? Math.round(9 + 17 * Math.sqrt((p.exposure || 0) / maxExp)) : Math.round(26 + 34 * Math.sqrt((p.exposure || 0) / maxExp)); }
 
     function layout() {
       const g = geom();
       const base = 62 + 30; // above the axis labels
+      if (compact) {
+        const H = 300;
+        state.forEach(p => {
+          const unk = UNSCORED(p.rating) && !p.sim;
+          const j = rnd(p.cp_id), k = rnd(p.cp_id + "y");
+          p._x = unk ? g.W - trayW + 16 + j * (trayW - 32) : g.x(p.score + (j - .5) * 1.6);
+          p._y = base + 8 + k * H;
+        });
+        track.style.height = (base + H + 30) + "px";
+        return;
+      }
       const scored = state.filter(p => !(UNSCORED(p.rating) && !p.sim)).sort((a, b) => a.score - b.score);
       const lanes = [];
       scored.forEach(p => {
@@ -76,7 +91,7 @@
         if (!el) {
           el = p._el = document.createElement("div");
           el.className = "tok" + (animate ? " in" : "");
-          if (animate) el.style.animationDelay = (120 + i * 90) + "ms";
+          if (animate) el.style.animationDelay = (120 + i * (compact ? 3 : 90)) + "ms";
           el.tabIndex = 0;
           el.setAttribute("role", "button");
           track.appendChild(el);
@@ -85,7 +100,7 @@
         const d = size(p);
         el.className = el.className.replace(/\br-\w+/g, "").trim() + " r-" + p.rating + (p.sim ? " sim" : "");
         Object.assign(el.style, { left: p._x + "px", bottom: p._y + "px", width: d + "px", height: d + "px" });
-        el.textContent = UNSCORED(p.rating) && !p.sim ? "?" : Math.round(p.score);
+        el.textContent = compact ? "" : UNSCORED(p.rating) && !p.sim ? "?" : Math.round(p.score);
         el.dataset.label = p.name.length > 22 ? p.name.slice(0, 21) + "…" : p.name;
         el.setAttribute("aria-label", `${p.name}: ${LABEL[p.rating]}, score ${p.score}`);
       });

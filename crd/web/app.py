@@ -180,7 +180,12 @@ def page(request: Request, name: str, **ctx) -> HTMLResponse:
         pending = len(db.get_actions("pending_approval"))
     except Exception:
         pending = 0
-    return templates.TemplateResponse(request, name, {"pending_count": pending, **ctx})
+    try:
+        latest = _latest_run()
+        demo = bool(latest and str(latest.get("note") or "").startswith("DEMO"))
+    except Exception:
+        demo = False
+    return templates.TemplateResponse(request, name, {"pending_count": pending, "demo": demo, **ctx})
 
 
 def _latest_run():
@@ -444,7 +449,8 @@ def sources(request: Request, run: str | None = None, cp: str | None = None, ref
                     path = _raw_path(e.raw_ref)
                     c = calls.setdefault(key, {
                         "ref": e.raw_ref or "", "viewable": path is not None,
-                        "kind": _raw_kind(path) if path else ("synthetic" if (e.raw_ref or "").startswith("mock:") else "missing"),
+                        "kind": _raw_kind(path) if path else ("demo" if (e.raw_ref or "").startswith("demo:") else
+                                                              "synthetic" if (e.raw_ref or "").startswith("mock:") else "missing"),
                         "endpoint": _endpoint_of(e.raw_ref or "", e.source), "source": e.source, "used": []})
                     c["used"].append({"signal": e.signal, "claim": e.claim, "path": e.field_path or "",
                                       "value": _short(e.value), "date": str(e.record_date or ""),

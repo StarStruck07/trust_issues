@@ -48,7 +48,7 @@
   // ------------------------------------------------------------- the files: pinned scroller
   const files = $("#files"), frame = $("#fx-frame"), peek = $("#fx-peek"), cap = $("#fx-cap"), num = $("#fx-i");
   const order = { RED: 0, AMBER: 1, CANNOT_VERIFY: 2, HELD: 3, GREEN: 4 };
-  const list = P.slice().sort((a, b) => (order[a.rating] - order[b.rating]) || (b.at_risk - a.at_risk));
+  const list = P.slice().sort((a, b) => (order[a.rating] - order[b.rating]) || (b.at_risk - a.at_risk)).slice(0, 7);
   function card(p, small) {
     return `<div class="cf r-${p.rating}${small ? " small" : ""}">
       <div class="cf-tab">FILE ${esc(p.cp_id)}</div>

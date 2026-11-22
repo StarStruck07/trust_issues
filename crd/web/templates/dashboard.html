@@ -40,13 +40,14 @@
   <section class="panel" id="attention">
     <header><h2>Needs attention</h2><span class="tally">{{ kpi.attention }}</span></header>
     {%- set worry = rows|rejectattr('rating', 'equalto', 'GREEN')|list -%}
-    {% for r in worry %}
+    {% for r in worry[:8] %}
     <a class="att" href="/cp/{{ run.run_id }}/{{ r.cp_id }}" data-cursor="open">
       <span class="att-score r-{{ r.rating }}">{{ '?' if r.rating in ('CANNOT_VERIFY', 'HELD') else r.a.score }}</span>
       <span class="att-main"><b>{{ r.a.display_name }}</b><small>{{ r.top_reason|reason }}</small></span>
       <span class="att-side">{{ ui.rating(r.rating, 'sm') }}<span class="att-risk">{{ r.a.inr_at_risk|inr if r.a.inr_at_risk else '—' }}</span></span>
     </a>
     {% else %}<p class="panel-empty">Everyone's trusted this week.</p>{% endfor %}
+    {% if worry|length > 8 %}<a class="att-more" href="#all" data-show-worry>+ {{ worry|length - 8 }} more in the table →</a>{% endif %}
   </section>
 
   <!-- priority matrix: numbers only -->

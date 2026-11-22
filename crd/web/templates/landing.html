@@ -34,9 +34,11 @@
 
 <!-- 1 · hello: one line, a handwritten aside, and things on the desk you can push around -->
 <section class="fx-hero" id="hello" data-chapter="hello">
+  {% if demo %}<div class="demo-bar fx-demo">Demo portfolio: <b>Kaveri Freight</b>, a fictional 3PL with {{ n }} invented companies and synthetic evidence. Not real data.</div>{% endif %}
   <div class="fx-hero-line">
     <span class="fx-scribble" aria-hidden="true">with your counterparties<svg viewBox="0 0 60 40" width="46" height="30"><path d="M5 4 C 30 6, 44 14, 40 34 M40 34 L 31 26 M40 34 L 49 27" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/></svg></span>
     <h1>Trust <em>issues.</em></h1>
+    <p class="fx-acro"><b>T</b>hreat and <b>R</b>isk <b>U</b>nderstanding <b>S</b>ystem for <b>T</b>racking <b>I</b>nstitutional <b>S</b>tability</p>
     <p class="fx-sub">{% if run %}This week we checked <b>{{ n }}</b> companies that owe you money or move your goods, read <b>{{ facts }}</b> facts about them, and wrote down where every one came from.{% else %}Every company that owes you money, checked. Every claim sourced. Nothing sent without you.{% endif %}</p>
   </div>
 
@@ -65,7 +67,7 @@
 <section class="fx-what" id="what" data-chapter="what">
   <div class="fx-wrap">
     <span class="fx-kick">What we do</span>
-    <p class="fx-intro">Trust Issues is a counterparty risk desk for logistics companies. Every week it checks the carriers, warehouses and customers you depend on, gives each one a <em>sourced</em> verdict, and drafts the next step for a person to approve.</p>
+    <p class="fx-intro">TRUST ISSUES, the Threat and Risk Understanding System for Tracking Institutional Stability, is a counterparty risk desk for logistics companies. Every week it checks the carriers, warehouses and customers you depend on, gives each one a <em>sourced</em> verdict, and drafts the next step for a person to approve.</p>
     <ol class="fx-steps">
       <li><b>01</b><h3>Check</h3><p>Identity, headcount, hiring, news and insolvency registries, through Crustdata.</p></li>
       <li><b>02</b><h3>Judge</h3><p>Trusted, doubts, don't trust, or can't tell. Every fact cited and dated.</p></li>
@@ -97,9 +99,9 @@
 
 {% if points %}
 <!-- 2 · the files: pinned; one company per scene, the next one peeking in -->
-<section class="fx-files" id="files" data-chapter="files" style="--n: {{ n }}">
+<section class="fx-files" id="files" data-chapter="files" style="--n: {{ [n, 7]|min }}">
   <div class="fx-stage">
-    <div class="fx-count"><span id="fx-i">01</span> / {{ '%02d'|format(n) }}</div>
+    <div class="fx-count"><span id="fx-i">01</span> / {{ '%02d'|format([n, 7]|min) }}{% if n > 7 %} · the {{ [n, 7]|min }} most worrying of {{ n }}{% endif %}</div>
     <div class="fx-frame" id="fx-frame" data-cursor="open" tabindex="0" role="link" aria-label="Open this company's file"></div>
     <div class="fx-peek" id="fx-peek" aria-hidden="true"></div>
     <div class="fx-caption" id="fx-cap"></div>
