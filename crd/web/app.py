@@ -494,6 +494,10 @@ def api_points():
 
 @app.post("/runs")
 async def start_run(request_text: str = Form(DEFAULT_REQUEST), csv_file: UploadFile | None = File(None)):
+    if os.getenv("CRD_HOSTED") == "1":  # serverless demo: no persistent disk or background runs
+        return HTMLResponse("<p style='font:18px system-ui;padding:40px'>This hosted copy is a read-only demo. "
+                            "Run reviews locally: <code>uvicorn crd.web.app:app</code>. <a href='/desk'>Back to the desk</a></p>",
+                            status_code=403)
     path = None
     if csv_file is not None and csv_file.filename:
         up = VAR / "uploads"

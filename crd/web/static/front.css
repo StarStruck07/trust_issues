@@ -387,3 +387,6 @@ body.front > .demo-bar { display: none; }
 .fx-acro { margin: 18px 0 0; font: 500 15px var(--sans); letter-spacing: .14em; text-transform: uppercase; color: var(--ink-3); }
 .fx-acro b { color: var(--amber); font-weight: 700; }
 .fx-hero-line > :nth-child(4) { transition-delay: .5s; }
+
+.cursor span { width: 30px; height: 30px; background: transparent; border: 1.5px solid rgba(255,255,255,.55); mix-blend-mode: difference; }
+.cursor.big span { width: 52px; height: 52px; background: rgba(255,255,255,.08); }
