@@ -109,8 +109,9 @@ def prefetch(cps: list[Counterparty], client, chunk: int = 25) -> Prefetch:
             try:
                 got = _by_identifier(client.identify(**{kind: part}))
                 ref = getattr(client, "last_raw_ref", None)
-                for k in part:
-                    pre.hits[k.lower().strip()] = (got.get(k.lower().strip(), []), ref)
+                for k in part:  # keys missing from the batch answer fall back to a single call later
+                    if k.lower().strip() in got:
+                        pre.hits[k.lower().strip()] = (got[k.lower().strip()], ref)
             except (BudgetExceeded, CreditsExhausted):
                 raise
             except Exception as e:
