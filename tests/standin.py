@@ -21,7 +21,7 @@ KEYWORDS = [  # rule fallback categories (same idea as NILAY_data.md section 8.6
 
 def _load(endpoint: str, key: str):
     p = os.path.join(FIX, endpoint, f"{key.lower().replace(' ', '-')}.json")
-    return json.load(open(p)) if os.path.exists(p) else None
+    return json.load(open(p, encoding="utf-8")) if os.path.exists(p) else None
 
 
 class FixtureClient:
