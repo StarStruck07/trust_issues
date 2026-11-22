@@ -1,0 +1,14 @@
+{
+  "id": "mock-watch-0001",
+  "kind": "entity",
+  "dataset": "company",
+  "status": "active",
+  "notifications_count": 0,
+  "credits_consumed": 0,
+  "delivered": [],
+  "envelope": {"metadata": {"watch_id": "mock-watch-0001", "kind": "entity", "dataset": "company", "test": true,
+                            "notification_id": "mock-notification-0001",
+                            "payload_delivery": {"type": "inline"}},
+               "results": [{"changes": [{"field": "headcount.total", "type": "changed", "old": 900, "new": 820}],
+                            "record": {"basic_info": {"primary_domain": "delhivery.com", "name": "Delhivery"}}}]}
+}
