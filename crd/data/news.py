@@ -74,7 +74,21 @@ FALLBACK_RULES: list[tuple[re.Pattern, str]] = [
     (re.compile(r"\braids?\b|\bfraud\b|\bED\b|\bGST evasion\b"), "fraud_or_raid"),
     (re.compile(r"\blayoffs?\b|\blays off\b|\bretrench\w*|\bshut(s|ting)? down\b|\bshutter\w*", re.I),
      "layoffs_or_shutdown"),
-    (re.compile(r"\bstrikes?\b|\bfire\b|\bflood\w*|\bhalt\w*", re.I), "operations_halt"),
+    (re.compile(r"\bstrikes?\b(?! (a |an |the )?(deal|partnership|pact|agreement|chord|gold))|\bfire\b|"
+                r"\bflood\w*|\bhalt\w*|\bsuspend\w* (operations|services|licen[cs]e)|\blicen[cs]es? (suspended|cancelled)",
+                re.I), "operations_halt"),
+    (re.compile(r"\bdowngrad\w*|\blos(es|t|ing) (\w+ ){0,2}(client|customer|contract|account)s?\b|"
+                r"\bdefaults? on\b|\bdelayed (salaries|salary|payments?)\b|\bunpaid (salaries|dues|vendors)\b", re.I),
+     "lost_client_or_downgrade"),
+    (re.compile(r"\b(ceo|cfo|coo|md|managing director|chief executive|chief financial|chief operating|founder)\b"
+                r"[^.]{0,60}\b(resigns?|resigned|quits?|steps? down|stepped down|exits?|exited)\b|"
+                r"\b(resigns?|resigned|quits?|steps? down|stepped down)\b[^.]{0,40}\b(ceo|cfo|coo|md|chief)\b", re.I),
+     "leadership_exit"),
+]
+POSITIVE_RULES: list[tuple[re.Pattern, str]] = [
+    (re.compile(r"\b(wins?|won|bags?|bagged|secures?|secured|signs?|signed|awarded)\b[^.]{0,50}"
+                r"\b(order|contract|deal|mandate)s?\b", re.I), "contract"),
+    (re.compile(r"\braises?\b[^.]{0,40}\b(funding|series [a-h]|crore|million|round)\b", re.I), "funding"),
 ]
 
 
@@ -189,6 +203,10 @@ def keyword_classify(title: str, text: str, names: "_Names") -> NewsClass:
     for rx, cat in FALLBACK_RULES:
         if rx.search(scope):
             return NewsClass(relevant=bool(sentence), company_named_sentence=sentence, category=cat)
+    for rx, sub in POSITIVE_RULES:
+        if rx.search(scope):
+            return NewsClass(relevant=bool(sentence), company_named_sentence=sentence, category="positive",
+                             subtype=sub)
     # no risk keyword: about the company but neutral (keywords can't tell "minor" negatives apart)
     return NewsClass(relevant=bool(sentence), company_named_sentence=sentence, category="irrelevant")
 

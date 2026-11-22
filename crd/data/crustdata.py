@@ -336,6 +336,7 @@ class CrustdataClient:
         if use_cache:
             hit = _cache_get_fresh(rhash)
             if hit is not None:
+                _record(endpoint, payload or {}, hit)
                 self.last_raw_ref = self._store_raw(endpoint, rhash, hit)
                 self._ledger(endpoint, rhash, status="cached", note="cache hit")
                 return hit
@@ -375,6 +376,7 @@ class CrustdataClient:
                      note="" if credits_hdr is not None else "price from config")
         if use_cache:
             db.cache_put(rhash, endpoint, {CACHE_WRAP: _now().isoformat(), "response": resp})
+        _record(endpoint, payload or {}, resp)
         self.last_raw_ref = self._store_raw(endpoint, rhash, resp)
         return resp
 
@@ -528,6 +530,12 @@ class CrustdataClient:
     # ---------------------------------------------------------------- mock
     def _mock_response(self, endpoint: str, payload: dict) -> tuple[Any, str]:
         idx = _index()
+        if endpoint == "web_fetch" and len(payload.get("urls") or []) > 1:  # one recorded page per URL
+            pages = []
+            for u in payload["urls"]:
+                resp, _ = self._mock_response(endpoint, {"urls": [u]})
+                pages += [dict(pg, url=u) if not pg.get("url") else pg for pg in (resp or [])[:1]]
+            return pages, f"mock:web_fetch:{len(pages)} pages"
         if endpoint == "identify":  # batch: answer each identifier on its own, like the real API
             kind = "domains" if payload.get("domains") else "names"
             ids = payload.get(kind) or []
@@ -557,6 +565,71 @@ class CrustdataClient:
         elif endpoint == "web_fetch":
             resp = [dict(resp[0], url=u) for u in payload.get("urls") or []] if resp else []
         return resp, default.as_posix()
+
+
+# --------------------------------------------------------------------------- record mode
+RECORD_SKIP = {"credits", "watch"}
+
+
+def _record(endpoint: str, payload: dict, resp: Any) -> None:
+    """CRD_RECORD=1: save each live (or cached) response as a mock fixture under the key mock mode looks up.
+
+    identify and web_fetch are split per identifier / URL so any later batch replays correctly.
+    """
+    if os.getenv("CRD_RECORD", "0").strip().lower() not in ("1", "true", "yes") or endpoint in RECORD_SKIP:
+        return
+    global _INDEX
+    items: list[tuple[str, Any]] = []
+    if endpoint == "identify" and isinstance(resp, list):
+        items = [(e.get("matched_on"), [e]) for e in resp if isinstance(e, dict) and e.get("matched_on")]
+    elif endpoint == "web_fetch" and isinstance(resp, list):
+        items = [(pg.get("url"), [pg]) for pg in resp if isinstance(pg, dict) and pg.get("url")]
+    else:
+        vals = _lookup_values(payload)
+        if vals:
+            items = [(vals[0], resp)]
+    for key, body in items:
+        if not key:
+            continue
+        body = minimise_people(endpoint, body)
+        f = FIXTURES / endpoint / f"{slug(key)}.json"
+        f.parent.mkdir(parents=True, exist_ok=True)
+        f.write_text(json.dumps(body, indent=1, ensure_ascii=False, default=str), encoding="utf-8")
+    _INDEX = None  # rebuild aliases (new identify/enrich fixtures) on next mock lookup
+
+
+def _slim_person(p: dict) -> dict:
+    """Only what people.py reads: name, title, connections, profile URL, and employer/title/dates."""
+    bp = p.get("basic_profile") or {}
+    sh = ((p.get("social_handles") or {}).get("professional_network_identifier") or {})
+    out: dict = {"basic_profile": {"name": bp.get("name"), "current_title": bp.get("current_title")},
+                 "professional_network": {"connections": (p.get("professional_network") or {}).get("connections")},
+                 "social_handles": {"professional_network_identifier": {"profile_url": sh.get("profile_url")}}}
+    ed = ((p.get("experience") or {}).get("employment_details")) or {}
+    if ed:
+        keep = ("name", "title", "crustdata_company_id", "start_date", "end_date")
+        out["experience"] = {"employment_details": {
+            k: [{f: e.get(f) for f in keep} for e in ed.get(k) or [] if isinstance(e, dict)]
+            for k in ("current", "past")}}
+    return out
+
+
+def minimise_people(endpoint: str, body: Any) -> Any:
+    """Strip personal data from fixtures before they are written to the repo (data minimisation)."""
+    body = json.loads(json.dumps(body, default=str))
+    if endpoint == "enrich" and isinstance(body, list):
+        for item in body:
+            for m in (item or {}).get("matches") or []:
+                ppl = (m.get("company_data") or {}).get("people")
+                if isinstance(ppl, dict):
+                    m["company_data"]["people"] = {"decision_makers": [], "founders": [],
+                                                   "cxos": [_slim_person(x) for x in ppl.get("cxos") or []]}
+    elif endpoint == "person_enrich" and isinstance(body, list):
+        for item in body:
+            for m in (item or {}).get("matches") or []:
+                if isinstance(m.get("person_data"), dict):
+                    m["person_data"] = _slim_person(m["person_data"])
+    return body
 
 
 # --------------------------------------------------------------------------- helpers

@@ -1,0 +1,39 @@
+[
+ {
+  "matched_on": "flygofirst.com",
+  "match_type": "domain",
+  "matches": [
+   {
+    "confidence_score": 1.0,
+    "company_data": {
+     "crustdata_company_id": 1994099,
+     "basic_info": {
+      "name": "GO FIRST",
+      "crustdata_company_id": 1994099,
+      "primary_domain": "flygofirst.com",
+      "all_domains": [
+       "flygofirst.com"
+      ],
+      "website": "https://www.flygofirst.com/",
+      "professional_network_url": "https://www.linkedin.com/company/flygofirst",
+      "professional_network_id": "63573",
+      "profile_name": "GO FIRST",
+      "logo_permalink": "https://crustdata-media.s3.us-east-2.amazonaws.com/company/bbfa630711829ba1e5ff0747122c3ac0645e491445bb7b8d7329327c86d13792.jpg",
+      "description": "You’ve landed on the official Go First's Company page. The airline where you come first! Go First is the aviation foray of the Wadia Group. Currently, we have 54 aircraft and fly to 28 domestic destinations and 10 international destinations with over 220+ daily flights. We see ourselves as a modern, futuristic organisation. Since our entry into the aviation industry, we have slowly expanded our footprint and now we are gearing up for our next level of expansion.We are here, on LinkedIn, to connect with you, share smart flying stories and be a part of your daily life. Please join us in this journey.We encourage smart ideas and friendly conversations on this platform, for an active engagement with you. Do check in with us as we’d love to hear from you. For any query, you may also connect with our social media team on socialmedia@flygofirst.comCustomer Care Number +91 22 68968300Toll-Free Number 1800 2100 999",
+      "company_type": "Privately Held",
+      "year_founded": 2005,
+      "employee_count_range": "1001-5000",
+      "markets": [
+       "PRIVATE"
+      ],
+      "industries": [
+       "Airlines and Aviation",
+       "Transportation, Logistics, Supply Chain and Storage"
+      ]
+     },
+     "social_profiles": null
+    }
+   }
+  ]
+ }
+]

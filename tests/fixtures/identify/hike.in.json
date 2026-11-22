@@ -1,0 +1,39 @@
+[
+ {
+  "matched_on": "hike.in",
+  "match_type": "domain",
+  "matches": [
+   {
+    "confidence_score": 1.0,
+    "company_data": {
+     "crustdata_company_id": 5740,
+     "basic_info": {
+      "name": "Hike",
+      "crustdata_company_id": 5740,
+      "primary_domain": "hike.in",
+      "all_domains": [
+       "hike.in"
+      ],
+      "website": "http://work.hike.in/",
+      "professional_network_url": "https://www.linkedin.com/company/hike",
+      "professional_network_id": "2790400",
+      "profile_name": "Hike",
+      "logo_permalink": "https://crustdata-media.s3.us-east-2.amazonaws.com/company/797210adc25634b134f30627fed20a6b8ee1626cbfa95aec2b4c780f94a3635f.jpg",
+      "description": "At Hike, we’re building the Hike Gaming Nation. We're taking gaming, one of the fastest-growing segments of entertainment in India, and converting it into a brand new source of economic opportunity. We're building a new kind of game economy where players can play, earn & grow and become true owners in the very networks that they help create. Hike’s latest round of funding came in August 2021, where we raised capital from the world’s best product innovators & investors. The round was led by Justin Mateen (Co-Founder, Tinder). Rajeev Misra (CEO, SoftBank Vision Fund), Sean Rad (Co-Founder, Tinder), Arjun Sethi (Co-Founder & Partner, Tribe Capital), Bhavin Turakhia (Co-Founder, Zeta & Titan), Kunal Shah (Founder, Cred), Binny Bansal (Co-Founder, Flipkart), Aditya Agarwal (Partner in Residence, South Park Commons), Kunal Bahl (Co-Founder & CEO, Snapdeal) & Rohit Kumar Bansal (Co-Founder, Snapdeal), also participated in the round.Currently, our dedicated team comprises approximately ~110 professionals who work remotely from over 30 different cities. The way we see it is we’ve been dropped off on a mountain that’s unexplored, without a map and it’s our job to figure things out. It’s an opportunity of a lifetime, a chance to do our life's best work.",
+      "company_type": "Privately Held",
+      "year_founded": 2012,
+      "employee_count_range": "51-200",
+      "markets": [
+       "PRIVATE"
+      ],
+      "industries": [
+       "Technology, Information and Internet",
+       "Technology, Information and Media"
+      ]
+     },
+     "social_profiles": null
+    }
+   }
+  ]
+ }
+]

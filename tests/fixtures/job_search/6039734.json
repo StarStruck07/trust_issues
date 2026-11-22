@@ -1,0 +1,1640 @@
+{
+ "job_listings": [
+  {
+   "crustdata_job_id": 5354255158799337,
+   "job_details": {
+    "job_id": 5354255158799337,
+    "title": "Android Developer",
+    "category": "Engineering and Information Technology",
+    "workplace_type": null,
+    "url": "https://in.linkedin.com/jobs/view/android-developer-at-rivigo-3295758490",
+    "reposted_job": false,
+    "number_of_openings": null,
+    "source": "professional_network",
+    "employment_type": null
+   },
+   "company": {
+    "basic_info": {
+     "crustdata_company_id": 6039734,
+     "name": "RIVIGO",
+     "primary_domain": "rivigo.com",
+     "website": "https://mahindralogistics.com/b2b-express",
+     "professional_network_id": "6585780",
+     "industries": [
+      "Truck Transportation",
+      "Transportation, Logistics, Supply Chain and Storage"
+     ]
+    },
+    "locations": {
+     "country": "India",
+     "state": "Haryana",
+     "city": null,
+     "street_address": "Plot No. 90, Sector 44 Near Huda City Centre, Gurgaon Sector 45, Wazirabad, Smaspur, Jharsa, Gwal Pahari, Haryana"
+    },
+    "headcount": {
+     "total": 2209,
+     "range": "1001-5000",
+     "largest_headcount_country": "IND"
+    },
+    "followers": {
+     "count": 217950
+    },
+    "revenue": {
+     "estimated": {
+      "lower_bound_usd": 500000000,
+      "upper_bound_usd": 1000000000
+     },
+     "public_markets": {
+      "stock_symbols": [],
+      "fiscal_year_end": ""
+     },
+     "acquisition_status": null
+    },
+    "funding": {
+     "total_investment_usd": 287045357.0,
+     "valuation_usd": 0.0,
+     "last_fundraise_date": "2022-08-23T00:00:00",
+     "last_round_type": "series_h",
+     "num_funding_rounds": 12,
+     "investors": [
+      "Elevation Capital",
+      "InnoVen Capital",
+      "KB Global Platform Fund",
+      "SAIF Partners",
+      "Spring Canter Investment",
+      "Trifecta Capital Advisors",
+      "Warburg Pincus"
+     ]
+    },
+    "competitors": {
+     "websites": []
+    }
+   },
+   "location": {
+    "raw": "Gurugram, Haryana, India",
+    "city": "Gurugram",
+    "district": "Gurgaon Division",
+    "state": "Haryana",
+    "country": "India",
+    "pincode": null
+   },
+   "content": {
+    "description": ". . . About RIVIGO. We are a technology-enabled company that is shaping the future of logistics for the world. Founded in 2014, we are transforming the sector with our global-first driver relay model made possible through a unique mix of next generation data science and operational excellence.. Grounded in the mission of making logistics human, we have fundamentally changed the truck driver’s job from a ‘months-away-from-home’ job to a ‘day’ job. Unlike conventional truck drivers, relay pilots drive from pitstop to pitstop (under 300 kms) and return to their families the same day, thus, creating huge social dividend.. Relay trucking also ensures 50-70% reduction in turnaround time and highest reliability for clients, helping them reinvent their business models – serving new markets, reducing inventory and significantly cutting costs. Listed among the world’s top emerging businesses and backed by marquee investors, we are working on a vision to build a completely technology-enabled RaaS (Relay as a service) marketplace to define the way goods move on roads in India and the world.. Responsibilities:. Design and build advanced applications for the Android platform.. • Collaborate with cross-functional teams to define, design, and ship new features.. • Work with outside data sources and APIs.. • Unit-test code for robustness, including edge cases, usability, and general reliability.. • Work on bug fixing and improving application performance.. • Continuously discover, evaluate, and implement new technologies to maximize development efficiency. Requirements:. • B. E. /B. Tech degree in Computer Science, Engineering or a related subject from Tier-I campus.. • 2 to 5 years of relevant experience.. • Proven software development experience and Android skills development.. • Proven working experience in Android app development and Have published at least one original Android app.. • Experience with Android SDK, Activity, Fragments, Layouts, Services, Broadcast Receivers, Rx Java, Kotlin, MVP and MVVM.. • Experience working with remote data via REST and JSON.. • Experience with third-party libraries and APIs.. • Working knowledge of the general mobile landscape, architectures, trends, and emerging technologies.. • Solid understanding of the full mobile development life cycle.. Who are we looking for:. •. A Technology Geek:. You are fanatical about technology and are always on the look-out of newer better ways of building solutions. •. Analytical and a Problem Solver:. You understand the needs and requirements and conceptualize and design solutions for the problems.. •. A Go-Getter:. You are a highly driven individual who goes that extra mile to deliver an outstanding product to the business team.. •. Customer Oriented:. You are obsessed with providing the highest quality product and experience to the customer.. •. Adaptable:. You demonstrate the ability to work in a fast paced and hyper-growth environment where the requirements are constantly changing.. •. A Visionary:. You complement product and design leadership with finding the right solution to the problems RIVIGO is trying to solve for tomorrow.. . . Show more. . . Show less. . . ."
+   },
+   "metadata": {
+    "date_added": "2022-09-30T00:00:00",
+    "date_updated": "2022-10-28T00:00:00"
+   }
+  },
+  {
+   "crustdata_job_id": 6853262897800181,
+   "job_details": {
+    "job_id": 6853262897800181,
+    "title": "Associate Product Manager",
+    "category": "Product Management",
+    "workplace_type": null,
+    "url": "https://in.linkedin.com/jobs/view/associate-product-manager-at-rivigo-3151076043",
+    "reposted_job": false,
+    "number_of_openings": null,
+    "source": "professional_network",
+    "employment_type": null
+   },
+   "company": {
+    "basic_info": {
+     "crustdata_company_id": 6039734,
+     "name": "RIVIGO",
+     "primary_domain": "rivigo.com",
+     "website": "https://mahindralogistics.com/b2b-express",
+     "professional_network_id": "6585780",
+     "industries": [
+      "Truck Transportation",
+      "Transportation, Logistics, Supply Chain and Storage"
+     ]
+    },
+    "locations": {
+     "country": "India",
+     "state": "Haryana",
+     "city": null,
+     "street_address": "Plot No. 90, Sector 44 Near Huda City Centre, Gurgaon Sector 45, Wazirabad, Smaspur, Jharsa, Gwal Pahari, Haryana"
+    },
+    "headcount": {
+     "total": 2209,
+     "range": "1001-5000",
+     "largest_headcount_country": "IND"
+    },
+    "followers": {
+     "count": 217950
+    },
+    "revenue": {
+     "estimated": {
+      "lower_bound_usd": 500000000,
+      "upper_bound_usd": 1000000000
+     },
+     "public_markets": {
+      "stock_symbols": [],
+      "fiscal_year_end": ""
+     },
+     "acquisition_status": null
+    },
+    "funding": {
+     "total_investment_usd": 287045357.0,
+     "valuation_usd": 0.0,
+     "last_fundraise_date": "2022-08-23T00:00:00",
+     "last_round_type": "series_h",
+     "num_funding_rounds": 12,
+     "investors": [
+      "Elevation Capital",
+      "InnoVen Capital",
+      "KB Global Platform Fund",
+      "SAIF Partners",
+      "Spring Canter Investment",
+      "Trifecta Capital Advisors",
+      "Warburg Pincus"
+     ]
+    },
+    "competitors": {
+     "websites": []
+    }
+   },
+   "location": {
+    "raw": "Gurugram, Haryana, India",
+    "city": "Gurugram",
+    "district": "Gurgaon Division",
+    "state": "Haryana",
+    "country": "India",
+    "pincode": null
+   },
+   "content": {
+    "description": ". . . About Rivigo:. We are a technology-enabled company that is shaping the future of logistics for the world. Founded in 2014, we are transforming the sector with our global-first driver relay model made possible through a unique mix of next generation data science and operational excellence.. . Grounded in the mission of making logistics human, we have fundamentally changed the truck driver’s job from a ‘months-away-from-home’ job to a ‘day’ job. Unlike conventional truck drivers, relay pilots drive from pitstop to pitstop (under 300 kms) and return to their families the same day, thus, creating huge social dividend.. . While RIVIGO has found a strong product/market fit with its disruptive idea, we believe it is still the first hour of our day 1 vision. We are looking for exceptionally smart, data-driven folks who love building exciting products. We call them Product CEOs – they take end to end accountability of executing our grand technology vision.. . . Our Product Managers work with sharp and driven business teams, a team of the country’s best engineers and data scientists, designers and product managers in a high energy, fast-paced, rapidly growing environment.. Responsibilities of an Associate Product Manager (APM):. . The key purpose of this role is to solve data and intelligence problems that are focused on redefining complex operations via efficient technology systems. The incumbent will lead the product development lifecycle end to end, starting from understanding the problems at hand, empathizing with the user to ensure the adoption post product launches, drive innovation and conceptualize new products from scratch – this might require challenging the status quo, going deep into data, and thinking boldly.. Create In-depth understanding of business and problem statement by:. Creating high quality PRDs/wireframe during product development. Working on disruptive data driven algorithms. Thinking through reports to measure product metric and future enhancement. Create products which ensure 100% :. Achievement of business objectives. Have high adoption post release. Qualifications:. • Master’s degree from premier institutes / Bachelor’s degree (preferably Computer Science) from a Tier I engineering college (IITs, BITS Pilani, NSIT, DCE, NITs, IIITs). • 1-3 years of prior product experience. • Experience with all stages of the product lifecycle. • Deep intuition driven from user empathy, along with passion to back it up with data. • Good understanding of consumer behaviour to drive product delivery from conceptualization to implementation. • Having Data Analytics knowledge/ experience would be a plus. • Proven experience in managing stakeholders well. • Building and managing people. . . Show more. . . Show less. . . ."
+   },
+   "metadata": {
+    "date_added": "2022-07-01T00:00:00",
+    "date_updated": "2022-07-30T00:00:00"
+   }
+  },
+  {
+   "crustdata_job_id": 7330429953577652,
+   "job_details": {
+    "job_id": 7330429953577652,
+    "title": "DevOps Engineer",
+    "category": "Engineering",
+    "workplace_type": null,
+    "url": "https://in.linkedin.com/jobs/view/devops-engineer-at-rivigo-3116753205",
+    "reposted_job": false,
+    "number_of_openings": null,
+    "source": "professional_network",
+    "employment_type": null
+   },
+   "company": {
+    "basic_info": {
+     "crustdata_company_id": 6039734,
+     "name": "RIVIGO",
+     "primary_domain": "rivigo.com",
+     "website": "https://mahindralogistics.com/b2b-express",
+     "professional_network_id": "6585780",
+     "industries": [
+      "Truck Transportation",
+      "Transportation, Logistics, Supply Chain and Storage"
+     ]
+    },
+    "locations": {
+     "country": "India",
+     "state": "Haryana",
+     "city": null,
+     "street_address": "Plot No. 90, Sector 44 Near Huda City Centre, Gurgaon Sector 45, Wazirabad, Smaspur, Jharsa, Gwal Pahari, Haryana"
+    },
+    "headcount": {
+     "total": 2209,
+     "range": "1001-5000",
+     "largest_headcount_country": "IND"
+    },
+    "followers": {
+     "count": 217950
+    },
+    "revenue": {
+     "estimated": {
+      "lower_bound_usd": 500000000,
+      "upper_bound_usd": 1000000000
+     },
+     "public_markets": {
+      "stock_symbols": [],
+      "fiscal_year_end": ""
+     },
+     "acquisition_status": null
+    },
+    "funding": {
+     "total_investment_usd": 287045357.0,
+     "valuation_usd": 0.0,
+     "last_fundraise_date": "2022-08-23T00:00:00",
+     "last_round_type": "series_h",
+     "num_funding_rounds": 12,
+     "investors": [
+      "Elevation Capital",
+      "InnoVen Capital",
+      "KB Global Platform Fund",
+      "SAIF Partners",
+      "Spring Canter Investment",
+      "Trifecta Capital Advisors",
+      "Warburg Pincus"
+     ]
+    },
+    "competitors": {
+     "websites": []
+    }
+   },
+   "location": {
+    "raw": "Gurugram, Haryana, India",
+    "city": "Gurugram",
+    "district": "Gurgaon Division",
+    "state": "Haryana",
+    "country": "India",
+    "pincode": null
+   },
+   "content": {
+    "description": ". . . ROLE. DevOps Engineer. About RIVIGO. We are a technology-enabled company that is shaping the future of logistics for the world. Founded in 2014, we are transforming the sector with our global-first driver relay model made possible through a unique mix of next generation data science and operational excellence.. Grounded in the mission of making logistics human, we have fundamentally changed the truck driver’s job from a ‘months-away-from-home’ job to a ‘day’ job. Unlike conventional truck drivers, relay pilots drive from pitstop to pitstop (under 300 kms) and return to their families the same day, thus, creating huge social dividend.. Relay trucking also ensures 50-70% reduction in turnaround time and highest reliability for clients, helping them reinvent their business models – serving new markets, reducing inventory and significantly cutting costs. Listed among the world’s top emerging businesses and backed by marquee investors, we are working on a vision to build a completely technology-enabled RaaS (Relay as a service) marketplace to define the way goods move on roads in India and the world.. . What will you do?. RIVIGO Labs is at the core of our vision. A team of the country’s best engineers and data scientists, we are leveraging smart data and technology to build ground-breaking solutions at scale. This year we are focused on solving data and intelligence problems, redefining complex operations via technology using decision making science to optimize, and build efficient technology systems.. As a. DevOps Engineer. , you will be managing the infrastructure which supports the technology vision for RIVIGO. To enable the development team to build solutions for time-space complexity problems such as network relay model, fuel analytics and optimization, resource (vehicle/pilot) allocation and optimization, human behavior analysis, geo analytics, time continuum and visualization, line haul planning etc., you will be the one who ensures that the platforms required for such services run in the most efficient manner. The DevOps Engineers at Rivigo strive to achieve high availability, scalability, reliability, and security of the technology systems.. . Who we are looking for:. Customer Oriented:. You are obsessed with providing the highest quality infrastructure and experience to the customer.. A Go-Getter:. You are a highly driven individual who goes that extra mile to deliver an outstanding product to the business team.. Analytical and a Problem Solver:. You understand the needs and requirements and conceptualize and design solutions for the problems.. Adaptable:. You demonstrate the ability to work in a fast paced and hyper-growth environment where the requirements are constantly changing.. A Technology Geek:. You are fanatical about technology and are always on the look-out of newer better ways of building solutions. A Team Builder:. You are a thoughtful interviewer who constantly raises the bar for excellence. You believe that each new hire should significantly be better than the team to raise the collective bar. You mentor and coach tech talent to becomes tomorrow’s leaders.. A Visionary:. You complement product and design leadership with finding the right infrastructure solution to the problems RIVIGO is trying to solve for tomorrow.. . Qualifications:. Bachelors/Masters in Computer Science or a related field. Strong knowledge of Linux systems with 3+ years of professional experience. DevOps software development experience in similar environments. Hands on experience in handling microservices based architecture at scale. Strong experience with Amazon Web Services (AWS). Experience with Chef (preferred), Puppet, Ansible, or similar tools.. Scripting experience in Ruby, Bash, Perl, Python or similar. Strong experience with SQL, MySQL (NoSQL experience is a plus, too, since we also use Redis & Mongo). Working understanding of application and web servers, such as tomcat and apache httpd.. Knowledge of best practices in release management & CI/CD pipelines. Professional experience in 24x7 enterprise environments. Understand and Automate solutions for permanently fixing prevent outages / downtimes. Responsible for architecting deployments for high availability, scalability and reliability. Design and implement platforms for monitoring, log processing, metrics collection and data visualization.. Script and code automation tools (in shell/perl/ruby/python etc) for automation and efficient management of sites/products. Good knowledge of Infrastructure and platform security.. . Read more:. About us:. Technology vision @ RIVIGO. - Future of Technology @ RIVIGO. Working at RIVIGO Labs. - https://rivigo.com/careers/solve-real-problems. Problems we solve at RIVIGO Labs. - https://rivigo.com/labs. Colleagues speak at RIVIGO Labs. – https://rivigo.com/careers/vinay-jeengar. https://rivigo.com/careers/sagar-patidar. Who we are. - https://rivigo.com/who-we-are. Our mission. - https://rivigo.com/the-dream. Our way of life. - https://rivigo.com/careers/the-rivigo-way-of-life. Hear our ‘Heroes’ talk about their journey. - https://www.youtube.com/watch?v=ukWlJdeSB3g&t=3s. Meet our 2017 campus hires. - https://www.youtube.com/watch?v=kwHxDyCVFV0. ‘Not the 37th Caste’, e-book of our pilot stories. - Not the 37th caste. Meet our ‘Pilots’. - https://www.youtube.com/watch?v=Z2wlKChJCRY&t=15s. https://www.youtube.com/watch?v=D8moa7B7bjU. Our hiring philosophy. - https://rivigo.com/careers/the-rivigo-way-of-hiring. . RIVIGO in the news:. Deepak Garg in conversation with Economic Times on the pivotal moments that set him on his way for the RIVIGO moment. Deepak Garg in conversation with Quartz on Rivigo’s journey so far, the impact of GST on logistics and the pivotal role of technology to go the distance. Rivigo features in Interbrand's global list of top 40 emerging brands. Tech-driven logistics firm Rivigo on road to be largest platform by 2020. McKinsey alumnus Deepak Garg taps geeks in bid to rule trucking in India. We Want To Positively Impact Lives Of 100,000 Truck Drivers By 2025: Rivigo. Drive in India’ can generate more jobs than ‘Make in India. Rivigo raises $75 million in Series C funding from Warburg Pincus. With 3 surface transport patents in US, Rivigo takes road less travelled. Rivigo adds relay system to fuel age-old transport biz. Rivigo gearing up to spend $100 million in new fiscal to beat rivals. . . Show more. . . Show less. . . ."
+   },
+   "metadata": {
+    "date_added": "2022-06-08T00:00:00",
+    "date_updated": "2022-06-29T00:00:00"
+   }
+  },
+  {
+   "crustdata_job_id": 7755188729891638,
+   "job_details": {
+    "job_id": 7755188729891638,
+    "title": "Associate/ Lead/  Program Manager- Strategy/ Planning",
+    "category": "Consulting, Strategy/Planning, and Supply Chain",
+    "workplace_type": null,
+    "url": "https://in.linkedin.com/jobs/view/associate-lead-program-manager-strategy-planning-at-rivigo-3101340606",
+    "reposted_job": false,
+    "number_of_openings": null,
+    "source": "professional_network",
+    "employment_type": null
+   },
+   "company": {
+    "basic_info": {
+     "crustdata_company_id": 6039734,
+     "name": "RIVIGO",
+     "primary_domain": "rivigo.com",
+     "website": "https://mahindralogistics.com/b2b-express",
+     "professional_network_id": "6585780",
+     "industries": [
+      "Truck Transportation",
+      "Transportation, Logistics, Supply Chain and Storage"
+     ]
+    },
+    "locations": {
+     "country": "India",
+     "state": "Haryana",
+     "city": null,
+     "street_address": "Plot No. 90, Sector 44 Near Huda City Centre, Gurgaon Sector 45, Wazirabad, Smaspur, Jharsa, Gwal Pahari, Haryana"
+    },
+    "headcount": {
+     "total": 2209,
+     "range": "1001-5000",
+     "largest_headcount_country": "IND"
+    },
+    "followers": {
+     "count": 217950
+    },
+    "revenue": {
+     "estimated": {
+      "lower_bound_usd": 500000000,
+      "upper_bound_usd": 1000000000
+     },
+     "public_markets": {
+      "stock_symbols": [],
+      "fiscal_year_end": ""
+     },
+     "acquisition_status": null
+    },
+    "funding": {
+     "total_investment_usd": 287045357.0,
+     "valuation_usd": 0.0,
+     "last_fundraise_date": "2022-08-23T00:00:00",
+     "last_round_type": "series_h",
+     "num_funding_rounds": 12,
+     "investors": [
+      "Elevation Capital",
+      "InnoVen Capital",
+      "KB Global Platform Fund",
+      "SAIF Partners",
+      "Spring Canter Investment",
+      "Trifecta Capital Advisors",
+      "Warburg Pincus"
+     ]
+    },
+    "competitors": {
+     "websites": []
+    }
+   },
+   "location": {
+    "raw": "Gurugram, Haryana, India",
+    "city": "Gurugram",
+    "district": "Gurgaon Division",
+    "state": "Haryana",
+    "country": "India",
+    "pincode": null
+   },
+   "content": {
+    "description": ". . . ROLE. Associate / Lead / Program Manager – Strategy/Planning. WHO WE ARE. Rivigo is a technology company and a crowned unicorn founded in 2014, which is revolutionizing logistics & goods mobility in India with its unique, global-first relay trucking model. With a strong interplay of data, technology, operational excellence, and culture, we aim to make logistics faster, safer, cost-effective, and human.. Since we embarked on our journey of making logistics human, our ever-evolving, passionate, ambitious, and bold team has been relentlessly working towards this pursuit. Our purpose will be fulfilled through implementation of relay at scale, which would ensure a better life for our pilots, limitless growth and scale for our fleet partners, and reliable supply for our customers. We strongly believe that the biggest celebration of human life is elimination of drudgery, and that's exactly what we aim to achieve through our innovations at Rivigo.. WHO WE’RE LOOKING FOR. B.E/B.Tech from a Premium Engineering Institute (IITs, NITs, BITS Pilani, DCE, NSIT, BIT Mesra, etc.) or MBA grad from Tier-I MBA college, with 1-4 years of experience in consulting / ops excellence / ops analytics roles. Exceptional problem-solver with a demonstrated ability to drive continuous improvement initiatives, who can take complete ownership of key workstreams to solve the complex challenges within a highly nuanced industry. Substantial experience in program/project management or an equivalent operational role. Ability to interpret, analyse, and understand complex data sets. Ability to influence stakeholders across the organization without direct reporting lines. Proven experience and knowledge of process improvement tools, methods, and techniques like 6/Sigma will be a plus. WHAT YOU’LL BE RESPONSIBLE FOR. Applying analytical expertise on operations to conceptualize projects, build stakeholder alignment, and drive projects to achieve strategic goals / rationalize cost & quality performance. Developing and maintaining operational excellence project plans, managing resources, identifying, prioritizing, and implementing initiatives to improve productivity, quality, customer service, and reducing costs and complexity. Leading the product development lifecycle end to end, starting from understanding the problems at hand, empathizing with the user to ensure the adoption post product launches, driving innovation, and conceptualizing new products from scratch – all of which requires challenging the status quo, going deep into data, persistently digging for improvement opportunities, and thinking boldly. Managing large and highly complex programs that will accelerate operational productivity and customer experience improvement across the organization. Fuelling a passion for operational excellence within operations teams. Join us to write the future of an entire sector and contribute to building the new India.. . . Show more. . . Show less. . . ."
+   },
+   "metadata": {
+    "date_added": "2022-05-30T00:00:00",
+    "date_updated": "2022-06-28T00:00:00"
+   }
+  },
+  {
+   "crustdata_job_id": 1521688884605095,
+   "job_details": {
+    "job_id": 1521688884605095,
+    "title": "SDE-2 Backend",
+    "category": "Information Technology and Engineering",
+    "workplace_type": null,
+    "url": "https://in.linkedin.com/jobs/view/sde-2-backend-at-rivigo-3094203571",
+    "reposted_job": false,
+    "number_of_openings": null,
+    "source": "professional_network",
+    "employment_type": null
+   },
+   "company": {
+    "basic_info": {
+     "crustdata_company_id": 6039734,
+     "name": "RIVIGO",
+     "primary_domain": "rivigo.com",
+     "website": "https://mahindralogistics.com/b2b-express",
+     "professional_network_id": "6585780",
+     "industries": [
+      "Truck Transportation",
+      "Transportation, Logistics, Supply Chain and Storage"
+     ]
+    },
+    "locations": {
+     "country": "India",
+     "state": "Haryana",
+     "city": null,
+     "street_address": "Plot No. 90, Sector 44 Near Huda City Centre, Gurgaon Sector 45, Wazirabad, Smaspur, Jharsa, Gwal Pahari, Haryana"
+    },
+    "headcount": {
+     "total": 2209,
+     "range": "1001-5000",
+     "largest_headcount_country": "IND"
+    },
+    "followers": {
+     "count": 217950
+    },
+    "revenue": {
+     "estimated": {
+      "lower_bound_usd": 500000000,
+      "upper_bound_usd": 1000000000
+     },
+     "public_markets": {
+      "stock_symbols": [],
+      "fiscal_year_end": ""
+     },
+     "acquisition_status": null
+    },
+    "funding": {
+     "total_investment_usd": 287045357.0,
+     "valuation_usd": 0.0,
+     "last_fundraise_date": "2022-08-23T00:00:00",
+     "last_round_type": "series_h",
+     "num_funding_rounds": 12,
+     "investors": [
+      "Elevation Capital",
+      "InnoVen Capital",
+      "KB Global Platform Fund",
+      "SAIF Partners",
+      "Spring Canter Investment",
+      "Trifecta Capital Advisors",
+      "Warburg Pincus"
+     ]
+    },
+    "competitors": {
+     "websites": []
+    }
+   },
+   "location": {
+    "raw": "Gurugram, Haryana, India",
+    "city": "Gurugram",
+    "district": "Gurgaon Division",
+    "state": "Haryana",
+    "country": "India",
+    "pincode": null
+   },
+   "content": {
+    "description": ". . . About RIVIGO. We are a technology-enabled company that is shaping the future of logistics for the world. Founded in 2014, we are transforming the sector with our global-first driver relay model made possible through a unique mix of next generation data science and operational excellence.. Grounded in the mission of making logistics human, we have fundamentally changed the truck driver’s job from a ‘months-away-from-home’ job to a ‘day’ job. Unlike conventional truck drivers, relay pilots drive from pitstop to pitstop (under 300 kms) and return to their families the same day, thus, creating huge social dividend.. Relay trucking also ensures 50-70% reduction in turnaround time and highest reliability for clients, helping them reinvent their business models – serving new markets, reducing inventory and significantly cutting costs. Listed among the world’s top emerging businesses and backed by marquee investors, we are working on a vision to build a completely technology-enabled RaaS (Relay as a service) marketplace to define the way goods move on roads in India and the world.. What will you do?. RIVIGO Labs is at the core of our vision. A team of the country’s best engineers and data scientists, we are leveraging smart data and technology to build ground-breaking solutions at scale. This year we are focused on solving data and intelligence problems that are focused on redefining complex operations via technology using decision making science to optimize and build efficient technology systems. As SDE II, you will be working on challenging time-space complex problems that are futuristic and have never been solved before. These will include network relay model, fuel analytics and optimization, resource (vehicle/pilot) allocation and optimization, human behavior analysis, geo analytics, time continuum and visualization, line haul planning etc. Your role would involve architecting systems capable of serving as the brains of complex distributed products. In addition, you’d also closely mentor younger engineers on the team and contribute to team building. A strong technologist at RIVIGO cares about code modularity, scalability and reusability and thrives in a complex and ambiguous environment.. Who are we looking for:. •. A Technology Geek:. You are fanatical about technology and are always on the look-out of newer better ways of building solutions. •. Analytical and a Problem Solver:. You understand the needs and requirements and conceptualize and design solutions for the problems.. •. A Go-Getter:. You are a highly driven individual who goes that extra mile to deliver an outstanding product to the business team.. •. Customer Oriented:. You are obsessed with providing the highest quality product and experience to the customer.. •. Adaptable:. You demonstrate the ability to work in a fast paced and hyper-growth environment where the requirements are constantly changing.. •. A Visionary:. You complement product and design leadership with finding the right solution to the problems RIVIGO is trying to solve for tomorrow.. Qualifications:. . • Bachelors/Masters in Computer Science or a related field. • 3-5 years of relevant experience. • Experience with web technologies and microservices architecture, including Java, Linux, Apache, MySQL, solr, memcache, redis, javascript, ajax etc.. • Experience with high performance websites catering to millions of daily traffic is a plus. • Excellent team-working skills and ability to handle multiple tasks together.. • Experience with API Designing and ability to architect and implement an intuitive customer and third-party integration story. • Ability to think and analyse both breadth-wise (client, server, DB, control flow) and depth-wise (threads, sessions, space-time complexity) while designing and implementing services. • Exceptional design and architectural skills. Read more About us:. You MUST watch this five-minute acceptance speech by Deepak Garg, our founder & CEO, where he talks about our mission: MIF Talkies - Not the 37th Caste Mahindra created this 2-minute video which very aptly summarizes what we do: Mahindra - RIVIGO video. Who we are:. https://rivigo.com/who-we-are. Our Vision:. Vision (rivigo.com). Our Purpose. : Making Logistics Human (rivigo.com). Our way of life. : https://rivigo.com/careers/the-rivigo-way-of-life. Our culture and hiring philosophy. : Culture (rivigo.com). Hear our ‘Heroes’ talk about their journey. : https://www.youtube.com/watch?v=ukWlJdeSB3g&t=3s. Problems we solve at Rivigo Labs. : https://eng.rivigo.com/. Why Rivigo is best place for engineers:. Why RIVIGO is the Best Place for Engineers - RIVIGO Blog. Rivigo:. A new approach for long-distance trucking in India: https://youtu.be/jDaBzcJLnm4. Stories of our pilots titled ‘Not the 37th Caste’. Making Logistics Human (rivigo.com). Meet our ‘Pilots’:. •. Rivigo Pilot Stories -. Pilot Sunder Lalji. •. Rivigo Pilot Stories -. Pilot Rajpal Chauhanji. • Rivigo Pilot Stories -. Pilot Nagrajji. •. Rivigo Pilot Stories -. Pilot Ramavtar Gujjarji. •. Rivigo Pilot Stories -. Pilot Ram Kishanji. Notable Press Mentions :. • Deepak Garg represents Rivigo at the Launch of Gati Shakti event with Prime Minister. • https://enterprisetalk.com/news/rivigo-appoints-rohan-mittal-as-chief-financial-officer/. • Rivigo- A new approach for long distance Trucking in India. • We Want to Positively Impact Lives Of 100,000 Truck Drivers By 2025: Rivigo. • Drive in India’ can generate more jobs than ‘Make in India. • Conference with Rivigo Pilots. • A journey towards a more flexible and impactful HR. • Quartz - How RIVIGO is using big data and technology to create an edge. • YourStory – Deepak Garg on building great technology products. • Yourstory – How RIVIGO is bringing in transformation through a humane mission and technology • Business Standard - Rivigo builds a long haul trip with drivers. • Hindu Business Line - Tech-driven logistics firm Rivigo on road to be largest platform by 2020. • Economic Times - With 3 surface transport patents in US, Rivigo takes road less travelled. • https://asia.stanford.edu/course/topics-in-international-technology-management/2021-mobility-asia-moves-forward-in-the-4th-industrial-revolution/infrastructure-in-india/. Recent Accolades:. 1. Among LinkedIn’s Top 5 Startups. 2. Economic Times’ Award for ‘Business Model Innovation’. 3. NASSCOM’s ‘Game Changer Award’. 4. Marico Innovation Foundation Award for ‘Business Innovation’. 5. People Business powered by ET for ‘Company with Great Managers’. 6. Among Interbrand’s Top 40 Emerging Brands Globally. 7. Frost and Sullivan's Innovation and Leadership Award. . . Show more. . . Show less. . . ."
+   },
+   "metadata": {
+    "date_added": "2022-05-25T00:00:00",
+    "date_updated": "2022-07-23T00:00:00"
+   }
+  },
+  {
+   "crustdata_job_id": 37211035055507,
+   "job_details": {
+    "job_id": 37211035055507,
+    "title": "Business Analyst",
+    "category": "Research, Analyst, and Information Technology",
+    "workplace_type": null,
+    "url": "https://in.linkedin.com/jobs/view/business-analyst-at-rivigo-3083599809",
+    "reposted_job": false,
+    "number_of_openings": null,
+    "source": "professional_network",
+    "employment_type": null
+   },
+   "company": {
+    "basic_info": {
+     "crustdata_company_id": 6039734,
+     "name": "RIVIGO",
+     "primary_domain": "rivigo.com",
+     "website": "https://mahindralogistics.com/b2b-express",
+     "professional_network_id": "6585780",
+     "industries": [
+      "Truck Transportation",
+      "Transportation, Logistics, Supply Chain and Storage"
+     ]
+    },
+    "locations": {
+     "country": "India",
+     "state": "Haryana",
+     "city": null,
+     "street_address": "Plot No. 90, Sector 44 Near Huda City Centre, Gurgaon Sector 45, Wazirabad, Smaspur, Jharsa, Gwal Pahari, Haryana"
+    },
+    "headcount": {
+     "total": 2209,
+     "range": "1001-5000",
+     "largest_headcount_country": "IND"
+    },
+    "followers": {
+     "count": 217950
+    },
+    "revenue": {
+     "estimated": {
+      "lower_bound_usd": 500000000,
+      "upper_bound_usd": 1000000000
+     },
+     "public_markets": {
+      "stock_symbols": [],
+      "fiscal_year_end": ""
+     },
+     "acquisition_status": null
+    },
+    "funding": {
+     "total_investment_usd": 287045357.0,
+     "valuation_usd": 0.0,
+     "last_fundraise_date": "2022-08-23T00:00:00",
+     "last_round_type": "series_h",
+     "num_funding_rounds": 12,
+     "investors": [
+      "Elevation Capital",
+      "InnoVen Capital",
+      "KB Global Platform Fund",
+      "SAIF Partners",
+      "Spring Canter Investment",
+      "Trifecta Capital Advisors",
+      "Warburg Pincus"
+     ]
+    },
+    "competitors": {
+     "websites": []
+    }
+   },
+   "location": {
+    "raw": "Gurugram, Haryana, India",
+    "city": "Gurugram",
+    "district": "Gurgaon Division",
+    "state": "Haryana",
+    "country": "India",
+    "pincode": null
+   },
+   "content": {
+    "description": ". . . About us:. Logistics is the world’s largest contributor to GDP and one of the key focus areas for India’s growth over the next decade. Founded in 2014 and listed among the world’s top emerging businesses, RIVIGO is writing the future of logistics with a global-first driver relay model enabled by a unique mix of next generation data science and operational excellence.. Through the relay model, we have fundamentally changed the truck driver’s job from a ‘months-away-from-home’ job to a ‘day’ job. Unlike conventional truck drivers, relay pilots drive from pitstop to pitstop (under 300 kms) and return to their families the same day, thus initiating a huge cycle of social change. Our mission and journey with relay pilots are captured in the coffee table book ‘. Not the 37th Caste. ’ (. an e-copy attached for you).. We help our customers reimagine their supply chain by leveraging our capabilities of fastest transit time, highest precision, highest network coverage and interplay of data & technology. (a case study of how our customers unlock value in their business is attached for your reference). . Notable Press Mentions :. Deepak Garg represents Rivigo at the Launch of Gati Shakti event with Prime Minister. https://enterprisetalk.com/news/rivigo-appoints-rohan-mittal-as-chief-financial-officer/. Rivigo- A new approach for long distance Trucking in India. We Want to Positively Impact Lives Of 100,000 Truck Drivers By 2025: Rivigo. Drive in India’ can generate more jobs than ‘Make in India. Conference with Rivigo Pilots. A journey towards a more flexible and impactful HR. Quartz - How RIVIGO is using big data and technology to create an edge. YourStory – Deepak Garg on building great technology products. Yourstory – How RIVIGO is bringing in transformation through a humane mission and technology. Business Standard - Rivigo builds a long haul trip with drivers. Hindu Business Line - Tech-driven logistics firm Rivigo on road to be largest platform by 2020. Economic Times - With 3 surface transport patents in US, Rivigo takes road less travelled. . Rivigo pilot stories. :. Rivigo Pilot Stories - Pilot Sunder Lalji. Rivigo Pilot Stories - Pilot Rajpal Chauhanji. Rivigo Pilot Stories - Pilot Nagrajji. Rivigo Pilot Stories - Pilot Ramavtar Gujjarji. Rivigo Pilot Stories - Pilot Ram Kishanji. . . Recent Accolades:. Among LinkedIn’s Top 5 Startups. Economic Times’ Award for ‘Business Model Innovation’. NASSCOM’s ‘Game Changer Award’. Marico Innovation Foundation Award for ‘Business Innovation’. People Business powered by ET for ‘Company with Great Managers’. Among Interbrand’s Top 40 Emerging Brands Globally. Frost and Sullivan's Innovation and Leadership Award. Job Description:. What will you do :. Analyse data to track and improve operational metrics and generate insights. Publish reports and dashboards to drive change management and initiatives’ success across workstreams. Drive continuous improvement in operations through process streamlining and tech deployment. Stay up-to-date on the latest process and tech advancements to automate systems & processes. Work closely with business leaders & cross functional teams to manage projects, develop project plans, and monitor performance. Influence business decisions through data based insights and enhance decision-making process. What are we looking for:. BE/ B.Tech from Tier 1/2 Campus. Proficiency in advance Excel, Python, SQL & R. Understanding of operations metrics. 1-3 years of prior work experience of working in fast paced and hyper growth environment. Technology orientation. Strong analytical and problem solving skills. Good verbal and written communications skills. . . Show more. . . Show less. . . ."
+   },
+   "metadata": {
+    "date_added": "2022-05-19T00:00:00",
+    "date_updated": "2022-05-24T00:00:00"
+   }
+  },
+  {
+   "crustdata_job_id": 531971388634129,
+   "job_details": {
+    "job_id": 531971388634129,
+    "title": "Associate/ Lead/  Program Manager- Strategy/ Planning",
+    "category": "Consulting, Strategy/Planning, and Supply Chain",
+    "workplace_type": null,
+    "url": "https://in.linkedin.com/jobs/view/associate-lead-program-manager-strategy-planning-at-rivigo-3049755312",
+    "reposted_job": false,
+    "number_of_openings": null,
+    "source": "professional_network",
+    "employment_type": null
+   },
+   "company": {
+    "basic_info": {
+     "crustdata_company_id": 6039734,
+     "name": "RIVIGO",
+     "primary_domain": "rivigo.com",
+     "website": "https://mahindralogistics.com/b2b-express",
+     "professional_network_id": "6585780",
+     "industries": [
+      "Truck Transportation",
+      "Transportation, Logistics, Supply Chain and Storage"
+     ]
+    },
+    "locations": {
+     "country": "India",
+     "state": "Haryana",
+     "city": null,
+     "street_address": "Plot No. 90, Sector 44 Near Huda City Centre, Gurgaon Sector 45, Wazirabad, Smaspur, Jharsa, Gwal Pahari, Haryana"
+    },
+    "headcount": {
+     "total": 2209,
+     "range": "1001-5000",
+     "largest_headcount_country": "IND"
+    },
+    "followers": {
+     "count": 217950
+    },
+    "revenue": {
+     "estimated": {
+      "lower_bound_usd": 500000000,
+      "upper_bound_usd": 1000000000
+     },
+     "public_markets": {
+      "stock_symbols": [],
+      "fiscal_year_end": ""
+     },
+     "acquisition_status": null
+    },
+    "funding": {
+     "total_investment_usd": 287045357.0,
+     "valuation_usd": 0.0,
+     "last_fundraise_date": "2022-08-23T00:00:00",
+     "last_round_type": "series_h",
+     "num_funding_rounds": 12,
+     "investors": [
+      "Elevation Capital",
+      "InnoVen Capital",
+      "KB Global Platform Fund",
+      "SAIF Partners",
+      "Spring Canter Investment",
+      "Trifecta Capital Advisors",
+      "Warburg Pincus"
+     ]
+    },
+    "competitors": {
+     "websites": []
+    }
+   },
+   "location": {
+    "raw": "Gurugram, Haryana, India",
+    "city": "Gurugram",
+    "district": "Gurgaon Division",
+    "state": "Haryana",
+    "country": "India",
+    "pincode": null
+   },
+   "content": {
+    "description": ". . . ROLE. Associate / Lead / Program Manager – Strategy/Planning. WHO WE ARE. Rivigo is a technology company and a crowned unicorn founded in 2014, which is revolutionizing logistics & goods mobility in India with its unique, global-first relay trucking model. With a strong interplay of data, technology, operational excellence, and culture, we aim to make logistics faster, safer, cost-effective, and human.. Since we embarked on our journey of making logistics human, our ever-evolving, passionate, ambitious, and bold team has been relentlessly working towards this pursuit. Our purpose will be fulfilled through implementation of relay at scale, which would ensure a better life for our pilots, limitless growth and scale for our fleet partners, and reliable supply for our customers. We strongly believe that the biggest celebration of human life is elimination of drudgery, and that's exactly what we aim to achieve through our innovations at Rivigo.. WHO WE’RE LOOKING FOR. B.E/B.Tech from a Premium Engineering Institute (IITs, NITs, BITS Pilani, DCE, NSIT, BIT Mesra, etc.) or MBA grad from Tier-I MBA college, with 1-4 years of experience in consulting / ops excellence / ops analytics roles. Exceptional problem-solver with a demonstrated ability to drive continuous improvement initiatives, who can take complete ownership of key workstreams to solve the complex challenges within a highly nuanced industry. Substantial experience in program/project management or an equivalent operational role. Ability to interpret, analyse, and understand complex data sets. Ability to influence stakeholders across the organization without direct reporting lines. Proven experience and knowledge of process improvement tools, methods, and techniques like 6/Sigma will be a plus. WHAT YOU’LL BE RESPONSIBLE FOR. Applying analytical expertise on operations to conceptualize projects, build stakeholder alignment, and drive projects to achieve strategic goals / rationalize cost & quality performance. Developing and maintaining operational excellence project plans, managing resources, identifying, prioritizing, and implementing initiatives to improve productivity, quality, customer service, and reducing costs and complexity. Leading the product development lifecycle end to end, starting from understanding the problems at hand, empathizing with the user to ensure the adoption post product launches, driving innovation, and conceptualizing new products from scratch – all of which requires challenging the status quo, going deep into data, persistently digging for improvement opportunities, and thinking boldly. Managing large and highly complex programs that will accelerate operational productivity and customer experience improvement across the organization. Fuelling a passion for operational excellence within operations teams. Join us to write the future of an entire sector and contribute to building the new India.. . . Show more. . . Show less. . . ."
+   },
+   "metadata": {
+    "date_added": "2022-04-27T00:00:00",
+    "date_updated": "2022-05-26T00:00:00"
+   }
+  },
+  {
+   "crustdata_job_id": 3805318013252188,
+   "job_details": {
+    "job_id": 3805318013252188,
+    "title": "SDE-II, Backend",
+    "category": "Engineering and Information Technology",
+    "workplace_type": null,
+    "url": "https://in.linkedin.com/jobs/view/sde-ii-backend-at-rivigo-3035116377",
+    "reposted_job": false,
+    "number_of_openings": null,
+    "source": "professional_network",
+    "employment_type": null
+   },
+   "company": {
+    "basic_info": {
+     "crustdata_company_id": 6039734,
+     "name": "RIVIGO",
+     "primary_domain": "rivigo.com",
+     "website": "https://mahindralogistics.com/b2b-express",
+     "professional_network_id": "6585780",
+     "industries": [
+      "Truck Transportation",
+      "Transportation, Logistics, Supply Chain and Storage"
+     ]
+    },
+    "locations": {
+     "country": "India",
+     "state": "Haryana",
+     "city": null,
+     "street_address": "Plot No. 90, Sector 44 Near Huda City Centre, Gurgaon Sector 45, Wazirabad, Smaspur, Jharsa, Gwal Pahari, Haryana"
+    },
+    "headcount": {
+     "total": 2209,
+     "range": "1001-5000",
+     "largest_headcount_country": "IND"
+    },
+    "followers": {
+     "count": 217950
+    },
+    "revenue": {
+     "estimated": {
+      "lower_bound_usd": 500000000,
+      "upper_bound_usd": 1000000000
+     },
+     "public_markets": {
+      "stock_symbols": [],
+      "fiscal_year_end": ""
+     },
+     "acquisition_status": null
+    },
+    "funding": {
+     "total_investment_usd": 287045357.0,
+     "valuation_usd": 0.0,
+     "last_fundraise_date": "2022-08-23T00:00:00",
+     "last_round_type": "series_h",
+     "num_funding_rounds": 12,
+     "investors": [
+      "Elevation Capital",
+      "InnoVen Capital",
+      "KB Global Platform Fund",
+      "SAIF Partners",
+      "Spring Canter Investment",
+      "Trifecta Capital Advisors",
+      "Warburg Pincus"
+     ]
+    },
+    "competitors": {
+     "websites": []
+    }
+   },
+   "location": {
+    "raw": "Chandigarh, India",
+    "city": "Chandigarh",
+    "district": null,
+    "state": "Chandigarh",
+    "country": "India",
+    "pincode": null
+   },
+   "content": {
+    "description": ". . . Role. : SDE-II, Backend. Location. : Chandigarh, India. Mode. : Work from office. WHO WE ARE. Rivigo is a technology company and a crowned unicorn founded in 2014, which is revolutionizing logistics & goods mobility in India with its unique, global-first relay trucking model. With a strong interplay of data, technology, operational excellence, and culture, we aim to make logistics faster, safer, cost-effective, and human.. Since we embarked on our journey of making logistics human, our ever-evolving, passionate, ambitious, and bold team has been relentlessly working towards this pursuit. Our purpose will be fulfilled through implementation of relay at scale, which would ensure a better life for our pilots, limitless growth and scale for our fleet partners, and reliable supply for our customers. We strongly believe that the biggest celebration of human life is elimination of drudgery, and that's exactly what we aim to achieve through our innovations at Rivigo.. WHAT YOU’LL BE RESPONSIBLE FOR. RIVIGO Labs is at the core of our vision. A team of the country’s best engineers and data scientists, we are leveraging smart data and technology to build ground-breaking solutions at scale. This year we are focussed on solving data and intelligence problems that are focused on redefining complex operations via technology using decision making science to optimize and build efficient technology systems.. You will be working on challenging time-space complex problems that are futuristic and have never been solved before. These will include network relay model, fuel analytics and optimisation, resource (vehicle/pilot) allocation and optimisation, human behaviour analysis, geo analytics, time continuum and visualisation, line haul planning etc. Your role would involve architecting systems capable of serving as the brains of complex distributed products. In addition, you’d also closely mentor younger engineers on the team and contribute to team building. A strong technologist at RIVIGO cares about code modularity, scalability and reusability and thrives in a complex and ambiguous environment.. WHO WE’RE LOOKING FOR. B.E/B.Tech in Computer Science or a related field. 2-5 years of relevant experience in spring or other Java frameworks. Experience with web technologies and microservices architecture, including Java, Linux, Apache, MySQL, solr, memcache, redis etc.. Experience with high performance websites catering to millions of daily traffic is a plus. Excellent team-working skills and ability to handle multiple tasks together.. Experience with API Designing and ability to architect and implement an intuitive customer and third-party integration story. Ability to think and analyse both breadth-wise (client, server, DB, control flow) and depth-wise (threads, sessions, space-time complexity) while designing and implementing services. Exceptional design and architectural skills. . . Show more. . . Show less. . . ."
+   },
+   "metadata": {
+    "date_added": "2022-04-19T00:00:00",
+    "date_updated": "2022-05-18T00:00:00"
+   }
+  },
+  {
+   "crustdata_job_id": 4184999144394302,
+   "job_details": {
+    "job_id": 4184999144394302,
+    "title": "Assistant Manager- Operations and Key Accounts",
+    "category": "Strategy/Planning, Analyst, and Consulting",
+    "workplace_type": null,
+    "url": "https://in.linkedin.com/jobs/view/assistant-manager-operations-and-key-accounts-at-rivigo-3024937355",
+    "reposted_job": false,
+    "number_of_openings": null,
+    "source": "professional_network",
+    "employment_type": null
+   },
+   "company": {
+    "basic_info": {
+     "crustdata_company_id": 6039734,
+     "name": "RIVIGO",
+     "primary_domain": "rivigo.com",
+     "website": "https://mahindralogistics.com/b2b-express",
+     "professional_network_id": "6585780",
+     "industries": [
+      "Truck Transportation",
+      "Transportation, Logistics, Supply Chain and Storage"
+     ]
+    },
+    "locations": {
+     "country": "India",
+     "state": "Haryana",
+     "city": null,
+     "street_address": "Plot No. 90, Sector 44 Near Huda City Centre, Gurgaon Sector 45, Wazirabad, Smaspur, Jharsa, Gwal Pahari, Haryana"
+    },
+    "headcount": {
+     "total": 2209,
+     "range": "1001-5000",
+     "largest_headcount_country": "IND"
+    },
+    "followers": {
+     "count": 217950
+    },
+    "revenue": {
+     "estimated": {
+      "lower_bound_usd": 500000000,
+      "upper_bound_usd": 1000000000
+     },
+     "public_markets": {
+      "stock_symbols": [],
+      "fiscal_year_end": ""
+     },
+     "acquisition_status": null
+    },
+    "funding": {
+     "total_investment_usd": 287045357.0,
+     "valuation_usd": 0.0,
+     "last_fundraise_date": "2022-08-23T00:00:00",
+     "last_round_type": "series_h",
+     "num_funding_rounds": 12,
+     "investors": [
+      "Elevation Capital",
+      "InnoVen Capital",
+      "KB Global Platform Fund",
+      "SAIF Partners",
+      "Spring Canter Investment",
+      "Trifecta Capital Advisors",
+      "Warburg Pincus"
+     ]
+    },
+    "competitors": {
+     "websites": []
+    }
+   },
+   "location": {
+    "raw": "Gurugram, Haryana, India",
+    "city": "Gurugram",
+    "district": "Gurgaon Division",
+    "state": "Haryana",
+    "country": "India",
+    "pincode": null
+   },
+   "content": {
+    "description": ". . . Assistant Manager – Operations and Key Accounts. We are looking to hire driven professionals (. B.E/B.Tech from premium engineering campus like IITs/ DTU/ NITs/ NSIT/ BITS Pilani or MBA grad from Tier 1/2 MBA colleges, with 0 to 3 years of experience. ) who will become the growth engine in our initiative of growing our footprints. This team will help us manage the Fleet Owners’ success by solving day to day demand and on ground issues.. Identifying and attacking the problem analytically with first principle approach to achieve consistent improvement in key metrices. Conduct Daily and weekly meetings with the team to understand ongoing issues and frame resolution for the same. Evaluating performance of Fleet Owners on a weekly basis and conducting meetings with them to improve TAT (Turn Around Time) and UNS (Un scheduled Stoppages). Be single point of contact for issue resolutions - Operations, Placements, PODs, Tracking etc. High level of engagement with multiple stake holders from other departments like Demand Planning, finance etc to adhere to the targets. Developing a thorough understanding of key clients' requirements and preparing customized solutions to help better working capital utilisation. Location- Gurgaon. Mode- Work from Office. About RIVIGO. We are a technology-enabled company that is shaping the future of logistics for the world. Founded in 2014, we are transforming the sector with our global-first driver relay model made possible through a unique mix of next generation data science and operational excellence.. Grounded in the mission of making logistics human, we have fundamentally changed the truck driver’s job from a ‘months-away-from-home’ job to a ‘day’ job. Unlike conventional truck drivers, relay pilots drive from pitstop to pitstop (under 300 kms) and return to their families the same day, thus, creating huge social dividend.. Relay trucking also ensures 50-70% reduction in turnaround time and highest reliability for clients, helping them reinvent their business models – serving new markets, reducing inventory and significantly cutting costs. Listed among the world’s top emerging businesses and backed by marquee investors, we are working on a vision to build a completely technology-enabled RaaS (Relay as a service) marketplace to define the way goods move on roads in India and the world.. . . Show more. . . Show less. . . ."
+   },
+   "metadata": {
+    "date_added": "2022-04-13T00:00:00",
+    "date_updated": "2022-05-12T00:00:00"
+   }
+  },
+  {
+   "crustdata_job_id": 4191951099460165,
+   "job_details": {
+    "job_id": 4191951099460165,
+    "title": "Senior Product Manager",
+    "category": "Product Management and Consulting",
+    "workplace_type": null,
+    "url": "https://in.linkedin.com/jobs/view/senior-product-manager-at-rivigo-3000414598",
+    "reposted_job": false,
+    "number_of_openings": null,
+    "source": "professional_network",
+    "employment_type": null
+   },
+   "company": {
+    "basic_info": {
+     "crustdata_company_id": 6039734,
+     "name": "RIVIGO",
+     "primary_domain": "rivigo.com",
+     "website": "https://mahindralogistics.com/b2b-express",
+     "professional_network_id": "6585780",
+     "industries": [
+      "Truck Transportation",
+      "Transportation, Logistics, Supply Chain and Storage"
+     ]
+    },
+    "locations": {
+     "country": "India",
+     "state": "Haryana",
+     "city": null,
+     "street_address": "Plot No. 90, Sector 44 Near Huda City Centre, Gurgaon Sector 45, Wazirabad, Smaspur, Jharsa, Gwal Pahari, Haryana"
+    },
+    "headcount": {
+     "total": 2209,
+     "range": "1001-5000",
+     "largest_headcount_country": "IND"
+    },
+    "followers": {
+     "count": 217950
+    },
+    "revenue": {
+     "estimated": {
+      "lower_bound_usd": 500000000,
+      "upper_bound_usd": 1000000000
+     },
+     "public_markets": {
+      "stock_symbols": [],
+      "fiscal_year_end": ""
+     },
+     "acquisition_status": null
+    },
+    "funding": {
+     "total_investment_usd": 287045357.0,
+     "valuation_usd": 0.0,
+     "last_fundraise_date": "2022-08-23T00:00:00",
+     "last_round_type": "series_h",
+     "num_funding_rounds": 12,
+     "investors": [
+      "Elevation Capital",
+      "InnoVen Capital",
+      "KB Global Platform Fund",
+      "SAIF Partners",
+      "Spring Canter Investment",
+      "Trifecta Capital Advisors",
+      "Warburg Pincus"
+     ]
+    },
+    "competitors": {
+     "websites": []
+    }
+   },
+   "location": {
+    "raw": "Gurugram, Haryana, India",
+    "city": "Gurugram",
+    "district": "Gurgaon Division",
+    "state": "Haryana",
+    "country": "India",
+    "pincode": null
+   },
+   "content": {
+    "description": ". . . ROLE. Senior Product Manager. WHO WE ARE. Rivigo is a technology company and a crowned unicorn founded in 2014, which is revolutionizing logistics & goods mobility in India with its unique, global-first relay trucking model. With a strong interplay of data, technology, operational excellence, and culture, we aim to make logistics faster, safer, cost-effective, and human.. Since we embarked on our journey of making logistics human, our ever-evolving, passionate, ambitious, and bold team has been relentlessly working towards this pursuit. Our purpose will be fulfilled through implementation of relay at scale, which would ensure a better life for our pilots, limitless growth and scale for our fleet partners, and reliable supply for our customers. We strongly believe that the biggest celebration of human life is elimination of drudgery, and that's exactly what we aim to achieve through our innovations at Rivigo.. WHAT YOU’LL BE RESPONSIBLE FOR. While RIVIGO has found a strong product/market fit with its disruptive idea, we believe it is still the first hour of our day 1 vision. We are looking for exceptionally smart, data-driven folks who love building exciting products. We call them Product CEOs – they take end to end accountability of executing our grand technology vision.. As a. Senior. . Product Manager. , you will work with a team of the country’s best engineers, data scientists, designers and product managers, and sharp and data driven business stakeholders in a high energy, fast-paced, rapidly growing environment. This year, you would be solving data and intelligence problems that are focused on redefining complex operations via efficient technology systems. You will lead the product development lifecycle end to end, starting from understanding the problems at hand, empathizing with the user, to ensure the adoption post product launches.. WHO WE’RE LOOKING FOR. Bachelor’s degree (preferably Computer Science) from a Tier I engineering college (IITs, BITS Pilani, NSIT, DCE, NITs, IIITs) or Master’s degree from premier institutes. 3-6 years of prior product experience. Experience with all stages of the product lifecycle. Deep intuition driven from user empathy, along with passion to back it up with data. Good understanding of consumer behavior to drive product delivery from conceptualization to implementation. Having Data Analytics knowledge/ experience would be a plus. Proven experience in managing stakeholders well. Building and managing people. Join us to write the future of an entire sector and contribute to building the new India.. . . Show more. . . Show less. . . ."
+   },
+   "metadata": {
+    "date_added": "2022-03-31T00:00:00",
+    "date_updated": "2022-05-29T00:00:00"
+   }
+  },
+  {
+   "crustdata_job_id": 5785159227647588,
+   "job_details": {
+    "job_id": 5785159227647588,
+    "title": "Lead Engineer",
+    "category": "Engineering and Information Technology",
+    "workplace_type": null,
+    "url": "https://in.linkedin.com/jobs/view/lead-engineer-at-rivigo-2999218590",
+    "reposted_job": false,
+    "number_of_openings": null,
+    "source": "professional_network",
+    "employment_type": null
+   },
+   "company": {
+    "basic_info": {
+     "crustdata_company_id": 6039734,
+     "name": "RIVIGO",
+     "primary_domain": "rivigo.com",
+     "website": "https://mahindralogistics.com/b2b-express",
+     "professional_network_id": "6585780",
+     "industries": [
+      "Truck Transportation",
+      "Transportation, Logistics, Supply Chain and Storage"
+     ]
+    },
+    "locations": {
+     "country": "India",
+     "state": "Haryana",
+     "city": null,
+     "street_address": "Plot No. 90, Sector 44 Near Huda City Centre, Gurgaon Sector 45, Wazirabad, Smaspur, Jharsa, Gwal Pahari, Haryana"
+    },
+    "headcount": {
+     "total": 2209,
+     "range": "1001-5000",
+     "largest_headcount_country": "IND"
+    },
+    "followers": {
+     "count": 217950
+    },
+    "revenue": {
+     "estimated": {
+      "lower_bound_usd": 500000000,
+      "upper_bound_usd": 1000000000
+     },
+     "public_markets": {
+      "stock_symbols": [],
+      "fiscal_year_end": ""
+     },
+     "acquisition_status": null
+    },
+    "funding": {
+     "total_investment_usd": 287045357.0,
+     "valuation_usd": 0.0,
+     "last_fundraise_date": "2022-08-23T00:00:00",
+     "last_round_type": "series_h",
+     "num_funding_rounds": 12,
+     "investors": [
+      "Elevation Capital",
+      "InnoVen Capital",
+      "KB Global Platform Fund",
+      "SAIF Partners",
+      "Spring Canter Investment",
+      "Trifecta Capital Advisors",
+      "Warburg Pincus"
+     ]
+    },
+    "competitors": {
+     "websites": []
+    }
+   },
+   "location": {
+    "raw": "Gurugram, Haryana, India",
+    "city": "Gurugram",
+    "district": "Gurgaon Division",
+    "state": "Haryana",
+    "country": "India",
+    "pincode": null
+   },
+   "content": {
+    "description": ". . . About RIVIGO. We are a technology-enabled company that is shaping the future of logistics for the world. Founded in 2014,. we are transforming the sector with our global-first driver relay model made possible through a unique mix of next generation data science and operational excellence. .. Grounded in the mission of making logistics human, we have fundamentally changed the truck driver’s job from a ‘months-away-from-home’ job to a ‘day’ job. Unlike conventional truck drivers, relay pilots drive from pitstop to pitstop (under 300 kms) and return to their families the same day, thus, creating huge social dividend.. Relay trucking also ensures 50-70% reduction in turnaround time and highest reliability for clients, helping them reinvent their business models – serving new markets, reducing inventory and significantly cutting costs. Listed among the world’s top emerging businesses and backed by marquee investors,. we are working on a vision to build a completely technology-enabled RaaS (Relay as a service) marketplace to define the way goods move on roads in India and the world. .. What will you do?. RIVIGO Labs is at the core of our vision. A team of the country’s best engineers and data scientists, we are leveraging smart data and technology to build ground-breaking solutions at scale.. This year we are focussed on solving data and intelligence problems that are focused on redefining complex operations via technology using decision making science to optimize and build efficient technology systems.. You will be working on problems that are futuristic and have never been solved before due to time-space complexity. These will include network relay model, fuel analytics and optimisation, resource (vehicle/pilot) allocation and optimisation, human behaviour analysis, geo-analytics, time continuum and visualisation, line haul planning etc. . Your role would involve architecting systems capable of serving as the brains of complex distributed products. A strong technologist at RIVIGO cares about code modularity, scalability and reusability as the problems we solve today become the foundation of future scale of business and thrives in a complex and ambiguous environment, continuously adapting for business & users.. Qualification:. Bachelors/Masters in Computer Science or a related field. 6-8 years of relevant experience in spring or other Java frameworks. Experience with web technologies and microservices architecture, including Java, Linux, Apache, MySQL, solr, memcache, redis etc.. Experience with high performance websites catering to millions of daily traffic is a plus. Excellent team-working skills and ability to handle multiple tasks together.. Experience with API Designing and ability to architect and implement an intuitive customer and third-party integration story. Ability to think and analyse both breadth-wise (client, server, DB, control flow) and depth-wise (threads, sessions, space-time complexity) while designing and implementing services. Exceptional design and architectural skills. . . Show more. . . Show less. . . ."
+   },
+   "metadata": {
+    "date_added": "2022-03-31T00:00:00",
+    "date_updated": "2022-05-29T00:00:00"
+   }
+  },
+  {
+   "crustdata_job_id": 4881380340126085,
+   "job_details": {
+    "job_id": 4881380340126085,
+    "title": "Lead Engineer",
+    "category": "Engineering and Information Technology",
+    "workplace_type": null,
+    "url": "https://in.linkedin.com/jobs/view/lead-engineer-at-rivigo-2707786177",
+    "reposted_job": false,
+    "number_of_openings": null,
+    "source": "professional_network",
+    "employment_type": null
+   },
+   "company": {
+    "basic_info": {
+     "crustdata_company_id": 6039734,
+     "name": "RIVIGO",
+     "primary_domain": "rivigo.com",
+     "website": "https://mahindralogistics.com/b2b-express",
+     "professional_network_id": "6585780",
+     "industries": [
+      "Truck Transportation",
+      "Transportation, Logistics, Supply Chain and Storage"
+     ]
+    },
+    "locations": {
+     "country": "India",
+     "state": "Haryana",
+     "city": null,
+     "street_address": "Plot No. 90, Sector 44 Near Huda City Centre, Gurgaon Sector 45, Wazirabad, Smaspur, Jharsa, Gwal Pahari, Haryana"
+    },
+    "headcount": {
+     "total": 2209,
+     "range": "1001-5000",
+     "largest_headcount_country": "IND"
+    },
+    "followers": {
+     "count": 217950
+    },
+    "revenue": {
+     "estimated": {
+      "lower_bound_usd": 500000000,
+      "upper_bound_usd": 1000000000
+     },
+     "public_markets": {
+      "stock_symbols": [],
+      "fiscal_year_end": ""
+     },
+     "acquisition_status": null
+    },
+    "funding": {
+     "total_investment_usd": 287045357.0,
+     "valuation_usd": 0.0,
+     "last_fundraise_date": "2022-08-23T00:00:00",
+     "last_round_type": "series_h",
+     "num_funding_rounds": 12,
+     "investors": [
+      "Elevation Capital",
+      "InnoVen Capital",
+      "KB Global Platform Fund",
+      "SAIF Partners",
+      "Spring Canter Investment",
+      "Trifecta Capital Advisors",
+      "Warburg Pincus"
+     ]
+    },
+    "competitors": {
+     "websites": []
+    }
+   },
+   "location": {
+    "raw": "Gurugram, Haryana, India",
+    "city": "Gurugram",
+    "district": "Gurgaon Division",
+    "state": "Haryana",
+    "country": "India",
+    "pincode": null
+   },
+   "content": {
+    "description": ". . . About RIVIGO. We are a technology-enabled company that is shaping the future of logistics for the world. Founded in 2014,. we are transforming the sector with our global-first driver relay model made possible through a unique mix of next generation data science and operational excellence. .. Grounded in the mission of making logistics human, we have fundamentally changed the truck driver’s job from a ‘months-away-from-home’ job to a ‘day’ job. Unlike conventional truck drivers, relay pilots drive from pitstop to pitstop (under 300 kms) and return to their families the same day, thus, creating huge social dividend.. Relay trucking also ensures 50-70% reduction in turnaround time and highest reliability for clients, helping them reinvent their business models – serving new markets, reducing inventory and significantly cutting costs. Listed among the world’s top emerging businesses and backed by marquee investors,. we are working on a vision to build a completely technology-enabled RaaS (Relay as a service) marketplace to define the way goods move on roads in India and the world. .. What will you do?. RIVIGO Labs is at the core of our vision. A team of the country’s best engineers and data scientists, we are leveraging smart data and technology to build ground-breaking solutions at scale.. This year we are focussed on solving data and intelligence problems that are focused on redefining complex operations via technology using decision making science to optimize and build efficient technology systems.. You will be working on problems that are futuristic and have never been solved before due to time-space complexity. These will include network relay model, fuel analytics and optimisation, resource (vehicle/pilot) allocation and optimisation, human behaviour analysis, geo-analytics, time continuum and visualisation, line haul planning etc. . Your role would involve architecting systems capable of serving as the brains of complex distributed products. A strong technologist at RIVIGO cares about code modularity, scalability and reusability as the problems we solve today become the foundation of future scale of business and thrives in a complex and ambiguous environment, continuously adapting for business & users.. Qualification:. Bachelors/Masters in Computer Science or a related field. 4-8 years of relevant experience in spring or other Java frameworks. Experience with web technologies and microservices architecture, including Java, Linux, Apache, MySQL, solr, memcache, redis etc.. Experience with high performance websites catering to millions of daily traffic is a plus. Excellent team-working skills and ability to handle multiple tasks together.. Experience with API Designing and ability to architect and implement an intuitive customer and third-party integration story. Ability to think and analyse both breadth-wise (client, server, DB, control flow) and depth-wise (threads, sessions, space-time complexity) while designing and implementing services. Exceptional design and architectural skills. . . Show more. . . Show less. . . ."
+   },
+   "metadata": {
+    "date_added": "2022-03-29T00:00:00",
+    "date_updated": "2022-03-30T00:00:00"
+   }
+  },
+  {
+   "crustdata_job_id": 1300837972201532,
+   "job_details": {
+    "job_id": 1300837972201532,
+    "title": "Financial Planning and Analysis (FP&A)- Associate",
+    "category": "Finance",
+    "workplace_type": null,
+    "url": "https://in.linkedin.com/jobs/view/financial-planning-and-analysis-fp-a-associate-at-rivigo-2994354737",
+    "reposted_job": false,
+    "number_of_openings": null,
+    "source": "professional_network",
+    "employment_type": null
+   },
+   "company": {
+    "basic_info": {
+     "crustdata_company_id": 6039734,
+     "name": "RIVIGO",
+     "primary_domain": "rivigo.com",
+     "website": "https://mahindralogistics.com/b2b-express",
+     "professional_network_id": "6585780",
+     "industries": [
+      "Truck Transportation",
+      "Transportation, Logistics, Supply Chain and Storage"
+     ]
+    },
+    "locations": {
+     "country": "India",
+     "state": "Haryana",
+     "city": null,
+     "street_address": "Plot No. 90, Sector 44 Near Huda City Centre, Gurgaon Sector 45, Wazirabad, Smaspur, Jharsa, Gwal Pahari, Haryana"
+    },
+    "headcount": {
+     "total": 2209,
+     "range": "1001-5000",
+     "largest_headcount_country": "IND"
+    },
+    "followers": {
+     "count": 217950
+    },
+    "revenue": {
+     "estimated": {
+      "lower_bound_usd": 500000000,
+      "upper_bound_usd": 1000000000
+     },
+     "public_markets": {
+      "stock_symbols": [],
+      "fiscal_year_end": ""
+     },
+     "acquisition_status": null
+    },
+    "funding": {
+     "total_investment_usd": 287045357.0,
+     "valuation_usd": 0.0,
+     "last_fundraise_date": "2022-08-23T00:00:00",
+     "last_round_type": "series_h",
+     "num_funding_rounds": 12,
+     "investors": [
+      "Elevation Capital",
+      "InnoVen Capital",
+      "KB Global Platform Fund",
+      "SAIF Partners",
+      "Spring Canter Investment",
+      "Trifecta Capital Advisors",
+      "Warburg Pincus"
+     ]
+    },
+    "competitors": {
+     "websites": []
+    }
+   },
+   "location": {
+    "raw": "Gurugram, Haryana, India",
+    "city": "Gurugram",
+    "district": "Gurgaon Division",
+    "state": "Haryana",
+    "country": "India",
+    "pincode": null
+   },
+   "content": {
+    "description": ". . . ROLE. Financial Planning & Analysis (FP&A) - Associate. WHO WE ARE. Rivigo is a technology company and a crowned unicorn founded in 2014, which is revolutionizing logistics & goods mobility in India with its unique, global-first relay trucking model. With a strong interplay of data, technology, operational excellence, and culture, we aim to make logistics faster, safer, cost-effective, and human.. Since we embarked on our journey of making logistics human, our ever-evolving, passionate, ambitious, and bold team has been relentlessly working towards this pursuit. Our purpose will be fulfilled through implementation of relay at scale, which would ensure a better life for our pilots, limitless growth and scale for our fleet partners, and reliable supply for our customers. We strongly believe that the biggest celebration of human life is elimination of drudgery, and that's exactly what we aim to achieve through our innovations at Rivigo.. WHO WE’RE LOOKING FOR. CA (First Attempt) /MBA – Finance (Premium Campus)/CFA. 1 - 3 Years of relevant experience. Prior experience of having handled a similar role, especially in a rapidly growing organization. Preference will be accorded to Advisory experience or experience of PE/VC interactions, due diligence, business valuations and supporting new business launches. Experience in handling large professional teams and working in fast paced environment. High Tolerance for ambiguity and ability to work in a relatively unstructured, high paced environment with aggressive timelines and stretch deliverables. Strong understanding of data analytics and front-end visualization, with drill down on the fly. Knowledge of, or ability to learn new things, including Machine Learning, Big Data analytics, etc.. WHAT YOU’LL BE RESPONSIBLE FOR. Purpose of Role:. Primary Finance SPOC for driving financial accountability and end-to-end P&L management. Incumbent will be responsible for Long and Short Range Planning, BI framework for Performance Evaluation, New business evaluation and Analytics/MIS for VC/PE Investors/Board. The role is also responsible for overseeing sanctity of cost allocation Operating Divisions and provide inputs on cost containment / revenue enhancing opportunities.. Key Responsibilities:. Partner with CFO and Division teams (Business + Finance) to finalize Long range and Annual/ quarterly operating plans and forecasts. Own the entire process end-to-end. Be a trusted advisor of senior leadership team.. Lead BI (Business Intelligence) framework for the organization and it’s evolution. Identify key metrics, keep track of financial KPIs and develop financial models along with sharp front-end visualization of the analysis to support strategic initiatives. Be the central owner of organization-wide operating and financial data and KPIs. Advanced Analytics & Benchmarking: Predictive Analysis, external benchmarking within same Sector/ Industry and need based advanced analytics. Proactively use benchmarking to ensure resources are optimized and BAU operations are managed tightly, while investing in growth initiatives.. Analyze key performance indicators in all areas of revenue, operating costs, fixed expenses and capital expenditures – time series as well as against budgets and forecasts.. Prepare monthly Comprehensive Finance Docket and drive reviews with analytics and identify pockets of operational value and effectively communicate the same to the senior management for action. Allocation of central costs to divisions to ensure holistic performance evaluation. Own the methodology and process, align with key stakeholders and also operationally handle it monthly.. New business financial models as Rivigo looks at rich opportunities in the market.. Investor/Board Interface. :. Be the central figure in preparation of business plans and dialogue with potential investors for any fund raising. Work closely with CFO/Founders and be accountable for internal dialogues to ensure robustness of plans.. Scenario building, stress testing and bringing in clarity of assumptions and key actions needed to make the plan real and participate in business valuation discussions. Be the interface with existing VC/PE investors for all MIS – regular as well as ad-hoc. Accountable for preparing Founders/CFO for Board discussions on performance. Play an active role in due diligence process for Debt and equity funding. Join us to write the future of an entire sector and contribute to building the new India.. . . Show more. . . Show less. . . ."
+   },
+   "metadata": {
+    "date_added": "2022-03-28T00:00:00",
+    "date_updated": "2022-04-18T00:00:00"
+   }
+  },
+  {
+   "crustdata_job_id": 4778040062897349,
+   "job_details": {
+    "job_id": 4778040062897349,
+    "title": "Associate/ Lead/  Program Manager- Strategy/ Planning",
+    "category": "Consulting, Strategy/Planning, and Supply Chain",
+    "workplace_type": null,
+    "url": "https://in.linkedin.com/jobs/view/associate-lead-program-manager-strategy-planning-at-rivigo-2985508052",
+    "reposted_job": false,
+    "number_of_openings": null,
+    "source": "professional_network",
+    "employment_type": null
+   },
+   "company": {
+    "basic_info": {
+     "crustdata_company_id": 6039734,
+     "name": "RIVIGO",
+     "primary_domain": "rivigo.com",
+     "website": "https://mahindralogistics.com/b2b-express",
+     "professional_network_id": "6585780",
+     "industries": [
+      "Truck Transportation",
+      "Transportation, Logistics, Supply Chain and Storage"
+     ]
+    },
+    "locations": {
+     "country": "India",
+     "state": "Haryana",
+     "city": null,
+     "street_address": "Plot No. 90, Sector 44 Near Huda City Centre, Gurgaon Sector 45, Wazirabad, Smaspur, Jharsa, Gwal Pahari, Haryana"
+    },
+    "headcount": {
+     "total": 2209,
+     "range": "1001-5000",
+     "largest_headcount_country": "IND"
+    },
+    "followers": {
+     "count": 217950
+    },
+    "revenue": {
+     "estimated": {
+      "lower_bound_usd": 500000000,
+      "upper_bound_usd": 1000000000
+     },
+     "public_markets": {
+      "stock_symbols": [],
+      "fiscal_year_end": ""
+     },
+     "acquisition_status": null
+    },
+    "funding": {
+     "total_investment_usd": 287045357.0,
+     "valuation_usd": 0.0,
+     "last_fundraise_date": "2022-08-23T00:00:00",
+     "last_round_type": "series_h",
+     "num_funding_rounds": 12,
+     "investors": [
+      "Elevation Capital",
+      "InnoVen Capital",
+      "KB Global Platform Fund",
+      "SAIF Partners",
+      "Spring Canter Investment",
+      "Trifecta Capital Advisors",
+      "Warburg Pincus"
+     ]
+    },
+    "competitors": {
+     "websites": []
+    }
+   },
+   "location": {
+    "raw": "Gurugram, Haryana, India",
+    "city": "Gurugram",
+    "district": "Gurgaon Division",
+    "state": "Haryana",
+    "country": "India",
+    "pincode": null
+   },
+   "content": {
+    "description": ". . . ROLE. Associate / Lead / Program Manager – Strategy/Planning. WHO WE ARE. Rivigo is a technology company and a crowned unicorn founded in 2014, which is revolutionizing logistics & goods mobility in India with its unique, global-first relay trucking model. With a strong interplay of data, technology, operational excellence, and culture, we aim to make logistics faster, safer, cost-effective, and human.. Since we embarked on our journey of making logistics human, our ever-evolving, passionate, ambitious, and bold team has been relentlessly working towards this pursuit. Our purpose will be fulfilled through implementation of relay at scale, which would ensure a better life for our pilots, limitless growth and scale for our fleet partners, and reliable supply for our customers. We strongly believe that the biggest celebration of human life is elimination of drudgery, and that's exactly what we aim to achieve through our innovations at Rivigo.. WHO WE’RE LOOKING FOR. B.E/B.Tech from a Premium Engineering Institute (IITs, NITs, BITS Pilani, DCE, NSIT, BIT Mesra, etc.) or MBA grad from Tier-I MBA college, with 1-4 years of experience in consulting / ops excellence / ops analytics roles. Exceptional problem-solver with a demonstrated ability to drive continuous improvement initiatives, who can take complete ownership of key workstreams to solve the complex challenges within a highly nuanced industry. Substantial experience in program/project management or an equivalent operational role. Ability to interpret, analyse, and understand complex data sets. Ability to influence stakeholders across the organization without direct reporting lines. Proven experience and knowledge of process improvement tools, methods, and techniques like 6/Sigma will be a plus. WHAT YOU’LL BE RESPONSIBLE FOR. Applying analytical expertise on operations to conceptualize projects, build stakeholder alignment, and drive projects to achieve strategic goals / rationalize cost & quality performance. Developing and maintaining operational excellence project plans, managing resources, identifying, prioritizing, and implementing initiatives to improve productivity, quality, customer service, and reducing costs and complexity. Leading the product development lifecycle end to end, starting from understanding the problems at hand, empathizing with the user to ensure the adoption post product launches, driving innovation, and conceptualizing new products from scratch – all of which requires challenging the status quo, going deep into data, persistently digging for improvement opportunities, and thinking boldly. Managing large and highly complex programs that will accelerate operational productivity and customer experience improvement across the organization. Fuelling a passion for operational excellence within operations teams. Join us to write the future of an entire sector and contribute to building the new India.. . . Show more. . . Show less. . . ."
+   },
+   "metadata": {
+    "date_added": "2022-03-24T00:00:00",
+    "date_updated": "2022-04-21T00:00:00"
+   }
+  },
+  {
+   "crustdata_job_id": 4670330075374234,
+   "job_details": {
+    "job_id": 4670330075374234,
+    "title": "Assistant Manager- Operations and Key Accounts",
+    "category": "Strategy/Planning, Analyst, and Consulting",
+    "workplace_type": null,
+    "url": "https://in.linkedin.com/jobs/view/assistant-manager-operations-and-key-accounts-at-rivigo-2967676074",
+    "reposted_job": false,
+    "number_of_openings": null,
+    "source": "professional_network",
+    "employment_type": null
+   },
+   "company": {
+    "basic_info": {
+     "crustdata_company_id": 6039734,
+     "name": "RIVIGO",
+     "primary_domain": "rivigo.com",
+     "website": "https://mahindralogistics.com/b2b-express",
+     "professional_network_id": "6585780",
+     "industries": [
+      "Truck Transportation",
+      "Transportation, Logistics, Supply Chain and Storage"
+     ]
+    },
+    "locations": {
+     "country": "India",
+     "state": "Haryana",
+     "city": null,
+     "street_address": "Plot No. 90, Sector 44 Near Huda City Centre, Gurgaon Sector 45, Wazirabad, Smaspur, Jharsa, Gwal Pahari, Haryana"
+    },
+    "headcount": {
+     "total": 2209,
+     "range": "1001-5000",
+     "largest_headcount_country": "IND"
+    },
+    "followers": {
+     "count": 217950
+    },
+    "revenue": {
+     "estimated": {
+      "lower_bound_usd": 500000000,
+      "upper_bound_usd": 1000000000
+     },
+     "public_markets": {
+      "stock_symbols": [],
+      "fiscal_year_end": ""
+     },
+     "acquisition_status": null
+    },
+    "funding": {
+     "total_investment_usd": 287045357.0,
+     "valuation_usd": 0.0,
+     "last_fundraise_date": "2022-08-23T00:00:00",
+     "last_round_type": "series_h",
+     "num_funding_rounds": 12,
+     "investors": [
+      "Elevation Capital",
+      "InnoVen Capital",
+      "KB Global Platform Fund",
+      "SAIF Partners",
+      "Spring Canter Investment",
+      "Trifecta Capital Advisors",
+      "Warburg Pincus"
+     ]
+    },
+    "competitors": {
+     "websites": []
+    }
+   },
+   "location": {
+    "raw": "Gurugram, Haryana, India",
+    "city": "Gurugram",
+    "district": "Gurgaon Division",
+    "state": "Haryana",
+    "country": "India",
+    "pincode": null
+   },
+   "content": {
+    "description": ". . . Assistant Manager – Operations and Key Accounts. We are looking to hire driven professionals (. B.E/B.Tech from premium engineering campus like IITs/ DTU/ NITs/ NSIT/ BITS Pilani or MBA grad from Tier 1/2 MBA colleges, with 0 to 3 years of experience. ) who will become the growth engine in our initiative of growing our footprints. This team will help us manage the Fleet Owners’ success by solving day to day demand and on ground issues.. Identifying and attacking the problem analytically with first principle approach to achieve consistent improvement in key metrices. Conduct Daily and weekly meetings with the team to understand ongoing issues and frame resolution for the same. Evaluating performance of Fleet Owners on a weekly basis and conducting meetings with them to improve TAT (Turn Around Time) and UNS (Un scheduled Stoppages). Be single point of contact for issue resolutions - Operations, Placements, PODs, Tracking etc. High level of engagement with multiple stake holders from other departments like Demand Planning, finance etc to adhere to the targets. Developing a thorough understanding of key clients' requirements and preparing customized solutions to help better working capital utilisation. Location- Gurgaon. Mode- Work from Office. About RIVIGO. We are a technology-enabled company that is shaping the future of logistics for the world. Founded in 2014, we are transforming the sector with our global-first driver relay model made possible through a unique mix of next generation data science and operational excellence.. Grounded in the mission of making logistics human, we have fundamentally changed the truck driver’s job from a ‘months-away-from-home’ job to a ‘day’ job. Unlike conventional truck drivers, relay pilots drive from pitstop to pitstop (under 300 kms) and return to their families the same day, thus, creating huge social dividend.. Relay trucking also ensures 50-70% reduction in turnaround time and highest reliability for clients, helping them reinvent their business models – serving new markets, reducing inventory and significantly cutting costs. Listed among the world’s top emerging businesses and backed by marquee investors, we are working on a vision to build a completely technology-enabled RaaS (Relay as a service) marketplace to define the way goods move on roads in India and the world.. . . Show more. . . Show less. . . ."
+   },
+   "metadata": {
+    "date_added": "2022-03-12T00:00:00",
+    "date_updated": "2022-04-10T00:00:00"
+   }
+  },
+  {
+   "crustdata_job_id": 8504407429732555,
+   "job_details": {
+    "job_id": 8504407429732555,
+    "title": "UX & Brand Designer",
+    "category": "Design",
+    "workplace_type": null,
+    "url": "https://in.linkedin.com/jobs/view/ux-brand-designer-at-rivigo-2960746213",
+    "reposted_job": false,
+    "number_of_openings": null,
+    "source": "professional_network",
+    "employment_type": null
+   },
+   "company": {
+    "basic_info": {
+     "crustdata_company_id": 6039734,
+     "name": "RIVIGO",
+     "primary_domain": "rivigo.com",
+     "website": "https://mahindralogistics.com/b2b-express",
+     "professional_network_id": "6585780",
+     "industries": [
+      "Truck Transportation",
+      "Transportation, Logistics, Supply Chain and Storage"
+     ]
+    },
+    "locations": {
+     "country": "India",
+     "state": "Haryana",
+     "city": null,
+     "street_address": "Plot No. 90, Sector 44 Near Huda City Centre, Gurgaon Sector 45, Wazirabad, Smaspur, Jharsa, Gwal Pahari, Haryana"
+    },
+    "headcount": {
+     "total": 2209,
+     "range": "1001-5000",
+     "largest_headcount_country": "IND"
+    },
+    "followers": {
+     "count": 217950
+    },
+    "revenue": {
+     "estimated": {
+      "lower_bound_usd": 500000000,
+      "upper_bound_usd": 1000000000
+     },
+     "public_markets": {
+      "stock_symbols": [],
+      "fiscal_year_end": ""
+     },
+     "acquisition_status": null
+    },
+    "funding": {
+     "total_investment_usd": 287045357.0,
+     "valuation_usd": 0.0,
+     "last_fundraise_date": "2022-08-23T00:00:00",
+     "last_round_type": "series_h",
+     "num_funding_rounds": 12,
+     "investors": [
+      "Elevation Capital",
+      "InnoVen Capital",
+      "KB Global Platform Fund",
+      "SAIF Partners",
+      "Spring Canter Investment",
+      "Trifecta Capital Advisors",
+      "Warburg Pincus"
+     ]
+    },
+    "competitors": {
+     "websites": []
+    }
+   },
+   "location": {
+    "raw": "Gurugram, Haryana, India",
+    "city": "Gurugram",
+    "district": "Gurgaon Division",
+    "state": "Haryana",
+    "country": "India",
+    "pincode": null
+   },
+   "content": {
+    "description": ". . . About us. Founded in 2014 and listed among the world’s top emerging businesses, RIVIGO is writing the future of logistics with a global-first driver relay model enabled by a unique mix of next generation technology and operational excellence.. Through the relay model, we have fundamentally changed the truck driver’s job from a ‘months-away-from-home’ job to a ‘day’ job. Unlike conventional truck drivers, relay pilots drive from pitstop to pitstop (under 300 kms) and return to their families the same day, thus initiating a huge cycle of social change.. Our customers leverage 50-70% reduction in transit time and 100% precision and reliability to reinvent their business models – by serving new markets, reducing inventory and significantly cutting costs. With ground-breaking technology solutions and advanced data analytics, we are a unique logistics network that aspires to be India’s largest new age logistics platform. We are contributing to building the new India by defining the next-generation trucking industry with accurate predictions, elevated levels of efficiency, simple automated operations, and by making logistics human.. If limitless aspiration and growth, opportunity to build real business while bringing innovative solutions to customers and working alongside a fantastic team at the world’s fastest growing company excites you then read on.. About the Role. Your role as UX Designer,. would be to identify right problems to solve, understand nuances, and create huge impact through user research and bringing in high degree of user empathy. You will be working with the product and technology teams directly across all/any of the product lines - Full truck, Express/Part truck load, Cold chain, Marketplace and new business lines as they get added.. You will collaborate with product team to define clear user flows and UI specification for engineering team. The role offers both range and depth of product design, as well as an opportunity to learn new skills and grow fast in your career. What makes the role more challenging is that you would develop skills in product thinking and solving complex logistic problems through your simplified design.. As a Brand Designer,. you will closely work with the marketing team on ideating and creating collateral that embody the brand’s personality and communicate the brand’s messaging effectively. While the role requires a technical understanding of branding and communication design, it also gives you space to exercise your creative freedom.. What will you do?. As UX Designer:. • Work with the product managers in developing and designing the product solution strategy ensuring excellent user experience through different design offerings. • Create user-centered design solutions that promote ease of use, best in class interaction design, and optimized user experience. • Research to understand user behavior and use those insights to deliver the best design. •. Logical thinking to understand complex machine learning and artificial intelligence driven products. As Brand Designer:. Work closely with the Marketing Team on design of brand and marketing collateral. Develop a deep understanding of the brand's visual identity to create on-brand graphics. Deliver impactful and engaging creative concepts for communication across internal and external channels. Qualifications. • B.Des or M.Des from IITs or NID. • B.Arch/M.Arch from IITs. • 1-2 years experience. Who are we looking for?. Professional attributes:. • Strong design experience with some understanding of B2B as well as B2C space. • Passion to simplify products through design. • Ability to tell compelling stories about your designs. • Good understanding of Information Architecture. • Ability to quickly turn around rigorous wire-frames and mock-ups in an iterative environment. • Ability to communicate complex, interactive design concepts clearly and persuasively across different audiences. • Sense of design aesthetics, and a natural propensity towards simplification over complication. • Ability and passion to design for the business user and yet keep the human interaction approach. • Collaborate with cross functional team product managers, developers, and designers. • Adept in working with Adobe Creative Suite and other design tools (Photoshop, Illustrator, After Effects, Premiere Pro, etc.). • A keen eye for aesthetics and details. • Experienced in designing social media creatives, email newsletters, pamphlets, brochures, presentations, and other marketing collateral. • Skilled at video editing and animations.. . . Show more. . . Show less. . . ."
+   },
+   "metadata": {
+    "date_added": "2022-03-09T00:00:00",
+    "date_updated": "2022-03-27T00:00:00"
+   }
+  },
+  {
+   "crustdata_job_id": 4578217143206716,
+   "job_details": {
+    "job_id": 4578217143206716,
+    "title": "Customer Service Executive",
+    "category": "Customer Service",
+    "workplace_type": null,
+    "url": "https://in.linkedin.com/jobs/view/customer-service-executive-at-rivigo-2952750468",
+    "reposted_job": false,
+    "number_of_openings": null,
+    "source": "professional_network",
+    "employment_type": null
+   },
+   "company": {
+    "basic_info": {
+     "crustdata_company_id": 6039734,
+     "name": "RIVIGO",
+     "primary_domain": "rivigo.com",
+     "website": "https://mahindralogistics.com/b2b-express",
+     "professional_network_id": "6585780",
+     "industries": [
+      "Truck Transportation",
+      "Transportation, Logistics, Supply Chain and Storage"
+     ]
+    },
+    "locations": {
+     "country": "India",
+     "state": "Haryana",
+     "city": null,
+     "street_address": "Plot No. 90, Sector 44 Near Huda City Centre, Gurgaon Sector 45, Wazirabad, Smaspur, Jharsa, Gwal Pahari, Haryana"
+    },
+    "headcount": {
+     "total": 2209,
+     "range": "1001-5000",
+     "largest_headcount_country": "IND"
+    },
+    "followers": {
+     "count": 217950
+    },
+    "revenue": {
+     "estimated": {
+      "lower_bound_usd": 500000000,
+      "upper_bound_usd": 1000000000
+     },
+     "public_markets": {
+      "stock_symbols": [],
+      "fiscal_year_end": ""
+     },
+     "acquisition_status": null
+    },
+    "funding": {
+     "total_investment_usd": 287045357.0,
+     "valuation_usd": 0.0,
+     "last_fundraise_date": "2022-08-23T00:00:00",
+     "last_round_type": "series_h",
+     "num_funding_rounds": 12,
+     "investors": [
+      "Elevation Capital",
+      "InnoVen Capital",
+      "KB Global Platform Fund",
+      "SAIF Partners",
+      "Spring Canter Investment",
+      "Trifecta Capital Advisors",
+      "Warburg Pincus"
+     ]
+    },
+    "competitors": {
+     "websites": []
+    }
+   },
+   "location": {
+    "raw": "Gurugram, Haryana, India",
+    "city": "Gurugram",
+    "district": "Gurgaon Division",
+    "state": "Haryana",
+    "country": "India",
+    "pincode": null
+   },
+   "content": {
+    "description": ". . . Responsibilities-. Answering calls received on the Toll Free Numbers and query handling. Create tickets for issues highlighted by the customers and follow up with respective departments for closure. Handling queries from the website and social media. Respond to customers consistently and confidently by providing accurate information in all areas such as transit time, status of consignments and accept bookings. Handle inquiries related to sales leads that we receive as inquiries from customers. Enhance service experience by exercising professionalism and empathy when dealing with each customer’s varying needs and demands.. Academic Qualifications- Graduate. Experience- 0-2 Years. Location- Gurgaon. Mode- Work from Office, Shift Job, 6 days working. Positions- Multiple. About RIVIGO. We are a technology-enabled company that is shaping the future of logistics for the world. Founded in 2014, we are transforming the sector with our global-first driver relay model made possible through a unique mix of next generation data science and operational excellence.. Grounded in the mission of making logistics human, we have fundamentally changed the truck driver’s job from a ‘months-away-from-home’ job to a ‘day’ job. Unlike conventional truck drivers, relay pilots drive from pitstop to pitstop and return to their families the same day, thus, creating huge social dividend.. . . Show more. . . Show less. . . ."
+   },
+   "metadata": {
+    "date_added": "2022-03-05T00:00:00",
+    "date_updated": "2022-03-30T00:00:00"
+   }
+  },
+  {
+   "crustdata_job_id": 8914432008848893,
+   "job_details": {
+    "job_id": 8914432008848893,
+    "title": "SDE-II, Backend",
+    "category": "Engineering",
+    "workplace_type": null,
+    "url": "https://in.linkedin.com/jobs/view/sde-ii-backend-at-rivigo-2930041623",
+    "reposted_job": false,
+    "number_of_openings": null,
+    "source": "professional_network",
+    "employment_type": null
+   },
+   "company": {
+    "basic_info": {
+     "crustdata_company_id": 6039734,
+     "name": "RIVIGO",
+     "primary_domain": "rivigo.com",
+     "website": "https://mahindralogistics.com/b2b-express",
+     "professional_network_id": "6585780",
+     "industries": [
+      "Truck Transportation",
+      "Transportation, Logistics, Supply Chain and Storage"
+     ]
+    },
+    "locations": {
+     "country": "India",
+     "state": "Haryana",
+     "city": null,
+     "street_address": "Plot No. 90, Sector 44 Near Huda City Centre, Gurgaon Sector 45, Wazirabad, Smaspur, Jharsa, Gwal Pahari, Haryana"
+    },
+    "headcount": {
+     "total": 2209,
+     "range": "1001-5000",
+     "largest_headcount_country": "IND"
+    },
+    "followers": {
+     "count": 217950
+    },
+    "revenue": {
+     "estimated": {
+      "lower_bound_usd": 500000000,
+      "upper_bound_usd": 1000000000
+     },
+     "public_markets": {
+      "stock_symbols": [],
+      "fiscal_year_end": ""
+     },
+     "acquisition_status": null
+    },
+    "funding": {
+     "total_investment_usd": 287045357.0,
+     "valuation_usd": 0.0,
+     "last_fundraise_date": "2022-08-23T00:00:00",
+     "last_round_type": "series_h",
+     "num_funding_rounds": 12,
+     "investors": [
+      "Elevation Capital",
+      "InnoVen Capital",
+      "KB Global Platform Fund",
+      "SAIF Partners",
+      "Spring Canter Investment",
+      "Trifecta Capital Advisors",
+      "Warburg Pincus"
+     ]
+    },
+    "competitors": {
+     "websites": []
+    }
+   },
+   "location": {
+    "raw": "Gurugram, Haryana, India",
+    "city": "Gurugram",
+    "district": "Gurgaon Division",
+    "state": "Haryana",
+    "country": "India",
+    "pincode": null
+   },
+   "content": {
+    "description": ". . . About RIVIGO. We are a technology-enabled company that is shaping the future of logistics for the world. Founded in 2014,. we are transforming the sector with our global-first driver relay model made possible through a unique mix of next generation data science and operational excellence. .. Grounded in the mission of making logistics human, we have fundamentally changed the truck driver’s job from a ‘months-away-from-home’ job to a ‘day’ job. Unlike conventional truck drivers, relay pilots drive from pitstop to pitstop (under 300 kms) and return to their families the same day, thus, creating huge social dividend.. Relay trucking also ensures 50-70% reduction in turnaround time and highest reliability for clients, helping them reinvent their business models – serving new markets, reducing inventory and significantly cutting costs. Listed among the world’s top emerging businesses and backed by marquee investors,. we are working on a vision to build a completely technology-enabled RaaS (Relay as a service) marketplace to define the way goods move on roads in India and the world. .. What will you do?. RIVIGO Labs is at the core of our vision. A team of the country’s best engineers and data scientists, we are leveraging smart data and technology to build ground-breaking solutions at scale. T. his year we are focussed on solving data and intelligence problems that are focused on redefining complex operations via technology using decision making science to optimize and build efficient technology systems.. You will be working on. challenging time-space complex problems. that are futuristic and have never been solved before. These will include network relay model, fuel analytics and optimisation, resource (vehicle/pilot) allocation and optimisation, human behaviour analysis, geo analytics, time continuum and visualisation, line haul planning etc. Your role would involve. architecting systems capable of serving as the brains of complex distributed products. . In addition, you’d also closely mentor younger engineers on the team and contribute to team building. A strong technologist at RIVIGO cares about code modularity, scalability and reusability and thrives in a complex and ambiguous environment.. Who should apply ?. Bachelors/Masters in Computer Science or a related field. 2-5 years of relevant experience in spring or other Java frameworks. Experience with web technologies and microservices architecture, including Java, Linux, Apache, MySQL, solr, memcache, redis etc.. Experience with high performance websites catering to millions of daily traffic is a plus. Excellent team-working skills and ability to handle multiple tasks together.. Experience with API Designing and ability to architect and implement an intuitive customer and third-party integration story. Ability to think and analyse both breadth-wise (client, server, DB, control flow) and depth-wise (threads, sessions, space-time complexity) while designing and implementing services. Exceptional design and architectural skills. This job can also be performed remotely.. . . Show more. . . Show less. . . ."
+   },
+   "metadata": {
+    "date_added": "2022-02-21T00:00:00",
+    "date_updated": "2022-03-22T00:00:00"
+   }
+  },
+  {
+   "crustdata_job_id": 6384007994378676,
+   "job_details": {
+    "job_id": 6384007994378676,
+    "title": "Associate/Lead/ Program Manager- Strategy/ Planning",
+    "category": "Analyst, Consulting, and Project Management",
+    "workplace_type": null,
+    "url": "https://in.linkedin.com/jobs/view/associate-lead-program-manager-strategy-planning-at-rivigo-2916255096",
+    "reposted_job": false,
+    "number_of_openings": null,
+    "source": "professional_network",
+    "employment_type": null
+   },
+   "company": {
+    "basic_info": {
+     "crustdata_company_id": 6039734,
+     "name": "RIVIGO",
+     "primary_domain": "rivigo.com",
+     "website": "https://mahindralogistics.com/b2b-express",
+     "professional_network_id": "6585780",
+     "industries": [
+      "Truck Transportation",
+      "Transportation, Logistics, Supply Chain and Storage"
+     ]
+    },
+    "locations": {
+     "country": "India",
+     "state": "Haryana",
+     "city": null,
+     "street_address": "Plot No. 90, Sector 44 Near Huda City Centre, Gurgaon Sector 45, Wazirabad, Smaspur, Jharsa, Gwal Pahari, Haryana"
+    },
+    "headcount": {
+     "total": 2209,
+     "range": "1001-5000",
+     "largest_headcount_country": "IND"
+    },
+    "followers": {
+     "count": 217950
+    },
+    "revenue": {
+     "estimated": {
+      "lower_bound_usd": 500000000,
+      "upper_bound_usd": 1000000000
+     },
+     "public_markets": {
+      "stock_symbols": [],
+      "fiscal_year_end": ""
+     },
+     "acquisition_status": null
+    },
+    "funding": {
+     "total_investment_usd": 287045357.0,
+     "valuation_usd": 0.0,
+     "last_fundraise_date": "2022-08-23T00:00:00",
+     "last_round_type": "series_h",
+     "num_funding_rounds": 12,
+     "investors": [
+      "Elevation Capital",
+      "InnoVen Capital",
+      "KB Global Platform Fund",
+      "SAIF Partners",
+      "Spring Canter Investment",
+      "Trifecta Capital Advisors",
+      "Warburg Pincus"
+     ]
+    },
+    "competitors": {
+     "websites": []
+    }
+   },
+   "location": {
+    "raw": "Gurugram, Haryana, India",
+    "city": "Gurugram",
+    "district": "Gurgaon Division",
+    "state": "Haryana",
+    "country": "India",
+    "pincode": null
+   },
+   "content": {
+    "description": ". . . Role- Associate/ Lead/ Program Manager- Strategy/ Planning. Location- Gurgaon (Work from Office). About RIVIGO. We are a technology-enabled company that is shaping the future of logistics for the world.. Founded in 2014, we are transforming the sector with our global-first driver relay model made possible through a unique mix of next generation data science and operational excellence. .. Grounded in the mission of making logistics human, we have fundamentally changed the truck driver’s job from a ‘months-away-from-home’ job to a ‘day’ job. Unlike conventional truck drivers, relay pilots drive from pitstop to pitstop (under 300 kms) and return to their families the same day, thus, creating huge social dividend.. Relay trucking also ensures 50-70% reduction in turnaround time and highest reliability for clients, helping them reinvent their business models – serving new markets, reducing inventory and significantly cutting costs. Listed among the world’s top emerging businesses and backed by marquee investors, we are working on a vision to build a completely technology-enabled RaaS (Relay as a service) marketplace to define the way goods move on roads in India and the world.. Responsibilities:. B.E/B.Tech from Premium Engineering Institute (IITs, NITs, BITS Pilani, DCE, NSIT, BIT Mesra etc) with 1-4 years of experience in consulting/ Ops excellence/ Ops Analytics roles. Exceptional problem solver to solve the service excellence issues for Supply Chain/ auto/pharma/e-commerce/FMCG and deliver Rivigo's promise of fastest TAT and lowest defects in the market.. Proven experience and knowledge of process improvement tools, methods, and techniques like 6/Sigma will be an added advantage.. Proven experience in driving continuous improvement initiatives. Develop and maintain operational excellence project plans, identify resource needs, and manage. Identifying, prioritizing and implementing initiatives to improve productivity, quality, customer service and/or reducing costs and complexity. Lead the product development lifecycle end to end, starting from understanding the problems at hand, empathizing with the user to ensure the adoption post product launches, drive innovation and conceptualize new products from scratch – this might require challenging the status quo, going deep into data, and thinking boldly.. Continually challenge the status quo and persistently dig for improvement opportunities.. Establish a passion for operational excellence within operations.. Manage large highly complex programs that will accelerate operational, productivity and customer experience improvement across the organization.. Apply analytical expertise on operations to conceptualize projects, build stakeholder alignment, and drive projects to achieve strategic goals / rationalize cost & quality performance.. Ability to influence stakeholders across the organization without direct reporting lines.. Substantial experience in program/project management or an equivalent operational role.. Ability to interpret, analyse, and understand complex data sets.. Join us and write the future of an entire sector and contribute to building the new India.. . . Show more. . . Show less. . . ."
+   },
+   "metadata": {
+    "date_added": "2022-02-10T00:00:00",
+    "date_updated": "2022-03-15T00:00:00"
+   }
+  }
+ ],
+ "next_cursor": null,
+ "total_count": 19
+}

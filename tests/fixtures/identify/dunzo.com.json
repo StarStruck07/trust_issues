@@ -1,0 +1,39 @@
+[
+ {
+  "matched_on": "dunzo.com",
+  "match_type": "domain",
+  "matches": [
+   {
+    "confidence_score": 1.0,
+    "company_data": {
+     "crustdata_company_id": 5721,
+     "basic_info": {
+      "name": "Dunzo",
+      "crustdata_company_id": 5721,
+      "primary_domain": "dunzo.com",
+      "all_domains": [
+       "dunzo.com"
+      ],
+      "website": "http://dunzo.com",
+      "professional_network_url": "https://www.linkedin.com/company/dunzo-in",
+      "professional_network_id": "7797838",
+      "profile_name": "Dunzo",
+      "logo_permalink": "https://crustdata-media.s3.us-east-2.amazonaws.com/company/294f11c4a42b2a102fbf6a14c5cba6803a81e12548a05af51d33f6ca2274d4e0.jpg",
+      "description": "Now launching #DunzoDaily - the 19 minute grocery delivery experience in #Delhi #Gurgaon #Noida #Hyderabad #Mumbai #Chennai #Pune and #Bangalore. ⚡Dunzo is an all-in-one 24X7 delivery platform, that picks and delivers anything and everything within the city while guaranteeing super-quick deliveries. Our Services include the delivery of packages, groceries, food, medicines, pet supplies, and more. Founded and headquartered in Bengaluru, Dunzo was incorporated in 2015. From the humble beginnings of a Whatsapp group, Dunzo has consistently proved its mettle as a convenience app and has grown from strength to strength. Currently, we stand fully operational in 8 cities and counting!Dunzo prides itself on providing a spirited, fair, and transparent work environment for all its employees. We focus on nurturing careers and celebrating talent.  Every opinion is given due consideration, and no voice is too feeble to be heard out. We're also strong advocates of the work-hard-play-hard philosophy, and are not ones to shy away from a good time!For Media Queries: press@dunzo.in | www.dunzo.in | Instagram | Facebook | Linkedin | Twitter For Merchant Enquiries: dunzoforbusiness@dunzo.in",
+      "company_type": "Privately Held",
+      "year_founded": 2015,
+      "employee_count_range": "5001-10000",
+      "markets": [
+       "PRIVATE"
+      ],
+      "industries": [
+       "Technology, Information and Internet",
+       "Technology, Information and Media"
+      ]
+     },
+     "social_profiles": null
+    }
+   }
+  ]
+ }
+]

@@ -114,3 +114,29 @@ def test_legal_status_comes_from_crustdata_record_and_says_mca_not_checked():
     ls = [e for e in evs if e.signal == "legal_status"][0]
     assert ls.status == "ok" and ls.value == {"status": "active", "registry_checked": False}
     assert "MCA not checked" in ls.claim and ls.field_path == "basic_info.status"
+
+
+def test_recorded_namesake_hike_leather_is_not_a_hard_stop():
+    """Real IBBI page: 'Hike Leather' is in liquidation; Hike (the app company) is not."""
+    evs = check(cp(name="Hike", legal_name="Hike Private Limited"))
+    e = [x for x in evs if x.signal == "insolvency"][0]
+    assert e.value == "none_found" and "1 similar name not matched" in e.claim
+
+
+def test_recorded_real_liquidation_go_first():
+    evs = check(cp(name="Go First", legal_name="Go Airlines (India) Limited"))
+    e = [x for x in evs if x.signal == "insolvency"][0]
+    assert e.value["status"] == "liquidation" and e.value["announced"] == "2025-01-25"
+
+
+def test_recorded_real_cirp_dunzo():
+    evs = check(cp(name="Dunzo", legal_name="Dunzo Digital Private Limited"))
+    e = [x for x in evs if x.signal == "insolvency"][0]
+    assert e.value["status"] == "cirp_admitted" and e.value["announced"] == "2025-09-23"
+
+
+def test_same_company_in_different_case_counts_once():
+    c = FakePublic([row("Corporate Insolvency Resolution Process", "01-10-2026", "ACME LOGISTICS SOUTH PRIVATE LIMITED"),
+                    row("Liquidation Process", "01-09-2026", "Acme Logistics South Pvt Ltd")])
+    e = fake_check(cp(legal_name="Acme Logistics Private Limited"), c)[0]
+    assert e.value == "none_found" and "1 similar name not matched" in e.claim

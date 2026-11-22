@@ -1,0 +1,68 @@
+[
+ {
+  "matched_on": "byjus.com",
+  "match_type": "domain",
+  "matches": [
+   {
+    "confidence_score": 1.0,
+    "company_data": {
+     "crustdata_company_id": 5705,
+     "basic_info": {
+      "name": "BYJU'S",
+      "crustdata_company_id": 5705,
+      "primary_domain": "byjus.com",
+      "all_domains": [
+       "byjus.com"
+      ],
+      "website": "https://www.byjus.com",
+      "professional_network_url": "https://www.linkedin.com/company/byjus",
+      "professional_network_id": "2395365",
+      "profile_name": "BYJU'S",
+      "logo_permalink": "https://crustdata-media.s3.us-east-2.amazonaws.com/company/33e05162e686e72f851543596b8c9b6d11b0bdba5d4f342206f126e916b2e6d0.jpg",
+      "description": "BYJU’S is a global ed-tech company, providing highly adaptive, engaging and effective learning solutions to more than 150 million students around the world. Founded in India in 2011, BYJU’S mission is to make high-quality learning accessible to students everywhere.The BYJU’S family of brands includes Disney-BYJU’S Early Learn, BYJU’S Future School, Epic!, Osmo, Tynker, Toppr and WhiteHat Jr, along with our beloved flagship product BYJU’S – The Learning App. Together, BYJU’S solutions support Pre-K – 12 education and a wide range of competitive exams. BYJU’S delivers a world-class learning experience with tools that sit at the cross-section of mobile, interactive content and personalized learning methodologies. BYJU’S geography-agnostic solutions and 12,000+ teachers make learning engaging, with visual and contextual programs that adapt to the unique learning style, skill level and pace of each student. In addition, we have innovative partnerships with some of the world’s leading companies, including Disney and Google, to drive engagement and help even more students become active and lifelong learners. BYJU’S is backed by blue-chip investors including the Chan Zuckerberg Initiative, Sequoia Capital, Bond Capital, Silver Lake, BlackRock, Sands Capital Management, Alkeon Capital Management, Sofina, Verlinvest, Tencent, Prosus (previously Naspers Ventures), CPPIB, General Atlantic, Tiger Global, Qatar Investment Authority, Owl Ventures, Lightspeed Venture Partners, Times Internet, Aarin Capital and IFC. Since 2017, we have completed more than 15 acquisitions, including companies in the U.S., UK, Austria, India and Singapore. A 2021 Time 100 Most Influential Company, BYJU’S is headquartered in India, with operations in more than 21 countries globally and learning programs in multiple languages. For additional information, please visit www.byjus.com.",
+      "company_type": "Privately Held",
+      "year_founded": 2011,
+      "employee_count_range": "10001+",
+      "markets": [
+       "PRIVATE"
+      ],
+      "industries": [
+       "E-Learning Providers",
+       "Education"
+      ]
+     },
+     "social_profiles": null
+    }
+   },
+   {
+    "confidence_score": 1.0,
+    "company_data": {
+     "crustdata_company_id": 6459390,
+     "basic_info": {
+      "name": "BYJU'S Support",
+      "crustdata_company_id": 6459390,
+      "primary_domain": "byjus.com",
+      "all_domains": [
+       "byjus.com"
+      ],
+      "website": "https://byjus.com/",
+      "professional_network_url": "https://www.linkedin.com/company/byju-s-support",
+      "professional_network_id": "75858357",
+      "profile_name": "BYJU'S Support",
+      "logo_permalink": "https://crustdata-media.s3.us-east-2.amazonaws.com/company/4a8c641bb8b2850afcbabd9736d8daaac956154fdf140b7db480dce1f8d72b65.jpg",
+      "description": "BYJU’S is India's largest ed-tech company and the creator of India’s most loved school learning app which offers highly adaptive, engaging and effective learning programs for students in LKG, UKG, classes 1 -12 (K-12) and competitive exams like JEE, NEET and IAS.  BYJU'S Support is a dedicated page to help users address queries about BYJU'S. Tag the page in a comment or post to let us know your question and our team of experts will promptly help you with a resolution!",
+      "company_type": "Privately Held",
+      "year_founded": null,
+      "employee_count_range": "1001-5000",
+      "markets": [],
+      "industries": [
+       "E-Learning Providers",
+       "Education"
+      ]
+     },
+     "social_profiles": null
+    }
+   }
+  ]
+ }
+]

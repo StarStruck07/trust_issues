@@ -35,7 +35,7 @@ MCA_URL = "https://www.mca.gov.in/content/mca/global/en/mca/master-data/MDS.html
 GST_URL = "https://services.gst.gov.in/services/searchtp"
 HARD_STOP_YEARS = 2
 SUFFIX_RE = re.compile(
-    r"\b(private limited|pvt\.? ?ltd\.?|pvt\.?|limited|ltd\.?|llp|opc|\(opc\)|india|inc\.?|corporation|corp\.?|"
+    r"\b(private limited|pvt\.? ?ltd\.?|pvt\.?|private|limited|ltd\.?|llp|opc|\(opc\)|india|inc\.?|corporation|corp\.?|"
     r"company|co\.?)\s*$")
 STOP = (BudgetExceeded, CreditsExhausted)
 
@@ -80,17 +80,22 @@ def ibbi(ctx) -> Evidence:
         raise RuntimeError(f"IBBI returned HTTP {status}")
     rows = parse_ibbi(page.get("html") or "")
     exact = [r for r in rows if normalise(r["debtor"]) == core]
-    similar = {r["debtor"] for r in rows if r not in exact and _similar(core, normalise(r["debtor"]))}
-    debtors_exact = {r["debtor"].upper() for r in exact}
+    # one company can appear in several announcements, in different capitalisation: count distinct names
+    similar: dict[str, str] = {}
+    for r in rows:
+        n = normalise(r["debtor"])
+        if r not in exact and _similar(core, n):
+            similar.setdefault(n, r["debtor"])
+    debtors_exact = {normalise(r["debtor"]) for r in exact}
 
     if len(debtors_exact) > 1 or (not exact and len(similar) >= 2):
-        names = sorted(debtors_exact or similar)
+        names = sorted({r["debtor"].upper() for r in exact} if len(debtors_exact) > 1 else similar.values())
         return ctx.make_ev("insolvency", f"ambiguous registry match: {len(names)} companies ({'; '.join(names[:3])})",
                            {"status": "ambiguous", "candidates": names[:10]}, "IBBI public announcements",
                            "Name of Corporate Debtor", ctx.as_of, source_type="registry", url=url, raw_ref=raw,
                            status="empty")
     if not exact:
-        note = f" (1 similar name not matched: {next(iter(similar))})" if similar else ""
+        note = f" (1 similar name not matched: {next(iter(similar.values()))})" if similar else ""
         return ctx.make_ev("insolvency", f"No IBBI announcement found for {legal} as of {ctx.as_of.isoformat()}{note}",
                            "none_found", "IBBI public announcements", "Name of Corporate Debtor", ctx.as_of,
                            source_type="registry", url=url, raw_ref=raw)

@@ -1,0 +1,40 @@
+[
+ {
+  "matched_on": "rivigo.com",
+  "match_type": "domain",
+  "matches": [
+   {
+    "confidence_score": 1.0,
+    "company_data": {
+     "crustdata_company_id": 6039734,
+     "basic_info": {
+      "name": "RIVIGO",
+      "crustdata_company_id": 6039734,
+      "primary_domain": "rivigo.com",
+      "all_domains": [
+       "mahindralogistics.com",
+       "rivigo.com"
+      ],
+      "website": "https://mahindralogistics.com/b2b-express/",
+      "professional_network_url": "https://www.linkedin.com/company/rivigo",
+      "professional_network_id": "6585780",
+      "profile_name": "RIVIGO",
+      "logo_permalink": "https://crustdata-media.s3.us-east-2.amazonaws.com/company/0e777c96b49112471a4d7757d6b4460d4ddbe6cc4ff330968f54253aaf9141ef.jpg",
+      "description": "A part of Mahindra Logistics, India’s leading integrated logistics services provider, we are an express logistics service provider with a mission to revolutionize goods mobility and bring down the overall logistics cost in India. Through innovation, problem-solving, and continuous collaboration, we are driven by our purpose of making logistics faster, safer, and more reliable.Delivering to 19,000+ pin codes across India, we strongly focus on zero-defect operations and customer centricity to drive excellence using world-class technology. Together with Mahindra Logistics, we are reimagining Indian Logistics and Igniting Success for all our stakeholders by bringing in efficiencies across every element of the supply chain.We operate as MLL Express Services Pvt. Ltd., which is the express business entity of Mahindra Logistics Limited.",
+      "company_type": "Privately Held",
+      "year_founded": 2014,
+      "employee_count_range": "1001-5000",
+      "markets": [
+       "PRIVATE"
+      ],
+      "industries": [
+       "Truck Transportation",
+       "Transportation, Logistics, Supply Chain and Storage"
+      ]
+     },
+     "social_profiles": null
+    }
+   }
+  ]
+ }
+]

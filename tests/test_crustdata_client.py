@@ -1,4 +1,6 @@
 """Owner: Nilay (P2). CrustdataClient pipeline: retries, 402, cache, budget, mock, forced failures."""
+import json
+
 import httpx
 import pytest
 
@@ -204,3 +206,20 @@ def test_cache_expires_after_ttl(monkeypatch):
     c2, calls2 = make_client(h, run_id="run-3")
     c2.identify(domains=["acme.in"])
     assert len(calls2) == 1                             # fetched again, not served from cache
+
+
+def test_record_mode_writes_replayable_fixtures(monkeypatch, tmp_path):
+    monkeypatch.setenv("CRD_RECORD", "1")
+    monkeypatch.setattr(crustdata, "FIXTURES", tmp_path)
+    two = [{"matched_on": "a.in", "matches": [{"confidence_score": 1.0, "company_data": {"crustdata_company_id": 1}}]},
+           {"matched_on": "b.in", "matches": []}]
+    c, _ = make_client(lambda req, n: httpx.Response(200, json=two, headers={"x-credits-used": "0.2"}))
+    c.identify(domains=["a.in", "b.in"])
+    assert json.loads((tmp_path / "identify" / "a.in.json").read_text(encoding="utf-8"))[0]["matched_on"] == "a.in"
+    assert (tmp_path / "identify" / "b.in.json").exists()              # split per identifier
+    monkeypatch.setenv("CRD_RECORD", "0")
+    monkeypatch.setenv("CRD_MOCK", "1")
+    crustdata._INDEX = None
+    out = CrustdataClient("run-r").identify(domains=["a.in"])          # replays offline
+    assert out[0]["matches"][0]["company_data"]["crustdata_company_id"] == 1
+    crustdata._INDEX = None
