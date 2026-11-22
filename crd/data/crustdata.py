@@ -260,10 +260,16 @@ class CrustdataClient:
         return list((resp or {}).get("job_listings") or []) if isinstance(resp, dict) else []
 
     def web_search(self, query: str, *, news: bool = True, limit: int = 10,
+                   start_date: int | None = None, end_date: int | None = None,
                    cp_key: str | None = None) -> list[dict]:
+        """Results carry no publish date; pass start_date/end_date (unix seconds) to bound the window."""
         payload: dict = {"query": query, "location": "IN"}
         if news:
             payload["sources"] = ["news"]
+        if start_date is not None:
+            payload["start_date"] = int(start_date)
+        if end_date is not None:
+            payload["end_date"] = int(end_date)
         resp = self._call("POST", "/web/search/live", payload, "web_search", cp_key=cp_key)
         results = (resp or {}).get("results") or [] if isinstance(resp, dict) else []
         return list(results)[:limit]
