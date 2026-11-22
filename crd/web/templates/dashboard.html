@@ -1,22 +1,20 @@
 {% extends "base.html" %}
+{% block title %}Desk · The Counterparty Desk{% endblock %}
 {% block content %}
 {% if run %}
 {%- set rows = data.rows -%}
-{%- set ns = namespace(red=0, amber=0, cv=0, green=0, total=0) -%}
+{%- set ns = namespace(red=0, amber=0, total=0) -%}
 {%- for r in rows -%}
   {%- set ns.total = ns.total + (r.a.inr_at_risk or 0) -%}
   {%- if r.rating == 'RED' %}{% set ns.red = ns.red + (r.a.inr_at_risk or 0) %}
-  {%- elif r.rating == 'AMBER' %}{% set ns.amber = ns.amber + (r.a.inr_at_risk or 0) %}
-  {%- elif r.rating == 'GREEN' %}{% set ns.green = ns.green + (r.a.inr_at_risk or 0) %}
-  {%- else %}{% set ns.cv = ns.cv + (r.a.inr_at_risk or 0) %}{% endif -%}
+  {%- elif r.rating == 'AMBER' %}{% set ns.amber = ns.amber + (r.a.inr_at_risk or 0) %}{% endif -%}
 {%- endfor -%}
-{%- set n = rows|length or 1 -%}
 {% endif %}
 
 <div class="page-head">
   <div>
-    <h1>Weekly counterparty review</h1>
-    <div class="sub">{% if run %}Latest run <a href="/runs/{{ run.run_id }}">{{ run.run_id }}</a> · as of {{ run.as_of or '—' }} · {{ ui.status(run.status) }}{% else %}No review has run yet.{% endif %}</div>
+    <h1>The desk</h1>
+    <div class="sub">{% if run %}Edition <a href="/runs/{{ run.run_id }}">{{ run.run_id }}</a> · as of {{ run.as_of or '—' }} · {{ ui.status(run.status) }}{% else %}No review has run yet.{% endif %}</div>
   </div>
   {% if run %}<div class="row">
     <a class="btn" href="/runs/{{ run.run_id }}/files/review.json">{{ ui.icon('download', 15) }}JSON</a>
@@ -24,53 +22,66 @@
   </div>{% endif %}
 </div>
 
-<form class="card reqbar" method="post" action="/runs" enctype="multipart/form-data">
-  <div>
-    <label class="lbl" for="request_text">Ask the desk</label>
-    <textarea id="request_text" name="request_text" rows="1">{{ default_request }}</textarea>
-  </div>
-  <div class="file">
-    <label class="lbl" for="csv_file">Counterparty list <span class="faint">(optional)</span></label>
-    <input id="csv_file" type="file" name="csv_file" accept=".csv">
-  </div>
-  <button class="btn primary" type="submit" style="height:40px">{{ ui.icon('play', 14) }}Run review</button>
-</form>
-
 {% if run %}
-<div class="section-title" style="margin-top:22px"><h2>Where the risk is</h2></div>
 <div class="kpis">
   <button type="button" class="kpi k-RED" data-filter="RED"><div class="n">{{ counts.RED }}</div><div class="l">Red</div><div class="s">{{ ns.red|inr }} at risk</div></button>
   <button type="button" class="kpi k-AMBER" data-filter="AMBER"><div class="n">{{ counts.AMBER }}</div><div class="l">Amber</div><div class="s">{{ ns.amber|inr }} at risk</div></button>
-  <button type="button" class="kpi k-CV" data-filter="CV"><div class="n">{{ counts.CV }}</div><div class="l">Cannot verify · Held</div><div class="s">needs a person</div></button>
+  <button type="button" class="kpi k-CV" data-filter="CV"><div class="n">{{ counts.CV }}</div><div class="l">Won't guess</div><div class="s">cannot verify · held</div></button>
   <button type="button" class="kpi k-GREEN" data-filter="GREEN"><div class="n">{{ counts.GREEN }}</div><div class="l">Green</div><div class="s">no action needed</div></button>
 </div>
-
-<div class="card" style="margin-top:12px">
-  <div class="metrics">
-    <span><b>{{ rows|length }}</b> counterparties</span>
-    <span><b>{{ ns.total|inr }}</b> total at risk</span>
-    <span><b>{{ pending_count }}</b> awaiting approval</span>
-    <span><b>{{ data.costs.credits }}</b> credits</span>
-    <span><b>{{ data.costs.inr|inr }}</b> spent</span>
-    <span><b>{{ data.costs.calls }}</b> calls{% if data.costs.cached_pct %} · {{ data.costs.cached_pct }}% cached{% endif %}</span>
-    {% if data.costs.minutes %}<span><b>{{ data.costs.minutes }}</b> min</span>{% endif %}
-  </div>
-  <div style="padding:0 16px 14px">
-    <div class="dist" title="Rating mix">
-      <span style="width:{{ 100 * counts.RED / n }}%;background:var(--red)"></span>
-      <span style="width:{{ 100 * counts.AMBER / n }}%;background:var(--amber)"></span>
-      <span style="width:{{ 100 * counts.CV / n }}%;background:var(--grey)"></span>
-      <span style="width:{{ 100 * counts.GREEN / n }}%;background:var(--green)"></span>
-    </div>
-  </div>
+<div class="metrics" style="padding:10px 0 0">
+  <span><b>{{ rows|length }}</b> counterparties</span>
+  <span><b>{{ ns.total|inr }}</b> total at risk</span>
+  <span><b>{{ pending_count }}</b> awaiting approval</span>
+  <span><b>{{ data.costs.credits }}</b> credits · <b>{{ data.costs.inr|inr }}</b></span>
+  <span><b>{{ data.costs.calls }}</b> calls{% if data.costs.cached_pct %} · {{ data.costs.cached_pct }}% cached{% endif %}</span>
 </div>
 
-<div class="grid-2" style="margin-top:16px;align-items:start">
+<div class="section-title" style="margin-top:26px"><h2>Where everyone sits</h2><span class="desk-hint" style="margin-left:auto">drag to simulate · click for the dossier</span></div>
+<div class="riskline" id="riskline" style="margin-top:10px"></div>
+
+{% if data.changes %}
+<div class="section-title" style="margin-top:26px"><h2>Changed since last review</h2><span class="count">{{ data.changes|length }}</span></div>
+<div class="changes">
+  {% for a in data.changes %}<a class="change" href="/cp/{{ run.run_id }}/{{ a.cp_ids[0] }}">{{ a.display_name }} {{ a.change_since_last|move }}</a>{% endfor %}
+</div>
+{% endif %}
+
+<div class="section-title" style="margin-top:30px">
+  <h2>Ranked by priority, then ₹ at risk</h2><span class="count" id="shown">{{ rows|length }}</span>
+  <span style="flex:1"></span>
+  <button type="button" class="btn sm" data-filter="ALL" id="clear" hidden>Show all</button>
+</div>
+<div class="desk-tools" style="margin-top:12px">
+  <label class="search"><span class="sr">Search</span><input id="desk-search" type="search" placeholder="Find a counterparty, reason or role…" autocomplete="off"></label>
+  <div class="seg" role="group" aria-label="Role">
+    <button type="button" class="on" data-rf="">All</button>
+    <button type="button" data-rf="customer">Customers</button>
+    <button type="button" data-rf="supplier">Suppliers</button>
+  </div>
+  <span class="desk-hint"><kbd>/</kbd> search · <kbd>j</kbd><kbd>k</kbd> move · <kbd>↵</kbd> dossier</span>
+</div>
+<div class="table-wrap">
+  <table class="tbl" id="ranked">
+    <thead><tr>{% for f in data.ui_fields %}<th class="{{ 'right' if f in ('inr_at_risk','exposure_inr') }}">{{ f|human|replace('inr', '₹')|replace('display name', 'counterparty') }}</th>{% endfor %}</tr></thead>
+    <tbody>
+    {% for r in rows %}
+      <tr class="rated" data-r="{{ r.rating }}" data-g="{{ 'CV' if r.rating in ('CANNOT_VERIFY','HELD') else r.rating }}"
+          data-role="{{ 'customer' if (r.a.role|val) == 'customer' else 'supplier' }}"
+          data-q="{{ (r.a.display_name ~ ' ' ~ r.cp_id ~ ' ' ~ (r.a.role|val) ~ ' ' ~ r.top_reason ~ ' ' ~ r.rating)|lower }}">
+        {% for f in data.ui_fields %}{{ ui.field_cell(f, r.cells[f], r, run.run_id) }}{% endfor %}
+      </tr>
+    {% endfor %}
+    </tbody>
+  </table>
+</div>
+
+<div class="grid-2" style="margin-top:34px;align-items:start">
   <div class="card">
     <div class="card-head"><h3>Priority = rating × importance</h3><span class="muted small">same rating, different urgency</span></div>
-    <div class="card-body" style="padding:8px 10px 10px">
+    <div class="card-body" style="padding:8px 0 10px">
       <table class="matrix">
-        <tr><th class="rowh"></th><th>Red</th><th>Amber</th><th>Verify · Held</th><th>Green</th></tr>
+        <tr><th class="rowh"></th><th>Red</th><th>Amber</th><th>Won't guess</th><th>Green</th></tr>
         {% for imp in ['strategic', 'core', 'standard'] %}<tr>
           <th class="rowh imp-{{ imp }}">{{ imp }}</th>
           {% for col in ['RED', 'AMBER', 'CV', 'GREEN'] %}{% set cell = data.matrix[imp][col] %}
@@ -95,54 +106,59 @@
     </div>
   </div>
 </div>
-
-{% if data.changes %}
-<div class="section-title"><h2>Changed since last review</h2><span class="count">{{ data.changes|length }}</span></div>
-<div class="changes">
-  {% for a in data.changes %}<a class="change" href="/cp/{{ run.run_id }}/{{ a.cp_ids[0] }}">{{ a.display_name }} {{ a.change_since_last|move }}</a>{% endfor %}
-</div>
 {% endif %}
 
-<div class="section-title">
-  <h2>Ranked by priority, then ₹ at risk</h2><span class="count" id="shown">{{ rows|length }}</span>
-  <span style="flex:1"></span>
-  <button type="button" class="btn sm" data-filter="ALL" id="clear" hidden>Show all</button>
-</div>
-<div class="card" style="overflow:auto">
-  <table class="tbl" id="ranked">
-    <thead><tr>{% for f in data.ui_fields %}<th class="{{ 'right' if f in ('inr_at_risk','exposure_inr') }}">{{ f|human|replace('inr', '₹')|replace('display name', 'counterparty') }}</th>{% endfor %}</tr></thead>
-    <tbody>
-    {% for r in rows %}
-      <tr class="rated" data-r="{{ r.rating }}" data-g="{{ 'CV' if r.rating in ('CANNOT_VERIFY','HELD') else r.rating }}">
-        {% for f in data.ui_fields %}{{ ui.field_cell(f, r.cells[f], r, run.run_id) }}{% endfor %}
-      </tr>
-    {% endfor %}
-    </tbody>
-  </table>
-</div>
+<div class="section-title" style="margin-top:34px" id="ask-anchor"><h2>Ask the desk</h2></div>
+<form method="post" action="/runs" enctype="multipart/form-data" style="margin-top:12px" id="ask">
+  <div class="ask">
+    <textarea id="ask-text" name="request_text" rows="1" aria-label="Ask the desk" placeholder="Ask the desk…"></textarea>
+    <button type="submit">Run it →</button>
+  </div>
+  <div class="ask-chips">
+    <button type="button" data-ask="{{ default_request }}">This week's full review</button>
+    <button type="button" data-ask="Run this week's risk review on our carriers.">Carriers only</button>
+    <button type="button" data-ask="Run this week's risk review on our customers only.">Customers only</button>
+  </div>
+  <div class="ask-file">New list? <label>attach a CSV <input type="file" name="csv_file" accept=".csv" style="font:inherit"></label></div>
+</form>
+{% endblock %}
 
+{% block scripts %}
+{% if run %}
 <script>
-(function () {
-  const rows = document.querySelectorAll('#ranked tbody tr');
-  const tiles = document.querySelectorAll('[data-filter]');
-  const clear = document.getElementById('clear');
-  let current = 'ALL';
-  function apply(f) {
-    current = (f === current || f === 'ALL') ? 'ALL' : f;
-    let n = 0;
-    rows.forEach(r => { const on = current === 'ALL' || r.dataset.g === current; r.classList.toggle('hidden', !on); if (on) n++; });
-    tiles.forEach(t => t.classList.toggle('on', t.dataset.filter === current));
-    document.getElementById('shown').textContent = n;
-    clear.hidden = current === 'ALL';
-  }
-  tiles.forEach(t => t.addEventListener('click', () => apply(t.dataset.filter)));
-})();
+  window.CRD_POINTS = {{ points|tojson }};
+  window.CRD_RUN = {{ run.run_id|tojson }};
+  CRD.riskLine(document.getElementById("riskline"), window.CRD_POINTS, {{ scale|tojson }}, {
+    onOpen: p => CRD.openDossier(p.url)
+  });
+  (function () {
+    const rows = Array.from(document.querySelectorAll('#ranked tbody tr'));
+    const tiles = document.querySelectorAll('[data-filter]');
+    const clear = document.getElementById('clear');
+    const search = document.getElementById('desk-search');
+    let rating = 'ALL', role = '';
+    function apply() {
+      const q = search.value.trim().toLowerCase();
+      let n = 0;
+      rows.forEach(r => {
+        const on = (rating === 'ALL' || r.dataset.g === rating) && (!role || r.dataset.role === role) &&
+                   (!q || q.split(/\s+/).every(w => r.dataset.q.includes(w)));
+        r.classList.toggle('hidden', !on); if (on) n++;
+      });
+      tiles.forEach(t => t.classList.toggle('on', t.dataset.filter === rating));
+      document.getElementById('shown').textContent = n;
+      clear.hidden = rating === 'ALL';
+    }
+    tiles.forEach(t => t.addEventListener('click', () => { const f = t.dataset.filter; rating = (f === rating || f === 'ALL') ? 'ALL' : f; apply(); }));
+    search.addEventListener('input', apply);
+    document.querySelectorAll('[data-rf]').forEach(b => b.addEventListener('click', () => {
+      role = b.dataset.rf; document.querySelectorAll('[data-rf]').forEach(x => x.classList.toggle('on', x === b)); apply();
+    }));
+    rows.forEach(r => r.addEventListener('click', ev => {
+      if (ev.target.closest('a, button')) return;
+      const a = r.querySelector('a[href^="/cp/"]'); if (a) CRD.openDossier(a.getAttribute('href'));
+    }));
+  })();
 </script>
-{% else %}
-<div class="card empty" style="margin-top:16px">
-  {{ ui.icon('shield', 28) }}
-  <p class="strong" style="margin-top:8px">No reviews yet</p>
-  <p>Ask the desk above and click <b>Run review</b>. Results show up here, ranked by ₹ at risk.</p>
-</div>
 {% endif %}
 {% endblock %}

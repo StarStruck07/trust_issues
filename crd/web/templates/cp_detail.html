@@ -4,7 +4,7 @@
 {%- set r = a.rating|val -%}
 {%- set rc = {'GREEN':'green','AMBER':'amber','RED':'red','HELD':'purple'}.get(r, 'grey') -%}
 {%- set final = why.final_score if why.final_score is not none else a.score -%}
-<div class="crumbs"><a href="/">Dashboard</a> / <a href="/runs/{{ run_id }}/report">{{ run_id }}</a> / {{ a.cp_ids|join(' + ') }}</div>
+<div class="crumbs"><a href="/desk">Desk</a> / <a href="/runs/{{ run_id }}/report">{{ run_id }}</a> / {{ a.cp_ids|join(' + ') }}</div>
 
 <div class="card">
   <div class="hero">

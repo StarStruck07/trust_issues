@@ -1,0 +1,141 @@
+{% extends "base.html" %}
+{% block title %}The Counterparty Desk{% endblock %}
+{% block body_class %}front{% endblock %}
+{% block content %}
+{%- set c = counts or {'RED': 0, 'AMBER': 0, 'CV': 0, 'GREEN': 0} -%}
+{%- set n = points|length -%}
+{%- set ns = namespace(risk=0, red=0) -%}
+{%- for p in points %}{% set ns.risk = ns.risk + p.at_risk %}{% if p.rating == 'RED' %}{% set ns.red = ns.red + p.at_risk %}{% endif %}{% endfor -%}
+
+<div class="fp">
+  <div class="fp-dateline">
+    <span>Vol. I · {{ (run.as_of if run else '') or 'No edition yet' }}</span>
+    <span>{% if run %}Edition {{ run.run_id }} · {{ run.status|status_label }}{% else %}Awaiting the first review{% endif %}</span>
+    <span>{{ 'Mock data · recorded fixtures' if MOCK else 'Live sources' }}</span>
+  </div>
+  <h1 class="fp-title" aria-label="The Counterparty Desk">
+    {%- for w in ['The', 'Counterparty'] %}<span class="lt" style="animation-delay:{{ loop.index0 * 90 }}ms">{{ w }}</span> {% endfor -%}
+    <em class="lt" style="animation-delay:220ms">Desk.</em>
+  </h1>
+  <div class="fp-rule"></div>
+
+  <section class="fp-lead">
+    <div>
+      <div class="fp-kicker">{% if run %}This week's review{% else %}Before you extend credit{% endif %}</div>
+      <h2 class="fp-head">
+        {%- if not run -%}
+          Know who you're <em>trusting</em> before the invoice is due.
+        {%- elif c.RED -%}
+          {{ c.RED }} counterpart{{ 'y is' if c.RED == 1 else 'ies are' }} <span class="hl">in the red</span>. {{ ns.red|inr }} <em>on the line</em>.
+        {%- elif c.AMBER -%}
+          {{ c.AMBER }} to <span class="hl">watch</span>, nothing on fire. {{ ns.risk|inr }} <em>at risk</em>.
+        {%- else -%}
+          Nothing on fire. {% if c.CV %}{{ c.CV }} we <span class="hl">refuse to guess</span> on.{% else %}<em>All clear</em>, with receipts.{% endif %}
+        {%- endif -%}
+      </h2>
+      <p class="fp-deck">
+        {%- if run -%}
+          The desk read <b>{{ facts }}</b> facts about <b>{{ n }}</b> counterpart{{ 'y' if n == 1 else 'ies' }}, every one with a source and a date.
+          When it can't tell who a company is, it says so instead of guessing. When it wants to act, it drafts and waits for you.
+        {%- else -%}
+          Upload your carriers and customers. The desk checks identity, headcount, hiring, news and registries,
+          cites every fact, and drafts the next step for a human to approve.
+        {%- endif -%}
+      </p>
+      <div class="fp-cta">
+        <a class="btn primary" href="/desk">Open the desk →</a>
+        <a class="btn" href="#ask" onclick="document.getElementById('ask-text').focus();">Ask it something</a>
+        {% if pending_count %}<a class="btn" href="/approvals">{{ pending_count }} waiting for you</a>{% endif %}
+      </div>
+    </div>
+    <aside class="fp-side" aria-label="This week in numbers">
+      <div class="fp-stat"><span class="v" style="color:var(--red)">{{ c.RED }}</span><span class="t"><b>Red.</b> Act now: hold credit, find a backup.<small>score below {{ scale.amber_min|int }}, or a hard stop</small></span></div>
+      <div class="fp-stat"><span class="v" style="color:var(--amber)">{{ c.AMBER }}</span><span class="t"><b>Amber.</b> Watch closely, tighten terms.<small>score {{ scale.amber_min|int }}–{{ scale.green_min|int - 1 }}</small></span></div>
+      <div class="fp-stat"><span class="v" style="color:var(--grey)">{{ c.CV }}</span><span class="t"><b>Won't guess.</b> Not enough fresh evidence, or a source was down.<small>cannot verify · held</small></span></div>
+      <div class="fp-stat"><span class="v" style="color:var(--green)">{{ c.GREEN }}</span><span class="t"><b>Clear.</b> Healthy on fresh, cited evidence.<small>score {{ scale.green_min|int }}+</small></span></div>
+    </aside>
+  </section>
+
+  {% if points %}
+  <section class="fp-sec reveal" id="line">
+    <div class="fp-sec-head">
+      <h2>The risk line, <em>live</em></h2>
+      <p>Every counterparty sits at its score. Hover for the reason, click for the dossier, or <b>drag one</b> to see what happens to your exposure if it slips. The rules are the real scoring bands; nothing you drag is saved.</p>
+    </div>
+    <div class="riskline" id="riskline"></div>
+  </section>
+  {% endif %}
+</div>
+
+{% if wire %}
+<div class="wire reveal" aria-label="Sourced facts from this review">
+  <span class="wire-label">THE WIRE</span>
+  <div class="wire-track">
+    {% for _ in range(2) %}{% for w in wire %}
+    <span class="wire-item">{{ w.claim }} <a href="{{ w.href }}" target="_blank" rel="noopener">{{ w.source }}</a><span class="d">{{ w.date }}</span></span>
+    {% endfor %}{% endfor %}
+  </div>
+</div>
+{% endif %}
+
+<div class="fp">
+  <section class="fp-sec reveal">
+    <div class="fp-sec-head"><h2>Three promises, <em>kept in code</em></h2></div>
+    <div class="fp-cols">
+      <div class="fp-col">
+        <div class="no">i.</div>
+        <h3>No fact without a source.</h3>
+        <p>Every claim carries the endpoint or URL it came from, the field it was read from, and the date of the record. Old evidence is shown but never scored.</p>
+        <div class="proof">{{ sourced }} of {{ facts }} facts this week link to their source.</div>
+      </div>
+      <div class="fp-col">
+        <div class="no">ii.</div>
+        <h3>Silence is not health.</h3>
+        <p>A lookalike name, a missing domain or a source that times out never turns into a green light. The desk says <em>cannot verify</em> or <em>held</em> and tells you what it tried.</p>
+        <div class="proof">{{ c.CV }} counterpart{{ 'y' if c.CV == 1 else 'ies' }} flagged instead of guessed.</div>
+      </div>
+      <div class="fp-col">
+        <div class="no">iii.</div>
+        <h3>A human signs anything irreversible.</h3>
+        <p>Terms emails, credit holds and backup quotes are drafts until someone approves them. Each one runs exactly once, even if the server dies halfway.</p>
+        <div class="proof">{{ pending_count }} draft{{ '' if pending_count == 1 else 's' }} waiting · <a href="/outbox">see what was sent</a></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="fp-sec reveal" id="ask">
+    <div class="fp-sec-head">
+      <h2>Ask the desk</h2>
+      <p>Plain English. Name a counterparty it doesn't know and it will ask you which one you mean instead of guessing.</p>
+    </div>
+    <form method="post" action="/runs" enctype="multipart/form-data">
+      <div class="ask">
+        <textarea id="ask-text" name="request_text" rows="2" aria-label="Ask the desk" placeholder="Ask the desk…"></textarea>
+        <button type="submit">Run it →</button>
+      </div>
+      <div class="ask-chips">
+        <button type="button" data-ask="{{ default_request }}">This week's full review</button>
+        {% if names.customer %}<button type="button" data-ask="Check our customer {{ names.customer }} before we renew 30-day terms.">Check {{ names.customer }} before renewing terms</button>{% endif %}
+        {% if names.carrier %}<button type="button" data-ask="Re-check {{ names.carrier }}, our carrier.">Re-check {{ names.carrier }}</button>{% endif %}
+        <button type="button" data-ask="Run this week's risk review on our customers only.">Customers only</button>
+      </div>
+      <div class="ask-file">New list? <label>attach a CSV <input type="file" name="csv_file" accept=".csv" style="font:inherit"></label></div>
+    </form>
+  </section>
+
+  <div class="colophon">
+    <span>Set in Fraunces &amp; IBM Plex. Printed on recorded evidence.</span>
+    <span>{% if data %}{{ data.costs.calls }} calls · {{ data.costs.credits }} credits · {{ data.costs.inr|inr }} this edition{% endif %}</span>
+  </div>
+</div>
+{% endblock %}
+
+{% block scripts %}
+<script>
+  window.CRD_POINTS = {{ points|tojson }};
+  window.CRD_RUN = {{ (run.run_id if run else none)|tojson }};
+  CRD.riskLine(document.getElementById("riskline"), window.CRD_POINTS, {{ scale|tojson }}, {
+    onOpen: p => CRD.openDossier(p.url)
+  });
+</script>
+{% endblock %}

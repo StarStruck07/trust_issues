@@ -157,7 +157,8 @@ env.filters["status_label"] = status_label
 env.filters["human"] = human
 env.filters["reason"] = reason
 env.filters["href"] = report.source_href
-env.globals["css_v"] = lambda: int((HERE / "static" / "style.css").stat().st_mtime)
+env.globals["css_v"] = lambda name="style.css": int((HERE / "static" / name).stat().st_mtime) \
+    if (HERE / "static" / name).exists() else 0
 env.globals["MOCK"] = USING_FAKE_DB or os.getenv("CRD_MOCK", "1") == "1"
 env.filters["rating_label"] = report.rating_label
 env.filters["val"] = _val
@@ -274,13 +275,68 @@ def _actions(statuses) -> list:
     return out
 
 
-# ---------------------------------------------------------------- dashboard / runs
+# ---------------------------------------------------------------- front page / desk / runs
+def _scale() -> dict:
+    """Rating bands and risk probabilities, so the what-if line uses the same rules as scoring."""
+    cfg = config.get()
+    sc, rp = cfg.scoring, cfg.risk_probability
+    return {"green_min": float(sc.get("green_min", 65)), "amber_min": float(sc.get("amber_min", 40)),
+            "prob": {k: float(rp.get(k, 0.5)) for k in ("GREEN", "AMBER", "RED", "CANNOT_VERIFY", "HELD")}}
+
+
+def _points(data: dict | None, run_id: str | None) -> list[dict]:
+    """One JSON-safe point per counterparty for the risk line, desk and command palette."""
+    out = []
+    for r in (data or {}).get("rows", []):
+        a = r["a"]
+        out.append({"cp_id": r["cp_id"], "name": a.display_name, "role": human(_val(a.role)),
+                    "rating": r["rating"], "score": a.score, "exposure": a.exposure_inr or 0,
+                    "at_risk": a.inr_at_risk or 0, "prio": r["priority"], "importance": r["importance"],
+                    "reason": reason(r["top_reason"]), "url": f"/cp/{run_id}/{r['cp_id']}"})
+    return out
+
+
+def _facts(data: dict | None, limit: int = 18) -> tuple[int, int, list[dict]]:
+    """(facts, facts with a source link, a sample of sourced claims for the wire)."""
+    evs = [e for v in (data or {}).get("evidence", {}).values() for e in v]
+    sourced = [e for e in evs if report.source_href(e)]
+    wire = [{"claim": e.claim, "source": e.source, "date": str(e.record_date or ""), "href": report.source_href(e)}
+            for e in sourced if _val(e.status) == "ok"][:limit]
+    return len(evs), len(sourced), wire
+
+
 @app.get("/", response_class=HTMLResponse)
+def landing(request: Request):
+    run = _run_view(_latest_run())
+    data = report.build(run["run_id"]) if run else None
+    facts, sourced, wire = _facts(data)
+    names = {"customer": None, "carrier": None}
+    for r in (data or {}).get("rows", []):
+        role = _val(r["a"].role)
+        key = "customer" if role == "customer" else "carrier"
+        names[key] = names[key] or r["a"].display_name
+    return page(request, "landing.html", run=run, data=data, default_request=DEFAULT_REQUEST,
+                counts=_counts(data["assessments"]) if data else None,
+                points=_points(data, run and run["run_id"]), scale=_scale(),
+                facts=facts, sourced=sourced, wire=wire, names=names,
+                ledger=db.get_ledger(run["run_id"], limit=12) if run else [])
+
+
+@app.get("/desk", response_class=HTMLResponse)
 def dashboard(request: Request):
     run = _run_view(_latest_run())
     data = report.build(run["run_id"]) if run else None
     return page(request, "dashboard.html", run=run, data=data, default_request=DEFAULT_REQUEST,
-                counts=_counts(data["assessments"]) if data else None)
+                counts=_counts(data["assessments"]) if data else None,
+                points=_points(data, run and run["run_id"]), scale=_scale())
+
+
+@app.get("/api/points")
+def api_points():
+    """Latest run's counterparties, for the command palette on every page."""
+    run = _latest_run()
+    data = report.build(run["run_id"]) if run else None
+    return {"run_id": run and run["run_id"], "points": _points(data, run and run["run_id"])}
 
 
 @app.post("/runs")
