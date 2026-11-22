@@ -24,6 +24,17 @@ def norm(name: str | None) -> str:
     return re.sub(r"\s+", " ", s).strip()
 
 
+def _same_name(asked: str | None, found: str | None) -> bool:
+    """The found company's name starts with the asked name, word by word. Only legal-form words are
+    dropped here (not "india", which norm() also strips): "Quasar India" must not equal "Quasar Infotek"."""
+    def light(n: str | None) -> list[str]:
+        s = re.sub(r"[^\w\s]", " ", (n or "").lower())
+        s = re.sub(r"\b(private|pvt|limited|ltd|llp|inc|co|company|corporation|corp)\b", " ", s)
+        return s.split()
+    a, f = light(asked), light(found)
+    return bool(a) and f[:len(a)] == a
+
+
 def pan_of(gstin: str | None) -> str | None:
     g = (gstin or "").strip().upper()
     return g[2:12] if len(g) == 15 else None
@@ -173,6 +184,17 @@ def resolve_one(cp: Counterparty, client, run_id: str, cfg, pre: Prefetch | None
             located = [m for m in good if any(t in (m.get("location") or "").lower() for t in loc.split())]
             if len(located) == 1:
                 good = located
+        # A lone fuzzy match must still be the same name: the found name has to start with the
+        # name we asked for, word by word ("Blue Dart" -> "Blue Dart Express" is fine;
+        # "Quasar India" -> "Quasar Infotek ... India" is a different company, not a match).
+        if len(good) == 1 and good[0]["confidence"] < 0.99 and not _same_name(qname, good[0]["name"]):
+            ev = _ev(run_id, cp.cp_id, f"No company record matches '{qname}'. The closest, "
+                     f"{good[0]['name']} (confidence {good[0]['confidence']:.2f}), has a different name, "
+                     "so it was not used", good[0], client.last_raw_ref, status="empty")
+            return ResolvedEntity(cp_ids=[cp.cp_id], status="not_found", legal_name=cp.legal_name,
+                                  domain=cp.domain, candidates=[{k: good[0].get(k) for k in (
+                                      "name", "domain", "location", "confidence", "crustdata_company_id")}],
+                                  evidence_ids=[ev.evidence_id]), [ev]
         if len(good) == 1 and (not loc or not good[0].get("location")
                                or any(t in good[0]["location"].lower() for t in loc.split())):
             e = _entity(cp, good[0], "name")

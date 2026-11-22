@@ -13,7 +13,7 @@ import traceback
 from typing import Callable, Optional
 
 from crd import config, db, explain, request_parser, scoring
-from crd.data import people, signals
+from crd.data import people, registries, signals
 from crd.data.crustdata import CrustdataClient
 from crd.data.errors import BudgetExceeded, CreditsExhausted
 from crd.models import Action, Assessment, Counterparty, Evidence, ResolvedEntity, ReviewRequest, SUPPLIER_ROLES
@@ -68,7 +68,7 @@ def process_entity(run_id: str, entity: ResolvedEntity, group: list[Counterparty
 
     def gather() -> dict:
         ev = list(signals.gather(group[0], entity, client, cfg)) if entity.status == "resolved" else \
-            _client_record_only(group[0], entity, run_id, cfg)
+            _client_record_only(group[0], entity, run_id, cfg, client)
         for e in ev:
             e.cp_id = cid
         db.save_evidence(ev)
@@ -97,13 +97,23 @@ def process_entity(run_id: str, entity: ResolvedEntity, group: list[Counterparty
     return a
 
 
-def _client_record_only(cp: Counterparty, entity: ResolvedEntity, run_id: str, cfg) -> list[Evidence]:
-    """Unresolved identity: only the client's own receivables record is safe to use."""
+def _client_record_only(cp: Counterparty, entity: ResolvedEntity, run_id: str, cfg, client=None) -> list[Evidence]:
+    """Unresolved identity: only the client's own record is safe to use, plus the insolvency registry
+    searched by the exact legal name the client gave us (that check does not depend on Crustdata's
+    identity, so an IBBI notice for that name is still a valid hard stop)."""
     import uuid
     from datetime import datetime, timezone
+    out: list[Evidence] = []
+    if client is not None and entity.status == "not_found" and cp.legal_name:
+        try:
+            out += [e for e in registries.check(entity, cp, client, cfg) if e.signal == "insolvency"]
+        except (BudgetExceeded, CreditsExhausted):
+            raise
+        except Exception:  # noqa: BLE001  a failed registry check must not crash the run
+            pass
     if cp.dso_days is None or cp.credit_terms_days is None:
-        return []
-    return [Evidence(
+        return out
+    return out + [Evidence(
         evidence_id=f"ev_{uuid.uuid4().hex[:8]}", run_id=run_id, cp_id=cp.cp_id, signal="payment_behaviour",
         claim=f"DSO {cp.dso_days:.0f} days against {cp.credit_terms_days}-day terms",
         value={"dso": cp.dso_days, "terms": cp.credit_terms_days, "overdue_inr": cp.overdue_inr},
