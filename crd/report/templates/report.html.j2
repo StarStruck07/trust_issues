@@ -12,21 +12,22 @@ h1{font-size:1.5rem}h2{font-size:1.15rem;margin-top:2rem;border-bottom:2px solid
 a{color:#1d4ed8}
 @media print{a{color:inherit}.card{break-inside:avoid}}
 {{ css | safe }}
-body{background:#fff;max-width:1120px;margin:0 auto;padding:28px 28px 48px}
+body{background:#fff;max-width:1120px;margin:0 auto;padding:28px 28px 48px;font-size:16px;line-height:1.55;color:#1d2433}
+h1{font-size:30px;letter-spacing:-.01em}h2{font-size:21px}h3{font-size:18px}.lead{font-size:17px;margin:4px 0 10px}
 h2{margin-top:2rem;border-bottom:2px solid #101828;padding-bottom:.3rem}
 h3{display:flex;gap:8px;align-items:center;flex-wrap:wrap}
-table{font-size:13px}
+table{font-size:15px}
 .card{padding:14px 18px;margin-bottom:14px}
-.kpis{display:grid;grid-template-columns:repeat(auto-fit,minmax(118px,1fr));gap:10px;margin:14px 0 6px}
-.kpi{border:1px solid #e5e7eb;border-radius:10px;padding:10px 12px}.kpi b{display:block;font-size:22px;line-height:1.1;color:#101828;font-variant-numeric:tabular-nums}
-.kpi span{font-size:12px;color:#6b7280}.kpi.red b{color:#b42318}.kpi.amber b{color:#b54708}.kpi.green b{color:#067647}.kpi.grey b{color:#475467}
+.kpis{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:10px;margin:14px 0 6px}
+.kpi{border:1px solid #e5e7eb;border-radius:10px;padding:10px 12px}.kpi b{display:block;white-space:nowrap;font-size:26px;line-height:1.1;color:#101828;font-variant-numeric:tabular-nums}
+.kpi span{font-size:13px;color:#6b7280}.kpi.red b{color:#b42318}.kpi.amber b{color:#b54708}.kpi.green b{color:#067647}.kpi.grey b{color:#475467}
 table.num td,table.num th{white-space:nowrap}table.num td.reason{white-space:normal;min-width:220px;color:#344054}
-.r{text-align:right;font-variant-numeric:tabular-nums}.big{font-size:16px;font-weight:700}.neg{color:#b42318;font-weight:600}.small{font-size:12px}
+.r{text-align:right;font-variant-numeric:tabular-nums}.big{font-size:16px;font-weight:700}.neg{color:#b42318;font-weight:600}.small{font-size:13.5px}.nowrap{white-space:nowrap}
 
 </style>
 </head>
 <body>
-<h1>Trust Issues · counterparty risk review</h1>
+<h1>Weekly counterparty review</h1>
 <p class="muted">Run {{ d.run.run_id }} · as of {{ d.as_of }} · “{{ d.request }}”</p>
 {% set rc = {} %}{% for a in d.assessments %}{% set k = a.rating|val %}{% set _ = rc.update({k: rc.get(k, 0) + 1}) %}{% endfor %}
 {% set facts = d.rows|sum(attribute='n.facts') %}{% set gaps = d.rows|sum(attribute='n.gaps') %}
@@ -44,7 +45,7 @@ table.num td,table.num th{white-space:nowrap}table.num td.reason{white-space:nor
 {% if d.not_reviewed %}<p class="muted"><b>Not reviewed:</b> {{ d.not_reviewed|join('; ') }}</p>{% endif %}
 {% if d.changes %}<p><b>Moved:</b> {% for a in d.changes %}{{ a.display_name }} {{ a.change_since_last }}{% if not loop.last %} · {% endif %}{% endfor %}</p>{% endif %}
 
-<h2>Ranked: priority, then ₹ at risk</h2>
+<h2>Who needs attention this week</h2>
 <div style="overflow-x:auto"><table class="num">
 <thead><tr><th>P</th><th>Company</th><th>Verdict</th><th class="r">Score</th><th class="r">Exposure</th><th class="r">At risk</th>
 <th class="r" title="Headcount change, last quarter">HC q/q</th><th class="r" title="Job postings, last 30 days">Hiring 30d</th>
@@ -68,29 +69,30 @@ table.num td,table.num th{white-space:nowrap}table.num td.reason{white-space:nor
 </tr>{% endfor %}
 </tbody>
 </table></div>
-<p class="muted small">P1 act now · P2 this week · P3 monitor · P4 no action. “–” = not checked or no data. Full evidence with sources below.</p>
+<p class="muted small">P1 = act today, P2 = this week, P3 = keep an eye on it, P4 = nothing to do. A dash means we could not check it.</p>
 
-<h2>Cannot verify / Held</h2>
+<h2>Companies we could not check</h2>
 {% if d.cannot_verify %}<ul>{% for a, line in d.cannot_verify %}<li class="{{ 'held' if a.rating|val == 'HELD' else 'cv' }}">{{ line }}</li>{% endfor %}</ul>
-{% else %}<p class="muted">None.</p>{% endif %}
+{% else %}<p class="muted">None this week.</p>{% endif %}
 
-<h2>Approval queue</h2>
-{% if d.pending %}<table><thead><tr><th>Action</th><th>Counterparty</th><th>Subject</th><th>Reasons</th></tr></thead><tbody>
-{% for x in d.pending %}<tr><td>{{ x.type|val }}</td><td>{{ x.cp_id }}</td><td>{{ x.subject }}</td>
-<td>{% for eid in x.reason_evidence %}{% set e = d.ev_by_id.get(eid) %}{% if e %}{{ e.claim|short }}{% set h = source_href(e) %}{% if h %} <a class="src" href="{{ h }}" target="_blank">source ↗</a>{% endif %}<br>{% endif %}{% endfor %}</td></tr>{% endfor %}
+<h2>Waiting for your approval</h2>
+{% if d.pending %}<table><thead><tr><th>What we suggest</th><th>Company</th><th>Why</th></tr></thead><tbody>
+{% for x in d.pending %}<tr><td><b>{{ x.type|action }}</b></td><td>{{ x.cp_id }}</td>
+<td>{% for eid in x.reason_evidence %}{% set e = d.ev_by_id.get(eid) %}{% if e %}{{ e.claim|clean|short }}{% set h = source_href(e) %}{% if h %} <a class="src" href="{{ h }}" target="_blank">source ↗</a>{% endif %}<br>{% endif %}{% endfor %}</td></tr>{% endfor %}
 </tbody></table>
-{% else %}<p class="muted">Nothing pending.</p>{% endif %}
+{% else %}<p class="muted">Nothing waiting.</p>{% endif %}
 
-<h2>Counterparties</h2>
+<h2>Company by company</h2>
+{% macro r_short(a) %}{% set n = {'RED': "We don't trust them right now.", 'AMBER': 'We have doubts. Worth a call this week.', 'GREEN': 'Nothing worrying found.', 'CANNOT_VERIFY': "We couldn't confirm who they are.", 'HELD': "Some checks failed, so we're holding the verdict."} %}{{ n.get(a.rating|val, '') }}{% if a.hard_stop %} Hard stop: {{ a.hard_stop.replace('_', ' ') }}.{% endif %}{% endmacro %}
 {% for a in d.assessments %}
 <div class="card">
 <h3>{{ a.display_name }} <span class="pill r-{{ a.rating|val }}">{{ a.rating|rating_label }}</span> <span class="muted">{{ a.score }}/100 · {{ (a.role|val).replace('_', ' ') }} · {{ inr(a.inr_at_risk) }} at risk</span></h3>
-<p>{{ a.explanation }}</p>
-<table><thead><tr><th>Signal</th><th>Points</th><th>Claim</th><th>Source</th><th>Date</th></tr></thead><tbody>
+<p class="lead">{{ r_short(a) }}</p>
+<table><thead><tr><th>What we checked</th><th class="r">Effect</th><th>What we found</th><th>Source</th><th>As of</th></tr></thead><tbody>
 {% for s in a.signals %}{% for eid in s.evidence_ids or [None] %}{% set e = d.ev_by_id.get(eid) if eid else None %}
-<tr><td>{{ s.signal }}</td><td>{{ '%+d' % s.points }}</td><td>{{ e.claim if e else s.note }}</td>
-<td>{% if e %}{% set h = source_href(e) %}{% if h %}<a class="src" href="{{ h }}" target="_blank">{{ e.source or 'source' }} ↗</a>{% else %}{{ e.source }}{% endif %}{% endif %}</td>
-<td>{{ e.record_date if e else '' }}{% if e and e.stale %} <span class="tag stale">stale</span>{% endif %}</td></tr>
+<tr><td>{{ s.signal|signal }}</td><td class="r {{ 'neg' if s.points < 0 else '' }}">{% if loop.first %}{{ ('%+d' % s.points) if s.points else '0' }}{% endif %}</td><td>{{ (e.claim if e else s.note)|clean }}</td>
+<td>{% if e %}{% set h = source_href(e) %}{% if h %}<a class="src" href="{{ h }}" target="_blank">{{ e.source|clean or 'source' }} ↗</a>{% else %}{{ e.source }}{% endif %}{% endif %}</td>
+<td class="nowrap">{{ (e.record_date or '–') if e else '' }}{% if e and e.stale %} <span class="tag stale">stale</span>{% endif %}</td></tr>
 {% endfor %}{% endfor %}
 </tbody></table>
 </div>

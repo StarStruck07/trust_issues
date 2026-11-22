@@ -15,8 +15,8 @@ from crd.deps import config, db
 HERE = Path(__file__).parent
 STATIC_CSS = HERE.parent / "web" / "static" / "style.css"
 RATING_LABEL = {"CANNOT_VERIFY": "CANNOT VERIFY"}
-FOOTER = ("Ratings computed by fixed rules from cited evidence; "
-          "the model only extracts facts and writes summaries.")
+FOOTER = ("Every rating comes from fixed rules applied to the facts above, each with its source. "
+          "No rating is made up by a language model.")
 
 
 def run_dir(run_id: str) -> Path:
@@ -47,6 +47,28 @@ def inr(v) -> str:
             parts.insert(0, head)
         s = ",".join(parts) + "," + tail
     return f"{'-' if neg else ''}₹{s}"
+
+
+SIGNAL_LABEL = {
+    "identity": "Who they are", "legal_status": "Company status", "insolvency": "Insolvency register",
+    "headcount_qoq": "Headcount, last quarter", "headcount_6m": "Headcount, last 6 months", "role_mix": "Staff mix",
+    "hiring": "Hiring", "leadership_exit": "Senior leaver", "funding_runway": "Last funding",
+    "news": "In the news", "employee_reviews": "Staff reviews", "web_traffic": "Website visits",
+    "payment_behaviour": "How they pay us", "positive": "Good sign",
+}
+ACTION_LABEL = {
+    "internal_alert": "Tell the account owner", "raise_watch_frequency": "Check them daily",
+    "customer_terms_email": "Email new payment terms", "credit_hold": "Pause new credit",
+    "backup_rfq": "Get a backup quote", "guarantee_request": "Ask for a guarantee",
+}
+
+
+def clean(text) -> str:
+    """Drop machine notes like '[article text not fetched; ...]' and '(refresh date unknown)'."""
+    t = re.sub(r"\s*\[[^\]]*\]?", "", str(text or ""))
+    t = re.sub(r"\s*\((refresh|publish) date unknown[^)]*\)", "", t)
+    t = re.sub(r"\b([a-z]+)_([a-z_]+)\b", lambda m: m.group(0).replace("_", " "), t)   # post_ipo_secondary
+    return re.sub(r"\s+", " ", t).strip()
 
 
 def rating_label(r) -> str:
@@ -237,6 +259,9 @@ def _env() -> Environment:
     env.filters["rating_label"] = rating_label
     env.filters["val"] = _val
     env.filters["short"] = lambda t, n=90: _short(t, n)
+    env.filters["clean"] = clean
+    env.filters["signal"] = lambda k: SIGNAL_LABEL.get(str(k), str(k).replace("_", " ").capitalize())
+    env.filters["action"] = lambda k: ACTION_LABEL.get(str(getattr(k, "value", k)), str(getattr(k, "value", k)).replace("_", " "))
     return env
 
 
