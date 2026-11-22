@@ -1,0 +1,167 @@
+{% extends "base.html" %}
+{% block title %}Sources · Trust Issues{% endblock %}
+{% block content %}
+<div class="page-head">
+  <div>
+    <h1>On the record</h1>
+    <div class="sub">
+      {% if run %}What Crustdata and the registries actually answered in review <a href="/runs/{{ run.run_id }}">{{ run.run_id }}</a>, and exactly which fields we used.
+      {{ stats.calls }} calls · {{ stats.cached }} from cache · {{ stats.credits }} credits.{% else %}No review has run yet.{% endif %}
+    </div>
+  </div>
+  {% if runs|length > 1 %}
+  <form method="get" action="/sources">
+    <select name="run" onchange="this.form.submit()" aria-label="Review">
+      {% for r in runs %}<option value="{{ r.run_id }}" {{ 'selected' if run and r.run_id == run.run_id }}>{{ r.run_id }}</option>{% endfor %}
+    </select>
+  </form>
+  {% endif %}
+</div>
+
+{% if companies %}
+<div class="src-layout">
+  <nav class="src-index" aria-label="Companies and their sources">
+    {% for co in companies %}
+    <div class="src-co">
+      <h3>{{ co.name }} {{ ui.rating(co.rating, 'sm') }}</h3>
+      {% for c in co.calls %}
+      <button type="button" class="src-call" data-cp="{{ co.cp_id }}" data-i="{{ loop.index0 }}">
+        <span>{{ c.label }}</span><span class="n">{{ c.used|length }} fact{{ '' if c.used|length == 1 else 's' }}</span>
+      </button>
+      {% else %}<p class="muted small">No API sources for this company.</p>{% endfor %}
+    </div>
+    {% endfor %}
+  </nav>
+  <section class="src-view" id="src-view" aria-live="polite">
+    <p class="src-empty">Pick a source on the left.</p>
+  </section>
+</div>
+{% else %}
+<p class="src-empty">Run a review first. Every answer from Crustdata will show up here, with the fields we used highlighted.</p>
+{% endif %}
+{% endblock %}
+
+{% block scripts %}
+<script>
+(function () {
+  const COS = {{ companies|tojson }};
+  const view = document.getElementById("src-view");
+  if (!view) return;
+  const esc = s => String(s ?? "").replace(/[&<>"']/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]));
+  const KIND = {
+    live: "Live answer, stored for this review",
+    fixture: "Recorded Crustdata answer (mock mode)",
+    placeholder: "Mock placeholder: a stand-in record, not this company's real data",
+    synthetic: "Mock mode made this answer up on the fly; there is no stored response",
+    missing: "No stored response for this source",
+    demo: "Fictional demo data: an invented company with synthetic evidence, not a Crustdata answer",
+  };
+
+  // field_path -> regex over concrete paths like "[0].matches[0].confidence_score"
+  function pathRe(fp) {
+    if (!fp) return null;
+    const body = fp.split(/(\[\]|\[\d+\])/).map(part =>
+      part === "[]" ? "\\[\\d+\\]" : /^\[\d+\]$/.test(part) ? part.replace(/[[\]]/g, "\\$&") :
+      part.split(".").map(s => s.replace(/[.*+?^${}()|\\]/g, "\\$&")).join("\\.")).join("");
+    return new RegExp("(^|\\.|\\])" + body.replace(/^\\\./, "") + "$");
+  }
+  const join = (p, k) => typeof k === "number" ? `${p}[${k}]` : (p ? `${p}.${k}` : k);
+
+  // walk the data once: which concrete paths match a used field, and their ancestors
+  function scan(data, res, q) {
+    const used = new Map(), open = new Set(), hits = new Set();
+    (function walk(v, p) {
+      res.forEach((r, i) => { if (r && r.test(p)) used.set(p, i); });
+      if (q && (String(p.split(/[.\]]/).pop()).toLowerCase().includes(q) || (v !== null && typeof v !== "object" && String(v).toLowerCase().includes(q)))) hits.add(p);
+      if (v && typeof v === "object") (Array.isArray(v) ? v.map((x, i) => [i, x]) : Object.entries(v)).forEach(([k, x]) => walk(x, join(p, k)));
+    })(data, "");
+    [...used.keys(), ...hits].forEach(p => { let s = p; while (s) { s = s.replace(/(\.[^.[\]]+|\[\d+\]|^[^.[\]]+)$/, ""); open.add(s); } });
+    return { used, open, hits };
+  }
+
+  function prim(v) {
+    if (v === null) return '<span class="z">null</span>';
+    if (typeof v === "string") return `<span class="s">"${esc(v.length > 300 ? v.slice(0, 299) + "…" : v)}"</span>`;
+    if (typeof v === "number") return `<span class="n">${v}</span>`;
+    if (typeof v === "boolean") return `<span class="b">${v}</span>`;
+    return esc(String(v));
+  }
+
+  function render(container, data, st) {
+    const LIMIT = 25;
+    function node(k, v, p, top) {
+      const label = k === null ? "" : `<span class="k">${typeof k === "number" ? k : esc(k)}</span>: `;
+      const mark = st.used.has(p) ? " used-mark" : st.hits.has(p) ? " hit" : "";
+      if (!v || typeof v !== "object") return `<span class="row${mark}" data-p="${esc(p)}">${label}${prim(v)}</span>`;
+      const arr = Array.isArray(v), entries = arr ? v.map((x, i) => [i, x]) : Object.entries(v);
+      const size = arr ? `[${v.length}]` : `{${entries.length}}`;
+      const isOpen = top || st.open.has(p);
+      return `<details${isOpen ? " open" : ""} data-p="${esc(p)}"><summary class="${mark.trim()}">${label}<span class="t">${size}</span></summary>${isOpen ? kids(entries, p) : ""}</details>`;
+    }
+    function kids(entries, p, from = 0) {
+      const must = entries.filter(([k]) => st.open.has(join(p, k)) || st.used.has(join(p, k)) || st.hits.has(join(p, k))).map(([k]) => k);
+      let html = "", shown = 0;
+      entries.forEach(([k, x], i) => {
+        if (i < from) return;
+        if (shown < LIMIT || must.includes(k)) { html += node(k, x, join(p, k)); shown++; }
+      });
+      const rest = entries.length - from - shown;
+      if (rest > 0) html += `<button type="button" class="more" data-p="${esc(p)}" data-from="${from + shown}">show ${rest} more</button>`;
+      return html;
+    }
+    container.innerHTML = node(null, data, "", true);
+    const lookup = p => p.split(/\.|(?=\[)/).filter(Boolean).reduce((o, s) => o == null ? o : o[s.startsWith("[") ? +s.slice(1, -1) : s], data);
+    container.onclick = ev => {
+      const b = ev.target.closest(".more");
+      if (!b) return;
+      const p = b.dataset.p, v = p ? lookup(p) : data;
+      const entries = Array.isArray(v) ? v.map((x, i) => [i, x]) : Object.entries(v);
+      b.insertAdjacentHTML("beforebegin", entries.slice(+b.dataset.from).map(([k, x]) => node(k, x, join(p, k))).join(""));
+      b.remove();
+    };
+    container.addEventListener("toggle", ev => {
+      const d = ev.target;
+      if (d.tagName !== "DETAILS" || !d.open || d.children.length > 1) return;
+      const p = d.dataset.p, v = p ? lookup(p) : data;
+      d.insertAdjacentHTML("beforeend", kids(Array.isArray(v) ? v.map((x, i) => [i, x]) : Object.entries(v), p));
+    }, true);
+  }
+
+  async function show(cp, i) {
+    const co = COS.find(c => c.cp_id === cp), call = co && co.calls[i];
+    if (!call) return;
+    document.querySelectorAll(".src-call").forEach(b => b.classList.toggle("on", b.dataset.cp === cp && +b.dataset.i === i));
+    history.replaceState(null, "", `?cp=${encodeURIComponent(cp)}&i=${i}`);
+    const usedRows = call.used.map((u, j) => `<div class="used" data-j="${j}"><span class="claim">${esc(u.claim)}</span><span class="val">${esc(u.value)}</span><span class="path">${esc(u.path || "no field path")} · ${esc(u.date || "no date")}${u.status !== "ok" ? " · " + esc(u.status) : ""}</span><span></span></div>`).join("");
+    view.innerHTML = `<div class="src-head"><h2>${esc(call.label)}</h2><span class="meta">${esc(co.name)} · ${esc(KIND[call.kind] || call.kind)}</span></div>
+      <div class="src-used"><h4>What we took from it</h4>${usedRows}</div>
+      ${call.viewable ? `<div class="src-tools"><input type="search" placeholder="Search keys and values…" id="src-q"><button type="button" id="src-collapse">Collapse all</button><a class="btn sm" href="/api/source?download=1&ref=${encodeURIComponent(call.ref)}">Download JSON</a></div><div class="jtree" id="jtree"><p class="drawer-loading">Opening the file…</p></div><p class="src-note">Highlighted fields are the ones scored. Personal contact fields are withheld.</p>`
+        : `<p class="src-empty">${esc(KIND[call.kind])}.</p>`}`;
+    if (!call.viewable) return;
+    let data;
+    try { const r = await fetch(`/api/source?ref=${encodeURIComponent(call.ref)}`); if (!r.ok) throw 0; data = (await r.json()).data; }
+    catch (e) { document.getElementById("jtree").innerHTML = '<p class="src-empty">Could not open the stored response.</p>'; return; }
+    const res = call.used.map(u => pathRe(u.path));
+    const tree = document.getElementById("jtree");
+    const draw = q => render(tree, data, scan(data, res, q));
+    draw("");
+    let t; document.getElementById("src-q").addEventListener("input", e => { clearTimeout(t); t = setTimeout(() => draw(e.target.value.trim().toLowerCase()), 200); });
+    document.getElementById("src-collapse").onclick = () => tree.querySelectorAll("details[open]").forEach((d, k) => { if (k) d.open = false; });
+    view.querySelectorAll(".used").forEach(row => row.addEventListener("click", () => {
+      view.querySelectorAll(".used").forEach(r => r.classList.toggle("on", r === row));
+      const j = +row.dataset.j;
+      const el = [...tree.querySelectorAll(".used-mark")].find(e => res[j] && res[j].test(e.dataset.p || e.parentElement.dataset.p || ""));
+      if (el) { el.scrollIntoView({ block: "center", behavior: "smooth" }); el.classList.remove("flash"); void el.offsetWidth; el.classList.add("flash"); }
+    }));
+  }
+
+  document.querySelectorAll(".src-call").forEach(b => b.addEventListener("click", () => show(b.dataset.cp, +b.dataset.i)));
+  const qs = new URLSearchParams(location.search);
+  const want = qs.get("cp"), wantRef = {{ (sel_ref or '')|tojson }};
+  let co = COS.find(c => c.cp_id === want) || COS.find(c => c.calls.some(x => x.viewable)) || COS[0];
+  if (wantRef) co = COS.find(c => c.cp_id === want && c.calls.some(x => x.ref === wantRef)) || COS.find(c => c.calls.some(x => x.ref === wantRef)) || co;
+  let i = qs.has("i") ? +qs.get("i") : Math.max(0, co.calls.findIndex(x => wantRef ? x.ref === wantRef : x.viewable));
+  if (co && co.calls.length) show(co.cp_id, i);
+})();
+</script>
+{% endblock %}

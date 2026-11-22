@@ -2,7 +2,7 @@
 {% block content %}
 <div class="page-head">
   <div><h1>Runs</h1><div class="sub">Every review, with what it cost.</div></div>
-  <a class="btn primary" href="/">{{ ui.icon('play', 14) }}New review</a>
+  <a class="btn primary" href="/desk#ask">{{ ui.icon('play', 14) }}New review</a>
 </div>
 <div class="card" style="overflow:auto">
 {% if runs %}
@@ -19,6 +19,6 @@
   </tr>{% endfor %}
   </tbody>
 </table>
-{% else %}<div class="empty">No runs yet. <a href="/">Start one</a>.</div>{% endif %}
+{% else %}<div class="empty">No runs yet. <a href="/desk#ask">Start one</a>.</div>{% endif %}
 </div>
 {% endblock %}

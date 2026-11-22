@@ -1,10 +1,10 @@
 {% extends "base.html" %}
-{% block title %}{{ a.display_name }} · Counterparty Risk Desk{% endblock %}
+{% block title %}{{ a.display_name }} · Trust Issues{% endblock %}
 {% block content %}
 {%- set r = a.rating|val -%}
 {%- set rc = {'GREEN':'green','AMBER':'amber','RED':'red','HELD':'purple'}.get(r, 'grey') -%}
 {%- set final = why.final_score if why.final_score is not none else a.score -%}
-<div class="crumbs"><a href="/">Dashboard</a> / <a href="/runs/{{ run_id }}/report">{{ run_id }}</a> / {{ a.cp_ids|join(' + ') }}</div>
+<div class="crumbs"><a href="/desk">Desk</a> / <a href="/runs/{{ run_id }}/report">{{ run_id }}</a> / {{ a.cp_ids|join(' + ') }}</div>
 
 <div class="card">
   <div class="hero">
@@ -93,6 +93,7 @@
           </div>
           <div class="where">
             {{ ui.src(e) }}
+            {% if (e.source_type|val) in ('crustdata_api', 'registry') and e.raw_ref and not e.raw_ref.startswith('mock:') %}<a class="raw" href="/sources?run={{ run_id }}&cp={{ a.cp_ids[0] }}&ref={{ e.raw_ref|urlencode }}">see the raw answer →</a>{% endif %}
             <div class="row" style="gap:4px">
               {% if e.stale %}<span class="tag stale">stale</span>{% endif %}
               {% if e.status == 'unavailable' %}<span class="tag unavailable">unavailable</span>{% endif %}

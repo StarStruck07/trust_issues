@@ -1,4 +1,4 @@
-"""Counterparty Risk Desk web UI (PRACHI_product.md section 5).
+"""Trust Issues web UI (PRACHI_product.md section 5).
 
 Run: uvicorn crd.web.app:app --reload --port 8000
 """
@@ -51,7 +51,7 @@ async def lifespan(_app: FastAPI):
     yield
 
 
-app = FastAPI(title="Counterparty Risk Desk", lifespan=lifespan)
+app = FastAPI(title="Trust Issues", lifespan=lifespan)
 app.mount("/static", StaticFiles(directory=str(HERE / "static")), name="static")
 templates = Jinja2Templates(directory=str(HERE / "templates"))
 
@@ -93,6 +93,7 @@ HUMAN = {
     "news": "News", "leadership": "Leadership", "insolvency": "Insolvency", "mca_status": "MCA status",
     "identity": "Identity", "warehouse_lessor": "warehouse lessor", "layoffs_or_shutdown": "Layoffs or shutdown reported",
     "cirp_admitted": "insolvency (CIRP) admitted", "sole_source": "sole source",
+    "rating": "verdict", "score": "trust score", "action_status": "next step", "display_name": "company",
 }
 
 
@@ -157,9 +158,15 @@ env.filters["status_label"] = status_label
 env.filters["human"] = human
 env.filters["reason"] = reason
 env.filters["href"] = report.source_href
-env.globals["css_v"] = lambda: int((HERE / "static" / "style.css").stat().st_mtime)
+env.globals["css_v"] = lambda name="style.css": int((HERE / "static" / name).stat().st_mtime) \
+    if (HERE / "static" / name).exists() else 0
 env.globals["MOCK"] = USING_FAKE_DB or os.getenv("CRD_MOCK", "1") == "1"
 env.filters["rating_label"] = report.rating_label
+# Trust Issues voice for the UI only; reports and exports keep the formal rating names.
+VERDICT = {"GREEN": "Trusted", "AMBER": "Doubts", "RED": "Don't trust", "CANNOT_VERIFY": "Can't tell",
+           "HELD": "On hold"}
+env.filters["verdict"] = lambda r: VERDICT.get(str(_val(r)), report.rating_label(r))
+env.globals["VERDICT"] = VERDICT
 env.filters["val"] = _val
 env.filters["src"] = src_link
 env.filters["evlinks"] = evlinks
@@ -173,7 +180,12 @@ def page(request: Request, name: str, **ctx) -> HTMLResponse:
         pending = len(db.get_actions("pending_approval"))
     except Exception:
         pending = 0
-    return templates.TemplateResponse(request, name, {"pending_count": pending, **ctx})
+    try:
+        latest = _latest_run()
+        demo = bool(latest and str(latest.get("note") or "").startswith("DEMO"))
+    except Exception:
+        demo = False
+    return templates.TemplateResponse(request, name, {"pending_count": pending, "demo": demo, **ctx})
 
 
 def _latest_run():
@@ -274,13 +286,210 @@ def _actions(statuses) -> list:
     return out
 
 
-# ---------------------------------------------------------------- dashboard / runs
+# ---------------------------------------------------------------- front page / desk / runs
+def _scale() -> dict:
+    """Rating bands and risk probabilities, so the what-if line uses the same rules as scoring."""
+    cfg = config.get()
+    sc, rp = cfg.scoring, cfg.risk_probability
+    return {"green_min": float(sc.get("green_min", 65)), "amber_min": float(sc.get("amber_min", 40)),
+            "prob": {k: float(rp.get(k, 0.5)) for k in ("GREEN", "AMBER", "RED", "CANNOT_VERIFY", "HELD")}}
+
+
+def _points(data: dict | None, run_id: str | None) -> list[dict]:
+    """One JSON-safe point per counterparty for the risk line, desk and command palette."""
+    out = []
+    for r in (data or {}).get("rows", []):
+        a = r["a"]
+        out.append({"cp_id": r["cp_id"], "name": a.display_name, "role": human(_val(a.role)),
+                    "rating": r["rating"], "score": a.score, "exposure": a.exposure_inr or 0,
+                    "at_risk": a.inr_at_risk or 0, "prio": r["priority"], "importance": r["importance"],
+                    "reason": reason(r["top_reason"]), "url": f"/cp/{run_id}/{r['cp_id']}"})
+    return out
+
+
+def _facts(data: dict | None, limit: int = 18) -> tuple[int, int, list[dict]]:
+    """(facts, facts with a source link, a sample of sourced claims for the wire)."""
+    evs = [e for v in (data or {}).get("evidence", {}).values() for e in v]
+    sourced = [e for e in evs if report.source_href(e)]
+    wire = [{"claim": e.claim, "source": e.source, "date": str(e.record_date or ""), "href": report.source_href(e)}
+            for e in sourced if _val(e.status) == "ok"][:limit]
+    return len(evs), len(sourced), wire
+
+
+# Example situations for the front page, from the graded test set (tests/cases). The title is our framing;
+# the description and source link come from the case's own notes. Shown as "what it's built to catch",
+# never as this week's results.
+EXAMPLES = [("04_lookalike", "Nine companies, one name"), ("03_insolvency", "Admitted to insolvency"),
+            ("02_distressed_customer", "A customer winding down"), ("08_leadership_exit", "The CEO walked out"),
+            ("07_false_alarm", "A false alarm"), ("09_namesake_news", "Same name, different company"),
+            ("06_no_footprint", "No footprint at all"), ("10_source_failure", "A source went quiet")]
+
+
+def _examples() -> list[dict]:
+    import yaml
+
+    out = []
+    for cid, title in EXAMPLES:
+        p = Path("tests") / "cases" / f"{cid}.yaml"
+        try:
+            case = yaml.safe_load(p.read_text(encoding="utf-8"))
+        except (OSError, ValueError, yaml.YAMLError):
+            continue
+        row = (case.get("input_rows") or [{}])[0]
+        want = (case.get("expected") or {}).get("rating")
+        verdict = (want[0] if isinstance(want, list) else want) or "CANNOT_VERIFY"
+        notes = " ".join(str(case.get("notes") or "").split())
+        sents = [s for s in re.split(r"(?<=[.!?])\s+", re.sub(r"Sources?:.*", "", notes)) if s and "http" not in s]
+        first = sents[0] if sents else ""
+        if cid == "10_source_failure":  # the case notes describe the test harness; say what the system does
+            first = "A healthy company, but a data source times out mid-review. Silence is not health, so no green light."
+        url = next((u.rstrip(".,)") for u in re.findall(r"https?://\S+", notes)), None)
+        out.append({"title": title, "name": row.get("name", ""), "role": human(row.get("role", "")),
+                    "verdict": verdict, "text": first if len(first) <= 190 else first[:189] + "…", "url": url})
+    return out
+
+
 @app.get("/", response_class=HTMLResponse)
+def landing(request: Request):
+    run = _run_view(_latest_run())
+    data = report.build(run["run_id"]) if run else None
+    facts, sourced, wire = _facts(data)
+    names = {"customer": None, "carrier": None}
+    for r in (data or {}).get("rows", []):
+        role = _val(r["a"].role)
+        key = "customer" if role == "customer" else "carrier"
+        names[key] = names[key] or r["a"].display_name
+    return page(request, "landing.html", run=run, data=data, default_request=DEFAULT_REQUEST,
+                counts=_counts(data["assessments"]) if data else None,
+                points=_points(data, run and run["run_id"]), scale=_scale(),
+                facts=facts, sourced=sourced, wire=wire, names=names, examples=_examples(),
+                ledger=db.get_ledger(run["run_id"], limit=12) if run else [])
+
+
+@app.get("/desk", response_class=HTMLResponse)
 def dashboard(request: Request):
     run = _run_view(_latest_run())
     data = report.build(run["run_id"]) if run else None
+    facts, sourced, _ = _facts(data, 0)
+    rows = (data or {}).get("rows", [])
+    kpi = {"exposure": sum(r["a"].exposure_inr or 0 for r in rows), "at_risk": sum(r["a"].inr_at_risk or 0 for r in rows),
+           "n": len(rows), "attention": sum(1 for r in rows if r["rating"] != "GREEN"),
+           "facts": facts, "sourced": sourced, "sourced_pct": round(100 * sourced / facts) if facts else 0}
     return page(request, "dashboard.html", run=run, data=data, default_request=DEFAULT_REQUEST,
-                counts=_counts(data["assessments"]) if data else None)
+                counts=_counts(data["assessments"]) if data else None, kpi=kpi,
+                points=_points(data, run and run["run_id"]), scale=_scale())
+
+
+# ---------------------------------------------------------------- sources: what Crustdata actually said
+SOURCE_TYPES = ("crustdata_api", "registry")
+# Rule 8 (personal data minimum): never show person-level endpoints, and withhold contact-type fields anywhere.
+PERSONAL_KEY = re.compile(r"(e-?mail|phone|mobile|photo|picture|avatar|profile_pic|linkedin|twitter|facebook|"
+                          r"instagram|personal|home_address|date_of_birth|dob)", re.I)
+ENDPOINT_LABEL = {"identify": "Company Identify", "enrich": "Company Enrich", "job_search": "Job Search",
+                  "web_search": "Web Search", "web_fetch": "Web Fetch", "registries": "Registries (IBBI / MCA / GST)"}
+
+
+def _raw_roots() -> list[Path]:
+    return [p.resolve() for p in (FIXTURES, Path("var") / "runs", VAR / "runs")]
+
+
+def _raw_path(ref: str | None) -> Path | None:
+    """Resolve an evidence raw_ref to a stored JSON file, only inside fixtures or run raw folders."""
+    if not ref or ref.startswith("mock:") or "person_enrich" in ref:
+        return None
+    try:
+        p = Path(ref).resolve()
+    except (OSError, ValueError):
+        return None
+    if p.suffix != ".json" or not p.is_file():
+        return None
+    return p if any(root == p or root in p.parents for root in _raw_roots()) else None
+
+
+def _raw_kind(p: Path) -> str:
+    if FIXTURES.resolve() in p.parents:
+        return "placeholder" if p.name.startswith("_default") else "fixture"
+    return "live"
+
+
+def _redact(obj):
+    if isinstance(obj, dict):
+        return {k: ("[withheld: personal data]" if PERSONAL_KEY.search(str(k)) else _redact(v)) for k, v in obj.items()}
+    if isinstance(obj, list):
+        return [_redact(v) for v in obj]
+    return obj
+
+
+def _endpoint_of(ref: str, source: str) -> str:
+    parts = Path(ref).parts if ref and not ref.startswith("mock:") else ()
+    for name in ENDPOINT_LABEL:
+        if name in parts or Path(ref or "").name.startswith(name + "_") or (ref or "").startswith(f"mock:{name}"):
+            return name
+    return source
+
+
+def _short(v, n: int = 60) -> str:
+    s = json.dumps(v, ensure_ascii=False, default=str) if not isinstance(v, str) else v
+    return s if len(s) <= n else s[: n - 1] + "…"
+
+
+@app.get("/sources", response_class=HTMLResponse)
+def sources(request: Request, run: str | None = None, cp: str | None = None, ref: str | None = None):
+    run_row = _run_view(db.get_run(run) if run else _latest_run())
+    companies = []
+    if run_row:
+        rid = run_row["run_id"]
+        for a in db.get_assessments(rid):
+            calls: dict[str, dict] = {}
+            for cid in a.cp_ids:
+                for e in db.get_evidence(rid, cid):
+                    if _val(e.source_type) not in SOURCE_TYPES:
+                        continue
+                    key = e.raw_ref or f"none:{e.source}"
+                    path = _raw_path(e.raw_ref)
+                    c = calls.setdefault(key, {
+                        "ref": e.raw_ref or "", "viewable": path is not None,
+                        "kind": _raw_kind(path) if path else ("demo" if (e.raw_ref or "").startswith("demo:") else
+                                                              "synthetic" if (e.raw_ref or "").startswith("mock:") else "missing"),
+                        "endpoint": _endpoint_of(e.raw_ref or "", e.source), "source": e.source, "used": []})
+                    c["used"].append({"signal": e.signal, "claim": e.claim, "path": e.field_path or "",
+                                      "value": _short(e.value), "date": str(e.record_date or ""),
+                                      "status": _val(e.status), "id": e.evidence_id})
+            for c in calls.values():
+                c["label"] = ENDPOINT_LABEL.get(c["endpoint"], c["source"])
+            companies.append({"cp_id": a.cp_ids[0], "name": a.display_name, "rating": _val(a.rating),
+                              "calls": sorted(calls.values(), key=lambda c: (not c["viewable"], c["label"]))})
+        order = {"RED": 0, "AMBER": 1, "HELD": 2, "CANNOT_VERIFY": 3, "GREEN": 4}
+        companies.sort(key=lambda c: (order.get(c["rating"], 5), c["name"]))
+    led = [le for le in db.get_ledger(run_row["run_id"])] if run_row else []
+    stats = {"calls": sum(1 for le in led if le.provider in ("crustdata", "registry")),
+             "cached": sum(1 for le in led if le.provider in ("crustdata", "registry") and _val(le.status) == "cached"),
+             "credits": round(sum(le.credits for le in led if le.provider == "crustdata"), 2)}
+    return page(request, "sources.html", run=run_row, companies=companies, stats=stats, sel_cp=cp, sel_ref=ref,
+                runs=db.list_runs())
+
+
+@app.get("/api/source")
+def api_source(ref: str, download: int = 0):
+    p = _raw_path(ref)
+    if not p:
+        raise HTTPException(404, "no stored response for this reference")
+    try:
+        data = _redact(json.loads(p.read_text(encoding="utf-8")))
+    except ValueError:
+        raise HTTPException(422, "stored response is not valid JSON")
+    if download:
+        return Response(json.dumps(data, ensure_ascii=False, indent=2), media_type="application/json",
+                        headers={"Content-Disposition": f'attachment; filename="{p.name}"'})
+    return {"ref": ref, "file": p.name, "kind": _raw_kind(p), "bytes": p.stat().st_size, "data": data}
+
+
+@app.get("/api/points")
+def api_points():
+    """Latest run's counterparties, for the command palette on every page."""
+    run = _latest_run()
+    data = report.build(run["run_id"]) if run else None
+    return {"run_id": run and run["run_id"], "points": _points(data, run and run["run_id"])}
 
 
 @app.post("/runs")

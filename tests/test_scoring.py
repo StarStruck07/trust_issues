@@ -98,6 +98,28 @@ def test_namesake_news_ignored():
     assert a.rating == Rating.GREEN
 
 
+# --- the graded cases' logic on synthetic evidence (the cases themselves need live data/fixtures)
+
+def test_case02_shutdown_news_is_amber():
+    a = run(healthy()[:3] + [ev("news", {"category": "layoffs_or_shutdown", "relevant": True},
+                                claim="Tide to wind down its India member business")])
+    assert a.rating == Rating.AMBER and a.score == 50
+
+
+def test_case07_demerger_neutralises_headcount_drop():
+    a = run([ev("identity", 1.0), ev("headcount_qoq", -25.0), ev("headcount_6m", -30.0),
+             ev("hiring", {"recent": 3, "prior": 3}),
+             ev("news", {"category": "irrelevant", "subtype": "demerger", "relevant": True},
+                claim="India Glycols demerger effective 1 Sep 2026")])
+    assert a.rating != Rating.RED and a.score == 70 and a.conflicts
+
+
+def test_case08_ceo_exit_is_amber():
+    a = run(healthy()[:3] + [ev("news", {"category": "leadership_exit", "relevant": True},
+                                claim="MD and CEO resigns")])
+    assert a.rating == Rating.AMBER and a.score == 60
+
+
 def test_ibbi_none_found_not_counted_for_coverage():
     a = run([ev("identity", 1.0), ev("insolvency", "none_found", source_type="registry"),
              ev("employee_reviews", {"rating": 4.0, "count": 30})])

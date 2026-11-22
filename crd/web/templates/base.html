@@ -5,37 +5,58 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>{% block title %}Counterparty Risk Desk{% endblock %}</title>
+  <title>{% block title %}Trust Issues{% endblock %}</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..900;1,9..144,300..900&family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="/static/style.css?v={{ css_v() }}">
-  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'><rect width='24' height='24' rx='6' fill='%232563eb'/><path d='M12 19s5-2.5 5-6.5V8l-5-2-5 2v4.5c0 4 5 6.5 5 6.5z' fill='none' stroke='white' stroke-width='2'/></svg>">
+  <link rel="stylesheet" href="/static/theme.css?v={{ css_v('theme.css') }}">
+  <link rel="stylesheet" href="/static/front.css?v={{ css_v('front.css') }}">
+  {% block head %}{% endblock %}
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'><rect width='24' height='24' fill='%231a1712'/><text x='12' y='17' font-family='Georgia' font-style='italic' font-size='15' text-anchor='middle' fill='%23f2ede3'>?</text></svg>">
   <script src="https://unpkg.com/htmx.org@1.9.12"></script>
 </head>
-<body>
+<body class="{% block body_class %}night app{% endblock %}">
 <header class="topbar">
   <div class="inner">
-    <a class="brand" href="/"><span class="mark">{{ ui.icon('shield', 17) }}</span>Counterparty Risk Desk</a>
+    <a class="brand" href="/" aria-label="Trust Issues, front page"><span class="mark">?</span><span class="word">Trust <em>Issues</em></span></a>
     <nav class="nav">
-      <a href="/" class="{{ 'active' if path == '/' or path.startswith('/cp/') }}">Dashboard</a>
+      <a href="/desk" class="{{ 'active' if path == '/desk' or path.startswith('/cp/') }}">Desk</a>
       <a href="/approvals" class="{{ 'active' if path.startswith('/approvals') }}">Approvals{% if pending_count %}<span class="count">{{ pending_count }}</span>{% endif %}</a>
       <a href="/outbox" class="{{ 'active' if path.startswith('/outbox') }}">Outbox</a>
+      <a href="/sources" class="{{ 'active' if path.startswith('/sources') }}">Sources</a>
       <a href="/ledger" class="{{ 'active' if path.startswith('/ledger') }}">Ledger</a>
       <a href="/runs" class="{{ 'active' if path.startswith('/runs') }}">Runs</a>
     </nav>
     <span class="spacer"></span>
-    {% if MOCK %}<span class="env-pill" title="{% if USING_FAKE_DB %}Stand-in data layer (crd.fakes). Swaps to the real crd.db automatically when it lands.{% else %}Mock providers{% endif %}"><span class="dot"></span>MOCK DATA</span>
+    <button type="button" class="kbd-launch" data-palette-open title="Jump to anything (Ctrl/⌘ K)"><span>Jump to…</span><kbd>⌘K</kbd></button>
+    {% if MOCK %}<span class="env-pill" title="{% if USING_FAKE_DB %}Stand-in data layer (crd.fakes).{% else %}Mock providers: answers come from recorded fixtures, not live calls.{% endif %}"><span class="dot"></span>MOCK DATA</span>
     {% else %}<span class="env-pill live"><span class="dot"></span>LIVE</span>{% endif %}
   </div>
 </header>
-<main>
+{% if demo %}<div class="demo-bar">Demo portfolio · <b>Kaveri Freight</b> and every company here are fictional, with synthetic evidence. Not real data.</div>{% endif %}
+<main class="{% block main_class %}{% endblock %}">
 {% block content %}{% endblock %}
 </main>
 <footer class="site">
   <span>{{ ui.icon('link', 13) }} Every fact links to its source</span>
-  <span>{{ ui.icon('lock', 13) }} Irreversible actions need approval</span>
-  <span>{{ ui.icon('coins', 13) }} Costs recorded per call</span>
+  <span>{{ ui.icon('lock', 13) }} Nothing irreversible without a human</span>
+  <span>{{ ui.icon('coins', 13) }} Every call costed in the ledger</span>
+  <span class="faint">Press <kbd>⌘K</kbd> anywhere</span>
 </footer>
+
+<div class="palette" id="palette" hidden>
+  <div class="palette-box" role="dialog" aria-modal="true" aria-label="Jump to">
+    <input id="palette-q" type="text" autocomplete="off" spellcheck="false" placeholder="Counterparty, page or command…">
+    <ol id="palette-list"></ol>
+    <div class="palette-foot"><span><kbd>↑</kbd><kbd>↓</kbd> move</span><span><kbd>↵</kbd> open</span><span><kbd>esc</kbd> close</span></div>
+  </div>
+</div>
+<aside class="drawer" id="drawer" hidden aria-label="Counterparty dossier">
+  <div class="drawer-bar"><span class="drawer-kicker">Dossier</span><a id="drawer-full" href="#">Open full page ↗</a><button type="button" id="drawer-close" aria-label="Close">×</button></div>
+  <div class="drawer-body" id="drawer-body"></div>
+</aside>
+<script src="/static/crd.js?v={{ css_v('crd.js') }}"></script>
+{% block scripts %}{% endblock %}
 </body>
 </html>

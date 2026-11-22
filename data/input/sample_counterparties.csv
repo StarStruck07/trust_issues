@@ -1,4 +1,4 @@
-cp_id,name,legal_name,domain,gstin,city,role,criticality,exposure_inr,credit_terms_days,dso_days,account_owner
-C-001,Sample Carrier,,example-carrier.in,,Mumbai,carrier,primary,500000,,,ops-team
-C-002,Sample Customer,,example-customer.in,,Bengaluru,customer,na,4200000,45,52,credit-team
-C-003,Sharma Transport,,,,,carrier,backup,150000,,,ops-team
+cp_id,name,legal_name,domain,gstin,city,role,criticality,importance,depends_on_us,exposure_inr,credit_terms_days,dso_days,account_owner
+C-001,Sample Carrier,,example-carrier.in,,Mumbai,carrier,primary,core,na,500000,,,ops-team
+C-002,Sample Customer,,example-customer.in,,Bengaluru,customer,na,strategic,high,4200000,45,52,credit-team
+C-003,Sharma Transport,,,,,carrier,backup,standard,na,150000,,,ops-team

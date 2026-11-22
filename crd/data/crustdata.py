@@ -46,7 +46,7 @@ RATE_LIMITS = {"identify": 5, "enrich": 5, "job_search": 5, "person_enrich": 5,
                "web_search": 10, "web_fetch": 10, "watch": 10, "credits": 300, "registries": 10}
 # Public government pages fetched directly (no Crustdata auth header, 0 credits, ledger provider "registry").
 PUBLIC_ENDPOINTS = {"registries"}
-PUBLIC_UA = "Mozilla/5.0 (compatible; CounterpartyRiskDesk/0.1)"
+PUBLIC_UA = "Mozilla/5.0 (compatible; TrustIssues/0.1)"
 BACKOFF = [1, 3, 9]
 MAX_TRIES = 3
 TIMEOUT_S = float(os.getenv("CRD_HTTP_TIMEOUT", "45"))   # first enrich call took 31 s in the probe

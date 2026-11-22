@@ -1,4 +1,4 @@
-# Counterparty Risk Desk — all tunable behaviour lives here (re-read at the start of every run).
+# Trust Issues — all tunable behaviour lives here (re-read at the start of every run).
 version: 1
 client_name: "Client 3PL"            # replace with the kickoff client name
 as_of: null                          # null = today (YYYY-MM-DD to replay a date)
@@ -46,5 +46,13 @@ actions:
   backup_rfq: {on: [RED, AMBER], only_criticality: [sole_source, primary]}
   internal_alert: {on_change: true}
   raise_watch_frequency: {on: [AMBER, RED], every_hours: 24}
+  high_dependence_amber: account_call      # AMBER + depends_on_us high -> account-owner call, not a terms email
+  low_dependence_exposure_factor: 0.5      # depends_on_us low -> terms email from 0.5 x min_exposure_inr
+  senior_approval_for: [strategic]
+priority:                                  # priority = rating severity x importance; never changes the rating
+  severity:   {RED: 3, AMBER: 2, HELD: 1.5, CANNOT_VERIFY: 1.5, GREEN: 0}
+  importance: {strategic: 3, core: 2, standard: 1}
+  dependence_shift: {high: -1, medium: 0, low: 1, na: 0}   # customers only
+  tiers: {P1: 6, P2: 4, P3: 2}                              # urgency >= threshold; GREEN is always P4
 report:
-  fields: [display_name, role, rating, score, inr_at_risk, top_reason, sources, action_status]
+  fields: [priority, display_name, role, rating, score, inr_at_risk, top_reason, sources, action_status]

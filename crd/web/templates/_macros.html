@@ -29,7 +29,7 @@
 {%- endmacro %}
 
 {% macro rating(r, size='') -%}
-{%- set r = r|val -%}<span class="pill r-{{ r }} {{ size }}">{{ r|rating_label }}</span>
+{%- set r = r|val -%}<span class="pill r-{{ r }} {{ size }}" title="{{ r|rating_label }}">{{ r|verdict }}</span>
 {%- endmacro %}
 
 {% macro status(s) -%}

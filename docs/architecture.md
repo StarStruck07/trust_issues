@@ -1,4 +1,4 @@
-# Architecture — Counterparty Risk Desk
+# Architecture — Trust Issues
 
 ```mermaid
 flowchart TD

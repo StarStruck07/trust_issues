@@ -37,6 +37,12 @@ class Counterparty(BaseModel):
     state: Optional[str] = None
     role: Role
     criticality: Literal["sole_source", "primary", "backup", "na"] = "na"
+    # How much the relationship matters to us, and (customers) how much they rely on us.
+    # Used only for priority and action choice, never for the rating. See crd/actions/priority.py.
+    # None = not given in the input; priority.py then treats it as standard / na (suppliers take
+    # importance from criticality).
+    importance: Optional[Literal["strategic", "core", "standard"]] = None
+    depends_on_us: Optional[Literal["high", "medium", "low", "na"]] = None
     exposure_inr: float = 0
     credit_terms_days: Optional[int] = None
     overdue_inr: Optional[float] = None

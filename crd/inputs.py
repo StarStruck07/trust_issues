@@ -30,6 +30,8 @@ ALIASES = {
     "owner": "account_owner", "account_manager": "account_owner",
     "location": "city", "hq": "city",
     "backups": "alt_suppliers", "alternates": "alt_suppliers",
+    "tier": "importance", "account_tier": "importance", "strategic": "importance",
+    "dependence": "depends_on_us", "dependency": "depends_on_us", "reliance": "depends_on_us",
 }
 
 ROLE_MAP = [
@@ -137,6 +139,17 @@ def normalise_row(raw: dict, i: int) -> Counterparty:
     if "criticality" in row:
         c = str(row["criticality"]).lower().replace(" ", "_").replace("-", "_")
         row["criticality"] = c if c in ("sole_source", "primary", "backup") else "na"
+    if "importance" in row:
+        v = str(row["importance"]).strip().lower()
+        row["importance"] = {"key": "strategic", "critical": "strategic", "high": "strategic",
+                             "medium": "core", "normal": "standard", "low": "standard"}.get(v, v)
+        if row["importance"] not in ("strategic", "core", "standard"):
+            row.pop("importance")
+    if "depends_on_us" in row:
+        v = str(row["depends_on_us"]).strip().lower()
+        row["depends_on_us"] = {"yes": "high", "no": "low", "n/a": "na", "none": "na"}.get(v, v)
+        if row["depends_on_us"] not in ("high", "medium", "low", "na"):
+            row.pop("depends_on_us")
     if isinstance(row.get("alt_suppliers"), str):
         row["alt_suppliers"] = [s.strip() for s in re.split(r"[;|,]", row["alt_suppliers"]) if s.strip()]
     known = set(Counterparty.model_fields)

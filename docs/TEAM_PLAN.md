@@ -1,7 +1,7 @@
-# Counterparty Risk Desk — Team Plan (3 builders)
+# Trust Issues — Team Plan (3 builders)
 
 > Put this file in the repo at `docs/TEAM_PLAN.md`. Every builder, and every Claude session, reads it before writing code.
-> Full product spec: the proposal doc (Counterparty Risk Desk — Build Proposal). This file covers **who builds what, against which interfaces, by when**.
+> Full product spec: the proposal doc (Trust Issues — Build Proposal). This file covers **who builds what, against which interfaces, by when**.
 
 ---
 

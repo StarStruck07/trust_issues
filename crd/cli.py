@@ -24,7 +24,7 @@ load_dotenv()
 
 from crd import db  # noqa: E402
 
-app = typer.Typer(add_completion=False, help="Counterparty Risk Desk")
+app = typer.Typer(add_completion=False, help="Trust Issues")
 
 
 def _mode(mock: Optional[bool]) -> None:

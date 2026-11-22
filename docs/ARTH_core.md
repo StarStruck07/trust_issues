@@ -1,6 +1,6 @@
 # Arth — P1 Core (lead and integrator)
 
-> Counterparty Risk Desk · ContextCon 05 · BITS Pilani · 22 Nov 2026
+> Trust Issues · ContextCon 05 · BITS Pilani · 22 Nov 2026
 > Teammates: **Nilay** (P2 Data) · **Prachi** (P3 Product)
 > Shared rules: `CLAUDE.md` · Team overview: `docs/TEAM_PLAN.md` · This file: `docs/ARTH_core.md`
 
