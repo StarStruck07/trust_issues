@@ -406,3 +406,8 @@ body.front > .demo-bar { display: none; }
 
 .cursor span { width: 30px; height: 30px; background: transparent; border: 1.5px solid rgba(255,255,255,.55); mix-blend-mode: difference; }
 .cursor.big span { width: 52px; height: 52px; background: rgba(255,255,255,.08); }
+
+/* desk graph: name to the right of each bubble on a solid pill, so stacked bubbles never cover a label */
+body.night .riskline:not(.compact) .tok::after { left: calc(100% + 8px); top: 50%; transform: translateY(-50%);
+  font: 600 13px/1 var(--sans); letter-spacing: 0; padding: 4px 8px; border-radius: 6px;
+  background: rgba(19, 18, 15, .92); color: var(--ink); border: 1px solid var(--rule); z-index: 2; }

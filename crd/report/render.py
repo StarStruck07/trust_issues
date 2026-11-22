@@ -1,6 +1,8 @@
 """Review outputs: review.json / review.md / review.html / ledger.csv (section 8)."""
 from __future__ import annotations
 
+import re
+
 import csv
 import json
 import os
@@ -120,6 +122,38 @@ def action_status(a, actions_by_cp: dict) -> str:
     return ", ".join(sorted({_val(x.status) for x in acts}))
 
 
+def _short(text: str, n: int = 60) -> str:
+    t = re.sub(r"\[[^\]]*\]?", "", str(text or ""))          # drop "[article text not fetched; ...]" notes
+    t = re.sub(r"^[a-z_]+: ", "", t.split(";")[0]).strip()     # "leadership_exit: X" -> "X"; first reason only
+    return t if len(t) <= n else t[: n - 1].rstrip() + "…"
+
+
+def numbers(a, evs: list) -> dict:
+    """One figure per signal, for the numbers-first table. None = not checked / no data."""
+    by = {}
+    for e in evs:
+        if e.status == "ok":
+            by.setdefault(e.signal, []).append(e)
+    v = lambda e, k: e.value.get(k) if isinstance(e.value, dict) else None  # noqa: E731
+    hc = by.get("headcount_qoq", [None])[0]
+    hi = by.get("hiring", [None])[0]
+    pay = by.get("payment_behaviour", [None])[0]
+    rev = by.get("employee_reviews", [None])[0]
+    news_pts = sum(s.points for s in a.signals if s.signal == "news")
+    return {
+        "hc_qoq": round(float(hc.value), 1) if hc is not None and isinstance(hc.value, (int, float)) else None,
+        "hiring_30d": v(hi, "recent") if hi is not None else None,
+        "news_pts": news_pts if any(s.signal == "news" for s in a.signals) else None,
+        "news_n": len([e for e in by.get("news", []) if v(e, "relevant")]),
+        "exits": len(by.get("leadership_exit", [])),
+        "dso_over": (round(v(pay, "dso") - v(pay, "terms")) if pay is not None and v(pay, "dso") is not None
+                     and v(pay, "terms") is not None else None),
+        "reviews": v(rev, "rating") if rev is not None else None,
+        "facts": len([e for e in evs if e.status == "ok"]),
+        "gaps": len([e for e in evs if e.status == "unavailable"]),
+    }
+
+
 def build(run_id: str) -> dict:
     run = dict(db.get_run(run_id) or {"run_id": run_id, "status": "unknown"})
     req = run.get("request")
@@ -151,6 +185,9 @@ def build(run_id: str) -> dict:
     for a in assessments:
         ctx = {
             "top_reason": top_reason(a),
+            "short_reason": _short(top_reason(a)),
+            "n": numbers(a, evidence.get(a.cp_ids[0], [])),
+            "role_label": str(_val(a.role)).replace("_", " "),
             "sources": top_sources(a, ev_by_id),
             "action_status": action_status(a, by_cp),
             "rating": _val(a.rating),
@@ -199,6 +236,7 @@ def _env() -> Environment:
     env.filters["inr"] = inr
     env.filters["rating_label"] = rating_label
     env.filters["val"] = _val
+    env.filters["short"] = lambda t, n=90: _short(t, n)
     return env
 
 

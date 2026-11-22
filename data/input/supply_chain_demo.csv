@@ -1,0 +1,15 @@
+cp_id,name,legal_name,domain,city,role,criticality,importance,depends_on_us,exposure_inr,credit_terms_days,dso_days,account_owner
+SC-01,TCI,Transport Corporation of India Limited,tcil.com,Gurugram,carrier,primary,core,na,3200000,,,ops-team
+SC-02,VRL Logistics,VRL Logistics Limited,vrlgroup.in,Hubballi,carrier,backup,standard,na,1100000,,,ops-team
+SC-03,Gati,Gati Limited,gati.com,Hyderabad,carrier,primary,core,na,1800000,,,ops-team
+SC-04,Allcargo Logistics,Allcargo Logistics Limited,allcargologistics.com,Mumbai,warehouse_lessor,primary,strategic,na,4500000,,,ops-team
+SC-05,CONCOR,Container Corporation of India Limited,concorindia.co.in,New Delhi,carrier,sole_source,strategic,na,6000000,,,ops-team
+SC-06,Xpressbees,Busybees Logistics Solutions Private Limited,xpressbees.com,Pune,carrier,primary,core,na,2400000,,,ops-team
+SC-07,Shadowfax,Shadowfax Technologies Limited,shadowfax.in,Bengaluru,carrier,backup,standard,na,900000,,,ops-team
+SC-08,Ecom Express,Ecom Express Limited,ecomexpress.in,Gurugram,carrier,backup,standard,na,700000,,,ops-team
+SC-09,Flipkart,Flipkart Internet Private Limited,flipkart.com,Bengaluru,customer,na,strategic,high,12000000,45,48,credit-team
+SC-10,Nykaa,FSN E-Commerce Ventures Limited,nykaa.com,Mumbai,customer,na,core,medium,5200000,30,41,credit-team
+SC-11,Zepto,Kiranakart Technologies Private Limited,zeptonow.com,Mumbai,customer,na,core,high,4800000,30,63,credit-team
+SC-12,Asian Paints,Asian Paints Limited,asianpaints.com,Mumbai,customer,na,strategic,medium,7500000,60,55,credit-team
+SC-13,Marico,Marico Limited,marico.com,Mumbai,customer,na,core,low,3100000,45,44,credit-team
+SC-14,Lenskart,Lenskart Solutions Limited,lenskart.com,Gurugram,customer,na,standard,low,1600000,30,52,credit-team
