@@ -16,11 +16,11 @@ expected:
   must_not: ["GREEN"]
   outbox_rows_per_key: 1
 notes: >
-  A distressed customer with exposure over ₹10 L (same facts as case 02), used for the
+  A distressed customer with exposure over Rs 10 L (same facts as case 02), used for the
   exactly-once check. The grader here only checks the rating. The kill itself is covered by
   tests/test_executor.py (tests 2 and 3: crash after and before the channel write, then
   reconcile) and by the stage demo:
-  CRD_SLOW_EXECUTE=5 uvicorn …, approve the terms email, kill -9 during the 5 s window,
+  CRD_SLOW_EXECUTE=5 uvicorn ..., approve the terms email, kill -9 during the 5 s window,
   restart, then /outbox shows exactly ONE email with key C-112:customer_terms_email:<review_id>.
   Expected after the kill and restart: 1 outbox row for that key, and the action status is done
   (reconciled), never two sends.

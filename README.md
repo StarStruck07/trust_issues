@@ -113,15 +113,20 @@ that key first. On every startup, `reconcile()` settles anything a crash left in
 | Crustdata Person Enrich | `POST /person/enrich` | CEO/CFO exits (public role and dates only) | 1 credit |
 | Crustdata Web Search / Fetch | `POST /web/search/live`, `/web/enrich/live` | news beyond Enrich; registry pages via `site:` search | 1 credit per page / URL |
 | Crustdata Watcher | `POST /watch/company` + our `/webhooks/crustdata` | re-check one counterparty when its signals move | 5 credits per notification |
-| IBBI public announcements | ibbi.gov.in | CIRP / liquidation hard stops | free |
-| MCA master data, GST taxpayer status | mca.gov.in, gst.gov.in | struck off / GST cancelled hard stops | free |
+| IBBI public announcements | ibbi.gov.in/public-announcement | CIRP / liquidation hard stops | free |
+| Company status (in place of MCA) | Crustdata company record | struck off / inactive | in Enrich |
 | Claude (`claude-sonnet-4-5`) | Anthropic Messages API | **only** extracts facts from fetched text, classifies news (with a namesake check in code), and writes the two-sentence summary, which is checked against the facts | tokens in the ledger |
 
-**Registries status:** `crd/data/registries.py` (IBBI, MCA, GST) is still being finished by Nilay.
-Until it lands, those checks return `unavailable`. The agent then **holds** any counterparty that
-would otherwise be GREEN (HELD, "Missing: insolvency, legal_status") rather than pass it on silence.
-The portals use CAPTCHAs, and we do not bypass them. The fallback is a `site:ibbi.gov.in` web
-search and a fetch of the result page.
+**Which registries work (checked 22 Nov 2026):**
+- **IBBI public announcements work.** The page is a public listing with no login or CAPTCHA. A match
+  on the normalised legal name within 2 years gives a `cirp_admitted` or `liquidation` hard stop. 2+
+  similar debtors count as ambiguous, never a guess.
+- **MCA blocks automated access** (HTTP 403 and a CAPTCHA). Legal status comes from Crustdata's
+  company record instead, and the claim says MCA was not checked.
+- **GST taxpayer search** sits behind a CAPTCHA and is reported as not checked.
+
+We never bypass a CAPTCHA or login. A registry that errors or times out is `unavailable`, so a
+counterparty that would otherwise be GREEN is **held** (HELD) instead of passed on silence.
 
 **What the LLM is not used for:** the rating, the score, the action choice, or any fact without a
 source.
@@ -189,10 +194,11 @@ plus about ₹10–20 of LLM. That leaves a **gross margin above 90%** before ho
 
 ## 10. How we tested
 
-- **Unit and integration tests** (`python -m pytest -q tests`, 89 tests):
+- **Unit and integration tests** (`python -m pytest -q tests`, **131 tests, all passing**,
+  Windows included):
   - scoring rules, resolve and dedupe, the orchestrator (including a simulated `kill -9` and resume),
-    the Crustdata client on recorded responses, news, the LLM wrapper, and the end-to-end pipeline
-    on fixtures;
+    the Crustdata client on recorded responses, news, registries, people, the watcher, the LLM
+    wrapper, and the end-to-end pipeline on fixtures;
   - **exactly-once** (`tests/test_executor.py`): execute twice → one email; crash after the channel
     write → reconcile → done, still one row; crash before the write → reconcile → sent once; draft
     edited after approval → back to the queue, nothing sent; four threads racing → one row;
@@ -217,14 +223,17 @@ plus about ₹10–20 of LLM. That leaves a **gross margin above 90%** before ho
 | 11 | Reworded | Case 01 asked as a question | same as 01 |
 | 12 | Kill mid-action | RED/AMBER customer over ₹10 L, terms email approved, server killed | 1 outbox row |
 
-  **Mock-mode result today: 5/12 pass, 0 wrong GREENs.** The lookalike, duplicate, no-footprint,
-  namesake and source-failure cases pass. The others are HELD, because the registries are not
-  connected yet and the agent refuses a GREEN without them, or because they need live data (no
-  recorded fixtures for Tide, Quasar, India Glycols or Mahindra Logistics). The table above will
-  be updated after the live run.
-- **Kill test:** we started a real server with `CRD_SLOW_EXECUTE=5`, approved a terms email, ran
-  `kill -9` mid-send, and restarted. The action was found in `executing` with no outbox row,
-  `reconcile()` moved it back to approved, and it was sent once: **1 outbox row**.
+  **Mock mode is a wiring check, not the graded run.** Mock mode only has recorded responses for
+  Delhivery, Blue Dart, Mamaearth and "Sharma Transport". It currently passes 6/12: healthy,
+  reworded, lookalike, duplicate, no footprint and namesake. For companies with no recording, the
+  mock client stands in a generic healthy company, so Tide, Mahindra Logistics and India Glycols
+  look healthy in mock mode, which is meaningless for those cases. **The graded result comes from
+  the live run** (`python -m crd.cli test --live`), and this table will be updated with it. Case 10
+  passes when the failure is actually forced (`CRD_FAIL_SOURCES=enrich`).
+- **Kill test** (re-run on the merged code and the real database): we started the server with
+  `CRD_SLOW_EXECUTE=5`, approved a terms email over HTTP, hard-killed the server mid-send, and
+  restarted. The action was in `executing` with 0 outbox rows. After restart it was `done` with
+  **exactly 1 outbox row**, and `/outbox` shows "Exactly once".
 - **Determinism:** case 11 repeats case 01 with different wording and must give the same rating.
   Scoring is a pure function of the evidence and the config.
 

@@ -86,6 +86,8 @@ def source_href(e) -> str | None:
     if not ref:
         return None
     ref = str(ref).replace("\\", "/")
+    if not ref.endswith(".json"):  # a client-record row id or "mock:identify:synthetic" is not a file
+        return None
     if "tests/fixtures/" in ref:
         return "/fixture/" + ref.split("tests/fixtures/", 1)[1]
     name = ref.rsplit("/", 1)[-1]

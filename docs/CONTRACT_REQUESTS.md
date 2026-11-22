@@ -62,10 +62,11 @@ finally:
 Also open the yaml with `encoding="utf-8"`, because the cases contain ₹ and the Windows default
 codec fails on it.
 
-### 4. Small Windows fixes in P1 tests
+### 4. Small Windows fixes
 
-`tests/test_orchestrator.py:35` writes a CSV containing "₹" without `encoding="utf-8"`. On Windows
-it fails unless `PYTHONUTF8=1`.
+The P1 tests are fixed (ea36e51). Still open: `python -m crd.cli review ...` crashes at the very end
+on a Windows console when it prints "₹" (cp1252). The run itself completes. Fix: call
+`sys.stdout.reconfigure(encoding="utf-8")` at CLI start, or print "Rs".
 
 `scripts/demo_kill.sh` defaults to `data/input/counterparties.csv`, which doesn't exist; the file in
 the repo is `sample_counterparties.csv`. For the approve-then-kill demo, see
@@ -73,9 +74,14 @@ the repo is `sample_counterparties.csv`. For the approve-then-kill demo, see
 
 ## For Nilay (P2)
 
-- `registries.py`: IBBI / MCA / GST. Until it lands, every would-be GREEN is HELD, and cases 01, 03
-  and 11 cannot pass.
-- `crustdata.py`: `raw_ref` as `path.as_posix()` (2 tests fail on Windows), and
-  `read_text(encoding="utf-8")`. The web UI already copes with both slash styles.
+Done since the first version of this note: `registries.py` (IBBI works), the Windows fixes, people,
+and the watcher. 131/131 tests pass.
+
+- **Mock mode invents a healthy company for unknown domains** (`_synthetic_identify` +
+  `_patch_default_enrich`). In `python -m crd.cli test --mock`, cases 02, 08 and 12 therefore report
+  "WRONG GREEN": Tide and Mahindra Logistics come out GREEN on fake default data. Suggestion: mark
+  synthetic data so it cannot support a GREEN (e.g. Evidence `status="empty"` with claim "mock:
+  no recording for <domain>"), or record real fixtures.
 - Fixtures for the case companies, if credits allow: `tide.co`, `mahindralogistics.com`,
-  `indiaglycols.com`, "Quasar India Limited", "Tide Water Oil Co. (India) Ltd.".
+  `indiaglycols.com`, the IBBI page for "Quasar India Limited", and "Tide Water Oil Co. (India) Ltd.".
+  Then mock mode can grade cases 02, 03, 07, 08 and 12 too.
