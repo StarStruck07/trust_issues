@@ -1,0 +1,27 @@
+id: "08_leadership_exit"
+request: "Run this week's risk review on our 3PL partners."
+as_of: "2026-11-22"
+input_rows:
+  - cp_id: "C-108"
+    name: "Mahindra Logistics"
+    legal_name: "Mahindra Logistics Limited"
+    domain: "mahindralogistics.com"
+    city: "Mumbai"
+    role: "warehouse_lessor"
+    criticality: "primary"
+    exposure_inr: 0
+    account_owner: "ops-team"
+expected:
+  rating: ["AMBER", "RED"]
+  must_cite: ["mahindra"]
+  must_not: ["GREEN"]
+notes: >
+  The CEO left after 1 Sep 2026. Mahindra Logistics' MD and CEO Hemant Sikka resigned (letter
+  dated 12 Nov 2026, announced 16 Nov) to pursue other opportunities, stepping down in December;
+  Mohammed Turra was named MD & CEO (Designate). The shares fell about 15% on the news, their
+  steepest intraday fall on record. Sources: https://www.businesstoday.in/markets/stocks/story/mahindra-logistics-shares-tumble-14-as-md-and-ceo-hemant-sikka-resigns-567585-2026-11-16 ,
+  https://www.business-standard.com/amp/markets/news/mahindra-logistics-shares-plunge-14-after-md-and-ceo-hemant-sikka-resigns-126111600947_1.html .
+  Correct because a CEO exit at a primary warehousing partner is a leadership_exit signal
+  (-10) and must at least flag AMBER. The officer appears only in a public role (Ethics). The
+  same quarter's results returned to profit (Rs 26.2 crore), which is why AMBER, not RED, is
+  the most likely answer.

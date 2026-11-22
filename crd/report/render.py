@@ -157,11 +157,15 @@ def build(run_id: str) -> dict:
             "prio": prio[a.cp_ids[0]],
             "importance": prio[a.cp_ids[0]]["importance"],
         }
-        rows.append({"a": a, "cells": {f: field_value(a, f, ctx) for f in fields}, **ctx})
+        cells = {f: field_value(a, f, ctx) for f in fields}
+        cells.setdefault("priority", ctx["priority"])
+        rows.append({"a": a, "cells": cells, **ctx})
     costs = db.run_costs(run_id)
     return {
         "run": run, "request": run.get("request"), "as_of": run.get("as_of"), "costs": costs,
-        "fields": fields, "rows": rows, "assessments": assessments, "actions": actions,
+        "fields": fields, "rows": rows,
+        # the dashboard always leads with priority; exported reports follow config exactly
+        "ui_fields": fields if "priority" in fields else ["priority"] + fields, "assessments": assessments, "actions": actions,
         "evidence": evidence, "ev_by_id": ev_by_id,
         "changes": [a for a in assessments if a.change_since_last],
         "cannot_verify": [(a, line) for a in assessments for line in a.cannot_verify],

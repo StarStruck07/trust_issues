@@ -1,0 +1,27 @@
+id: "01_healthy_carrier"
+request: "Run this week's risk review on our carriers."
+as_of: "2026-11-22"
+input_rows:
+  - cp_id: "C-101"
+    name: "Delhivery"
+    legal_name: "Delhivery Limited"
+    domain: "delhivery.com"
+    city: "Gurugram"
+    role: "carrier"
+    criticality: "primary"
+    exposure_inr: 0
+    account_owner: "ops-team"
+expected:
+  rating: "GREEN"
+  must_cite: ["headcount"]
+  must_not: ["RED"]
+notes: >
+  Large listed Indian logistics company with no adverse news since 1 Sep 2026. Delhivery
+  reported its Q2 FY27 results on 30 Oct 2026: a swing to a net profit of about Rs 41 crore,
+  service revenue above Rs 3,000 crore for the first time (+19.8% YoY), and express parcel
+  volumes up 32%. Sources: https://yourstory.com/2026/10/delhivery-reports-net-profit-of-rs-41-crore-in-q2-of-fy27 ,
+  https://www.freepressjournal.in/business/delhivery-reports-3066-crore-q2fy27-revenue-ebitda-triples-to-205-crore-pat-at-41-crore .
+  Correct because headcount, hiring and news are all healthy, and the domain is the exact
+  identity key. Mock fixtures: tests/fixtures/*/delhivery.com.json. Until registries.py
+  (insolvency/legal_status) lands, the coverage rule turns this into HELD, which is the right
+  behaviour: no GREEN while a required source is unavailable.

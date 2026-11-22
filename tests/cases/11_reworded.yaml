@@ -1,0 +1,23 @@
+id: "11_reworded"
+request: "Before the Diwali volume surge, can you tell me whether Delhivery is still safe to rely on as our main line-haul partner?"
+as_of: "2026-11-22"
+input_rows:
+  - cp_id: "C-101"
+    name: "Delhivery"
+    legal_name: "Delhivery Limited"
+    domain: "delhivery.com"
+    city: "Gurugram"
+    role: "carrier"
+    criticality: "primary"
+    exposure_inr: 0
+    account_owner: "ops-team"
+expected:
+  rating: "GREEN"
+  must_cite: ["headcount"]
+  must_not: ["RED"]
+notes: >
+  The same company and data as case 01, asked in completely different words: a question rather
+  than a command, naming the company, with no "risk review" phrase. Correct because the rating
+  comes from fixed rules over evidence, not from the wording of the request. The result must be
+  identical to case 01 (determinism). Sources as in case 01:
+  https://yourstory.com/2026/10/delhivery-reports-net-profit-of-rs-41-crore-in-q2-of-fy27 .

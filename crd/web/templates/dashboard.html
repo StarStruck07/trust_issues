@@ -110,11 +110,11 @@
 </div>
 <div class="card" style="overflow:auto">
   <table class="tbl" id="ranked">
-    <thead><tr>{% for f in data.fields %}<th class="{{ 'right' if f in ('inr_at_risk','exposure_inr') }}">{{ f|human|replace('inr', '₹')|replace('display name', 'counterparty') }}</th>{% endfor %}</tr></thead>
+    <thead><tr>{% for f in data.ui_fields %}<th class="{{ 'right' if f in ('inr_at_risk','exposure_inr') }}">{{ f|human|replace('inr', '₹')|replace('display name', 'counterparty') }}</th>{% endfor %}</tr></thead>
     <tbody>
     {% for r in rows %}
       <tr class="rated" data-r="{{ r.rating }}" data-g="{{ 'CV' if r.rating in ('CANNOT_VERIFY','HELD') else r.rating }}">
-        {% for f in data.fields %}{{ ui.field_cell(f, r.cells[f], r, run.run_id) }}{% endfor %}
+        {% for f in data.ui_fields %}{{ ui.field_cell(f, r.cells[f], r, run.run_id) }}{% endfor %}
       </tr>
     {% endfor %}
     </tbody>

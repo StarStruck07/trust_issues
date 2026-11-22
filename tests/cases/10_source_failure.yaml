@@ -1,0 +1,25 @@
+id: "10_source_failure"
+request: "Run this week's risk review on our carriers."
+as_of: "2026-11-22"
+env:
+  CRD_FAIL_SOURCES: "enrich"
+input_rows:
+  - cp_id: "C-110"
+    name: "Delhivery"
+    legal_name: "Delhivery Limited"
+    domain: "delhivery.com"
+    role: "carrier"
+    criticality: "primary"
+    exposure_inr: 0
+    account_owner: "ops-team"
+expected:
+  rating: ["HELD", "CANNOT_VERIFY"]
+  must_not: ["GREEN"]
+notes: >
+  Same healthy company as case 01, but Company Enrich is forced to fail
+  (CRD_FAIL_SOURCES=enrich, read by crd/data/crustdata.py). Correct because a timeout or outage
+  must become Evidence(status="unavailable") and can never produce a GREEN: silence is not
+  health. The ledger must show the failed call with status error. The runner needs to apply
+  this case's `env:` block before the run (see docs/CONTRACT_REQUESTS.md); until then, run it
+  with:
+  CRD_FAIL_SOURCES=enrich python -m crd.cli test --case '10_*' --mock .
