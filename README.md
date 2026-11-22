@@ -1,13 +1,19 @@
 # Trust Issues
 
+**T**hreat and **R**isk **U**nderstanding **S**ystem for **T**racking **I**nstitutional **S**tability.
+
 **An agent that runs the weekly counterparty risk review for a 3PL.** It gives every carrier,
-warehouse and customer a sourced rating, proposes protective actions that a person approves, and
+warehouse and customer a sourced verdict, proposes protective actions that a person approves, and
 executes each one exactly once.
 
 ContextCon 05 · BITS Pilani · 22 Nov 2026 · Theme: Supply chain + Trust and compliance
 Team: Arth (P1 Core) · Nilay (P2 Data) · Prachi (P3 Product)
 
 Architecture: [`docs/architecture.md`](docs/architecture.md) · Demo video: _link on the submission form_
+
+**Contents:** [The service](#1-the-service) · [What it does now](#2-what-it-does-now) ·
+[What comes next](#3-what-comes-next) · [How it runs](#4-how-it-runs) ·
+[What we tried](#5-what-we-tried) · [Why this way](#6-why-this-way)
 
 ---
 
@@ -26,7 +32,9 @@ the credit-control and insurance budget.
 **What we replace:** the analyst's weekly loop. Look up each counterparty, read the signals,
 decide a rating, decide what to do, draft the emails, chase approvals, and keep the record.
 
-## 2. Input and finished result
+## 2. What it does now
+
+### Input and finished result
 
 **Input**
 - **A counterparty list** (CSV, JSON or XLSX) with `cp_id`, `name`, optional `legal_name`,
@@ -49,18 +57,58 @@ decide a rating, decide what to do, draft the emails, chase approvals, and keep 
 4. **A cost ledger.** Every API and LLM call with its credits, ₹, tokens and latency
    (`ledger.csv`).
 
-## 3. Pass mark
+### The web app
 
-| Check | Target |
-| --- | --- |
-| Ratings vs test answers | ≥ 90%, **zero wrong GREENs** |
-| Hard cases (lookalike, duplicate, no footprint, namesake, source failure) | 100% |
-| Facts with a source and a date | 100% |
-| Unapproved irreversible actions | 0 |
-| Duplicate actions after a kill | 0 |
-| Credits per counterparty | under the cap (`limits.max_credits_per_cp: 15`) |
+Start it (see [How it runs](#4-how-it-runs)) and open `http://localhost:8000`.
 
-## 4. How to run it (fresh clone)
+| Tab | What it's for |
+|---|---|
+| **Front page** | This week at a glance: verdict counts, the most worrying companies as case files, real example situations, and a draggable *what-if* line (pull a company down and see what a downgrade costs; nothing is saved). |
+| **Desk** | The working dashboard: ₹ at risk, companies needing attention, approvals waiting, % of facts sourced, spend; a verdict-mix bar that filters; the priority grid; the full table with search. Click any company for its file. |
+| **Company file** | Score, exposure, ₹ at risk, the explanation with numbered citations, a "why this rating" breakdown (start 70, points per signal, hard stop, coverage check), every piece of evidence with its source and date, identity match, proposed actions. |
+| **Approvals** | Drafts waiting for a human: read, edit, approve or reject. Strategic accounts need a senior. |
+| **Outbox** | What actually went out, each exactly once (team inbox only during the event). |
+| **Sources** | What Crustdata and the registries actually answered, as a searchable JSON tree with the scored fields highlighted. Person-level data is never shown; contact fields are withheld. |
+| **Ledger** | Every API and LLM call with credits, ₹, tokens and latency; CSV export. |
+| **Runs** | Past reviews, live progress and the full report (HTML / JSON / Markdown). |
+
+`Ctrl/⌘ K` anywhere jumps to a company, page or command.
+
+**Verdicts in the UI:** *Trusted* (GREEN), *Doubts* (AMBER), *Don't trust* (RED), *Can't tell*
+(CANNOT VERIFY), *On hold* (HELD). Reports and exports keep the formal names.
+
+### Demo portfolio (fictional)
+
+`python scripts/seed_demo.py` seeds **Kaveri Freight**, a made-up 3PL with **24 vendors and 400
+customers**, into its own database (`var/demo-portfolio/crd.db`). Every name is invented and every
+piece of evidence is synthetic, labelled `Demo data (fictional)`; the UI shows a demo banner on
+every page. The verdicts and draft actions are real outputs of the scoring engine and action policy
+(this run: 248 trusted, 92 doubts, 39 don't trust, 45 can't tell or on hold; 85 drafts awaiting
+approval). It exists to show the product at a realistic scale, not as evidence of accuracy.
+
+### Where it stands (honestly)
+
+- **134 unit and integration tests pass**, Windows included.
+- **Graded cases in mock mode: 7 of 12.** The other five (Tide India, Quasar India, India Glycols,
+  Mahindra Logistics, and the kill case) involve companies with no recorded Crustdata response, so
+  mock mode cannot judge them. Scoring tests reproduce their logic on synthetic evidence (shutdown
+  news → AMBER, demerger neutralises a headcount drop, CEO exit → AMBER, CIRP → RED). **The graded
+  result comes from the live run** (`python -m crd.cli test --live`).
+
+## 3. What comes next
+
+- **Bank-statement and GST-filing signals** (payment delays, filing gaps). They need the
+  counterparty's consent and an account-aggregator integration.
+- **Carrier on-time performance from the TMS**, the strongest operational signal for suppliers.
+- **A learned model on outcomes** (who actually defaulted or failed). Not now: there is no outcome
+  data yet, and fixed rules over cited evidence are explainable and auditable. Once a few quarters
+  of outcomes exist, the rule weights in `config.yaml` can be tuned against them.
+- **Importance from data**, such as our share of the customer's shipments and years of relationship,
+  instead of a column.
+
+## 4. How it runs
+
+### Run it (fresh clone)
 
 ```bash
 python -m venv .venv && source .venv/bin/activate      # Windows: .venv\Scripts\activate
@@ -76,7 +124,7 @@ python -m crd.cli review "Run this week's risk review on all our carriers and cu
 python -m crd.cli review "Run this week's risk review on all our carriers and customers" \
     --input data/input/sample_counterparties.csv --live
 
-# web UI: dashboard, live progress, approvals, outbox, ledger
+# web UI: front page, desk, approvals, outbox, sources, ledger, runs
 uvicorn crd.web.app:app --port 8000          # open http://localhost:8000
 
 # tests
@@ -88,7 +136,15 @@ On Windows, set `PYTHONUTF8=1` (several files contain ₹). Kill demo:
 `bash scripts/demo_kill_approval.sh` (or `scripts\demo_kill_approval.ps1`) after a review has
 created some pending approvals.
 
-## 5. How it's built
+Extra commands:
+
+```bash
+python scripts/seed_demo.py                  # fictional 424-company demo portfolio (own DB)
+CRD_DB_PATH=var/demo-portfolio/crd.db uvicorn crd.web.app:app --port 8000
+python -m tests.run_cases                    # graded cases, one line each
+```
+
+### How it's built
 
 See [`docs/architecture.md`](docs/architecture.md) for the diagram and the step-by-step flow.
 In one paragraph:
@@ -103,7 +159,7 @@ moves `approved → executing → done` by compare-and-set, and channels write t
 that key first. On every startup, `reconcile()` settles anything a crash left in `executing`. The
 **web UI** is FastAPI + Jinja2 + HTMX, with no build step.
 
-## 6. Data sources it calls
+### Data sources it calls
 
 | Source | Endpoint | Used for | Cost (measured) |
 |---|---|---|---|
@@ -131,7 +187,7 @@ counterparty that would otherwise be GREEN is **held** (HELD) instead of passed 
 **What the LLM is not used for:** the rating, the score, the action choice, or any fact without a
 source.
 
-## 7. Where a person approves
+### Where a person approves
 
 | Action | Reversible | Who | When |
 |---|---|---|---|
@@ -152,7 +208,7 @@ The approval flow:
    returns to the queue.
 5. During the event, every outbound message goes **only to our team inbox**.
 
-## 8. Costs
+### Costs
 
 Measured on the probe run (`tests/fixtures/README.md`), one counterparty costs about:
 
@@ -175,26 +231,52 @@ Watcher re-checks). That is a fraction of an analyst's time or a trade-credit in
 monitoring fee. At ₹2–3 per credit, the data cost is about ₹50–80 per counterparty per month,
 plus about ₹10–20 of LLM. That leaves a **gross margin above 90%** before hosting and support.
 
-## 9. Ethics
+## 5. What we tried
 
-- **Companies only.** People appear only as a company's officers in public roles (name, title,
-  employer, dates). No contact enrichment, photos or posts. Person data is purged after each run.
-- **No fact without a source.** Every claim links to its URL or stored raw response, with its
-  record date. Stale evidence is shown but not scored.
-- **Cannot verify instead of punishing small firms.** A firm with no web footprint, or a common name
-  we cannot pin down, is CANNOT VERIFY ("Missing: GSTIN or CIN"), never RED.
-- **Silence is not health.** A failed source is `unavailable`, and a GREEN that relied on it becomes
-  HELD.
-- **People decide.** Nothing irreversible runs without a named approver, and strategic accounts need
-  a senior one. Messages go only to our own inbox during the event.
-- **Explanations.** Every rating has a "why this rating" breakdown (start 70, points per signal,
-  hard stop, coverage check), and every action has a "why".
-- **Prompt injection.** Fetched web text is data. The LLM extracts fields into a schema, suspicious
-  instructions are flagged, and nothing in fetched text can trigger an action.
+### Approaches we considered
 
-## 10. How we tested
+1. **An LLM rates each company directly.** Rejected. It is not deterministic, it draws on the
+   model's memory instead of cited evidence, and a credit decision cannot be explained or audited.
+2. **A dashboard of raw signals.** Rejected. That is a tool, not a service: the analyst still does
+   the review, the decision and the follow-up.
+3. **Rules over cited evidence, the LLM for extraction only, and an approval gate.** Chosen.
 
-- **Unit and integration tests** (`python -m pytest -q tests`, **131 tests, all passing**,
+What worked:
+- the coverage gate (no GREEN on thin evidence);
+- turning failed sources into HELD;
+- identity-first resolution, which kills most namesake errors before scoring;
+- idempotency keys plus reconcile, which made the kill demo boring, as it should be.
+
+What didn't:
+- Web Search news has no dates and returns Google redirect URLs, so we moved to Enrich `news[]` as
+  the main news source.
+- The registries sit behind CAPTCHAs, so we fall back to site search and otherwise report them as
+  unavailable.
+- The 5-per-minute rate limit forced batching of Identify.
+
+**Priority as a separate layer.** We considered making importance part of the rating and rejected
+it. The rating must stay a health score anyone can check. Importance changes the *action* instead:
+- **sole-source carrier on AMBER:** backup RFQ now;
+- **customer who relies on us on AMBER:** an account-owner call, because they tend to keep paying
+  us;
+- **customer who can switch easily:** a terms email at half the usual exposure bar;
+- **strategic account:** a senior approver.
+
+### The hardest case
+
+**A timeout that looks like "no news".** If IBBI or Enrich times out and we treat the empty answer
+as "nothing found", a company in insolvency would come out GREEN. That is the worst possible error.
+We handle it in three layers:
+1. every failure becomes `Evidence(status="unavailable")`;
+2. the coverage gate demands fresh evidence on the required signals;
+3. any GREEN that relied on an unavailable source becomes **HELD** with "Missing: … Tried: …".
+
+Case 10 forces this on purpose. The **lookalike** is a close second: Identify returns a 1.0 match
+for "Sharma Transport" alongside four others, so a high score alone is not uniqueness.
+
+### How we tested
+
+- **Unit and integration tests** (`python -m pytest -q tests`, **134 tests, all passing**,
   Windows included):
   - scoring rules, resolve and dedupe, the orchestrator (including a simulated `kill -9` and resume),
     the Crustdata client on recorded responses, news, registries, people, the watcher, the LLM
@@ -224,8 +306,8 @@ plus about ₹10–20 of LLM. That leaves a **gross margin above 90%** before ho
 | 12 | Kill mid-action | RED/AMBER customer over ₹10 L, terms email approved, server killed | 1 outbox row |
 
   **Mock mode is a wiring check, not the graded run.** Mock mode only has recorded responses for
-  Delhivery, Blue Dart, Mamaearth and "Sharma Transport". It currently passes 6/12: healthy,
-  reworded, lookalike, duplicate, no footprint and namesake. For companies with no recording, the
+  Delhivery, Blue Dart, Mamaearth and "Sharma Transport". It currently passes 7/12: healthy,
+  reworded, lookalike, duplicate, no footprint, namesake and source failure. For companies with no recording, the
   mock client stands in a generic healthy company, so Tide, Mahindra Logistics and India Glycols
   look healthy in mock mode, which is meaningless for those cases. **The graded result comes from
   the live run** (`python -m crd.cli test --live`), and this table will be updated with it. Case 10
@@ -237,57 +319,45 @@ plus about ₹10–20 of LLM. That leaves a **gross margin above 90%** before ho
 - **Determinism:** case 11 repeats case 01 with different wording and must give the same rating.
   Scoring is a pure function of the evidence and the config.
 
-## 11. Approaches we considered
+### Pass mark we set ourselves
 
-1. **An LLM rates each company directly.** Rejected. It is not deterministic, it draws on the
-   model's memory instead of cited evidence, and a credit decision cannot be explained or audited.
-2. **A dashboard of raw signals.** Rejected. That is a tool, not a service: the analyst still does
-   the review, the decision and the follow-up.
-3. **Rules over cited evidence, the LLM for extraction only, and an approval gate.** Chosen.
+| Check | Target |
+| --- | --- |
+| Ratings vs test answers | ≥ 90%, **zero wrong GREENs** |
+| Hard cases (lookalike, duplicate, no footprint, namesake, source failure) | 100% |
+| Facts with a source and a date | 100% |
+| Unapproved irreversible actions | 0 |
+| Duplicate actions after a kill | 0 |
+| Credits per counterparty | under the cap (`limits.max_credits_per_cp: 15`) |
 
-What worked:
-- the coverage gate (no GREEN on thin evidence);
-- turning failed sources into HELD;
-- identity-first resolution, which kills most namesake errors before scoring;
-- idempotency keys plus reconcile, which made the kill demo boring, as it should be.
+## 6. Why this way
 
-What didn't:
-- Web Search news has no dates and returns Google redirect URLs, so we moved to Enrich `news[]` as
-  the main news source.
-- The registries sit behind CAPTCHAs, so we fall back to site search and otherwise report them as
-  unavailable.
-- The 5-per-minute rate limit forced batching of Identify.
+Three decisions shape everything else:
 
-**Priority as a separate layer.** We considered making importance part of the rating and rejected
-it. The rating must stay a health score anyone can check. Importance changes the *action* instead:
-- **sole-source carrier on AMBER:** backup RFQ now;
-- **customer who relies on us on AMBER:** an account-owner call, because they tend to keep paying
-  us;
-- **customer who can switch easily:** a terms email at half the usual exposure bar;
-- **strategic account:** a senior approver.
+1. **Rules over cited evidence, not an LLM verdict.** A credit decision has to be explainable and
+   auditable. The score is a pure function of the evidence and `config.yaml`; the LLM only extracts
+   facts from fetched text, classifies news, and writes a summary that is checked against the facts.
+2. **"Can't tell" is a first-class answer.** The costliest error is a wrong *Trusted*. A lookalike
+   name, a missing identifier, thin evidence or a source that timed out never becomes a green light.
+3. **A person signs anything irreversible, and it runs once.** Drafts wait for a named approver;
+   idempotency keys plus reconcile-on-startup mean a crash mid-send never sends twice.
 
-## 12. The hardest case
+### Ethics
 
-**A timeout that looks like "no news".** If IBBI or Enrich times out and we treat the empty answer
-as "nothing found", a company in insolvency would come out GREEN. That is the worst possible error.
-We handle it in three layers:
-1. every failure becomes `Evidence(status="unavailable")`;
-2. the coverage gate demands fresh evidence on the required signals;
-3. any GREEN that relied on an unavailable source becomes **HELD** with "Missing: … Tried: …".
-
-Case 10 forces this on purpose. The **lookalike** is a close second: Identify returns a 1.0 match
-for "Sharma Transport" alongside four others, so a high score alone is not uniqueness.
-
-## 13. What we left out and what comes next
-
-- **Bank-statement and GST-filing signals** (payment delays, filing gaps). They need the
-  counterparty's consent and an account-aggregator integration.
-- **Carrier on-time performance from the TMS**, the strongest operational signal for suppliers.
-- **A learned model on outcomes** (who actually defaulted or failed). Not now: there is no outcome
-  data yet, and fixed rules over cited evidence are explainable and auditable. Once a few quarters
-  of outcomes exist, the rule weights in `config.yaml` can be tuned against them.
-- **Importance from data**, such as our share of the customer's shipments and years of relationship,
-  instead of a column.
+- **Companies only.** People appear only as a company's officers in public roles (name, title,
+  employer, dates). No contact enrichment, photos or posts. Person data is purged after each run.
+- **No fact without a source.** Every claim links to its URL or stored raw response, with its
+  record date. Stale evidence is shown but not scored.
+- **Cannot verify instead of punishing small firms.** A firm with no web footprint, or a common name
+  we cannot pin down, is CANNOT VERIFY ("Missing: GSTIN or CIN"), never RED.
+- **Silence is not health.** A failed source is `unavailable`, and a GREEN that relied on it becomes
+  HELD.
+- **People decide.** Nothing irreversible runs without a named approver, and strategic accounts need
+  a senior one. Messages go only to our own inbox during the event.
+- **Explanations.** Every rating has a "why this rating" breakdown (start 70, points per signal,
+  hard stop, coverage check), and every action has a "why".
+- **Prompt injection.** Fetched web text is data. The LLM extracts fields into a schema, suspicious
+  instructions are flagged, and nothing in fetched text can trigger an action.
 
 ---
 
