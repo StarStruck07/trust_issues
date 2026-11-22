@@ -61,6 +61,22 @@ def _grade(case: dict, run_id: str) -> tuple[bool, str]:
 def run_case(path: str) -> dict:
     with open(path, encoding="utf-8") as f:
         case = yaml.safe_load(f)
+    # A case may set env vars (e.g. CRD_FAIL_SOURCES for case 10). Restore them, and CRD_AS_OF,
+    # afterwards so nothing leaks into the next case.
+    env = {k: str(v) for k, v in (case.get("env") or {}).items()}
+    saved = {k: os.environ.get(k) for k in [*env, "CRD_AS_OF"]}
+    os.environ.update(env)
+    try:
+        return _run_case(case, path)
+    finally:
+        for k, v in saved.items():
+            if v is None:
+                os.environ.pop(k, None)
+            else:
+                os.environ[k] = v
+
+
+def _run_case(case: dict, path: str) -> dict:
     tmp = tempfile.mkdtemp(prefix="crdcase_")
     os.environ["CRD_DB_PATH"] = os.path.join(tmp, "case.db")
     from crd import db, orchestrator
